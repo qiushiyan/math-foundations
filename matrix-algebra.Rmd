@@ -48,11 +48,12 @@ $$
 
 
 
-
 ## LU factorization 
 
 A *factorization* a matrix A is an equation that expresses A as a product of two or more
 matrices  
+
+## 4 subspaces
 
 
 ## Matrix multiplication as linear transformation
