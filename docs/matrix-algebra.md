@@ -46,11 +46,12 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
-
 ## LU factorization 
 
 A *factorization* a matrix A is an equation that expresses A as a product of two or more
 matrices  
+
+## 4 subspaces
 
 
 ## Matrix multiplication as linear transformation
@@ -72,7 +73,7 @@ $$
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: R^n \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
-T(x) = Ax \quad \text{for all} \; x \text{in} \; R^n  
+T(x) = Ax \quad \text{for all} \; x \; \text{in} \; R^n  
 $$
   
 In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\boldsymbol{e_j})$, where $\boldsymbol{e_j}$ is the $j$th basis of $R^n$ </div>\EndKnitrBlock{theorem}
