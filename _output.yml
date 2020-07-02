@@ -1,0 +1,19 @@
+bookdown::gitbook:
+  split_by: section
+  css: css/style.css
+  config:
+    fontsettings:
+      theme: white
+      family: serif
+      size: 2
+    toc:
+      before: |
+        <li><a href="./">Math foundations in Machine learning</a></li>
+      after: |
+        <li>
+          <a href="https://github.com/rstudio/bookdown" target="blank">Written with bookdown</a>
+        </li>
+    edit:
+      link: https://github.com/user/repo/edit/master/%s
+      text: "Edit"
+

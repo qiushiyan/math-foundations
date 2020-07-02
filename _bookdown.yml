@@ -1,0 +1,21 @@
+new_session: yes
+book_filename: "math-foundations"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+
+output_dir: 'docs'
+
+before_chapter_script: "_common.R"
+
+rmd_files: [
+  "index.Rmd",
+  "matrix-algebra.Rmd",
+  
+  
+  "eigen-quadratic.Rmd",
+  
+  
+  "references.Rmd"
+]

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.4 Matrix multiplication as linear transformation | Mathematical Foundations</title>
+  <meta name="description" content="1.4 Matrix multiplication as linear transformation | Mathematical Foundations" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.4 Matrix multiplication as linear transformation | Mathematical Foundations" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="enixam/math-foundations" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.4 Matrix multiplication as linear transformation | Mathematical Foundations" />
+  
+  
+  
+
+<meta name="author" content="Qiushi Yan" />
+
+
+<meta name="date" content="2020-07-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lu-factorization.html"/>
+<link rel="next" href="eigen-values-and-quadratic-forms.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+<link rel="stylesheet" href="css\style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Math foundations in Machine learning</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Linear Algebra</b></span></li>
+<li class="chapter" data-level="1" data-path="matrix-algebra.html"><a href="matrix-algebra.html"><i class="fa fa-check"></i><b>1</b> Matrix Algebra</a><ul>
+<li class="chapter" data-level="1.1" data-path="elemetary-matrix-and-row-operations.html"><a href="elemetary-matrix-and-row-operations.html"><i class="fa fa-check"></i><b>1.1</b> Elemetary matrix and row operations</a></li>
+<li class="chapter" data-level="1.2" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html"><i class="fa fa-check"></i><b>1.2</b> Arithmetic properties</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.2.1</b> Inverse of a matrix</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.3</b> LU factorization</a></li>
+<li class="chapter" data-level="1.4" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.4</b> Matrix multiplication as linear transformation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="eigen-values-and-quadratic-forms.html"><a href="eigen-values-and-quadratic-forms.html"><i class="fa fa-check"></i><b>2</b> Eigen values and quadratic forms</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li>
+  <a href="https://github.com/rstudio/bookdown" target="blank">Written with bookdown</a>
+</li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mathematical Foundations</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="matrix-multiplication-as-linear-transformation" class="section level2">
+<h2><span class="header-section-number">1.4</span> Matrix multiplication as linear transformation</h2>
+<p>The equation <span class="math inline">\(A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}\)</span> can arise in a way that is not directly connected with linear combination of column vectors. That is, we think of the matrix <span class="math inline">\(A\)</span> as an force that “acts” on a vector <span class="math inline">\(x\)</span> in <span class="math inline">\(R^n\)</span> by multiplication to produce a new vector called <span class="math inline">\(b\)</span> in <span class="math inline">\(R^m\)</span>.</p>
+<p>A transformation <span class="math inline">\(T\)</span> from <span class="math inline">\(R^n\)</span> to <span class="math inline">\(R^m\)</span> is a rule that assigns each vector  in <span class="math inline">\(R^n\)</span> a vector <span class="math inline">\(T(x)\)</span> in <span class="math inline">\(R^m\)</span>, which is called the <strong>image</strong> of  (under the action of <span class="math inline">\(T\)</span>).</p>
+<p>It can be show that such transformations induced by multiplying a matrix is a type of <strong>linear transformation</strong>, because it satisfies all required properties to be linear:</p>
+<span class="math display">\[
+\begin{aligned}
+\text{vector addition} \quad A(\boldsymbol{u} + \boldsymbol{v}) &amp;= A\boldsymbol{u} + A\boldsymbol{v}  \\ 
+\text{scalar multiplication} \quad A(c\boldsymbol{u}) &amp;= cA\boldsymbol{u}
+\end{aligned}
+\]</span>
+<hr>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 1.2  </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let <span class="math inline">\(T: R^n \rightarrow R^m\)</span> be a linear transformation. Then there exists a <strong>unique</strong> matrix <span class="math inline">\(A\)</span> such that:</p>
+<p><span class="math display">\[
+T(x) = Ax \quad \text{for all} \; x \text{in} \; R^n  
+\]</span></p>
+In fact, <span class="math inline">\(A\)</span> is a <span class="math inline">\(m \times n\)</span> matrix whose <span class="math inline">\(j\)</span>th column is the vector <span class="math inline">\(T(\boldsymbol{e_j})\)</span>, where <span class="math inline">\(\boldsymbol{e_j}\)</span> is the <span class="math inline">\(j\)</span>th basis of <span class="math inline">\(R^n\)</span>
+</div>
+
+<p><strong>Proof</strong>:</p>
+<p><span class="math display">\[
+\boldsymbol{x} = x_1\boldsymbol{e_1} + \dots + x_n{\boldsymbol{e_n}}
+\]</span>
+And because <span class="math inline">\(T(\boldsymbol{x})\)</span> is a linear transformation:</p>
+<p><span class="math display">\[
+\begin{split}
+T(\boldsymbol{x}) &amp;= x_1T(\boldsymbol{e_1}) + \dots + x_nT(\boldsymbol{e_n}) \\
+&amp;= [T(\boldsymbol{e_1}) \, \cdots \, T(\boldsymbol{e_n})]\boldsymbol{x} \\
+&amp;= A\boldsymbol{x}
+\end{split}
+\]</span></p>
+<p>In other words, the transformation is specified once we know what all basis in <span class="math inline">\(R^n\)</span> become in <span class="math inline">\(R^m\)</span>.</p>
+<p>The matrix <span class="math inline">\(A\)</span> is called the <strong>standard matrix for the linear transformation</strong> <span class="math inline">\(T\)</span>.</p>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lu-factorization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="eigen-values-and-quadratic-forms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "serif",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/user/repo/edit/master/matrix-algebra.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
