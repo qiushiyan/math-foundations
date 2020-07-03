@@ -86,10 +86,37 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\boldsymbol{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\boldsymbol{x} = \boldsymbol{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
+
+
 ## LU factorization 
 
-A *factorization* a matrix A is an equation that expresses A as a product of two or more
-matrices  
+https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysis/
+
+A *factorization* a matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
+
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4) </strong></span>**LU factorization**
+  
+Suppose $A$ can be reduced to an echelon form $U$ using row operations that add a multiple ofo oone row to another row *below* it, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
+
+$$
+E_p \cdots E_1A = U  
+$$
+  
+Then 
+
+$$
+A = (E_p \cdots E_1)^{-1}U = LU
+$$
+
+where 
+$$
+L = (E_p \cdots E_1)^{-1}  
+$$</div>\EndKnitrBlock{definition}
+
+
+
+
 
 ## 4 subspaces
 
@@ -110,7 +137,7 @@ $$
 $$
 <hr>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: R^n \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-5"><strong>(\#thm:unnamed-chunk-5) </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: R^n \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; R^n  
@@ -140,13 +167,17 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 <hr>
 
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4) </strong></span>A mapping $T: R^n \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymbol{b}$ in $R^m$ is the image of at least one $\boldsymbol{x}$ in R^n</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6) </strong></span>**onto**
+
+A mapping $T: R^n \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymbol{b}$ in $R^m$ is the image of at least one $\boldsymbol{x}$ in R^n</div>\EndKnitrBlock{definition}
 
 <br>
 
 Equivalently, $T$ is onto $R^m$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5) </strong></span>A mapping T: R^n \rightarrow R^m$ is said to be **one-to-one** ifi each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $R^n$</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-7"><strong>(\#def:unnamed-chunk-7) </strong></span>**one-to-one mapping**
+
+A mapping T: R^n \rightarrow R^m$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $R^n$</div>\EndKnitrBlock{definition}
 <br>
 
 Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $R^m$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.

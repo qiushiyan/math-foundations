@@ -13,8 +13,9 @@ rmd_files: [
   "index.Rmd",
   "matrix-algebra.Rmd",
   
-  
   "eigen-quadratic.Rmd",
+  
+  "taylor.Rmd",
   
   
   "references.Rmd"

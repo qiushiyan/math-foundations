@@ -90,10 +90,41 @@ $$
 
 
 
+```{block2, type = "rmdnote"}
+In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\boldsymbol{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\boldsymbol{x} = \boldsymbol{b}$ by row reduction.
+```
+
+
 ## LU factorization 
 
-A *factorization* a matrix A is an equation that expresses A as a product of two or more
-matrices  
+https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysis/
+
+A *factorization* a matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
+
+```{definition}
+**LU factorization**
+  
+Suppose $A$ can be reduced to an echelon form $U$ using row operations that add a multiple ofo oone row to another row *below* it, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
+
+$$
+E_p \cdots E_1A = U  
+$$
+  
+Then 
+
+$$
+A = (E_p \cdots E_1)^{-1}U = LU
+$$
+
+where 
+$$
+L = (E_p \cdots E_1)^{-1}  
+$$
+```
+
+
+
+
 
 ## 4 subspaces
 
@@ -147,6 +178,8 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 
 
 ```{definition}
+**onto**
+
 A mapping $T: R^n \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymbol{b}$ in $R^m$ is the image of at least one $\boldsymbol{x}$ in R^n
 ```
 
@@ -154,8 +187,10 @@ A mapping $T: R^n \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymb
 
 Equivalently, $T$ is onto $R^m$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
 
-```{definition}
-A mapping T: R^n \rightarrow R^m$ is said to be **one-to-one** ifi each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $R^n$
+```{definition} 
+**one-to-one mapping**
+
+A mapping T: R^n \rightarrow R^m$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $R^n$
 ```
 <br>
 
