@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.1 Elemetary matrix and row operations | Mathematical Foundations</title>
-  <meta name="description" content="1.1 Elemetary matrix and row operations | Mathematical Foundations" />
+  <title>1.2 Matrix multiplication | Mathematical Foundations</title>
+  <meta name="description" content="1.2 Matrix multiplication | Mathematical Foundations" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.1 Elemetary matrix and row operations | Mathematical Foundations" />
+  <meta property="og:title" content="1.2 Matrix multiplication | Mathematical Foundations" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.1 Elemetary matrix and row operations | Mathematical Foundations" />
+  <meta name="twitter:title" content="1.2 Matrix multiplication | Mathematical Foundations" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="matrix-algebra.html"/>
-<link rel="next" href="matrix-multiplication.html"/>
+<link rel="prev" href="elemetary-matrix-and-row-operations.html"/>
+<link rel="next" href="arithmetic-properties.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -109,18 +109,58 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="elemetary-matrix-and-row-operations" class="section level2">
-<h2><span class="header-section-number">1.1</span> Elemetary matrix and row operations</h2>
-<p>An elementary matrix is one that is obtained by performing a single elementary row
-operation on an identity matrix <span class="math inline">\(I\)</span>. Each elementary matrix <span class="math inline">\(E\)</span> is invertible. The inverse of <span class="math inline">\(E\)</span> is the elementary matrix of the same type that transforms <span class="math inline">\(E\)</span> back into <span class="math inline">\(I\)</span>.</p>
+<div id="matrix-multiplication" class="section level2">
+<h2><span class="header-section-number">1.2</span> Matrix multiplication</h2>
+<p>A common way of looking at matrix-vector multiplication <span class="math inline">\(A\boldsymbol{x}\)</span> is to think of as a linear combination of column vectors in <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+A\boldsymbol{x} &amp;= [\boldsymbol{a}_1 \cdots \boldsymbol{a}_n] 
+\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix} \\
+&amp;= x_1\boldsymbol{a}_1 + \cdots + x_n\boldsymbol{a}_n
+\end{aligned}
+\]</span></p>
+<p>Likewise, for any <span class="math inline">\(\boldsymbol{x}^{T} = [x_1, \cdots, x_n]^T\)</span> and matrix <span class="math inline">\(A_{m \times n}\)</span>, <span class="math inline">\(x^{T}A\)</span> can be thought of as a linear combination of rows in <span class="math inline">\(A\)</span> to produce a new row vector:</p>
+<p><span class="math display">\[
+[x_1, \cdots, x_n] 
+\begin{bmatrix}
+\boldsymbol{a}_1^T \\
+\vdots  \\
+\boldsymbol{a}_n^T
+\end{bmatrix} 
+= x_1\boldsymbol{a}_1^T + \dots + x_n\boldsymbol{a}_n^T
+\]</span>
+For matrix-matrix multiplication <span class="math inline">\(AB\)</span>, besides the dot product definition we can see it as <strong>column row expansion</strong>.</p>
+<p><br></p>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 1.1  </strong></span><strong>Column-row expansion of <span class="math inline">\(AB\)</span></strong></p>
+<p>if <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times n\)</span> and <span class="math inline">\(B\)</span> is <span class="math inline">\(n \times p\)</span>, then</p>
+<span class="math display">\[
+\begin{aligned}
+AB &amp;= [\text{col}_1(A) \cdots \text{col}_n(A)] 
+\begin{bmatrix}
+\text{row}_1(B) \\
+\vdots \\ 
+\text{row}_n(B)
+\end{bmatrix} \\ 
+&amp;= \text{col}_1(A)\text{row}_1(B) + \cdots +  \text{col}_n(A)\text{row}_n(B)
+\end{aligned}
+\]</span>
+</div>
+
+<p>Note that each <span class="math inline">\(\text{col}_1(A)\text{row}_1(B)\)</span> is a rank 1 <span class="math inline">\(m \times p\)</span> matrix.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="matrix-algebra.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="matrix-multiplication.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="elemetary-matrix-and-row-operations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="arithmetic-properties.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

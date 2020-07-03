@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.5 Matrix multiplication as linear transformation | Mathematical Foundations</title>
-  <meta name="description" content="1.5 Matrix multiplication as linear transformation | Mathematical Foundations" />
+  <title>1.6 Matrix multiplication as linear transformation | Mathematical Foundations</title>
+  <meta name="description" content="1.6 Matrix multiplication as linear transformation | Mathematical Foundations" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.5 Matrix multiplication as linear transformation | Mathematical Foundations" />
+  <meta property="og:title" content="1.6 Matrix multiplication as linear transformation | Mathematical Foundations" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.5 Matrix multiplication as linear transformation | Mathematical Foundations" />
+  <meta name="twitter:title" content="1.6 Matrix multiplication as linear transformation | Mathematical Foundations" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-02" />
+<meta name="date" content="2020-07-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="subspaces.html"/>
-<link rel="next" href="eigen-values-and-quadratic-forms.html"/>
+<link rel="next" href="special-matrices-and-their-properties.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -74,12 +74,16 @@
 <li class="part"><span><b>I Linear Algebra</b></span></li>
 <li class="chapter" data-level="1" data-path="matrix-algebra.html"><a href="matrix-algebra.html"><i class="fa fa-check"></i><b>1</b> Matrix Algebra</a><ul>
 <li class="chapter" data-level="1.1" data-path="elemetary-matrix-and-row-operations.html"><a href="elemetary-matrix-and-row-operations.html"><i class="fa fa-check"></i><b>1.1</b> Elemetary matrix and row operations</a></li>
-<li class="chapter" data-level="1.2" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html"><i class="fa fa-check"></i><b>1.2</b> Arithmetic properties</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.2.1</b> Inverse of a matrix</a></li>
+<li class="chapter" data-level="1.2" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html"><i class="fa fa-check"></i><b>1.2</b> Matrix multiplication</a></li>
+<li class="chapter" data-level="1.3" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html"><i class="fa fa-check"></i><b>1.3</b> Arithmetic properties</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.3.1</b> Inverse of a matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.3</b> LU factorization</a></li>
-<li class="chapter" data-level="1.4" data-path="subspaces.html"><a href="subspaces.html"><i class="fa fa-check"></i><b>1.4</b> 4 subspaces</a></li>
-<li class="chapter" data-level="1.5" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.5</b> Matrix multiplication as linear transformation</a></li>
+<li class="chapter" data-level="1.4" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.4</b> LU factorization</a></li>
+<li class="chapter" data-level="1.5" data-path="subspaces.html"><a href="subspaces.html"><i class="fa fa-check"></i><b>1.5</b> 4 subspaces</a></li>
+<li class="chapter" data-level="1.6" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.6</b> Matrix multiplication as linear transformation</a></li>
+<li class="chapter" data-level="1.7" data-path="special-matrices-and-their-properties.html"><a href="special-matrices-and-their-properties.html"><i class="fa fa-check"></i><b>1.7</b> Special matrices and their properties</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="special-matrices-and-their-properties.html"><a href="special-matrices-and-their-properties.html#orthogonal-matrices"><i class="fa fa-check"></i><b>1.7.1</b> Orthogonal matrices</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="eigen-values-and-quadratic-forms.html"><a href="eigen-values-and-quadratic-forms.html"><i class="fa fa-check"></i><b>2</b> Eigen values and quadratic forms</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -106,7 +110,7 @@
 
             <section class="normal" id="section-">
 <div id="matrix-multiplication-as-linear-transformation" class="section level2">
-<h2><span class="header-section-number">1.5</span> Matrix multiplication as linear transformation</h2>
+<h2><span class="header-section-number">1.6</span> Matrix multiplication as linear transformation</h2>
 <p>The equation <span class="math inline">\(A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}\)</span> can arise in a way that is not directly connected with linear combination of column vectors. That is, we think of the matrix <span class="math inline">\(A\)</span> as an force that “acts” on a vector <span class="math inline">\(x\)</span> in <span class="math inline">\(R^n\)</span> by multiplication to produce a new vector called <span class="math inline">\(b\)</span> in <span class="math inline">\(R^m\)</span>.</p>
 <p>A transformation <span class="math inline">\(T\)</span> from <span class="math inline">\(R^n\)</span> to <span class="math inline">\(R^m\)</span> is a rule that assigns each vector  in <span class="math inline">\(R^n\)</span> a vector <span class="math inline">\(T(x)\)</span> in <span class="math inline">\(R^m\)</span>, which is called the <strong>image</strong> of  (under the action of <span class="math inline">\(T\)</span>).</p>
 <p>It can be show that such transformations induced by multiplying a matrix is a type of <strong>linear transformation</strong>, because it satisfies all required properties to be linear:</p>
@@ -119,7 +123,7 @@
 <hr>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 1.2  </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let <span class="math inline">\(T: R^n \rightarrow R^m\)</span> be a linear transformation. Then there exists a <strong>unique</strong> matrix <span class="math inline">\(A\)</span> such that:</p>
+<p><span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 1.3  </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let <span class="math inline">\(T: R^n \rightarrow R^m\)</span> be a linear transformation. Then there exists a <strong>unique</strong> matrix <span class="math inline">\(A\)</span> such that:</p>
 <p><span class="math display">\[
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; R^n  
 \]</span></p>
@@ -135,21 +139,34 @@ And because <span class="math inline">\(T(\boldsymbol{x})\)</span> is a linear t
 \begin{split}
 T(\boldsymbol{x}) &amp;= x_1T(\boldsymbol{e_1}) + \dots + x_nT(\boldsymbol{e_n}) \\
 &amp;= [T(\boldsymbol{e_1}) \, \cdots \, T(\boldsymbol{e_n})]\boldsymbol{x} \\
-&amp;= A\boldsymbol{x}
+&amp;= (A\boldsymbol{x})_{m \times 1}
 \end{split}
 \]</span></p>
 <p>In other words, the transformation is specified once we know what all basis in <span class="math inline">\(R^n\)</span> become in <span class="math inline">\(R^m\)</span>.</p>
 <p>The matrix <span class="math inline">\(A\)</span> is called the <strong>standard matrix for the linear transformation</strong> <span class="math inline">\(T\)</span>.</p>
+<hr>
 
+<div class="definition">
+<span id="def:unnamed-chunk-4" class="definition"><strong>Definition 1.1  </strong></span>A mapping <span class="math inline">\(T: R^n \rightarrow R^m\)</span> is said to be <strong>onto</strong> R^m if each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(R^m\)</span> is the image of at least one <span class="math inline">\(\boldsymbol{x}\)</span> in R^n
 </div>
-<!-- </div> -->
+
+<p><br></p>
+<p>Equivalently, <span class="math inline">\(T\)</span> is onto <span class="math inline">\(R^m\)</span> means that there exists at least one solution of <span class="math inline">\(T(\boldsymbol{x}) = \boldsymbol{b}\)</span></p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-5" class="definition"><strong>Definition 1.2  </strong></span>A mapping T: R^n R^m$ is said to be <strong>one-to-one</strong> ifi each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(R^m\)</span> is the image of <em>at most</em> one <span class="math inline">\(\boldsymbol{x}\)</span> in <span class="math inline">\(R^n\)</span>
+</div>
+
+<p><br></p>
+<p>Equivalently, <span class="math inline">\(T\)</span> is one-to-one if, for each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(R^m\)</span>, the equation <span class="math inline">\(T(\boldsymbol{x}) = \boldsymbol{b}\)</span> has either a unique solution or none at all.</p>
+</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="subspaces.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="eigen-values-and-quadratic-forms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="special-matrices-and-their-properties.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -180,7 +197,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/user/repo/edit/master/matrix-algebra.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/matrix-algebra.Rmd",
 "text": "Edit"
 },
 "history": {

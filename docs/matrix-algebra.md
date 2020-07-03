@@ -7,21 +7,61 @@
 
 
 ## Elemetary matrix and row operations  
-
-For any $x^{T} = [x_1, ..., x_m]^T$ and matrix $A_{m \times n}$, $x^{T}A$ can be thought of as a linear combination of rows in $A$ to produce a new row vector: 
-
-$$
-[x_1, ..., x_m] 
-\begin{bmatrix}
-\boldsymbol{a}_1^T \\
-\cdots  \\
-\boldsymbol{a}_m^T
-\end{bmatrix} 
-= x_1\boldsymbol{a}_1^T + \dots + x_m\boldsymbol{a}_m^T
-$$
-
 An elementary matrix is one that is obtained by performing a single elementary row
 operation on an identity matrix $I$. Each elementary matrix $E$ is invertible. The inverse of $E$ is the elementary matrix of the same type that transforms $E$ back into $I$.
+
+
+## Matrix multiplication
+
+A common way of looking at matrix-vector multiplication $A\boldsymbol{x}$ is to think of as a linear combination of column vectors in $A$:  
+
+$$
+\begin{aligned}
+A\boldsymbol{x} &= [\boldsymbol{a}_1 \cdots \boldsymbol{a}_n] 
+\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix} \\
+&= x_1\boldsymbol{a}_1 + \cdots + x_n\boldsymbol{a}_n
+\end{aligned}
+$$
+
+
+Likewise, for any $\boldsymbol{x}^{T} = [x_1, \cdots, x_n]^T$ and matrix $A_{m \times n}$, $x^{T}A$ can be thought of as a linear combination of rows in $A$ to produce a new row vector: 
+
+$$
+[x_1, \cdots, x_n] 
+\begin{bmatrix}
+\boldsymbol{a}_1^T \\
+\vdots  \\
+\boldsymbol{a}_n^T
+\end{bmatrix} 
+= x_1\boldsymbol{a}_1^T + \dots + x_n\boldsymbol{a}_n^T
+$$
+For matrix-matrix multiplication $AB$, besides the dot product definition we can see it as **column row expansion**.  
+
+<br>
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-1"><strong>(\#thm:unnamed-chunk-1) </strong></span>**Column-row expansion of $AB$**
+
+if $A$ is $m \times n$ and $B$ is $n \times p$, then 
+
+$$
+\begin{aligned}
+AB &= [\text{col}_1(A) \cdots \text{col}_n(A)] 
+\begin{bmatrix}
+\text{row}_1(B) \\
+\vdots \\ 
+\text{row}_n(B)
+\end{bmatrix} \\ 
+&= \text{col}_1(A)\text{row}_1(B) + \cdots +  \text{col}_n(A)\text{row}_n(B)
+\end{aligned}
+$$</div>\EndKnitrBlock{theorem}
+
+
+Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix. 
+
 
 
 
@@ -29,7 +69,7 @@ operation on an identity matrix $I$. Each elementary matrix $E$ is invertible. T
 
 ### Inverse of a matrix
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-1"><strong>(\#thm:unnamed-chunk-1) </strong></span>If A and B are both invertible matrces, we have
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>If A and B are both invertible matrces, we have
 
 $$
 (AB)^{-1} = B^{-1}A^{-1}
@@ -70,7 +110,7 @@ $$
 $$
 <hr>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: R^n \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: R^n \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; R^n  
@@ -89,11 +129,37 @@ $$
 \begin{split}
 T(\boldsymbol{x}) &= x_1T(\boldsymbol{e_1}) + \dots + x_nT(\boldsymbol{e_n}) \\
 &= [T(\boldsymbol{e_1}) \, \cdots \, T(\boldsymbol{e_n})]\boldsymbol{x} \\
-&= A\boldsymbol{x}
+&= (A\boldsymbol{x})_{m \times 1}
 \end{split}
 $$
 
 In other words, the transformation is specified once we know what all basis in $R^n$ become in $R^m$.
 
-The matrix $A$ is called the **standard matrix for the linear transformation** $T$.
+The matrix $A$ is called the **standard matrix for the linear transformation** $T$.  
 
+<hr>
+
+
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4) </strong></span>A mapping $T: R^n \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymbol{b}$ in $R^m$ is the image of at least one $\boldsymbol{x}$ in R^n</div>\EndKnitrBlock{definition}
+
+<br>
+
+Equivalently, $T$ is onto $R^m$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
+
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5) </strong></span>A mapping T: R^n \rightarrow R^m$ is said to be **one-to-one** ifi each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $R^n$</div>\EndKnitrBlock{definition}
+<br>
+
+Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $R^m$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.
+
+## Special matrices and their properties 
+
+### Orthogonal matrices  
+
+An *orthogonal matrix* is a square matrix whose inverse is its transpose:  
+
+$$
+(\#eq:orthogonal)
+AA^T = A^TA = I
+$$
+
+Another way of defining it is that an orthogonal matrix has both **orthogonal columns** and **orthogonal rows**.

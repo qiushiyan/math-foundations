@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.1 Elemetary matrix and row operations | Mathematical Foundations</title>
-  <meta name="description" content="1.1 Elemetary matrix and row operations | Mathematical Foundations" />
+  <title>1.7 Special matrices and their properties | Mathematical Foundations</title>
+  <meta name="description" content="1.7 Special matrices and their properties | Mathematical Foundations" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.1 Elemetary matrix and row operations | Mathematical Foundations" />
+  <meta property="og:title" content="1.7 Special matrices and their properties | Mathematical Foundations" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.1 Elemetary matrix and row operations | Mathematical Foundations" />
+  <meta name="twitter:title" content="1.7 Special matrices and their properties | Mathematical Foundations" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="matrix-algebra.html"/>
-<link rel="next" href="matrix-multiplication.html"/>
+<link rel="prev" href="matrix-multiplication-as-linear-transformation.html"/>
+<link rel="next" href="eigen-values-and-quadratic-forms.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -109,18 +109,27 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="elemetary-matrix-and-row-operations" class="section level2">
-<h2><span class="header-section-number">1.1</span> Elemetary matrix and row operations</h2>
-<p>An elementary matrix is one that is obtained by performing a single elementary row
-operation on an identity matrix <span class="math inline">\(I\)</span>. Each elementary matrix <span class="math inline">\(E\)</span> is invertible. The inverse of <span class="math inline">\(E\)</span> is the elementary matrix of the same type that transforms <span class="math inline">\(E\)</span> back into <span class="math inline">\(I\)</span>.</p>
+<div id="special-matrices-and-their-properties" class="section level2">
+<h2><span class="header-section-number">1.7</span> Special matrices and their properties</h2>
+<div id="orthogonal-matrices" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Orthogonal matrices</h3>
+<p>An <em>orthogonal matrix</em> is a square matrix whose inverse is its transpose:</p>
+<p><span class="math display" id="eq:orthogonal">\[
+\tag{1.1}
+AA^T = A^TA = I
+\]</span></p>
+<p>Another way of defining it is that an orthogonal matrix has both <strong>orthogonal columns</strong> and <strong>orthogonal rows</strong>.</p>
+
 </div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="matrix-algebra.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="matrix-multiplication.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="matrix-multiplication-as-linear-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="eigen-values-and-quadratic-forms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,7 +1,7 @@
 --- 
 title: "Mathematical Foundations"
 author: "Qiushi Yan"
-date: "2020-07-02"
+date: "2020-07-03"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib, packages.bib]
@@ -19,6 +19,8 @@ This notebook documents my self-study on math foundations of data science, inclu
 Some references (books, online courses, videos, papers) include:  
 
 - *Linear Algebra and its Applications* [@lay2006-3]  
+
+- *Linear Algebra and its Applications* [@strang2006linear]
 
 - [Linear Algebra Review and Reference](http://cs229.stanford.edu/section/cs229-linalg.pdf) on Stanford's cs229 website   
 

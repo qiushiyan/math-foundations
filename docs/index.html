@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-02" />
+<meta name="date" content="2020-07-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -74,12 +74,16 @@
 <li class="part"><span><b>I Linear Algebra</b></span></li>
 <li class="chapter" data-level="1" data-path="matrix-algebra.html"><a href="matrix-algebra.html"><i class="fa fa-check"></i><b>1</b> Matrix Algebra</a><ul>
 <li class="chapter" data-level="1.1" data-path="elemetary-matrix-and-row-operations.html"><a href="elemetary-matrix-and-row-operations.html"><i class="fa fa-check"></i><b>1.1</b> Elemetary matrix and row operations</a></li>
-<li class="chapter" data-level="1.2" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html"><i class="fa fa-check"></i><b>1.2</b> Arithmetic properties</a><ul>
-<li class="chapter" data-level="1.2.1" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.2.1</b> Inverse of a matrix</a></li>
+<li class="chapter" data-level="1.2" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html"><i class="fa fa-check"></i><b>1.2</b> Matrix multiplication</a></li>
+<li class="chapter" data-level="1.3" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html"><i class="fa fa-check"></i><b>1.3</b> Arithmetic properties</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.3.1</b> Inverse of a matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.3</b> LU factorization</a></li>
-<li class="chapter" data-level="1.4" data-path="subspaces.html"><a href="subspaces.html"><i class="fa fa-check"></i><b>1.4</b> 4 subspaces</a></li>
-<li class="chapter" data-level="1.5" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.5</b> Matrix multiplication as linear transformation</a></li>
+<li class="chapter" data-level="1.4" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.4</b> LU factorization</a></li>
+<li class="chapter" data-level="1.5" data-path="subspaces.html"><a href="subspaces.html"><i class="fa fa-check"></i><b>1.5</b> 4 subspaces</a></li>
+<li class="chapter" data-level="1.6" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.6</b> Matrix multiplication as linear transformation</a></li>
+<li class="chapter" data-level="1.7" data-path="special-matrices-and-their-properties.html"><a href="special-matrices-and-their-properties.html"><i class="fa fa-check"></i><b>1.7</b> Special matrices and their properties</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="special-matrices-and-their-properties.html"><a href="special-matrices-and-their-properties.html#orthogonal-matrices"><i class="fa fa-check"></i><b>1.7.1</b> Orthogonal matrices</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="eigen-values-and-quadratic-forms.html"><a href="eigen-values-and-quadratic-forms.html"><i class="fa fa-check"></i><b>2</b> Eigen values and quadratic forms</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -108,7 +112,7 @@
 <div id="header">
 <h1 class="title">Mathematical Foundations</h1>
 <p class="author"><em>Qiushi Yan</em></p>
-<p class="date"><em>2020-07-02</em></p>
+<p class="date"><em>2020-07-03</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -116,6 +120,7 @@
 <p>Some references (books, online courses, videos, papers) include:</p>
 <ul>
 <li><p><em>Linear Algebra and its Applications</em> <span class="citation">(Lay <a href="references.html#ref-lay2006-3" role="doc-biblioref">2006</a>)</span></p></li>
+<li><p><em>Linear Algebra and its Applications</em> <span class="citation">(Strang <a href="references.html#ref-strang2006linear" role="doc-biblioref">2006</a>)</span></p></li>
 <li><p><a href="http://cs229.stanford.edu/section/cs229-linalg.pdf">Linear Algebra Review and Reference</a> on Stanford’s cs229 website</p></li>
 <li><p>Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, <a href="https://ocw.mit.edu" class="uri">https://ocw.mit.edu</a>. License: Creative Commons BY-NC-SA.</p></li>
 </ul>
@@ -161,7 +166,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/user/repo/edit/master/index.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/index.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -14,6 +14,6 @@ bookdown::gitbook:
           <a href="https://github.com/rstudio/bookdown" target="blank">Written with bookdown</a>
         </li>
     edit:
-      link: https://github.com/user/repo/edit/master/%s
+      link: https://github.com/enixam/math-foundations/edit/master/%s
       text: "Edit"
 
