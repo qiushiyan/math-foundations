@@ -126,6 +126,7 @@ $$
 ## Determinants
 
 
+
 ## Matrix multiplication as linear transformation
 
 The equation $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$ can arise in a way that is not directly connected with linear combination of column vectors. That is,  we think of the matrix $A$ as an force that “acts” on a vector $x$ in $R^n$ by multiplication to produce a new vector called $b$ in $R^m$.  
@@ -175,21 +176,20 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 
 
 ```{definition}
-**onto**
+**mapping is onto $R^m$**
 
 A mapping $T: R^n \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymbol{b}$ in $R^m$ is the image of at least one $\boldsymbol{x}$ in R^n
 ```
 
-<br>
-
 Equivalently, $T$ is onto $R^m$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
+
+<br>
 
 ```{definition} 
 **one-to-one mapping**
 
 A mapping T: R^n \rightarrow R^m$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $R^n$
 ```
-<br>
 
 Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $R^m$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.
 
