@@ -123,10 +123,7 @@ $$
 ```
 
 
-
-
-
-## 4 subspaces
+## Determinants
 
 
 ## Matrix multiplication as linear transformation
