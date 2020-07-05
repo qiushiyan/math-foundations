@@ -18,7 +18,7 @@ This notebook collects various mathematical topics relevant to machine learning 
 
 References (books, online courses, videos, papers) include:  
 
-- Linear Algebra
+- **Linear Algebra**
   - *Linear Algebra and its Applications* [@lay2006-3]  
   - *Linear Algebra and Optimization for Machine Learning* [@DBLP:books/sp/Aggarwal20]
   - *Linear Algebra and its Applications* [@strang2006linear]  

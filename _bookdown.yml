@@ -15,10 +15,12 @@ rmd_files: [
   "vector-spaces.Rmd",
   
   "eigen.Rmd",
+  "orthogonality.Rmd",
   
   "taylor.Rmd",
   
   
   "least-square.Rmd",
+  "pca.Rmd",
   "references.Rmd"
 ]
