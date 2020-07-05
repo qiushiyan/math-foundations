@@ -1,5 +1,5 @@
 
-# Eigen values and and eigen vectors
+# Eigenvalues and and eigenvectors
 
 
 
@@ -53,3 +53,5 @@ A &= PDP^{-1}
 $$
 Because $P$ contains $n$ independent columns so it's invertible.
 
+
+## Eigenvectors and linear transformations
