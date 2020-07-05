@@ -16,18 +16,14 @@ github-repo: enixam/math-foundations
 
 This notebook collects various mathematical topics relevant to machine learning problems, including linear algebra, calculus, probability theory, statistics and (possibly) optimization. 
 
-Some references (books, online courses, videos, papers) include:  
+References (books, online courses, videos, papers) include:  
 
-- *Linear Algebra and its Applications* [@lay2006-3]  
-
-- *Linear Algebra and Optimization for Machine Learning* [@DBLP:books/sp/Aggarwal20]
-
-- *Linear Algebra and its Applications* [@strang2006linear]  
-
-- *Mathematics for Machine Learning* [@Deisenroth2020]
-
-- [Linear Algebra Review and Reference](http://cs229.stanford.edu/section/cs229-linalg.pdf) on Stanford's cs229 website   
-
-- Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, https://ocw.mit.edu. License: Creative Commons BY-NC-SA.
+- Linear Algebra
+  - *Linear Algebra and its Applications* [@lay2006-3]  
+  - *Linear Algebra and Optimization for Machine Learning* [@DBLP:books/sp/Aggarwal20]
+  - *Linear Algebra and its Applications* [@strang2006linear]  
+  - *Mathematics for Machine Learning* [@Deisenroth2020]
+  - [Linear Algebra Review and Reference](http://cs229.stanford.edu/section/cs229-linalg.pdf) on Stanford's cs229 website   
+  - Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, https://ocw.mit.edu. License: Creative Commons BY-NC-SA.
 
 

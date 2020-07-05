@@ -19,5 +19,6 @@ rmd_files: [
   "taylor.Rmd",
   
   
+  "least-square.Rmd",
   "references.Rmd"
 ]
