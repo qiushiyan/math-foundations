@@ -69,6 +69,12 @@ Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix.
 
 ## Arithmetic properties   
 
+
+```{block2, type = "rmdnote"}
+Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants)
+```
+
+
 ### Inverse of a matrix
 
 ```{theorem}
@@ -125,6 +131,34 @@ $$
 
 ## Determinants
 
+### Properties of determinants 
+
+A list of arithmetic properties of determinants, A is an $n\times n$ maatrix: 
+
+1. $\det A^T = \det A$
+2. $\det (\lambda A) = \lambda^n \det A$
+3. $\det (AB) = \det A \times \det B$ (although $AB \not = BA$)  
+
+
+### Cramer's rule
+
+Given an $n \times n$ matrix $A$ and $\boldsymbol{b}$ in $R^n$, denote $A_i(\boldsymbol{b})$ as the matrix derived by $A$ by **replacing** column $i$ by vector $\boldsymbol{b}$:  
+
+$$
+A_i(\boldsymbol{b}) = [\boldsymbol{a}_1 \cdots \underbrace{\boldsymbol{b}}_{\text{column} \,i} \cdots \boldsymbol{a}_n]
+$$
+
+```{definition}
+**Cramer's rule** 
+
+Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ $R^n$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
+
+
+```
+
+$$
+x_i = \frac{\det A_i(\boldsymbol{b})}{\det A}
+$$
 
 
 ## Matrix multiplication as linear transformation

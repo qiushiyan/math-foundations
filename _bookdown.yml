@@ -14,7 +14,7 @@ rmd_files: [
   "matrix-algebra.Rmd",
   "vector-spaces.Rmd",
   
-  "eigen-quadratic.Rmd",
+  "eigen.Rmd",
   
   "taylor.Rmd",
   

@@ -1,7 +1,7 @@
 --- 
 title: "Mathematical Notes for Machine Learning"
 author: "Qiushi Yan"
-date: "2020-07-03"
+date: "2020-07-05"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib, packages.bib]
@@ -14,7 +14,7 @@ github-repo: enixam/math-foundations
 
 # Preface {-}  
 
-This notebook documents my self-study on math foundations of data science, including linear algebra, probability theory, statistics and possibly optimization.  
+This notebook collects various mathematical topics relevant to machine learning problems, including linear algebra, calculus, probability theory, statistics and (possibly) optimization. 
 
 Some references (books, online courses, videos, papers) include:  
 

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.3 Arithmetic properties | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="1.3 Arithmetic properties | Mathematical Notes for Machine Learning" />
+  <title>Chapter 3 Eigen values and and eigen vectors | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 3 Eigen values and and eigen vectors | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.3 Arithmetic properties | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 3 Eigen values and and eigen vectors | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.3 Arithmetic properties | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 3 Eigen values and and eigen vectors | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="matrix-multiplication.html"/>
-<link rel="next" href="lu-factorization.html"/>
+<link rel="prev" href="vector-spaces.html"/>
+<link rel="next" href="diagnolization.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -117,43 +117,16 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="arithmetic-properties" class="section level2">
-<h2><span class="header-section-number">1.3</span> Arithmetic properties</h2>
-
-<div class="rmdnote">
-Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section <a href="determinants.html#determinants">1.5</a>
-</div>
-
-<div id="inverse-of-a-matrix" class="section level3">
-<h3><span class="header-section-number">1.3.1</span> Inverse of a matrix</h3>
-
-<div class="theorem">
-<p><span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 1.2  </strong></span>If A and B are both invertible matrces, we have</p>
-<p><span class="math display">\[
-(AB)^{-1} = B^{-1}A^{-1}
-\]</span></p>
-<p><span class="math display">\[
-(A^{-1})^{-1} = A  
-\]</span></p>
-<span class="math display">\[
-(A^T)^{-1} = (A^{-1})^T
-\]</span>
-</div>
-
-
-<div class="rmdnote">
-In practice <span class="math inline">\(A^{-1}\)</span> is seldom computed, because computing both <span class="math inline">\(A^{-1}\)</span> and <span class="math inline">\(A^{-1}\boldsymbol{b}\)</span> to solve linear equations takes about 3 times as many arithmetic operations as solving <span class="math inline">\(A\boldsymbol{x} = \boldsymbol{b}\)</span> by row reduction.
-</div>
-
-</div>
+<div id="eigen-values-and-and-eigen-vectors" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Eigen values and and eigen vectors</h1>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="matrix-multiplication.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lu-factorization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="vector-spaces.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diagnolization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -184,7 +157,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/matrix-algebra.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/eigen.Rmd",
 "text": "Edit"
 },
 "history": {

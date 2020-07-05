@@ -67,9 +67,13 @@ Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix.
 
 ## Arithmetic properties   
 
+
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants)</div>\EndKnitrBlock{rmdnote}
+
+
 ### Inverse of a matrix
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>If A and B are both invertible matrces, we have
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>If A and B are both invertible matrces, we have
 
 $$
 (AB)^{-1} = B^{-1}A^{-1}
@@ -95,7 +99,7 @@ https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysi
 
 A *factorization* a matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4) </strong></span>**LU factorization**
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5) </strong></span>**LU factorization**
   
 Suppose $A$ can be reduced to an echelon form $U$ using row operations that add a multiple ofo oone row to another row *below* it, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
 
@@ -115,10 +119,34 @@ L = (E_p \cdots E_1)^{-1}
 $$</div>\EndKnitrBlock{definition}
 
 
+## Determinants
+
+### Properties of determinants 
+
+A list of arithmetic properties of determinants, A is an $n\times n$ maatrix: 
+
+1. $\det A^T = \det A$
+2. $\det (\lambda A) = \lambda^n \det A$
+3. $\det (AB) = \det A \times \det B$ (although $AB \not = BA$)  
 
 
+### Cramer's rule
 
-## 4 subspaces
+Given an $n \times n$ matrix $A$ and $\boldsymbol{b}$ in $R^n$, denote $A_i(\boldsymbol{b})$ as the matrix derived by $A$ by **replacing** column $i$ by vector $\boldsymbol{b}$:  
+
+$$
+A_i(\boldsymbol{b}) = [\boldsymbol{a}_1 \cdots \underbrace{\boldsymbol{b}}_{\text{column} \,i} \cdots \boldsymbol{a}_n]
+$$
+
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6) </strong></span>**Cramer's rule** 
+
+Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ $R^n$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
+
+</div>\EndKnitrBlock{definition}
+
+$$
+x_i = \frac{\det A_i(\boldsymbol{b})}{\det A}
+$$
 
 
 ## Matrix multiplication as linear transformation
@@ -137,7 +165,7 @@ $$
 $$
 <hr>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-5"><strong>(\#thm:unnamed-chunk-5) </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: R^n \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: R^n \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; R^n  
@@ -167,18 +195,17 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 <hr>
 
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6) </strong></span>**onto**
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8) </strong></span>**mapping is onto $R^m$**
 
 A mapping $T: R^n \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymbol{b}$ in $R^m$ is the image of at least one $\boldsymbol{x}$ in R^n</div>\EndKnitrBlock{definition}
 
-<br>
-
 Equivalently, $T$ is onto $R^m$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-7"><strong>(\#def:unnamed-chunk-7) </strong></span>**one-to-one mapping**
+<br>
+
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9) </strong></span>**one-to-one mapping**
 
 A mapping T: R^n \rightarrow R^m$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $R^n$</div>\EndKnitrBlock{definition}
-<br>
 
 Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $R^m$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.
 

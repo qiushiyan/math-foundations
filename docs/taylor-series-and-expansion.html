@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Taylor series and expansion | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 3 Taylor series and expansion | Mathematical Notes for Machine Learning" />
+  <title>Chapter 4 Taylor series and expansion | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 4 Taylor series and expansion | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Taylor series and expansion | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 4 Taylor series and expansion | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Taylor series and expansion | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 4 Taylor series and expansion | Mathematical Notes for Machine Learning" />
   
   
   
@@ -24,14 +24,14 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-03" />
+<meta name="date" content="2020-07-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="eigen-values-and-quadratic-forms.html"/>
+<link rel="prev" href="diagnolization.html"/>
 <link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -79,15 +79,21 @@
 <li class="chapter" data-level="1.3.1" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.3.1</b> Inverse of a matrix</a></li>
 </ul></li>
 <li class="chapter" data-level="1.4" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.4</b> LU factorization</a></li>
-<li class="chapter" data-level="1.5" data-path="subspaces.html"><a href="subspaces.html"><i class="fa fa-check"></i><b>1.5</b> 4 subspaces</a></li>
+<li class="chapter" data-level="1.5" data-path="determinants.html"><a href="determinants.html"><i class="fa fa-check"></i><b>1.5</b> Determinants</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="determinants.html"><a href="determinants.html#properties-of-determinants"><i class="fa fa-check"></i><b>1.5.1</b> Properties of determinants</a></li>
+<li class="chapter" data-level="1.5.2" data-path="determinants.html"><a href="determinants.html#cramers-rule"><i class="fa fa-check"></i><b>1.5.2</b> Cramer’s rule</a></li>
+</ul></li>
 <li class="chapter" data-level="1.6" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.6</b> Matrix multiplication as linear transformation</a></li>
 <li class="chapter" data-level="1.7" data-path="special-matrices-and-their-properties.html"><a href="special-matrices-and-their-properties.html"><i class="fa fa-check"></i><b>1.7</b> Special matrices and their properties</a><ul>
 <li class="chapter" data-level="1.7.1" data-path="special-matrices-and-their-properties.html"><a href="special-matrices-and-their-properties.html#orthogonal-matrices"><i class="fa fa-check"></i><b>1.7.1</b> Orthogonal matrices</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="eigen-values-and-quadratic-forms.html"><a href="eigen-values-and-quadratic-forms.html"><i class="fa fa-check"></i><b>2</b> Eigen values and quadratic forms</a></li>
+<li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector spaces</a></li>
+<li class="chapter" data-level="3" data-path="eigen-values-and-and-eigen-vectors.html"><a href="eigen-values-and-and-eigen-vectors.html"><i class="fa fa-check"></i><b>3</b> Eigen values and and eigen vectors</a><ul>
+<li class="chapter" data-level="3.1" data-path="diagnolization.html"><a href="diagnolization.html"><i class="fa fa-check"></i><b>3.1</b> Diagnolization</a></li>
+</ul></li>
 <li class="part"><span><b>II Calculus</b></span></li>
-<li class="chapter" data-level="3" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>3</b> Taylor series and expansion</a></li>
+<li class="chapter" data-level="4" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>4</b> Taylor series and expansion</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -112,7 +118,7 @@
 
             <section class="normal" id="section-">
 <div id="taylor-series-and-expansion" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Taylor series and expansion</h1>
+<h1><span class="header-section-number">Chapter 4</span> Taylor series and expansion</h1>
 
 </div>
             </section>
@@ -120,7 +126,7 @@
           </div>
         </div>
       </div>
-<a href="eigen-values-and-quadratic-forms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diagnolization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
