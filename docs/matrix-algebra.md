@@ -132,27 +132,26 @@ A list of arithmetic properties of determinants, A is an $n\times n$ maatrix:
 
 ### Cramer's rule
 
-Given an $n \times n$ matrix $A$ and $\boldsymbol{b}$ in $R^n$, denote $A_i(\boldsymbol{b})$ as the matrix derived by $A$ by **replacing** column $i$ by vector $\boldsymbol{b}$:  
+Given an $n \times n$ matrix $A$ and $\boldsymbol{b}$ in $\mathbb{\mathbb{R^n}}$, denote $A_i(\boldsymbol{b})$ as the matrix derived by $A$ by **replacing** column $i$ by vector $\boldsymbol{b}$:  
 
 $$
 A_i(\boldsymbol{b}) = [\boldsymbol{a}_1 \cdots \underbrace{\boldsymbol{b}}_{\text{column} \,i} \cdots \boldsymbol{a}_n]
 $$
 
-\BeginKnitrBlock{definition}\iffalse{-91-67-114-97-109-101-114-39-115-32-114-117-108-101-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6)  \iffalse (Cramer's rule) \fi{} </strong></span>
-Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ $R^n$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
-
-</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-67-114-97-109-101-114-39-115-32-114-117-108-101-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6)  \iffalse (Cramer's rule) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ $\mathbb{R^n}$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
 
 $$
 x_i = \frac{\det A_i(\boldsymbol{b})}{\det A}
-$$
+$$</div>\EndKnitrBlock{definition}
+
+
 
 
 ## Matrix multiplication as linear transformation
 
-The equation $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$ can arise in a way that is not directly connected with linear combination of column vectors. That is,  we think of the matrix $A$ as an force that “acts” on a vector $x$ in $R^n$ by multiplication to produce a new vector called $b$ in $R^m$.  
+The equation $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$ can arise in a way that is not directly connected with linear combination of column vectors. That is,  we think of the matrix $A$ as an force that “acts” on a vector $x$ in $\mathbb{R^n}$ by multiplication to produce a new vector called $b$ in $R^m$.  
 
-A transformation $T$ from $R^n$ to $R^m$ is a rule that assigns each vector \boldsymbol{x} in $R^n$ a vector $T(x)$ in $R^m$, which is called the **image** of \boldsymbol{x} (under the action of $T$). 
+A transformation $T$ from $\mathbb{R^n}$ to $R^m$ is a rule that assigns each vector \boldsymbol{x} in $\mathbb{R^n}$ a vector $T(x)$ in $R^m$, which is called the **image** of \boldsymbol{x} (under the action of $T$). 
 
 It can be show that such transformations induced by multiplying a matrix is a type of **linear transformation**, because it satisfies all required properties to be linear:  
 
@@ -164,13 +163,13 @@ $$
 $$
 <hr>
 
-\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: R^n \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
-T(x) = Ax \quad \text{for all} \; x \; \text{in} \; R^n  
+T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
 $$
   
-In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\boldsymbol{e_j})$, where $\boldsymbol{e_j}$ is the $j$th basis of $R^n$ </div>\EndKnitrBlock{theorem}
+In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\boldsymbol{e_j})$, where $\boldsymbol{e_j}$ is the $j$th basis of $\mathbb{R^n}$ </div>\EndKnitrBlock{theorem}
 
 **Proof**: 
 
@@ -187,7 +186,7 @@ T(\boldsymbol{x}) &= x_1T(\boldsymbol{e_1}) + \dots + x_nT(\boldsymbol{e_n}) \\
 \end{split}
 $$
 
-In other words, the transformation is specified once we know what all basis in $R^n$ become in $R^m$.
+In other words, the transformation is specified once we know what all basis in $\mathbb{R^n}$ become in $R^m$.
 
 The matrix $A$ is called the **standard matrix for the linear transformation** $T$.  
 
@@ -195,13 +194,13 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 
 (ref:onto) A mapping is onto $R^m$
 
-\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: R^n \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymbol{b}$ in $R^m$ is the image of at least one $\boldsymbol{x}$ in R^n</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymbol{b}$ in $R^m$ is the image of at least one $\boldsymbol{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
 
 Equivalently, $T$ is onto $R^m$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
 
 <br>
 
-\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (one-to-one mapping) \fi{} </strong></span>A mapping T: $R^n \rightarrow R^m$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $R^n$</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (one-to-one mapping) \fi{} </strong></span>A mapping T: $\mathbb{R^n} \rightarrow R^m$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
 
 Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $R^m$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.  
 

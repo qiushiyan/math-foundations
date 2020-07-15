@@ -20,7 +20,7 @@ rmd_files: [
   "taylor.Rmd",
   
   
-  "least-square.Rmd",
+  "linear-models.Rmd",
   "pca.Rmd",
   "references.Rmd"
 ]

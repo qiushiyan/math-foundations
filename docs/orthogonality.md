@@ -3,7 +3,7 @@
 
 Some definitions:  
 
-If $\boldsymbol{u}$ and $\boldsymbol{v}$ and both vectors in $R^n$, then the number $\boldsymbol{u}^T\boldsymbol{v}$ is called the **inner product** of $\boldsymbol{u}$ and $\boldsymbol{v}$, also denoted by $\langle\boldsymbol{u}, \boldsymbol{v}\rangle$ or $\boldsymbol{u} \cdot \boldsymbol{v}$.  Also, when $\boldsymbol{u}$ is perpendicular to $\boldsymbol{v}$ we have $\boldsymbol{u} \cdot \boldsymbol{v} = 0$.
+If $\boldsymbol{u}$ and $\boldsymbol{v}$ and both vectors in $\mathbb{\mathbb{R^n}}$, then the number $\boldsymbol{u}^T\boldsymbol{v}$ is called the **inner product** of $\boldsymbol{u}$ and $\boldsymbol{v}$, also denoted by $\langle\boldsymbol{u}, \boldsymbol{v}\rangle$ or $\boldsymbol{u} \cdot \boldsymbol{v}$.  Also, when $\boldsymbol{u}$ is perpendicular to $\boldsymbol{v}$ we have $\boldsymbol{u} \cdot \boldsymbol{v} = 0$.
 
 <br>
 **Norm** is a function from a vector space to a nonnegative scalar that satisfies certain properties. 
@@ -45,9 +45,9 @@ $$
 
 ### Orthogonal complements
 
-if vector $\boldsymbol{v}$ is orthogonal to every vector in a subspace $W$ of $R^n$, then $\boldsymbol{v}$ is said to be orthogonal to $W$. The subspace that contains the set of vectors that are orthogonal to $W$ is called the **orthogonal complement**, denoted by $W^{\perp}$. 
+if vector $\boldsymbol{v}$ is orthogonal to every vector in a subspace $W$ of $\mathbb{R^n}$, then $\boldsymbol{v}$ is said to be orthogonal to $W$. The subspace that contains the set of vectors that are orthogonal to $W$ is called the **orthogonal complement**, denoted by $W^{\perp}$. 
 
-This corresponds to discussions in \@ref(4-subspaces), where 
+This corresponds to discussions in \@ref(four-subspaces), where 
 
 $$
 (\text{row} A)^{\perp} = \text{Nul} A \\
@@ -57,7 +57,7 @@ $$
 ### Orthogonal sets and orthogonal basis
 
 An orthogonal set is a set of vectors 
-$\{\boldsymbol{u_1}, \dots, \boldsymbol{u_p}\}$ in $R^n$, in which each pair of distinct vectors is orthogonal: $\boldsymbol{u_i}^{T} \boldsymbol{u_j} = 0 \quad i\not = j$. 
+$\{\boldsymbol{u_1}, \dots, \boldsymbol{u_p}\}$ in $\mathbb{R^n}$, in which each pair of distinct vectors is orthogonal: $\boldsymbol{u_i}^{T} \boldsymbol{u_j} = 0 \quad i\not = j$. 
 
 Since vectors in orthogonal sets is mutually perpendicular, they must also be linearly independent and could form a basis for a subspace $W$. In such case, they are called **orthogonal basis**.  
 
@@ -140,3 +140,13 @@ $$
 \boldsymbol{y} = \hat{\boldsymbol{y}} + z= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z}\\ 
 c_i = \frac{\boldsymbol{y} \cdot \boldsymbol{u}_i}{\boldsymbol{u}_i \cdot \boldsymbol{u}_i}\boldsymbol{u}_i \quad i = 1, \cdots, p
 $$
+
+### Best approximation 
+
+\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-66-101-115-116-32-65-112-112-114-111-120-105-109-97-116-105-111-110-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:best-approximation"><strong>(\#thm:best-approximation)  \iffalse (The Best Approximation Theorem) \fi{} </strong></span>Given $\boldsymbol{y}$ be any vector in $\mathbb{R^n}$, with its subspace $W$, let $\hat{\boldsymbol{y}}$ be the orthogonal projection of $\boldsymbol{y}$ onto $W$. Then $\hat{\boldsymbol{y}}$ is the closest point in $W$ to $\boldsymbol{y}$ in the sense that 
+
+$$
+||\boldsymbol{y} - \hat{\boldsymbol{y}}|| \le ||\boldsymbol{y} - \boldsymbol{v}||
+$$</div>\EndKnitrBlock{theorem}
+
+

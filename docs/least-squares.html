@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-06" />
+<meta name="date" content="2020-07-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -88,7 +88,9 @@
 <li class="chapter" data-level="1.7.1" data-path="special-matrices-and-their-properties.html"><a href="special-matrices-and-their-properties.html#orthogonal-matrices"><i class="fa fa-check"></i><b>1.7.1</b> Orthogonal matrices</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector spaces</a></li>
+<li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector spaces</a><ul>
+<li class="chapter" data-level="2.1" data-path="four-subspaces.html"><a href="four-subspaces.html"><i class="fa fa-check"></i><b>2.1</b> Four subspaces</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="eigenvalues-and-and-eigenvectors.html"><a href="eigenvalues-and-and-eigenvectors.html"><i class="fa fa-check"></i><b>3</b> Eigenvalues and and eigenvectors</a><ul>
 <li class="chapter" data-level="3.1" data-path="diagnolization.html"><a href="diagnolization.html"><i class="fa fa-check"></i><b>3.1</b> Diagnolization</a></li>
 <li class="chapter" data-level="3.2" data-path="eigenvectors-and-linear-transformations.html"><a href="eigenvectors-and-linear-transformations.html"><i class="fa fa-check"></i><b>3.2</b> Eigenvectors and linear transformations</a></li>
@@ -98,6 +100,7 @@
 <li class="chapter" data-level="4.1.1" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html#orthogonal-complements"><i class="fa fa-check"></i><b>4.1.1</b> Orthogonal complements</a></li>
 <li class="chapter" data-level="4.1.2" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html#orthogonal-sets-and-orthogonal-basis"><i class="fa fa-check"></i><b>4.1.2</b> Orthogonal sets and orthogonal basis</a></li>
 <li class="chapter" data-level="4.1.3" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html#orthogonal-projection"><i class="fa fa-check"></i><b>4.1.3</b> Orthogonal projection</a></li>
+<li class="chapter" data-level="4.1.4" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html#best-approximation"><i class="fa fa-check"></i><b>4.1.4</b> Best approximation</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -130,6 +133,28 @@
             <section class="normal" id="section-">
 <div id="least-squares" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Least squares</h1>
+<p>From theorem <a href="orthogonal-decomposition.html#thm:best-approximation">4.1</a> we know that</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-1" class="definition"><strong>Definition 3.1  </strong></span>the <strong>normal equation</strong>
+<span class="math display">\[
+A^TA\boldsymbol{x} = A^T\boldsymbol{b}
+\]</span>
+</div>
+
+<p><span class="math display">\[
+\boldsymbol{\beta} = (X^TX)^{-1}X^T\boldsymbol{y}
+\]</span></p>
+<p>thus:</p>
+<p><span class="math display">\[
+\hat{\boldsymbol{y}} = X\boldsymbol{\beta} = X (X^TX)^{-1}X^{T}\boldsymbol{y}
+\]</span></p>
+<p><span class="math display">\[
+\hat{\boldsymbol{y}} = \frac{\boldsymbol{x}_0^T\boldsymbol{y}}{\boldsymbol{x}_0^T\boldsymbol{x}_0}\boldsymbol{x}_0 + 
+\frac{\boldsymbol{x}_1^T\boldsymbol{y}}{\boldsymbol{x}_1^T\boldsymbol{x}_1}\boldsymbol{x}_1
+\cdots +
+\frac{\boldsymbol{x}_p^T\boldsymbol{y}}{\boldsymbol{x}_p^T\boldsymbol{x}_p}\boldsymbol{x}_p
+\]</span></p>
 
 </div>
             </section>
