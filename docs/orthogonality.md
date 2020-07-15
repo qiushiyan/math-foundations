@@ -57,7 +57,7 @@ $$
 ### Orthogonal sets and orthogonal basis
 
 An orthogonal set is a set of vectors 
-$\{\boldsymbol{u_1}, \dots, \boldsymbol{u_p}\}$ in $\mathbb{R^n}$, in which each pair of distinct vectors is orthogonal: $\boldsymbol{u_i}^{T} \boldsymbol{u_j} = 0 \quad i\not = j$. 
+$\{\boldsymbol{u_1}, \dots, \boldsymbol{u_p}\}$ in $\mathbb{R^n}$, in which each pair of distinct vectors is orthogonal: $\boldsymbol{u_i}^{T} \boldsymbol{u_j} = 0 \quad i\not = j$. Note that the set do not necessarily span the whole $\mathbb{R^n}$, but a subspace $W$. 
 
 Since vectors in orthogonal sets is mutually perpendicular, they must also be linearly independent and could form a basis for a subspace $W$. In such case, they are called **orthogonal basis**.  
 
@@ -93,52 +93,15 @@ $$
 
 Derivations for other $c_i$ is similar. 
 
-### Orthogonal projection 
 
-Any vector $\boldsymbol{y}$ can be expressed as a sum of two vectors, one a multiple of $\boldsymbol{u}$ and other orthogonal to $\boldsymbol{u}$. 
 
-$$
-\begin{aligned}
-\boldsymbol{y} &= \hat{\boldsymbol{y}} + \boldsymbol{z} \\
-\hat{\boldsymbol{y}} &= \alpha\boldsymbol{u} 
-\end{aligned}
-$$
+### Orthogonal decomposition
 
-$\hat{\boldsymbol{y}}$ is the projection of $\boldsymbol{y}$ onto the line through origin and $\boldsymbol{u}$. 
-
-<div class="figure" style="text-align: center">
-<img src="images/orthogonal-projection.png" alt="figure from page p342, ch6 [@lay2006-3]  " width="192" />
-<p class="caption">(\#fig:unnamed-chunk-2)figure from page p342, ch6 [@lay2006-3]  </p>
-</div>
-
-To get $\alpha$, we can write:  
+**Orthogonal decomposition** split $\boldsymbol{y}$ in $\mathbb{R^n}$ into two vectors, one in $W$ and one in its orthogonal compliment $W^{\perp}$. The trick is to use $\hat{\boldsymbol{y}}$ as $\boldsymbol{y}$'s projection onto $W$, which can be represented as illustrated in \@ref(orthogonal-sets-and-orthogonal-basis), and the other term, often referred to as error term in statistics, is simply $\boldsymbol{y}- \hat{\boldsymbol{y}}$. 
 
 $$
-\begin{aligned}
-(\boldsymbol{y} - \alpha\boldsymbol{u}) \cdot\alpha\boldsymbol{u} &= 0  \\
-\alpha\boldsymbol{y} \cdot \boldsymbol{u} &=   \alpha^2 \boldsymbol{u} \cdot \boldsymbol{u} \\
-\alpha &=  \frac{\boldsymbol{u} \cdot \boldsymbol{y}}{\boldsymbol{u} \cdot \boldsymbol{u}}
-\end{aligned}
-$$
-So the final equation is: 
-
-$$
-(\#eq:orthogonal-projection)
-
-$$
-
-$$
-y = \frac{\boldsymbol{y} \cdot \boldsymbol{u}}{\boldsymbol{u} \cdot \boldsymbol{u}}\boldsymbol{u} + \boldsymbol{z}
-$$
-
-
-This is similar to the scenario in which we express $\boldsymbol{y}$ in terms of linear combinations of vectors in orthogonal basis, except that we are now only projecting $\boldsymbol{y}$ to a single vector $\boldsymbol{u}$.
-
-**Orthogonal decomposition** projects $\boldsymbol{y}$ onto the whole plane $W$ instead of just a vector, similarly we can get: 
-
-$$
-\boldsymbol{y} = \hat{\boldsymbol{y}} + z= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z}\\ 
-c_i = \frac{\boldsymbol{y} \cdot \boldsymbol{u}_i}{\boldsymbol{u}_i \cdot \boldsymbol{u}_i}\boldsymbol{u}_i \quad i = 1, \cdots, p
+\boldsymbol{y} = \hat{\boldsymbol{y}} + \boldsymbol{z}= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z}\\ 
+c_i = \frac{\boldsymbol{y} \cdot \boldsymbol{u}_i}{\boldsymbol{u}_i \cdot \boldsymbol{u}_i}\boldsymbol{u}_i \quad i = 1, \cdots, p 
 $$
 
 ### Best approximation 
@@ -149,4 +112,20 @@ $$
 ||\boldsymbol{y} - \hat{\boldsymbol{y}}|| \le ||\boldsymbol{y} - \boldsymbol{v}||
 $$</div>\EndKnitrBlock{theorem}
 
+**PROOF**
 
+Take $\boldsymbol{v}$ distinct from $\hat{\boldsymbol{y}}$ in $W$, we know that $\boldsymbol{y} - \hat{\boldsymbol{y}}$ is perpendicular to $\boldsymbol{v}$. According to Pythoagorean theorem, we have
+
+<div class="figure" style="text-align: center">
+<img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]  " width="172" />
+<p class="caption">(\#fig:unnamed-chunk-2)figure from page p352, ch6 [@lay2006-3]  </p>
+</div>
+
+$$
+||\boldsymbol{y}-  \boldsymbol{v}||^2 = ||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2 + ||\boldsymbol{y} -\boldsymbol{\hat{y}}||^2 
+$$
+When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2$ is non-negative, so the error term of choosing $\boldsymbol{v}$ is always larger than that of the orthogonal projection $\boldsymbol{\hat{y}}$.
+
+### Orthonormal sets and orthogonal matrices
+
+An orthogonal set whose components are all unit vectors are said to be **orthonormal** sets. 
