@@ -105,14 +105,15 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>5</b> Vector calculus</a></li>
+<li class="chapter" data-level="6" data-path="symmetric-matrices-and-quadratic-forms.html"><a href="symmetric-matrices-and-quadratic-forms.html"><i class="fa fa-check"></i><b>6</b> Symmetric matrices and quadratic forms</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
-<li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
+<li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
 <li class="part"><span><b>III Applications</b></span></li>
-<li class="chapter" data-level="7" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>7</b> Linear models</a><ul>
-<li class="chapter" data-level="7.1" data-path="least-square-estimation.html"><a href="least-square-estimation.html"><i class="fa fa-check"></i><b>7.1</b> Least square estimation</a></li>
-<li class="chapter" data-level="7.2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html"><i class="fa fa-check"></i><b>7.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="8" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>8</b> Linear models</a><ul>
+<li class="chapter" data-level="8.1" data-path="least-square-estimation.html"><a href="least-square-estimation.html"><i class="fa fa-check"></i><b>8.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="8.2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html"><i class="fa fa-check"></i><b>8.2</b> Maximum likelihood estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="principle-component-analysis.html"><a href="principle-component-analysis.html"><i class="fa fa-check"></i><b>8</b> Principle component analysis</a></li>
+<li class="chapter" data-level="9" data-path="principle-component-analysis.html"><a href="principle-component-analysis.html"><i class="fa fa-check"></i><b>9</b> Principle component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -183,7 +184,7 @@ c_1 = \frac{\boldsymbol{u_1} \cdot \boldsymbol{y}}{\boldsymbol{u_1} \cdot \bolds
 <h3><span class="header-section-number">4.1.3</span> Orthogonal decomposition</h3>
 <p><strong>Orthogonal decomposition</strong> split <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> into two vectors, one in <span class="math inline">\(W\)</span> and one in its orthogonal compliment <span class="math inline">\(W^{\perp}\)</span>. The trick is to use <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> as <span class="math inline">\(\boldsymbol{y}\)</span>’s projection onto <span class="math inline">\(W\)</span>, which can be represented as illustrated in <a href="orthogonal-decomposition.html#orthogonal-sets-and-orthogonal-basis">4.1.2</a>, and the other term, often referred to as error term in statistics, is simply <span class="math inline">\(\boldsymbol{y}- \hat{\boldsymbol{y}}\)</span>.</p>
 <p><span class="math display">\[
-\boldsymbol{y} = \hat{\boldsymbol{y}} + \boldsymbol{z}= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z}\\ 
+\boldsymbol{y} = \hat{\boldsymbol{y}} + \boldsymbol{z}= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z} 
 \]</span></p>
 <p>Where</p>
 <p><span class="math display">\[
@@ -203,7 +204,7 @@ c_i = \frac{\boldsymbol{y} \cdot \boldsymbol{u}_i}{\boldsymbol{u}_i \cdot \bolds
 <p><strong>PROOF</strong></p>
 <p>Take <span class="math inline">\(\boldsymbol{v}\)</span> distinct from <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> in <span class="math inline">\(W\)</span>, we know that <span class="math inline">\(\boldsymbol{y} - \hat{\boldsymbol{y}}\)</span> is perpendicular to <span class="math inline">\(\boldsymbol{v}\)</span>. According to Pythoagorean theorem, we have</p>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]  " width="172" />
+<img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]" width="150%" />
 <p class="caption">
 Figure 4.1: figure from page p352, ch6 <span class="citation">(Lay <a href="references.html#ref-lay2006-3" role="doc-biblioref">2006</a>)</span>
 </p>

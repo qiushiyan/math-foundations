@@ -17,6 +17,7 @@ rmd_files: [
   "eigen.Rmd",
   "orthogonality.Rmd",
   "vector-calculus.Rmd",
+  "symmetric-quadratic.Rmd",
   
   "taylor.Rmd",
   

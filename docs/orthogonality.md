@@ -100,7 +100,7 @@ Derivations for other $c_i$ is similar.
 **Orthogonal decomposition** split $\boldsymbol{y}$ in $\mathbb{R^n}$ into two vectors, one in $W$ and one in its orthogonal compliment $W^{\perp}$. The trick is to use $\hat{\boldsymbol{y}}$ as $\boldsymbol{y}$'s projection onto $W$, which can be represented as illustrated in \@ref(orthogonal-sets-and-orthogonal-basis), and the other term, often referred to as error term in statistics, is simply $\boldsymbol{y}- \hat{\boldsymbol{y}}$. 
 
 $$
-\boldsymbol{y} = \hat{\boldsymbol{y}} + \boldsymbol{z}= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z}\\ 
+\boldsymbol{y} = \hat{\boldsymbol{y}} + \boldsymbol{z}= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z} 
 $$
 
 Where 
@@ -122,8 +122,8 @@ $$</div>\EndKnitrBlock{theorem}
 Take $\boldsymbol{v}$ distinct from $\hat{\boldsymbol{y}}$ in $W$, we know that $\boldsymbol{y} - \hat{\boldsymbol{y}}$ is perpendicular to $\boldsymbol{v}$. According to Pythoagorean theorem, we have
 
 <div class="figure" style="text-align: center">
-<img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]  " width="172" />
-<p class="caption">(\#fig:unnamed-chunk-2)figure from page p352, ch6 [@lay2006-3]  </p>
+<img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]" width="150%" />
+<p class="caption">(\#fig:unnamed-chunk-2)figure from page p352, ch6 [@lay2006-3]</p>
 </div>
 
 $$
