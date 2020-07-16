@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-15" />
+<meta name="date" content="2020-07-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -104,14 +104,15 @@
 <li class="chapter" data-level="4.1.5" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>4.1.5</b> Orthonormal sets and orthogonal matrices</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>5</b> Vector calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
-<li class="chapter" data-level="5" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>5</b> Taylor series and expansion</a></li>
+<li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
 <li class="part"><span><b>III Applications</b></span></li>
-<li class="chapter" data-level="6" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>6</b> Linear models</a><ul>
-<li class="chapter" data-level="6.1" data-path="least-square-estimation.html"><a href="least-square-estimation.html"><i class="fa fa-check"></i><b>6.1</b> Least square estimation</a></li>
-<li class="chapter" data-level="6.2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html"><i class="fa fa-check"></i><b>6.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="7" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>7</b> Linear models</a><ul>
+<li class="chapter" data-level="7.1" data-path="least-square-estimation.html"><a href="least-square-estimation.html"><i class="fa fa-check"></i><b>7.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="7.2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html"><i class="fa fa-check"></i><b>7.2</b> Maximum likelihood estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="principle-component-analysis.html"><a href="principle-component-analysis.html"><i class="fa fa-check"></i><b>7</b> Principle component analysis</a></li>
+<li class="chapter" data-level="8" data-path="principle-component-analysis.html"><a href="principle-component-analysis.html"><i class="fa fa-check"></i><b>8</b> Principle component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -137,8 +138,8 @@
             <section class="normal" id="section-">
 <div id="matrix-multiplication-as-linear-transformation" class="section level2">
 <h2><span class="header-section-number">1.6</span> Matrix multiplication as linear transformation</h2>
-<p>The equation <span class="math inline">\(A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}\)</span> can arise in a way that is not directly connected with linear combination of column vectors. That is, we think of the matrix <span class="math inline">\(A\)</span> as an force that “acts” on a vector <span class="math inline">\(x\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> by multiplication to produce a new vector called <span class="math inline">\(b\)</span> in <span class="math inline">\(R^m\)</span>.</p>
-<p>A transformation <span class="math inline">\(T\)</span> from <span class="math inline">\(\mathbb{R^n}\)</span> to <span class="math inline">\(R^m\)</span> is a rule that assigns each vector  in <span class="math inline">\(\mathbb{R^n}\)</span> a vector <span class="math inline">\(T(x)\)</span> in <span class="math inline">\(R^m\)</span>, which is called the <strong>image</strong> of  (under the action of <span class="math inline">\(T\)</span>).</p>
+<p>The equation <span class="math inline">\(A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}\)</span> can arise in a way that is not directly connected with linear combination of column vectors. That is, we think of the matrix <span class="math inline">\(A\)</span> as an force that “acts” on a vector <span class="math inline">\(x\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> by multiplication to produce a new vector called <span class="math inline">\(b\)</span> in <span class="math inline">\(\mathbb{\mathbb{R^m}}\)</span>.</p>
+<p>A transformation <span class="math inline">\(T\)</span> from <span class="math inline">\(\mathbb{R^n}\)</span> to <span class="math inline">\(\mathbb{R^m}\)</span> is a rule that assigns each vector  in <span class="math inline">\(\mathbb{R^n}\)</span> a vector <span class="math inline">\(T(x)\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span>, which is called the <strong>image</strong> of  (under the action of <span class="math inline">\(T\)</span>).</p>
 <p>It can be show that such transformations induced by multiplying a matrix is a type of <strong>linear transformation</strong>, because it satisfies all required properties to be linear:</p>
 <span class="math display">\[
 \begin{aligned}
@@ -149,7 +150,7 @@
 <hr>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-7" class="theorem"><strong>Theorem 1.3  (left multiplication as linear transformation)  </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let <span class="math inline">\(T: \mathbb{R^n} \rightarrow R^m\)</span> be a linear transformation. Then there exists a <strong>unique</strong> matrix <span class="math inline">\(A\)</span> such that:</p>
+<p><span id="thm:unnamed-chunk-7" class="theorem"><strong>Theorem 1.3  (left multiplication as linear transformation)  </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> be a linear transformation. Then there exists a <strong>unique</strong> matrix <span class="math inline">\(A\)</span> such that:</p>
 <p><span class="math display">\[
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
 \]</span></p>
@@ -168,23 +169,23 @@ T(\boldsymbol{x}) &amp;= x_1T(\boldsymbol{e_1}) + \dots + x_nT(\boldsymbol{e_n})
 &amp;= (A\boldsymbol{x})_{m \times 1}
 \end{split}
 \]</span></p>
-<p>In other words, the transformation is specified once we know what all basis in <span class="math inline">\(\mathbb{R^n}\)</span> become in <span class="math inline">\(R^m\)</span>.</p>
+<p>In other words, the transformation is specified once we know what all basis in <span class="math inline">\(\mathbb{R^n}\)</span> become in <span class="math inline">\(\mathbb{R^m}\)</span>.</p>
 <p>The matrix <span class="math inline">\(A\)</span> is called the <strong>standard matrix for the linear transformation</strong> <span class="math inline">\(T\)</span>.</p>
 <hr>
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 1.3  (A mapping is onto <span class="math inline">\(R^m\)</span>)  </strong></span>A mapping <span class="math inline">\(T: \mathbb{R^n} \rightarrow R^m\)</span> is said to be <strong>onto</strong> R^m if each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(R^m\)</span> is the image of at least one <span class="math inline">\(\boldsymbol{x}\)</span> in 
+<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 1.3  (A mapping is onto <span class="math inline">\(\mathbb{R^m}\)</span>)  </strong></span>A mapping <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> is said to be <strong>onto</strong>  if each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span> is the image of at least one <span class="math inline">\(\boldsymbol{x}\)</span> in 
 </div>
 
-<p>Equivalently, <span class="math inline">\(T\)</span> is onto <span class="math inline">\(R^m\)</span> means that there exists at least one solution of <span class="math inline">\(T(\boldsymbol{x}) = \boldsymbol{b}\)</span></p>
+<p>Equivalently, <span class="math inline">\(T\)</span> is onto <span class="math inline">\(\mathbb{R^m}\)</span> means that there exists at least one solution of <span class="math inline">\(T(\boldsymbol{x}) = \boldsymbol{b}\)</span></p>
 <p><br></p>
 
 <div class="definition">
-<span id="def:unnamed-chunk-9" class="definition"><strong>Definition 1.4  (one-to-one mapping)  </strong></span>A mapping T: <span class="math inline">\(\mathbb{R^n} \rightarrow R^m\)</span> is said to be <strong>one-to-one</strong> if each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(R^m\)</span> is the image of <em>at most</em> one <span class="math inline">\(\boldsymbol{x}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span>
+<span id="def:unnamed-chunk-9" class="definition"><strong>Definition 1.4  (one-to-one mapping)  </strong></span>A mapping T: <span class="math inline">\(\mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> is said to be <strong>one-to-one</strong> if each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span> is the image of <em>at most</em> one <span class="math inline">\(\boldsymbol{x}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span>
 </div>
 
-<p>Equivalently, <span class="math inline">\(T\)</span> is one-to-one if, for each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(R^m\)</span>, the equation <span class="math inline">\(T(\boldsymbol{x}) = \boldsymbol{b}\)</span> has either a unique solution or none at all.</p>
+<p>Equivalently, <span class="math inline">\(T\)</span> is one-to-one if, for each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span>, the equation <span class="math inline">\(T(\boldsymbol{x}) = \boldsymbol{b}\)</span> has either a unique solution or none at all.</p>
 </div>
             </section>
 

@@ -101,6 +101,11 @@ Derivations for other $c_i$ is similar.
 
 $$
 \boldsymbol{y} = \hat{\boldsymbol{y}} + \boldsymbol{z}= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z}\\ 
+$$
+
+Where 
+
+$$
 c_i = \frac{\boldsymbol{y} \cdot \boldsymbol{u}_i}{\boldsymbol{u}_i \cdot \boldsymbol{u}_i}\boldsymbol{u}_i \quad i = 1, \cdots, p 
 $$
 

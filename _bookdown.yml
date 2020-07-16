@@ -16,6 +16,7 @@ rmd_files: [
   
   "eigen.Rmd",
   "orthogonality.Rmd",
+  "vector-calculus.Rmd",
   
   "taylor.Rmd",
   

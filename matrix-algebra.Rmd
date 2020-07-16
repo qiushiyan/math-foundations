@@ -161,9 +161,9 @@ $$
 
 ## Matrix multiplication as linear transformation
 
-The equation $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$ can arise in a way that is not directly connected with linear combination of column vectors. That is,  we think of the matrix $A$ as an force that “acts” on a vector $x$ in $\mathbb{R^n}$ by multiplication to produce a new vector called $b$ in $R^m$.  
+The equation $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$ can arise in a way that is not directly connected with linear combination of column vectors. That is,  we think of the matrix $A$ as an force that “acts” on a vector $x$ in $\mathbb{R^n}$ by multiplication to produce a new vector called $b$ in $\mathbb{\mathbb{R^m}}$.  
 
-A transformation $T$ from $\mathbb{R^n}$ to $R^m$ is a rule that assigns each vector \boldsymbol{x} in $\mathbb{R^n}$ a vector $T(x)$ in $R^m$, which is called the **image** of \boldsymbol{x} (under the action of $T$). 
+A transformation $T$ from $\mathbb{R^n}$ to $\mathbb{R^m}$ is a rule that assigns each vector \boldsymbol{x} in $\mathbb{R^n}$ a vector $T(x)$ in $\mathbb{R^m}$, which is called the **image** of \boldsymbol{x} (under the action of $T$). 
 
 It can be show that such transformations induced by multiplying a matrix is a type of **linear transformation**, because it satisfies all required properties to be linear:  
 
@@ -176,7 +176,7 @@ $$
 <hr>
 
 ```{theorem, name = "left multiplication as linear transformation"}
-There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow R^m$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
@@ -200,27 +200,27 @@ T(\boldsymbol{x}) &= x_1T(\boldsymbol{e_1}) + \dots + x_nT(\boldsymbol{e_n}) \\
 \end{split}
 $$
 
-In other words, the transformation is specified once we know what all basis in $\mathbb{R^n}$ become in $R^m$.
+In other words, the transformation is specified once we know what all basis in $\mathbb{R^n}$ become in $\mathbb{R^m}$.
 
 The matrix $A$ is called the **standard matrix for the linear transformation** $T$.  
 
 <hr>
 
-(ref:onto) A mapping is onto $R^m$
+(ref:onto) A mapping is onto $\mathbb{R^m}$
 
 ```{definition, name = "(ref:onto)"}
-A mapping $T: \mathbb{R^n} \rightarrow R^m$ is said to be **onto** R^m if each $\boldsymbol{b}$ in $R^m$ is the image of at least one $\boldsymbol{x}$ in \mathbb{R^n}
+A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of at least one $\boldsymbol{x}$ in \mathbb{R^n}
 ```
 
-Equivalently, $T$ is onto $R^m$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
+Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
 
 <br>
 
 ```{definition, name = "one-to-one mapping"} 
-A mapping T: $\mathbb{R^n} \rightarrow R^m$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $R^m$ is the image of *at most* one $\boldsymbol{x}$ in $\mathbb{R^n}$
+A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\boldsymbol{x}$ in $\mathbb{R^n}$
 ```
 
-Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $R^m$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.  
+Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $\mathbb{R^m}$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.  
 
 
 
