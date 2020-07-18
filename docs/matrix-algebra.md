@@ -6,10 +6,7 @@
 
 
 
-## Elemetary matrix and row operations  
 
-An elementary matrix is one that is obtained by performing a single elementary row
-operation on an identity matrix $I$. Each elementary matrix $E$ is invertible. The inverse of $E$ is the elementary matrix of the same type that transforms $E$ back into $I$.
 
 
 ## Matrix multiplication
@@ -66,8 +63,39 @@ Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix.
 
 
 
+## Elemetary matrix and row operations  
 
+An *elementary matrix* is one that is obtained by performing a single elementary row
+operation on an identity matrix $I$. Each elementary matrix $E$ is invertible. The inverse of $E$ is the elementary matrix of the same type that transforms $E$ back into $I$.  
+Left multiplication by a elementary matrix has a nice illustration. There are 3 primary types of elementary matrices (example for $3 \times 3$):  
 
+$$
+E_1 = 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-4 & 0 & 1
+\end{bmatrix} 
+, 
+E_2 = 
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & 0 & 0 \\
+0 & 0 & 1
+\end{bmatrix} 
+,
+E_3 = 
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 5
+\end{bmatrix} 
+$$
+$E_1, E_2, E_3$ represents 3 types of elementary row operations applicable to a $3 \times 3$ matrix, (1) *replacement*; (2) *interchange* and (3) *scaling*. We can verify this by right multiply them with an arbitrary matrix $A$ 
+
+$$
+E_1A = 
+$$
 
 
 
@@ -167,7 +195,7 @@ $$</div>\EndKnitrBlock{theorem}
 \BeginKnitrBlock{rmdnote}<div class="rmdnote">In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\boldsymbol{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\boldsymbol{x} = \boldsymbol{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
 
 
-Cramer's rule \@ref(thm:cramer)
+Cramer's rule \@ref(thm:cramer) leads to a general formula 
 
 ## Matrix multiplication as linear transformation
 
