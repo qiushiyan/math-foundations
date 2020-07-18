@@ -125,7 +125,7 @@ Thus, any row operation on $A$ is equivalent to left multiply a corresponding el
 
 Since row operation are invertible, elementary matrices are invertible. This gives a general way of finding the inverse matrix of $A$.  
 
-```{theorem, name = "an algorithm for finding inverse matrices"}
+```{theorem find-inverse, name = "an algorithm for finding inverse matrices"}
 Row reduce the augmented matrix $[A \;\; I]$, when $A$ becomes $I$, $I$ becomes $A^{-1}$. Otherwise $A^{-1}$ is not invertible. 
 ```
 
@@ -251,9 +251,33 @@ a_j^T \\
 a_n^T
 \end{vmatrix}
 $$
-By property 6 $\det(A) = \det(B) + \det(C)$
+By property 6 $\det(A) = \det(B) + \det(C)$ when $B$ and $C$ only differs from $A$ by the same row. So $\det A$ can be broke down into two parts 
 
-Note that row operations don't change whether or not a determinant is 0, only change it by a non-zero factor or change its sign.  
+$$
+|A| = 
+\begin{vmatrix}
+a_1^T \\ 
+\vdots \\
+a_i^T \\
+\vdots \\
+a_j^T \\ 
+\vdots \\
+a_n^T
+\end{vmatrix} 
++ 
+\begin{vmatrix}
+a_1^T \\ 
+\vdots \\
+ka_j^T \\
+\vdots \\
+a_j^T \\ 
+\vdots \\
+a_n^T
+\end{vmatrix} 
+$$
+The second matrix on the right side has determinant $0$, and $\det A$ stays the same after replacing. 
+
+Note that all row operations don't change whether or not a determinant is 0, only change it by a non-zero factor or change its sign.  
 
 
 ### Cramer's rule
@@ -265,7 +289,7 @@ A_i(\boldsymbol{b}) = [\boldsymbol{a}_1 \cdots \underbrace{\boldsymbol{b}}_{\tex
 $$
 
 ```{theorem cramer, name = "Cramer's rule"}
-Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ $\mathbb{R^n}$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
+Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ in $\mathbb{R^n}$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
 
 $$
 x_i = \frac{\det A_i(\boldsymbol{b})}{\det A}
@@ -284,7 +308,7 @@ The trace has the following properties:
 2. $\text{tr}(kA) = k\text{tr}A$, $k$ is a scalar     
 3. $\text{tr}(A^T) = \text{tr}(A)$  
 4. For $A$, $B$ such that $AB$ is square, $\text{tr}(AB) = \text{tr}(BA)$  
-5. Trace of product of multiple matrices is invariant to cyclic permutations, $\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$. Note that the reordering cannot be done arbitrarily, fro example $\text{tr}(ABC) \not= \text{tr}(ACG)$ in general. 
+5. Trace of product of multiple matrices is invariant to *cyclic permutations*, $\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$. Note that the reordering cannot be done arbitrarily, fro example $\text{tr}(ABC) \not= \text{tr}(ACG)$ in general. 
 6. Trace is equal to the sum of its eigenvalues (repeated accordin gto multiplicity) $\text{tr}(A) = \sum_{i = 1}^n{\lambda_i}$  
 7. $\text{tr}(\boldsymbol{a}\boldsymbol{a}^T) = \boldsymbol{a}^T\boldsymbol{a}$, a is a column vector
 
@@ -316,7 +340,7 @@ $$
 
 
 
-In \@ref(thm:an-algorithm-for-finding-inverse-matrices), we know an algorithm of finding inverse matrices by row reducions on the augmented matrix $[A \;\; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
+In \@ref(thm:find-inverse), we know an algorithm of finding inverse matrices by row reducions on the augmented matrix $[A \;\; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
 
 The $j$th column of $A^{-1}$ is a vector $\boldsymbol{x}$ that satisfies:  
 

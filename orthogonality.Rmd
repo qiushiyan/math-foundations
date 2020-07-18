@@ -140,11 +140,27 @@ An orthogonal set whose components are all unit vectors are said to be **orthono
 
 ### Orthogonal matrices  
 
-An *orthogonal matrix* is a square matrix whose inverse is its transpose:  
+An *orthogonal matrix* is a square matrix $Q$ whose inverse is its transpose:  
 
 $$
-(\#eq:orthogonal)
-AA^T = A^TA = I
+(\#eq:orthogonal-matrix)
+QQ^T = Q^TQ = I
 $$
 
-Another way of defining it is that an orthogonal matrix has both **orthogonal columns** and **orthogonal rows**.
+Another way of defining it is that an orthogonal matrix has both **orthonormal columns** and **orthonormal rows**.  
+
+Orthogonal matrices have a nice property that they preserve inner products: 
+
+$$
+(Q\boldsymbol{x})^T(Q\boldsymbol{y}) = \boldsymbol{x}^TQ^TQ\boldsymbol{y} = \boldsymbol{x}^TI\boldsymbol{y} = \boldsymbol{x}^T\boldsymbol{y}
+$$
+
+A direct result is that $Q$ preserves L2 norms 
+
+$$
+||Q\boldsymbol{x}||_2 = \sqrt{(Q\boldsymbol{x})^T(Q\boldsymbol{x})} = \sqrt{\boldsymbol{x}^T\boldsymbol{x}} = ||\boldsymbol{x}||_2
+$$
+
+Therefore multiplication by an orthogonal matrix can be considered as a transformation that preserves length, but may rotate or reflect the vector about the origin. 
+
+Note that $Q$ may not necessarily be a square matrix to satisfy $Q^TQ = I$. For exmaple $Q \in \mathbb{R}^{m \times n}, n < m$, but its columns and rows can still be orthonormal, then $QQ^T = I$. But in most cases the term orthogonal implies a square matrix $Q$. 

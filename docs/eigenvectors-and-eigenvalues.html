@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.8 Statistics and proabability | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="1.8 Statistics and proabability | Mathematical Notes for Machine Learning" />
+  <title>3.1 Eigenvectors and eigenvalues | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="3.1 Eigenvectors and eigenvalues | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.8 Statistics and proabability | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="3.1 Eigenvectors and eigenvalues | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.8 Statistics and proabability | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="3.1 Eigenvectors and eigenvalues | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="matrix-multiplication-as-linear-transformation.html"/>
-<link rel="next" href="vector-spaces.html"/>
+<link rel="prev" href="eigenthings-and-quadratic-forms.html"/>
+<link rel="next" href="diagnolization-and-similar-matrices.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -142,21 +142,80 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="statistics-and-proabability" class="section level2">
-<h2><span class="header-section-number">1.8</span> Statistics and proabability</h2>
-<div id="sample-statistics" class="section level3">
-<h3><span class="header-section-number">1.8.1</span> Sample statistics</h3>
+<div id="eigenvectors-and-eigenvalues" class="section level2">
+<h2><span class="header-section-number">3.1</span> Eigenvectors and eigenvalues</h2>
 
+<div class="definition">
+<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 3.1  (Eigenvectors and eigenvalues)  </strong></span>An <strong>eigenvector</strong> of an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is a <em>nonzero</em> vector <span class="math inline">\(\boldsymbol{x}\)</span> such that <span class="math inline">\(A\boldsymbol{x} = \lambda\boldsymbol{x}\)</span>.</p>
+<span class="math inline">\(\lambda\)</span> is the <strong>eigenvalue</strong> of <span class="math inline">\(A\)</span> if there is a nontrivial solution <span class="math inline">\(\boldsymbol{x}\)</span> of <span class="math inline">\(A\boldsymbol{x} = \lambda \boldsymbol{x}\)</span>; such an <span class="math inline">\(\boldsymbol{x}\)</span> is called an <em>eigenvector corresponding to <span class="math inline">\(\lambda\)</span></em>
 </div>
+
+<p>To find eigenvalues and corresponding eigenvectors of <span class="math inline">\(A\)</span>, we look at the equation</p>
+<p><span class="math display">\[
+(A - \lambda I)\boldsymbol{x}= 0
+\]</span></p>
+<p>Since eigenvector <span class="math inline">\(\boldsymbol{x}\)</span> must be nonzero, <span class="math inline">\((A - \lambda I)\)</span> is a singular matrix</p>
+<p><span class="math display" id="eq:characteristic-equation">\[\begin{equation}
+\tag{3.1}
+\det (A - \lambda I) = 0
+\end{equation}\]</span></p>
+<p>Eq <a href="eigenvectors-and-eigenvalues.html#eq:characteristic-equation">(3.1)</a> is called the **characteristic equation* of matrix <span class="math inline">\(A\)</span>. This is a scalar equation containing information about eigenvalues and eigenvectors of a square matrix <span class="math inline">\(A\)</span>.</p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>Eigenvalues of a trangular matrix are its diagonal entries.
 </div>
-<!-- </div> -->
+
+<p><strong>PROOF</strong></p>
+<p>Consider the <span class="math inline">\(3 \times 3\)</span> case. If <span class="math inline">\(A\)</span> is upper triangular, then <span class="math inline">\(A - \lambda I\)</span> has the form</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+a_{11} - \lambda &amp; a_{12} &amp; a_{13} \\
+0 &amp; a_{22} - \lambda &amp; a_{23}  \\
+0 &amp; 0 &amp; a_{33} - \lambda
+\end{bmatrix}
+\]</span>
+So the roots of characteristic are <span class="math inline">\(a_{11}, a_{22}, a_{33}\)</span> respectively.</p>
+<p>There are some useful results about how eigenvalues change after various manipulations.</p>
+<ol style="list-style-type: decimal">
+<li>For any <span class="math inline">\(k, b \in \mathbb{R}\)</span>, <span class="math inline">\(\boldsymbol{x}\)</span> is an eigenvector of <span class="math inline">\(kA + bI\)</span> with eigenvalue <span class="math inline">\(k\lambda + b\)</span></li>
+</ol>
+<p><strong>PROOF</strong>
+<span class="math display">\[
+(kA + bI)\boldsymbol{x} = kA\boldsymbol{x} + bI\boldsymbol{x} = k \lambda\boldsymbol{x} + b\boldsymbol{x} = (k\lambda + b)\boldsymbol{x} 
+\]</span></p>
+<p>2, If <span class="math inline">\(A\)</span> is invertible, then <span class="math inline">\(\boldsymbol{x}\)</span> is an eigenvector of <span class="math inline">\(A^{-1}\)</span> with eigenvalue <span class="math inline">\(1/\lambda\)</span></p>
+<p><strong>PROOF</strong></p>
+<p><span class="math display">\[
+\boldsymbol{x} = A^{-1}A\boldsymbol{x} =  A^{-1}\lambda \boldsymbol{x} = \lambda A^{-1}\boldsymbol{x}
+\]</span>
+3. <span class="math inline">\(A^{k}\boldsymbol{x} = \lambda^{k}\boldsymbol{x}\)</span></p>
+<p>The next theorem is important in terms of diagonalization and spectral decomposition</p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 3.2  </strong></span>For distinct eigenvalues <span class="math inline">\(\lambda_1, \cdots, \lambda_r\)</span> of an <span class="math inline">\(n \times n\)</span> matrix A, their corresponding eigenvectors <span class="math inline">\(\boldsymbol{v_1}, ..., \boldsymbol{v_r}\)</span> are linearly independent.
+</div>
+
+<p><strong>PROOF</strong></p>
+<p>Suppose <span class="math inline">\(\{\boldsymbol{v_1}, ..., \boldsymbol{v_r}\}\)</span> is not independent, and <span class="math inline">\(p\)</span> is the least index such that <span class="math inline">\(\boldsymbol{v}_{p+1}\)</span> is a linear combination of the preceding vectors. Then there exists scalars <span class="math inline">\(c_1, \cdots, c_p\)</span> such that</p>
+<p><span class="math display">\[
+c_1\boldsymbol{v}_1 + \cdots + c_p\boldsymbol{v}_p = \boldsymbol{v}_{p+1} \tag{1}
+\]</span>
+Left multiply by <span class="math inline">\(A\)</span>, and note we have <span class="math inline">\(A\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i\)</span> for <span class="math inline">\(i = 1, ..., n\)</span></p>
+<p><span class="math display">\[
+c_1\lambda_1\boldsymbol{v}_1 + \cdots + c_p\lambda_p\boldsymbol{v}_p = \lambda_{p+1}\boldsymbol{v}_{p+1} \tag{2}
+\]</span>
+Multiplying both sides of (2) by <span class="math inline">\(\lambda_{p+1}\)</span> and subtracting (2) from the result</p>
+<p><span class="math display">\[
+c_1(\lambda_1 - \lambda_{p+1})\boldsymbol{v}_1 +\cdots + c_p(\lambda_p - \lambda_{p+1})\boldsymbol{v}_p = 0
+\]</span></p>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="matrix-multiplication-as-linear-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="vector-spaces.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="eigenthings-and-quadratic-forms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="diagnolization-and-similar-matrices.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -187,7 +246,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/matrix-algebra.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/eigen.Rmd",
 "text": "Edit"
 },
 "history": {

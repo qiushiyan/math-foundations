@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.3 Arithmetic properties | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="1.3 Arithmetic properties | Mathematical Notes for Machine Learning" />
+  <title>Chapter 3 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 3 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.3 Arithmetic properties | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 3 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.3 Arithmetic properties | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 3 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning" />
   
   
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-18" />
+<meta name="date" content="2020-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="matrix-multiplication.html"/>
-<link rel="next" href="lu-factorization.html"/>
+<link rel="prev" href="four-subspaces.html"/>
+<link rel="next" href="eigenvectors-and-eigenvalues.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -73,29 +73,31 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Linear Algebra</b></span></li>
 <li class="chapter" data-level="1" data-path="matrix-basics.html"><a href="matrix-basics.html"><i class="fa fa-check"></i><b>1</b> Matrix basics</a><ul>
-<li class="chapter" data-level="1.1" data-path="elemetary-matrix-and-row-operations.html"><a href="elemetary-matrix-and-row-operations.html"><i class="fa fa-check"></i><b>1.1</b> Elemetary matrix and row operations</a></li>
-<li class="chapter" data-level="1.2" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html"><i class="fa fa-check"></i><b>1.2</b> Matrix multiplication</a></li>
-<li class="chapter" data-level="1.3" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html"><i class="fa fa-check"></i><b>1.3</b> Arithmetic properties</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.3.1</b> Inverse of a matrix</a></li>
+<li class="chapter" data-level="1.1" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html"><i class="fa fa-check"></i><b>1.1</b> Matrix multiplication</a></li>
+<li class="chapter" data-level="1.2" data-path="elemetary-matrix-and-row-operations.html"><a href="elemetary-matrix-and-row-operations.html"><i class="fa fa-check"></i><b>1.2</b> Elemetary matrix and row operations</a></li>
+<li class="chapter" data-level="1.3" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.3</b> LU factorization</a></li>
+<li class="chapter" data-level="1.4" data-path="determinants.html"><a href="determinants.html"><i class="fa fa-check"></i><b>1.4</b> Determinants</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="determinants.html"><a href="determinants.html#cofactor-expansion"><i class="fa fa-check"></i><b>1.4.1</b> Cofactor expansion</a></li>
+<li class="chapter" data-level="1.4.2" data-path="determinants.html"><a href="determinants.html#geometric-interpretation-of-determinant"><i class="fa fa-check"></i><b>1.4.2</b> Geometric interpretation of determinant</a></li>
+<li class="chapter" data-level="1.4.3" data-path="determinants.html"><a href="determinants.html#properties-of-determinant"><i class="fa fa-check"></i><b>1.4.3</b> Properties of determinant</a></li>
+<li class="chapter" data-level="1.4.4" data-path="determinants.html"><a href="determinants.html#cramers-rule"><i class="fa fa-check"></i><b>1.4.4</b> Cramer’s rule</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.4</b> LU factorization</a></li>
-<li class="chapter" data-level="1.5" data-path="determinants.html"><a href="determinants.html"><i class="fa fa-check"></i><b>1.5</b> Determinants</a><ul>
-<li class="chapter" data-level="1.5.1" data-path="determinants.html"><a href="determinants.html#properties-of-determinants"><i class="fa fa-check"></i><b>1.5.1</b> Properties of determinants</a></li>
-<li class="chapter" data-level="1.5.2" data-path="determinants.html"><a href="determinants.html#cramers-rule"><i class="fa fa-check"></i><b>1.5.2</b> Cramer’s rule</a></li>
-</ul></li>
-<li class="chapter" data-level="1.6" data-path="trace.html"><a href="trace.html"><i class="fa fa-check"></i><b>1.6</b> Trace</a></li>
+<li class="chapter" data-level="1.5" data-path="trace.html"><a href="trace.html"><i class="fa fa-check"></i><b>1.5</b> Trace</a></li>
+<li class="chapter" data-level="1.6" data-path="inverse-of-a-matrix.html"><a href="inverse-of-a-matrix.html"><i class="fa fa-check"></i><b>1.6</b> Inverse of a matrix</a></li>
 <li class="chapter" data-level="1.7" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.7</b> Matrix multiplication as linear transformation</a></li>
-<li class="chapter" data-level="1.8" data-path="matrix-representation-of-sample-statistics.html"><a href="matrix-representation-of-sample-statistics.html"><i class="fa fa-check"></i><b>1.8</b> Matrix representation of sample statistics</a><ul>
-<li class="chapter" data-level="1.8.1" data-path="matrix-representation-of-sample-statistics.html"><a href="matrix-representation-of-sample-statistics.html#sample-mean"><i class="fa fa-check"></i><b>1.8.1</b> Sample mean</a></li>
-<li class="chapter" data-level="1.8.2" data-path="matrix-representation-of-sample-statistics.html"><a href="matrix-representation-of-sample-statistics.html#sample-covariance"><i class="fa fa-check"></i><b>1.8.2</b> Sample covariance</a></li>
+<li class="chapter" data-level="1.8" data-path="statistics-and-proabability.html"><a href="statistics-and-proabability.html"><i class="fa fa-check"></i><b>1.8</b> Statistics and proabability</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="statistics-and-proabability.html"><a href="statistics-and-proabability.html#sample-statistics"><i class="fa fa-check"></i><b>1.8.1</b> Sample statistics</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector spaces</a><ul>
 <li class="chapter" data-level="2.1" data-path="four-subspaces.html"><a href="four-subspaces.html"><i class="fa fa-check"></i><b>2.1</b> Four subspaces</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="eigenvalues-and-and-eigenvectors.html"><a href="eigenvalues-and-and-eigenvectors.html"><i class="fa fa-check"></i><b>3</b> Eigenvalues and and eigenvectors</a><ul>
-<li class="chapter" data-level="3.1" data-path="diagnolization.html"><a href="diagnolization.html"><i class="fa fa-check"></i><b>3.1</b> Diagnolization</a></li>
-<li class="chapter" data-level="3.2" data-path="eigenvectors-and-linear-transformations.html"><a href="eigenvectors-and-linear-transformations.html"><i class="fa fa-check"></i><b>3.2</b> Eigenvectors and linear transformations</a></li>
+<li class="chapter" data-level="3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>3</b> Eigenthings and quadratic forms</a><ul>
+<li class="chapter" data-level="3.1" data-path="eigenvectors-and-eigenvalues.html"><a href="eigenvectors-and-eigenvalues.html"><i class="fa fa-check"></i><b>3.1</b> Eigenvectors and eigenvalues</a></li>
+<li class="chapter" data-level="3.2" data-path="diagnolization-and-similar-matrices.html"><a href="diagnolization-and-similar-matrices.html"><i class="fa fa-check"></i><b>3.2</b> Diagnolization and similar matrices</a></li>
+<li class="chapter" data-level="3.3" data-path="eigenvectors-and-linear-transformations.html"><a href="eigenvectors-and-linear-transformations.html"><i class="fa fa-check"></i><b>3.3</b> Eigenvectors and linear transformations</a></li>
+<li class="chapter" data-level="3.4" data-path="symmetric-matrices.html"><a href="symmetric-matrices.html"><i class="fa fa-check"></i><b>3.4</b> Symmetric matrices</a></li>
+<li class="chapter" data-level="3.5" data-path="svd.html"><a href="svd.html"><i class="fa fa-check"></i><b>3.5</b> SVD</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>4</b> Orthogonality</a><ul>
 <li class="chapter" data-level="4.1" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html"><i class="fa fa-check"></i><b>4.1</b> Orthogonal decomposition</a><ul>
@@ -109,17 +111,14 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
-<li class="chapter" data-level="6" data-path="symmetric-matrices-and-quadratic-forms.html"><a href="symmetric-matrices-and-quadratic-forms.html"><i class="fa fa-check"></i><b>6</b> Symmetric matrices and quadratic forms</a><ul>
-<li class="chapter" data-level="6.1" data-path="svd.html"><a href="svd.html"><i class="fa fa-check"></i><b>6.1</b> SVD</a></li>
-</ul></li>
 <li class="part"><span><b>II Calculus</b></span></li>
-<li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
+<li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
 <li class="part"><span><b>III Applications</b></span></li>
-<li class="chapter" data-level="8" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>8</b> Linear models</a><ul>
-<li class="chapter" data-level="8.1" data-path="least-square-estimation.html"><a href="least-square-estimation.html"><i class="fa fa-check"></i><b>8.1</b> Least square estimation</a></li>
-<li class="chapter" data-level="8.2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html"><i class="fa fa-check"></i><b>8.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="7" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>7</b> Linear models</a><ul>
+<li class="chapter" data-level="7.1" data-path="least-square-estimation.html"><a href="least-square-estimation.html"><i class="fa fa-check"></i><b>7.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="7.2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html"><i class="fa fa-check"></i><b>7.2</b> Maximum likelihood estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="principle-component-analysis.html"><a href="principle-component-analysis.html"><i class="fa fa-check"></i><b>9</b> Principle component analysis</a></li>
+<li class="chapter" data-level="8" data-path="principle-component-analysis.html"><a href="principle-component-analysis.html"><i class="fa fa-check"></i><b>8</b> Principle component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -143,43 +142,16 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="arithmetic-properties" class="section level2">
-<h2><span class="header-section-number">1.3</span> Arithmetic properties</h2>
-
-<div class="rmdnote">
-Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section <a href="determinants.html#determinants">1.5</a>
-</div>
-
-<div id="inverse-of-a-matrix" class="section level3">
-<h3><span class="header-section-number">1.3.1</span> Inverse of a matrix</h3>
-
-<div class="theorem">
-<p><span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 1.2  </strong></span>If A and B are both invertible matrces, we have</p>
-<p><span class="math display">\[
-(AB)^{-1} = B^{-1}A^{-1}
-\]</span></p>
-<p><span class="math display">\[
-(A^{-1})^{-1} = A  
-\]</span></p>
-<span class="math display">\[
-(A^T)^{-1} = (A^{-1})^T
-\]</span>
-</div>
-
-
-<div class="rmdnote">
-In practice <span class="math inline">\(A^{-1}\)</span> is seldom computed, because computing both <span class="math inline">\(A^{-1}\)</span> and <span class="math inline">\(A^{-1}\boldsymbol{b}\)</span> to solve linear equations takes about 3 times as many arithmetic operations as solving <span class="math inline">\(A\boldsymbol{x} = \boldsymbol{b}\)</span> by row reduction.
-</div>
-
-</div>
+<div id="eigenthings-and-quadratic-forms" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Eigenthings and quadratic forms</h1>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="matrix-multiplication.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lu-factorization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="four-subspaces.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="eigenvectors-and-eigenvalues.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -210,7 +182,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/matrix-algebra.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/eigen.Rmd",
 "text": "Edit"
 },
 "history": {

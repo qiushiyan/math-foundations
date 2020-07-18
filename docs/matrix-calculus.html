@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-18" />
+<meta name="date" content="2020-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="orthonormal-sets-and-orthogonal-matrices.html"/>
-<link rel="next" href="symmetric-matrices-and-quadratic-forms.html"/>
+<link rel="next" href="taylor-series-and-expansion.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -77,8 +77,10 @@
 <li class="chapter" data-level="1.2" data-path="elemetary-matrix-and-row-operations.html"><a href="elemetary-matrix-and-row-operations.html"><i class="fa fa-check"></i><b>1.2</b> Elemetary matrix and row operations</a></li>
 <li class="chapter" data-level="1.3" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.3</b> LU factorization</a></li>
 <li class="chapter" data-level="1.4" data-path="determinants.html"><a href="determinants.html"><i class="fa fa-check"></i><b>1.4</b> Determinants</a><ul>
-<li class="chapter" data-level="1.4.1" data-path="determinants.html"><a href="determinants.html#properties-of-determinants"><i class="fa fa-check"></i><b>1.4.1</b> Properties of determinants</a></li>
-<li class="chapter" data-level="1.4.2" data-path="determinants.html"><a href="determinants.html#cramers-rule"><i class="fa fa-check"></i><b>1.4.2</b> Cramer’s rule</a></li>
+<li class="chapter" data-level="1.4.1" data-path="determinants.html"><a href="determinants.html#cofactor-expansion"><i class="fa fa-check"></i><b>1.4.1</b> Cofactor expansion</a></li>
+<li class="chapter" data-level="1.4.2" data-path="determinants.html"><a href="determinants.html#geometric-interpretation-of-determinant"><i class="fa fa-check"></i><b>1.4.2</b> Geometric interpretation of determinant</a></li>
+<li class="chapter" data-level="1.4.3" data-path="determinants.html"><a href="determinants.html#properties-of-determinant"><i class="fa fa-check"></i><b>1.4.3</b> Properties of determinant</a></li>
+<li class="chapter" data-level="1.4.4" data-path="determinants.html"><a href="determinants.html#cramers-rule"><i class="fa fa-check"></i><b>1.4.4</b> Cramer’s rule</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="trace.html"><a href="trace.html"><i class="fa fa-check"></i><b>1.5</b> Trace</a></li>
 <li class="chapter" data-level="1.6" data-path="inverse-of-a-matrix.html"><a href="inverse-of-a-matrix.html"><i class="fa fa-check"></i><b>1.6</b> Inverse of a matrix</a></li>
@@ -90,9 +92,12 @@
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector spaces</a><ul>
 <li class="chapter" data-level="2.1" data-path="four-subspaces.html"><a href="four-subspaces.html"><i class="fa fa-check"></i><b>2.1</b> Four subspaces</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="eigenvalues-and-and-eigenvectors.html"><a href="eigenvalues-and-and-eigenvectors.html"><i class="fa fa-check"></i><b>3</b> Eigenvalues and and eigenvectors</a><ul>
-<li class="chapter" data-level="3.1" data-path="diagnolization.html"><a href="diagnolization.html"><i class="fa fa-check"></i><b>3.1</b> Diagnolization</a></li>
-<li class="chapter" data-level="3.2" data-path="eigenvectors-and-linear-transformations.html"><a href="eigenvectors-and-linear-transformations.html"><i class="fa fa-check"></i><b>3.2</b> Eigenvectors and linear transformations</a></li>
+<li class="chapter" data-level="3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>3</b> Eigenthings and quadratic forms</a><ul>
+<li class="chapter" data-level="3.1" data-path="eigenvectors-and-eigenvalues.html"><a href="eigenvectors-and-eigenvalues.html"><i class="fa fa-check"></i><b>3.1</b> Eigenvectors and eigenvalues</a></li>
+<li class="chapter" data-level="3.2" data-path="diagnolization-and-similar-matrices.html"><a href="diagnolization-and-similar-matrices.html"><i class="fa fa-check"></i><b>3.2</b> Diagnolization and similar matrices</a></li>
+<li class="chapter" data-level="3.3" data-path="eigenvectors-and-linear-transformations.html"><a href="eigenvectors-and-linear-transformations.html"><i class="fa fa-check"></i><b>3.3</b> Eigenvectors and linear transformations</a></li>
+<li class="chapter" data-level="3.4" data-path="symmetric-matrices.html"><a href="symmetric-matrices.html"><i class="fa fa-check"></i><b>3.4</b> Symmetric matrices</a></li>
+<li class="chapter" data-level="3.5" data-path="svd.html"><a href="svd.html"><i class="fa fa-check"></i><b>3.5</b> SVD</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>4</b> Orthogonality</a><ul>
 <li class="chapter" data-level="4.1" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html"><i class="fa fa-check"></i><b>4.1</b> Orthogonal decomposition</a><ul>
@@ -106,17 +111,14 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
-<li class="chapter" data-level="6" data-path="symmetric-matrices-and-quadratic-forms.html"><a href="symmetric-matrices-and-quadratic-forms.html"><i class="fa fa-check"></i><b>6</b> Symmetric matrices and quadratic forms</a><ul>
-<li class="chapter" data-level="6.1" data-path="svd.html"><a href="svd.html"><i class="fa fa-check"></i><b>6.1</b> SVD</a></li>
-</ul></li>
 <li class="part"><span><b>II Calculus</b></span></li>
-<li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
+<li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
 <li class="part"><span><b>III Applications</b></span></li>
-<li class="chapter" data-level="8" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>8</b> Linear models</a><ul>
-<li class="chapter" data-level="8.1" data-path="least-square-estimation.html"><a href="least-square-estimation.html"><i class="fa fa-check"></i><b>8.1</b> Least square estimation</a></li>
-<li class="chapter" data-level="8.2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html"><i class="fa fa-check"></i><b>8.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="7" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>7</b> Linear models</a><ul>
+<li class="chapter" data-level="7.1" data-path="least-square-estimation.html"><a href="least-square-estimation.html"><i class="fa fa-check"></i><b>7.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="7.2" data-path="maximum-likelihood-estimation.html"><a href="maximum-likelihood-estimation.html"><i class="fa fa-check"></i><b>7.2</b> Maximum likelihood estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="principle-component-analysis.html"><a href="principle-component-analysis.html"><i class="fa fa-check"></i><b>9</b> Principle component analysis</a></li>
+<li class="chapter" data-level="8" data-path="principle-component-analysis.html"><a href="principle-component-analysis.html"><i class="fa fa-check"></i><b>8</b> Principle component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -147,13 +149,16 @@
 \]</span></p>
 
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
 <a href="orthonormal-sets-and-orthogonal-matrices.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="symmetric-matrices-and-quadratic-forms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="taylor-series-and-expansion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

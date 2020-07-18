@@ -67,6 +67,7 @@ Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix.
 
 An *elementary matrix* is one that is obtained by performing a single elementary row
 operation on an identity matrix $I$. Each elementary matrix $E$ is invertible. The inverse of $E$ is the elementary matrix of the same type that transforms $E$ back into $I$.  
+
 Left multiplication by a elementary matrix has a nice illustration. There are 3 primary types of elementary matrices (example for $3 \times 3$):  
 
 $$
@@ -94,8 +95,35 @@ $$
 $E_1, E_2, E_3$ represents 3 types of elementary row operations applicable to a $3 \times 3$ matrix, (1) *replacement*; (2) *interchange* and (3) *scaling*. We can verify this by right multiply them with an arbitrary matrix $A$ 
 
 $$
-E_1A = 
+\begin{aligned}
+E_1A &= 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+- 4a_{11} + a_{31} & -4a_{12} + a_{32} & -4a_{13} + a_{33}
+\end{bmatrix}  \\ \\  
+
+E_2A &= 
+\begin{bmatrix}
+a_{21} & a_{22} & a_{23} \\
+a_{11} & a_{12} & a_{13} \\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix} \\ \\
+
+E_3A &= 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+5a_{31} & 5a_{32} & 5a_{33} \\
+\end{bmatrix}
+
+\end{aligned}
 $$
+Thus, any row operation on $A$ is equivalent to left multiply a corresponding elementary matrix $E$.  
+
+Since row operation are invertible, elementary matrices are invertible. This gives a general way of finding the inverse matrix of $A$.  
+
+\BeginKnitrBlock{theorem}\iffalse{-91-97-110-32-97-108-103-111-114-105-116-104-109-32-102-111-114-32-102-105-110-100-105-110-103-32-105-110-118-101-114-115-101-32-109-97-116-114-105-99-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:find-inverse"><strong>(\#thm:find-inverse)  \iffalse (an algorithm for finding inverse matrices) \fi{} </strong></span>Row reduce the augmented matrix $[A \;\; I]$, when $A$ becomes $I$, $I$ becomes $A^{-1}$. Otherwise $A^{-1}$ is not invertible. </div>\EndKnitrBlock{theorem}
 
 
 
@@ -128,16 +156,120 @@ $$</div>\EndKnitrBlock{definition}
 
 ## Determinants
 
-### Properties of determinants 
+
+### Cofactor expansion
+
+The $(i, j)\text{-cofactor}$ of $A$ is a number $C_{ij}$ in $\mathbb{R}$ given by 
+
+$$
+C_{ij} = (-1)^{i + j} \det A_{ij}
+$$
+where $A_{ij}$ denotes the submatrix formed by deleting the $i$h row and $j$th column of $A$. 
+
+\BeginKnitrBlock{theorem}\iffalse{-91-99-111-102-97-99-116-111-114-32-101-120-112-97-110-115-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cofactor-expansion"><strong>(\#thm:cofactor-expansion)  \iffalse (cofactor expansion) \fi{} </strong></span>The determinant of an $n \times n$ matrix is given by a **cofactor expasion** across any row or column. For example, the expansion across the $i$th row is:  
+
+$$
+\det A = a_{i1}C_{i1} + a_{i2}C_{i2} + \cdots + a_{in}C_{in} 
+$$
+  
+and cross the $j$th column is 
+
+$$
+\det A = a_{1j}C_{1j} + a_{2j}C_{2j} + \cdots + a_{nj}C_{nj} 
+$$</div>\EndKnitrBlock{theorem}
+
+
+
+
+### Geometric interpretation of determinant 
+
+Given matrix $A_{n \times n}$  
+
+$$
+\begin{bmatrix}
+a_1^{T} \\
+a_2^{T} \\
+\vdots \\
+a_n^{T}
+\end{bmatrix}
+$$
+where $a_1, ..., a_n$ are row vectors of A. Then $|\det A|$ is the volume of parallelotope constrained by $a_1, ..., a_n$. When $A$ is $2\times2$, $|\det A|$ is simply the area of the parallelogram defined by two side $a_1, a_2$
+
+
+### Properties of determinant 
 
 A list of arithmetic properties of determinants, A is an $n\times n$ matrix: 
 
 1. $\det(A^T) = \det(A)$
 2. $\det(kA) = k^n \det(A)$
-3. $\det(AB) = \det(A)\det(B)$ (although $AB \not = BA$ in general)  
+3. $\det(AB) = \det(A)\det(B)$ (although $AB \not = BA$ in general), it follows that  $\det(A^n) = \det(A)^n$  
 4. $\det(A^{-1}) = 1 / \det(A)$, if $A$ is invertible
-5. $\det(A^n) = \det(A)^n$  
-6. determinant is equal to the product of eigenvalues(counting multiplicity) $\det(A)  = \prod_{i=1}^n{\lambda_i}$ 
+5. determinant is equal to the product of eigenvalues(counting multiplicity) $\det(A)  = \prod_{i=1}^n{\lambda_i}$  
+6. If the $i$-th row (column) in A is a sum of the $i$-th row (column) of a matrix $B$ and the $i$-th row (column) of a matrix $C$ and all other rows in $B$ and $C$ are equal to the corresponding rows in $A$ (that is $B$ and $C$ differ from $A$ by one row only), then $\det(A)=\det(B)+\det(C)$. This can be proven by cofactor expansion across the $i$th row. The same applies to columns. 
+
+Row operations on $A$ has the following effect on $\det A$
+
+- if we multiply a single row in $A$ by a scalar $k \in \mathbb{R}$, then the determinant of the new matrix is $k\det A$  
+
+- if we exchange two rows $a_i^T$ and $a_j^T$ of $A$, determinant becomes $-\det A$ 
+
+- Add a multiple of one row to another row has **no** effect on determinant 
+
+The first two effects can be easily understood in connection with geometric meaning of determinant. As for the third one, let us represent A with row vectors
+
+$$
+A = 
+\begin{vmatrix}
+a_1^T \\ 
+\vdots \\
+a_i^T \\
+\vdots \\
+a_j^T \\ 
+\vdots \\
+a_n^T
+\end{vmatrix}
+$$
+Then $B$, after performing replacing (add a multiple of the $j$th row to the $i$th row) on $A$, becomes  
+
+$$
+B = 
+\begin{vmatrix}
+a_1^T \\ 
+\vdots \\
+a_i^T + ka_j^T \\
+\vdots \\
+a_j^T \\ 
+\vdots \\
+a_n^T
+\end{vmatrix}
+$$
+By property 6 $\det(A) = \det(B) + \det(C)$ when $B$ and $C$ only differs from $A$ by the same row. So $\det A$ can be broke down into two parts 
+
+$$
+|A| = 
+\begin{vmatrix}
+a_1^T \\ 
+\vdots \\
+a_i^T \\
+\vdots \\
+a_j^T \\ 
+\vdots \\
+a_n^T
+\end{vmatrix} 
++ 
+\begin{vmatrix}
+a_1^T \\ 
+\vdots \\
+ka_j^T \\
+\vdots \\
+a_j^T \\ 
+\vdots \\
+a_n^T
+\end{vmatrix} 
+$$
+The second matrix on the right side has determinant $0$, and $\det A$ stays the same after replacing. 
+
+Note that all row operations don't change whether or not a determinant is 0, only change it by a non-zero factor or change its sign.  
 
 
 ### Cramer's rule
@@ -148,7 +280,7 @@ $$
 A_i(\boldsymbol{b}) = [\boldsymbol{a}_1 \cdots \underbrace{\boldsymbol{b}}_{\text{column} \,i} \cdots \boldsymbol{a}_n]
 $$
 
-\BeginKnitrBlock{theorem}\iffalse{-91-67-114-97-109-101-114-39-115-32-114-117-108-101-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cramer"><strong>(\#thm:cramer)  \iffalse (Cramer's rule) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ $\mathbb{R^n}$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
+\BeginKnitrBlock{theorem}\iffalse{-91-67-114-97-109-101-114-39-115-32-114-117-108-101-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cramer"><strong>(\#thm:cramer)  \iffalse (Cramer's rule) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ in $\mathbb{R^n}$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
 
 $$
 x_i = \frac{\det A_i(\boldsymbol{b})}{\det A}
@@ -166,14 +298,16 @@ The trace has the following properties:
 2. $\text{tr}(kA) = k\text{tr}A$, $k$ is a scalar     
 3. $\text{tr}(A^T) = \text{tr}(A)$  
 4. For $A$, $B$ such that $AB$ is square, $\text{tr}(AB) = \text{tr}(BA)$  
-5. Trace of product of multiple matrices is invariant to cyclic permutations, $\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$. Note that the reordering cannot be done arbitrarily, fro example $\text{tr}(ABC) \not= \text{tr}(ACG)$ in general. 
+5. Trace of product of multiple matrices is invariant to *cyclic permutations*, $\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$. Note that the reordering cannot be done arbitrarily, fro example $\text{tr}(ABC) \not= \text{tr}(ACG)$ in general. 
 6. Trace is equal to the sum of its eigenvalues (repeated accordin gto multiplicity) $\text{tr}(A) = \sum_{i = 1}^n{\lambda_i}$  
 7. $\text{tr}(\boldsymbol{a}\boldsymbol{a}^T) = \boldsymbol{a}^T\boldsymbol{a}$, a is a column vector
 
 
 ## Inverse of a matrix
 
-\BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants)</div>\EndKnitrBlock{rmdnote}
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants). 
+
+In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\boldsymbol{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\boldsymbol{x} = \boldsymbol{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
 
 Assume that $A$ and $B$ are both non-singular
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4) </strong></span>If A and B are both invertible matrces, we have
@@ -192,10 +326,45 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
-\BeginKnitrBlock{rmdnote}<div class="rmdnote">In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\boldsymbol{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\boldsymbol{x} = \boldsymbol{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
+In \@ref(thm:find-inverse), we know an algorithm of finding inverse matrices by row reducions on the augmented matrix $[A \;\; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
+
+The $j$th column of $A^{-1}$ is a vector $\boldsymbol{x}$ that satisfies:  
+
+$$
+A\boldsymbol{x} = \boldsymbol{e}_j
+$$
+By Cramer's rule 
+$$
+\{(i,j) \text{ entry of } A^{-1}\} = x_i = \frac{\det A_i{(\boldsymbol{e}_j)}}{\det A}
+$$
+
+A cofactor expansion \@ref(thm:cofactor-expansion) down column $i$ of $A_i{(\boldsymbol{e}_j)}$ shows that:   
+
+$$
+\det A_i{(\boldsymbol{e}_j)} = (-1)^{i + j}\det A_{ji} = C_{ji}
+$$
+where $C_{ji}$ is a cofactor of $A$. Note that the ($i$, $j$)th entry of $A^{-1}$ is the cofactor $C_{ji}$ divided by $\det A$ (the subscript is reversed). Thus
 
 
-Cramer's rule \@ref(thm:cramer) leads to a general formula 
+\begin{equation}
+(\#eq:inverse-adjugate)
+A^{-1} = \frac{1}{\det A} 
+\begin{bmatrix}
+C_{11} & C_{21} & \cdots & C_{n1} \\ 
+C_{12} & C_{22} & \cdots & C_{n2} \\
+\vdots & \vdots & & \vdots \\
+C_{1n} & C_{2n} & \cdots & C_{nn} \\
+\end{bmatrix}
+\end{equation}
+
+The right side of Eq \@ref(eq:inverse-adjugate) is called the *adjugate* of $A$, often denoted by $\text{adj}\, A$.  
+
+\BeginKnitrBlock{theorem}\iffalse{-91-65-110-32-73-110-118-101-114-115-101-32-70-111-114-109-117-108-97-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-5"><strong>(\#thm:unnamed-chunk-5)  \iffalse (An Inverse Formula) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. Then 
+
+$$
+A^{-1} = \frac{1}{\det A}\text{adj}\, A
+$$</div>\EndKnitrBlock{theorem}
+
 
 ## Matrix multiplication as linear transformation
 
