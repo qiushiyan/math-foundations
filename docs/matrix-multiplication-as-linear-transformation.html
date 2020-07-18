@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>1.6 Matrix multiplication as linear transformation | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="1.6 Matrix multiplication as linear transformation | Mathematical Notes for Machine Learning" />
+  <title>1.7 Matrix multiplication as linear transformation | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="1.7 Matrix multiplication as linear transformation | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="1.6 Matrix multiplication as linear transformation | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="1.7 Matrix multiplication as linear transformation | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="1.6 Matrix multiplication as linear transformation | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="1.7 Matrix multiplication as linear transformation | Mathematical Notes for Machine Learning" />
   
   
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-16" />
+<meta name="date" content="2020-07-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="determinants.html"/>
-<link rel="next" href="special-matrices-and-their-properties.html"/>
+<link rel="prev" href="inverse-of-a-matrix.html"/>
+<link rel="next" href="statistics-and-proabability.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -72,20 +72,19 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Linear Algebra</b></span></li>
-<li class="chapter" data-level="1" data-path="matrix-algebra.html"><a href="matrix-algebra.html"><i class="fa fa-check"></i><b>1</b> Matrix Algebra</a><ul>
+<li class="chapter" data-level="1" data-path="matrix-basics.html"><a href="matrix-basics.html"><i class="fa fa-check"></i><b>1</b> Matrix basics</a><ul>
 <li class="chapter" data-level="1.1" data-path="elemetary-matrix-and-row-operations.html"><a href="elemetary-matrix-and-row-operations.html"><i class="fa fa-check"></i><b>1.1</b> Elemetary matrix and row operations</a></li>
 <li class="chapter" data-level="1.2" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html"><i class="fa fa-check"></i><b>1.2</b> Matrix multiplication</a></li>
-<li class="chapter" data-level="1.3" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html"><i class="fa fa-check"></i><b>1.3</b> Arithmetic properties</a><ul>
-<li class="chapter" data-level="1.3.1" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.3.1</b> Inverse of a matrix</a></li>
+<li class="chapter" data-level="1.3" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.3</b> LU factorization</a></li>
+<li class="chapter" data-level="1.4" data-path="determinants.html"><a href="determinants.html"><i class="fa fa-check"></i><b>1.4</b> Determinants</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="determinants.html"><a href="determinants.html#properties-of-determinants"><i class="fa fa-check"></i><b>1.4.1</b> Properties of determinants</a></li>
+<li class="chapter" data-level="1.4.2" data-path="determinants.html"><a href="determinants.html#cramers-rule"><i class="fa fa-check"></i><b>1.4.2</b> Cramer’s rule</a></li>
 </ul></li>
-<li class="chapter" data-level="1.4" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.4</b> LU factorization</a></li>
-<li class="chapter" data-level="1.5" data-path="determinants.html"><a href="determinants.html"><i class="fa fa-check"></i><b>1.5</b> Determinants</a><ul>
-<li class="chapter" data-level="1.5.1" data-path="determinants.html"><a href="determinants.html#properties-of-determinants"><i class="fa fa-check"></i><b>1.5.1</b> Properties of determinants</a></li>
-<li class="chapter" data-level="1.5.2" data-path="determinants.html"><a href="determinants.html#cramers-rule"><i class="fa fa-check"></i><b>1.5.2</b> Cramer’s rule</a></li>
-</ul></li>
-<li class="chapter" data-level="1.6" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.6</b> Matrix multiplication as linear transformation</a></li>
-<li class="chapter" data-level="1.7" data-path="special-matrices-and-their-properties.html"><a href="special-matrices-and-their-properties.html"><i class="fa fa-check"></i><b>1.7</b> Special matrices and their properties</a><ul>
-<li class="chapter" data-level="1.7.1" data-path="special-matrices-and-their-properties.html"><a href="special-matrices-and-their-properties.html#orthogonal-matrices"><i class="fa fa-check"></i><b>1.7.1</b> Orthogonal matrices</a></li>
+<li class="chapter" data-level="1.5" data-path="trace.html"><a href="trace.html"><i class="fa fa-check"></i><b>1.5</b> Trace</a></li>
+<li class="chapter" data-level="1.6" data-path="inverse-of-a-matrix.html"><a href="inverse-of-a-matrix.html"><i class="fa fa-check"></i><b>1.6</b> Inverse of a matrix</a></li>
+<li class="chapter" data-level="1.7" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.7</b> Matrix multiplication as linear transformation</a></li>
+<li class="chapter" data-level="1.8" data-path="statistics-and-proabability.html"><a href="statistics-and-proabability.html"><i class="fa fa-check"></i><b>1.8</b> Statistics and proabability</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="statistics-and-proabability.html"><a href="statistics-and-proabability.html#sample-statistics"><i class="fa fa-check"></i><b>1.8.1</b> Sample statistics</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector spaces</a><ul>
@@ -101,11 +100,15 @@
 <li class="chapter" data-level="4.1.2" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html#orthogonal-sets-and-orthogonal-basis"><i class="fa fa-check"></i><b>4.1.2</b> Orthogonal sets and orthogonal basis</a></li>
 <li class="chapter" data-level="4.1.3" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>4.1.3</b> Orthogonal decomposition</a></li>
 <li class="chapter" data-level="4.1.4" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html#best-approximation"><i class="fa fa-check"></i><b>4.1.4</b> Best approximation</a></li>
-<li class="chapter" data-level="4.1.5" data-path="orthogonal-decomposition.html"><a href="orthogonal-decomposition.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>4.1.5</b> Orthonormal sets and orthogonal matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="orthonormal-sets-and-orthogonal-matrices.html"><a href="orthonormal-sets-and-orthogonal-matrices.html"><i class="fa fa-check"></i><b>4.2</b> Orthonormal sets and orthogonal matrices</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="orthonormal-sets-and-orthogonal-matrices.html"><a href="orthonormal-sets-and-orthogonal-matrices.html#orthogonal-matrices"><i class="fa fa-check"></i><b>4.2.1</b> Orthogonal matrices</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>5</b> Vector calculus</a></li>
-<li class="chapter" data-level="6" data-path="symmetric-matrices-and-quadratic-forms.html"><a href="symmetric-matrices-and-quadratic-forms.html"><i class="fa fa-check"></i><b>6</b> Symmetric matrices and quadratic forms</a></li>
+<li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
+<li class="chapter" data-level="6" data-path="symmetric-matrices-and-quadratic-forms.html"><a href="symmetric-matrices-and-quadratic-forms.html"><i class="fa fa-check"></i><b>6</b> Symmetric matrices and quadratic forms</a><ul>
+<li class="chapter" data-level="6.1" data-path="svd.html"><a href="svd.html"><i class="fa fa-check"></i><b>6.1</b> SVD</a></li>
+</ul></li>
 <li class="part"><span><b>II Calculus</b></span></li>
 <li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
 <li class="part"><span><b>III Applications</b></span></li>
@@ -138,7 +141,7 @@
 
             <section class="normal" id="section-">
 <div id="matrix-multiplication-as-linear-transformation" class="section level2">
-<h2><span class="header-section-number">1.6</span> Matrix multiplication as linear transformation</h2>
+<h2><span class="header-section-number">1.7</span> Matrix multiplication as linear transformation</h2>
 <p>The equation <span class="math inline">\(A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}\)</span> can arise in a way that is not directly connected with linear combination of column vectors. That is, we think of the matrix <span class="math inline">\(A\)</span> as an force that “acts” on a vector <span class="math inline">\(x\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> by multiplication to produce a new vector called <span class="math inline">\(b\)</span> in <span class="math inline">\(\mathbb{\mathbb{R^m}}\)</span>.</p>
 <p>A transformation <span class="math inline">\(T\)</span> from <span class="math inline">\(\mathbb{R^n}\)</span> to <span class="math inline">\(\mathbb{R^m}\)</span> is a rule that assigns each vector  in <span class="math inline">\(\mathbb{R^n}\)</span> a vector <span class="math inline">\(T(x)\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span>, which is called the <strong>image</strong> of  (under the action of <span class="math inline">\(T\)</span>).</p>
 <p>It can be show that such transformations induced by multiplying a matrix is a type of <strong>linear transformation</strong>, because it satisfies all required properties to be linear:</p>
@@ -151,7 +154,7 @@
 <hr>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-7" class="theorem"><strong>Theorem 1.3  (left multiplication as linear transformation)  </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> be a linear transformation. Then there exists a <strong>unique</strong> matrix <span class="math inline">\(A\)</span> such that:</p>
+<p><span id="thm:unnamed-chunk-6" class="theorem"><strong>Theorem 1.4  (left multiplication as linear transformation)  </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> be a linear transformation. Then there exists a <strong>unique</strong> matrix <span class="math inline">\(A\)</span> such that:</p>
 <p><span class="math display">\[
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
 \]</span></p>
@@ -176,14 +179,14 @@ T(\boldsymbol{x}) &amp;= x_1T(\boldsymbol{e_1}) + \dots + x_nT(\boldsymbol{e_n})
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 1.3  (A mapping is onto <span class="math inline">\(\mathbb{R^m}\)</span>)  </strong></span>A mapping <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> is said to be <strong>onto</strong>  if each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span> is the image of at least one <span class="math inline">\(\boldsymbol{x}\)</span> in 
+<span id="def:unnamed-chunk-7" class="definition"><strong>Definition 1.2  (A mapping is onto <span class="math inline">\(\mathbb{R^m}\)</span>)  </strong></span>A mapping <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> is said to be <strong>onto</strong>  if each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span> is the image of at least one <span class="math inline">\(\boldsymbol{x}\)</span> in 
 </div>
 
 <p>Equivalently, <span class="math inline">\(T\)</span> is onto <span class="math inline">\(\mathbb{R^m}\)</span> means that there exists at least one solution of <span class="math inline">\(T(\boldsymbol{x}) = \boldsymbol{b}\)</span></p>
 <p><br></p>
 
 <div class="definition">
-<span id="def:unnamed-chunk-9" class="definition"><strong>Definition 1.4  (one-to-one mapping)  </strong></span>A mapping T: <span class="math inline">\(\mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> is said to be <strong>one-to-one</strong> if each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span> is the image of <em>at most</em> one <span class="math inline">\(\boldsymbol{x}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span>
+<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 1.3  (one-to-one mapping)  </strong></span>A mapping T: <span class="math inline">\(\mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> is said to be <strong>one-to-one</strong> if each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span> is the image of <em>at most</em> one <span class="math inline">\(\boldsymbol{x}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span>
 </div>
 
 <p>Equivalently, <span class="math inline">\(T\)</span> is one-to-one if, for each <span class="math inline">\(\boldsymbol{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span>, the equation <span class="math inline">\(T(\boldsymbol{x}) = \boldsymbol{b}\)</span> has either a unique solution or none at all.</p>
@@ -193,8 +196,8 @@ T(\boldsymbol{x}) &amp;= x_1T(\boldsymbol{e_1}) + \dots + x_nT(\boldsymbol{e_n})
           </div>
         </div>
       </div>
-<a href="determinants.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="special-matrices-and-their-properties.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="inverse-of-a-matrix.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="statistics-and-proabability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

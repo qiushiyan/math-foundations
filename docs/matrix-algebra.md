@@ -2,11 +2,12 @@
 # (PART) Linear Algebra {-}
 
 
-# Matrix Algebra  
+# Matrix basics
 
 
 
 ## Elemetary matrix and row operations  
+
 An elementary matrix is one that is obtained by performing a single elementary row
 operation on an identity matrix $I$. Each elementary matrix $E$ is invertible. The inverse of $E$ is the elementary matrix of the same type that transforms $E$ back into $I$.
 
@@ -66,32 +67,10 @@ Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix.
 
 
 
-## Arithmetic properties   
-
-
-\BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants)</div>\EndKnitrBlock{rmdnote}
-
-
-### Inverse of a matrix
-
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>If A and B are both invertible matrces, we have
-
-$$
-(AB)^{-1} = B^{-1}A^{-1}
-$$
-
-$$
-(A^{-1})^{-1} = A  
-$$
-  
-
-$$
-(A^T)^{-1} = (A^{-1})^T
-$$</div>\EndKnitrBlock{theorem}
 
 
 
-\BeginKnitrBlock{rmdnote}<div class="rmdnote">In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\boldsymbol{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\boldsymbol{x} = \boldsymbol{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
+
 
 
 ## LU factorization 
@@ -100,7 +79,7 @@ https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysi
 
 A *factorization* a matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
 
-\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5)  \iffalse (LU factorization) \fi{} </strong></span>  
+\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-2"><strong>(\#def:unnamed-chunk-2)  \iffalse (LU factorization) \fi{} </strong></span>  
 Suppose $A$ can be reduced to an echelon form $U$ using row operations that add a multiple ofo oone row to another row *below* it, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
 
 $$
@@ -123,11 +102,14 @@ $$</div>\EndKnitrBlock{definition}
 
 ### Properties of determinants 
 
-A list of arithmetic properties of determinants, A is an $n\times n$ maatrix: 
+A list of arithmetic properties of determinants, A is an $n\times n$ matrix: 
 
-1. $\det A^T = \det A$
-2. $\det (\lambda A) = \lambda^n \det A$
-3. $\det (AB) = \det A \times \det B$ (although $AB \not = BA$)  
+1. $\det(A^T) = \det(A)$
+2. $\det(kA) = k^n \det(A)$
+3. $\det(AB) = \det(A)\det(B)$ (although $AB \not = BA$ in general)  
+4. $\det(A^{-1}) = 1 / \det(A)$, if $A$ is invertible
+5. $\det(A^n) = \det(A)^n$  
+6. determinant is equal to the product of eigenvalues(counting multiplicity) $\det(A)  = \prod_{i=1}^n{\lambda_i}$ 
 
 
 ### Cramer's rule
@@ -138,14 +120,54 @@ $$
 A_i(\boldsymbol{b}) = [\boldsymbol{a}_1 \cdots \underbrace{\boldsymbol{b}}_{\text{column} \,i} \cdots \boldsymbol{a}_n]
 $$
 
-\BeginKnitrBlock{definition}\iffalse{-91-67-114-97-109-101-114-39-115-32-114-117-108-101-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6)  \iffalse (Cramer's rule) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ $\mathbb{R^n}$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
+\BeginKnitrBlock{theorem}\iffalse{-91-67-114-97-109-101-114-39-115-32-114-117-108-101-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cramer"><strong>(\#thm:cramer)  \iffalse (Cramer's rule) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ $\mathbb{R^n}$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
 
 $$
 x_i = \frac{\det A_i(\boldsymbol{b})}{\det A}
-$$</div>\EndKnitrBlock{definition}
+$$</div>\EndKnitrBlock{theorem}
+
+
+## Trace
+
+
+The *trace* of square matrix $A$ is the sum of its diagonal entries $\sum_{i = 1}^{n}A_{ii}$.  
+
+The trace has the following properties:  
+
+1. $\text{tr}(A + B) = \text{tr}A + \text{tr}B$  
+2. $\text{tr}(kA) = k\text{tr}A$, $k$ is a scalar     
+3. $\text{tr}(A^T) = \text{tr}(A)$  
+4. For $A$, $B$ such that $AB$ is square, $\text{tr}(AB) = \text{tr}(BA)$  
+5. Trace of product of multiple matrices is invariant to cyclic permutations, $\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$. Note that the reordering cannot be done arbitrarily, fro example $\text{tr}(ABC) \not= \text{tr}(ACG)$ in general. 
+6. Trace is equal to the sum of its eigenvalues (repeated accordin gto multiplicity) $\text{tr}(A) = \sum_{i = 1}^n{\lambda_i}$  
+7. $\text{tr}(\boldsymbol{a}\boldsymbol{a}^T) = \boldsymbol{a}^T\boldsymbol{a}$, a is a column vector
+
+
+## Inverse of a matrix
+
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants)</div>\EndKnitrBlock{rmdnote}
+
+Assume that $A$ and $B$ are both non-singular
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4) </strong></span>If A and B are both invertible matrces, we have
+
+$$
+(A^{-1})^{-1} = A  
+$$
+  
+$$
+(AB)^{-1} = B^{-1}A^{-1}
+$$
+
+$$
+(A^T)^{-1} = (A^{-1})^T
+$$</div>\EndKnitrBlock{theorem}
 
 
 
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\boldsymbol{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\boldsymbol{x} = \boldsymbol{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
+
+
+Cramer's rule \@ref(thm:cramer)
 
 ## Matrix multiplication as linear transformation
 
@@ -163,7 +185,7 @@ $$
 $$
 <hr>
 
-\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-6"><strong>(\#thm:unnamed-chunk-6)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
@@ -194,27 +216,18 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 
 (ref:onto) A mapping is onto $\mathbb{R^m}$
 
-\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of at least one $\boldsymbol{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-7"><strong>(\#def:unnamed-chunk-7)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of at least one $\boldsymbol{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
 
 Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
 
 <br>
 
-\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (one-to-one mapping) \fi{} </strong></span>A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\boldsymbol{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse (one-to-one mapping) \fi{} </strong></span>A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\boldsymbol{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
 
 Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $\mathbb{R^m}$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.  
 
+## Statistics and proabability
 
 
-## Special matrices and their properties 
+### Sample statistics
 
-### Orthogonal matrices  
-
-An *orthogonal matrix* is a square matrix whose inverse is its transpose:  
-
-$$
-(\#eq:orthogonal)
-AA^T = A^TA = I
-$$
-
-Another way of defining it is that an orthogonal matrix has both **orthogonal columns** and **orthogonal rows**.

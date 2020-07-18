@@ -134,6 +134,17 @@ $$
 $$
 When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2$ is non-negative, so the error term of choosing $\boldsymbol{v}$ is always larger than that of the orthogonal projection $\boldsymbol{\hat{y}}$.
 
-### Orthonormal sets and orthogonal matrices
+## Orthonormal sets and orthogonal matrices
 
 An orthogonal set whose components are all unit vectors are said to be **orthonormal** sets. 
+
+### Orthogonal matrices  
+
+An *orthogonal matrix* is a square matrix whose inverse is its transpose:  
+
+$$
+(\#eq:orthogonal)
+AA^T = A^TA = I
+$$
+
+Another way of defining it is that an orthogonal matrix has both **orthogonal columns** and **orthogonal rows**.

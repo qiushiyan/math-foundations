@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Orthogonality | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 4 Orthogonality | Mathematical Notes for Machine Learning" />
+  <title>1.8 Matrix representation of sample statistics | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="1.8 Matrix representation of sample statistics | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Orthogonality | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="1.8 Matrix representation of sample statistics | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Orthogonality | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="1.8 Matrix representation of sample statistics | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="eigenvectors-and-linear-transformations.html"/>
-<link rel="next" href="orthogonal-decomposition.html"/>
+<link rel="prev" href="matrix-multiplication-as-linear-transformation.html"/>
+<link rel="next" href="vector-spaces.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -75,16 +75,19 @@
 <li class="chapter" data-level="1" data-path="matrix-basics.html"><a href="matrix-basics.html"><i class="fa fa-check"></i><b>1</b> Matrix basics</a><ul>
 <li class="chapter" data-level="1.1" data-path="elemetary-matrix-and-row-operations.html"><a href="elemetary-matrix-and-row-operations.html"><i class="fa fa-check"></i><b>1.1</b> Elemetary matrix and row operations</a></li>
 <li class="chapter" data-level="1.2" data-path="matrix-multiplication.html"><a href="matrix-multiplication.html"><i class="fa fa-check"></i><b>1.2</b> Matrix multiplication</a></li>
-<li class="chapter" data-level="1.3" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.3</b> LU factorization</a></li>
-<li class="chapter" data-level="1.4" data-path="determinants.html"><a href="determinants.html"><i class="fa fa-check"></i><b>1.4</b> Determinants</a><ul>
-<li class="chapter" data-level="1.4.1" data-path="determinants.html"><a href="determinants.html#properties-of-determinants"><i class="fa fa-check"></i><b>1.4.1</b> Properties of determinants</a></li>
-<li class="chapter" data-level="1.4.2" data-path="determinants.html"><a href="determinants.html#cramers-rule"><i class="fa fa-check"></i><b>1.4.2</b> Cramer’s rule</a></li>
+<li class="chapter" data-level="1.3" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html"><i class="fa fa-check"></i><b>1.3</b> Arithmetic properties</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="arithmetic-properties.html"><a href="arithmetic-properties.html#inverse-of-a-matrix"><i class="fa fa-check"></i><b>1.3.1</b> Inverse of a matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="trace.html"><a href="trace.html"><i class="fa fa-check"></i><b>1.5</b> Trace</a></li>
-<li class="chapter" data-level="1.6" data-path="inverse-of-a-matrix.html"><a href="inverse-of-a-matrix.html"><i class="fa fa-check"></i><b>1.6</b> Inverse of a matrix</a></li>
+<li class="chapter" data-level="1.4" data-path="lu-factorization.html"><a href="lu-factorization.html"><i class="fa fa-check"></i><b>1.4</b> LU factorization</a></li>
+<li class="chapter" data-level="1.5" data-path="determinants.html"><a href="determinants.html"><i class="fa fa-check"></i><b>1.5</b> Determinants</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="determinants.html"><a href="determinants.html#properties-of-determinants"><i class="fa fa-check"></i><b>1.5.1</b> Properties of determinants</a></li>
+<li class="chapter" data-level="1.5.2" data-path="determinants.html"><a href="determinants.html#cramers-rule"><i class="fa fa-check"></i><b>1.5.2</b> Cramer’s rule</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="trace.html"><a href="trace.html"><i class="fa fa-check"></i><b>1.6</b> Trace</a></li>
 <li class="chapter" data-level="1.7" data-path="matrix-multiplication-as-linear-transformation.html"><a href="matrix-multiplication-as-linear-transformation.html"><i class="fa fa-check"></i><b>1.7</b> Matrix multiplication as linear transformation</a></li>
-<li class="chapter" data-level="1.8" data-path="statistics-and-proabability.html"><a href="statistics-and-proabability.html"><i class="fa fa-check"></i><b>1.8</b> Statistics and proabability</a><ul>
-<li class="chapter" data-level="1.8.1" data-path="statistics-and-proabability.html"><a href="statistics-and-proabability.html#sample-statistics"><i class="fa fa-check"></i><b>1.8.1</b> Sample statistics</a></li>
+<li class="chapter" data-level="1.8" data-path="matrix-representation-of-sample-statistics.html"><a href="matrix-representation-of-sample-statistics.html"><i class="fa fa-check"></i><b>1.8</b> Matrix representation of sample statistics</a><ul>
+<li class="chapter" data-level="1.8.1" data-path="matrix-representation-of-sample-statistics.html"><a href="matrix-representation-of-sample-statistics.html#sample-mean"><i class="fa fa-check"></i><b>1.8.1</b> Sample mean</a></li>
+<li class="chapter" data-level="1.8.2" data-path="matrix-representation-of-sample-statistics.html"><a href="matrix-representation-of-sample-statistics.html#sample-covariance"><i class="fa fa-check"></i><b>1.8.2</b> Sample covariance</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector spaces</a><ul>
@@ -140,42 +143,24 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="orthogonality" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Orthogonality</h1>
-<p>Some definitions:</p>
-<p>If <span class="math inline">\(\boldsymbol{u}\)</span> and <span class="math inline">\(\boldsymbol{v}\)</span> and both vectors in <span class="math inline">\(\mathbb{\mathbb{R^n}}\)</span>, then the number <span class="math inline">\(\boldsymbol{u}^T\boldsymbol{v}\)</span> is called the <strong>inner product</strong> of <span class="math inline">\(\boldsymbol{u}\)</span> and <span class="math inline">\(\boldsymbol{v}\)</span>, also denoted by <span class="math inline">\(\langle\boldsymbol{u}, \boldsymbol{v}\rangle\)</span> or <span class="math inline">\(\boldsymbol{u} \cdot \boldsymbol{v}\)</span>. Also, when <span class="math inline">\(\boldsymbol{u}\)</span> is perpendicular to <span class="math inline">\(\boldsymbol{v}\)</span> we have <span class="math inline">\(\boldsymbol{u} \cdot \boldsymbol{v} = 0\)</span>.</p>
-<p><br>
-<strong>Norm</strong> is a function from a vector space to a nonnegative scalar that satisfies certain properties.</p>
-<p>The L2 norm (most common measure of length of a vector) of <span class="math inline">\(\boldsymbol{v}\)</span> is <span class="math inline">\(||\boldsymbol{u}||\)</span> defined by</p>
-<p><span class="math display">\[
-||\boldsymbol{v}||_2 = \sqrt{v_1^2 + \cdots + v_n^2} = \sqrt{\boldsymbol{v}^T\boldsymbol{v}}
-\]</span>
-The subscript <span class="math inline">\(2\)</span> can be left out in most cases.</p>
-<p>Moreover, the L1 norm of <span class="math inline">\(\boldsymbol{v}\)</span> is</p>
-<p><span class="math display">\[
-||\boldsymbol{v}||_1 = |v_1| + \cdots + |v_n|
-\]</span></p>
-<p>More generally, the Lp norm is:</p>
-<p><span class="math display">\[
-||\boldsymbol{v}||_p = (\sum_{i = 1}^n{x_i^p})^{1/p}
-\]</span></p>
-<p>For all these definitions, it can be shown that</p>
-<p><span class="math display">\[
-||c\boldsymbol{v}|| = |c| \times ||\boldsymbol{v}||
-\]</span></p>
-<p><br>
-The <strong>Euclidean distance</strong> between <span class="math inline">\(\boldsymbol{u}\)</span> and <span class="math inline">\(\boldsymbol{v}\)</span> is the L2 norm of the vector <span class="math inline">\(\boldsymbol{u} - \boldsymbol{v}\)</span></p>
-<p><span class="math display">\[
-\text{dist}(\boldsymbol{u}, \boldsymbol{v}) = ||\boldsymbol{u} - \boldsymbol{v}||_2
-\]</span></p>
+<div id="matrix-representation-of-sample-statistics" class="section level2">
+<h2><span class="header-section-number">1.8</span> Matrix representation of sample statistics</h2>
+<div id="sample-mean" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> Sample mean</h3>
 </div>
+<div id="sample-covariance" class="section level3">
+<h3><span class="header-section-number">1.8.2</span> Sample covariance</h3>
+
+</div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="eigenvectors-and-linear-transformations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="orthogonal-decomposition.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="matrix-multiplication-as-linear-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vector-spaces.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -206,7 +191,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/orthogonality.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/matrix-algebra.Rmd",
 "text": "Edit"
 },
 "history": {

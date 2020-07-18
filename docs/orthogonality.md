@@ -122,7 +122,7 @@ $$</div>\EndKnitrBlock{theorem}
 Take $\boldsymbol{v}$ distinct from $\hat{\boldsymbol{y}}$ in $W$, we know that $\boldsymbol{y} - \hat{\boldsymbol{y}}$ is perpendicular to $\boldsymbol{v}$. According to Pythoagorean theorem, we have
 
 <div class="figure" style="text-align: center">
-<img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]" width="150%" />
+<img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]" width="120%" />
 <p class="caption">(\#fig:unnamed-chunk-2)figure from page p352, ch6 [@lay2006-3]</p>
 </div>
 
@@ -131,6 +131,17 @@ $$
 $$
 When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2$ is non-negative, so the error term of choosing $\boldsymbol{v}$ is always larger than that of the orthogonal projection $\boldsymbol{\hat{y}}$.
 
-### Orthonormal sets and orthogonal matrices
+## Orthonormal sets and orthogonal matrices
 
 An orthogonal set whose components are all unit vectors are said to be **orthonormal** sets. 
+
+### Orthogonal matrices  
+
+An *orthogonal matrix* is a square matrix whose inverse is its transpose:  
+
+$$
+(\#eq:orthogonal)
+AA^T = A^TA = I
+$$
+
+Another way of defining it is that an orthogonal matrix has both **orthogonal columns** and **orthogonal rows**.
