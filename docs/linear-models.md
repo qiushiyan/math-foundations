@@ -25,6 +25,8 @@ $$
 \hat{\boldsymbol{y}} = X\boldsymbol{\beta} = X (X^TX)^{-1}X^{T}\boldsymbol{y}
 $$
 
+When columns of the design matrix $A$ are orthogonal, the orthogonal projection of $\boldsymbol{y}$ onto Col$X$ isi given by 
+
 $$
 \hat{\boldsymbol{y}} = \frac{\boldsymbol{x}_0^T\boldsymbol{y}}{\boldsymbol{x}_0^T\boldsymbol{x}_0}\boldsymbol{x}_0 + 
 \frac{\boldsymbol{x}_1^T\boldsymbol{y}}{\boldsymbol{x}_1^T\boldsymbol{x}_1}\boldsymbol{x}_1

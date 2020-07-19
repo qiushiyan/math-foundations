@@ -13,9 +13,8 @@ rmd_files: [
   "index.Rmd",
   "matrix-algebra.Rmd",
   "vector-spaces.Rmd",
-  
-  "eigen.Rmd",
   "orthogonality.Rmd",
+  "eigen-quadratic.Rmd",
   "matrix-calculus.Rmd",
 
   "taylor.Rmd",

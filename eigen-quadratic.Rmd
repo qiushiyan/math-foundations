@@ -94,9 +94,7 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 ## Diagnolization and similar matrices 
 
 
-```{definition}
-**Diagonalization theorem** 
-  
+```{definition diagonalization, name = "Diagonalization thoerem"}
 An $n \ times n$ matrix $A$ is diagnolizable **if and only if** A has $n$ independent linearly independent eigenvectors. 
 
 In such case, in $A = PDP^{-1}$, the diagonal entries of $D$ are eigenvalues that correpond, respectively, to the eigenvectors of in $P$  
@@ -148,9 +146,123 @@ For matrices whose eigenvalues are not distinct, there is still a change that it
 
 2. The dimension of the eigenspace for each $\lambda_k$ equals the multiplicity of $\lambda_k$. Thus $A$ with repeated eigenvalues can still be diagonalizable. 
 
+### similarity
+
+If $A$ and $B$ are $n \times n$ matrices, then $A$ **is similar to** $N$ if there is an invertible matrix $P$ such that $P^{-1}AP = B$, or equivalently if we write $Q$ for $P^{-1}$, $Q^{-1}BQ = A$. Changing $A$ into $P^{-1}AP$ is called a **similarity transformation**. 
+
+```{theorem}
+If $A$ and $B$ are similar, they have the same eigenvalues. 
+```
+
+**PROOF**  
+If $B = P^{-1}AP$, then 
+
+$$
+B - \lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP - \lambda P) =  P^{-1}(A - \lambda I) P
+$$
+so that 
+
+$$
+\det (B - \lambda I ) = \det(P) \cdot \det(A - \lambda I ) \cdot \det(P^{-1})
+$$
 
 
 ## Symmetric matrices 
 
+A *square* matrix $A \in \mathbb{R}^{n \times n}$ is *symmetric* if $A = A^{T}$, and *anti-symmetric* if $A = - A^{T}$. 
+
+It can be shown that for any $A \in \mathbb{R}^{n \times n}$, $A + A^T$ is symmetric and $A - A^T$ anti-symmetric. So any square matrix $A$ can be wrote as a sum of a symmetric matrix and an anti-symmetric matrix 
+
+$$
+A = \frac{1}{2}(A + A^T) + \frac{1}{2}(A - A^T)
+$$
+
+It is common to denote the set of all symmetric matrices of size $n$ as $\mathbb{S}^n$, and $A \in \mathbb{S}^n$ means $A$ is a symmetric $n \times n$ matrix. 
+
+
+Symmetric matrices have some nice properties about diagonalization.  
+
+```{theorem}
+If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. 
+```
+
+**PROOF** 
+
+Let $\boldsymbol{v}_1$ and $\boldsymbol{v}_2$ be eigenvectors that correspond to distinct eigenvalues $\lambda_1$ and $\lambda_2$. Compute 
+
+$$
+\begin{split}
+\lambda_1\boldsymbol{v}_1 \cdot \boldsymbol{v}_2 &= (\lambda_1\boldsymbol{v}_1)^T\boldsymbol{v}_2 \\
+&= (\boldsymbol{v}_1^TA^T)\boldsymbol{v}_2 \\
+&= \boldsymbol{v}_1^T(A\boldsymbol{v}_2) \\
+&= \boldsymbol{v}_1^T(\lambda_2\boldsymbol{v}_2) \\
+&= \lambda_2\boldsymbol{v}_1 \cdot \boldsymbol{v}_2
+\end{split}
+$$
+because $\lambda_1 \not = \lambda_2$, $\boldsymbol{v}_1 \cdot \boldsymbol{v}_2 = 0$.
+
+For symmetric matrices $A \in \mathbb{R}^{n \times n}$ without $n$ distinct eigenvalues, it turns out that the dimension of the eigenspace for each $\lambda_k$ always equals the multiplicity of $\lambda_k$. For this reason, if $A$ is a symmetric matrix we can always construct a orthonormal set $\{\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n\}$ from $\{\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n\}$ such that  
+
+$$
+P^{T} = 
+\begin{bmatrix}
+\boldsymbol{q}_1^T \\
+\vdots \\ 
+\boldsymbol{q}_n^T
+\end{bmatrix}
+= P^{-1}
+$$
+Recall that matrix $A$ with $n$ linearly dependent eigenvectors is diagonalizable and can be written as 
+
+$$
+A = PDP^{-1}
+$$
+where $P = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ and $D$ is a diagonal matrix with eigenvalues on its diagonal entries. 
+
+With symmetric matrices, after proper transformation we have $P^T = P^{-1}$, so that 
+
+\begin{equation}
+(\#eq:orthogonal-diagonalization)
+A = PDP^T
+\end{equation}
+
+Such matrix $A$ is said to be **orthogonally diagonalizable**. 
+
+We have seen that for symmetric matrix $A$, Eq \@ref(eq:orthogonal-diagonalization) always holds. We can also also verify that if $A$ is orthogonally diagonalizable then it is a symmetric matrix
+
+$$
+A^T = (PDP^T)^T = PD^TP^T = PDP^T  = A
+$$
+
+```{theorem}
+An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. 
+```
+
+### Spectral decomposition 
+
+For orthogonally diagonalizable matrix $A$, we have 
+
+$$
+A = PDP^T = [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n] 
+\begin{bmatrix}
+\lambda_1 & & \\
+ & \ddots \\
+ & & \lambda_n
+\end{bmatrix}
+\begin{bmatrix}
+\boldsymbol{q}_1^T \\
+\vdots \\
+\boldsymbol{q}_n
+\end{bmatrix}
+$$
+
+It follows that 
+
+\begin{equation}
+(\#eq:spectral-decomposition)
+A = \lambda_1\boldsymbol{q}_1\boldsymbol{q}_1^T + \cdots + \lambda_1\boldsymbol{q}_n\boldsymbol{q}_n^T
+\end{equation}
+
+Eq \@ref(eq:spectral-decomposition) is called the **spectral decomposition**, breaking $A$ into pieces of rank 1 matrix. It got this name because he set of eigenvalues of a matrix $A$ is sometimes called its *spectrum*.
 
 ## SVD

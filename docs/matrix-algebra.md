@@ -102,21 +102,18 @@ a_{11} & a_{12} & a_{13} \\
 a_{21} & a_{22} & a_{23} \\
 - 4a_{11} + a_{31} & -4a_{12} + a_{32} & -4a_{13} + a_{33}
 \end{bmatrix}  \\ \\  
-
 E_2A &= 
 \begin{bmatrix}
 a_{21} & a_{22} & a_{23} \\
 a_{11} & a_{12} & a_{13} \\
 a_{31} & a_{32} & a_{33}
 \end{bmatrix} \\ \\
-
 E_3A &= 
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13} \\
 a_{21} & a_{22} & a_{23} \\
 5a_{31} & 5a_{32} & 5a_{33} \\
 \end{bmatrix}
-
 \end{aligned}
 $$
 Thus, any row operation on $A$ is equivalent to left multiply a corresponding elementary matrix $E$.  

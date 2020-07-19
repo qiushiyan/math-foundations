@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Orthogonality | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 4 Orthogonality | Mathematical Notes for Machine Learning" />
+  <title>Chapter 3 Orthogonality | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 3 Orthogonality | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Orthogonality | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 3 Orthogonality | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Orthogonality | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 3 Orthogonality | Mathematical Notes for Machine Learning" />
   
   
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-19" />
+<meta name="date" content="2020-07-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="eigenthings-and-quadratic-forms.html"/>
-<link rel="next" href="matrix-calculus.html"/>
+<link rel="prev" href="vector-spaces.html"/>
+<link rel="next" href="eigenthings-and-quadratic-forms.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -92,25 +92,30 @@
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector spaces</a><ul>
 <li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#four-subspaces"><i class="fa fa-check"></i><b>2.1</b> Four subspaces</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>3</b> Eigenthings and quadratic forms</a><ul>
-<li class="chapter" data-level="3.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>3.1</b> Eigenvectors and eigenvalues</a></li>
-<li class="chapter" data-level="3.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>3.2</b> Diagnolization and similar matrices</a></li>
-<li class="chapter" data-level="3.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>3.3</b> Symmetric matrices</a></li>
-<li class="chapter" data-level="3.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>3.4</b> SVD</a></li>
+<li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
+<li class="chapter" data-level="3.1" data-path="orthogonality.html"><a href="orthogonality.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>3.1</b> Metric spaces, normed spaces, inner product spaces</a></li>
+<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>3.2</b> Orthogonal decomposition</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-complements"><i class="fa fa-check"></i><b>3.2.1</b> Orthogonal complements</a></li>
+<li class="chapter" data-level="3.2.2" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-sets-and-orthogonal-basis"><i class="fa fa-check"></i><b>3.2.2</b> Orthogonal sets and orthogonal basis</a></li>
+<li class="chapter" data-level="3.2.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>3.2.3</b> Orthogonal decomposition</a></li>
+<li class="chapter" data-level="3.2.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.2.4</b> Best approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>4</b> Orthogonality</a><ul>
-<li class="chapter" data-level="4.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>4.1</b> Orthogonal decomposition</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-complements"><i class="fa fa-check"></i><b>4.1.1</b> Orthogonal complements</a></li>
-<li class="chapter" data-level="4.1.2" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-sets-and-orthogonal-basis"><i class="fa fa-check"></i><b>4.1.2</b> Orthogonal sets and orthogonal basis</a></li>
-<li class="chapter" data-level="4.1.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>4.1.3</b> Orthogonal decomposition</a></li>
-<li class="chapter" data-level="4.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>4.1.4</b> Best approximation</a></li>
+<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt process</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR factorizaiton</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>4.2</b> Gram-Schmidt process</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>4.2.1</b> QR factorizaiton</a></li>
+<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.4</b> Orthonormal sets and orthogonal matrices</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.4.1</b> Orthogonal matrices</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>4.3</b> Orthonormal sets and orthogonal matrices</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>4.3.1</b> Orthogonal matrices</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and quadratic forms</a><ul>
+<li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and eigenvalues</a></li>
+<li class="chapter" data-level="4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>4.2</b> Diagnolization and similar matrices</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#similarity"><i class="fa fa-check"></i><b>4.2.1</b> similarity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.3</b> Symmetric matrices</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#spectral-decomposition"><i class="fa fa-check"></i><b>4.3.1</b> Spectral decomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.4</b> SVD</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -145,53 +150,95 @@
 
             <section class="normal" id="section-">
 <div id="orthogonality" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Orthogonality</h1>
-<p>Some definitions:</p>
-<p>If <span class="math inline">\(\boldsymbol{u}\)</span> and <span class="math inline">\(\boldsymbol{v}\)</span> and both vectors in <span class="math inline">\(\mathbb{\mathbb{R^n}}\)</span>, then the number <span class="math inline">\(\boldsymbol{u}^T\boldsymbol{v}\)</span> is called the <strong>inner product</strong> of <span class="math inline">\(\boldsymbol{u}\)</span> and <span class="math inline">\(\boldsymbol{v}\)</span>, also denoted by <span class="math inline">\(\langle\boldsymbol{u}, \boldsymbol{v}\rangle\)</span> or <span class="math inline">\(\boldsymbol{u} \cdot \boldsymbol{v}\)</span>. Also, when <span class="math inline">\(\boldsymbol{u}\)</span> is perpendicular to <span class="math inline">\(\boldsymbol{v}\)</span> we have <span class="math inline">\(\boldsymbol{u} \cdot \boldsymbol{v} = 0\)</span>.</p>
-<p><br>
-<strong>Norm</strong> is a function from a vector space to a nonnegative scalar that satisfies certain properties.</p>
-<p>The L2 norm (most common measure of length of a vector) of <span class="math inline">\(\boldsymbol{v}\)</span> is <span class="math inline">\(||\boldsymbol{u}||\)</span> defined by</p>
+<h1><span class="header-section-number">Chapter 3</span> Orthogonality</h1>
+<div id="metric-spaces-normed-spaces-inner-product-spaces" class="section level2">
+<h2><span class="header-section-number">3.1</span> Metric spaces, normed spaces, inner product spaces</h2>
+<p>Metrics generalize the notion of distance from Euclidean space. A <em>metric space</em> is a set together with a metric on the set (metric spaces don’t have to be vector spaces). The metric is a function that defines a concept of distance <span class="math inline">\(\in \mathbb{R}\)</span> between any two members of the set. A metric must satisfies the following properties:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(d(x, y) \ge 0\)</span>, with equality if and only if <span class="math inline">\(x = y\)</span>. Distances are non-negative, and the only point at zero distance from <span class="math inline">\(x\)</span> is <span class="math inline">\(x\)</span> itself<br />
+</li>
+<li><span class="math inline">\(d(x, y) = d(y, x)\)</span>. The distance is a symmetric function.</li>
+<li><span class="math inline">\(d(x, z) \le d(x, y) + d(y, z)\)</span>. Distance satisfies triangular inequality.</li>
+</ol>
+<p><br></p>
+<p>Norms generalize the notion of length from Euclidean space.</p>
+<p>A <strong>norm</strong> on a real vector space <span class="math inline">\(X\)</span> is a function: <span class="math inline">\(||\cdot||: V \rightarrow \mathbb{R}\)</span> that satisfies:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(||x|| \ge 0\)</span> for all <span class="math inline">\(x \in X\)</span>, with equality if and only if <span class="math inline">\(x = \boldsymbol{0}\)</span> (nonnegative)<br />
+</li>
+<li><span class="math inline">\(||\lambda x|| = \lambda ||x||\)</span>, for all <span class="math inline">\(x \in X\)</span> and <span class="math inline">\(\lambda \in \mathbb{R}\)</span> (homogeneous)<br />
+</li>
+<li><span class="math inline">\(||x + y|| \le ||x|| + ||y||\)</span> (triangular inequality)</li>
+</ol>
+<p><strong>A normed space is a metric space with the metric</strong></p>
 <p><span class="math display">\[
-||\boldsymbol{v}||_2 = \sqrt{v_1^2 + \cdots + v_n^2} = \sqrt{\boldsymbol{v}^T\boldsymbol{v}}
+d(\boldsymbol{x}, \boldsymbol{y}) = ||\boldsymbol{x} - \boldsymbol{y}||
+\]</span></p>
+<p>So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that <span class="math inline">\(d(x, y) = ||x - y||\)</span> satisfies all properties of a metric.</p>
+<p>The most common function for norms on <span class="math inline">\(\mathbb{R}^n\)</span> are listed below, with <span class="math inline">\(x = [x_1, x_2, ..., x_n]\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{1-norm}: ||\boldsymbol{x}||_1 &amp;= \sum_{i=1}^{n}{|x_i|} \\
+\text{2-norm}: ||\boldsymbol{x}||_2 &amp;= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
+\text{p-norm}: ||\boldsymbol{x}||_p &amp;= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
+\text{maximum norm}: ||\boldsymbol{x}||_{\infty} &amp;= \max\{|x_1|, |x_2|, ..., |x_n|\}
+\end{aligned}
 \]</span>
-The subscript <span class="math inline">\(2\)</span> can be left out in most cases.</p>
-<p>Moreover, the L1 norm of <span class="math inline">\(\boldsymbol{v}\)</span> is</p>
+1-norm is also called the Manhattan norm.</p>
+<p>2-norm is the commonly used Euclidean distance, and the subscript <span class="math inline">\(2\)</span> can be left out in most cases.</p>
+<p>p-norm is a generalization of 1-norm and 2-norm, requiring <span class="math inline">\(p &gt; 1\)</span>. When <span class="math inline">\(p\)</span> turns infinity, <span class="math inline">\(||x||_{\infty}\)</span> is called the maximum norm.</p>
+<p><br></p>
+<p>An <strong>inner product</strong> on a real vector space <span class="math inline">\(X\)</span> is a function <span class="math inline">\(\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}\)</span> satisfying</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\langle x, x \rangle \ge 0\)</span>, with equality if and only if <span class="math inline">\(x = \boldsymbol{0}\)</span><br />
+</li>
+<li><span class="math inline">\(\langle x, y \rangle = \langle y, x \rangle\)</span></li>
+<li><span class="math inline">\(\langle x + y, z\rangle = \langle x, z\rangle + \langle y, z\rangle\)</span> and <span class="math inline">\(\langle \lambda x, y\rangle = \lambda \langle x, y \rangle\)</span></li>
+</ol>
+<p>A vector sapce equipped with such inner product is called a <strong>inner product space</strong>. Note that <strong>all inner product spaces are normed spaces</strong>, because a inner product induce a norm on a vector space:</p>
 <p><span class="math display">\[
-||\boldsymbol{v}||_1 = |v_1| + \cdots + |v_n|
-\]</span></p>
-<p>More generally, the Lp norm is:</p>
+\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = ||\boldsymbol{x}||^2  
+\]</span>
+The <em>standard inner product</em> defined on <span class="math inline">\(\mathbb{R}^{n}\)</span> is given by</p>
 <p><span class="math display">\[
-||\boldsymbol{v}||_p = (\sum_{i = 1}^n{x_i^p})^{1/p}
+\langle \boldsymbol{x}, \boldsymbol{y} \rangle = \sum_{i=1}^{n}{x_iy_i} = \boldsymbol{x}^T\boldsymbol{y}
 \]</span></p>
-<p>For all these definitions, it can be shown that</p>
-<p><span class="math display">\[
-||c\boldsymbol{v}|| = |c| \times ||\boldsymbol{v}||
-\]</span></p>
-<p><br>
-The <strong>Euclidean distance</strong> between <span class="math inline">\(\boldsymbol{u}\)</span> and <span class="math inline">\(\boldsymbol{v}\)</span> is the L2 norm of the vector <span class="math inline">\(\boldsymbol{u} - \boldsymbol{v}\)</span></p>
-<p><span class="math display">\[
-\text{dist}(\boldsymbol{u}, \boldsymbol{v}) = ||\boldsymbol{u} - \boldsymbol{v}||_2
-\]</span></p>
+
+<div class="rmdnote">
+The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces.” These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.
+</div>
+
+</div>
 <div id="orthogonal-decomposition" class="section level2">
-<h2><span class="header-section-number">4.1</span> Orthogonal decomposition</h2>
+<h2><span class="header-section-number">3.2</span> Orthogonal decomposition</h2>
 <div id="orthogonal-complements" class="section level3">
-<h3><span class="header-section-number">4.1.1</span> Orthogonal complements</h3>
+<h3><span class="header-section-number">3.2.1</span> Orthogonal complements</h3>
 <p>if vector <span class="math inline">\(\boldsymbol{v}\)</span> is orthogonal to every vector in a subspace <span class="math inline">\(W\)</span> of <span class="math inline">\(\mathbb{R^n}\)</span>, then <span class="math inline">\(\boldsymbol{v}\)</span> is said to be orthogonal to <span class="math inline">\(W\)</span>. The subspace that contains the set of vectors that are orthogonal to <span class="math inline">\(W\)</span> is called the <strong>orthogonal complement</strong>, denoted by <span class="math inline">\(W^{\perp}\)</span>.</p>
-<p>This corresponds to discussions in <a href="vector-spaces.html#four-subspaces">2.1</a>, where</p>
+<p><span class="math display">\[
+W^{\perp} = \{\boldsymbol{v} \in W^{\perp} | \;\boldsymbol{v} \perp \boldsymbol{x} \; \text{for all} \; \boldsymbol{x} \in W\}
+\]</span></p>
+<p>This corresponds to discussions in Section <a href="vector-spaces.html#four-subspaces">2.1</a>, where</p>
 <p><span class="math display">\[
 (\text{row} A)^{\perp} = \text{Nul} A \\
 (\text{col} A)^{\perp} = \text{Nul} A^T
-\]</span></p>
+\]</span>
+<br></p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>If <span class="math inline">\(W\)</span> is a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>, <span class="math inline">\(W^{\perp}\)</span> is also a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>.
+</div>
+
+<p>It’s easy to verify that <span class="math inline">\(W^{\perp}\)</span> is closed under scalar multiplication, and under vector addition, and that any vector in <span class="math inline">\(W\)</span> has <span class="math inline">\(n\)</span> components. So that <span class="math inline">\(W^{\perp}\)</span> is a subspace of <span class="math inline">\(\mathbb{R}^n\)</span></p>
 </div>
 <div id="orthogonal-sets-and-orthogonal-basis" class="section level3">
-<h3><span class="header-section-number">4.1.2</span> Orthogonal sets and orthogonal basis</h3>
+<h3><span class="header-section-number">3.2.2</span> Orthogonal sets and orthogonal basis</h3>
 <p>An orthogonal set is a set of vectors
 <span class="math inline">\(\{\boldsymbol{u_1}, \dots, \boldsymbol{u_p}\}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span>, in which each pair of distinct vectors is orthogonal: <span class="math inline">\(\boldsymbol{u_i}^{T} \boldsymbol{u_j} = 0 \quad i\not = j\)</span>. Note that the set do not necessarily span the whole <span class="math inline">\(\mathbb{R^n}\)</span>, but a subspace <span class="math inline">\(W\)</span>.</p>
 <p>Since vectors in orthogonal sets is mutually perpendicular, they must also be linearly independent and could form a basis for a subspace <span class="math inline">\(W\)</span>. In such case, they are called <strong>orthogonal basis</strong>.</p>
 <p>There is a particular advantage in using orthogonal basis rather than other basis, because we can find a easy representation of any vector in <span class="math inline">\(W\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 1.1  </strong></span>For each <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(W\)</span>, we have the following linear combination</p>
+<p><span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 3.2  </strong></span>For each <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(W\)</span>, there exists a linear combination</p>
 <p><span class="math display">\[
 y = c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p}
 \]</span></p>
@@ -216,21 +263,60 @@ c_1 = \frac{\boldsymbol{u_1} \cdot \boldsymbol{y}}{\boldsymbol{u_1} \cdot \bolds
 <p>Derivations for other <span class="math inline">\(c_i\)</span> is similar.</p>
 </div>
 <div id="orthogonal-decomposition-1" class="section level3">
-<h3><span class="header-section-number">4.1.3</span> Orthogonal decomposition</h3>
-<p><strong>Orthogonal decomposition</strong> split <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> into two vectors, one in <span class="math inline">\(W\)</span> and one in its orthogonal compliment <span class="math inline">\(W^{\perp}\)</span>. The trick is to use <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> as <span class="math inline">\(\boldsymbol{y}\)</span>’s projection onto <span class="math inline">\(W\)</span>, which can be represented as illustrated in <a href="orthogonality.html#orthogonal-sets-and-orthogonal-basis">4.1.2</a>, and the other term, often referred to as error term in statistics, is simply <span class="math inline">\(\boldsymbol{y}- \hat{\boldsymbol{y}}\)</span>.</p>
-<p><span class="math display">\[
-\boldsymbol{y} = \hat{\boldsymbol{y}} + \boldsymbol{z}= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z} 
-\]</span></p>
-<p>Where</p>
-<p><span class="math display">\[
-c_i = \frac{\boldsymbol{y} \cdot \boldsymbol{u}_i}{\boldsymbol{u}_i \cdot \boldsymbol{u}_i}\boldsymbol{u}_i \quad i = 1, \cdots, p 
-\]</span></p>
-</div>
-<div id="best-approximation" class="section level3">
-<h3><span class="header-section-number">4.1.4</span> Best approximation</h3>
+<h3><span class="header-section-number">3.2.3</span> Orthogonal decomposition</h3>
+<p><strong>Orthogonal decomposition</strong> split <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> into two vectors, one in <span class="math inline">\(W\)</span> and one in its orthogonal compliment <span class="math inline">\(W^{\perp}\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:best-approximation" class="theorem"><strong>Theorem 4.1  (The Best Approximation Theorem)  </strong></span>Given <span class="math inline">\(\boldsymbol{y}\)</span> be any vector in <span class="math inline">\(\mathbb{R^n}\)</span>, with its subspace <span class="math inline">\(W\)</span>, let <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> be the orthogonal projection of <span class="math inline">\(\boldsymbol{y}\)</span> onto <span class="math inline">\(W\)</span>. Then <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> is the closest point in <span class="math inline">\(W\)</span> to <span class="math inline">\(\boldsymbol{y}\)</span> in the sense that</p>
+<p><span id="thm:unnamed-chunk-4" class="theorem"><strong>Theorem 1.5  </strong></span>Let <span class="math inline">\(\mathbb{R}^n\)</span> be a inner product space and <span class="math inline">\(W\)</span> and subspace of <span class="math inline">\(\mathbb{R}^n\)</span>. Then every <span class="math inline">\(\boldsymbol{v}\)</span> in <span class="math inline">\(W\)</span> can be written uniquely in the form</p>
+<p><span class="math display">\[
+\boldsymbol{v} = \boldsymbol{v}_W + \boldsymbol{v}_{\perp}
+\]</span></p>
+where <span class="math inline">\(\boldsymbol{v}_W \in W\)</span> and <span class="math inline">\(\boldsymbol{v}_{\perp} \in W^{\perp}\)</span>
+</div>
+
+<p><strong>PROOF</strong></p>
+<p>Let <span class="math inline">\(\boldsymbol{u}_1, ..., \boldsymbol{u}_m\)</span> be a orthonormal basis for <span class="math inline">\(W\)</span>, there exists linear combination according to Section <a href="orthogonality.html#orthogonal-sets-and-orthogonal-basis">3.2.2</a></p>
+<p><span class="math display">\[
+\boldsymbol{v}_w = (\boldsymbol{v} \cdot \boldsymbol{u}_1)\boldsymbol{u}_1 + \cdots + (\boldsymbol{v} \cdot \boldsymbol{u}_m)\boldsymbol{u}_m
+\]</span>
+and</p>
+<p><span class="math display">\[
+\boldsymbol{v}_{\perp} = \boldsymbol{v} - \boldsymbol{v}_w
+\]</span>
+It is clear that <span class="math inline">\(\boldsymbol{v}_W \in W\)</span>. And we can also show that <span class="math inline">\(\boldsymbol{v}_{\perp}\)</span> is perpendicular to <span class="math inline">\(W\)</span></p>
+<p><span class="math display">\[
+\begin{split}
+\boldsymbol{v}_{\perp} \cdot \boldsymbol{u}_i &amp;= [\boldsymbol{v}- (\boldsymbol{v} \cdot \boldsymbol{u}_1)\boldsymbol{u}_1 - \cdots - (\boldsymbol{v} \cdot \boldsymbol{u}_m)\boldsymbol{u}_m] \cdot \boldsymbol{u}_i \\
+&amp;= (\boldsymbol{v} \cdot \boldsymbol{u}_1) - [(\boldsymbol{v} \cdot \boldsymbol{u}_i)\boldsymbol{u}_i \cdot \boldsymbol{u}_i] \\
+&amp;= 0
+\end{split}
+\]</span></p>
+<p>which implies <span class="math inline">\(\boldsymbol{v}_{\perp} \in W^{\perp}\)</span>.</p>
+<p>To prove that <span class="math inline">\(\boldsymbol{v}_w\)</span> and <span class="math inline">\(\boldsymbol{v}_{\perp}\)</span> are unique (does not depend on the choice of basis), let <span class="math inline">\(\boldsymbol{u}_1&#39;, ..., \boldsymbol{u}_m&#39;\)</span> be another orthonormal basis for <span class="math inline">\(W\)</span>, and define <span class="math inline">\(\boldsymbol{v}_w&#39;\)</span> and <span class="math inline">\(\boldsymbol{v}_{\perp}&#39;\)</span> similarly we want to get <span class="math inline">\(\boldsymbol{v}_w&#39; = \boldsymbol{v}_w\)</span> and <span class="math inline">\(\boldsymbol{v}_{\perp}&#39; = \boldsymbol{v}_{\perp}\)</span>.</p>
+<p>By definition</p>
+<p><span class="math display">\[
+\boldsymbol{v}_w + \boldsymbol{v}_{\perp} = \boldsymbol{v} = \boldsymbol{v}_w&#39; + \boldsymbol{v}_{\perp}&#39; 
+\]</span></p>
+<p>so</p>
+<p><span class="math display">\[
+\underbrace{\boldsymbol{v}_w - \boldsymbol{v}_w&#39;}_{\in W} = \underbrace{\boldsymbol{v}_{\perp}&#39; - \boldsymbol{v}_{\perp}}_{\in W^{\perp}}
+\]</span>
+From the orthogonality of these subspaces, we have</p>
+<p><span class="math display">\[
+0 = (\boldsymbol{v}_w - \boldsymbol{v}_w&#39;) \cdot (\boldsymbol{v}_{\perp}&#39; - \boldsymbol{v}_{\perp}) = (\boldsymbol{v}_w - \boldsymbol{v}_w&#39;) \cdot (\boldsymbol{v}_w - \boldsymbol{v}_w&#39;) = ||\boldsymbol{v}_w - \boldsymbol{v}_w&#39;||^2
+\]</span>
+Similarly we have <span class="math inline">\(||\boldsymbol{v}_{\perp}&#39; - \boldsymbol{v}_{\perp}||^2 = 0\)</span>.</p>
+<p>The existence and uniqueness of the decomposition above mean that</p>
+<p><span class="math display">\[
+\mathbb{R}^n = W \oplus W^{\perp}
+\]</span></p>
+<p>whenever <span class="math inline">\(W\)</span> is a subspace.</p>
+</div>
+<div id="best-approximation" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> Best approximation</h3>
+
+<div class="theorem">
+<p><span id="thm:best-approximation" class="theorem"><strong>Theorem 3.3  (The Best Approximation)  </strong></span>Given <span class="math inline">\(\boldsymbol{y}\)</span> be any vector in <span class="math inline">\(\mathbb{R^n}\)</span>, with its subspace <span class="math inline">\(W\)</span>, let <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> be the orthogonal projection of <span class="math inline">\(\boldsymbol{y}\)</span> onto <span class="math inline">\(W\)</span>. Then <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> is the closest point in <span class="math inline">\(W\)</span> to <span class="math inline">\(\boldsymbol{y}\)</span> in the sense that</p>
 <span class="math display">\[
 ||\boldsymbol{y} - \hat{\boldsymbol{y}}|| \le ||\boldsymbol{y} - \boldsymbol{v}||
 \]</span>
@@ -238,10 +324,10 @@ c_i = \frac{\boldsymbol{y} \cdot \boldsymbol{u}_i}{\boldsymbol{u}_i \cdot \bolds
 
 <p><strong>PROOF</strong></p>
 <p>Take <span class="math inline">\(\boldsymbol{v}\)</span> distinct from <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> in <span class="math inline">\(W\)</span>, we know that <span class="math inline">\(\boldsymbol{y} - \hat{\boldsymbol{y}}\)</span> is perpendicular to <span class="math inline">\(\boldsymbol{v}\)</span>. According to Pythoagorean theorem, we have</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]" width="120%" />
 <p class="caption">
-Figure 4.1: figure from page p352, ch6 <span class="citation">(Lay <a href="references.html#ref-lay2006-3" role="doc-biblioref">2006</a>)</span>
+Figure 3.1: figure from page p352, ch6 <span class="citation">(Lay <a href="references.html#ref-lay2006-3" role="doc-biblioref">2006</a>)</span>
 </p>
 </div>
 <p><span class="math display">\[
@@ -251,11 +337,11 @@ When <span class="math inline">\(\boldsymbol{v}\)</span> is distinct from <span 
 </div>
 </div>
 <div id="gram-schmidt-process" class="section level2">
-<h2><span class="header-section-number">4.2</span> Gram-Schmidt process</h2>
-<p>Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of <span class="math inline">\(\boldsymbol{x}_{i}\)</span> onto the space spanned by the previously created orthogonal set <span class="math inline">\(\{\boldsymbol{v}_{1}, ..., \boldsymbol{v}_{i-1}\}\)</span>, and take the term in the orthogonal compliment to be <span class="math inline">\(\boldsymbol{v}_{i+1}\)</span></p>
+<h2><span class="header-section-number">3.3</span> Gram-Schmidt process</h2>
+<p>Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of <span class="math inline">\(\boldsymbol{x}_{i}\)</span> onto the space spanned by the previously created orthogonal set <span class="math inline">\(\{\boldsymbol{v}_{1}, ..., \boldsymbol{v}_{i-1}\}\)</span>, and take the term in the orthogonal compliment to be <span class="math inline">\(\boldsymbol{v}_{i}\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:gram-schmidt" class="theorem"><strong>Theorem 4.2  (the Gram-Schmidt process)  </strong></span>Given a basis <span class="math inline">\(\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\}\)</span> for a nonzero subspace <span class="math inline">\(W\)</span> of <span class="math inline">\(\mathbb{R}^n\)</span>, define</p>
+<p><span id="thm:gram-schmidt" class="theorem"><strong>Theorem 3.4  (the Gram-Schmidt process)  </strong></span>Given a basis <span class="math inline">\(\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\}\)</span> for a nonzero subspace <span class="math inline">\(W\)</span> of <span class="math inline">\(\mathbb{R}^n\)</span>, define</p>
 <p><span class="math display">\[
 \begin{aligned}
 \boldsymbol{v}_1 &amp;= \boldsymbol{x}_1 \\
@@ -283,18 +369,44 @@ When <span class="math inline">\(\boldsymbol{v}\)</span> is distinct from <span 
 \{\frac{\boldsymbol{v}_i}{||\boldsymbol{v}_i||}, \;i = 1, ... p\} 
 \]</span></p>
 <div id="qr-factorizaiton" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> QR factorizaiton</h3>
-<p>For <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span></p>
+<h3><span class="header-section-number">3.3.1</span> QR factorizaiton</h3>
+<p>For <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> with linearly independent columns <span class="math inline">\(\boldsymbol{x}_1, ..., \boldsymbol{x}_n\)</span>, apply the Gram-Schmidt process to <span class="math inline">\(\boldsymbol{x}_1, ..., \boldsymbol{x}_n\)</span> amounts to <em>factorizing</em> <span class="math inline">\(A\)</span>.</p>
+
+<div class="theorem">
+<span id="thm:qr" class="theorem"><strong>Theorem 3.5  (QR factorization)  </strong></span>if <span class="math inline">\(A\)</span> is an <span class="math inline">\(m \times n\)</span> matrix with full column rank, then <span class="math inline">\(A\)</span> can be factored as <span class="math inline">\(A = QR\)</span>, where <span class="math inline">\(Q\)</span> is an <span class="math inline">\(m \times n\)</span> matrix whose columns form an orthonormal basis of <span class="math inline">\(\text{Col}\;A\)</span> and <span class="math inline">\(R\)</span> is an <span class="math inline">\(n \times n\)</span> upper triangular invertible matrix with positive entries on its diagonal.
+</div>
+
+<p><strong>PROOF</strong></p>
+<p>Because <span class="math inline">\(A_{m \times n}\)</span> is full column rank, we can transform its column vector <span class="math inline">\(\{\boldsymbol{x}_{1}, ..., \boldsymbol{x}_{n}\}\)</span> into a new set of orthonormal basis <span class="math inline">\(\{\boldsymbol{u}_{1}, ..., \boldsymbol{u}_{n}\}\)</span> with Gram-Schmidt process. Let</p>
+<p><span class="math display">\[
+Q = [\boldsymbol{u}_{1} \;\; \cdots \;\; \boldsymbol{u}_{n}]
+\]</span>
+For <span class="math inline">\(\boldsymbol{x}_i, \; i = {1, ..., n}\)</span> in Span<span class="math inline">\(\{\boldsymbol{x}_1, ... \boldsymbol{x}_k\}\)</span>, there exists a set of constant <span class="math inline">\(r_{1k}, ..., r_{kk}\)</span> such that<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p><span class="math display">\[
+\boldsymbol{x}_k = r_{1k}\boldsymbol{u}_{1} + \cdots + r_{kk}\boldsymbol{u}_{k} + 0 \cdot\boldsymbol{u}_{k+1} + \cdots + 0 \cdot \boldsymbol{u}_{n}
+\]</span></p>
+<p>So</p>
+<p><span class="math display">\[
+A = [\boldsymbol{x}_{1} \;\; \boldsymbol{x}_{2} \;\; \cdots \;\; \boldsymbol{x}_{n}] = [\boldsymbol{u}_{1} \;\; \boldsymbol{u}_{2} \;\; \cdots \;\; \boldsymbol{u}_{n}] 
+\begin{bmatrix}
+r_{11} &amp; r_{12} &amp; \cdots &amp; r_{1n} \\
+0 &amp; r_{22} &amp; \cdots &amp; r_{2n} \\
+\vdots &amp; \vdots &amp; &amp; \vdots\\
+0 &amp; 0 &amp; \cdots &amp; r_{nn}
+\end{bmatrix} 
+= QR
+\]</span>
+We could assume that <span class="math inline">\(r_{kk} \ge 0\)</span>. (if <span class="math inline">\(r_{kk} &lt; 0\)</span>, multiply both <span class="math inline">\(r_{kk}\)</span> and <span class="math inline">\(\boldsymbol{u}_k\)</span> by <span class="math inline">\(-1\)</span>)</p>
 </div>
 </div>
 <div id="orthonormal-sets-and-orthogonal-matrices" class="section level2">
-<h2><span class="header-section-number">4.3</span> Orthonormal sets and orthogonal matrices</h2>
-<p>An orthogonal set whose components are all unit vectors are said to be <strong>orthonormal</strong> sets.</p>
+<h2><span class="header-section-number">3.4</span> Orthonormal sets and orthogonal matrices</h2>
+<p>An orthogonal set whose components are all unit vectors is said to be <strong>orthonormal</strong> sets.</p>
 <div id="orthogonal-matrices" class="section level3">
-<h3><span class="header-section-number">4.3.1</span> Orthogonal matrices</h3>
+<h3><span class="header-section-number">3.4.1</span> Orthogonal matrices</h3>
 <p>An <em>orthogonal matrix</em> is a square matrix <span class="math inline">\(Q\)</span> whose inverse is its transpose:</p>
 <p><span class="math display" id="eq:orthogonal-matrix">\[
-\tag{4.1}
+\tag{3.1}
 QQ^T = Q^TQ = I
 \]</span></p>
 <p>Another way of defining it is that an orthogonal matrix has both <strong>orthonormal columns</strong> and <strong>orthonormal rows</strong>.</p>
@@ -312,13 +424,19 @@ QQ^T = Q^TQ = I
 </div>
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>because Span<span class="math inline">\(\{\boldsymbol{x}_1, ... \boldsymbol{x}_k\}\)</span> is the same as Span<span class="math inline">\(\{\boldsymbol{u}_1, ... \boldsymbol{u}_k\}\)</span><a href="orthogonality.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="eigenthings-and-quadratic-forms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="matrix-calculus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="vector-spaces.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="eigenthings-and-quadratic-forms.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

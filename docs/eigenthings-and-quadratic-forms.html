@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 3 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning" />
+  <title>Chapter 4 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 4 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 4 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 4 Eigenthings and quadratic forms | Mathematical Notes for Machine Learning" />
   
   
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-19" />
+<meta name="date" content="2020-07-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="vector-spaces.html"/>
-<link rel="next" href="orthogonality.html"/>
+<link rel="prev" href="orthogonality.html"/>
+<link rel="next" href="matrix-calculus.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -92,25 +92,30 @@
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector spaces</a><ul>
 <li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#four-subspaces"><i class="fa fa-check"></i><b>2.1</b> Four subspaces</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>3</b> Eigenthings and quadratic forms</a><ul>
-<li class="chapter" data-level="3.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>3.1</b> Eigenvectors and eigenvalues</a></li>
-<li class="chapter" data-level="3.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>3.2</b> Diagnolization and similar matrices</a></li>
-<li class="chapter" data-level="3.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>3.3</b> Symmetric matrices</a></li>
-<li class="chapter" data-level="3.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>3.4</b> SVD</a></li>
+<li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
+<li class="chapter" data-level="3.1" data-path="orthogonality.html"><a href="orthogonality.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>3.1</b> Metric spaces, normed spaces, inner product spaces</a></li>
+<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>3.2</b> Orthogonal decomposition</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-complements"><i class="fa fa-check"></i><b>3.2.1</b> Orthogonal complements</a></li>
+<li class="chapter" data-level="3.2.2" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-sets-and-orthogonal-basis"><i class="fa fa-check"></i><b>3.2.2</b> Orthogonal sets and orthogonal basis</a></li>
+<li class="chapter" data-level="3.2.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>3.2.3</b> Orthogonal decomposition</a></li>
+<li class="chapter" data-level="3.2.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.2.4</b> Best approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>4</b> Orthogonality</a><ul>
-<li class="chapter" data-level="4.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>4.1</b> Orthogonal decomposition</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-complements"><i class="fa fa-check"></i><b>4.1.1</b> Orthogonal complements</a></li>
-<li class="chapter" data-level="4.1.2" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-sets-and-orthogonal-basis"><i class="fa fa-check"></i><b>4.1.2</b> Orthogonal sets and orthogonal basis</a></li>
-<li class="chapter" data-level="4.1.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>4.1.3</b> Orthogonal decomposition</a></li>
-<li class="chapter" data-level="4.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>4.1.4</b> Best approximation</a></li>
+<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt process</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR factorizaiton</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>4.2</b> Gram-Schmidt process</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>4.2.1</b> QR factorizaiton</a></li>
+<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.4</b> Orthonormal sets and orthogonal matrices</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.4.1</b> Orthogonal matrices</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>4.3</b> Orthonormal sets and orthogonal matrices</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>4.3.1</b> Orthogonal matrices</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and quadratic forms</a><ul>
+<li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and eigenvalues</a></li>
+<li class="chapter" data-level="4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>4.2</b> Diagnolization and similar matrices</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#similarity"><i class="fa fa-check"></i><b>4.2.1</b> similarity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.3</b> Symmetric matrices</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#spectral-decomposition"><i class="fa fa-check"></i><b>4.3.1</b> Spectral decomposition</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.4</b> SVD</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -145,12 +150,12 @@
 
             <section class="normal" id="section-">
 <div id="eigenthings-and-quadratic-forms" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Eigenthings and quadratic forms</h1>
+<h1><span class="header-section-number">Chapter 4</span> Eigenthings and quadratic forms</h1>
 <div id="eigenvectors-and-eigenvalues" class="section level2">
-<h2><span class="header-section-number">3.1</span> Eigenvectors and eigenvalues</h2>
+<h2><span class="header-section-number">4.1</span> Eigenvectors and eigenvalues</h2>
 
 <div class="definition">
-<p><span id="def:eigen" class="definition"><strong>Definition 3.1  (Eigenvectors and eigenvalues)  </strong></span>An <strong>eigenvector</strong> of an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is a <em>nonzero</em> vector <span class="math inline">\(\boldsymbol{x}\)</span> such that <span class="math inline">\(A\boldsymbol{x} = \lambda\boldsymbol{x}\)</span>.</p>
+<p><span id="def:eigen" class="definition"><strong>Definition 4.1  (Eigenvectors and eigenvalues)  </strong></span>An <strong>eigenvector</strong> of an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is a <em>nonzero</em> vector <span class="math inline">\(\boldsymbol{x}\)</span> such that <span class="math inline">\(A\boldsymbol{x} = \lambda\boldsymbol{x}\)</span>.</p>
 <span class="math inline">\(\lambda\)</span> is the <strong>eigenvalue</strong> of <span class="math inline">\(A\)</span> if there is a nontrivial solution <span class="math inline">\(\boldsymbol{x}\)</span> of <span class="math inline">\(A\boldsymbol{x} = \lambda \boldsymbol{x}\)</span>; such an <span class="math inline">\(\boldsymbol{x}\)</span> is called an <em>eigenvector corresponding to <span class="math inline">\(\lambda\)</span></em>
 </div>
 
@@ -160,10 +165,10 @@
 \]</span></p>
 <p>Since eigenvector <span class="math inline">\(\boldsymbol{x}\)</span> must be nonzero, <span class="math inline">\((A - \lambda I)\)</span> is a singular matrix</p>
 <p><span class="math display" id="eq:characteristic-equation">\[\begin{equation}
-\tag{3.1}
+\tag{4.1}
 \det (A - \lambda I) = 0
 \end{equation}\]</span></p>
-<p>Eq <a href="eigenthings-and-quadratic-forms.html#eq:characteristic-equation">(3.1)</a> is called the <strong>characteristic equation</strong> of matrix <span class="math inline">\(A\)</span>. This is a scalar equation containing information about eigenvalues and eigenvectors of a square matrix <span class="math inline">\(A\)</span>.</p>
+<p>Eq <a href="eigenthings-and-quadratic-forms.html#eq:characteristic-equation">(4.1)</a> is called the <strong>characteristic equation</strong> of matrix <span class="math inline">\(A\)</span>. This is a scalar equation containing information about eigenvalues and eigenvectors of a square matrix <span class="math inline">\(A\)</span>.</p>
 
 <div class="theorem">
 <span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 1.1  </strong></span>Eigenvalues of a trangular matrix are its diagonal entries.
@@ -196,7 +201,7 @@ So the roots of characteristic are <span class="math inline">\(a_{11}, a_{22}, a
 <p>The next theorem is important in terms of diagonalization and spectral decomposition</p>
 
 <div class="theorem">
-<span id="thm:distinct-eigenvalue" class="theorem"><strong>Theorem 3.1  </strong></span>For distinct eigenvalues <span class="math inline">\(\lambda_1, \cdots, \lambda_r\)</span> of an <span class="math inline">\(n \times n\)</span> matrix A, their corresponding eigenvectors <span class="math inline">\(\boldsymbol{v_1}, ..., \boldsymbol{v_r}\)</span> are linearly independent.
+<span id="thm:distinct-eigenvalue" class="theorem"><strong>Theorem 4.1  </strong></span>For distinct eigenvalues <span class="math inline">\(\lambda_1, \cdots, \lambda_r\)</span> of an <span class="math inline">\(n \times n\)</span> matrix A, their corresponding eigenvectors <span class="math inline">\(\boldsymbol{v_1}, ..., \boldsymbol{v_r}\)</span> are linearly independent.
 </div>
 
 <p><strong>PROOF</strong></p>
@@ -212,14 +217,13 @@ Multiplying both sides of (2) by <span class="math inline">\(\lambda_{p+1}\)</sp
 <p><span class="math display">\[
 c_1(\lambda_1 - \lambda_{p+1})\boldsymbol{v}_1 +\cdots + c_p(\lambda_p - \lambda_{p+1})\boldsymbol{v}_p = 0 \tag{3}
 \]</span>
-Since <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_p\)</span> are linearly independent, weights in (3) must be all zero. Since <span class="math inline">\(\lambda_1, \cdots, \lambda_p\)</span> are distinct, hence <span class="math inline">\(c_i = 0, \, i = 1, ..., p\)</span>. But then (5) says that eigenvector <span class="math inline">\(\boldsymbol{v}_{p+1}\)</span> is zero vector, which contradicts definition <a href="eigenthings-and-quadratic-forms.html#def:eigen">3.1</a></p>
+Since <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_p\)</span> are linearly independent, weights in (3) must be all zero. Since <span class="math inline">\(\lambda_1, \cdots, \lambda_p\)</span> are distinct, hence <span class="math inline">\(c_i = 0, \, i = 1, ..., p\)</span>. But then (5) says that eigenvector <span class="math inline">\(\boldsymbol{v}_{p+1}\)</span> is zero vector, which contradicts definition <a href="eigenthings-and-quadratic-forms.html#def:eigen">4.1</a></p>
 </div>
 <div id="diagnolization-and-similar-matrices" class="section level2">
-<h2><span class="header-section-number">3.2</span> Diagnolization and similar matrices</h2>
+<h2><span class="header-section-number">4.2</span> Diagnolization and similar matrices</h2>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-2" class="definition"><strong>Definition 1.1  </strong></span><strong>Diagonalization theorem</strong></p>
-<p>An <span class="math inline">\(n \ times n\)</span> matrix <span class="math inline">\(A\)</span> is diagnolizable <strong>if and only if</strong> A has <span class="math inline">\(n\)</span> independent linearly independent eigenvectors.</p>
+<p><span id="def:diagonalization" class="definition"><strong>Definition 4.2  (Diagonalization thoerem)  </strong></span>An <span class="math inline">\(n \ times n\)</span> matrix <span class="math inline">\(A\)</span> is diagnolizable <strong>if and only if</strong> A has <span class="math inline">\(n\)</span> independent linearly independent eigenvectors.</p>
 <p>In such case, in <span class="math inline">\(A = PDP^{-1}\)</span>, the diagonal entries of <span class="math inline">\(D\)</span> are eigenvalues that correpond, respectively, to the eigenvectors of in <span class="math inline">\(P\)</span></p>
 In other words, <span class="math inline">\(A\)</span> is diagnolizable if and only if there are enough eigenvectors in form a basis of <span class="math inline">\(R^n\)</span>, called an <strong>eigenvector basis</strong> of <span class="math inline">\(R^n\)</span>
 </div>
@@ -255,18 +259,113 @@ A &amp;= PDP^{-1}
 \end{aligned}
 \]</span>
 Because <span class="math inline">\(P\)</span> contains <span class="math inline">\(n\)</span> independent columns so it’s invertible.</p>
-<p>According to theorem <a href="eigenthings-and-quadratic-forms.html#thm:distinct-eigenvalue">3.1</a>, an <span class="math inline">\(n \times n\)</span> matrix with <span class="math inline">\(n\)</span> distinct eigenvalues is diagonalizable. This is a sufficient condition.</p>
+<p>According to theorem <a href="eigenthings-and-quadratic-forms.html#thm:distinct-eigenvalue">4.1</a>, an <span class="math inline">\(n \times n\)</span> matrix with <span class="math inline">\(n\)</span> distinct eigenvalues is diagonalizable. This is a sufficient condition.</p>
 <p>For matrices whose eigenvalues are not distinct, there is still a change that it is diagonalizable. For any matrix <span class="math inline">\(A_{n\times n}\)</span>, as long as the sum of the dimensions of the eigenspaces equals <span class="math inline">\(n\)</span> then <span class="math inline">\(P\)</span> is invertible. This could happen in the following two scenarios</p>
 <ol style="list-style-type: decimal">
 <li><p>The characteristic polynomial factors completely into linear factors. This is the case when <span class="math inline">\(A\)</span> has n distinct eigenvalues.</p></li>
 <li><p>The dimension of the eigenspace for each <span class="math inline">\(\lambda_k\)</span> equals the multiplicity of <span class="math inline">\(\lambda_k\)</span>. Thus <span class="math inline">\(A\)</span> with repeated eigenvalues can still be diagonalizable.</p></li>
 </ol>
+<div id="similarity" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> similarity</h3>
+<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(N\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
+</div>
+
+<p><strong>PROOF</strong><br />
+If <span class="math inline">\(B = P^{-1}AP\)</span>, then</p>
+<p><span class="math display">\[
+B - \lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP - \lambda P) =  P^{-1}(A - \lambda I) P
+\]</span>
+so that</p>
+<p><span class="math display">\[
+\det (B - \lambda I ) = \det(P) \cdot \det(A - \lambda I ) \cdot \det(P^{-1})
+\]</span></p>
+</div>
 </div>
 <div id="symmetric-matrices" class="section level2">
-<h2><span class="header-section-number">3.3</span> Symmetric matrices</h2>
+<h2><span class="header-section-number">4.3</span> Symmetric matrices</h2>
+<p>A <em>square</em> matrix <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is <em>symmetric</em> if <span class="math inline">\(A = A^{T}\)</span>, and <em>anti-symmetric</em> if <span class="math inline">\(A = - A^{T}\)</span>.</p>
+<p>It can be shown that for any <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span>, <span class="math inline">\(A + A^T\)</span> is symmetric and <span class="math inline">\(A - A^T\)</span> anti-symmetric. So any square matrix <span class="math inline">\(A\)</span> can be wrote as a sum of a symmetric matrix and an anti-symmetric matrix</p>
+<p><span class="math display">\[
+A = \frac{1}{2}(A + A^T) + \frac{1}{2}(A - A^T)
+\]</span></p>
+<p>It is common to denote the set of all symmetric matrices of size <span class="math inline">\(n\)</span> as <span class="math inline">\(\mathbb{S}^n\)</span>, and <span class="math inline">\(A \in \mathbb{S}^n\)</span> means <span class="math inline">\(A\)</span> is a symmetric <span class="math inline">\(n \times n\)</span> matrix.</p>
+<p>Symmetric matrices have some nice properties about diagonalization.</p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 3.2  </strong></span>If <span class="math inline">\(A\)</span> is symmetric, eigenvectors from distinct eigenvalues are <strong>orthogonal</strong>.
+</div>
+
+<p><strong>PROOF</strong></p>
+<p>Let <span class="math inline">\(\boldsymbol{v}_1\)</span> and <span class="math inline">\(\boldsymbol{v}_2\)</span> be eigenvectors that correspond to distinct eigenvalues <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>. Compute</p>
+<p><span class="math display">\[
+\begin{split}
+\lambda_1\boldsymbol{v}_1 \cdot \boldsymbol{v}_2 &amp;= (\lambda_1\boldsymbol{v}_1)^T\boldsymbol{v}_2 \\
+&amp;= (\boldsymbol{v}_1^TA^T)\boldsymbol{v}_2 \\
+&amp;= \boldsymbol{v}_1^T(A\boldsymbol{v}_2) \\
+&amp;= \boldsymbol{v}_1^T(\lambda_2\boldsymbol{v}_2) \\
+&amp;= \lambda_2\boldsymbol{v}_1 \cdot \boldsymbol{v}_2
+\end{split}
+\]</span>
+because <span class="math inline">\(\lambda_1 \not = \lambda_2\)</span>, <span class="math inline">\(\boldsymbol{v}_1 \cdot \boldsymbol{v}_2 = 0\)</span>.</p>
+<p>For symmetric matrices <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> without <span class="math inline">\(n\)</span> distinct eigenvalues, it turns out that the dimension of the eigenspace for each <span class="math inline">\(\lambda_k\)</span> always equals the multiplicity of <span class="math inline">\(\lambda_k\)</span>. For this reason, if <span class="math inline">\(A\)</span> is a symmetric matrix we can always construct a orthonormal set <span class="math inline">\(\{\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n\}\)</span> from <span class="math inline">\(\{\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n\}\)</span> such that</p>
+<p><span class="math display">\[
+P^{T} = 
+\begin{bmatrix}
+\boldsymbol{q}_1^T \\
+\vdots \\ 
+\boldsymbol{q}_n^T
+\end{bmatrix}
+= P^{-1}
+\]</span>
+Recall that matrix <span class="math inline">\(A\)</span> with <span class="math inline">\(n\)</span> linearly dependent eigenvectors is diagonalizable and can be written as</p>
+<p><span class="math display">\[
+A = PDP^{-1}
+\]</span>
+where <span class="math inline">\(P = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]\)</span> and <span class="math inline">\(D\)</span> is a diagonal matrix with eigenvalues on its diagonal entries.</p>
+<p>With symmetric matrices, after proper transformation we have <span class="math inline">\(P^T = P^{-1}\)</span>, so that</p>
+<p><span class="math display" id="eq:orthogonal-diagonalization">\[\begin{equation}
+\tag{4.2}
+A = PDP^T
+\end{equation}\]</span></p>
+<p>Such matrix <span class="math inline">\(A\)</span> is said to be <strong>orthogonally diagonalizable</strong>.</p>
+<p>We have seen that for symmetric matrix <span class="math inline">\(A\)</span>, Eq <a href="eigenthings-and-quadratic-forms.html#eq:orthogonal-diagonalization">(4.2)</a> always holds. We can also also verify that if <span class="math inline">\(A\)</span> is orthogonally diagonalizable then it is a symmetric matrix</p>
+<p><span class="math display">\[
+A^T = (PDP^T)^T = PD^TP^T = PDP^T  = A
+\]</span></p>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-4" class="theorem"><strong>Theorem 1.5  </strong></span>An <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is orthogonally diagonalizable if an only if <span class="math inline">\(A\)</span> is a symmetric matrix.
+</div>
+
+<div id="spectral-decomposition" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> Spectral decomposition</h3>
+<p>For orthogonally diagonalizable matrix <span class="math inline">\(A\)</span>, we have</p>
+<p><span class="math display">\[
+A = PDP^T = [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n] 
+\begin{bmatrix}
+\lambda_1 &amp; &amp; \\
+ &amp; \ddots \\
+ &amp; &amp; \lambda_n
+\end{bmatrix}
+\begin{bmatrix}
+\boldsymbol{q}_1^T \\
+\vdots \\
+\boldsymbol{q}_n
+\end{bmatrix}
+\]</span></p>
+<p>It follows that</p>
+<p><span class="math display" id="eq:spectral-decomposition">\[\begin{equation}
+\tag{4.3}
+A = \lambda_1\boldsymbol{q}_1\boldsymbol{q}_1^T + \cdots + \lambda_1\boldsymbol{q}_n\boldsymbol{q}_n^T
+\end{equation}\]</span></p>
+<p>Eq <a href="eigenthings-and-quadratic-forms.html#eq:spectral-decomposition">(4.3)</a> is called the <strong>spectral decomposition</strong>, breaking <span class="math inline">\(A\)</span> into pieces of rank 1 matrix. It got this name because he set of eigenvalues of a matrix <span class="math inline">\(A\)</span> is sometimes called its <em>spectrum</em>.</p>
+</div>
 </div>
 <div id="svd" class="section level2">
-<h2><span class="header-section-number">3.4</span> SVD</h2>
+<h2><span class="header-section-number">4.4</span> SVD</h2>
 
 </div>
 </div>
@@ -275,8 +374,8 @@ Because <span class="math inline">\(P\)</span> contains <span class="math inline
           </div>
         </div>
       </div>
-<a href="vector-spaces.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="orthogonality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="orthogonality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="matrix-calculus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -307,7 +406,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/eigen.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/eigen-quadratic.Rmd",
 "text": "Edit"
 },
 "history": {

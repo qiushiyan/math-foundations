@@ -1,58 +1,98 @@
 
 # Orthogonality 
 
-Some definitions:  
+## Metric spaces, normed spaces, inner product spaces
 
-If $\boldsymbol{u}$ and $\boldsymbol{v}$ and both vectors in $\mathbb{\mathbb{R^n}}$, then the number $\boldsymbol{u}^T\boldsymbol{v}$ is called the **inner product** of $\boldsymbol{u}$ and $\boldsymbol{v}$, also denoted by $\langle\boldsymbol{u}, \boldsymbol{v}\rangle$ or $\boldsymbol{u} \cdot \boldsymbol{v}$.  Also, when $\boldsymbol{u}$ is perpendicular to $\boldsymbol{v}$ we have $\boldsymbol{u} \cdot \boldsymbol{v} = 0$.
 
-<br>
-**Norm** is a function from a vector space to a nonnegative scalar that satisfies certain properties. 
+Metrics generalize the notion of distance from Euclidean space. A *metric space* is a set together with a metric on the set (metric spaces don't have to be vector spaces). The metric is a function that defines a concept of distance $\in \mathbb{R}$ between any two members of the set. A metric must satisfies the following properties: 
 
-The L2 norm (most common measure of length of a vector) of $\boldsymbol{v}$ is  $||\boldsymbol{u}||$ defined by 
-
-$$
-||\boldsymbol{v}||_2 = \sqrt{v_1^2 + \cdots + v_n^2} = \sqrt{\boldsymbol{v}^T\boldsymbol{v}}
-$$
-The subscript $2$ can be left out in most cases. 
-
-Moreover, the L1 norm of $\boldsymbol{v}$ is 
-
-$$
-||\boldsymbol{v}||_1 = |v_1| + \cdots + |v_n|
-$$
-
-More generally, the Lp norm is: 
-
-$$
-||\boldsymbol{v}||_p = (\sum_{i = 1}^n{x_i^p})^{1/p}
-$$
-
-For all these definitions, it can be shown that 
-
-$$
-||c\boldsymbol{v}|| = |c| \times ||\boldsymbol{v}||
-$$
+1. $d(x, y) \ge 0$, with equality if and only if $x = y$. Distances are non-negative, and the only point at zero distance from $x$ is $x$ itself  
+2. $d(x, y) = d(y, x)$. The distance is a symmetric function. 
+3. $d(x, z) \le d(x, y) + d(y, z)$. Distance satisfies triangular inequality. 
 
 <br>
-The **Euclidean distance** between $\boldsymbol{u}$ and $\boldsymbol{v}$ is the L2 norm of the vector $\boldsymbol{u} - \boldsymbol{v}$  
+
+Norms generalize the notion of length from Euclidean space. 
+
+A **norm** on a real vector space $X$ is a function: $||\cdot||: V \rightarrow \mathbb{R}$ that satisfies: 
+
+1. $||x|| \ge 0$ for all $x \in X$, with equality if and only if $x = \boldsymbol{0}$ (nonnegative)  
+2. $||\lambda x|| = \lambda ||x||$, for all $x \in X$ and $\lambda \in \mathbb{R}$ (homogeneous)  
+3. $||x + y|| \le ||x|| + ||y||$ (triangular inequality)  
+
+**A normed space is a metric space with the metric** 
 
 $$
-\text{dist}(\boldsymbol{u}, \boldsymbol{v}) = ||\boldsymbol{u} - \boldsymbol{v}||_2
+d(\boldsymbol{x}, \boldsymbol{y}) = ||\boldsymbol{x} - \boldsymbol{y}||
 $$
+
+So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that $d(x, y) = ||x - y||$ satisfies all properties of a metric. 
+
+The most common function for norms on $\mathbb{R}^n$ are listed below, with $x = [x_1, x_2, ..., x_n]$. 
+
+$$
+\begin{aligned}
+\text{1-norm}: ||\boldsymbol{x}||_1 &= \sum_{i=1}^{n}{|x_i|} \\
+\text{2-norm}: ||\boldsymbol{x}||_2 &= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
+\text{p-norm}: ||\boldsymbol{x}||_p &= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
+\text{maximum norm}: ||\boldsymbol{x}||_{\infty} &= \max\{|x_1|, |x_2|, ..., |x_n|\}
+\end{aligned}
+$$
+1-norm is also called the Manhattan norm. 
+
+2-norm is the commonly used Euclidean distance, and the subscript $2$ can be left out in most cases. 
+
+p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $||x||_{\infty}$ is called the maximum norm. 
+
+<br>
+
+An **inner product** on a real vector space $X$ is a function $\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}$ satisfying 
+
+1. $\langle x, x \rangle \ge 0$, with equality if and only if $x = \boldsymbol{0}$   
+2. $\langle x, y \rangle = \langle y, x \rangle$
+3. $\langle x + y, z\rangle = \langle x, z\rangle + \langle y, z\rangle$ and $\langle \lambda x, y\rangle = \lambda \langle x, y \rangle$
+
+A vector sapce equipped with such inner product is called a **inner product space**. Note that **all inner product spaces are normed spaces**, because a inner product induce a norm on a vector space: 
+
+$$
+\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = ||\boldsymbol{x}||^2  
+$$
+The *standard inner product* defined on $\mathbb{R}^{n}$ is given by 
+
+$$
+\langle \boldsymbol{x}, \boldsymbol{y} \rangle = \sum_{i=1}^{n}{x_iy_i} = \boldsymbol{x}^T\boldsymbol{y}
+$$
+
+
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces.” These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.</div>\EndKnitrBlock{rmdnote}
+
+
+
 
 ## Orthogonal decomposition 
 
 
 ### Orthogonal complements
 
-if vector $\boldsymbol{v}$ is orthogonal to every vector in a subspace $W$ of $\mathbb{R^n}$, then $\boldsymbol{v}$ is said to be orthogonal to $W$. The subspace that contains the set of vectors that are orthogonal to $W$ is called the **orthogonal complement**, denoted by $W^{\perp}$. 
+if vector $\boldsymbol{v}$ is orthogonal to every vector in a subspace $W$ of $\mathbb{R^n}$, then $\boldsymbol{v}$ is said to be orthogonal to $W$. The subspace that contains the set of vectors that are orthogonal to $W$ is called the **orthogonal complement**, denoted by $W^{\perp}$.  
 
-This corresponds to discussions in \@ref(four-subspaces), where 
+$$
+W^{\perp} = \{\boldsymbol{v} \in W^{\perp} | \;\boldsymbol{v} \perp \boldsymbol{x} \; \text{for all} \; \boldsymbol{x} \in W\}
+$$
+
+This corresponds to discussions in Section \@ref(four-subspaces), where 
 
 $$
 (\text{row} A)^{\perp} = \text{Nul} A \\
 (\text{col} A)^{\perp} = \text{Nul} A^T
 $$
+<br>
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>If $W$ is a subspace of $\mathbb{R}^n$, $W^{\perp}$ is also a subspace of $\mathbb{R}^n$.</div>\EndKnitrBlock{theorem}
+
+It's easy to verify that $W^{\perp}$ is closed under scalar multiplication, and under vector addition, and that any vector in $W$ has $n$ components. So that $W^{\perp}$ is a subspace of $\mathbb{R}^n$
+
+
 
 ### Orthogonal sets and orthogonal basis
 
@@ -63,7 +103,7 @@ Since vectors in orthogonal sets is mutually perpendicular, they must also be li
 
 There is a particular advantage in using orthogonal basis rather than other basis, because we can find a easy representation of any vector in $W$.  
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-1"><strong>(\#thm:unnamed-chunk-1) </strong></span>For each $\boldsymbol{y}$ in $W$, we have the following linear combination
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>For each $\boldsymbol{y}$ in $W$, there exists a linear combination
 
 $$
 y = c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p}
@@ -97,21 +137,71 @@ Derivations for other $c_i$ is similar.
 
 ### Orthogonal decomposition
 
-**Orthogonal decomposition** split $\boldsymbol{y}$ in $\mathbb{R^n}$ into two vectors, one in $W$ and one in its orthogonal compliment $W^{\perp}$. The trick is to use $\hat{\boldsymbol{y}}$ as $\boldsymbol{y}$'s projection onto $W$, which can be represented as illustrated in \@ref(orthogonal-sets-and-orthogonal-basis), and the other term, often referred to as error term in statistics, is simply $\boldsymbol{y}- \hat{\boldsymbol{y}}$. 
+**Orthogonal decomposition** split $\boldsymbol{y}$ in $\mathbb{R^n}$ into two vectors, one in $W$ and one in its orthogonal compliment $W^{\perp}$. 
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4) </strong></span>Let $\mathbb{R}^n$ be a inner product space and $W$ and subspace of $\mathbb{R}^n$. Then every $\boldsymbol{v}$ in $W$ can be written uniquely in the form
 
 $$
-\boldsymbol{y} = \hat{\boldsymbol{y}} + \boldsymbol{z}= c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p} + \boldsymbol{z} 
+\boldsymbol{v} = \boldsymbol{v}_W + \boldsymbol{v}_{\perp}
+$$
+  
+where $\boldsymbol{v}_W \in W$ and $\boldsymbol{v}_{\perp} \in W^{\perp}$</div>\EndKnitrBlock{theorem}
+
+**PROOF** 
+
+Let $\boldsymbol{u}_1, ..., \boldsymbol{u}_m$ be a orthonormal basis for $W$, there exists linear combination according to Section \@ref(orthogonal-sets-and-orthogonal-basis) 
+
+$$
+\boldsymbol{v}_w = (\boldsymbol{v} \cdot \boldsymbol{u}_1)\boldsymbol{u}_1 + \cdots + (\boldsymbol{v} \cdot \boldsymbol{u}_m)\boldsymbol{u}_m
+$$
+and 
+
+$$
+\boldsymbol{v}_{\perp} = \boldsymbol{v} - \boldsymbol{v}_w
+$$
+It is clear that $\boldsymbol{v}_W \in W$. And we can also show that $\boldsymbol{v}_{\perp}$ is perpendicular to $W$ 
+
+$$
+\begin{split}
+\boldsymbol{v}_{\perp} \cdot \boldsymbol{u}_i &= [\boldsymbol{v}- (\boldsymbol{v} \cdot \boldsymbol{u}_1)\boldsymbol{u}_1 - \cdots - (\boldsymbol{v} \cdot \boldsymbol{u}_m)\boldsymbol{u}_m] \cdot \boldsymbol{u}_i \\
+&= (\boldsymbol{v} \cdot \boldsymbol{u}_1) - [(\boldsymbol{v} \cdot \boldsymbol{u}_i)\boldsymbol{u}_i \cdot \boldsymbol{u}_i] \\
+&= 0
+\end{split}
 $$
 
-Where 
+which implies $\boldsymbol{v}_{\perp} \in W^{\perp}$. 
+
+To prove that $\boldsymbol{v}_w$ and $\boldsymbol{v}_{\perp}$ are unique (does not depend on the choice of basis), let $\boldsymbol{u}_1', ..., \boldsymbol{u}_m'$ be another orthonormal basis for $W$, and define $\boldsymbol{v}_w'$ and $\boldsymbol{v}_{\perp}'$ similarly we want to get $\boldsymbol{v}_w' = \boldsymbol{v}_w$ and $\boldsymbol{v}_{\perp}' = \boldsymbol{v}_{\perp}$. 
+
+By definition 
 
 $$
-c_i = \frac{\boldsymbol{y} \cdot \boldsymbol{u}_i}{\boldsymbol{u}_i \cdot \boldsymbol{u}_i}\boldsymbol{u}_i \quad i = 1, \cdots, p 
+\boldsymbol{v}_w + \boldsymbol{v}_{\perp} = \boldsymbol{v} = \boldsymbol{v}_w' + \boldsymbol{v}_{\perp}' 
 $$
+
+so 
+
+$$
+\underbrace{\boldsymbol{v}_w - \boldsymbol{v}_w'}_{\in W} = \underbrace{\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}}_{\in W^{\perp}}
+$$
+From the orthogonality of these subspaces, we have 
+
+$$
+0 = (\boldsymbol{v}_w - \boldsymbol{v}_w') \cdot (\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}) = (\boldsymbol{v}_w - \boldsymbol{v}_w') \cdot (\boldsymbol{v}_w - \boldsymbol{v}_w') = ||\boldsymbol{v}_w - \boldsymbol{v}_w'||^2
+$$
+Similarly we have $||\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}||^2 = 0$. 
+
+The existence and uniqueness of the decomposition above mean that 
+
+$$
+\mathbb{R}^n = W \oplus W^{\perp}
+$$
+
+whenever $W$ is a subspace. 
 
 ### Best approximation 
 
-\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-66-101-115-116-32-65-112-112-114-111-120-105-109-97-116-105-111-110-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:best-approximation"><strong>(\#thm:best-approximation)  \iffalse (The Best Approximation Theorem) \fi{} </strong></span>Given $\boldsymbol{y}$ be any vector in $\mathbb{R^n}$, with its subspace $W$, let $\hat{\boldsymbol{y}}$ be the orthogonal projection of $\boldsymbol{y}$ onto $W$. Then $\hat{\boldsymbol{y}}$ is the closest point in $W$ to $\boldsymbol{y}$ in the sense that 
+\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-66-101-115-116-32-65-112-112-114-111-120-105-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:best-approximation"><strong>(\#thm:best-approximation)  \iffalse (The Best Approximation) \fi{} </strong></span>Given $\boldsymbol{y}$ be any vector in $\mathbb{R^n}$, with its subspace $W$, let $\hat{\boldsymbol{y}}$ be the orthogonal projection of $\boldsymbol{y}$ onto $W$. Then $\hat{\boldsymbol{y}}$ is the closest point in $W$ to $\boldsymbol{y}$ in the sense that 
 
 $$
 ||\boldsymbol{y} - \hat{\boldsymbol{y}}|| \le ||\boldsymbol{y} - \boldsymbol{v}||
@@ -123,7 +213,7 @@ Take $\boldsymbol{v}$ distinct from $\hat{\boldsymbol{y}}$ in $W$, we know that 
 
 <div class="figure" style="text-align: center">
 <img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]" width="120%" />
-<p class="caption">(\#fig:unnamed-chunk-2)figure from page p352, ch6 [@lay2006-3]</p>
+<p class="caption">(\#fig:unnamed-chunk-5)figure from page p352, ch6 [@lay2006-3]</p>
 </div>
 
 $$
@@ -135,7 +225,7 @@ When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $||\boldsymbol{\h
 
 ## Gram-Schmidt process
 
-Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of $\boldsymbol{x}_{i}$ onto the space spanned by the previously created orthogonal set $\{\boldsymbol{v}_{1}, ..., \boldsymbol{v}_{i-1}\}$, and take the term in the orthogonal compliment to be $\boldsymbol{v}_{i+1}$   
+Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of $\boldsymbol{x}_{i}$ onto the space spanned by the previously created orthogonal set $\{\boldsymbol{v}_{1}, ..., \boldsymbol{v}_{i-1}\}$, and take the term in the orthogonal compliment to be $\boldsymbol{v}_{i}$. 
 
 \BeginKnitrBlock{theorem}\iffalse{-91-116-104-101-32-71-114-97-109-45-83-99-104-109-105-100-116-32-112-114-111-99-101-115-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:gram-schmidt"><strong>(\#thm:gram-schmidt)  \iffalse (the Gram-Schmidt process) \fi{} </strong></span>Given a basis $\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\}$ for a nonzero subspace $W$ of $\mathbb{R}^n$, define 
 
@@ -171,13 +261,40 @@ $$
 
 ### QR factorizaiton 
 
-For $A \in \mathbb{R}^{m \times n}$
+For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\boldsymbol{x}_1, ..., \boldsymbol{x}_n$, apply the Gram-Schmidt process to $\boldsymbol{x}_1, ..., \boldsymbol{x}_n$ amounts to *factorizing* $A$. 
+ 
+\BeginKnitrBlock{theorem}\iffalse{-91-81-82-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:qr"><strong>(\#thm:qr)  \iffalse (QR factorization) \fi{} </strong></span>if $A$ is an $m \times n$ matrix with full column rank, then $A$ can be factored as $A = QR$, where $Q$ is an $m \times n$ matrix whose columns form an orthonormal basis of $\text{Col}\;A$ and $R$ is an $n \times n$ upper triangular invertible matrix with positive entries on its diagonal. </div>\EndKnitrBlock{theorem}
 
+**PROOF**  
 
+Because $A_{m \times n}$ is full column rank, we can transform its column vector $\{\boldsymbol{x}_{1}, ..., \boldsymbol{x}_{n}\}$ into a new set of orthonormal basis $\{\boldsymbol{u}_{1}, ..., \boldsymbol{u}_{n}\}$ with Gram-Schmidt process. Let 
+
+$$
+Q = [\boldsymbol{u}_{1} \;\; \cdots \;\; \boldsymbol{u}_{n}]
+$$
+For $\boldsymbol{x}_i, \; i = {1, ..., n}$ in Span$\{\boldsymbol{x}_1, ... \boldsymbol{x}_k\}$, there exists a set of constant $r_{1k}, ..., r_{kk}$ such that ^[because Span$\{\boldsymbol{x}_1, ... \boldsymbol{x}_k\}$ is the same as Span$\{\boldsymbol{u}_1, ... \boldsymbol{u}_k\}$] 
+
+$$
+\boldsymbol{x}_k = r_{1k}\boldsymbol{u}_{1} + \cdots + r_{kk}\boldsymbol{u}_{k} + 0 \cdot\boldsymbol{u}_{k+1} + \cdots + 0 \cdot \boldsymbol{u}_{n}
+$$
+
+So 
+
+$$
+A = [\boldsymbol{x}_{1} \;\; \boldsymbol{x}_{2} \;\; \cdots \;\; \boldsymbol{x}_{n}] = [\boldsymbol{u}_{1} \;\; \boldsymbol{u}_{2} \;\; \cdots \;\; \boldsymbol{u}_{n}] 
+\begin{bmatrix}
+r_{11} & r_{12} & \cdots & r_{1n} \\
+0 & r_{22} & \cdots & r_{2n} \\
+\vdots & \vdots & & \vdots\\
+0 & 0 & \cdots & r_{nn}
+\end{bmatrix} 
+= QR
+$$
+We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ and $\boldsymbol{u}_k$ by $-1$)
 
 ## Orthonormal sets and orthogonal matrices
 
-An orthogonal set whose components are all unit vectors are said to be **orthonormal** sets. 
+An orthogonal set whose components are all unit vectors is said to be **orthonormal** sets. 
 
 ### Orthogonal matrices  
 
