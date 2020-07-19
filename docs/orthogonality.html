@@ -105,8 +105,11 @@
 <li class="chapter" data-level="4.1.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>4.1.3</b> Orthogonal decomposition</a></li>
 <li class="chapter" data-level="4.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>4.1.4</b> Best approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>4.2</b> Orthonormal sets and orthogonal matrices</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>4.2.1</b> Orthogonal matrices</a></li>
+<li class="chapter" data-level="4.2" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>4.2</b> Gram-Schmidt process</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>4.2.1</b> QR factorizaiton</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>4.3</b> Orthonormal sets and orthogonal matrices</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>4.3.1</b> Orthogonal matrices</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
@@ -247,11 +250,48 @@ Figure 4.1: figure from page p352, ch6 <span class="citation">(Lay <a href="refe
 When <span class="math inline">\(\boldsymbol{v}\)</span> is distinct from <span class="math inline">\(\boldsymbol{\hat{y}}\)</span>, <span class="math inline">\(||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2\)</span> is non-negative, so the error term of choosing <span class="math inline">\(\boldsymbol{v}\)</span> is always larger than that of the orthogonal projection <span class="math inline">\(\boldsymbol{\hat{y}}\)</span>.</p>
 </div>
 </div>
+<div id="gram-schmidt-process" class="section level2">
+<h2><span class="header-section-number">4.2</span> Gram-Schmidt process</h2>
+<p>Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of <span class="math inline">\(\boldsymbol{x}_{i}\)</span> onto the space spanned by the previously created orthogonal set <span class="math inline">\(\{\boldsymbol{v}_{1}, ..., \boldsymbol{v}_{i-1}\}\)</span>, and take the term in the orthogonal compliment to be <span class="math inline">\(\boldsymbol{v}_{i+1}\)</span></p>
+
+<div class="theorem">
+<p><span id="thm:gram-schmidt" class="theorem"><strong>Theorem 4.2  (the Gram-Schmidt process)  </strong></span>Given a basis <span class="math inline">\(\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\}\)</span> for a nonzero subspace <span class="math inline">\(W\)</span> of <span class="math inline">\(\mathbb{R}^n\)</span>, define</p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{v}_1 &amp;= \boldsymbol{x}_1 \\
+\boldsymbol{v}_2 &amp;= \boldsymbol{x}_2 - \frac{\boldsymbol{x}_2 \cdot \boldsymbol{v}_1}{\boldsymbol{v}_1 \cdot \boldsymbol{v}_1}\boldsymbol{v}_1 \\
+\boldsymbol{v}_3 &amp;= \boldsymbol{x}_3 
+- \frac{\boldsymbol{x}_3 \cdot \boldsymbol{v}_1}{\boldsymbol{v}_1 \cdot \boldsymbol{v}_1}\boldsymbol{v}_1 
+- \frac{\boldsymbol{x}_3 \cdot \boldsymbol{v}_2}{\boldsymbol{v}_2 \cdot \boldsymbol{v}_2}\boldsymbol{v}_2
+\\
+&amp; \vdots \\
+\boldsymbol{v}_p &amp;= \boldsymbol{x}_p 
+- \frac{\boldsymbol{x}_p \cdot \boldsymbol{v}_1}{\boldsymbol{v}_1 \cdot \boldsymbol{v}_1}\boldsymbol{v}_1 
+- \frac{\boldsymbol{x}_p \cdot \boldsymbol{v}_2}{\boldsymbol{v}_2 \cdot \boldsymbol{v}_2}\boldsymbol{v}_2
+- \cdots
+- \frac{\boldsymbol{x}_p \cdot \boldsymbol{v}_{p-1}}{\boldsymbol{v}_{p-1} \cdot \boldsymbol{v}_{p-1}}\boldsymbol{v}_{p-1}
+\end{aligned}
+\]</span></p>
+<p>Then <span class="math inline">\(\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\}\)</span> is an orthogonal basis for <span class="math inline">\(W\)</span>. In addition</p>
+<span class="math display">\[
+\text{Span}\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\} = \text{Span}\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\} 
+\]</span>
+</div>
+
+<p>To make <span class="math inline">\(\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\}\)</span> an <em>orthonormal</em> basis, there is simply one more step of normalization</p>
+<p><span class="math display">\[
+\{\frac{\boldsymbol{v}_i}{||\boldsymbol{v}_i||}, \;i = 1, ... p\} 
+\]</span></p>
+<div id="qr-factorizaiton" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> QR factorizaiton</h3>
+<p>For <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span></p>
+</div>
+</div>
 <div id="orthonormal-sets-and-orthogonal-matrices" class="section level2">
-<h2><span class="header-section-number">4.2</span> Orthonormal sets and orthogonal matrices</h2>
+<h2><span class="header-section-number">4.3</span> Orthonormal sets and orthogonal matrices</h2>
 <p>An orthogonal set whose components are all unit vectors are said to be <strong>orthonormal</strong> sets.</p>
 <div id="orthogonal-matrices" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> Orthogonal matrices</h3>
+<h3><span class="header-section-number">4.3.1</span> Orthogonal matrices</h3>
 <p>An <em>orthogonal matrix</em> is a square matrix <span class="math inline">\(Q\)</span> whose inverse is its transpose:</p>
 <p><span class="math display" id="eq:orthogonal-matrix">\[
 \tag{4.1}

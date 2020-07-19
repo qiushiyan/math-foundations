@@ -129,7 +129,51 @@ Take $\boldsymbol{v}$ distinct from $\hat{\boldsymbol{y}}$ in $W$, we know that 
 $$
 ||\boldsymbol{y}-  \boldsymbol{v}||^2 = ||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2 + ||\boldsymbol{y} -\boldsymbol{\hat{y}}||^2 
 $$
-When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2$ is non-negative, so the error term of choosing $\boldsymbol{v}$ is always larger than that of the orthogonal projection $\boldsymbol{\hat{y}}$.
+When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2$ is non-negative, so the error term of choosing $\boldsymbol{v}$ is always larger than that of the orthogonal projection $\boldsymbol{\hat{y}}$.  
+
+
+
+## Gram-Schmidt process
+
+Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of $\boldsymbol{x}_{i}$ onto the space spanned by the previously created orthogonal set $\{\boldsymbol{v}_{1}, ..., \boldsymbol{v}_{i-1}\}$, and take the term in the orthogonal compliment to be $\boldsymbol{v}_{i+1}$   
+
+\BeginKnitrBlock{theorem}\iffalse{-91-116-104-101-32-71-114-97-109-45-83-99-104-109-105-100-116-32-112-114-111-99-101-115-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:gram-schmidt"><strong>(\#thm:gram-schmidt)  \iffalse (the Gram-Schmidt process) \fi{} </strong></span>Given a basis $\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\}$ for a nonzero subspace $W$ of $\mathbb{R}^n$, define 
+
+$$
+\begin{aligned}
+\boldsymbol{v}_1 &= \boldsymbol{x}_1 \\
+\boldsymbol{v}_2 &= \boldsymbol{x}_2 - \frac{\boldsymbol{x}_2 \cdot \boldsymbol{v}_1}{\boldsymbol{v}_1 \cdot \boldsymbol{v}_1}\boldsymbol{v}_1 \\
+\boldsymbol{v}_3 &= \boldsymbol{x}_3 
+- \frac{\boldsymbol{x}_3 \cdot \boldsymbol{v}_1}{\boldsymbol{v}_1 \cdot \boldsymbol{v}_1}\boldsymbol{v}_1 
+- \frac{\boldsymbol{x}_3 \cdot \boldsymbol{v}_2}{\boldsymbol{v}_2 \cdot \boldsymbol{v}_2}\boldsymbol{v}_2
+\\
+& \vdots \\
+\boldsymbol{v}_p &= \boldsymbol{x}_p 
+- \frac{\boldsymbol{x}_p \cdot \boldsymbol{v}_1}{\boldsymbol{v}_1 \cdot \boldsymbol{v}_1}\boldsymbol{v}_1 
+- \frac{\boldsymbol{x}_p \cdot \boldsymbol{v}_2}{\boldsymbol{v}_2 \cdot \boldsymbol{v}_2}\boldsymbol{v}_2
+- \cdots
+- \frac{\boldsymbol{x}_p \cdot \boldsymbol{v}_{p-1}}{\boldsymbol{v}_{p-1} \cdot \boldsymbol{v}_{p-1}}\boldsymbol{v}_{p-1}
+\end{aligned}
+$$
+  
+Then $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\}$ is an orthogonal basis for $W$. In addition 
+
+$$
+\text{Span}\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\} = \text{Span}\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\} 
+$$</div>\EndKnitrBlock{theorem}
+
+To make $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\}$ an *orthonormal* basis, there is simply one more step of normalization 
+
+$$
+\{\frac{\boldsymbol{v}_i}{||\boldsymbol{v}_i||}, \;i = 1, ... p\} 
+$$
+
+
+### QR factorizaiton 
+
+For $A \in \mathbb{R}^{m \times n}$
+
+
 
 ## Orthonormal sets and orthogonal matrices
 
