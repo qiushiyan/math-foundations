@@ -140,7 +140,10 @@ For matrices whose eigenvalues are not distinct, there is still a change that it
 
 ### similarity
 
-If $A$ and $B$ are $n \times n$ matrices, then $A$ **is similar to** $N$ if there is an invertible matrix $P$ such that $P^{-1}AP = B$, or equivalently if we write $Q$ for $P^{-1}$, $Q^{-1}BQ = A$. Changing $A$ into $P^{-1}AP$ is called a **similarity transformation**. 
+If $A$ and $B$ are both $n \times n$ matrices, then $A$ **is similar to** $N$ if there is an invertible matrix $P$ such that $P^{-1}AP = B$, or equivalently if we write $Q$ for $P^{-1}$, $Q^{-1}BQ = A$. Changing $A$ into $P^{-1}AP$ is called a **similarity transformation**.  
+
+
+
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>If $A$ and $B$ are similar, they have the same eigenvalues. </div>\EndKnitrBlock{theorem}
 
@@ -155,7 +158,129 @@ so that
 $$
 \det (B - \lambda I ) = \det(P) \cdot \det(A - \lambda I ) \cdot \det(P^{-1})
 $$
+since $\det(P) \cdot \det(P^{-1}) = \det (I) = 1$, we have 
 
+$$
+\det (B - \lambda I)  = \det(A - \lambda I)
+$$
+
+As a result of their identical characteristic polynomial, $B$ and $A$ have the same eigenvalues. We can also show that eigenvector of $B$ is $P\boldsymbol{v}$:
+
+$$
+\begin{aligned}
+A\boldsymbol{v} &= \lambda\boldsymbol{v} \\
+(P^{-1}BP)\boldsymbol{v} &= \lambda\boldsymbol{v} \\
+P(P^{-1}BP)\boldsymbol{v} &= \lambda P\boldsymbol{v} \\
+B(P\boldsymbol{v}) = \lambda P \boldsymbol{v}
+\end{aligned}
+$$
+
+
+
+The similarity theorem leads to a interesting proposition. 
+
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-3"><strong>(\#prp:unnamed-chunk-3) </strong></span>For $A, B \in \mathbb{R}^{n \times n}$, $AB$ and $BA$ are similar matrices and therefore share the same set of eigenvalues.  </div>\EndKnitrBlock{proposition}
+
+To prove this, we need to show that there exists a invertible matrix $A$ such that $P^{-1}(AB)P = BA$. Take $P = A$ and the equation holds.  
+
+It is easy to show that similarity is **transitive**: if $A$ is similar to $B$, $B$ is similar to $C$, then $A$ is similar to $C$. So similarity means a family of matrices with the same set of eigenvalues, the most special and simplest of which is the diagonal matrix (if this is an diagonalizable family). Some computer algorithms calculate eigenvalues of $A$ in this manner: with a sequential choices of $P$, the off-diagonal elements of $A$ become smaller and smaller until $A$ becomes a triangular matrix or diagonal matrix, whose eigenvalues are simply diagonal entries and is the same as $A$.
+
+
+It is obvious that a diagonalizable matrix $A$ is similar to diagonal matrix $D$, whose diagonal entries are $A$'s eigenvalues $\lambda_i$, and $P = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]^{-1}$ where $\boldsymbol{v}_i, \;i = 1,..., n$ are eigenvectors corresponding to $\lambda_i$. 
+
+But square matrix $A$ can still be similar to matrices other than $D$ with other choices of $P$, and non-diagonal matrices can also have similar matrices of their own. In fact, **every square matrix is similar to a matrix in Jordan matrix** \@ref(jordan-matrix). 
+
+
+<hr>
+
+Similarity is only a *sufficient* condition for identical eigenvalues. The matrices 
+
+$$
+\begin{bmatrix}
+2 & 1 \\
+0 & 2 
+\end{bmatrix}
+\;\text{and}\;
+\begin{bmatrix}
+2 & 0 \\
+0 & 2 
+\end{bmatrix}
+$$
+are not similar even though they have the same eigenvalues. 
+
+
+### Jordan matrix
+
+For non-diagonalizable matrices $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
+
+
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4) </strong></span>The $n \times n$ matrix $J_{\lambda, n}$ with $\lambda$s on the diagonal, $1$s on the superdiagonal and $0$s elsewhere is called a Jordan matrix. A Jordan matrix in Jordan normal form is a block matrix that has Jordan blocks down its block diagonal and is zero elsewhere</div>\EndKnitrBlock{definition}
+
+An example of Jordan matrix, the appearance of $\lambda_i$ on the diagonal is equal to its multiplicity as $A$'s eigenvalue. 
+$$
+\begin{bmatrix}
+\lambda_1 & 1  & \\
+& \lambda_1 & 1 & \\
+& & \lambda_1 & \\ 
+& & & \lambda_2 & 1 \\
+& & & & \lambda_2  \\ 
+& & & & & \lambda_3 & 1  \\ 
+& & & & & & \ddots \\
+& & & & & & & \lambda_n & 1 \\
+& & & & & & & & \lambda_n
+\end{bmatrix}
+$$
+An illustration from [wikipedia](https://en.wikipedia.org/wiki/Jordan_normal_form), the circled area is the Jordan blcok. 
+<img src="images/jordan-blocks.png" width="40%" style="display: block; margin: auto;" />
+
+Though the purpose of this section was not the computation details of Jordan matrices, it helps to give a concrete example. Consider $A$
+
+$$
+A = 
+\begin{bmatrix}
+5 & 4 & 2 & 1 \\
+0 & 1 & -1 & -1 \\
+-1 & -1 & 3 & 0 \\
+1 & 1 & -1 & 2
+\end{bmatrix}
+$$
+
+Including multiplicity, the eigenvalues of $A$ are $\lambda = 1, 2, 4, 4$. And for $\lambda = 4$, the eigenspace is 1 dimensional instead of 2, meaning $A$ is not diagonalizable. Nonetheless, $A$ is similar to the following Jordan matrix 
+
+$$
+J = 
+\begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 2 & 0 & 0\\
+0 & 0 & 4 & 1\\
+0 & 0 & 0 & 4
+\end{bmatrix}
+$$
+
+To obtain $P$, recall that $P^{-1}AP = J$. Let $P$ have column vectors $p_i, \; i = 1,...,4$, then:
+
+$$
+A[\boldsymbol{p}_1 \; \; \boldsymbol{p}_2 \;\; \boldsymbol{p}_3 \;\; \boldsymbol{p}_4] = [\boldsymbol{p}_1 \; \; \boldsymbol{p}_2 \;\; \boldsymbol{p}_3 \;\; \boldsymbol{p}_4]
+\begin{bmatrix}
+1 & 0 & 0 & 0\\
+0 & 2 & 0 & 0\\
+0 & 0 & 4 & 1\\
+0 & 0 & 0 & 4
+\end{bmatrix}
+= [\boldsymbol{p}_1 \;\; 2\boldsymbol{p}_2 \;\; 4\boldsymbol{p}_3 \;\; \boldsymbol{p}_3 + 4\boldsymbol{p}_4]
+$$
+
+We see that 
+
+$$
+\begin{aligned}
+(A - 1I)\boldsymbol{p}_1 &= \boldsymbol{0} \\
+(A - 2I)\boldsymbol{p}_2 &= \boldsymbol{0} \\
+(A - 4I)\boldsymbol{p}_3 &= \boldsymbol{0} \\
+(A - 1I)\boldsymbol{p}_4 &= \boldsymbol{p}_3 
+\end{aligned}
+$$
+The solutions $\boldsymbol{p}_i$ are called **generalized eigenvectors** of $A$. 
 
 ## Symmetric matrices 
 
@@ -172,7 +297,7 @@ It is common to denote the set of all symmetric matrices of size $n$ as $\mathbb
 
 Symmetric matrices have some nice properties about diagonalization.  
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-6"><strong>(\#thm:unnamed-chunk-6) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
 
 **PROOF** 
 
@@ -200,7 +325,7 @@ P^{T} =
 \end{bmatrix}
 = P^{-1}
 $$
-Recall that matrix $A$ with $n$ linearly dependent eigenvectors is diagonalizable and can be written as 
+Recall that matrix $A$ with $n$ linearly independent eigenvectors is diagonalizable and can be written as 
 
 $$
 A = PDP^{-1}
@@ -222,7 +347,7 @@ $$
 A^T = (PDP^T)^T = PD^TP^T = PDP^T  = A
 $$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
 
 ### Spectral decomposition 
 
@@ -249,6 +374,57 @@ It follows that
 A = \lambda_1\boldsymbol{q}_1\boldsymbol{q}_1^T + \cdots + \lambda_1\boldsymbol{q}_n\boldsymbol{q}_n^T
 \end{equation}
 
-Eq \@ref(eq:spectral-decomposition) is called the **spectral decomposition**, breaking $A$ into pieces of rank 1 matrix. It got this name because he set of eigenvalues of a matrix $A$ is sometimes called its *spectrum*.
+Eq \@ref(eq:spectral-decomposition) is called the **spectral decomposition**, breaking $A$ into pieces of rank 1 matrix. It got this name because he set of eigenvalues of a matrix $A$ is sometimes called its *spectrum*.  
+
+
+
+
+## Quadratic forms 
+
+\BeginKnitrBlock{definition}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse (Quadratic form) \fi{} </strong></span>A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\boldsymbol{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\boldsymbol{x}) = \boldsymbol{x}^TA\boldsymbol{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. </div>\EndKnitrBlock{definition}
+
+There exists a one-to-one mapping between symmetric matrix $A$ and the quadratic form. Consider the $3 \times 3$ case: 
+
+$$
+\boldsymbol{x} =
+\begin{bmatrix}
+x_1 \\
+x_3 \\
+x_3 \\
+\end{bmatrix}
+, \;\; A = 
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} 
+\end{bmatrix} \\
+$$
+
+$$
+\begin{split}
+\boldsymbol{x}^TA\boldsymbol{x} &= 
+[x_1 \;\; x_2 \;\; x_3]
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} 
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_3 \\
+x_3 \\
+\end{bmatrix} \\
+&= a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + (a_{12} + a_{21})x_1x_2 + (a_{13} + a_{31})x_1x_3 + (a_{23} + a_{32})x_2x_3 
+\end{split} 
+\tag{1}
+$$
+Since $A$ is symmetric, we have $a_{ij} = a_{ji}$, thus 
+
+$$
+\boldsymbol{x}^TA\boldsymbol{x}  = a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + 2a_{12}x_1x_2 + 2a_{13}x_1x_3 + 2a_{23}x_2x_3 \tag{2} 
+$$
+This verifies that $\boldsymbol{x}^TA\boldsymbol{x}$ when $A \in \mathbb{R}^{n \times n}$ is symmetric does result in a quadratic function of $n$ variables. Conversely, any quadratic function of $n$ variables, like shown in $(2)$, can be expressed in terms of $\boldsymbol{x}^TA\boldsymbol{x}$ with unique choice of $A$.  
+
+
 
 ## SVD

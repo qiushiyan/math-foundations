@@ -111,11 +111,13 @@
 <li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and eigenvalues</a></li>
 <li class="chapter" data-level="4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>4.2</b> Diagnolization and similar matrices</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#similarity"><i class="fa fa-check"></i><b>4.2.1</b> similarity</a></li>
+<li class="chapter" data-level="4.2.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#jordan-matrix"><i class="fa fa-check"></i><b>4.2.2</b> Jordan matrix</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.3</b> Symmetric matrices</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#spectral-decomposition"><i class="fa fa-check"></i><b>4.3.1</b> Spectral decomposition</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.4</b> SVD</a></li>
+<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#quadratic-forms"><i class="fa fa-check"></i><b>4.4</b> Quadratic forms</a></li>
+<li class="chapter" data-level="4.5" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.5</b> SVD</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -267,7 +269,7 @@ Because <span class="math inline">\(P\)</span> contains <span class="math inline
 </ol>
 <div id="similarity" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> similarity</h3>
-<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(N\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
+<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(N\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
 
 <div class="theorem">
 <span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
@@ -281,7 +283,110 @@ B - \lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP - \lambda P) =  P^{-1}(A 
 so that</p>
 <p><span class="math display">\[
 \det (B - \lambda I ) = \det(P) \cdot \det(A - \lambda I ) \cdot \det(P^{-1})
+\]</span>
+since <span class="math inline">\(\det(P) \cdot \det(P^{-1}) = \det (I) = 1\)</span>, we have</p>
+<p><span class="math display">\[
+\det (B - \lambda I)  = \det(A - \lambda I)
 \]</span></p>
+<p>As a result of their identical characteristic polynomial, <span class="math inline">\(B\)</span> and <span class="math inline">\(A\)</span> have the same eigenvalues. We can also show that eigenvector of <span class="math inline">\(B\)</span> is <span class="math inline">\(P\boldsymbol{v}\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+A\boldsymbol{v} &amp;= \lambda\boldsymbol{v} \\
+(P^{-1}BP)\boldsymbol{v} &amp;= \lambda\boldsymbol{v} \\
+P(P^{-1}BP)\boldsymbol{v} &amp;= \lambda P\boldsymbol{v} \\
+B(P\boldsymbol{v}) = \lambda P \boldsymbol{v}
+\end{aligned}
+\]</span></p>
+<p>The similarity theorem leads to a interesting proposition.</p>
+
+<div class="proposition">
+<span id="prp:unnamed-chunk-3" class="proposition"><strong>Proposition 4.1  </strong></span>For <span class="math inline">\(A, B \in \mathbb{R}^{n \times n}\)</span>, <span class="math inline">\(AB\)</span> and <span class="math inline">\(BA\)</span> are similar matrices and therefore share the same set of eigenvalues.
+</div>
+
+<p>To prove this, we need to show that there exists a invertible matrix <span class="math inline">\(A\)</span> such that <span class="math inline">\(P^{-1}(AB)P = BA\)</span>. Take <span class="math inline">\(P = A\)</span> and the equation holds.</p>
+<p>It is easy to show that similarity is <strong>transitive</strong>: if <span class="math inline">\(A\)</span> is similar to <span class="math inline">\(B\)</span>, <span class="math inline">\(B\)</span> is similar to <span class="math inline">\(C\)</span>, then <span class="math inline">\(A\)</span> is similar to <span class="math inline">\(C\)</span>. So similarity means a family of matrices with the same set of eigenvalues, the most special and simplest of which is the diagonal matrix (if this is an diagonalizable family). Some computer algorithms calculate eigenvalues of <span class="math inline">\(A\)</span> in this manner: with a sequential choices of <span class="math inline">\(P\)</span>, the off-diagonal elements of <span class="math inline">\(A\)</span> become smaller and smaller until <span class="math inline">\(A\)</span> becomes a triangular matrix or diagonal matrix, whose eigenvalues are simply diagonal entries and is the same as <span class="math inline">\(A\)</span>.</p>
+<p>It is obvious that a diagonalizable matrix <span class="math inline">\(A\)</span> is similar to diagonal matrix <span class="math inline">\(D\)</span>, whose diagonal entries are <span class="math inline">\(A\)</span>’s eigenvalues <span class="math inline">\(\lambda_i\)</span>, and <span class="math inline">\(P = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]^{-1}\)</span> where <span class="math inline">\(\boldsymbol{v}_i, \;i = 1,..., n\)</span> are eigenvectors corresponding to <span class="math inline">\(\lambda_i\)</span>.</p>
+<p>But square matrix <span class="math inline">\(A\)</span> can still be similar to matrices other than <span class="math inline">\(D\)</span> with other choices of <span class="math inline">\(P\)</span>, and non-diagonal matrices can also have similar matrices of their own. In fact, <strong>every square matrix is similar to a matrix in Jordan matrix</strong> <a href="eigenthings-and-quadratic-forms.html#jordan-matrix">4.2.2</a>.</p>
+<hr>
+<p>Similarity is only a <em>sufficient</em> condition for identical eigenvalues. The matrices</p>
+<p><span class="math display">\[
+\begin{bmatrix}
+2 &amp; 1 \\
+0 &amp; 2 
+\end{bmatrix}
+\;\text{and}\;
+\begin{bmatrix}
+2 &amp; 0 \\
+0 &amp; 2 
+\end{bmatrix}
+\]</span>
+are not similar even though they have the same eigenvalues.</p>
+</div>
+<div id="jordan-matrix" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Jordan matrix</h3>
+<p>For non-diagonalizable matrices <span class="math inline">\(A_{n \times n}\)</span>, the goal is to with similar transformation <span class="math inline">\(P^{-1}AP\)</span> construct a matrix that is as nearest to a diagonal matrix as possible.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-4" class="definition"><strong>Definition 4.3  </strong></span>The <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(J_{\lambda, n}\)</span> with <span class="math inline">\(\lambda\)</span>s on the diagonal, <span class="math inline">\(1\)</span>s on the superdiagonal and <span class="math inline">\(0\)</span>s elsewhere is called a Jordan matrix. A Jordan matrix in Jordan normal form is a block matrix that has Jordan blocks down its block diagonal and is zero elsewhere
+</div>
+
+<p>An example of Jordan matrix, the appearance of <span class="math inline">\(\lambda_i\)</span> on the diagonal is equal to its multiplicity as <span class="math inline">\(A\)</span>’s eigenvalue.
+<span class="math display">\[
+\begin{bmatrix}
+\lambda_1 &amp; 1  &amp; \\
+&amp; \lambda_1 &amp; 1 &amp; \\
+&amp; &amp; \lambda_1 &amp; \\ 
+&amp; &amp; &amp; \lambda_2 &amp; 1 \\
+&amp; &amp; &amp; &amp; \lambda_2  \\ 
+&amp; &amp; &amp; &amp; &amp; \lambda_3 &amp; 1  \\ 
+&amp; &amp; &amp; &amp; &amp; &amp; \ddots \\
+&amp; &amp; &amp; &amp; &amp; &amp; &amp; \lambda_n &amp; 1 \\
+&amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; \lambda_n
+\end{bmatrix}
+\]</span>
+An illustration from <a href="https://en.wikipedia.org/wiki/Jordan_normal_form">wikipedia</a>, the circled area is the Jordan blcok.
+<img src="images/jordan-blocks.png" width="40%" style="display: block; margin: auto;" /></p>
+<p>Though the purpose of this section was not the computation details of Jordan matrices, it helps to give a concrete example. Consider <span class="math inline">\(A\)</span></p>
+<p><span class="math display">\[
+A = 
+\begin{bmatrix}
+5 &amp; 4 &amp; 2 &amp; 1 \\
+0 &amp; 1 &amp; -1 &amp; -1 \\
+-1 &amp; -1 &amp; 3 &amp; 0 \\
+1 &amp; 1 &amp; -1 &amp; 2
+\end{bmatrix}
+\]</span></p>
+<p>Including multiplicity, the eigenvalues of <span class="math inline">\(A\)</span> are <span class="math inline">\(\lambda = 1, 2, 4, 4\)</span>. And for <span class="math inline">\(\lambda = 4\)</span>, the eigenspace is 1 dimensional instead of 2, meaning <span class="math inline">\(A\)</span> is not diagonalizable. Nonetheless, <span class="math inline">\(A\)</span> is similar to the following Jordan matrix</p>
+<p><span class="math display">\[
+J = 
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 4 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 4
+\end{bmatrix}
+\]</span></p>
+<p>To obtain <span class="math inline">\(P\)</span>, recall that <span class="math inline">\(P^{-1}AP = J\)</span>. Let <span class="math inline">\(P\)</span> have column vectors <span class="math inline">\(p_i, \; i = 1,...,4\)</span>, then:</p>
+<p><span class="math display">\[
+A[\boldsymbol{p}_1 \; \; \boldsymbol{p}_2 \;\; \boldsymbol{p}_3 \;\; \boldsymbol{p}_4] = [\boldsymbol{p}_1 \; \; \boldsymbol{p}_2 \;\; \boldsymbol{p}_3 \;\; \boldsymbol{p}_4]
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; 2 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 4 &amp; 1\\
+0 &amp; 0 &amp; 0 &amp; 4
+\end{bmatrix}
+= [\boldsymbol{p}_1 \;\; 2\boldsymbol{p}_2 \;\; 4\boldsymbol{p}_3 \;\; \boldsymbol{p}_3 + 4\boldsymbol{p}_4]
+\]</span></p>
+<p>We see that</p>
+<p><span class="math display">\[
+\begin{aligned}
+(A - 1I)\boldsymbol{p}_1 &amp;= \boldsymbol{0} \\
+(A - 2I)\boldsymbol{p}_2 &amp;= \boldsymbol{0} \\
+(A - 4I)\boldsymbol{p}_3 &amp;= \boldsymbol{0} \\
+(A - 1I)\boldsymbol{p}_4 &amp;= \boldsymbol{p}_3 
+\end{aligned}
+\]</span>
+The solutions <span class="math inline">\(\boldsymbol{p}_i\)</span> are called <strong>generalized eigenvectors</strong> of <span class="math inline">\(A\)</span>.</p>
 </div>
 </div>
 <div id="symmetric-matrices" class="section level2">
@@ -295,7 +400,7 @@ A = \frac{1}{2}(A + A^T) + \frac{1}{2}(A - A^T)
 <p>Symmetric matrices have some nice properties about diagonalization.</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 3.2  </strong></span>If <span class="math inline">\(A\)</span> is symmetric, eigenvectors from distinct eigenvalues are <strong>orthogonal</strong>.
+<span id="thm:unnamed-chunk-6" class="theorem"><strong>Theorem 1.7  </strong></span>If <span class="math inline">\(A\)</span> is symmetric, eigenvectors from distinct eigenvalues are <strong>orthogonal</strong>.
 </div>
 
 <p><strong>PROOF</strong></p>
@@ -320,7 +425,7 @@ P^{T} =
 \end{bmatrix}
 = P^{-1}
 \]</span>
-Recall that matrix <span class="math inline">\(A\)</span> with <span class="math inline">\(n\)</span> linearly dependent eigenvectors is diagonalizable and can be written as</p>
+Recall that matrix <span class="math inline">\(A\)</span> with <span class="math inline">\(n\)</span> linearly independent eigenvectors is diagonalizable and can be written as</p>
 <p><span class="math display">\[
 A = PDP^{-1}
 \]</span>
@@ -337,7 +442,7 @@ A^T = (PDP^T)^T = PD^TP^T = PDP^T  = A
 \]</span></p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-4" class="theorem"><strong>Theorem 1.5  </strong></span>An <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is orthogonally diagonalizable if an only if <span class="math inline">\(A\)</span> is a symmetric matrix.
+<span id="thm:unnamed-chunk-7" class="theorem"><strong>Theorem 4.2  </strong></span>An <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is orthogonally diagonalizable if an only if <span class="math inline">\(A\)</span> is a symmetric matrix.
 </div>
 
 <div id="spectral-decomposition" class="section level3">
@@ -364,8 +469,54 @@ A = \lambda_1\boldsymbol{q}_1\boldsymbol{q}_1^T + \cdots + \lambda_1\boldsymbol{
 <p>Eq <a href="eigenthings-and-quadratic-forms.html#eq:spectral-decomposition">(4.3)</a> is called the <strong>spectral decomposition</strong>, breaking <span class="math inline">\(A\)</span> into pieces of rank 1 matrix. It got this name because he set of eigenvalues of a matrix <span class="math inline">\(A\)</span> is sometimes called its <em>spectrum</em>.</p>
 </div>
 </div>
+<div id="quadratic-forms" class="section level2">
+<h2><span class="header-section-number">4.4</span> Quadratic forms</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 1.3  (Quadratic form)  </strong></span>A <strong>quadratic form</strong> on <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math inline">\(Q\)</span> defined on <span class="math inline">\(\mathbb{R}^n\)</span> whose value at a vector <span class="math inline">\(\boldsymbol{x}\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span> can be computed by an expression of the form <span class="math inline">\(Q(\boldsymbol{x}) = \boldsymbol{x}^TA\boldsymbol{x}\)</span>, where <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is a <strong>symmetric</strong> matrix. <span class="math inline">\(A\)</span> is called the matrix of the quadraticc form.
+</div>
+
+<p>There exists a one-to-one mapping between symmetric matrix <span class="math inline">\(A\)</span> and the quadratic form. Consider the <span class="math inline">\(3 \times 3\)</span> case:</p>
+<p><span class="math display">\[
+\boldsymbol{x} =
+\begin{bmatrix}
+x_1 \\
+x_3 \\
+x_3 \\
+\end{bmatrix}
+, \;\; A = 
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33} 
+\end{bmatrix} \\
+\]</span></p>
+<p><span class="math display">\[
+\begin{split}
+\boldsymbol{x}^TA\boldsymbol{x} &amp;= 
+[x_1 \;\; x_2 \;\; x_3]
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33} 
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_3 \\
+x_3 \\
+\end{bmatrix} \\
+&amp;= a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + (a_{12} + a_{21})x_1x_2 + (a_{13} + a_{31})x_1x_3 + (a_{23} + a_{32})x_2x_3 
+\end{split} 
+\tag{1}
+\]</span>
+Since <span class="math inline">\(A\)</span> is symmetric, we have <span class="math inline">\(a_{ij} = a_{ji}\)</span>, thus</p>
+<p><span class="math display">\[
+\boldsymbol{x}^TA\boldsymbol{x}  = a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + 2a_{12}x_1x_2 + 2a_{13}x_1x_3 + 2a_{23}x_2x_3 \tag{2} 
+\]</span>
+This verifies that <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span> when <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is symmetric does result in a quadratic function of <span class="math inline">\(n\)</span> variables. Conversely, any quadratic function of <span class="math inline">\(n\)</span> variables, like shown in <span class="math inline">\((2)\)</span>, can be expressed in terms of <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span> with unique choice of <span class="math inline">\(A\)</span>.</p>
+</div>
 <div id="svd" class="section level2">
-<h2><span class="header-section-number">4.4</span> SVD</h2>
+<h2><span class="header-section-number">4.5</span> SVD</h2>
 
 </div>
 </div>
