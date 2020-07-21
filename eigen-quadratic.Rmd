@@ -146,7 +146,7 @@ For matrices whose eigenvalues are not distinct, there is still a change that it
 
 2. The dimension of the eigenspace for each $\lambda_k$ equals the multiplicity of $\lambda_k$. Thus $A$ with repeated eigenvalues can still be diagonalizable. 
 
-### similarity
+### Similarity
 
 If $A$ and $B$ are both $n \times n$ matrices, then $A$ **is similar to** $N$ if there is an invertible matrix $P$ such that $P^{-1}AP = B$, or equivalently if we write $Q$ for $P^{-1}$, $Q^{-1}BQ = A$. Changing $A$ into $P^{-1}AP$ is called a **similarity transformation**.  
 
@@ -556,18 +556,104 @@ $$
 $$
 where $\{\lambda_1, ..., \lambda_n\}$ are diagonal entries of $\Lambda$ and eigenvalues of $A$. Let us suppose that the set $\{\lambda_1, \lambda_2, \cdots, \lambda_n\}$ has already been ordered descendingly, so that $\lambda_1 > \lambda_2 > \cdots > \lambda_n$. 
 
-We can obtain the equality from (3) and the order of eigenvalues: 
+We can obtain the inequality from (3) and the order of eigenvalues: 
 
 $$
 \begin{split}
 \boldsymbol{x}^TA\boldsymbol{x} &= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
 &\le \lambda_1y_1^2 + \underbrace{\lambda_1y_2^2 + \cdots + \lambda_1y_n^2}_{\lambda_1 \text{ is the greatest eigenvalue}} \\ 
 &\le \lambda_1(\boldsymbol{y}^T\boldsymbol{y}) \\
-&= 1
+&= \lambda_1
+\end{split}
+$$
+The equation reach equality if and only if $[y_1, y_2, \cdots, y_n] = [1, 0, \cdots, 0]$. Since $\boldsymbol{x} = Q\boldsymbol{y}$, we have 
+
+$$
+\boldsymbol{x} = 
+\begin{bmatrix}
+\boldsymbol{q}_1 & \boldsymbol{q}_2 & \cdots & \boldsymbol{q}_n
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0 \\
+\vdots \\
+0
+\end{bmatrix}
+= \boldsymbol{q}_1
+$$
+Similarly, the minimum of the Rayleigh quotient will be $\lambda_n$, with $\boldsymbol{x} = \boldsymbol{q}_n$. 
+
+
+<hr>
+
+From the optimization perspective, the bound of Rayleigh quotient amounts to a constrained optimization problem 
+
+$$
+\begin{aligned}
+\text{objective function} &:  \boldsymbol{x}^TA\boldsymbol{x}\\
+\text{subject to}&: \boldsymbol{x}^T\boldsymbol{x} = 1 
+\end{aligned}
+$$
+The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n$, with $\boldsymbol{x}$ being $\boldsymbol{q}_1$ and $\boldsymbol{q}_n$ respectively. 
+
+If we add more constraints, for example, that $\boldsymbol{x}$ should be orthogonal to $\boldsymbol{q}_1$, then $\boldsymbol{x}^TA\boldsymbol{x}$ has maximum $\lambda_2$ attained at $\boldsymbol{x} = \lambda_2$
+
+```{theorem}
+Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
+
+$$
+\boldsymbol{x}^T\boldsymbol{x} =  1, \;\; \boldsymbol{x}^T\boldsymbol{q}_1 = 0, \;\; \dots \;\;, \boldsymbol{x}^T\boldsymbol{q}_{k-1} = 0
+$$
+is the eigenvalue $\lambda_k$, and this maximum is attained at $\boldsymbol{x} = \boldsymbol{q}_k$
+```
+
+**PROOF**
+
+From $\boldsymbol{x} = P\boldsymbol{y}$ we know that
+
+$$
+\boldsymbol{x} = y_1\boldsymbol{q}_1 + \cdots + + y_{k-1}\boldsymbol{q}_{k-1} + y_k\boldsymbol{q}_k + \cdots +  y_{n}\boldsymbol{q}_n 
+$$
+Left multiply by $\boldsymbol{q}_1^T$ 
+
+$$
+\begin{aligned}
+\boldsymbol{q}_1^T\boldsymbol{x} &= y_1\boldsymbol{q}_1^T\boldsymbol{q}_1 + \cdots + + y_{k-1}\boldsymbol{q}_1^T\boldsymbol{q}_{k-1} + y_k\boldsymbol{q}_1^T\boldsymbol{q}_k + \cdots +  y_{n}\boldsymbol{q}_1^T\boldsymbol{q}_n  \\
+&= y_1\boldsymbol{q}_1^T\boldsymbol{q}_1 \\
+&= y_1
+\end{aligned} 
+$$
+Since $\boldsymbol{q}_1^T\boldsymbol{x} = \boldsymbol{x}^T\boldsymbol{q}_1 = 0$, we have $y_1 = 0$. Similarly, $y_2 = \cdots = y_{k-1} = 0$, and $\boldsymbol{y}$ becomes $[0 \;\; \cdots \;\; 0 \;\; y_{k} \;\; \cdots \;\; y_n]$. And the inequality now becomes: 
+
+$$
+\begin{split}
+\boldsymbol{x}^TA\boldsymbol{x} &= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
+&= \lambda_ky_k^2 + \cdots + \lambda_ny_n^ 2 \\
+&\le \lambda_ky_k^2 + \cdots + \lambda_ky_n^2 \\ 
+&\le \lambda_k(\boldsymbol{y}^T\boldsymbol{y}) \\
+&= \lambda_k
 \end{split}
 $$
 
+It's easy to see that $\boldsymbol{x}^TA\boldsymbol{x}$ gets its maximum $\lambda_k$ when $y_k = 0$ and other weights being zero. So the solution $\boldsymbol{x}$ can be solved as 
 
+$$
+\begin{split}
+\boldsymbol{x} &= 
+\begin{bmatrix}
+\boldsymbol{q}_1 &  \cdots & \boldsymbol{q}_k &   \boldsymbol{q}_{k+1} & \cdots &\boldsymbol{q}_n
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+\vdots \\
+\underbrace{1}_{k\text{th weight}} \\
+0 \\
+\vdots \\
+0
+\end{bmatrix} \\
+&= \boldsymbol{q}_k
+\end{split}
+$$
 
 ## SVD  
 

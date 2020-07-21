@@ -110,7 +110,7 @@
 <li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and quadratic forms</a><ul>
 <li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and eigenvalues</a></li>
 <li class="chapter" data-level="4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>4.2</b> Diagnolization and similar matrices</a><ul>
-<li class="chapter" data-level="4.2.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#similarity"><i class="fa fa-check"></i><b>4.2.1</b> similarity</a></li>
+<li class="chapter" data-level="4.2.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#similarity"><i class="fa fa-check"></i><b>4.2.1</b> Similarity</a></li>
 <li class="chapter" data-level="4.2.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#jordan-matrix"><i class="fa fa-check"></i><b>4.2.2</b> Jordan matrix</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.3</b> Symmetric matrices</a><ul>
@@ -272,7 +272,7 @@ Because <span class="math inline">\(P\)</span> contains <span class="math inline
 <li><p>The dimension of the eigenspace for each <span class="math inline">\(\lambda_k\)</span> equals the multiplicity of <span class="math inline">\(\lambda_k\)</span>. Thus <span class="math inline">\(A\)</span> with repeated eigenvalues can still be diagonalizable.</p></li>
 </ol>
 <div id="similarity" class="section level3">
-<h3><span class="header-section-number">4.2.1</span> similarity</h3>
+<h3><span class="header-section-number">4.2.1</span> Similarity</h3>
 <p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(N\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
 
 <div class="theorem">
@@ -531,14 +531,14 @@ This verifies that <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)
 where <span class="math inline">\(P\)</span> is any invertible matrix <span class="math inline">\(\in \mathbb{R}^{n \times n}\)</span></p>
 
 <div class="theorem">
-<p><span id="thm:principle-axes" class="theorem"><strong>Theorem 4.3  (The Principal Axes Theorem)  </strong></span>Let <span class="math inline">\(A\)</span> be an <span class="math inline">\(n \times n\)</span> symmetric matrix. Then there exists an orthogonal change of variable, <span class="math inline">\(\boldsymbol{x} = Q\boldsymbol{y}\)</span>, this transform the quadratic form <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span> into a quadratic form <span class="math inline">\(\boldsymbol{y}^T\Lambda\boldsymbol{y}\)</span> with no cross-product term.</p>
+<p><span id="thm:principal-axes" class="theorem"><strong>Theorem 4.3  (The Principal Axes Theorem)  </strong></span>Let <span class="math inline">\(A\)</span> be an <span class="math inline">\(n \times n\)</span> symmetric matrix. Then there exists an orthogonal change of variable, <span class="math inline">\(\boldsymbol{x} = Q\boldsymbol{y}\)</span>, this transform the quadratic form <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span> into a quadratic form <span class="math inline">\(\boldsymbol{y}^T\Lambda\boldsymbol{y}\)</span> with no cross-product term.</p>
 <p><span class="math inline">\(Q\)</span> is constructed with <span class="math inline">\(A\)</span>’s orthonormal eigenvectors <span class="math inline">\(\boldsymbol{q}_1, ..., \boldsymbol{q}_n\)</span>. According to theorem <a href="eigenthings-and-quadratic-forms.html#eq:orthogonal-diagonalization">(4.2)</a>:</p>
 <span class="math display">\[
 \boldsymbol{x}^TA\boldsymbol{x} = (Q\boldsymbol{y})^TA(Q\boldsymbol{y}) = \boldsymbol{y}^TQ^{T}AQ\boldsymbol{y} = \boldsymbol{y}^T \Lambda \boldsymbol{y}
 \]</span>
 </div>
 
-<p>The principle axes theorem <a href="#thm:principal-axes"><strong>??</strong></a> shows that if <span class="math inline">\(A\)</span> is diagonalizable, quadratic form <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span> can be reexpressed into the form <span class="math inline">\(\lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2\)</span> with change of variables <span class="math inline">\(\boldsymbol{x} = P\boldsymbol{y}\)</span>.</p>
+<p>The principal axes theorem <a href="eigenthings-and-quadratic-forms.html#thm:principal-axes">4.3</a> shows that if <span class="math inline">\(A\)</span> is diagonalizable, quadratic form <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span> can be reexpressed into the form <span class="math inline">\(\lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2\)</span> with change of variables <span class="math inline">\(\boldsymbol{x} = Q\boldsymbol{y}\)</span>.</p>
 </div>
 <div id="classification-of-quadratic-forms" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Classification of quadratic forms</h3>
@@ -555,7 +555,7 @@ where <span class="math inline">\(P\)</span> is any invertible matrix <span clas
 Also, if <span class="math inline">\(A\)</span> is positive definite, then <span class="math inline">\(−A\)</span> is negative definite and viceversa. Likewise, if <span class="math inline">\(A\)</span> is positive semidefinite then <span class="math inline">\(−A\)</span> is negative semidefinite and vice versa. If <span class="math inline">\(A\)</span> is indefinite, then so is <span class="math inline">\(−A\)</span>.
 </div>
 
-<p>From theorem <a href="eigenthings-and-quadratic-forms.html#thm:principle-axes">4.3</a>, we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of <span class="math inline">\(A\)</span> are equivalent:</p>
+<p>From theorem <a href="eigenthings-and-quadratic-forms.html#thm:principal-axes">4.3</a>, we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of <span class="math inline">\(A\)</span> are equivalent:</p>
 <ul>
 <li><p>For any <span class="math inline">\(\boldsymbol{x} \in \mathbb{R}^n, \; \boldsymbol{x}^TA\boldsymbol{x} &gt; 0\)</span></p></li>
 <li><p>Let <span class="math inline">\(\lambda_i, \; i = 1, ..., n\)</span> be <span class="math inline">\(A\)</span>’s eigenvalues, <span class="math inline">\(\lambda_i &gt; 0\)</span></p></li>
@@ -590,14 +590,110 @@ The Rayleigh quotient has some nice properties:</p>
 \lambda_{\text{min}}(A) \le R_{A}(\boldsymbol{x}) \le \lambda_{\text{max}}(A)
 \]</span></p>
 <p><strong>PROOF</strong></p>
-<p>Since the Rayleigh quotient does not depend on the 2-norm of vector <span class="math inline">\(\boldsymbol{x}\)</span>, we may assume a unit vector <span class="math inline">\(\boldsymbol{x}^T\boldsymbol{x} = 1\)</span>.</p>
-<p>Next, orthogonally diagonalize <span class="math inline">\(A\)</span> as <span class="math inline">\(Q \Lambda Q\)</span></p>
+<p>Since the Rayleigh quotient does not depend on the 2-norm of vector <span class="math inline">\(\boldsymbol{x}\)</span>, we may assume a unit vector <span class="math inline">\(\boldsymbol{x}^T\boldsymbol{x} = 1\)</span>, and Rayleigh quotient simplifies to the quadratic form <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span>.</p>
+<p>Next, orthogonally diagonalize <span class="math inline">\(A\)</span> as <span class="math inline">\(Q \Lambda Q\)</span>, we know that when <span class="math inline">\(\boldsymbol{x} = Q \boldsymbol{y}\)</span>:</p>
+<p><span class="math display">\[
+\boldsymbol{x}^TA\boldsymbol{x} = \boldsymbol{y}^T \Lambda \boldsymbol{y} \tag{1}
+\]</span>
+Also</p>
+<p><span class="math display">\[
+1= \boldsymbol{x}^T\boldsymbol{x} = (Q\boldsymbol{y})^T Q\boldsymbol{y} = \boldsymbol{y}^TQ^TQ\boldsymbol{y} = \boldsymbol{y}^T\boldsymbol{y} \tag{2}
+\]</span></p>
+<p>Expand <span class="math inline">\(\boldsymbol{y}^T \Lambda \boldsymbol{y}\)</span> in (1) we get</p>
+<p><span class="math display">\[
+\boldsymbol{x}^TA\boldsymbol{x} = \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \tag{3}
+\]</span>
+where <span class="math inline">\(\{\lambda_1, ..., \lambda_n\}\)</span> are diagonal entries of <span class="math inline">\(\Lambda\)</span> and eigenvalues of <span class="math inline">\(A\)</span>. Let us suppose that the set <span class="math inline">\(\{\lambda_1, \lambda_2, \cdots, \lambda_n\}\)</span> has already been ordered descendingly, so that <span class="math inline">\(\lambda_1 &gt; \lambda_2 &gt; \cdots &gt; \lambda_n\)</span>.</p>
+<p>We can obtain the inequality from (3) and the order of eigenvalues:</p>
+<p><span class="math display">\[
+\begin{split}
+\boldsymbol{x}^TA\boldsymbol{x} &amp;= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
+&amp;\le \lambda_1y_1^2 + \underbrace{\lambda_1y_2^2 + \cdots + \lambda_1y_n^2}_{\lambda_1 \text{ is the greatest eigenvalue}} \\ 
+&amp;\le \lambda_1(\boldsymbol{y}^T\boldsymbol{y}) \\
+&amp;= \lambda_1
+\end{split}
+\]</span>
+The equation reach equality if and only if <span class="math inline">\([y_1, y_2, \cdots, y_n] = [1, 0, \cdots, 0]\)</span>. Since <span class="math inline">\(\boldsymbol{x} = Q\boldsymbol{y}\)</span>, we have</p>
+<p><span class="math display">\[
+\boldsymbol{x} = 
+\begin{bmatrix}
+\boldsymbol{q}_1 &amp; \boldsymbol{q}_2 &amp; \cdots &amp; \boldsymbol{q}_n
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0 \\
+\vdots \\
+0
+\end{bmatrix}
+= \boldsymbol{q}_1
+\]</span>
+Similarly, the minimum of the Rayleigh quotient will be <span class="math inline">\(\lambda_n\)</span>, with <span class="math inline">\(\boldsymbol{x} = \boldsymbol{q}_n\)</span>.</p>
+<hr>
+<p>From the optimization perspective, the bound of Rayleigh quotient amounts to a constrained optimization problem</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{objective function} &amp;:  \boldsymbol{x}^TA\boldsymbol{x}\\
+\text{subject to}&amp;: \boldsymbol{x}^T\boldsymbol{x} = 1 
+\end{aligned}
+\]</span>
+The maximum and minimum of the objective function are <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_n\)</span>, with <span class="math inline">\(\boldsymbol{x}\)</span> being <span class="math inline">\(\boldsymbol{q}_1\)</span> and <span class="math inline">\(\boldsymbol{q}_n\)</span> respectively.</p>
+<p>If we add more constraints, for example, that <span class="math inline">\(\boldsymbol{x}\)</span> should be orthogonal to <span class="math inline">\(\boldsymbol{q}_1\)</span>, then <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span> has maximum <span class="math inline">\(\lambda_2\)</span> attained at <span class="math inline">\(\boldsymbol{x} = \lambda_2\)</span></p>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-11" class="theorem"><strong>Theorem 4.5  </strong></span>Let <span class="math inline">\(A \in \mathbb{S}^n\)</span> with orthogonal diagonalization <span class="math inline">\(A = Q\Lambda Q^T\)</span>, where the entries on the diagonal of <span class="math inline">\(\Lambda\)</span> are arranged so that <span class="math inline">\(\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n\)</span>. Then for <span class="math inline">\(k = 2, ...\)</span>, the maximum of value of <span class="math inline">\(\boldsymbol{x}^T A \boldsymbol{x}\)</span> subject to constraints</p>
+<span class="math display">\[
+\boldsymbol{x}^T\boldsymbol{x} =  1, \;\; \boldsymbol{x}^T\boldsymbol{q}_1 = 0, \;\; \dots \;\;, \boldsymbol{x}^T\boldsymbol{q}_{k-1} = 0
+\]</span>
+is the eigenvalue <span class="math inline">\(\lambda_k\)</span>, and this maximum is attained at <span class="math inline">\(\boldsymbol{x} = \boldsymbol{q}_k\)</span>
+</div>
+
+<p><strong>PROOF</strong></p>
+<p>From <span class="math inline">\(\boldsymbol{x} = P\boldsymbol{y}\)</span> we know that</p>
+<p><span class="math display">\[
+\boldsymbol{x} = y_1\boldsymbol{q}_1 + \cdots + + y_{k-1}\boldsymbol{q}_{k-1} + y_k\boldsymbol{q}_k + \cdots +  y_{n}\boldsymbol{q}_n 
+\]</span>
+Left multiply by <span class="math inline">\(\boldsymbol{q}_1^T\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\boldsymbol{q}_1^T\boldsymbol{x} &amp;= y_1\boldsymbol{q}_1^T\boldsymbol{q}_1 + \cdots + + y_{k-1}\boldsymbol{q}_1^T\boldsymbol{q}_{k-1} + y_k\boldsymbol{q}_1^T\boldsymbol{q}_k + \cdots +  y_{n}\boldsymbol{q}_1^T\boldsymbol{q}_n  \\
+&amp;= y_1\boldsymbol{q}_1^T\boldsymbol{q}_1 \\
+&amp;= y_1
+\end{aligned} 
+\]</span>
+Since <span class="math inline">\(\boldsymbol{q}_1^T\boldsymbol{x} = \boldsymbol{x}^T\boldsymbol{q}_1 = 0\)</span>, we have <span class="math inline">\(y_1 = 0\)</span>. Similarly, <span class="math inline">\(y_2 = \cdots = y_{k-1} = 0\)</span>, and <span class="math inline">\(\boldsymbol{y}\)</span> becomes <span class="math inline">\([0 \;\; \cdots \;\; 0 \;\; y_{k} \;\; \cdots \;\; y_n]\)</span>. And the inequality now becomes:</p>
+<p><span class="math display">\[
+\begin{split}
+\boldsymbol{x}^TA\boldsymbol{x} &amp;= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
+&amp;= \lambda_ky_k^2 + \cdots + \lambda_ny_n^ 2 \\
+&amp;\le \lambda_ky_k^2 + \cdots + \lambda_ky_n^2 \\ 
+&amp;\le \lambda_k(\boldsymbol{y}^T\boldsymbol{y}) \\
+&amp;= \lambda_k
+\end{split}
+\]</span></p>
+<p>It’s easy to see that <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span> gets its maximum <span class="math inline">\(\lambda_k\)</span> when <span class="math inline">\(y_k = 0\)</span> and other weights being zero. So the solution <span class="math inline">\(\boldsymbol{x}\)</span> can be solved as</p>
+<p><span class="math display">\[
+\begin{split}
+\boldsymbol{x} &amp;= 
+\begin{bmatrix}
+\boldsymbol{q}_1 &amp;  \cdots &amp; \boldsymbol{q}_k &amp;   \boldsymbol{q}_{k+1} &amp; \cdots &amp;\boldsymbol{q}_n
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+\vdots \\
+\underbrace{1}_{k\text{th weight}} \\
+0 \\
+\vdots \\
+0
+\end{bmatrix} \\
+&amp;= \boldsymbol{q}_k
+\end{split}
+\]</span></p>
 </div>
 <div id="svd" class="section level2">
 <h2><span class="header-section-number">4.6</span> SVD</h2>
 <p><span class="math display">\[
 \begin{split}
-U\Sigma &amp;= [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n]
+U\Sigma &amp;= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]
 \begin{bmatrix}
 \sigma_1 \\
 &amp; \ddots &amp;  \\ 
@@ -606,7 +702,7 @@ U\Sigma &amp;= [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n]
 &amp; &amp; &amp; &amp; \ddots \\
 &amp; &amp; &amp; &amp; &amp; 0 \\
 \end{bmatrix} \\
-&amp;= [\sigma_1\boldsymbol{q}_1 \;\; \cdots \;\; \sigma_n\boldsymbol{q}_n] \\
+&amp;= [\sigma_1\boldsymbol{u}_1 \;\; \cdots \;\; \sigma_n\boldsymbol{u}_n] \\
 &amp; = [A\boldsymbol{v}_1 \;\; \cdots \;\; A\boldsymbol{v}_n] \\
 &amp;= AV
 \end{split}

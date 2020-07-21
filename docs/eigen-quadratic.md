@@ -138,7 +138,7 @@ For matrices whose eigenvalues are not distinct, there is still a change that it
 
 2. The dimension of the eigenspace for each $\lambda_k$ equals the multiplicity of $\lambda_k$. Thus $A$ with repeated eigenvalues can still be diagonalizable. 
 
-### similarity
+### Similarity
 
 If $A$ and $B$ are both $n \times n$ matrices, then $A$ **is similar to** $N$ if there is an invertible matrix $P$ such that $P^{-1}AP = B$, or equivalently if we write $Q$ for $P^{-1}$, $Q^{-1}BQ = A$. Changing $A$ into $P^{-1}AP$ is called a **similarity transformation**.  
 
@@ -438,7 +438,7 @@ $$
 $$
 where $P$ is any invertible matrix $\in \mathbb{R}^{n \times n}$
 
-\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-80-114-105-110-99-105-112-97-108-32-65-120-101-115-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:principle-axes"><strong>(\#thm:principle-axes)  \iffalse (The Principal Axes Theorem) \fi{} </strong></span>Let $A$ be an $n \times n$ symmetric matrix. Then there exists an orthogonal change of variable, $\boldsymbol{x} = Q\boldsymbol{y}$, this transform the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ into a quadratic form $\boldsymbol{y}^T\Lambda\boldsymbol{y}$ with no cross-product term.  
+\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-80-114-105-110-99-105-112-97-108-32-65-120-101-115-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:principal-axes"><strong>(\#thm:principal-axes)  \iffalse (The Principal Axes Theorem) \fi{} </strong></span>Let $A$ be an $n \times n$ symmetric matrix. Then there exists an orthogonal change of variable, $\boldsymbol{x} = Q\boldsymbol{y}$, this transform the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ into a quadratic form $\boldsymbol{y}^T\Lambda\boldsymbol{y}$ with no cross-product term.  
 
 $Q$ is constructed with $A$'s orthonormal eigenvectors $\boldsymbol{q}_1, ..., \boldsymbol{q}_n$. According to theorem \@ref(eq:orthogonal-diagonalization): 
 
@@ -448,7 +448,7 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
-The principle axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = P\boldsymbol{y}$. 
+The principal axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = Q\boldsymbol{y}$. 
 
 ### Classification of quadratic forms 
 
@@ -466,7 +466,7 @@ The principle axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagon
 
 Also, if $A$ is positive definite, then $−A$ is negative definite and viceversa. Likewise, if $A$ is positive semidefinite then $−A$ is negative semidefinite and vice versa. If $A$ is indefinite, then so is $−A$. </div>\EndKnitrBlock{rmdnote}
 
-From theorem \@ref(thm:principle-axes), we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of $A$ are equivalent: 
+From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of $A$ are equivalent: 
 
 - For any $\boldsymbol{x} \in \mathbb{R}^n, \; \boldsymbol{x}^TA\boldsymbol{x} > 0$  
 
@@ -508,15 +508,128 @@ $$
 
 **PROOF** 
 
-Since the Rayleigh quotient does not depend on the 2-norm of vector $\boldsymbol{x}$, we may assume a unit vector $\boldsymbol{x}^T\boldsymbol{x} = 1$. 
+Since the Rayleigh quotient does not depend on the 2-norm of vector $\boldsymbol{x}$, we may assume a unit vector $\boldsymbol{x}^T\boldsymbol{x} = 1$, and Rayleigh quotient simplifies to the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$. 
 
-Next, orthogonally diagonalize $A$ as $Q \Lambda Q$
+Next, orthogonally diagonalize $A$ as $Q \Lambda Q$, we know that when $\boldsymbol{x} = Q \boldsymbol{y}$: 
+
+$$
+\boldsymbol{x}^TA\boldsymbol{x} = \boldsymbol{y}^T \Lambda \boldsymbol{y} \tag{1}
+$$
+Also 
+
+$$
+1= \boldsymbol{x}^T\boldsymbol{x} = (Q\boldsymbol{y})^T Q\boldsymbol{y} = \boldsymbol{y}^TQ^TQ\boldsymbol{y} = \boldsymbol{y}^T\boldsymbol{y} \tag{2}
+$$
+
+Expand $\boldsymbol{y}^T \Lambda \boldsymbol{y}$ in (1) we get 
+
+$$
+\boldsymbol{x}^TA\boldsymbol{x} = \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \tag{3}
+$$
+where $\{\lambda_1, ..., \lambda_n\}$ are diagonal entries of $\Lambda$ and eigenvalues of $A$. Let us suppose that the set $\{\lambda_1, \lambda_2, \cdots, \lambda_n\}$ has already been ordered descendingly, so that $\lambda_1 > \lambda_2 > \cdots > \lambda_n$. 
+
+We can obtain the inequality from (3) and the order of eigenvalues: 
+
+$$
+\begin{split}
+\boldsymbol{x}^TA\boldsymbol{x} &= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
+&\le \lambda_1y_1^2 + \underbrace{\lambda_1y_2^2 + \cdots + \lambda_1y_n^2}_{\lambda_1 \text{ is the greatest eigenvalue}} \\ 
+&\le \lambda_1(\boldsymbol{y}^T\boldsymbol{y}) \\
+&= \lambda_1
+\end{split}
+$$
+The equation reach equality if and only if $[y_1, y_2, \cdots, y_n] = [1, 0, \cdots, 0]$. Since $\boldsymbol{x} = Q\boldsymbol{y}$, we have 
+
+$$
+\boldsymbol{x} = 
+\begin{bmatrix}
+\boldsymbol{q}_1 & \boldsymbol{q}_2 & \cdots & \boldsymbol{q}_n
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0 \\
+\vdots \\
+0
+\end{bmatrix}
+= \boldsymbol{q}_1
+$$
+Similarly, the minimum of the Rayleigh quotient will be $\lambda_n$, with $\boldsymbol{x} = \boldsymbol{q}_n$. 
+
+
+<hr>
+
+From the optimization perspective, the bound of Rayleigh quotient amounts to a constrained optimization problem 
+
+$$
+\begin{aligned}
+\text{objective function} &:  \boldsymbol{x}^TA\boldsymbol{x}\\
+\text{subject to}&: \boldsymbol{x}^T\boldsymbol{x} = 1 
+\end{aligned}
+$$
+The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n$, with $\boldsymbol{x}$ being $\boldsymbol{q}_1$ and $\boldsymbol{q}_n$ respectively. 
+
+If we add more constraints, for example, that $\boldsymbol{x}$ should be orthogonal to $\boldsymbol{q}_1$, then $\boldsymbol{x}^TA\boldsymbol{x}$ has maximum $\lambda_2$ attained at $\boldsymbol{x} = \lambda_2$
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
+
+$$
+\boldsymbol{x}^T\boldsymbol{x} =  1, \;\; \boldsymbol{x}^T\boldsymbol{q}_1 = 0, \;\; \dots \;\;, \boldsymbol{x}^T\boldsymbol{q}_{k-1} = 0
+$$
+is the eigenvalue $\lambda_k$, and this maximum is attained at $\boldsymbol{x} = \boldsymbol{q}_k$</div>\EndKnitrBlock{theorem}
+
+**PROOF**
+
+From $\boldsymbol{x} = P\boldsymbol{y}$ we know that
+
+$$
+\boldsymbol{x} = y_1\boldsymbol{q}_1 + \cdots + + y_{k-1}\boldsymbol{q}_{k-1} + y_k\boldsymbol{q}_k + \cdots +  y_{n}\boldsymbol{q}_n 
+$$
+Left multiply by $\boldsymbol{q}_1^T$ 
+
+$$
+\begin{aligned}
+\boldsymbol{q}_1^T\boldsymbol{x} &= y_1\boldsymbol{q}_1^T\boldsymbol{q}_1 + \cdots + + y_{k-1}\boldsymbol{q}_1^T\boldsymbol{q}_{k-1} + y_k\boldsymbol{q}_1^T\boldsymbol{q}_k + \cdots +  y_{n}\boldsymbol{q}_1^T\boldsymbol{q}_n  \\
+&= y_1\boldsymbol{q}_1^T\boldsymbol{q}_1 \\
+&= y_1
+\end{aligned} 
+$$
+Since $\boldsymbol{q}_1^T\boldsymbol{x} = \boldsymbol{x}^T\boldsymbol{q}_1 = 0$, we have $y_1 = 0$. Similarly, $y_2 = \cdots = y_{k-1} = 0$, and $\boldsymbol{y}$ becomes $[0 \;\; \cdots \;\; 0 \;\; y_{k} \;\; \cdots \;\; y_n]$. And the inequality now becomes: 
+
+$$
+\begin{split}
+\boldsymbol{x}^TA\boldsymbol{x} &= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
+&= \lambda_ky_k^2 + \cdots + \lambda_ny_n^ 2 \\
+&\le \lambda_ky_k^2 + \cdots + \lambda_ky_n^2 \\ 
+&\le \lambda_k(\boldsymbol{y}^T\boldsymbol{y}) \\
+&= \lambda_k
+\end{split}
+$$
+
+It's easy to see that $\boldsymbol{x}^TA\boldsymbol{x}$ gets its maximum $\lambda_k$ when $y_k = 0$ and other weights being zero. So the solution $\boldsymbol{x}$ can be solved as 
+
+$$
+\begin{split}
+\boldsymbol{x} &= 
+\begin{bmatrix}
+\boldsymbol{q}_1 &  \cdots & \boldsymbol{q}_k &   \boldsymbol{q}_{k+1} & \cdots &\boldsymbol{q}_n
+\end{bmatrix}
+\begin{bmatrix}
+0 \\
+\vdots \\
+\underbrace{1}_{k\text{th weight}} \\
+0 \\
+\vdots \\
+0
+\end{bmatrix} \\
+&= \boldsymbol{q}_k
+\end{split}
+$$
 
 ## SVD  
 
 $$
 \begin{split}
-U\Sigma &= [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n]
+U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]
 \begin{bmatrix}
 \sigma_1 \\
 & \ddots &  \\ 
@@ -525,7 +638,7 @@ U\Sigma &= [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n]
 & & & & \ddots \\
 & & & & & 0 \\
 \end{bmatrix} \\
-&= [\sigma_1\boldsymbol{q}_1 \;\; \cdots \;\; \sigma_n\boldsymbol{q}_n] \\
+&= [\sigma_1\boldsymbol{u}_1 \;\; \cdots \;\; \sigma_n\boldsymbol{u}_n] \\
 & = [A\boldsymbol{v}_1 \;\; \cdots \;\; A\boldsymbol{v}_n] \\
 &= AV
 \end{split}
