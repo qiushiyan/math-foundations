@@ -472,7 +472,7 @@ $$
 
 
 
-The principal axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = P\boldsymbol{y}$. 
+The principal axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = Q\boldsymbol{y}$. 
 
 ### Classification of quadratic forms 
 
@@ -536,9 +536,13 @@ $$
 
 **PROOF** 
 
-Since the Rayleigh quotient does not depend on the 2-norm of vector $\boldsymbol{x}$, we may assume a unit vector $\boldsymbol{x}^T\boldsymbol{x} = 1$. 
+Since the Rayleigh quotient does not depend on the 2-norm of vector $\boldsymbol{x}$, we may assume a unit vector $\boldsymbol{x}^T\boldsymbol{x} = 1$, and Rayleigh quotient simplifies to the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$. 
 
-Next, orthogonally diagonalize $A$ as $Q \Lambda Q$
+Next, orthogonally diagonalize $A$ as $Q \Lambda Q$, we know that: 
+
+$$
+\boldsymbol{x}^TA\boldsymbol{x} = \boldsymbol{y}^TA\boldsymbol{y}
+$$
 
 ## SVD  
 
