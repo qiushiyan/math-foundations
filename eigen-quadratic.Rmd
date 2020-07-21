@@ -538,17 +538,42 @@ $$
 
 Since the Rayleigh quotient does not depend on the 2-norm of vector $\boldsymbol{x}$, we may assume a unit vector $\boldsymbol{x}^T\boldsymbol{x} = 1$, and Rayleigh quotient simplifies to the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$. 
 
-Next, orthogonally diagonalize $A$ as $Q \Lambda Q$, we know that: 
+Next, orthogonally diagonalize $A$ as $Q \Lambda Q$, we know that when $\boldsymbol{x} = Q \boldsymbol{y}$: 
 
 $$
-\boldsymbol{x}^TA\boldsymbol{x} = \boldsymbol{y}^TA\boldsymbol{y}
+\boldsymbol{x}^TA\boldsymbol{x} = \boldsymbol{y}^T \Lambda \boldsymbol{y} \tag{1}
 $$
+Also 
+
+$$
+1= \boldsymbol{x}^T\boldsymbol{x} = (Q\boldsymbol{y})^T Q\boldsymbol{y} = \boldsymbol{y}^TQ^TQ\boldsymbol{y} = \boldsymbol{y}^T\boldsymbol{y} \tag{2}
+$$
+
+Expand $\boldsymbol{y}^T \Lambda \boldsymbol{y}$ in (1) we get 
+
+$$
+\boldsymbol{x}^TA\boldsymbol{x} = \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \tag{3}
+$$
+where $\{\lambda_1, ..., \lambda_n\}$ are diagonal entries of $\Lambda$ and eigenvalues of $A$. Let us suppose that the set $\{\lambda_1, \lambda_2, \cdots, \lambda_n\}$ has already been ordered descendingly, so that $\lambda_1 > \lambda_2 > \cdots > \lambda_n$. 
+
+We can obtain the equality from (3) and the order of eigenvalues: 
+
+$$
+\begin{split}
+\boldsymbol{x}^TA\boldsymbol{x} &= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
+&\le \lambda_1y_1^2 + \underbrace{\lambda_1y_2^2 + \cdots + \lambda_1y_n^2}_{\lambda_1 \text{ is the greatest eigenvalue}} \\ 
+&\le \lambda_1(\boldsymbol{y}^T\boldsymbol{y}) \\
+&= 1
+\end{split}
+$$
+
+
 
 ## SVD  
 
 $$
 \begin{split}
-U\Sigma &= [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n]
+U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]
 \begin{bmatrix}
 \sigma_1 \\
 & \ddots &  \\ 
@@ -557,7 +582,7 @@ U\Sigma &= [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n]
 & & & & \ddots \\
 & & & & & 0 \\
 \end{bmatrix} \\
-&= [\sigma_1\boldsymbol{q}_1 \;\; \cdots \;\; \sigma_n\boldsymbol{q}_n] \\
+&= [\sigma_1\boldsymbol{u}_1 \;\; \cdots \;\; \sigma_n\boldsymbol{u}_n] \\
 & = [A\boldsymbol{v}_1 \;\; \cdots \;\; A\boldsymbol{v}_n] \\
 &= AV
 \end{split}
