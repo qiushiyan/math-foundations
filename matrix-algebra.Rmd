@@ -15,7 +15,7 @@ A common way of looking at matrix-vector multiplication $A\boldsymbol{x}$ is to 
 
 $$
 \begin{aligned}
-A\boldsymbol{x} &= [\boldsymbol{a}_1 \cdots \boldsymbol{a}_n] 
+A\boldsymbol{x} &= [\boldsymbol{a}_1 \;\; \cdots \;\; \boldsymbol{a}_n] 
 \begin{bmatrix}
 x_1 \\
 \vdots \\
@@ -29,7 +29,7 @@ $$
 Likewise, for any $\boldsymbol{x}^{T} = [x_1, \cdots, x_n]^T$ and matrix $A_{m \times n}$, $x^{T}A$ can be thought of as a linear combination of rows in $A$ to produce a new row vector: 
 
 $$
-[x_1, \cdots, x_n] 
+[x_1 \;\; \cdots \;\; x_n] 
 \begin{bmatrix}
 \boldsymbol{a}_1^T \\
 \vdots  \\

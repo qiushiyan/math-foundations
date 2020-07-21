@@ -90,7 +90,7 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 
 \BeginKnitrBlock{definition}\iffalse{-91-68-105-97-103-111-110-97-108-105-122-97-116-105-111-110-32-116-104-111-101-114-101-109-93-}\fi{}<div class="definition"><span class="definition" id="def:diagonalization"><strong>(\#def:diagonalization)  \iffalse (Diagonalization thoerem) \fi{} </strong></span>An $n \ times n$ matrix $A$ is diagnolizable **if and only if** A has $n$ independent linearly independent eigenvectors. 
 
-In such case, in $A = PDP^{-1}$, the diagonal entries of $D$ are eigenvalues that correpond, respectively, to the eigenvectors of in $P$  
+In such case, in $A = P \Lambda P^{-1}$, the diagonal entries of $D$ are eigenvalues that correpond, respectively, to the eigenvectors of in $P$  
   
 In other words, $A$ is diagnolizable if and only if there are enough eigenvectors in form a basis of $R^n$, called an **eigenvector basis** of $R^n$ </div>\EndKnitrBlock{definition}
 
@@ -125,7 +125,7 @@ So that
 $$
 \begin{aligned}
 AP &= PD \\
-A &= PDP^{-1}
+A &= P \Lambda P^{-1}
 \end{aligned}
 $$
 Because $P$ contains $n$ independent columns so it's invertible.  
@@ -328,7 +328,7 @@ $$
 Recall that matrix $A$ with $n$ linearly independent eigenvectors is diagonalizable and can be written as 
 
 $$
-A = PDP^{-1}
+A = P \Lambda P^{-1}
 $$
 where $P = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ and $D$ is a diagonal matrix with eigenvalues on its diagonal entries. 
 
@@ -336,7 +336,7 @@ With symmetric matrices, after proper transformation we have $P^T = P^{-1}$, so 
 
 \begin{equation}
 (\#eq:orthogonal-diagonalization)
-A = PDP^T
+A = Q \Lambda Q^{T}
 \end{equation}
 
 Such matrix $A$ is said to be **orthogonally diagonalizable**. 
@@ -344,7 +344,7 @@ Such matrix $A$ is said to be **orthogonally diagonalizable**.
 We have seen that for symmetric matrix $A$, Eq \@ref(eq:orthogonal-diagonalization) always holds. We can also also verify that if $A$ is orthogonally diagonalizable then it is a symmetric matrix
 
 $$
-A^T = (PDP^T)^T = PD^TP^T = PDP^T  = A
+A^T = (Q \Lambda Q^{T})^T = PD^TP^T = Q \Lambda Q^{T}  = A
 $$
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
@@ -354,7 +354,7 @@ $$
 For orthogonally diagonalizable matrix $A$, we have 
 
 $$
-A = PDP^T = [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n] 
+A = Q \Lambda Q^{T} = [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n] 
 \begin{bmatrix}
 \lambda_1 & & \\
  & \ddots \\
@@ -414,7 +414,8 @@ x_1 \\
 x_3 \\
 x_3 \\
 \end{bmatrix} \\
-&= a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + (a_{12} + a_{21})x_1x_2 + (a_{13} + a_{31})x_1x_3 + (a_{23} + a_{32})x_2x_3 
+&= a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + \\
+& \quad(a_{12} + a_{21})x_1x_2 + (a_{13} + a_{31})x_1x_3 + (a_{23} + a_{32})x_2x_3 
 \end{split} 
 \tag{1}
 $$
@@ -423,8 +424,106 @@ Since $A$ is symmetric, we have $a_{ij} = a_{ji}$, thus
 $$
 \boldsymbol{x}^TA\boldsymbol{x}  = a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + 2a_{12}x_1x_2 + 2a_{13}x_1x_3 + 2a_{23}x_2x_3 \tag{2} 
 $$
-This verifies that $\boldsymbol{x}^TA\boldsymbol{x}$ when $A \in \mathbb{R}^{n \times n}$ is symmetric does result in a quadratic function of $n$ variables. Conversely, any quadratic function of $n$ variables, like shown in $(2)$, can be expressed in terms of $\boldsymbol{x}^TA\boldsymbol{x}$ with unique choice of $A$.  
+This verifies that $\boldsymbol{x}^TA\boldsymbol{x}$ when $A \in \mathbb{R}^{n \times n}$ is symmetric does result in a quadratic function of $n$ variables. Conversely, any quadratic function of $n$ variables, like shown in $(2)$, can be expressed in terms of $\boldsymbol{x}^TA\boldsymbol{x}$ with unique choice of symmetric matrix $A \in \mathbb{R}^{n \times n}$.  
+
+### Change of variabele 
+
+If $\boldsymbol{x}$ is a variable vector in $\mathbb{R}^n$, then a *change of variable* is an equation of the form 
+
+$$
+\begin{aligned}
+\boldsymbol{x} &= P\boldsymbol{y} \\
+\text{or equivalently} \quad \boldsymbol{y} &= P^{-1}\boldsymbol{x}
+\end{aligned}
+$$
+\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-80-114-105-110-99-105-112-97-108-32-65-120-101-115-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-9"><strong>(\#thm:unnamed-chunk-9)  \iffalse (The Principal Axes Theorem) \fi{} </strong></span>Let $A$ be an $n \times n$ symmetric matrix. Then there is an orthogonal change of variable, $\boldsymbol{x} = P\boldsymbol{y}$, this transform the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ into a quadratic form $\boldsymbol{y}^TD\boldsymbol{y}$ with no cross-product term.  
+
+$P$ is constructed with $A$'s orthonormal eigenvectors $\boldsymbol{q}_1, ..., \boldsymbol{q}_n$. According to theorem \@ref(eq:orthogonal-diagonalization): 
+
+$$
+\boldsymbol{x}^TA\boldsymbol{x} = (P\boldsymbol{y})^TA(P\boldsymbol{y}) = \boldsymbol{y}^TP^{T}AP\boldsymbol{y} = \boldsymbol{y}^TD\boldsymbol{y}
+$$</div>\EndKnitrBlock{theorem}
+
+The principle axes theorem \@ref(thm:the-principal-axes-theorem) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = P\boldsymbol{y}$. 
+
+### Classification of quadratic forms 
+
+- A symmetric matrix $A \in \mathbb{S}^n$ is **positive definite** (PD) if for all non-zero vectors $\boldsymbol{x} \in \mathbb{R}^n,\; \boldsymbol{x}^TA\boldsymbol{x} > 0$. We can denote positive definite matrix $A$ as $A \succ 0$ (or $A > 0$). The set of all positive definite matrices is denoted as $\mathbb{S}_{++}^n$  
+
+- A symmetric matrix $A \in \mathbb{S}^n$ is **positive semidefinite** (PSD) if for all non-zero vectors $\boldsymbol{x} \in \mathbb{R}^n,\; \boldsymbol{x}^TA\boldsymbol{x} \ge 0$. We can denote positive definite matrix $A$ as $A \succeq 0$ (or $A \ge 0$). The set of all positive semidefinite matrices is denoted as $\mathbb{S}_{+}^n$  
+
+- A symmetric matrix $A \in \mathbb{S}^n$ is **negative definite** (ND), denoted by $A \prec 0$ (or $A < 0$),  if for all non-zero vectors $\boldsymbol{x} \in \mathbb{R}^n,\; \boldsymbol{x}^TA\boldsymbol{x} < 0$.  
+
+- Similarly, a symmetric matrix $A \in \mathbb{S}^n$ is **negative semidefinite** (NSD), denoted by $A \preceq 0$ (or $A \le 0$),  if for all non-zero vectors $\boldsymbol{x} \in \mathbb{R}^n,\; \boldsymbol{x}^TA\boldsymbol{x} \le 0$.   
+
+- Finally,  a symmetric matrix $A \in \mathbb{S}^n$ is **indefinite**, if it is neither positive semidefinite or negative semidefinite. In other words, if there exists $\boldsymbol{x}, \boldsymbol{x}', \in \mathbb{R}^{n}$ such taht $\boldsymbol{x}^TA\boldsymbol{x} > 0$ and $\boldsymbol{x'}^TA\boldsymbol{x}' > 0$
+
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that when talking about $A$ being PD, PSD, ND, NSD or indefinite, $A$ is always assumed to be **symmetric**.
+
+Also, if $A$ is positive definite, then $−A$ is negative definite and viceversa. Likewise, if $A$ is positive semidefinite then $−A$ is negative semidefinite and vice versa. If $A$ is indefinite, then so is $−A$. </div>\EndKnitrBlock{rmdnote}
+
+From theorem \@ref(thm:the-principal-axes-theorem), we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of $A$ are equivalent: 
+
+- For any $\boldsymbol{x} \in \mathbb{R}^n, \; \boldsymbol{x}^TA\boldsymbol{x} > 0$  
+
+- Let $\lambda_i, \; i = 1, ..., n$ be $A$'s eigenvalues, $\lambda_i > 0$  
+
+- All leading determinants of $A > 0$  
+
+- All pivots are $> 0$  
 
 
+Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in general. 
 
-## SVD
+\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $$A \in \mathbb{S}^{n}$$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
+   
+- positive definite if and only if the eigenvalues of $A$ are all positive  
+
+- negative definite if and only if the eigenvalues of $A$ are all negative  
+
+- indefinite if and only if $A$ has both positive and negative eigenvalues</div>\EndKnitrBlock{theorem}
+
+## Rayleigh quotients 
+
+Let $A \in \mathbb{S}^n$ and $\boldsymbol{x} \in \mathbb{R}^n$, **Rayleigh quotient** is defined as 
+
+$$
+R_{A}(\boldsymbol{x}) = \frac{\boldsymbol{x}^TA\boldsymbol{x}}{\boldsymbol{x}^T\boldsymbol{x}}
+$$
+The Rayleigh quotient has some nice properties: 
+
+- scale invariance: for any vector $\boldsymbol{x} \not= 0$ and any scalar $\alpha \not= 0$, $R_{A}(\boldsymbol{x}) = R_{A}(\alpha\boldsymbol{x})$  
+
+- If $\boldsymbol{x}$ is a eigenvector of $A$ with eigenvalue $\lambda$, then $R_{A}(\boldsymbol{x}) = \lambda$
+
+- The Rayleigh quotient is bounded by the largest and smallest eigenvalue of $A$, i.e. 
+
+$$
+\lambda_{\text{min}}(A) \le R_{A}(\boldsymbol{x}) \le \lambda_{\text{max}}(A)
+$$
+
+**PROOF** 
+
+Since the Rayleigh quotient does not depend on the 2-norm of vector $\boldsymbol{x}$, we may assume a unit vector $\boldsymbol{x}^T\boldsymbol{x} = 1$. 
+
+Next, orthogonally diagonalize $A$ as $Q \Lambda Q$
+
+## SVD  
+
+$$
+\begin{split}
+U\Sigma &= [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n]
+\begin{bmatrix}
+\sigma_1 \\
+& \ddots &  \\ 
+& & \sigma_r \\
+& & & 0 \\
+& & & & \ddots \\
+& & & & & 0 \\
+\end{bmatrix} \\
+&= [\sigma_1\boldsymbol{q}_1 \;\; \cdots \;\; \sigma_n\boldsymbol{q}_n] \\
+& = [A\boldsymbol{v}_1 \;\; \cdots \;\; A\boldsymbol{v}_n] \\
+&= AV
+\end{split}
+$$
+

@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-20" />
+<meta name="date" content="2020-07-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -116,8 +116,12 @@
 <li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.3</b> Symmetric matrices</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#spectral-decomposition"><i class="fa fa-check"></i><b>4.3.1</b> Spectral decomposition</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#quadratic-forms"><i class="fa fa-check"></i><b>4.4</b> Quadratic forms</a></li>
-<li class="chapter" data-level="4.5" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.5</b> SVD</a></li>
+<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#quadratic-forms"><i class="fa fa-check"></i><b>4.4</b> Quadratic forms</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#change-of-variabele"><i class="fa fa-check"></i><b>4.4.1</b> Change of variabele</a></li>
+<li class="chapter" data-level="4.4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#classification-of-quadratic-forms"><i class="fa fa-check"></i><b>4.4.2</b> Classification of quadratic forms</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients"><i class="fa fa-check"></i><b>4.5</b> Rayleigh quotients</a></li>
+<li class="chapter" data-level="4.6" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.6</b> SVD</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -158,7 +162,7 @@
 <p>A common way of looking at matrix-vector multiplication <span class="math inline">\(A\boldsymbol{x}\)</span> is to think of as a linear combination of column vectors in <span class="math inline">\(A\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-A\boldsymbol{x} &amp;= [\boldsymbol{a}_1 \cdots \boldsymbol{a}_n] 
+A\boldsymbol{x} &amp;= [\boldsymbol{a}_1 \;\; \cdots \;\; \boldsymbol{a}_n] 
 \begin{bmatrix}
 x_1 \\
 \vdots \\
@@ -169,7 +173,7 @@ x_n
 \]</span></p>
 <p>Likewise, for any <span class="math inline">\(\boldsymbol{x}^{T} = [x_1, \cdots, x_n]^T\)</span> and matrix <span class="math inline">\(A_{m \times n}\)</span>, <span class="math inline">\(x^{T}A\)</span> can be thought of as a linear combination of rows in <span class="math inline">\(A\)</span> to produce a new row vector:</p>
 <p><span class="math display">\[
-[x_1, \cdots, x_n] 
+[x_1 \;\; \cdots \;\; x_n] 
 \begin{bmatrix}
 \boldsymbol{a}_1^T \\
 \vdots  \\
