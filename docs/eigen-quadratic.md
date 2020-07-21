@@ -317,22 +317,22 @@ because $\lambda_1 \not = \lambda_2$, $\boldsymbol{v}_1 \cdot \boldsymbol{v}_2 =
 For symmetric matrices $A \in \mathbb{R}^{n \times n}$ without $n$ distinct eigenvalues, it turns out that the dimension of the eigenspace for each $\lambda_k$ always equals the multiplicity of $\lambda_k$. For this reason, if $A$ is a symmetric matrix we can always construct a orthonormal set $\{\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n\}$ from $\{\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n\}$ such that  
 
 $$
-P^{T} = 
+Q^{T} = 
 \begin{bmatrix}
 \boldsymbol{q}_1^T \\
 \vdots \\ 
 \boldsymbol{q}_n^T
 \end{bmatrix}
-= P^{-1}
+= Q^{-1}
 $$
 Recall that matrix $A$ with $n$ linearly independent eigenvectors is diagonalizable and can be written as 
 
 $$
 A = P \Lambda P^{-1}
 $$
-where $P = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ and $D$ is a diagonal matrix with eigenvalues on its diagonal entries. 
+where $P = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ and $\Lambda$ is a diagonal matrix with eigenvalues on its diagonal entries. 
 
-With symmetric matrices, after proper transformation we have $P^T = P^{-1}$, so that 
+With symmetric matrices, $\{\boldsymbol{v}_1, \cdots, \boldsymbol{v}_n\}$ must be linearly independent and can be transformed into a orthonormal basis $\{\boldsymbol{q}_1, \cdots, \boldsymbol{q}_n\}$. With orthogonal matrix $Q =[\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n]$, we have
 
 \begin{equation}
 (\#eq:orthogonal-diagonalization)
@@ -344,7 +344,7 @@ Such matrix $A$ is said to be **orthogonally diagonalizable**.
 We have seen that for symmetric matrix $A$, Eq \@ref(eq:orthogonal-diagonalization) always holds. We can also also verify that if $A$ is orthogonally diagonalizable then it is a symmetric matrix
 
 $$
-A^T = (Q \Lambda Q^{T})^T = PD^TP^T = Q \Lambda Q^{T}  = A
+A^T = (Q \Lambda Q^{T})^T = (Q^T)^T\Lambda^TQ^T= Q \Lambda Q^{T}  = A
 $$
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
@@ -436,15 +436,19 @@ $$
 \text{or equivalently} \quad \boldsymbol{y} &= P^{-1}\boldsymbol{x}
 \end{aligned}
 $$
-\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-80-114-105-110-99-105-112-97-108-32-65-120-101-115-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-9"><strong>(\#thm:unnamed-chunk-9)  \iffalse (The Principal Axes Theorem) \fi{} </strong></span>Let $A$ be an $n \times n$ symmetric matrix. Then there is an orthogonal change of variable, $\boldsymbol{x} = P\boldsymbol{y}$, this transform the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ into a quadratic form $\boldsymbol{y}^TD\boldsymbol{y}$ with no cross-product term.  
+where $P$ is any invertible matrix $\in \mathbb{R}^{n \times n}$
 
-$P$ is constructed with $A$'s orthonormal eigenvectors $\boldsymbol{q}_1, ..., \boldsymbol{q}_n$. According to theorem \@ref(eq:orthogonal-diagonalization): 
+\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-80-114-105-110-99-105-112-97-108-32-65-120-101-115-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:principle-axes"><strong>(\#thm:principle-axes)  \iffalse (The Principal Axes Theorem) \fi{} </strong></span>Let $A$ be an $n \times n$ symmetric matrix. Then there exists an orthogonal change of variable, $\boldsymbol{x} = Q\boldsymbol{y}$, this transform the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ into a quadratic form $\boldsymbol{y}^T\Lambda\boldsymbol{y}$ with no cross-product term.  
+
+$Q$ is constructed with $A$'s orthonormal eigenvectors $\boldsymbol{q}_1, ..., \boldsymbol{q}_n$. According to theorem \@ref(eq:orthogonal-diagonalization): 
 
 $$
-\boldsymbol{x}^TA\boldsymbol{x} = (P\boldsymbol{y})^TA(P\boldsymbol{y}) = \boldsymbol{y}^TP^{T}AP\boldsymbol{y} = \boldsymbol{y}^TD\boldsymbol{y}
+\boldsymbol{x}^TA\boldsymbol{x} = (Q\boldsymbol{y})^TA(Q\boldsymbol{y}) = \boldsymbol{y}^TQ^{T}AQ\boldsymbol{y} = \boldsymbol{y}^T \Lambda \boldsymbol{y}
 $$</div>\EndKnitrBlock{theorem}
 
-The principle axes theorem \@ref(thm:the-principal-axes-theorem) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = P\boldsymbol{y}$. 
+
+
+The principle axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = P\boldsymbol{y}$. 
 
 ### Classification of quadratic forms 
 
@@ -462,7 +466,7 @@ The principle axes theorem \@ref(thm:the-principal-axes-theorem) shows that if $
 
 Also, if $A$ is positive definite, then $−A$ is negative definite and viceversa. Likewise, if $A$ is positive semidefinite then $−A$ is negative semidefinite and vice versa. If $A$ is indefinite, then so is $−A$. </div>\EndKnitrBlock{rmdnote}
 
-From theorem \@ref(thm:the-principal-axes-theorem), we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of $A$ are equivalent: 
+From theorem \@ref(thm:principle-axes), we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of $A$ are equivalent: 
 
 - For any $\boldsymbol{x} \in \mathbb{R}^n, \; \boldsymbol{x}^TA\boldsymbol{x} > 0$  
 
@@ -475,7 +479,7 @@ From theorem \@ref(thm:the-principal-axes-theorem), we know that the sign of eig
 
 Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in general. 
 
-\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $$A \in \mathbb{S}^{n}$$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
+\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-10"><strong>(\#thm:unnamed-chunk-10)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $$A \in \mathbb{S}^{n}$$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
    
 - positive definite if and only if the eigenvalues of $A$ are all positive  
 

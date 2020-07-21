@@ -255,7 +255,7 @@ $$</div>\EndKnitrBlock{theorem}
 To make $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\}$ an *orthonormal* basis, there is simply one more step of normalization 
 
 $$
-\{\frac{\boldsymbol{v}_i}{||\boldsymbol{v}_i||}, \;i = 1, ... p\} 
+\{\boldsymbol{q}_i = \frac{\boldsymbol{v}_i}{||\boldsymbol{v}_i||}, \;i = 1, ... p\} 
 $$
 
 
@@ -267,21 +267,21 @@ For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\boldsymb
 
 **PROOF**  
 
-Because $A_{m \times n}$ is full column rank, we can transform its column vector $\{\boldsymbol{x}_{1}, ..., \boldsymbol{x}_{n}\}$ into a new set of orthonormal basis $\{\boldsymbol{u}_{1}, ..., \boldsymbol{u}_{n}\}$ with Gram-Schmidt process. Let 
+Because $A_{m \times n}$ is full column rank, we can transform its column vector $\{\boldsymbol{x}_{1}, ..., \boldsymbol{x}_{n}\}$ into a new set of orthonormal basis $\{\boldsymbol{q}_{1}, ..., \boldsymbol{q}_{n}\}$ with Gram-Schmidt process. Let 
 
 $$
-Q = [\boldsymbol{u}_{1} \;\; \cdots \;\; \boldsymbol{u}_{n}]
+Q = [\boldsymbol{q}_{1} \;\; \cdots \;\; \boldsymbol{q}_{n}]
 $$
 For $\boldsymbol{x}_i, \; i = {1, ..., n}$ in Span$\{\boldsymbol{x}_1, ... \boldsymbol{x}_k\}$, there exists a set of constant $r_{1k}, ..., r_{kk}$ such that ^[because Span$\{\boldsymbol{x}_1, ... \boldsymbol{x}_k\}$ is the same as Span$\{\boldsymbol{u}_1, ... \boldsymbol{u}_k\}$] 
 
 $$
-\boldsymbol{x}_k = r_{1k}\boldsymbol{u}_{1} + \cdots + r_{kk}\boldsymbol{u}_{k} + 0 \cdot\boldsymbol{u}_{k+1} + \cdots + 0 \cdot \boldsymbol{u}_{n}
+\boldsymbol{x}_k = r_{1k}\boldsymbol{q}_{1} + \cdots + r_{kk}\boldsymbol{q}_{k} + 0 \cdot\boldsymbol{q}_{k+1} + \cdots + 0 \cdot \boldsymbol{q}_{n}
 $$
 
 So 
 
 $$
-A = [\boldsymbol{x}_{1} \;\; \boldsymbol{x}_{2} \;\; \cdots \;\; \boldsymbol{x}_{n}] = [\boldsymbol{u}_{1} \;\; \boldsymbol{u}_{2} \;\; \cdots \;\; \boldsymbol{u}_{n}] 
+A = [\boldsymbol{x}_{1} \;\; \boldsymbol{x}_{2} \;\; \cdots \;\; \boldsymbol{x}_{n}] = [\boldsymbol{q}_{1} \;\; \boldsymbol{q}_{2} \;\; \cdots \;\; \boldsymbol{q}_{n}] 
 \begin{bmatrix}
 r_{11} & r_{12} & \cdots & r_{1n} \\
 0 & r_{22} & \cdots & r_{2n} \\

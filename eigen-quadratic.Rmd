@@ -460,7 +460,7 @@ $$
 $$
 where $P$ is any invertible matrix $\in \mathbb{R}^{n \times n}$
 
-```{theorem, name = "The Principal Axes Theorem"}
+```{theorem principal-axes, name = "The Principal Axes Theorem"}
 Let $A$ be an $n \times n$ symmetric matrix. Then there exists an orthogonal change of variable, $\boldsymbol{x} = Q\boldsymbol{y}$, this transform the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ into a quadratic form $\boldsymbol{y}^T\Lambda\boldsymbol{y}$ with no cross-product term.  
 
 $Q$ is constructed with $A$'s orthonormal eigenvectors $\boldsymbol{q}_1, ..., \boldsymbol{q}_n$. According to theorem \@ref(eq:orthogonal-diagonalization): 
@@ -472,7 +472,7 @@ $$
 
 
 
-The principle axes theorem \@ref(thm:the-principal-axes-theorem) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = P\boldsymbol{y}$. 
+The principal axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = P\boldsymbol{y}$. 
 
 ### Classification of quadratic forms 
 
@@ -492,7 +492,7 @@ Note that when talking about $A$ being PD, PSD, ND, NSD or indefinite, $A$ is al
 Also, if $A$ is positive definite, then $−A$ is negative definite and viceversa. Likewise, if $A$ is positive semidefinite then $−A$ is negative semidefinite and vice versa. If $A$ is indefinite, then so is $−A$. 
 ```
 
-From theorem \@ref(thm:the-principal-axes-theorem), we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of $A$ are equivalent: 
+From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of $A$ are equivalent: 
 
 - For any $\boldsymbol{x} \in \mathbb{R}^n, \; \boldsymbol{x}^TA\boldsymbol{x} > 0$  
 

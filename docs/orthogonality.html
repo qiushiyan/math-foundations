@@ -372,7 +372,7 @@ When <span class="math inline">\(\boldsymbol{v}\)</span> is distinct from <span 
 
 <p>To make <span class="math inline">\(\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\}\)</span> an <em>orthonormal</em> basis, there is simply one more step of normalization</p>
 <p><span class="math display">\[
-\{\frac{\boldsymbol{v}_i}{||\boldsymbol{v}_i||}, \;i = 1, ... p\} 
+\{\boldsymbol{q}_i = \frac{\boldsymbol{v}_i}{||\boldsymbol{v}_i||}, \;i = 1, ... p\} 
 \]</span></p>
 <div id="qr-factorizaiton" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> QR factorizaiton</h3>
@@ -383,17 +383,17 @@ When <span class="math inline">\(\boldsymbol{v}\)</span> is distinct from <span 
 </div>
 
 <p><strong>PROOF</strong></p>
-<p>Because <span class="math inline">\(A_{m \times n}\)</span> is full column rank, we can transform its column vector <span class="math inline">\(\{\boldsymbol{x}_{1}, ..., \boldsymbol{x}_{n}\}\)</span> into a new set of orthonormal basis <span class="math inline">\(\{\boldsymbol{u}_{1}, ..., \boldsymbol{u}_{n}\}\)</span> with Gram-Schmidt process. Let</p>
+<p>Because <span class="math inline">\(A_{m \times n}\)</span> is full column rank, we can transform its column vector <span class="math inline">\(\{\boldsymbol{x}_{1}, ..., \boldsymbol{x}_{n}\}\)</span> into a new set of orthonormal basis <span class="math inline">\(\{\boldsymbol{q}_{1}, ..., \boldsymbol{q}_{n}\}\)</span> with Gram-Schmidt process. Let</p>
 <p><span class="math display">\[
-Q = [\boldsymbol{u}_{1} \;\; \cdots \;\; \boldsymbol{u}_{n}]
+Q = [\boldsymbol{q}_{1} \;\; \cdots \;\; \boldsymbol{q}_{n}]
 \]</span>
 For <span class="math inline">\(\boldsymbol{x}_i, \; i = {1, ..., n}\)</span> in Span<span class="math inline">\(\{\boldsymbol{x}_1, ... \boldsymbol{x}_k\}\)</span>, there exists a set of constant <span class="math inline">\(r_{1k}, ..., r_{kk}\)</span> such that<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <p><span class="math display">\[
-\boldsymbol{x}_k = r_{1k}\boldsymbol{u}_{1} + \cdots + r_{kk}\boldsymbol{u}_{k} + 0 \cdot\boldsymbol{u}_{k+1} + \cdots + 0 \cdot \boldsymbol{u}_{n}
+\boldsymbol{x}_k = r_{1k}\boldsymbol{q}_{1} + \cdots + r_{kk}\boldsymbol{q}_{k} + 0 \cdot\boldsymbol{q}_{k+1} + \cdots + 0 \cdot \boldsymbol{q}_{n}
 \]</span></p>
 <p>So</p>
 <p><span class="math display">\[
-A = [\boldsymbol{x}_{1} \;\; \boldsymbol{x}_{2} \;\; \cdots \;\; \boldsymbol{x}_{n}] = [\boldsymbol{u}_{1} \;\; \boldsymbol{u}_{2} \;\; \cdots \;\; \boldsymbol{u}_{n}] 
+A = [\boldsymbol{x}_{1} \;\; \boldsymbol{x}_{2} \;\; \cdots \;\; \boldsymbol{x}_{n}] = [\boldsymbol{q}_{1} \;\; \boldsymbol{q}_{2} \;\; \cdots \;\; \boldsymbol{q}_{n}] 
 \begin{bmatrix}
 r_{11} &amp; r_{12} &amp; \cdots &amp; r_{1n} \\
 0 &amp; r_{22} &amp; \cdots &amp; r_{2n} \\
