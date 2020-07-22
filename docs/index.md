@@ -28,5 +28,8 @@ References (books, online courses, videos, papers) include:
   - *Linear Algebra and its Applications* [@strang2006linear]  
   - [Linear Algebra Review and Reference](http://cs229.stanford.edu/section/cs229-linalg.pdf) on Stanford's cs229 website   
   - Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, https://ocw.mit.edu. License: Creative Commons BY-NC-SA.
+  
+- **Probability Thoery**  
+  - *Probability for Statistics and Machine Learning: Fundamentals and Advanced   Topics* [@10.5555/2028916]
 
 

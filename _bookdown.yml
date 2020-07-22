@@ -19,6 +19,8 @@ rmd_files: [
 
   "taylor.Rmd",
   
+  "probability-basics.Rmd",
+  "moments.Rmd",
   
   "linear-models.Rmd",
   "pca.Rmd",
