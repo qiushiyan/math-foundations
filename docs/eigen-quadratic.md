@@ -487,6 +487,25 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 - indefinite if and only if $A$ has both positive and negative eigenvalues</div>\EndKnitrBlock{theorem}
 
+
+<hr>
+
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-11"><strong>(\#prp:unnamed-chunk-11) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ is a positive semidefinite matrix</div>\EndKnitrBlock{proposition}
+
+**PROOF**
+
+By definition, $A^TA$ is a positive semidefinite matrix if for any $\boldsymbol{x} \in \mathbb{R}^n$, the quadratic form $\boldsymbol{x}^T(A^TA)\boldsymbol{x} \ge 0$. 
+
+$$
+\begin{split}
+\boldsymbol{x}^T(A^TA)\boldsymbol{x} &= (\boldsymbol{x}^TA^T)(A\boldsymbol{x}) \\
+&= (A\boldsymbol{x})^T(A\boldsymbol{x}) \\
+&= ||A\boldsymbol{x}||^2
+\end{split}
+$$
+It turns out that the result is the square of the 2-norm of $A\boldsymbol{x}$
+
+
 ## Rayleigh quotients 
 
 Let $A \in \mathbb{S}^n$ and $\boldsymbol{x} \in \mathbb{R}^n$, **Rayleigh quotient** is defined as 
@@ -570,7 +589,7 @@ The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n
 
 If we add more constraints, for example, that $\boldsymbol{x}$ should be orthogonal to $\boldsymbol{q}_1$, then $\boldsymbol{x}^TA\boldsymbol{x}$ has maximum $\lambda_2$ attained at $\boldsymbol{x} = \lambda_2$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-12"><strong>(\#thm:unnamed-chunk-12) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
 
 $$
 \boldsymbol{x}^T\boldsymbol{x} =  1, \;\; \boldsymbol{x}^T\boldsymbol{q}_1 = 0, \;\; \dots \;\;, \boldsymbol{x}^T\boldsymbol{q}_{k-1} = 0
@@ -625,7 +644,102 @@ $$
 \end{split}
 $$
 
-## SVD  
+
+
+## SVD   
+
+### Singular values of m x n matrix
+
+Singular value decomposition illustrates a way of decomposing *any* matrix $A \in \mathbb{R}^{m \times n}$ into the form $U \Sigma V^T$, where $U = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]$ and $V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ are both orthogonal matrices, and $\Sigma$ a diagonal matrix with entries being the square root of the eigenvalues of $A^TA$ (perhaps plus some zeros).  
+Before proceeding to the theorem, let's explore the motivating idea behind SVD. For (square) diagonalizable matrix $A \in \mathbb{S}^{n}$, the absolute value of the eigenvalues measure the amounts that $A$ stretches or shrinks eigenvectors, consider the ratio between the length of $\boldsymbol{x}$ before and after left multiplied by $A$ 
+
+$$
+\frac{||A\boldsymbol{x}||}{||\boldsymbol{x}||} 
+= \frac{||\lambda\boldsymbol{x}||}{||\boldsymbol{x}||}
+= \frac{\lambda||\boldsymbol{x}||}{||\boldsymbol{x}||} = \lambda
+$$
+If $\lambda_1$ is the greatest eigenvalue, then the corresponding eigenvector $\boldsymbol{v}_1$ identifies the direction in which $A$'s stretching effect is greatest. 
+
+So, the question is, can we identify such similar direction for *rectangular* matrices $A \in \mathbb{R}^{m \times n}$, even though they does not have eigenvalues and eigenvectors?  
+
+The answer is yes. Note that maximize $\frac{||A\boldsymbol{x}||}{||\boldsymbol{x}||}$ is equivalent to maximize $\frac{||A\boldsymbol{x}||^2}{||\boldsymbol{x}||^2}$ 
+
+$$
+\begin{split}
+\frac{||A\boldsymbol{x}||^2}{||\boldsymbol{x}||^2} &= \frac{(A\boldsymbol{x})^T(A\boldsymbol{x})}{\boldsymbol{x}^T\boldsymbol{x}} \\
+&= \frac{\boldsymbol{x}^T(A^TA)\boldsymbol{x}}{\boldsymbol{x}^T\boldsymbol{x}}
+
+\end{split}
+$$
+Since $A^TA$ is **symmetric**, this is the form of a Rayleigh quotients \@ref(rayleigh-quotients)! We know that the largest possible value is of this quotient $\lambda_1$, the greatest eigenvalue of $A^TA$, with $\boldsymbol{x} = \boldsymbol{v}_1$, among the **orthonormal** set $\{\boldsymbol{v}_1, \cdots, \boldsymbol{v}_n\}$. Note that here $V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ is already a orthogonal matrix, previously denoted by $Q$. 
+
+To sum up, the greatest possible stretching ratio of $A \in \mathbb{R}^{m \times n}$ on a vector $\boldsymbol{x} \in \mathbb{R}^n$ is $\sqrt{\lambda_1}$. Generally, let $\{\boldsymbol{v}_1, \cdots, \boldsymbol{v}_n\}$ be a orthonormal basis for $\mathbb{R}^n$ consisting of eigenvectors of $A^TA$, and $\lambda_1, ..., \lambda_n$ be the eigenvalues of $A^TA$, for $i = 1, \cdots, n$
+
+$$
+||A\boldsymbol{v}_i|| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
+$$
+\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-13"><strong>(\#def:unnamed-chunk-13)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the lengths of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
+
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-14"><strong>(\#thm:unnamed-chunk-14) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col}\; A$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
+
+**PROOF**
+
+First, let's examine that $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is a orthogonal basis: any pair of two distinct vectors $A\boldsymbol{v}_i, A\boldsymbol{v}_j, \; i,j = 1, ..., r$ are orthogonal to each other 
+
+$$
+\begin{split}
+(A\boldsymbol{v}_i)^T(A\boldsymbol{v}_j) &=  \boldsymbol{v}_i^TA^TA\boldsymbol{v}_j \\
+&= \boldsymbol{v}_i^T(\lambda_j\boldsymbol{v}_j) \\
+&= 0
+
+\end{split}
+$$
+
+Next, we will show that any vector in $\text{Col}\; A$ is a linear a combination of $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$. Note that $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_r\}$ is a orthonormal basis of $A^TA$'s eigenspace $\mathbb{R}$. So for any vector $\boldsymbol{y} = A\boldsymbol{x}$ in $\text{Col}\; A$ , we can write $\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n$, thus
+
+$$
+\begin{split}
+\boldsymbol{y} &= A\boldsymbol{x} = A(c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n) \\
+&= c_1 A \boldsymbol{v}_1 + \cdots + c_r A \boldsymbol{v}_r + c_{r+1} A \boldsymbol{v}_{r+1} + \cdots + c_n A \boldsymbol{v}_n 
+\end{split}
+\tag{1}
+$$
+Since $\lambda_{r+1} = \cdots = \lambda_{n} = 0$, $A\boldsymbol{v}_{r+1}, ..., A\boldsymbol{v}_{n}$ have length $0$: they are zero vectors. And (1) is reduced to 
+
+$$
+\boldsymbol{y} = c_1 A \boldsymbol{v}_1 + \cdots + c_r A\boldsymbol{v}_r
+$$
+
+Thus $\boldsymbol{y} \in \text{Col}\; A$ is in Span$\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$, and $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col} \;A$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
+
+
+### The singular value decomposition 
+
+Let's begin SVD by the $m \times n$ diagonal matrix $\Sigma$ of the form 
+
+$$
+\Sigma = \begin{bmatrix}
+\sigma_1 \\
+& \ddots &  \\ 
+& & \sigma_r \\
+& & & 0 \\
+& & & & \ddots \\
+& & & & & 0 \\
+\end{bmatrix}
+\tag{1}
+$$
+
+There are $r$ nonzero entries on the diagonal, being $A$'s nonzero singular values, and the left positions are filled by $0$ to form a $m \times n$ matrix. If $r$ equals $m$ or $n$ or both, some or all of the zero blocks do not appear.  
+
+\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-83-105-110-103-117-108-97-114-32-86-97-108-117-101-32-68-101-99-111-109-112-111-115-105-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:SVD"><strong>(\#thm:SVD)  \iffalse (The Singular Value Decomposition) \fi{} </strong></span>Let $A \in \mathbb{R}^{m \times n}$ with rank $r$. There exists an diagonal matrix $\mathbb{\Sigma} \in \mathbb{R}^{m \times n}$ as in (1) for which the first $r\ \times r$ block is a diagonal matrix with the first $r$ singular values on its diagonal, and there exist $U \in \mathbb{R}^{m \times m}$ and $V \in \mathbb{R}^{n \times n}$ such that 
+
+$$
+A = U \Sigma V^T
+$$</div>\EndKnitrBlock{theorem}
+
+
+
 
 $$
 \begin{split}

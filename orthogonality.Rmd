@@ -335,3 +335,20 @@ $$
 Therefore multiplication by an orthogonal matrix can be considered as a transformation that preserves length, but may rotate or reflect the vector about the origin. 
 
 Note that $Q$ may not necessarily be a square matrix to satisfy $Q^TQ = I$. For exmaple $Q \in \mathbb{R}^{m \times n}, n < m$, but its columns and rows can still be orthonormal, then $QQ^T = I$. But in most cases the term orthogonal implies a square matrix $Q$. 
+
+## Lesat squares problems 
+
+```{definition}
+the **normal equation** 
+$$
+A^TA\boldsymbol{x} = A^T\boldsymbol{b}
+$$
+```
+
+$$
+\begin{aligned}
+A^T(\boldsymbol{b} - A\hat{\boldsymbol{x}}) &= \boldsymbol{0}
+\end{aligned} \\
+A^T\boldsymbol{b} - A^TA\hat{\boldsymbol{x}} = 0 \\
+\hat{\boldsymbol{x}} = (A^TA)^{-1}A^T\boldsymbol{b}
+$$

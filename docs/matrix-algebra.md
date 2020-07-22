@@ -77,14 +77,14 @@ E_1 =
 0 & 1 & 0 \\
 -4 & 0 & 1
 \end{bmatrix} 
-, 
+,\;
 E_2 = 
 \begin{bmatrix}
 0 & 1 & 0 \\
 1 & 0 & 0 \\
 0 & 0 & 1
 \end{bmatrix} 
-,
+,\;
 E_3 = 
 \begin{bmatrix}
 1 & 0 & 0 \\

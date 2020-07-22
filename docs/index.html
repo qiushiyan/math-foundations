@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-21" />
+<meta name="date" content="2020-07-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -106,6 +106,7 @@
 <li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.4</b> Orthonormal sets and orthogonal matrices</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.4.1</b> Orthogonal matrices</a></li>
 </ul></li>
+<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#lesat-squares-problems"><i class="fa fa-check"></i><b>3.5</b> Lesat squares problems</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and quadratic forms</a><ul>
 <li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and eigenvalues</a></li>
@@ -121,19 +122,23 @@
 <li class="chapter" data-level="4.4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#classification-of-quadratic-forms"><i class="fa fa-check"></i><b>4.4.2</b> Classification of quadratic forms</a></li>
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients"><i class="fa fa-check"></i><b>4.5</b> Rayleigh quotients</a></li>
-<li class="chapter" data-level="4.6" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.6</b> SVD</a></li>
+<li class="chapter" data-level="4.6" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.6</b> SVD</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#singular-values-of-m-x-n-matrix"><i class="fa fa-check"></i><b>4.6.1</b> Singular values of m x n matrix</a></li>
+<li class="chapter" data-level="4.6.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-singular-value-decomposition"><i class="fa fa-check"></i><b>4.6.2</b> The singular value decomposition</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
 <li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
 <li class="chapter" data-level="7" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>7</b> Probability basics</a></li>
+<li class="chapter" data-level="8" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>8</b> Moments</a></li>
 <li class="part"><span><b>IV Applications</b></span></li>
-<li class="chapter" data-level="8" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>8</b> Linear models</a><ul>
-<li class="chapter" data-level="8.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>8.1</b> Least square estimation</a></li>
-<li class="chapter" data-level="8.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>8.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="9" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>9</b> Linear models</a><ul>
+<li class="chapter" data-level="9.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>9.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="9.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>9.2</b> Maximum likelihood estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="principle-component-analysis.html"><a href="principle-component-analysis.html"><i class="fa fa-check"></i><b>9</b> Principle component analysis</a></li>
+<li class="chapter" data-level="10" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>10</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -160,11 +165,12 @@
 <div id="header">
 <h1 class="title">Mathematical Notes for Machine Learning</h1>
 <p class="author"><em>Qiushi Yan</em></p>
-<p class="date"><em>2020-07-21</em></p>
+<p class="date"><em>2020-07-22</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<p>This notebook collects various mathematical topics relevant to machine learning problems, including linear algebra, calculus, probability theory, statistics and (possibly) optimization.</p>
+<p>This document aims to collect notes on various mathematical topics relevant to machine learning problems, including linear algebra, calculus, probability theory, statistics and (possibly) optimization.</p>
+<p>The document is generated by the <code>bookdown</code> package <span class="citation">(Xie <a href="references.html#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>.</p>
 <p>References (books, online courses, videos, papers) include:</p>
 <ul>
 <li><strong>general</strong>
@@ -186,6 +192,7 @@
 <li><strong>Probability Thoery</strong>
 <ul>
 <li><em>Probability for Statistics and Machine Learning: Fundamentals and Advanced Topics</em> <span class="citation">(DasGupta <a href="references.html#ref-10.5555/2028916" role="doc-biblioref">2011</a>)</span></li>
+<li>John Tsitsiklis, and Patrick Jaillet. RES.6-012 Introduction to Probability. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, <a href="https://ocw.mit.edu" class="uri">https://ocw.mit.edu</a>. License: Creative Commons BY-NC-SA.</li>
 </ul></li>
 </ul>
 

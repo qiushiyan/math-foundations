@@ -142,10 +142,10 @@ Derivations for other $c_i$ is similar.
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4) </strong></span>Let $\mathbb{R}^n$ be a inner product space and $W$ and subspace of $\mathbb{R}^n$. Then every $\boldsymbol{v}$ in $W$ can be written uniquely in the form
 
 $$
-\boldsymbol{v} = \boldsymbol{v}_W + \boldsymbol{v}_{\perp}
+\boldsymbol{v} = \boldsymbol{v}_w + \boldsymbol{v}_{\perp}
 $$
   
-where $\boldsymbol{v}_W \in W$ and $\boldsymbol{v}_{\perp} \in W^{\perp}$</div>\EndKnitrBlock{theorem}
+where $\boldsymbol{v}_w \in W$ and $\boldsymbol{v}_{\perp} \in W^{\perp}$</div>\EndKnitrBlock{theorem}
 
 **PROOF** 
 
@@ -322,3 +322,18 @@ $$
 Therefore multiplication by an orthogonal matrix can be considered as a transformation that preserves length, but may rotate or reflect the vector about the origin. 
 
 Note that $Q$ may not necessarily be a square matrix to satisfy $Q^TQ = I$. For exmaple $Q \in \mathbb{R}^{m \times n}, n < m$, but its columns and rows can still be orthonormal, then $QQ^T = I$. But in most cases the term orthogonal implies a square matrix $Q$. 
+
+## Lesat squares problems 
+
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6) </strong></span>the **normal equation** 
+$$
+A^TA\boldsymbol{x} = A^T\boldsymbol{b}
+$$</div>\EndKnitrBlock{definition}
+
+$$
+\begin{aligned}
+A^T(\boldsymbol{b} - A\hat{\boldsymbol{x}}) &= \boldsymbol{0}
+\end{aligned} \\
+A^T\boldsymbol{b} - A^TA\hat{\boldsymbol{x}} = 0 \\
+\hat{\boldsymbol{x}} = (A^TA)^{-1}A^T\boldsymbol{b}
+$$

@@ -8,10 +8,7 @@
 From theorem \@ref(thm:best-approximation) we know that 
 
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-1"><strong>(\#def:unnamed-chunk-1) </strong></span>the **normal equation** 
-$$
-A^TA\boldsymbol{x} = A^T\boldsymbol{b}
-$$</div>\EndKnitrBlock{definition}
+
 
 
 

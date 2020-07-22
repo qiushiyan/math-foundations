@@ -1,3 +1,3 @@
 
 
-# Principle component analysis
+# Principal component analysis

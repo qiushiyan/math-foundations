@@ -8,12 +8,7 @@
 From theorem \@ref(thm:best-approximation) we know that 
 
 
-```{definition}
-the **normal equation** 
-$$
-A^TA\boldsymbol{x} = A^T\boldsymbol{b}
-$$
-```
+
 
 
 
