@@ -149,10 +149,10 @@ Derivations for other $c_i$ is similar.
 Let $\mathbb{R}^n$ be a inner product space and $W$ and subspace of $\mathbb{R}^n$. Then every $\boldsymbol{v}$ in $W$ can be written uniquely in the form
 
 $$
-\boldsymbol{v} = \boldsymbol{v}_W + \boldsymbol{v}_{\perp}
+\boldsymbol{v} = \boldsymbol{v}_w + \boldsymbol{v}_{\perp}
 $$
   
-where $\boldsymbol{v}_W \in W$ and $\boldsymbol{v}_{\perp} \in W^{\perp}$
+where $\boldsymbol{v}_w \in W$ and $\boldsymbol{v}_{\perp} \in W^{\perp}$
 ```
 
 **PROOF** 
