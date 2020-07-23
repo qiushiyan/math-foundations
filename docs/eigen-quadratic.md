@@ -83,7 +83,55 @@ Multiplying both sides of (2) by $\lambda_{p+1}$ and subtracting (2) from the re
 $$
 c_1(\lambda_1 - \lambda_{p+1})\boldsymbol{v}_1 +\cdots + c_p(\lambda_p - \lambda_{p+1})\boldsymbol{v}_p = 0 \tag{3}
 $$
-Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weights in (3) must be all zero. Since $\lambda_1, \cdots, \lambda_p$ are distinct, hence $c_i = 0, \, i = 1, ..., p$. But then (5) says that eigenvector $\boldsymbol{v}_{p+1}$ is zero vector, which contradicts definition \@ref(def:eigen) 
+Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weights in (3) must be all zero. Since $\lambda_1, \cdots, \lambda_p$ are distinct, hence $c_i = 0, \, i = 1, ..., p$. But then (5) says that eigenvector $\boldsymbol{v}_{p+1}$ is zero vector, which contradicts definition \@ref(def:eigen)   
+
+<hr>
+
+
+```propisition
+Let $A in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. 
+```
+
+**PROOF** 
+
+Let $\lambda$ be a nonzero eigenvalue of $A^TA$ and $\boldsymbol{x}$ its eigenvector 
+
+$$
+\begin{split}
+(A^TA)\boldsymbol{x} &= \lambda\boldsymbol{x} \\
+\end{split}
+$$
+Left multiply by $A$ 
+
+$$
+AA^T(A\boldsymbol{x}) = \lambda (A\boldsymbol{x})
+$$
+We will have to verify that $A\boldsymbol{x}$ is no zero vector before concluding $\lambda$ is also an eigenvector of $AA^T$. Suppose $A\boldsymbol{x} = 0$, then $A^TA\boldsymbol{x} =\lambda\boldsymbol{x} = 0$. Since $\boldsymbol{x}$ is a eigenvector which is nonzero, $\lambda = 0$, which contradicts our former statement. Thus, any nonzero eigenvalue of $A^TA$ is also an eigenvalue of $AA^T$. 
+
+## Additional properties of eigenvalues and eigenvectors  
+
+Let $A \in \mathbb{R}^{n \times n}$ with eigenvalues $\lambda_1, ..., \lambda_n$. Here are some additional properties of this matrix and its eigenvlaues: 
+
+- The trace of $A$ is the sum of all eigenvalues
+
+$$
+\text{tr}(A) = \sum_{i=1}^{n}{\lambda_i}
+$$
+
+- The determinant of $A$ is the product of all its eigenvalues.  
+
+$$
+\det(A) = \prod_{i=1}^{n}{\lambda_i}
+$$
+
+- The eigenvalues of $k$th power of $A$, i.e. $A^k$, is $\lambda_1^k, ..., \lambda_n^k$  
+
+- If $A$ is invertible, then eigenvalues of $A^{-1}$ are $\frac{1}{\lambda_1}, ..., \frac{1}{\lambda_n}$  
+
+- For a polynomial function $P$ the eigenvalues of $P(A)$ are $P(\lambda_1), ..., P(\lambda_n)$
+
+
+
 
 ## Diagnolization and similar matrices 
 
@@ -145,7 +193,7 @@ If $A$ and $B$ are both $n \times n$ matrices, then $A$ **is similar to** $N$ if
 
 
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>If $A$ and $B$ are similar, they have the same eigenvalues. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>If $A$ and $B$ are similar, they have the same eigenvalues. </div>\EndKnitrBlock{theorem}
 
 **PROOF**  
 If $B = P^{-1}AP$, then 
@@ -179,7 +227,7 @@ $$
 
 The similarity theorem leads to a interesting proposition. 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-3"><strong>(\#prp:unnamed-chunk-3) </strong></span>For $A, B \in \mathbb{R}^{n \times n}$, $AB$ and $BA$ are similar matrices and therefore share the same set of eigenvalues.  </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-4"><strong>(\#prp:unnamed-chunk-4) </strong></span>For $A, B \in \mathbb{R}^{n \times n}$, $AB$ and $BA$ are similar matrices and therefore share the same set of eigenvalues.  </div>\EndKnitrBlock{proposition}
 
 To prove this, we need to show that there exists a invertible matrix $A$ such that $P^{-1}(AB)P = BA$. Take $P = A$ and the equation holds.  
 
@@ -214,7 +262,7 @@ are not similar even though they have the same eigenvalues.
 For non-diagonalizable matrices $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
 
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4) </strong></span>The $n \times n$ matrix $J_{\lambda, n}$ with $\lambda$s on the diagonal, $1$s on the superdiagonal and $0$s elsewhere is called a Jordan matrix. A Jordan matrix in Jordan normal form is a block matrix that has Jordan blocks down its block diagonal and is zero elsewhere</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5) </strong></span>The $n \times n$ matrix $J_{\lambda, n}$ with $\lambda$s on the diagonal, $1$s on the superdiagonal and $0$s elsewhere is called a Jordan matrix. A Jordan matrix in Jordan normal form is a block matrix that has Jordan blocks down its block diagonal and is zero elsewhere</div>\EndKnitrBlock{definition}
 
 An example of Jordan matrix, the appearance of $\lambda_i$ on the diagonal is equal to its multiplicity as $A$'s eigenvalue. 
 $$
@@ -297,7 +345,7 @@ It is common to denote the set of all symmetric matrices of size $n$ as $\mathbb
 
 Symmetric matrices have some nice properties about diagonalization.  
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-6"><strong>(\#thm:unnamed-chunk-6) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
 
 **PROOF** 
 
@@ -347,7 +395,7 @@ $$
 A^T = (Q \Lambda Q^{T})^T = (Q^T)^T\Lambda^TQ^T= Q \Lambda Q^{T}  = A
 $$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
 
 ### Spectral decomposition 
 
@@ -381,7 +429,7 @@ Eq \@ref(eq:spectral-decomposition) is called the **spectral decomposition**, br
 
 ## Quadratic forms 
 
-\BeginKnitrBlock{definition}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse (Quadratic form) \fi{} </strong></span>A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\boldsymbol{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\boldsymbol{x}) = \boldsymbol{x}^TA\boldsymbol{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (Quadratic form) \fi{} </strong></span>A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\boldsymbol{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\boldsymbol{x}) = \boldsymbol{x}^TA\boldsymbol{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. </div>\EndKnitrBlock{definition}
 
 There exists a one-to-one mapping between symmetric matrix $A$ and the quadratic form. Consider the $3 \times 3$ case: 
 
@@ -479,7 +527,7 @@ From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are
 
 Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in general. 
 
-\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-10"><strong>(\#thm:unnamed-chunk-10)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
+\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
    
 - positive definite if and only if the eigenvalues of $A$ are all positive  
 
@@ -490,7 +538,7 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 <hr>
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-11"><strong>(\#prp:unnamed-chunk-11) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ is a positive semidefinite matrix</div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-12"><strong>(\#prp:unnamed-chunk-12) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ is a positive semidefinite matrix</div>\EndKnitrBlock{proposition}
 
 **PROOF**
 
@@ -589,7 +637,7 @@ The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n
 
 If we add more constraints, for example, that $\boldsymbol{x}$ should be orthogonal to $\boldsymbol{q}_1$, then $\boldsymbol{x}^TA\boldsymbol{x}$ has maximum $\lambda_2$ attained at $\boldsymbol{x} = \lambda_2$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-12"><strong>(\#thm:unnamed-chunk-12) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-13"><strong>(\#thm:unnamed-chunk-13) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
 
 $$
 \boldsymbol{x}^T\boldsymbol{x} =  1, \;\; \boldsymbol{x}^T\boldsymbol{q}_1 = 0, \;\; \dots \;\;, \boldsymbol{x}^T\boldsymbol{q}_{k-1} = 0
@@ -681,12 +729,12 @@ $$
 
 <br>  
 
-\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-13"><strong>(\#def:unnamed-chunk-13)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the lengths of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-14"><strong>(\#def:unnamed-chunk-14)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the lengths of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
 
 
 <br>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-14"><strong>(\#thm:unnamed-chunk-14) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col}\; A$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-15"><strong>(\#thm:unnamed-chunk-15) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col}\; A$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
 
 
 **PROOF**  
@@ -716,7 +764,7 @@ $$
 \boldsymbol{y} = c_1 A \boldsymbol{v}_1 + \cdots + c_r A\boldsymbol{v}_r
 $$
 
-Thus $\boldsymbol{y} \in \text{Col}\; A$ is in Span$\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$, and $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col} \;A$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
+Thus any $\boldsymbol{y} \in \text{Col}\; A$ is in Span$\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$, and $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col} \;A$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
 
 
 ### The singular value decomposition 
@@ -745,12 +793,22 @@ $$</div>\EndKnitrBlock{theorem}
 
 **PROOF** 
 
-Since $A$ has $r$ nonzero singular values which measures the length of $A\boldsymbol{v}_i, \; i = 1, ...n$, there exists 
+Since $A$ has $r$ nonzero singular values which measure the length of $A\boldsymbol{v}_i, \; i = 1, ...n$, there exists orthogonal basis $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ for $\text{Col}$, we can further normalize the set to produce the *orthonormal* set $\boldsymbol{u}_1, ..., \boldsymbol{u}_r$: 
 
+$$
+\boldsymbol{u}_i = \frac{A\boldsymbol{v}_i}{\sigma_i}, \;\; i = 1, ..., r
+$$
+Now we can extend $\{\boldsymbol{u}_1, ..., \boldsymbol{u}_r\}$ to an orthonormal basis $\{\boldsymbol{u}_1, ..., \boldsymbol{u}_m\}$ of $\mathbb{R}^m$, and let 
+
+$$
+U = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_m], \quad V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n}]
+$$
+
+and $\Sigma$ be as be as in (1) above. Write out
 
 $$
 \begin{split}
-U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]
+U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_r \;\; \cdots \;\; \boldsymbol{u}_m]_{m \times m}
 \begin{bmatrix}
 \sigma_1 \\
 & \ddots &  \\ 
@@ -758,10 +816,61 @@ U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]
 & & & 0 \\
 & & & & \ddots \\
 & & & & & 0 \\
-\end{bmatrix} \\
-&= [\sigma_1\boldsymbol{u}_1 \;\; \cdots \;\; \sigma_n\boldsymbol{u}_n] \\
-& = [A\boldsymbol{v}_1 \;\; \cdots \;\; A\boldsymbol{v}_n] \\
-&= AV
+\end{bmatrix}_{m\times n} \\
+&= [\sigma_1\boldsymbol{u}_1 \;\; \cdots \;\;   \sigma_r\boldsymbol{u}_r \;\; \boldsymbol{0} \;\;  \cdots \;\;  \boldsymbol{0}] \\
+& = [A\boldsymbol{v}_1 \;\; \cdots \;\; A\boldsymbol{v}_r \;\; A\boldsymbol{v}_{r+1} \;\; \cdots \;\; A \boldsymbol{v}_n] \\
+&= A_{m \times n}V_{n \times n}
 \end{split}
 $$
 
+And because $V$ is orthogonal 
+
+$$
+A = U \Sigma V^{-1} =  U \Sigma V^{T}
+$$
+$\boldsymbol{u}_i$ and $\boldsymbol{v}_i$ are called *left eigenvector* and right eigenvector of $A$ respectively. 
+
+It's easy to verify that the spectral decomposition \@ref(spectral-decomposition) is a special case of SVD when $A \in \mathbb{R}^{n}, \;\; m = n$. In that case, $\Sigma$ is a square matrix and $U$ is equal to $V$. 
+
+When $\Sigma$ contains rows or columns of zeros (i.e, $r < \min(m, n)$), we can write SVD in a more compact form. Divide $U, \Sigma, V$ into submatrices
+
+$$
+U = [U_r \;\; U_{m-r}], \quad \text{where } U_r = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_r] \\
+V = [V_r \;\; V_{m-r}], \quad \text{where } V_r = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_r] \\
+\Sigma = 
+\begin{bmatrix}
+D & 0 \\
+0 & 0
+\end{bmatrix}
+\quad \text{where } D = 
+\begin{bmatrix}
+\lambda_1 \\ 
+ & \ddots \\
+ & & \lambda_r
+\end{bmatrix}
+$$
+The partitioned matrix multiplication shows that 
+
+$$
+A = [U_r \;\; U_{m-r}]
+\begin{bmatrix}
+D & 0 \\
+0 & 0
+\end{bmatrix}
+\begin{bmatrix}
+V_r^T \\
+V_{n-r}^T
+\end{bmatrix}
+= U_rDV_{r}^T
+$$
+This more compact form is called a reduced **singular value decomposition**.  
+
+<hr> 
+
+Using the full representation $A = U\Sigma V^T$
+
+
+
+ 
+
+### The condition number
