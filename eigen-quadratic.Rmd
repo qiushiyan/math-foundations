@@ -752,7 +752,7 @@ $$
 \boldsymbol{y} = c_1 A \boldsymbol{v}_1 + \cdots + c_r A\boldsymbol{v}_r
 $$
 
-Thus $\boldsymbol{y} \in \text{Col}\; A$ is in Span$\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$, and $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col} \;A$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
+Thus any $\boldsymbol{y} \in \text{Col}\; A$ is in Span$\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$, and $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col} \;A$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
 
 
 ### The singular value decomposition 
@@ -783,12 +783,22 @@ $$
 
 **PROOF** 
 
-Since $A$ has $r$ nonzero singular values which measures the length of $A\boldsymbol{v}_i, \; i = 1, ...n$, there exists 
+Since $A$ has $r$ nonzero singular values which measure the length of $A\boldsymbol{v}_i, \; i = 1, ...n$, there exists orthogonal basis $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ for $\text{Col}$, we can further normalize the set to produce the *orthonormal* set $\boldsymbol{u}_1, ..., \boldsymbol{u}_r$: 
 
+$$
+\boldsymbol{u}_i = \frac{A\boldsymbol{v}_i}{\sigma_i}, \;\; i = 1, ..., r
+$$
+Now we can extend $\{\boldsymbol{u}_1, ..., \boldsymbol{u}_r\}$ to an orthonormal basis $\{\boldsymbol{u}_1, ..., \boldsymbol{u}_m\}$ of $\mathbb{R}^m$, and let 
+
+$$
+U = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_m], \quad V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n}]
+$$
+
+and $\Sigma$ be as be as in (1) above. Write out
 
 $$
 \begin{split}
-U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]
+U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_r \;\; \cdots \;\; \boldsymbol{u}_n]
 \begin{bmatrix}
 \sigma_1 \\
 & \ddots &  \\ 
@@ -797,9 +807,14 @@ U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]
 & & & & \ddots \\
 & & & & & 0 \\
 \end{bmatrix} \\
-&= [\sigma_1\boldsymbol{u}_1 \;\; \cdots \;\; \sigma_n\boldsymbol{u}_n] \\
-& = [A\boldsymbol{v}_1 \;\; \cdots \;\; A\boldsymbol{v}_n] \\
+&= [\sigma_1\boldsymbol{u}_1 \;\; \cdots \;\;   \sigma_r\boldsymbol{u}_r \;\; \boldsymbol{0} \;\;  \cdots \;\;  \boldsymbol{0}] \\
+& = [A\boldsymbol{v}_1 \;\; \cdots \;\; A\boldsymbol{v}_r \;\; A\boldsymbol{v}_{r+1} \;\; \cdots \;\; A \boldsymbol{v}_n] \\
 &= AV
 \end{split}
 $$
 
+And because $V$ is orthogonal 
+
+$$
+A = U \Sigma V^{-1} =  U \Sigma V^{T}
+$$
