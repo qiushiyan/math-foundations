@@ -296,8 +296,8 @@ The trace has the following properties:
 3. $\text{tr}(A^T) = \text{tr}(A)$  
 4. For $A$, $B$ such that $AB$ is square, $\text{tr}(AB) = \text{tr}(BA)$  
 5. Trace of product of multiple matrices is invariant to *cyclic permutations*, $\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$. Note that the reordering cannot be done arbitrarily, fro example $\text{tr}(ABC) \not= \text{tr}(ACG)$ in general. 
-6. Trace is equal to the sum of its eigenvalues (repeated accordin gto multiplicity) $\text{tr}(A) = \sum_{i = 1}^n{\lambda_i}$  
-7. $\text{tr}(\boldsymbol{a}\boldsymbol{a}^T) = \boldsymbol{a}^T\boldsymbol{a}$, a is a column vector
+6. Trace is equal to the sum of its eigenvalues (repeated according to multiplicity) $\text{tr}(A) = \sum_{i = 1}^n{\lambda_i}$  
+7. $\text{tr}(\boldsymbol{a}\boldsymbol{a}^T) = \boldsymbol{a}^T\boldsymbol{a}$
 
 
 ## Inverse of a matrix
