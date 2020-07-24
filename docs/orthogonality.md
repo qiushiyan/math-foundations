@@ -1,70 +1,6 @@
 
 # Orthogonality 
 
-## Metric spaces, normed spaces, inner product spaces
-
-
-Metrics generalize the notion of distance from Euclidean space. A *metric space* is a set together with a metric on the set (metric spaces don't have to be vector spaces). The metric is a function that defines a concept of distance $\in \mathbb{R}$ between any two members of the set. A metric must satisfies the following properties: 
-
-1. $d(x, y) \ge 0$, with equality if and only if $x = y$. Distances are non-negative, and the only point at zero distance from $x$ is $x$ itself  
-2. $d(x, y) = d(y, x)$. The distance is a symmetric function. 
-3. $d(x, z) \le d(x, y) + d(y, z)$. Distance satisfies triangular inequality. 
-
-<br>
-
-Norms generalize the notion of length from Euclidean space. 
-
-A **norm** on a real vector space $X$ is a function: $||\cdot||: V \rightarrow \mathbb{R}$ that satisfies: 
-
-1. $||x|| \ge 0$ for all $x \in X$, with equality if and only if $x = \boldsymbol{0}$ (nonnegative)  
-2. $||\lambda x|| = \lambda ||x||$, for all $x \in X$ and $\lambda \in \mathbb{R}$ (homogeneous)  
-3. $||x + y|| \le ||x|| + ||y||$ (triangular inequality)  
-
-**A normed space is a metric space with the metric** 
-
-$$
-d(\boldsymbol{x}, \boldsymbol{y}) = ||\boldsymbol{x} - \boldsymbol{y}||
-$$
-
-So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that $d(x, y) = ||x - y||$ satisfies all properties of a metric. 
-
-The most common function for norms on $\mathbb{R}^n$ are listed below, with $x = [x_1, x_2, ..., x_n]$. 
-
-$$
-\begin{aligned}
-\text{1-norm}: ||\boldsymbol{x}||_1 &= \sum_{i=1}^{n}{|x_i|} \\
-\text{2-norm}: ||\boldsymbol{x}||_2 &= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
-\text{p-norm}: ||\boldsymbol{x}||_p &= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
-\text{maximum norm}: ||\boldsymbol{x}||_{\infty} &= \max\{|x_1|, |x_2|, ..., |x_n|\}
-\end{aligned}
-$$
-1-norm is also called the Manhattan norm. 
-
-2-norm is the commonly used Euclidean distance, and the subscript $2$ can be left out in most cases. 
-
-p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $||x||_{\infty}$ is called the maximum norm. 
-
-<br>
-
-An **inner product** on a real vector space $X$ is a function $\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}$ satisfying 
-
-1. $\langle x, x \rangle \ge 0$, with equality if and only if $x = \boldsymbol{0}$   
-2. $\langle x, y \rangle = \langle y, x \rangle$
-3. $\langle x + y, z\rangle = \langle x, z\rangle + \langle y, z\rangle$ and $\langle \lambda x, y\rangle = \lambda \langle x, y \rangle$
-
-A vector sapce equipped with such inner product is called a **inner product space**. Note that **all inner product spaces are normed spaces**, because a inner product induce a norm on a vector space: 
-
-$$
-\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = ||\boldsymbol{x}||^2  
-$$
-The *standard inner product* defined on $\mathbb{R}^{n}$ is given by 
-
-$$
-\langle \boldsymbol{x}, \boldsymbol{y} \rangle = \sum_{i=1}^{n}{x_iy_i} = \boldsymbol{x}^T\boldsymbol{y}
-$$
-
-
-\BeginKnitrBlock{rmdnote}<div class="rmdnote">The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces.” These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.</div>\EndKnitrBlock{rmdnote}
 
 
 
@@ -88,7 +24,7 @@ $$
 $$
 <br>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>If $W$ is a subspace of $\mathbb{R}^n$, $W^{\perp}$ is also a subspace of $\mathbb{R}^n$.</div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-1"><strong>(\#thm:unnamed-chunk-1) </strong></span>If $W$ is a subspace of $\mathbb{R}^n$, $W^{\perp}$ is also a subspace of $\mathbb{R}^n$.</div>\EndKnitrBlock{theorem}
 
 It's easy to verify that $W^{\perp}$ is closed under scalar multiplication, and under vector addition, and that any vector in $W$ has $n$ components. So that $W^{\perp}$ is a subspace of $\mathbb{R}^n$
 
@@ -103,7 +39,7 @@ Since vectors in orthogonal sets is mutually perpendicular, they must also be li
 
 There is a particular advantage in using orthogonal basis rather than other basis, because we can find a easy representation of any vector in $W$.  
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>For each $\boldsymbol{y}$ in $W$, there exists a linear combination
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>For each $\boldsymbol{y}$ in $W$, there exists a linear combination
 
 $$
 y = c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p}
@@ -139,7 +75,7 @@ Derivations for other $c_i$ is similar.
 
 **Orthogonal decomposition** split $\boldsymbol{y}$ in $\mathbb{R^n}$ into two vectors, one in $W$ and one in its orthogonal compliment $W^{\perp}$. 
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4) </strong></span>Let $\mathbb{R}^n$ be a inner product space and $W$ and subspace of $\mathbb{R}^n$. Then every $\boldsymbol{v}$ in $W$ can be written uniquely in the form
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>Let $\mathbb{R}^n$ be a inner product space and $W$ and subspace of $\mathbb{R}^n$. Then every $\boldsymbol{v}$ in $W$ can be written uniquely in the form
 
 $$
 \boldsymbol{v} = \boldsymbol{v}_w + \boldsymbol{v}_{\perp}
@@ -213,7 +149,7 @@ Take $\boldsymbol{v}$ distinct from $\hat{\boldsymbol{y}}$ in $W$, we know that 
 
 <div class="figure" style="text-align: center">
 <img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]" width="120%" />
-<p class="caption">(\#fig:unnamed-chunk-5)figure from page p352, ch6 [@lay2006-3]</p>
+<p class="caption">(\#fig:unnamed-chunk-4)figure from page p352, ch6 [@lay2006-3]</p>
 </div>
 
 $$
@@ -325,7 +261,7 @@ Note that $Q$ may not necessarily be a square matrix to satisfy $Q^TQ = I$. For 
 
 ## Lesat squares problems 
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6) </strong></span>the **normal equation** 
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5) </strong></span>the **normal equation** 
 $$
 A^TA\boldsymbol{x} = A^T\boldsymbol{b}
 $$</div>\EndKnitrBlock{definition}

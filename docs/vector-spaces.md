@@ -1,7 +1,163 @@
 
 # Vector spaces 
 
+Vector spaces, metric spaces, normed spaces, and inner product spaces are places where computations in linear algebra happen. These spaces are defined more or less to generalize properties of Euclidean space.  
+
+## Vector space 
+
+A **vector space** $V$ is a nonempty set, the elements of which are called vectors, also called *linear spaces*. A vector space comes with two operations predefined: vectors can be added together, and vectors can be multiplied by real numbers called scalars. For all vectors $\boldsymbol{u}, \boldsymbol{v}$ and $\boldsymbol{w}$, and all scalars $c$ and $d$ in $V$, the following axioms of vector space must hold:   
+
+1. The sum of $\boldsymbol{u}$ and $\boldsymbol{v}$ is in $V$ 
+
+2. The scalar multiple of $\boldsymbol{u}$ by c, denoted by $c\boldsymbol{u}$, is in $V$  
+
+3. There exists additive identity (denoted by $\boldsymbol{0}$) such that $\boldsymbol{x} + \boldsymbol{0} = \boldsymbol{x}$. Similarly, multiplicative identity (written $\boldsymbol{1}$) means $\boldsymbol{1}\boldsymbol{x} = \boldsymbol{x}$  
+
+4. There exists an additive inverse (written $-\boldsymbol{x}$) such that $-\boldsymbol{x} + \boldsymbol{x} = \boldsymbol{0}$  
+
+5. Communitivity: $\boldsymbol{x} + \boldsymbol{y} = \boldsymbol{y} + \boldsymbol{x}$
+
+6. Associativity: $(\boldsymbol{x} + \boldsymbol{y}) + \boldsymbol{z} = \boldsymbol{x} + (\boldsymbol{y} + \boldsymbol{z})$, and $\alpha(\beta\boldsymbol{x}) = (\alpha\beta)\boldsymbol{x}$  
+
+7. Distributivity: $\alpha(\boldsymbol{x} + \boldsymbol{y}) = \alpha\boldsymbol{x} + \alpha\boldsymbol{y}$ and $(\alpha + \beta)\boldsymbol{x} = \alpha\boldsymbol{x} + \beta\boldsymbol{x}$
+ 
+ 
+A set of vectors $\boldsymbol{v}_1, ..., \boldsymbol{v}_n \in V$ are set to be *linearly independent* if 
+
+$$
+\begin{align*}
+c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n &= 0 && \text{implies } c_1 = \cdots = c_n
+\end{align*}
+$$
+
+The **span** of  $\boldsymbol{v}_1, ..., \boldsymbol{v}_n$  is the set of all vectors that can be expressed as a linear combination of them. 
+
+### Euclidean space 
+
+Euclidean space is the quintessential vector space, denoted by $\mathbb{R}^n$. 
+
+The two must-have operations of vector spaces are valid in $\mathbb{R}^n$  
+
+$$
+\boldsymbol{x} = 
+\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_n
+\end{bmatrix}, \;\;
+\boldsymbol{y} = 
+\begin{bmatrix}
+y_1 \\
+\vdots \\
+y_n
+\end{bmatrix}, \;\;
+\alpha \in \mathbb{R} \\
+\boldsymbol{x} + \boldsymbol{y} = 
+\begin{bmatrix}
+x_1 + y_1 \\
+\vdots \\
+x_n + y_n
+\end{bmatrix}, \;\;
+\alpha\boldsymbol{x} = 
+\begin{bmatrix}
+\alpha x_1 \\
+\vdots \\
+\alpha x_n
+\end{bmatrix}
+$$
+
+Euclidean spaces have other structures defined in addition to the plainest vector space. We can calculate *dot product*, *length*, *distance* by
+
+$$
+\begin{aligned}
+\text{dot product between }  \boldsymbol{x} \text{ and } \boldsymbol{y}: \boldsymbol{x} \cdot\boldsymbol{y} &= \sum_{i=1}^{n}{x_iy_i} \\
+\text{length of } \boldsymbol{x}: ||\boldsymbol{x}|| &= \sqrt{\boldsymbol{x} \cdot \boldsymbol{x}} \\
+\text{distance between } \boldsymbol{x} \text{ and } \boldsymbol{y}: \text{dist}(\boldsymbol{x}, \boldsymbol{y}) &= ||\boldsymbol{x} - \boldsymbol{y}||
+\end{aligned}
+$$
 
 
 
-## Four subspaces
+## Metric spaces, normed spaces, inner product spaces
+
+
+Metric spaces, normed spaces and inner product spaces capture important properties of Euclidean space in a more general way (distance, length, angle). 
+
+Although metric spaces are not required to be vector spaces, it is always assumed in linear algebra that this is the case. For this reason, metric spaces are short for "metric linear space". Normed spaces and inner product spaces are defined to be extensions of metric linear spaces, so that they must be vector spaces. 
+
+<hr>
+
+Metrics generalize the notion of distance from Euclidean space. A *metric space* is a set together with a metric on the set (metric spaces don't have to be vector spaces). The metric is a function that defines a concept of distance $\in \mathbb{R}$ between any two members of the set. A metric must satisfies the following properties: 
+
+1. $d(x, y) \ge 0$, with equality if and only if $x = y$. Distances are non-negative, and the only point at zero distance from $x$ is $x$ itself  
+2. $d(x, y) = d(y, x)$. The distance is a symmetric function. 
+3. $d(x, z) \le d(x, y) + d(y, z)$. Distance satisfies triangular inequality. 
+
+<br>
+
+Norms generalize the notion of length from Euclidean space. 
+
+A **norm** on a real vector space $X$ is a function: $||\cdot||: V \rightarrow \mathbb{R}$ that satisfies: 
+
+1. $||x|| \ge 0$ for all $x \in X$, with equality if and only if $x = \boldsymbol{0}$ (nonnegative)  
+2. $||\lambda x|| = \lambda ||x||$, for all $x \in X$ and $\lambda \in \mathbb{R}$ (homogeneous)  
+3. $||x + y|| \le ||x|| + ||y||$ (triangular inequality)  
+
+**A normed space is a metric space with the metric** 
+
+$$
+d(\boldsymbol{x}, \boldsymbol{y}) = ||\boldsymbol{x} - \boldsymbol{y}||
+$$
+
+So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that $d(x, y) = ||x - y||$ satisfies all properties of a metric. 
+
+The most common function for norms on $\mathbb{R}^n$ are listed below, with $x = [x_1, x_2, ..., x_n]$. 
+
+$$
+\begin{align*}
+\text{1-norm}: ||\boldsymbol{x}||_1 &= \sum_{i=1}^{n}{|x_i|}\\
+\text{2-norm}: ||\boldsymbol{x}||_2 &= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
+\text{p-norm}: ||\boldsymbol{x}||_p &= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
+\text{maximum norm}: ||\boldsymbol{x}||_{\infty} &= \max\{|x_1|, |x_2|, ..., |x_n|\}
+\end{align*}
+$$
+1-norm is also called the Manhattan norm. 
+
+2-norm is the Euclidean norm, the subscript $2$ can be left out in $\mathbb{R}^n$. 
+
+p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $||x||_{\infty}$ is called the maximum norm. 
+
+<br>
+
+An **inner product** on a real vector space $X$ is a function $\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}$ satisfying 
+
+1. $\langle x, x \rangle \ge 0$, with equality if and only if $x = \boldsymbol{0}$   
+2. $\langle x, y \rangle = \langle y, x \rangle$
+3. $\langle x + y, z\rangle = \langle x, z\rangle + \langle y, z\rangle$ and $\langle \lambda x, y\rangle = \lambda \langle x, y \rangle$
+
+A vector sapce equipped with such inner product is called a **inner product space**. Note that **all inner product spaces are normed spaces**, because a inner product induce a norm on a vector space: 
+
+$$
+\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = ||\boldsymbol{x}||^2  
+$$
+The *standard inner product* defined on $\mathbb{R}^{n}$ is given by 
+
+$$
+\langle \boldsymbol{x}, \boldsymbol{y} \rangle = \sum_{i=1}^{n}{x_iy_i} = \boldsymbol{x}^T\boldsymbol{y}
+$$
+
+
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces” (linear topological space if they are assumed to be vector spaces first).  These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.</div>\EndKnitrBlock{rmdnote}
+
+## Subspaces
+
+If $V$ is a subspace, then $S \subseteq A$ if 
+
+1. $\boldsymbol{0} \in S$  
+
+2. $S$ is closed under addition: if $\boldsymbol{x}, \boldsymbol{y} \in S$, then $\boldsymbol{x} + \boldsymbol{y} \in S$  
+
+3. $S$ is closed under scalar multiplication if $\boldsymbol{x} \in S, \alpha \in \mathbb{R}$ then $\alpha\boldsymbol{x} \in S$
+
+## Fundamental theorem of linear algebra  
+

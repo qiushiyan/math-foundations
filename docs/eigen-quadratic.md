@@ -734,7 +734,7 @@ $$
 
 <br>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-15"><strong>(\#thm:unnamed-chunk-15) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col}\; A$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:svd-rank"><strong>(\#thm:svd-rank) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col}\; A$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
 
 
 **PROOF**  
@@ -801,7 +801,7 @@ $$
 Now we can extend $\{\boldsymbol{u}_1, ..., \boldsymbol{u}_r\}$ to an orthonormal basis $\{\boldsymbol{u}_1, ..., \boldsymbol{u}_m\}$ of $\mathbb{R}^m$, and let 
 
 $$
-U = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_m], \quad V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n}]
+U = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_m], \quad V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]
 $$
 
 and $\Sigma$ be as be as in (1) above. Write out
@@ -865,12 +865,45 @@ V_{n-r}^T
 $$
 This more compact form is called a reduced **singular value decomposition**.  
 
+Another way to write this is 
+
+$$
+A = \sum_{i=1}^{t}{\sigma_i}\boldsymbol{u}_i\boldsymbol{v}_i
+$$
+
 <hr> 
 
-Using the full representation $A = U\Sigma V^T$
+Right multiply the non-compact form $A = U\Sigma V^T$ by $A^T$  , we get the spectral decomposition of symmetric matrix $AA^T$.
+
+$$
+AA^T = (U \Sigma V^T)(U \Sigma V^T)^T = U \Sigma \Sigma^T VV^TU^T = U (\Sigma\Sigma^T) U^T       \tag{1}
+$$
+
+Therefore, $[\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]$ are revealed as the orthonormal basis for $AA^T$'s eigenspace, as $[\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ are for $A^TA$.   
+
+(1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, because $\Sigma\Sigma^T$ produces nonzero set $\lambda_1, ..., \lambda_r$.  
+
+In fact, if were to ask for a direction in which $A^T$ has its greatest stretching effect instead of $A$, we would still result in the equivalent decomposition $A^T =  V\Sigma U^T$, with $\boldsymbol{v}_i = \frac{A\boldsymbol{u}_i}{\sigma_i}$. 
+
+It's also easy to test that $\{A\boldsymbol{u}_1, ..., A\boldsymbol{u}_r\}$ produces an orthogonal basis for $\text{row}\; A$ or $\text{Col}\;A^T$. The process is analogous to theorem \@ref(thm:svd-rank) where $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ are shown to span $\text{Col}\; A$. 
+
+For any vector $\boldsymbol{y}$ in $\text{Col}\;A^T$, we have 
 
 
 
- 
+
+$$
+\begin{align*}
+\boldsymbol{y} &= A^T\boldsymbol{x} \\
+&= A^T(c_1\boldsymbol{u}_1 + \cdots + c_1\boldsymbol{u}_n) \\
+&= c_1A\boldsymbol{u}_1 + \cdots + c_rA\boldsymbol{u}_r + \boldsymbol{0} + \cdots + \boldsymbol{0} && (\text{because }A\boldsymbol{u}_i = \sigma_i\boldsymbol{v}_i)\\
+&= c_1A\boldsymbol{u}_1 + \cdots + c_rA\boldsymbol{u}_r 
+\end{align*}
+$$
+
+
 
 ### The condition number
+
+
+### Low-rank approximation 

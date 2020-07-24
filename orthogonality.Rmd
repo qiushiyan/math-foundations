@@ -1,72 +1,6 @@
 
 # Orthogonality 
 
-## Metric spaces, normed spaces, inner product spaces
-
-
-Metrics generalize the notion of distance from Euclidean space. A *metric space* is a set together with a metric on the set (metric spaces don't have to be vector spaces). The metric is a function that defines a concept of distance $\in \mathbb{R}$ between any two members of the set. A metric must satisfies the following properties: 
-
-1. $d(x, y) \ge 0$, with equality if and only if $x = y$. Distances are non-negative, and the only point at zero distance from $x$ is $x$ itself  
-2. $d(x, y) = d(y, x)$. The distance is a symmetric function. 
-3. $d(x, z) \le d(x, y) + d(y, z)$. Distance satisfies triangular inequality. 
-
-<br>
-
-Norms generalize the notion of length from Euclidean space. 
-
-A **norm** on a real vector space $X$ is a function: $||\cdot||: V \rightarrow \mathbb{R}$ that satisfies: 
-
-1. $||x|| \ge 0$ for all $x \in X$, with equality if and only if $x = \boldsymbol{0}$ (nonnegative)  
-2. $||\lambda x|| = \lambda ||x||$, for all $x \in X$ and $\lambda \in \mathbb{R}$ (homogeneous)  
-3. $||x + y|| \le ||x|| + ||y||$ (triangular inequality)  
-
-**A normed space is a metric space with the metric** 
-
-$$
-d(\boldsymbol{x}, \boldsymbol{y}) = ||\boldsymbol{x} - \boldsymbol{y}||
-$$
-
-So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that $d(x, y) = ||x - y||$ satisfies all properties of a metric. 
-
-The most common function for norms on $\mathbb{R}^n$ are listed below, with $x = [x_1, x_2, ..., x_n]$. 
-
-$$
-\begin{aligned}
-\text{1-norm}: ||\boldsymbol{x}||_1 &= \sum_{i=1}^{n}{|x_i|} \\
-\text{2-norm}: ||\boldsymbol{x}||_2 &= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
-\text{p-norm}: ||\boldsymbol{x}||_p &= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
-\text{maximum norm}: ||\boldsymbol{x}||_{\infty} &= \max\{|x_1|, |x_2|, ..., |x_n|\}
-\end{aligned}
-$$
-1-norm is also called the Manhattan norm. 
-
-2-norm is the commonly used Euclidean distance, and the subscript $2$ can be left out in most cases. 
-
-p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $||x||_{\infty}$ is called the maximum norm. 
-
-<br>
-
-An **inner product** on a real vector space $X$ is a function $\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}$ satisfying 
-
-1. $\langle x, x \rangle \ge 0$, with equality if and only if $x = \boldsymbol{0}$   
-2. $\langle x, y \rangle = \langle y, x \rangle$
-3. $\langle x + y, z\rangle = \langle x, z\rangle + \langle y, z\rangle$ and $\langle \lambda x, y\rangle = \lambda \langle x, y \rangle$
-
-A vector sapce equipped with such inner product is called a **inner product space**. Note that **all inner product spaces are normed spaces**, because a inner product induce a norm on a vector space: 
-
-$$
-\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = ||\boldsymbol{x}||^2  
-$$
-The *standard inner product* defined on $\mathbb{R}^{n}$ is given by 
-
-$$
-\langle \boldsymbol{x}, \boldsymbol{y} \rangle = \sum_{i=1}^{n}{x_iy_i} = \boldsymbol{x}^T\boldsymbol{y}
-$$
-
-
-```{block2, type = "rmdnote"}
-The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces.” These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.
-```
 
 
 
@@ -82,11 +16,11 @@ $$
 W^{\perp} = \{\boldsymbol{v} \in W^{\perp} | \;\boldsymbol{v} \perp \boldsymbol{x} \; \text{for all} \; \boldsymbol{x} \in W\}
 $$
 
-This corresponds to discussions in Section \@ref(four-subspaces), where 
+This corresponds to discussions in Section \@ref(fundamental-theorem), where 
 
 $$
-(\text{row} A)^{\perp} = \text{Nul} A \\
-(\text{col} A)^{\perp} = \text{Nul} A^T
+(\text{row}\,A)^{\perp} = \text{Nul}\,A \\
+(\text{col}\,A)^{\perp} = \text{Nul}\,A^T
 $$
 <br>
 
