@@ -132,9 +132,10 @@
 <li class="chapter" data-level="4.7.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#singular-values-of-m-x-n-matrix"><i class="fa fa-check"></i><b>4.7.1</b> Singular values of m x n matrix</a></li>
 <li class="chapter" data-level="4.7.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-singular-value-decomposition"><i class="fa fa-check"></i><b>4.7.2</b> The singular value decomposition</a></li>
 <li class="chapter" data-level="4.7.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-condition-number"><i class="fa fa-check"></i><b>4.7.3</b> The condition number</a></li>
-<li class="chapter" data-level="4.7.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-approximation"><i class="fa fa-check"></i><b>4.7.4</b> Low-rank approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#operator-and-matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Operator and matrix norms</a></li>
+<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a></li>
+<li class="chapter" data-level="4.9" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-optimization"><i class="fa fa-check"></i><b>4.9</b> Low rank optimization</a></li>
+<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Pseudoinverses</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -499,7 +500,7 @@ A^{-1} = \frac{1}{\det A}\text{adj}\, A
 </div>
 <div id="matrix-multiplication-as-linear-transformation" class="section level2">
 <h2><span class="header-section-number">1.7</span> Matrix multiplication as linear transformation</h2>
-<p>The equation <span class="math inline">\(A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}\)</span> can arise in a way that is not directly connected with linear combination of column vectors. That is, we think of the matrix <span class="math inline">\(A\)</span> as an force that “acts” on a vector <span class="math inline">\(x\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> by multiplication to produce a new vector called <span class="math inline">\(b\)</span> in <span class="math inline">\(\mathbb{\mathbb{R^m}}\)</span>.</p>
+<p>Another way to look at <span class="math inline">\(A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}\)</span>, besides linear combination of column vectors, is to think of the matrix <span class="math inline">\(A\)</span> as an force that “acts” on a vector <span class="math inline">\(x\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> by multiplication to produce a new vector called <span class="math inline">\(b\)</span> in <span class="math inline">\(\mathbb{\mathbb{R^m}}\)</span>.</p>
 <p>A transformation <span class="math inline">\(T\)</span> from <span class="math inline">\(\mathbb{R^n}\)</span> to <span class="math inline">\(\mathbb{R^m}\)</span> is a rule that assigns each vector  in <span class="math inline">\(\mathbb{R^n}\)</span> a vector <span class="math inline">\(T(x)\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span>, which is called the <strong>image</strong> of  (under the action of <span class="math inline">\(T\)</span>).</p>
 <p>It can be show that such transformations induced by multiplying a matrix is a type of <strong>linear transformation</strong>, because it satisfies all required properties to be linear:</p>
 <span class="math display">\[

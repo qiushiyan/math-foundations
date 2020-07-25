@@ -202,7 +202,7 @@ $$
 
 And the left null space is all $\boldsymbol{x}$ that satisfies $A^T\boldsymbol{x} = \boldsymbol{0}$. The word "left" in this context stems from the fact that $A^T\boldsymbol{x}= \boldsymbol{0}$ is equivalent to $\boldsymbol{x}^TA=\boldsymbol{0}$ where y "acts" on A from the left.  
 
-The relationship between these four subspaces present the fundamental thoerem of linear algebra 
+The relationship between these four subspaces present the fundamental theorem of linear algebra 
 
 
 ```{theorem fundamental-theorem, name = "The fundamental theorem of Linear Algebra"}

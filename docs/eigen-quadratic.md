@@ -46,20 +46,24 @@ There are some useful results about how eigenvalues change after various manipul
 
 1. For any $k, b \in \mathbb{R}$, $\boldsymbol{x}$ is an eigenvector of $kA + bI$ with eigenvalue $k\lambda + b$  
 
+2. If $A$ is invertible, then $\boldsymbol{x}$ is an eigenvector of $A^{-1}$ with eigenvalue $1/\lambda$ 
+
+3. $A^{k}\boldsymbol{x} = \lambda^{k}\boldsymbol{x}$ 
+
 **PROOF**
+
+For (1)
 $$
 (kA + bI)\boldsymbol{x} = kA\boldsymbol{x} + bI\boldsymbol{x} = k \lambda\boldsymbol{x} + b\boldsymbol{x} = (k\lambda + b)\boldsymbol{x} 
 $$
 
+For(2)
 
-2, If $A$ is invertible, then $\boldsymbol{x}$ is an eigenvector of $A^{-1}$ with eigenvalue $1/\lambda$  
-
-**PROOF**
 
 $$
 \boldsymbol{x} = A^{-1}A\boldsymbol{x} =  A^{-1}\lambda \boldsymbol{x} = \lambda A^{-1}\boldsymbol{x}
 $$
-3. $A^{k}\boldsymbol{x} = \lambda^{k}\boldsymbol{x}$ 
+
 
 
 The next theorem is important in terms of diagonalization and spectral decomposition
@@ -88,7 +92,7 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 <hr>
 
 
-```propisition
+```propsition
 Let $A in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. 
 ```
 
@@ -193,7 +197,7 @@ If $A$ and $B$ are both $n \times n$ matrices, then $A$ **is similar to** $N$ if
 
 
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>If $A$ and $B$ are similar, they have the same eigenvalues. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>If $A$ and $B$ are similar, they have the same eigenvalues. </div>\EndKnitrBlock{theorem}
 
 **PROOF**  
 If $B = P^{-1}AP$, then 
@@ -227,7 +231,7 @@ $$
 
 The similarity theorem leads to a interesting proposition. 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-4"><strong>(\#prp:unnamed-chunk-4) </strong></span>For $A, B \in \mathbb{R}^{n \times n}$, $AB$ and $BA$ are similar matrices and therefore share the same set of eigenvalues.  </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-3"><strong>(\#prp:unnamed-chunk-3) </strong></span>For $A, B \in \mathbb{R}^{n \times n}$, $AB$ and $BA$ are similar matrices and therefore share the same set of eigenvalues.  </div>\EndKnitrBlock{proposition}
 
 To prove this, we need to show that there exists a invertible matrix $A$ such that $P^{-1}(AB)P = BA$. Take $P = A$ and the equation holds.  
 
@@ -262,7 +266,7 @@ are not similar even though they have the same eigenvalues.
 For non-diagonalizable matrices $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
 
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5) </strong></span>The $n \times n$ matrix $J_{\lambda, n}$ with $\lambda$s on the diagonal, $1$s on the superdiagonal and $0$s elsewhere is called a Jordan matrix. A Jordan matrix in Jordan normal form is a block matrix that has Jordan blocks down its block diagonal and is zero elsewhere</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4) </strong></span>The $n \times n$ matrix $J_{\lambda, n}$ with $\lambda$s on the diagonal, $1$s on the superdiagonal and $0$s elsewhere is called a Jordan matrix. A Jordan matrix in Jordan normal form is a block matrix that has Jordan blocks down its block diagonal and is zero elsewhere</div>\EndKnitrBlock{definition}
 
 An example of Jordan matrix, the appearance of $\lambda_i$ on the diagonal is equal to its multiplicity as $A$'s eigenvalue. 
 $$
@@ -345,7 +349,7 @@ It is common to denote the set of all symmetric matrices of size $n$ as $\mathbb
 
 Symmetric matrices have some nice properties about diagonalization.  
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-6"><strong>(\#thm:unnamed-chunk-6) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
 
 **PROOF** 
 
@@ -395,7 +399,7 @@ $$
 A^T = (Q \Lambda Q^{T})^T = (Q^T)^T\Lambda^TQ^T= Q \Lambda Q^{T}  = A
 $$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
 
 ### Spectral decomposition 
 
@@ -429,7 +433,7 @@ Eq \@ref(eq:spectral-decomposition) is called the **spectral decomposition**, br
 
 ## Quadratic forms 
 
-\BeginKnitrBlock{definition}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (Quadratic form) \fi{} </strong></span>A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\boldsymbol{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\boldsymbol{x}) = \boldsymbol{x}^TA\boldsymbol{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse (Quadratic form) \fi{} </strong></span>A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\boldsymbol{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\boldsymbol{x}) = \boldsymbol{x}^TA\boldsymbol{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. </div>\EndKnitrBlock{definition}
 
 There exists a one-to-one mapping between symmetric matrix $A$ and the quadratic form. Consider the $3 \times 3$ case: 
 
@@ -527,7 +531,7 @@ From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are
 
 Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in general. 
 
-\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
+\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-10"><strong>(\#thm:unnamed-chunk-10)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
    
 - positive definite if and only if the eigenvalues of $A$ are all positive  
 
@@ -536,9 +540,26 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 - indefinite if and only if $A$ has both positive and negative eigenvalues</div>\EndKnitrBlock{theorem}
 
 
+
+<hr>  
+
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-11"><strong>(\#prp:unnamed-chunk-11) </strong></span>Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results remain to be positive definite. </div>\EndKnitrBlock{proposition}
+
+
+- Scalar multiplication of PD matrices $\alpha A$ are PD matrices 
+
+- The sum of PD matrices $A +B$ are PD matrices
+
+- If a PD matrix is invertible, its inverse is also PD. $A^{-1}$   
+
+- Similar matrix of a PD matrix is PD. 
+
+
+
+
 <hr>
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-12"><strong>(\#prp:unnamed-chunk-12) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ is a positive semidefinite matrix</div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:ata-pd"><strong>(\#prp:ata-pd) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are positive semidefinite matrix</div>\EndKnitrBlock{proposition}
 
 **PROOF**
 
@@ -551,7 +572,9 @@ $$
 &= ||A\boldsymbol{x}||^2
 \end{split}
 $$
-It turns out that the result is the square of the 2-norm of $A\boldsymbol{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\boldsymbol{x}$ is not in the null space of $A$. 
+It turns out that the result is the square of the 2-norm of $A\boldsymbol{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\boldsymbol{x} \not\subseteq \mathcal{N}(A)$
+
+Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $A^T\boldsymbol{x}$. 
 
 
 ## Rayleigh quotients 
@@ -637,7 +660,7 @@ The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n
 
 If we add more constraints, for example, that $\boldsymbol{x}$ should be orthogonal to $\boldsymbol{q}_1$, then $\boldsymbol{x}^TA\boldsymbol{x}$ has maximum $\lambda_2$ attained at $\boldsymbol{x} = \lambda_2$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-13"><strong>(\#thm:unnamed-chunk-13) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-12"><strong>(\#thm:unnamed-chunk-12) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
 
 $$
 \boldsymbol{x}^T\boldsymbol{x} =  1, \;\; \boldsymbol{x}^T\boldsymbol{q}_1 = 0, \;\; \dots \;\;, \boldsymbol{x}^T\boldsymbol{q}_{k-1} = 0
@@ -727,9 +750,11 @@ $$
 ||A\boldsymbol{v}_i|| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
 $$
 
+From proposition \@ref(prp:ata-pd), we know that $A^TA$ are positive semidefinite matrices. Thus, $\lambda_i \ge 0, \, i = 1, ..., n$, and we can find their square root $\sigma_i = \sqrt{\lambda_i}$.
+
 <br>  
 
-\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-14"><strong>(\#def:unnamed-chunk-14)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the lengths of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-13"><strong>(\#def:unnamed-chunk-13)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
 
 
 <br>
@@ -881,7 +906,7 @@ $$
 
 Therefore, $[\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]$ are revealed as the orthonormal basis for $AA^T$'s eigenspace, as $[\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ are for $A^TA$.   
 
-(1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, because $\Sigma\Sigma^T$ produces nonzero set $\lambda_1, ..., \lambda_r$.  
+Formula (1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, because $\Sigma\Sigma^T$ produces nonzero set $\lambda_1, ..., \lambda_r$.  
 
 In fact, if were to ask for a direction in which $A^T$ has its greatest stretching effect instead of $A$, we would still result in the equivalent decomposition $A^T =  V\Sigma U^T$, with $\boldsymbol{v}_i = \frac{A\boldsymbol{u}_i}{\sigma_i}$. 
 
@@ -897,25 +922,41 @@ $$
 &= c_1A\boldsymbol{u}_1 + \cdots + c_rA\boldsymbol{u}_r 
 \end{align*}
 $$
-This shed light on the relationship between SVD and fundamental theorem of linear algebra \@ref(thm:fundamental-theorem) 
+
+Thus, SVD can be thought of an connection between two spectral decomposition
+
+$$
+A^TA = V (\Sigma^T\Sigma)V^T  \\
+AA^T = U (\Sigma\Sigma^T) U^T
+$$
+
+
+This shed light on the relationship between SVD and the fundamental theorem of linear algebra \@ref(thm:fundamental-theorem) 
 
 |Subspace|Columns|
 |:-:|:-:|
 |$\mathcal{R}(A)$|the first $r$ columns of $U$|  
 |$\mathcal{R}(A^T)$|the first $r$ columns of $V$| 
-|$\mathcal{N}(A^T)$|the last $m - r$ columns of $U$|
 |$\mathcal{N}(A)$|the last $n - r$ columns of $V$|
+|$\mathcal{N}(A^T)$|the last $m - r$ columns of $U$|
+
 
 
 ### The condition number
 
 
-### Low-rank approximation 
 
-## Operator and matrix norms 
 
-$$
-A(A^TA)^{-1}A^T
-$$
+## Matrix norms 
 
-When 
+
+
+
+
+
+## Low rank optimization 
+
+
+
+## Pseudoinverses 
+

@@ -50,20 +50,24 @@ There are some useful results about how eigenvalues change after various manipul
 
 1. For any $k, b \in \mathbb{R}$, $\boldsymbol{x}$ is an eigenvector of $kA + bI$ with eigenvalue $k\lambda + b$  
 
+2. If $A$ is invertible, then $\boldsymbol{x}$ is an eigenvector of $A^{-1}$ with eigenvalue $1/\lambda$ 
+
+3. $A^{k}\boldsymbol{x} = \lambda^{k}\boldsymbol{x}$ 
+
 **PROOF**
+
+For (1)
 $$
 (kA + bI)\boldsymbol{x} = kA\boldsymbol{x} + bI\boldsymbol{x} = k \lambda\boldsymbol{x} + b\boldsymbol{x} = (k\lambda + b)\boldsymbol{x} 
 $$
 
+For(2)
 
-2, If $A$ is invertible, then $\boldsymbol{x}$ is an eigenvector of $A^{-1}$ with eigenvalue $1/\lambda$  
-
-**PROOF**
 
 $$
 \boldsymbol{x} = A^{-1}A\boldsymbol{x} =  A^{-1}\lambda \boldsymbol{x} = \lambda A^{-1}\boldsymbol{x}
 $$
-3. $A^{k}\boldsymbol{x} = \lambda^{k}\boldsymbol{x}$ 
+
 
 
 The next theorem is important in terms of diagonalization and spectral decomposition
@@ -93,7 +97,7 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 
 <hr>
 
-```{propisition}
+```{propsition same-nonzero}
 Let $A in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. 
 ```
 
@@ -563,10 +567,29 @@ Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbo
 ```
 
 
-<hr>
+
+<hr>  
 
 ```{proposition}
-Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ is a positive semidefinite matrix
+Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results remain to be positive definite. 
+```
+
+
+- Scalar multiplication of PD matrices $\alpha A$ are PD matrices 
+
+- The sum of PD matrices $A +B$ are PD matrices
+
+- If a PD matrix is invertible, its inverse is also PD. $A^{-1}$   
+
+- Similar matrix of a PD matrix is PD. 
+
+
+
+
+<hr>
+
+```{proposition ata-pd}
+Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are positive semidefinite matrix
 ```
 
 **PROOF**
@@ -580,7 +603,9 @@ $$
 &= ||A\boldsymbol{x}||^2
 \end{split}
 $$
-It turns out that the result is the square of the 2-norm of $A\boldsymbol{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\boldsymbol{x}$ is not in the null space of $A$. 
+It turns out that the result is the square of the 2-norm of $A\boldsymbol{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\boldsymbol{x} \not\subseteq \mathcal{N}(A)$
+
+Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $A^T\boldsymbol{x}$. 
 
 
 ## Rayleigh quotients 
@@ -758,10 +783,12 @@ $$
 ||A\boldsymbol{v}_i|| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
 $$
 
+From proposition \@ref(prp:ata-pd), we know that $A^TA$ are positive semidefinite matrices. Thus, $\lambda_i \ge 0, \, i = 1, ..., n$, and we can find their square root $\sigma_i = \sqrt{\lambda_i}$.
+
 <br>  
 
 ```{definition, name = "Singular values"}
-The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the lengths of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. 
+The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. 
 ```
 
 
@@ -918,7 +945,7 @@ $$
 
 Therefore, $[\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]$ are revealed as the orthonormal basis for $AA^T$'s eigenspace, as $[\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ are for $A^TA$.   
 
-(1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, because $\Sigma\Sigma^T$ produces nonzero set $\lambda_1, ..., \lambda_r$.  
+Formula (1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, because $\Sigma\Sigma^T$ produces nonzero set $\lambda_1, ..., \lambda_r$.  
 
 In fact, if were to ask for a direction in which $A^T$ has its greatest stretching effect instead of $A$, we would still result in the equivalent decomposition $A^T =  V\Sigma U^T$, with $\boldsymbol{v}_i = \frac{A\boldsymbol{u}_i}{\sigma_i}$. 
 
@@ -934,25 +961,41 @@ $$
 &= c_1A\boldsymbol{u}_1 + \cdots + c_rA\boldsymbol{u}_r 
 \end{align*}
 $$
-This shed light on the relationship between SVD and fundamental theorem of linear algebra \@ref(thm:fundamental-theorem) 
+
+Thus, SVD can be thought of an connection between two spectral decomposition
+
+$$
+A^TA = V (\Sigma^T\Sigma)V^T  \\
+AA^T = U (\Sigma\Sigma^T) U^T
+$$
+
+
+This shed light on the relationship between SVD and the fundamental theorem of linear algebra \@ref(thm:fundamental-theorem) 
 
 |Subspace|Columns|
 |:-:|:-:|
 |$\mathcal{R}(A)$|the first $r$ columns of $U$|  
 |$\mathcal{R}(A^T)$|the first $r$ columns of $V$| 
-|$\mathcal{N}(A^T)$|the last $m - r$ columns of $U$|
 |$\mathcal{N}(A)$|the last $n - r$ columns of $V$|
+|$\mathcal{N}(A^T)$|the last $m - r$ columns of $U$|
+
 
 
 ### The condition number
 
 
-### Low-rank approximation 
 
-## Operator and matrix norms 
 
-$$
-A(A^TA)^{-1}A^T
-$$
+## Matrix norms 
 
-When 
+
+
+
+
+
+## Low rank optimization 
+
+
+
+## Pseudoinverses 
+

@@ -167,6 +167,55 @@ When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $||\boldsymbol{\h
 
 ## Projection matrices
 
+$$
+\begin{split}
+P_S\boldsymbol{v} &= (\boldsymbol{v} \cdot \boldsymbol{u}_1)\boldsymbol{u}_1 + \cdots + (\boldsymbol{v} \cdot \boldsymbol{u}_m)\boldsymbol{u}_m \\
+&= \boldsymbol{v}^T\boldsymbol{u}_1\boldsymbol{u}_1 + \cdots +  \boldsymbol{v}^T\boldsymbol{u}_m\boldsymbol{u}_m\\
+&= (\boldsymbol{u}_1\boldsymbol{u}_1^T)\boldsymbol{v} + \cdots +  (\boldsymbol{u}_m\boldsymbol{u}_m^T)\boldsymbol{v} \\
+&= (\sum_{i=1}^{M}{\boldsymbol{u}_i\boldsymbol{u}_i^T})\boldsymbol{v}\\
+&= 
+\begin{bmatrix}
+\boldsymbol{u}_1 & \cdots & \boldsymbol{u}_m
+\end{bmatrix}
+\begin{bmatrix}
+\boldsymbol{u}_1^T \\
+\vdots \\
+\boldsymbol{u}_m^T
+\end{bmatrix}\boldsymbol{x} \\
+&= UU^T\boldsymbol{x}
+\end{split}
+$$
+
+In practical problems, there are times when it is more convenient to use matrix at hand rather than producing an orthonormal basis. 
+
+
+<hr>
+
+Another way to derive projection matrices with matrix calculus 
+
+$$
+\begin{split}
+||A\boldsymbol{x} - \boldsymbol{b}||_2^2
+&= (A\boldsymbol{x} - \boldsymbol{b})^T(A\boldsymbol{x} - \boldsymbol{b}) \\
+&= \boldsymbol{x}^TA^TA\boldsymbol{x} - 2\boldsymbol{b}^TA\boldsymbol{x} + \boldsymbol{b}^T\boldsymbol{b}
+\end{split}
+$$
+
+$$
+\begin{split}
+\nabla_{x}(\boldsymbol{x}^TA^TA\boldsymbol{x} - 2A\boldsymbol{x}\boldsymbol{b} + \boldsymbol{b}^T\boldsymbol{b}) &=\nabla_x(\boldsymbol{x}^TA^TA\boldsymbol{x}) - \nabla_x{2\boldsymbol{b}^TA\boldsymbol{x}} + \nabla_x{\boldsymbol{b}^T\boldsymbol{b}} \\
+&= 2(A^TA)\boldsymbol{x} - 2A^T\boldsymbol{b}
+
+\end{split}
+$$
+
+$$
+\boldsymbol{x} = (A^TA)^{-1}A^T\boldsymbol{b}
+$$
+$$
+A\boldsymbol{x} = A(A^TA)^{-1}A^T\boldsymbol{b} = \hat{\boldsymbol{b}}
+$$
+
 
 ## Gram-Schmidt process
 

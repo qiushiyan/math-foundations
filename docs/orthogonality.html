@@ -132,9 +132,10 @@
 <li class="chapter" data-level="4.7.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#singular-values-of-m-x-n-matrix"><i class="fa fa-check"></i><b>4.7.1</b> Singular values of m x n matrix</a></li>
 <li class="chapter" data-level="4.7.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-singular-value-decomposition"><i class="fa fa-check"></i><b>4.7.2</b> The singular value decomposition</a></li>
 <li class="chapter" data-level="4.7.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-condition-number"><i class="fa fa-check"></i><b>4.7.3</b> The condition number</a></li>
-<li class="chapter" data-level="4.7.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-approximation"><i class="fa fa-check"></i><b>4.7.4</b> Low-rank approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#operator-and-matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Operator and matrix norms</a></li>
+<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a></li>
+<li class="chapter" data-level="4.9" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-optimization"><i class="fa fa-check"></i><b>4.9</b> Low rank optimization</a></li>
+<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Pseudoinverses</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -302,6 +303,46 @@ When <span class="math inline">\(\boldsymbol{v}\)</span> is distinct from <span 
 </div>
 <div id="projection-matrices" class="section level2">
 <h2><span class="header-section-number">3.2</span> Projection matrices</h2>
+<p><span class="math display">\[
+\begin{split}
+P_S\boldsymbol{v} &amp;= (\boldsymbol{v} \cdot \boldsymbol{u}_1)\boldsymbol{u}_1 + \cdots + (\boldsymbol{v} \cdot \boldsymbol{u}_m)\boldsymbol{u}_m \\
+&amp;= \boldsymbol{v}^T\boldsymbol{u}_1\boldsymbol{u}_1 + \cdots +  \boldsymbol{v}^T\boldsymbol{u}_m\boldsymbol{u}_m\\
+&amp;= (\boldsymbol{u}_1\boldsymbol{u}_1^T)\boldsymbol{v} + \cdots +  (\boldsymbol{u}_m\boldsymbol{u}_m^T)\boldsymbol{v} \\
+&amp;= (\sum_{i=1}^{M}{\boldsymbol{u}_i\boldsymbol{u}_i^T})\boldsymbol{v}\\
+&amp;= 
+\begin{bmatrix}
+\boldsymbol{u}_1 &amp; \cdots &amp; \boldsymbol{u}_m
+\end{bmatrix}
+\begin{bmatrix}
+\boldsymbol{u}_1^T \\
+\vdots \\
+\boldsymbol{u}_m^T
+\end{bmatrix}\boldsymbol{x} \\
+&amp;= UU^T\boldsymbol{x}
+\end{split}
+\]</span></p>
+<p>In practical problems, there are times when it is more convenient to use matrix at hand rather than producing an orthonormal basis.</p>
+<hr>
+<p>Another way to derive projection matrices with matrix calculus</p>
+<p><span class="math display">\[
+\begin{split}
+||A\boldsymbol{x} - \boldsymbol{b}||_2^2
+&amp;= (A\boldsymbol{x} - \boldsymbol{b})^T(A\boldsymbol{x} - \boldsymbol{b}) \\
+&amp;= \boldsymbol{x}^TA^TA\boldsymbol{x} - 2\boldsymbol{b}^TA\boldsymbol{x} + \boldsymbol{b}^T\boldsymbol{b}
+\end{split}
+\]</span></p>
+<p>$$
+\begin{split}
+_{x}(<sup>TA</sup>TA - 2A + ^T) &amp;=_x(<sup>TA</sup>TA) - _x{2^TA} + _x{^T} \
+&amp;= 2(A^TA) - 2A^T</p>
+<p>\end{split}
+$$</p>
+<p><span class="math display">\[
+\boldsymbol{x} = (A^TA)^{-1}A^T\boldsymbol{b}
+\]</span>
+<span class="math display">\[
+A\boldsymbol{x} = A(A^TA)^{-1}A^T\boldsymbol{b} = \hat{\boldsymbol{b}}
+\]</span></p>
 </div>
 <div id="gram-schmidt-process" class="section level2">
 <h2><span class="header-section-number">3.3</span> Gram-Schmidt process</h2>
