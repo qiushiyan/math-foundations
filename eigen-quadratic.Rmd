@@ -926,9 +926,6 @@ It's also easy to test that $\{A\boldsymbol{u}_1, ..., A\boldsymbol{u}_r\}$ prod
 
 For any vector $\boldsymbol{y}$ in $\text{Col}\;A^T$, we have 
 
-
-
-
 $$
 \begin{align*}
 \boldsymbol{y} &= A^T\boldsymbol{x} \\
@@ -937,10 +934,25 @@ $$
 &= c_1A\boldsymbol{u}_1 + \cdots + c_rA\boldsymbol{u}_r 
 \end{align*}
 $$
+This shed light on the relationship between SVD and fundamental theorem of linear algebra \@ref(thm:fundamental-theorem) 
 
+|Subspace|Columns|
+|:-:|:-:|
+|$\mathcal{R}(A)$|the first $r$ columns of $U$|  
+|$\mathcal{R}(A^T)$|the first $r$ columns of $V$| 
+|$\mathcal{N}(A^T)$|the last $m - r$ columns of $U$|
+|$\mathcal{N}(A)$|the last $n - r$ columns of $V$|
 
 
 ### The condition number
 
 
 ### Low-rank approximation 
+
+## Operator and matrix norms 
+
+$$
+A(A^TA)^{-1}A^T
+$$
+
+When 

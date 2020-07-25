@@ -168,5 +168,55 @@ If $U$ and $W$ are all subspaces of $V$, then the sum of these two subspaces are
 $$
 U + W = \{\boldsymbol{u} + \boldsymbol{v} \;| \; \boldsymbol{w} \in U, \boldsymbol{w} \in W \}
 $$
+
+If $U$ and $W$ are perpendicular, in other words, $U \cap W = \boldsymbol{0}$. Then $U + W$ are said to be a **direct sum** and written $U \oplus W$. 
+
+Dimensions of sums of subspaces has the following property 
+
+$$
+\text{dim}(U + W) = \text{dim}(U) + \text{dim}(W) - \text{dim}(U \cap W)
+$$
+
+It follows that if $U$ is perpendicular to $W$, $W$, 
+
+$$
+\text{dim}(U \oplus W) = \text{dim}(V)  = \text{dim}(U) + \text{dim}(W)
+$$
+
+
 ## Fundamental theorem of linear algebra  {#fundamental-theorem}
 
+The **columnspace** (also called *range*) of matrix $A \in \mathbb{R}^{m \times n}$ is the span of the columns of $A$
+
+$$
+\mathcal{R}(A) = \{\boldsymbol{v} \in \mathbb{R}^m\;|\; \boldsymbol{v} = A\boldsymbol{x}, \, \boldsymbol{x} \in \mathbb{R}^n\}
+$$
+
+Similarly, the **rowspace** of $A$ is the span of its rows $\mathcal{R}(A^T)$. 
+
+The **nullspace** (also called *kernel*) of $A$ is the set of solutions to $A\boldsymbol{v} = \boldsymbol{0}$ 
+
+$$
+\mathcal{N}(A) = \{\boldsymbol{x} \in \mathbb{R}^n\;|\;A\boldsymbol{x} = \boldsymbol{0}\}
+$$
+
+And the left null space is all $\boldsymbol{x}$ that satisfies $A^T\boldsymbol{x} = \boldsymbol{0}$. The word "left" in this context stems from the fact that $A^T\boldsymbol{x}= \boldsymbol{0}$ is equivalent to $\boldsymbol{x}^TA=\boldsymbol{0}$ where y "acts" on A from the left.  
+
+The relationship between these four subspaces present the fundamental thoerem of linear algebra 
+
+
+```{theorem fundamental-theorem, name = "The fundamental theorem of Linear Algebra"}
+
+
+- $\mathcal{R}(A) = \mathcal{N}(A^T)^{\perp}$, and $\dim(\mathcal{R}(A)) + \dim(\mathcal{N}(A^T)) = m$  
+
+- $\mathcal{R}(A^T) = \mathcal{N}(A)^{\perp}$, and $\dim(\mathcal{R}(A^T)) + \dim(\mathcal{N}(A)) = n$
+```
+
+
+
+The rank of a $A \in \mathbb{R}^{m \times n}$, $r$, is the dimension of $\mathcal{R}(A)$ or $\mathcal{R}(A^T)$. I often think of rank as the total volume of information that a matrix can offer. 
+
+- $m - r$ is the dimention of the left null space of $A$  
+
+- $n - r$ is the dimension of the null space of $A$

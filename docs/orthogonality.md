@@ -16,11 +16,11 @@ $$
 W^{\perp} = \{\boldsymbol{v} \in W^{\perp} | \;\boldsymbol{v} \perp \boldsymbol{x} \; \text{for all} \; \boldsymbol{x} \in W\}
 $$
 
-This corresponds to discussions in Section \@ref(four-subspaces), where 
+This corresponds to discussions in Section \@ref(fundamental-theorem), where 
 
 $$
-(\text{row} A)^{\perp} = \text{Nul} A \\
-(\text{col} A)^{\perp} = \text{Nul} A^T
+(\text{row}\,A)^{\perp} = \text{Nul}\,A \\
+(\text{col}\,A)^{\perp} = \text{Nul}\,A^T
 $$
 <br>
 
@@ -157,6 +157,8 @@ $$
 $$
 When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2$ is non-negative, so the error term of choosing $\boldsymbol{v}$ is always larger than that of the orthogonal projection $\boldsymbol{\hat{y}}$.  
 
+
+## Projection matrices
 
 
 ## Gram-Schmidt process

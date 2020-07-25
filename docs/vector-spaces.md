@@ -140,7 +140,7 @@ A vector sapce equipped with such inner product is called a **inner product spac
 $$
 \langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = ||\boldsymbol{x}||^2  
 $$
-The *standard inner product* defined on $\mathbb{R}^{n}$ is given by 
+The *standard inner product* defined on $\mathbb{R}^{n}$ is the dot product,  given by 
 
 $$
 \langle \boldsymbol{x}, \boldsymbol{y} \rangle = \sum_{i=1}^{n}{x_iy_i} = \boldsymbol{x}^T\boldsymbol{y}
@@ -159,5 +159,60 @@ If $V$ is a subspace, then $S \subseteq A$ if
 
 3. $S$ is closed under scalar multiplication if $\boldsymbol{x} \in S, \alpha \in \mathbb{R}$ then $\alpha\boldsymbol{x} \in S$
 
-## Fundamental theorem of linear algebra  
+$V$ is always a subspace of itself. 
 
+If $U$ and $W$ are all subspaces of $V$, then the sum of these two subspaces are defined as 
+
+$$
+U + W = \{\boldsymbol{u} + \boldsymbol{v} \;| \; \boldsymbol{w} \in U, \boldsymbol{w} \in W \}
+$$
+
+If $U$ and $W$ are perpendicular, in other words, $U \cap W = \boldsymbol{0}$. Then $U + W$ are said to be a **direct sum** and written $U \oplus W$. 
+
+Dimensions of sums of subspaces has the following property 
+
+$$
+\text{dim}(U + W) = \text{dim}(U) + \text{dim}(W) - \text{dim}(U \cap W)
+$$
+
+It follows that if $U$ is perpendicular to $W$, $W$, 
+
+$$
+\text{dim}(U \oplus W) = \text{dim}(V)  = \text{dim}(U) + \text{dim}(W)
+$$
+
+
+## Fundamental theorem of linear algebra  {#fundamental-theorem}
+
+The **columnspace** (also called *range*) of matrix $A \in \mathbb{R}^{m \times n}$ is the span of the columns of $A$
+
+$$
+\mathcal{R}(A) = \{\boldsymbol{v} \in \mathbb{R}^m\;|\; \boldsymbol{v} = A\boldsymbol{x}, \, \boldsymbol{x} \in \mathbb{R}^n\}
+$$
+
+Similarly, the **rowspace** of $A$ is the span of its rows $\mathcal{R}(A^T)$. 
+
+The **nullspace** (also called *kernel*) of $A$ is the set of solutions to $A\boldsymbol{v} = \boldsymbol{0}$ 
+
+$$
+\mathcal{N}(A) = \{\boldsymbol{x} \in \mathbb{R}^n\;|\;A\boldsymbol{x} = \boldsymbol{0}\}
+$$
+
+And the left null space is all $\boldsymbol{x}$ that satisfies $A^T\boldsymbol{x} = \boldsymbol{0}$. The word "left" in this context stems from the fact that $A^T\boldsymbol{x}= \boldsymbol{0}$ is equivalent to $\boldsymbol{x}^TA=\boldsymbol{0}$ where y "acts" on A from the left.  
+
+The relationship between these four subspaces present the fundamental thoerem of linear algebra 
+
+
+\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-102-117-110-100-97-109-101-110-116-97-108-32-116-104-101-111-114-101-109-32-111-102-32-76-105-110-101-97-114-32-65-108-103-101-98-114-97-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:fundamental-theorem"><strong>(\#thm:fundamental-theorem)  \iffalse (The fundamental theorem of Linear Algebra) \fi{} </strong></span>
+
+- $\mathcal{R}(A) = \mathcal{N}(A^T)^{\perp}$, and $\dim(\mathcal{R}(A)) + \dim(\mathcal{N}(A^T)) = m$  
+
+- $\mathcal{R}(A^T) = \mathcal{N}(A)^{\perp}$, and $\dim(\mathcal{R}(A^T)) + \dim(\mathcal{N}(A)) = n$</div>\EndKnitrBlock{theorem}
+
+
+
+The rank of a $A \in \mathbb{R}^{m \times n}$, $r$, is the dimension of $\mathcal{R}(A)$ or $\mathcal{R}(A^T)$. I often think of rank as the total volume of information that a matrix can offer. 
+
+- $m - r$ is the dimention of the left null space of $A$  
+
+- $n - r$ is the dimension of the null space of $A$
