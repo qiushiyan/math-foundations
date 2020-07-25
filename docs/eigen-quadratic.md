@@ -91,10 +91,7 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 
 <hr>
 
-
-```propsition
-Let $A in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. 
-```
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:same-nonzero"><strong>(\#prp:same-nonzero) </strong></span>Let $A in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. </div>\EndKnitrBlock{proposition}
 
 **PROOF** 
 
@@ -192,7 +189,7 @@ For matrices whose eigenvalues are not distinct, there is still a change that it
 
 ### Similarity
 
-If $A$ and $B$ are both $n \times n$ matrices, then $A$ **is similar to** $N$ if there is an invertible matrix $P$ such that $P^{-1}AP = B$, or equivalently if we write $Q$ for $P^{-1}$, $Q^{-1}BQ = A$. Changing $A$ into $P^{-1}AP$ is called a **similarity transformation**.  
+If $A$ and $B$ are both $n \times n$ matrices, then $A$ **is similar to** $B$ if there is an invertible matrix $P$ such that $P^{-1}AP = B$, or equivalently if we write $Q$ for $P^{-1}$, $Q^{-1}BQ = A$. Changing $A$ into $P^{-1}AP$ is called a **similarity transformation**.  
 
 
 
@@ -531,6 +528,7 @@ From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are
 
 Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in general. 
 
+<hr>
 \BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-10"><strong>(\#thm:unnamed-chunk-10)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
    
 - positive definite if and only if the eigenvalues of $A$ are all positive  
@@ -543,14 +541,14 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 <hr>  
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-11"><strong>(\#prp:unnamed-chunk-11) </strong></span>Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results remain to be positive definite. </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-11"><strong>(\#prp:unnamed-chunk-11) </strong></span>Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results **remain to be positive definite**. </div>\EndKnitrBlock{proposition}
 
 
 - Scalar multiplication of PD matrices $\alpha A$ are PD matrices 
 
 - The sum of PD matrices $A +B$ are PD matrices
 
-- If a PD matrix is invertible, its inverse is also PD. $A^{-1}$   
+- If a PD matrix is invertible, its inverse $A^{-1}$ is also PD.    
 
 - Similar matrix of a PD matrix is PD. 
 

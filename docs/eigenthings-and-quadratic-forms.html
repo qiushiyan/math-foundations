@@ -243,7 +243,11 @@ c_1(\lambda_1 - \lambda_{p+1})\boldsymbol{v}_1 +\cdots + c_p(\lambda_p - \lambda
 \]</span>
 Since <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_p\)</span> are linearly independent, weights in (3) must be all zero. Since <span class="math inline">\(\lambda_1, \cdots, \lambda_p\)</span> are distinct, hence <span class="math inline">\(c_i = 0, \, i = 1, ..., p\)</span>. But then (5) says that eigenvector <span class="math inline">\(\boldsymbol{v}_{p+1}\)</span> is zero vector, which contradicts definition <a href="eigenthings-and-quadratic-forms.html#def:eigen">4.1</a></p>
 <hr>
-<pre class="propsition"><code>Let $A in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. </code></pre>
+
+<div class="proposition">
+<span id="prp:same-nonzero" class="proposition"><strong>Proposition 4.1  </strong></span>Let <span class="math inline">\(A in \mathbb{R}^{m \times n}\)</span> <span class="math inline">\(A^TA_{n \times n}\)</span> and <span class="math inline">\(AA^T\)</span> has the same set of <em>nonzero</em> eigenvalues.
+</div>
+
 <p><strong>PROOF</strong></p>
 <p>Let <span class="math inline">\(\lambda\)</span> be a nonzero eigenvalue of <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(\boldsymbol{x}\)</span> its eigenvector</p>
 <p><span class="math display">\[
@@ -326,7 +330,7 @@ Because <span class="math inline">\(P\)</span> contains <span class="math inline
 </ol>
 <div id="similarity" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Similarity</h3>
-<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(N\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
+<p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(B\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
 
 <div class="theorem">
 <span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
@@ -357,7 +361,7 @@ B(P\boldsymbol{v}) = \lambda P \boldsymbol{v}
 <p>The similarity theorem leads to a interesting proposition.</p>
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-3" class="proposition"><strong>Proposition 4.1  </strong></span>For <span class="math inline">\(A, B \in \mathbb{R}^{n \times n}\)</span>, <span class="math inline">\(AB\)</span> and <span class="math inline">\(BA\)</span> are similar matrices and therefore share the same set of eigenvalues.
+<span id="prp:unnamed-chunk-3" class="proposition"><strong>Proposition 4.2  </strong></span>For <span class="math inline">\(A, B \in \mathbb{R}^{n \times n}\)</span>, <span class="math inline">\(AB\)</span> and <span class="math inline">\(BA\)</span> are similar matrices and therefore share the same set of eigenvalues.
 </div>
 
 <p>To prove this, we need to show that there exists a invertible matrix <span class="math inline">\(A\)</span> such that <span class="math inline">\(P^{-1}(AB)P = BA\)</span>. Take <span class="math inline">\(P = A\)</span> and the equation holds.</p>
@@ -616,6 +620,7 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 <li><p>All pivots are <span class="math inline">\(&gt; 0\)</span></p></li>
 </ul>
 <p>Classification of <span class="math inline">\(A \in \mathbb{S}^{n}\)</span> by its eigenvalue can be applied in general.</p>
+<hr>
 
 <div class="theorem">
 <p><span id="thm:unnamed-chunk-10" class="theorem"><strong>Theorem 4.4  (Quadratic forms and eigenvalues)  </strong></span>Let <span class="math inline">\(A \in \mathbb{S}^{n}\)</span>. Then the quadratic form <span class="math inline">\(\boldsymbol{x}^TA\boldsymbol{x}\)</span> and <span class="math inline">\(A\)</span> is:</p>
@@ -628,19 +633,19 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 <hr>
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-11" class="proposition"><strong>Proposition 4.2  </strong></span>Given positive definite matrices <span class="math inline">\(A, B \in \mathbb{S}^n\)</span> and <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, the following results remain to be positive definite.
+<span id="prp:unnamed-chunk-11" class="proposition"><strong>Proposition 4.3  </strong></span>Given positive definite matrices <span class="math inline">\(A, B \in \mathbb{S}^n\)</span> and <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, the following results <strong>remain to be positive definite</strong>.
 </div>
 
 <ul>
 <li><p>Scalar multiplication of PD matrices <span class="math inline">\(\alpha A\)</span> are PD matrices</p></li>
 <li><p>The sum of PD matrices <span class="math inline">\(A +B\)</span> are PD matrices</p></li>
-<li><p>If a PD matrix is invertible, its inverse is also PD. <span class="math inline">\(A^{-1}\)</span></p></li>
+<li><p>If a PD matrix is invertible, its inverse <span class="math inline">\(A^{-1}\)</span> is also PD.</p></li>
 <li><p>Similar matrix of a PD matrix is PD.</p></li>
 </ul>
 <hr>
 
 <div class="proposition">
-<span id="prp:ata-pd" class="proposition"><strong>Proposition 4.3  </strong></span>Given any matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are positive semidefinite matrix
+<span id="prp:ata-pd" class="proposition"><strong>Proposition 4.4  </strong></span>Given any matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are positive semidefinite matrix
 </div>
 
 <p><strong>PROOF</strong></p>
@@ -796,7 +801,7 @@ Since <span class="math inline">\(A^TA\)</span> is <strong>symmetric</strong>, t
 <p><span class="math display">\[
 ||A\boldsymbol{v}_i|| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
 \]</span></p>
-<p>From proposition <a href="eigenthings-and-quadratic-forms.html#prp:ata-pd">4.3</a>, we know that <span class="math inline">\(A^TA\)</span> are positive semidefinite matrices. Thus, <span class="math inline">\(\lambda_i \ge 0, \, i = 1, ..., n\)</span>, and we can find their square root <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>.</p>
+<p>From proposition <a href="eigenthings-and-quadratic-forms.html#prp:ata-pd">4.4</a>, we know that <span class="math inline">\(A^TA\)</span> are positive semidefinite matrices. Thus, <span class="math inline">\(\lambda_i \ge 0, \, i = 1, ..., n\)</span>, and we can find their square root <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>.</p>
 <p><br></p>
 
 <div class="definition">
