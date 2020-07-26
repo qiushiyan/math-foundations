@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-25" />
+<meta name="date" content="2020-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -96,6 +96,9 @@
 <li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric spaces, normed spaces, inner product spaces</a></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
 <li class="chapter" data-level="2.4" data-path="vector-spaces.html"><a href="vector-spaces.html#fundamental-theorem"><i class="fa fa-check"></i><b>2.4</b> Fundamental theorem of linear algebra</a></li>
+<li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="vector-spaces.html"><a href="vector-spaces.html#effect-of-operations-on-matrix-rank"><i class="fa fa-check"></i><b>2.5.1</b> Effect of operations on matrix rank</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
 <li class="chapter" data-level="3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>3.1</b> Orthogonal decomposition</a><ul>
@@ -135,7 +138,7 @@
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a></li>
 <li class="chapter" data-level="4.9" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-optimization"><i class="fa fa-check"></i><b>4.9</b> Low rank optimization</a></li>
-<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Pseudoinverses</a></li>
+<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#left-inverses-and-right-inverses-pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Left inverses and right inverses; Pseudoinverses</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -340,12 +343,46 @@ U + W = \{\boldsymbol{u} + \boldsymbol{v} \;| \; \boldsymbol{w} \in U, \boldsymb
 <li><p><span class="math inline">\(\mathcal{R}(A^T) = \mathcal{N}(A)^{\perp}\)</span>, and <span class="math inline">\(\dim(\mathcal{R}(A^T)) + \dim(\mathcal{N}(A)) = n\)</span></p>
 </div></li>
 </ul>
-<p>The rank of a <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, <span class="math inline">\(r\)</span>, is the dimension of <span class="math inline">\(\mathcal{R}(A)\)</span> or <span class="math inline">\(\mathcal{R}(A^T)\)</span>. I often think of rank as the total volume of information that a matrix can offer.</p>
+<p>If the rank (defined next section) of <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> is <span class="math inline">\(r\)</span></p>
 <ul>
-<li><p><span class="math inline">\(m - r\)</span> is the dimention of the left null space of <span class="math inline">\(A\)</span></p></li>
+<li><p><span class="math inline">\(m - r\)</span> is the dimension of the left null space of <span class="math inline">\(A\)</span></p></li>
 <li><p><span class="math inline">\(n - r\)</span> is the dimension of the null space of <span class="math inline">\(A\)</span></p></li>
 </ul>
+</div>
+<div id="rank" class="section level2">
+<h2><span class="header-section-number">2.5</span> Rank</h2>
+<p>The <strong>rank</strong> of a subspace its the same as its dimension.</p>
 
+<div class="theorem">
+<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 2.2  </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space.
+</div>
+
+<p>I often think of rank of <span class="math inline">\(A\)</span> as the total volume of information that the matrix can offer.</p>
+<p>From the definition of matrix rank, we know that <span class="math inline">\(A\)</span>’s row rank (the dimension of <span class="math inline">\(\mathcal{R}(A^T)\)</span>)equals its column rank <span class="math inline">\(\mathcal{R}(A)\)</span>. A way to verify this are presented below.</p>
+<p>All matrices can be reduced into a (possibly rectangular) <em>diagonal matrix</em> with elementary row and column operations. First we can row reduce the matrix into row echelon form, then use column operations to convert positions above the pivot to zero.</p>
+<p>Thus, any <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> can be expressed in the following form</p>
+<p><span class="math display">\[
+RAC = \Lambda \tag{1}
+\]</span></p>
+<p>where <span class="math inline">\(R\)</span> is the product of the elementary matrices that perform row opertations, and <span class="math inline">\(C\)</span> for column operations. Since <span class="math inline">\(C\)</span> is invertible, we can write</p>
+<p><span class="math display">\[
+RA = \Lambda C^{-1} \tag{2}
+\]</span></p>
+<p>From (1) we know that row rank of <span class="math inline">\(A\)</span> is identical to that the number of non-zero entries in <span class="math inline">\(\Lambda\)</span>, on the ground that row operations on <span class="math inline">\(A\)</span> does not change its row rank, and <span class="math inline">\(C^{-1}\)</span> only scale diagonal entries of <span class="math inline">\(\Lambda\)</span> to some multiple. Similarly, <span class="math inline">\(AC = R^{-1}\Lambda\)</span> shows that column rank of <span class="math inline">\(A\)</span> is the same as the number of non-zero diagonal entries in <span class="math inline">\(\Lambda\)</span>. Therefore, row rank <span class="math inline">\(=\)</span> column rank.</p>
+<div id="effect-of-operations-on-matrix-rank" class="section level3">
+<h3><span class="header-section-number">2.5.1</span> Effect of operations on matrix rank</h3>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two matrices with ranks <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span></p>
+
+<div class="corollary">
+<p><span id="cor:unnamed-chunk-3" class="corollary"><strong>Corollary 2.1  </strong></span>1. <span class="math inline">\(|a - b| \le \text{rank}(A + B) \le a + b\)</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p><span class="math inline">\(\text{rank}(A + B) &lt; \min(a, b)\)</span></p></li>
+<li><p>Multiplying <span class="math inline">\(A\)</span> with a square matrix <span class="math inline">\(B\)</span> of full rank does not change the rank of <span class="math inline">\(A\)</span>.</p></li>
+<li><p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both singular, then <span class="math inline">\(AB\)</span> is non-singular if and only if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both non-singular</p>
+</div></li>
+</ol>
+
+</div>
 </div>
 </div>
             </section>

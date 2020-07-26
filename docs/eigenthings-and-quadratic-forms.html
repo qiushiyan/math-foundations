@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-25" />
+<meta name="date" content="2020-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -96,6 +96,9 @@
 <li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric spaces, normed spaces, inner product spaces</a></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
 <li class="chapter" data-level="2.4" data-path="vector-spaces.html"><a href="vector-spaces.html#fundamental-theorem"><i class="fa fa-check"></i><b>2.4</b> Fundamental theorem of linear algebra</a></li>
+<li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="vector-spaces.html"><a href="vector-spaces.html#effect-of-operations-on-matrix-rank"><i class="fa fa-check"></i><b>2.5.1</b> Effect of operations on matrix rank</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
 <li class="chapter" data-level="3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>3.1</b> Orthogonal decomposition</a><ul>
@@ -135,7 +138,7 @@
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a></li>
 <li class="chapter" data-level="4.9" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-optimization"><i class="fa fa-check"></i><b>4.9</b> Low rank optimization</a></li>
-<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Pseudoinverses</a></li>
+<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#left-inverses-and-right-inverses-pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Left inverses and right inverses; Pseudoinverses</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -244,8 +247,8 @@ c_1(\lambda_1 - \lambda_{p+1})\boldsymbol{v}_1 +\cdots + c_p(\lambda_p - \lambda
 Since <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_p\)</span> are linearly independent, weights in (3) must be all zero. Since <span class="math inline">\(\lambda_1, \cdots, \lambda_p\)</span> are distinct, hence <span class="math inline">\(c_i = 0, \, i = 1, ..., p\)</span>. But then (5) says that eigenvector <span class="math inline">\(\boldsymbol{v}_{p+1}\)</span> is zero vector, which contradicts definition <a href="eigenthings-and-quadratic-forms.html#def:eigen">4.1</a></p>
 <hr>
 
-<div class="proposition">
-<span id="prp:same-nonzero" class="proposition"><strong>Proposition 4.1  </strong></span>Let <span class="math inline">\(A in \mathbb{R}^{m \times n}\)</span> <span class="math inline">\(A^TA_{n \times n}\)</span> and <span class="math inline">\(AA^T\)</span> has the same set of <em>nonzero</em> eigenvalues.
+<div class="corollary">
+<span id="cor:same-nonzero" class="corollary"><strong>Corollary 4.1  </strong></span>Let <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> <span class="math inline">\(A^TA_{n \times n}\)</span> and <span class="math inline">\(AA^T\)</span> has the same set of <em>nonzero</em> eigenvalues.
 </div>
 
 <p><strong>PROOF</strong></p>
@@ -333,7 +336,7 @@ Because <span class="math inline">\(P\)</span> contains <span class="math inline
 <p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(B\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
+<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 2.2  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
 </div>
 
 <p><strong>PROOF</strong><br />
@@ -358,10 +361,10 @@ P(P^{-1}BP)\boldsymbol{v} &amp;= \lambda P\boldsymbol{v} \\
 B(P\boldsymbol{v}) = \lambda P \boldsymbol{v}
 \end{aligned}
 \]</span></p>
-<p>The similarity theorem leads to a interesting proposition.</p>
+<p>The similarity theorem leads to a interesting result.</p>
 
-<div class="proposition">
-<span id="prp:unnamed-chunk-3" class="proposition"><strong>Proposition 4.2  </strong></span>For <span class="math inline">\(A, B \in \mathbb{R}^{n \times n}\)</span>, <span class="math inline">\(AB\)</span> and <span class="math inline">\(BA\)</span> are similar matrices and therefore share the same set of eigenvalues.
+<div class="corollary">
+<span id="cor:unnamed-chunk-3" class="corollary"><strong>Corollary 2.1  </strong></span>For <span class="math inline">\(A, B \in \mathbb{R}^{n \times n}\)</span>, <span class="math inline">\(AB\)</span> and <span class="math inline">\(BA\)</span> are similar matrices and therefore share the same set of eigenvalues.
 </div>
 
 <p>To prove this, we need to show that there exists a invertible matrix <span class="math inline">\(A\)</span> such that <span class="math inline">\(P^{-1}(AB)P = BA\)</span>. Take <span class="math inline">\(P = A\)</span> and the equation holds.</p>
@@ -632,8 +635,8 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 </ul>
 <hr>
 
-<div class="proposition">
-<span id="prp:unnamed-chunk-11" class="proposition"><strong>Proposition 4.3  </strong></span>Given positive definite matrices <span class="math inline">\(A, B \in \mathbb{S}^n\)</span> and <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, the following results <strong>remain to be positive definite</strong>.
+<div class="corollary">
+<span id="cor:unnamed-chunk-11" class="corollary"><strong>Corollary 4.2  </strong></span>Given positive definite matrices <span class="math inline">\(A, B \in \mathbb{S}^n\)</span> and <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, the following results <strong>remain to be positive definite</strong>.
 </div>
 
 <ul>
@@ -644,8 +647,8 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 </ul>
 <hr>
 
-<div class="proposition">
-<span id="prp:ata-pd" class="proposition"><strong>Proposition 4.4  </strong></span>Given any matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are positive semidefinite matrix
+<div class="corollary">
+<span id="cor:ata-pd" class="corollary"><strong>Corollary 4.3  </strong></span>Given any matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are positive semidefinite matrix
 </div>
 
 <p><strong>PROOF</strong></p>
@@ -801,7 +804,7 @@ Since <span class="math inline">\(A^TA\)</span> is <strong>symmetric</strong>, t
 <p><span class="math display">\[
 ||A\boldsymbol{v}_i|| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
 \]</span></p>
-<p>From proposition <a href="eigenthings-and-quadratic-forms.html#prp:ata-pd">4.4</a>, we know that <span class="math inline">\(A^TA\)</span> are positive semidefinite matrices. Thus, <span class="math inline">\(\lambda_i \ge 0, \, i = 1, ..., n\)</span>, and we can find their square root <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>.</p>
+<p>From corollary <a href="eigenthings-and-quadratic-forms.html#cor:ata-pd">4.3</a>, we know that <span class="math inline">\(A^TA\)</span> are positive semidefinite matrices. Thus, <span class="math inline">\(\lambda_i \ge 0, \, i = 1, ..., n\)</span>, and we can find their square root <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>.</p>
 <p><br></p>
 
 <div class="definition">
@@ -811,7 +814,7 @@ Since <span class="math inline">\(A^TA\)</span> is <strong>symmetric</strong>, t
 <p><br></p>
 
 <div class="theorem">
-<span id="thm:svd-rank" class="theorem"><strong>Theorem 4.6  </strong></span>Proceeding from previous definitons of singular values, and suppose <span class="math inline">\(A\)</span> has at least one nonzero singular values. Then <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span> is an orthogonal basis for <span class="math inline">\(\text{Col}\; A\)</span>, and <span class="math inline">\(\text{rank} \;A = r\)</span>
+<span id="thm:svd-rank" class="theorem"><strong>Theorem 4.6  </strong></span>Proceeding from previous definitons of singular values, and suppose <span class="math inline">\(A\)</span> has at least one nonzero singular values. Then <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span> is an orthogonal basis for <span class="math inline">\(\mathcal{R}(A)\)</span>, and <span class="math inline">\(\text{rank} \;A = r\)</span>
 </div>
 
 <p><strong>PROOF</strong></p>
@@ -823,7 +826,7 @@ Since <span class="math inline">\(A^TA\)</span> is <strong>symmetric</strong>, t
 &amp;= 0
 \end{split}
 \]</span></p>
-<p>Next, we will show that any vector in <span class="math inline">\(\text{Col}\; A\)</span> is a linear a combination of <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span>. Note that <span class="math inline">\(\{\boldsymbol{v}_1, ..., \boldsymbol{v}_r\}\)</span> is a orthonormal basis of <span class="math inline">\(A^TA\)</span>’s eigenspace <span class="math inline">\(\mathbb{R}\)</span>. So for any vector <span class="math inline">\(\boldsymbol{y} = A\boldsymbol{x}\)</span> in <span class="math inline">\(\text{Col}\; A\)</span> , we can write <span class="math inline">\(\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n\)</span>, thus</p>
+<p>Next, we will show that any vector in <span class="math inline">\(\mathcal{R}(A)\)</span> is a linear a combination of <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span>. Note that <span class="math inline">\(\{\boldsymbol{v}_1, ..., \boldsymbol{v}_r\}\)</span> is a orthonormal basis of <span class="math inline">\(A^TA\)</span>’s eigenspace <span class="math inline">\(\mathbb{R}\)</span>. So for any vector <span class="math inline">\(\boldsymbol{y} = A\boldsymbol{x}\)</span> in <span class="math inline">\(\mathcal{R}(A)\)</span> , we can write <span class="math inline">\(\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n\)</span>, thus</p>
 <p><span class="math display">\[
 \begin{split}
 \boldsymbol{y} &amp;= A\boldsymbol{x} = A(c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n) \\
@@ -835,7 +838,7 @@ Since <span class="math inline">\(\lambda_{r+1} = \cdots = \lambda_{n} = 0\)</sp
 <p><span class="math display">\[
 \boldsymbol{y} = c_1 A \boldsymbol{v}_1 + \cdots + c_r A\boldsymbol{v}_r
 \]</span></p>
-<p>Thus any <span class="math inline">\(\boldsymbol{y} \in \text{Col}\; A\)</span> is in Span<span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span>, and <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span> is an orthogonal basis for <span class="math inline">\(\text{Col} \;A\)</span>. This also shows that the column rank of <span class="math inline">\(A\)</span> is equal to its number of nonzero singular values.</p>
+<p>Thus any <span class="math inline">\(\boldsymbol{y} \in \mathcal{R}(A)\)</span> is in Span<span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span>, and <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span> is an orthogonal basis for <span class="math inline">\(\mathcal{R}(A)\)</span>. This also shows that the column rank of <span class="math inline">\(A\)</span> is equal to its number of nonzero singular values.</p>
 </div>
 <div id="the-singular-value-decomposition" class="section level3">
 <h3><span class="header-section-number">4.7.2</span> The singular value decomposition</h3>
@@ -861,7 +864,7 @@ A = U \Sigma V^T
 </div>
 
 <p><strong>PROOF</strong></p>
-<p>Since <span class="math inline">\(A\)</span> has <span class="math inline">\(r\)</span> nonzero singular values which measure the length of <span class="math inline">\(A\boldsymbol{v}_i, \; i = 1, ...n\)</span>, there exists orthogonal basis <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span> for <span class="math inline">\(\text{Col}\)</span>, we can further normalize the set to produce the <em>orthonormal</em> set <span class="math inline">\(\boldsymbol{u}_1, ..., \boldsymbol{u}_r\)</span>:</p>
+<p>Since <span class="math inline">\(A\)</span> has <span class="math inline">\(r\)</span> nonzero singular values which measure the length of <span class="math inline">\(A\boldsymbol{v}_i, \; i = 1, ...n\)</span>, there exists orthogonal basis <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span> for <span class="math inline">\(\mathcal{R}(A)\)</span>, we can further normalize the set to produce the <em>orthonormal</em> set <span class="math inline">\(\boldsymbol{u}_1, ..., \boldsymbol{u}_r\)</span>:</p>
 <p><span class="math display">\[
 \boldsymbol{u}_i = \frac{A\boldsymbol{v}_i}{\sigma_i}, \;\; i = 1, ..., r
 \]</span>
@@ -934,8 +937,8 @@ AA^T = (U \Sigma V^T)(U \Sigma V^T)^T = U \Sigma \Sigma^T VV^TU^T = U (\Sigma\Si
 <p>Therefore, <span class="math inline">\([\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]\)</span> are revealed as the orthonormal basis for <span class="math inline">\(AA^T\)</span>’s eigenspace, as <span class="math inline">\([\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]\)</span> are for <span class="math inline">\(A^TA\)</span>.</p>
 <p>Formula (1) echoes the fact that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> have the same set of nonzero eigenvalues, because <span class="math inline">\(\Sigma\Sigma^T\)</span> produces nonzero set <span class="math inline">\(\lambda_1, ..., \lambda_r\)</span>.</p>
 <p>In fact, if were to ask for a direction in which <span class="math inline">\(A^T\)</span> has its greatest stretching effect instead of <span class="math inline">\(A\)</span>, we would still result in the equivalent decomposition <span class="math inline">\(A^T = V\Sigma U^T\)</span>, with <span class="math inline">\(\boldsymbol{v}_i = \frac{A\boldsymbol{u}_i}{\sigma_i}\)</span>.</p>
-<p>It’s also easy to test that <span class="math inline">\(\{A\boldsymbol{u}_1, ..., A\boldsymbol{u}_r\}\)</span> produces an orthogonal basis for <span class="math inline">\(\text{row}\; A\)</span> or <span class="math inline">\(\text{Col}\;A^T\)</span>. The process is analogous to theorem <a href="eigenthings-and-quadratic-forms.html#thm:svd-rank">4.6</a> where <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span> are shown to span <span class="math inline">\(\text{Col}\; A\)</span>.</p>
-<p>For any vector <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(\text{Col}\;A^T\)</span>, we have</p>
+<p>It’s also easy to test that <span class="math inline">\(\{A\boldsymbol{u}_1, ..., A\boldsymbol{u}_r\}\)</span> produces an orthogonal basis for <span class="math inline">\(\mathcal{R}(A^T)\)</span> or <span class="math inline">\(\mathcal{R}(A)\)</span>. The process is analogous to theorem <a href="eigenthings-and-quadratic-forms.html#thm:svd-rank">4.6</a> where <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span> are shown to span <span class="math inline">\(\mathcal{R}(A)\)</span>.</p>
+<p>For any vector <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(\mathcal{R}(A)\)</span>, we have</p>
 <p><span class="math display">\[
 \begin{align*}
 \boldsymbol{y} &amp;= A^T\boldsymbol{x} \\
@@ -987,8 +990,8 @@ AA^T = U (\Sigma\Sigma^T) U^T
 <div id="low-rank-optimization" class="section level2">
 <h2><span class="header-section-number">4.9</span> Low rank optimization</h2>
 </div>
-<div id="pseudoinverses" class="section level2">
-<h2><span class="header-section-number">4.10</span> Pseudoinverses</h2>
+<div id="left-inverses-and-right-inverses-pseudoinverses" class="section level2">
+<h2><span class="header-section-number">4.10</span> Left inverses and right inverses; Pseudoinverses</h2>
 
 </div>
 </div>

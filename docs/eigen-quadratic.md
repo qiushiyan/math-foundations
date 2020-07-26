@@ -91,7 +91,7 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 
 <hr>
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:same-nonzero"><strong>(\#prp:same-nonzero) </strong></span>Let $A in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:same-nonzero"><strong>(\#cor:same-nonzero) </strong></span>Let $A \in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. </div>\EndKnitrBlock{corollary}
 
 **PROOF** 
 
@@ -226,9 +226,9 @@ $$
 
 
 
-The similarity theorem leads to a interesting proposition. 
+The similarity theorem leads to a interesting result. 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-3"><strong>(\#prp:unnamed-chunk-3) </strong></span>For $A, B \in \mathbb{R}^{n \times n}$, $AB$ and $BA$ are similar matrices and therefore share the same set of eigenvalues.  </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-3"><strong>(\#cor:unnamed-chunk-3) </strong></span>For $A, B \in \mathbb{R}^{n \times n}$, $AB$ and $BA$ are similar matrices and therefore share the same set of eigenvalues.  </div>\EndKnitrBlock{corollary}
 
 To prove this, we need to show that there exists a invertible matrix $A$ such that $P^{-1}(AB)P = BA$. Take $P = A$ and the equation holds.  
 
@@ -541,7 +541,7 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 <hr>  
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-11"><strong>(\#prp:unnamed-chunk-11) </strong></span>Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results **remain to be positive definite**. </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-11"><strong>(\#cor:unnamed-chunk-11) </strong></span>Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results **remain to be positive definite**. </div>\EndKnitrBlock{corollary}
 
 
 - Scalar multiplication of PD matrices $\alpha A$ are PD matrices 
@@ -557,7 +557,7 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 <hr>
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:ata-pd"><strong>(\#prp:ata-pd) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are positive semidefinite matrix</div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ata-pd"><strong>(\#cor:ata-pd) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are positive semidefinite matrix</div>\EndKnitrBlock{corollary}
 
 **PROOF**
 
@@ -748,7 +748,7 @@ $$
 ||A\boldsymbol{v}_i|| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
 $$
 
-From proposition \@ref(prp:ata-pd), we know that $A^TA$ are positive semidefinite matrices. Thus, $\lambda_i \ge 0, \, i = 1, ..., n$, and we can find their square root $\sigma_i = \sqrt{\lambda_i}$.
+From corollary \@ref(cor:ata-pd), we know that $A^TA$ are positive semidefinite matrices. Thus, $\lambda_i \ge 0, \, i = 1, ..., n$, and we can find their square root $\sigma_i = \sqrt{\lambda_i}$.
 
 <br>  
 
@@ -757,7 +757,7 @@ From proposition \@ref(prp:ata-pd), we know that $A^TA$ are positive semidefinit
 
 <br>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:svd-rank"><strong>(\#thm:svd-rank) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col}\; A$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:svd-rank"><strong>(\#thm:svd-rank) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
 
 
 **PROOF**  
@@ -772,7 +772,7 @@ $$
 \end{split}
 $$
 
-Next, we will show that any vector in $\text{Col}\; A$ is a linear a combination of $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$. Note that $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_r\}$ is a orthonormal basis of $A^TA$'s eigenspace $\mathbb{R}$. So for any vector $\boldsymbol{y} = A\boldsymbol{x}$ in $\text{Col}\; A$ , we can write $\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n$, thus
+Next, we will show that any vector in $\mathcal{R}(A)$ is a linear a combination of $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$. Note that $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_r\}$ is a orthonormal basis of $A^TA$'s eigenspace $\mathbb{R}$. So for any vector $\boldsymbol{y} = A\boldsymbol{x}$ in $\mathcal{R}(A)$ , we can write $\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n$, thus
 
 $$
 \begin{split}
@@ -787,7 +787,7 @@ $$
 \boldsymbol{y} = c_1 A \boldsymbol{v}_1 + \cdots + c_r A\boldsymbol{v}_r
 $$
 
-Thus any $\boldsymbol{y} \in \text{Col}\; A$ is in Span$\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$, and $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\text{Col} \;A$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
+Thus any $\boldsymbol{y} \in \mathcal{R}(A)$ is in Span$\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$, and $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
 
 
 ### The singular value decomposition 
@@ -816,7 +816,7 @@ $$</div>\EndKnitrBlock{theorem}
 
 **PROOF** 
 
-Since $A$ has $r$ nonzero singular values which measure the length of $A\boldsymbol{v}_i, \; i = 1, ...n$, there exists orthogonal basis $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ for $\text{Col}$, we can further normalize the set to produce the *orthonormal* set $\boldsymbol{u}_1, ..., \boldsymbol{u}_r$: 
+Since $A$ has $r$ nonzero singular values which measure the length of $A\boldsymbol{v}_i, \; i = 1, ...n$, there exists orthogonal basis $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ for $\mathcal{R}(A)$, we can further normalize the set to produce the *orthonormal* set $\boldsymbol{u}_1, ..., \boldsymbol{u}_r$: 
 
 $$
 \boldsymbol{u}_i = \frac{A\boldsymbol{v}_i}{\sigma_i}, \;\; i = 1, ..., r
@@ -908,9 +908,9 @@ Formula (1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero 
 
 In fact, if were to ask for a direction in which $A^T$ has its greatest stretching effect instead of $A$, we would still result in the equivalent decomposition $A^T =  V\Sigma U^T$, with $\boldsymbol{v}_i = \frac{A\boldsymbol{u}_i}{\sigma_i}$. 
 
-It's also easy to test that $\{A\boldsymbol{u}_1, ..., A\boldsymbol{u}_r\}$ produces an orthogonal basis for $\text{row}\; A$ or $\text{Col}\;A^T$. The process is analogous to theorem \@ref(thm:svd-rank) where $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ are shown to span $\text{Col}\; A$. 
+It's also easy to test that $\{A\boldsymbol{u}_1, ..., A\boldsymbol{u}_r\}$ produces an orthogonal basis for $\mathcal{R}(A^T)$ or $\mathcal{R}(A)$. The process is analogous to theorem \@ref(thm:svd-rank) where $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ are shown to span $\mathcal{R}(A)$. 
 
-For any vector $\boldsymbol{y}$ in $\text{Col}\;A^T$, we have 
+For any vector $\boldsymbol{y}$ in $\mathcal{R}(A)$, we have 
 
 $$
 \begin{align*}
@@ -956,5 +956,5 @@ This shed light on the relationship between SVD and the fundamental theorem of l
 
 
 
-## Pseudoinverses 
+## Left inverses and right inverses; Pseudoinverses 
 

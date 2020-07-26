@@ -210,9 +210,52 @@ The relationship between these four subspaces present the fundamental theorem of
 - $\mathcal{R}(A^T) = \mathcal{N}(A)^{\perp}$, and $\dim(\mathcal{R}(A^T)) + \dim(\mathcal{N}(A)) = n$</div>\EndKnitrBlock{theorem}
 
 
+If the rank (defined next section) of $A \in \mathbb{R}^{m \times n}$ is $r$ 
 
-The rank of a $A \in \mathbb{R}^{m \times n}$, $r$, is the dimension of $\mathcal{R}(A)$ or $\mathcal{R}(A^T)$. I often think of rank as the total volume of information that a matrix can offer. 
 
-- $m - r$ is the dimention of the left null space of $A$  
+- $m - r$ is the dimension of the left null space of $A$  
 
 - $n - r$ is the dimension of the null space of $A$
+
+
+## Rank 
+
+
+The **rank** of a subspace its the same as its dimension. 
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space. </div>\EndKnitrBlock{theorem}
+
+I often think of rank of $A$ as the total volume of information that the matrix can offer.   
+
+From the definition of matrix rank, we know that $A$'s row rank (the dimension of $\mathcal{R}(A^T)$)equals its column rank $\mathcal{R}(A)$. A way to verify this are presented below.
+
+All matrices can be reduced into a (possibly rectangular) *diagonal matrix* with elementary row and column operations. First we can row reduce the matrix into row echelon form, then use column operations to convert positions above the pivot to zero. 
+
+Thus, any $A \in \mathbb{R}^{m \times n}$ can be expressed in the following form
+
+$$
+RAC = \Lambda \tag{1}
+$$
+
+where $R$ is the product of the elementary matrices that perform row opertations, and $C$ for column operations. Since $C$ is invertible, we can write 
+
+$$
+RA = \Lambda C^{-1} \tag{2}
+$$
+
+From (1) we know that row rank of $A$ is identical to that the number of non-zero entries in $\Lambda$, on the ground that row operations on $A$ does not change its row rank, and $C^{-1}$ only scale diagonal entries of $\Lambda$ to some multiple. Similarly, $AC = R^{-1}\Lambda$ shows that column rank of $A$ is the same as the number of non-zero diagonal entries in $\Lambda$. Therefore, row rank $=$ column rank. 
+
+### Effect of operations on matrix rank  
+
+Let $A$ and $B$ be two matrices with ranks $a$ and $b$
+
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-3"><strong>(\#cor:unnamed-chunk-3) </strong></span>1. $|a - b| \le  \text{rank}(A + B) \le a + b$
+
+2. $\text{rank}(A + B) < \min(a, b)$  
+
+3. Multiplying $A$ with a square matrix $B$ of full rank does not change the rank of $A$. 
+
+4. If $A$ and $B$ are both singular, then $AB$ is non-singular if and only if $A$ and $B$ are both non-singular  </div>\EndKnitrBlock{corollary}
+
+
+

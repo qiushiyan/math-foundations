@@ -97,8 +97,8 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 
 <hr>
 
-```{proposition same-nonzero}
-Let $A in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. 
+```{corollary same-nonzero}
+Let $A \in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. 
 ```
 
 **PROOF** 
@@ -238,9 +238,9 @@ $$
 
 
 
-The similarity theorem leads to a interesting proposition. 
+The similarity theorem leads to a interesting result. 
 
-```{proposition}
+```{corollary}
 For $A, B \in \mathbb{R}^{n \times n}$, $AB$ and $BA$ are similar matrices and therefore share the same set of eigenvalues.  
 ```
 
@@ -571,7 +571,7 @@ Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbo
 
 <hr>  
 
-```{proposition}
+```{corollary}
 Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results **remain to be positive definite**. 
 ```
 
@@ -589,7 +589,7 @@ Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb
 
 <hr>
 
-```{proposition ata-pd}
+```{corollary ata-pd}
 Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are positive semidefinite matrix
 ```
 
@@ -784,7 +784,7 @@ $$
 ||A\boldsymbol{v}_i|| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
 $$
 
-From proposition \@ref(prp:ata-pd), we know that $A^TA$ are positive semidefinite matrices. Thus, $\lambda_i \ge 0, \, i = 1, ..., n$, and we can find their square root $\sigma_i = \sqrt{\lambda_i}$.
+From corollary \@ref(cor:ata-pd), we know that $A^TA$ are positive semidefinite matrices. Thus, $\lambda_i \ge 0, \, i = 1, ..., n$, and we can find their square root $\sigma_i = \sqrt{\lambda_i}$.
 
 <br>  
 

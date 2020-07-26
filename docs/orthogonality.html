@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-25" />
+<meta name="date" content="2020-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -96,6 +96,9 @@
 <li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric spaces, normed spaces, inner product spaces</a></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
 <li class="chapter" data-level="2.4" data-path="vector-spaces.html"><a href="vector-spaces.html#fundamental-theorem"><i class="fa fa-check"></i><b>2.4</b> Fundamental theorem of linear algebra</a></li>
+<li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="vector-spaces.html"><a href="vector-spaces.html#effect-of-operations-on-matrix-rank"><i class="fa fa-check"></i><b>2.5.1</b> Effect of operations on matrix rank</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
 <li class="chapter" data-level="3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>3.1</b> Orthogonal decomposition</a><ul>
@@ -135,7 +138,7 @@
 </ul></li>
 <li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a></li>
 <li class="chapter" data-level="4.9" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-optimization"><i class="fa fa-check"></i><b>4.9</b> Low rank optimization</a></li>
-<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Pseudoinverses</a></li>
+<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#left-inverses-and-right-inverses-pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Left inverses and right inverses; Pseudoinverses</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
@@ -203,7 +206,7 @@ W^{\perp} = \{\boldsymbol{v} \in W^{\perp} | \;\boldsymbol{v} \perp \boldsymbol{
 <p>There is a particular advantage in using orthogonal basis rather than other basis, because we can find a easy representation of any vector in <span class="math inline">\(W\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>For each <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(W\)</span>, there exists a linear combination</p>
+<p><span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 2.2  </strong></span>For each <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(W\)</span>, there exists a linear combination</p>
 <p><span class="math display">\[
 y = c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p}
 \]</span></p>
@@ -232,7 +235,7 @@ c_1 = \frac{\boldsymbol{u_1} \cdot \boldsymbol{y}}{\boldsymbol{u_1} \cdot \bolds
 <p><strong>Orthogonal decomposition</strong> split <span class="math inline">\(\boldsymbol{y}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> into two vectors, one in <span class="math inline">\(W\)</span> and one in its orthogonal compliment <span class="math inline">\(W^{\perp}\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 3.2  </strong></span>Let <span class="math inline">\(\mathbb{R}^n\)</span> be a inner product space and <span class="math inline">\(W\)</span> and subspace of <span class="math inline">\(\mathbb{R}^n\)</span>. Then every <span class="math inline">\(\boldsymbol{v}\)</span> in <span class="math inline">\(W\)</span> can be written uniquely in the form</p>
+<p><span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 3.1  </strong></span>Let <span class="math inline">\(\mathbb{R}^n\)</span> be a inner product space and <span class="math inline">\(W\)</span> and subspace of <span class="math inline">\(\mathbb{R}^n\)</span>. Then every <span class="math inline">\(\boldsymbol{v}\)</span> in <span class="math inline">\(W\)</span> can be written uniquely in the form</p>
 <p><span class="math display">\[
 \boldsymbol{v} = \boldsymbol{v}_w + \boldsymbol{v}_{\perp}
 \]</span></p>
@@ -281,7 +284,7 @@ Similarly we have <span class="math inline">\(||\boldsymbol{v}_{\perp}&#39; - \b
 <h3><span class="header-section-number">3.1.4</span> Best approximation</h3>
 
 <div class="theorem">
-<p><span id="thm:best-approximation" class="theorem"><strong>Theorem 3.3  (The Best Approximation)  </strong></span>Given <span class="math inline">\(\boldsymbol{y}\)</span> be any vector in <span class="math inline">\(\mathbb{R^n}\)</span>, with its subspace <span class="math inline">\(W\)</span>, let <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> be the orthogonal projection of <span class="math inline">\(\boldsymbol{y}\)</span> onto <span class="math inline">\(W\)</span>. Then <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> is the closest point in <span class="math inline">\(W\)</span> to <span class="math inline">\(\boldsymbol{y}\)</span> in the sense that</p>
+<p><span id="thm:best-approximation" class="theorem"><strong>Theorem 3.2  (The Best Approximation)  </strong></span>Given <span class="math inline">\(\boldsymbol{y}\)</span> be any vector in <span class="math inline">\(\mathbb{R^n}\)</span>, with its subspace <span class="math inline">\(W\)</span>, let <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> be the orthogonal projection of <span class="math inline">\(\boldsymbol{y}\)</span> onto <span class="math inline">\(W\)</span>. Then <span class="math inline">\(\hat{\boldsymbol{y}}\)</span> is the closest point in <span class="math inline">\(W\)</span> to <span class="math inline">\(\boldsymbol{y}\)</span> in the sense that</p>
 <span class="math display">\[
 ||\boldsymbol{y} - \hat{\boldsymbol{y}}|| \le ||\boldsymbol{y} - \boldsymbol{v}||
 \]</span>
@@ -349,7 +352,7 @@ A\boldsymbol{x} = A(A^TA)^{-1}A^T\boldsymbol{b} = \hat{\boldsymbol{b}}
 <p>Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of <span class="math inline">\(\boldsymbol{x}_{i}\)</span> onto the space spanned by the previously created orthogonal set <span class="math inline">\(\{\boldsymbol{v}_{1}, ..., \boldsymbol{v}_{i-1}\}\)</span>, and take the term in the orthogonal compliment to be <span class="math inline">\(\boldsymbol{v}_{i}\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:gram-schmidt" class="theorem"><strong>Theorem 3.4  (the Gram-Schmidt process)  </strong></span>Given a basis <span class="math inline">\(\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\}\)</span> for a nonzero subspace <span class="math inline">\(W\)</span> of <span class="math inline">\(\mathbb{R}^n\)</span>, define</p>
+<p><span id="thm:gram-schmidt" class="theorem"><strong>Theorem 3.3  (the Gram-Schmidt process)  </strong></span>Given a basis <span class="math inline">\(\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\}\)</span> for a nonzero subspace <span class="math inline">\(W\)</span> of <span class="math inline">\(\mathbb{R}^n\)</span>, define</p>
 <p><span class="math display">\[
 \begin{aligned}
 \boldsymbol{v}_1 &amp;= \boldsymbol{x}_1 \\
@@ -381,7 +384,7 @@ A\boldsymbol{x} = A(A^TA)^{-1}A^T\boldsymbol{b} = \hat{\boldsymbol{b}}
 <p>For <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> with linearly independent columns <span class="math inline">\(\boldsymbol{x}_1, ..., \boldsymbol{x}_n\)</span>, apply the Gram-Schmidt process to <span class="math inline">\(\boldsymbol{x}_1, ..., \boldsymbol{x}_n\)</span> amounts to <em>factorizing</em> <span class="math inline">\(A\)</span>.</p>
 
 <div class="theorem">
-<span id="thm:qr" class="theorem"><strong>Theorem 3.5  (QR factorization)  </strong></span>if <span class="math inline">\(A\)</span> is an <span class="math inline">\(m \times n\)</span> matrix with full column rank, then <span class="math inline">\(A\)</span> can be factored as <span class="math inline">\(A = QR\)</span>, where <span class="math inline">\(Q\)</span> is an <span class="math inline">\(m \times n\)</span> matrix whose columns form an orthonormal basis of <span class="math inline">\(\text{Col}\;A\)</span> and <span class="math inline">\(R\)</span> is an <span class="math inline">\(n \times n\)</span> upper triangular invertible matrix with positive entries on its diagonal.
+<span id="thm:qr" class="theorem"><strong>Theorem 3.4  (QR factorization)  </strong></span>if <span class="math inline">\(A\)</span> is an <span class="math inline">\(m \times n\)</span> matrix with full column rank, then <span class="math inline">\(A\)</span> can be factored as <span class="math inline">\(A = QR\)</span>, where <span class="math inline">\(Q\)</span> is an <span class="math inline">\(m \times n\)</span> matrix whose columns form an orthonormal basis of <span class="math inline">\(\text{Col}\;A\)</span> and <span class="math inline">\(R\)</span> is an <span class="math inline">\(n \times n\)</span> upper triangular invertible matrix with positive entries on its diagonal.
 </div>
 
 <p><strong>PROOF</strong></p>
