@@ -98,7 +98,7 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 <hr>
 
 ```{corollary same-nonzero}
-Let $A \in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. 
+Let $A \in \mathbb{R}^{m \times n}$ $A^TA$ and $AA^T$ has the same set of *nonzero* eigenvalues. 
 ```
 
 **PROOF** 
@@ -116,6 +116,8 @@ $$
 AA^T(A\boldsymbol{x}) = \lambda (A\boldsymbol{x})
 $$
 We will have to verify that $A\boldsymbol{x}$ is no zero vector before concluding $\lambda$ is also an eigenvector of $AA^T$. Suppose $A\boldsymbol{x} = 0$, then $A^TA\boldsymbol{x} =\lambda\boldsymbol{x} = 0$. Since $\boldsymbol{x}$ is a eigenvector which is nonzero, $\lambda = 0$, which contradicts our former statement. Thus, any nonzero eigenvalue of $A^TA$ is also an eigenvalue of $AA^T$. 
+
+$A^TA$ and $AA^T$ are known as Gram matrix and left Gram matrix in corollary \@ref(cor:gram-matrix)
 
 ## Additional properties of eigenvalues and eigenvectors  
 
