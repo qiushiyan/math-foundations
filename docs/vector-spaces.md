@@ -71,8 +71,8 @@ Euclidean spaces have other structures defined in addition to the plainest vecto
 $$
 \begin{aligned}
 \text{dot product between }  \boldsymbol{x} \text{ and } \boldsymbol{y}: \boldsymbol{x} \cdot\boldsymbol{y} &= \sum_{i=1}^{n}{x_iy_i} \\
-\text{length of } \boldsymbol{x}: ||\boldsymbol{x}|| &= \sqrt{\boldsymbol{x} \cdot \boldsymbol{x}} \\
-\text{distance between } \boldsymbol{x} \text{ and } \boldsymbol{y}: \text{dist}(\boldsymbol{x}, \boldsymbol{y}) &= ||\boldsymbol{x} - \boldsymbol{y}||
+\text{length of } \boldsymbol{x}: \|\boldsymbol{x}\| &= \sqrt{\boldsymbol{x} \cdot \boldsymbol{x}} \\
+\text{distance between } \boldsymbol{x} \text{ and } \boldsymbol{y}: \text{dist}(\boldsymbol{x}, \boldsymbol{y}) &= \|\boldsymbol{x} - \boldsymbol{y}\|
 \end{aligned}
 $$
 
@@ -97,35 +97,35 @@ Metrics generalize the notion of distance from Euclidean space. A *metric space*
 
 Norms generalize the notion of length from Euclidean space. 
 
-A **norm** on a real vector space $X$ is a function: $||\cdot||: V \rightarrow \mathbb{R}$ that satisfies: 
+A **norm** on a real vector space $X$ is a function: $\|\cdot\|: V \rightarrow \mathbb{R}$ that satisfies: 
 
-1. $||x|| \ge 0$ for all $x \in X$, with equality if and only if $x = \boldsymbol{0}$ (nonnegative)  
-2. $||\lambda x|| = \lambda ||x||$, for all $x \in X$ and $\lambda \in \mathbb{R}$ (homogeneous)  
-3. $||x + y|| \le ||x|| + ||y||$ (triangular inequality)  
+1. $\|x\| \ge 0$ for all $x \in X$, with equality if and only if $x = \boldsymbol{0}$ (nonnegative)  
+2. $\|\lambda x\| = \lambda \|x\|$, for all $x \in X$ and $\lambda \in \mathbb{R}$ (homogeneous)  
+3. $\|x + y\| \le \|x\| + \|y\|$ (triangular inequality)  
 
 **A normed space is a metric space with the metric** 
 
 $$
-d(\boldsymbol{x}, \boldsymbol{y}) = ||\boldsymbol{x} - \boldsymbol{y}||
+d(\boldsymbol{x}, \boldsymbol{y}) = \|\boldsymbol{x} - \boldsymbol{y}\|
 $$
 
-So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that $d(x, y) = ||x - y||$ satisfies all properties of a metric. 
+So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that $d(x, y) = \|x - y\|$ satisfies all properties of a metric. 
 
 The most common function for norms on $\mathbb{R}^n$ are listed below, with $x = [x_1, x_2, ..., x_n]$. 
 
 $$
 \begin{align*}
-\text{1-norm}: ||\boldsymbol{x}||_1 &= \sum_{i=1}^{n}{|x_i|}\\
-\text{2-norm}: ||\boldsymbol{x}||_2 &= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
-\text{p-norm}: ||\boldsymbol{x}||_p &= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
-\text{maximum norm}: ||\boldsymbol{x}||_{\infty} &= \max\{|x_1|, |x_2|, ..., |x_n|\}
+\text{1-norm}: \|\boldsymbol{x}\|_1 &= \sum_{i=1}^{n}{|x_i|}\\
+\text{2-norm}: \|\boldsymbol{x}\|_2 &= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
+\text{p-norm}: \|\boldsymbol{x}\|_p &= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
+\text{maximum norm}: \|\boldsymbol{x}\|_{\infty} &= \max\{|x_1|, |x_2|, ..., |x_n|\}
 \end{align*}
 $$
 1-norm is also called the Manhattan norm. 
 
 2-norm is the Euclidean norm, the subscript $2$ can be left out in $\mathbb{R}^n$. 
 
-p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $||x||_{\infty}$ is called the maximum norm. 
+p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $\|x\|_{\infty}$ is called the maximum norm. 
 
 <br>
 
@@ -138,7 +138,7 @@ An **inner product** on a real vector space $X$ is a function $\langle \cdot, \c
 A vector sapce equipped with such inner product is called a **inner product space**. Note that **all inner product spaces are normed spaces**, because a inner product induce a norm on a vector space: 
 
 $$
-\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = ||\boldsymbol{x}||^2  
+\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = \|\boldsymbol{x}\|^2  
 $$
 The *standard inner product* defined on $\mathbb{R}^{n}$ is the dot product,  given by 
 
@@ -221,9 +221,9 @@ If the rank (defined next section) of $A \in \mathbb{R}^{m \times n}$ is $r$
 ## Rank 
 
 
-The **rank** of a subspace its the same as its dimension. 
+The **rank** of a vector space is its dimension. 
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-2"><strong>(\#def:unnamed-chunk-2) </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space. </div>\EndKnitrBlock{definition}
 
 I often think of rank of $A$ as the total volume of information that the matrix can offer.   
 
@@ -247,15 +247,53 @@ From (1) we know that row rank of $A$ is identical to that the number of non-zer
 
 ### Effect of operations on matrix rank  
 
-Let $A$ and $B$ be two matrices with ranks $a$ and $b$
+Let $A, B \in \mathbb{R}^{m \times n}$ have ranks $a$ and $b$
 
-\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-3"><strong>(\#cor:unnamed-chunk-3) </strong></span>1. $|a - b| \le  \text{rank}(A + B) \le a + b$
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-3"><strong>(\#cor:unnamed-chunk-3) </strong></span>
+1. $|a - b| \le  r(A + B) \le a + b$
 
-2. $\text{rank}(A + B) < \min(a, b)$  
+2. $r(AB) < \min(a, b)$  </div>\EndKnitrBlock{corollary}
 
+
+
+**PROOF**
+
+For (1), rows / columns of $A + B$ can be expressed as linear combinations of rows / columns of $A$ and $B$. 
+
+For (2), Each column of $AB$ is a linear combination of columns of A, and each row is a linear combination of rows of $B$. Therefore, $r(AB)$ can not exceed either rank of $A$ or $B$. There is also a corollary on the lower bound of $r(AB)$, which is $a + b - n$. Note that $n$ is the shared dimension. I have not found a concise proof about this, but this property leads to a interesting result: when one of $A$ and $B$ are square and full rank, $\min(r(AB)) = \max(r(AB))$
+
+
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-4"><strong>(\#cor:unnamed-chunk-4) </strong></span>
 3. Multiplying $A$ with a square matrix $B$ of full rank does not change the rank of $A$. 
 
-4. If $A$ and $B$ are both singular, then $AB$ is non-singular if and only if $A$ and $B$ are both non-singular  </div>\EndKnitrBlock{corollary}
+4. If $A$ and $B$ are both singular, then $AB$ is non-singular if and only if $A$ and $B$ are both non-singular </div>\EndKnitrBlock{corollary}
+
+**PROOF**
+
+Suppose $B$ is $n \times n$, the minimum rank of $AB$ is $a + n - n = a$, and the maximum rank is $\min(a, n) = a$. Thus, multiplying by a full rank matrixi preserves rank: $r(AB) = r(A)$. (4) follows naturally after (3). 
 
 
+### Gram matrix
+
+\BeginKnitrBlock{proposition}\iffalse{-91-71-114-97-109-32-109-97-116-114-105-120-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:gram-matrix"><strong>(\#prp:gram-matrix)  \iffalse (Gram matrix) \fi{} </strong></span>The matrix $A^TA$ is said to be the gram matrix of column space of $A_{m \times n}$. The columns of $A$ are linearly independent if and only if $A^TA$ is invertible.</div>\EndKnitrBlock{proposition}
+
+When $A^TA$ is invertible, it has rank $n$. Therefore,  each of the factors of $A^TA$ has at least rank $n$, and this means columns of $A$ are linearly independent (since $r(A) \le \min(m, n)$). 
+
+Similarly, $AA^T$ are called the left Gram matrix of rowspace of $A$. And $AA^T$ is invertible if and only rows of $A$ are linearly independent.
+
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:gram-matrix-rank"><strong>(\#prp:gram-matrix-rank) </strong></span>For any matrix $A \in \mathbb{R}^{m \times n}$, $A$, $A^TA$ and $AA^T$ always have the same rank.
+
+$$
+r(A) = r(A^TA) = r(AA^T)
+$$</div>\EndKnitrBlock{proposition}
+
+**PROOF**
+
+For $r(A) = r(A^TA)$, suppose $r(A) = r$, then $\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r$. Note that for any $\boldsymbol{x}$ that satisfies $A\boldsymbol{x} = 0$, we have $A^TA\boldsymbol{x} = 0$. It follows that $A$ $A^TA$ have the same null space, $\mathcal{N}(A)  = \mathcal{N}(A^TA)$. Since $A^TA \in \mathbb{R}^{n \times n}$, we have $r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r$. 
+
+For $r(A) = R(AA^T)$, note that $r(A) = r(A^T)$,  and that $\mathcal{N}(A^T) = \mathcal{N}(AA^T)$, then the conclusion presents itself. 
+
+<hr>
+
+From the SVD perspective(Corollary \@ref(cor:same-nonzero) and Section \@ref(svd-theorem)), one can show that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, and $r(A)$ is the same as the number of nonzero eigenvalues of $A^A$ or $AA^T$, so that $r(A) = r(A^TA) = r(AA^T)$.   
 

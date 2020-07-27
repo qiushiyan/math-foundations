@@ -15,6 +15,7 @@ rmd_files: [
   "vector-spaces.Rmd",
   "orthogonality.Rmd",
   "eigen-quadratic.Rmd",
+  "linear-system.Rmd",
   "matrix-calculus.Rmd",
 
   "taylor.Rmd",

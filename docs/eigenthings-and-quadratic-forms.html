@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-26" />
+<meta name="date" content="2020-07-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="orthogonality.html"/>
-<link rel="next" href="matrix-calculus.html"/>
+<link rel="next" href="solutions-of-linear-system-ax-b.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -98,6 +98,7 @@
 <li class="chapter" data-level="2.4" data-path="vector-spaces.html"><a href="vector-spaces.html#fundamental-theorem"><i class="fa fa-check"></i><b>2.4</b> Fundamental theorem of linear algebra</a></li>
 <li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="vector-spaces.html"><a href="vector-spaces.html#effect-of-operations-on-matrix-rank"><i class="fa fa-check"></i><b>2.5.1</b> Effect of operations on matrix rank</a></li>
+<li class="chapter" data-level="2.5.2" data-path="vector-spaces.html"><a href="vector-spaces.html#gram-matrix"><i class="fa fa-check"></i><b>2.5.2</b> Gram matrix</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
@@ -107,7 +108,7 @@
 <li class="chapter" data-level="3.1.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>3.1.3</b> Orthogonal decomposition</a></li>
 <li class="chapter" data-level="3.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.1.4</b> Best approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#projection-matrices"><i class="fa fa-check"></i><b>3.2</b> Projection matrices</a></li>
+<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#idempotent-and-projection-matrices"><i class="fa fa-check"></i><b>3.2</b> Idempotent and Projection Matrices</a></li>
 <li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt process</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR factorizaiton</a></li>
 </ul></li>
@@ -133,25 +134,36 @@
 <li class="chapter" data-level="4.6" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients"><i class="fa fa-check"></i><b>4.6</b> Rayleigh quotients</a></li>
 <li class="chapter" data-level="4.7" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.7</b> SVD</a><ul>
 <li class="chapter" data-level="4.7.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#singular-values-of-m-x-n-matrix"><i class="fa fa-check"></i><b>4.7.1</b> Singular values of m x n matrix</a></li>
-<li class="chapter" data-level="4.7.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-singular-value-decomposition"><i class="fa fa-check"></i><b>4.7.2</b> The singular value decomposition</a></li>
-<li class="chapter" data-level="4.7.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-condition-number"><i class="fa fa-check"></i><b>4.7.3</b> The condition number</a></li>
+<li class="chapter" data-level="4.7.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd-theorem"><i class="fa fa-check"></i><b>4.7.2</b> The singular value decomposition</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a></li>
+<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#induced-norms"><i class="fa fa-check"></i><b>4.8.1</b> Induced norms</a></li>
+<li class="chapter" data-level="4.8.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#entry-wise-norm"><i class="fa fa-check"></i><b>4.8.2</b> Entry-wise norm</a></li>
+<li class="chapter" data-level="4.8.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#other-matrix-norms"><i class="fa fa-check"></i><b>4.8.3</b> Other matrix norms</a></li>
+<li class="chapter" data-level="4.8.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#unitary-invariancy"><i class="fa fa-check"></i><b>4.8.4</b> Unitary invariancy</a></li>
+</ul></li>
 <li class="chapter" data-level="4.9" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-optimization"><i class="fa fa-check"></i><b>4.9</b> Low rank optimization</a></li>
-<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#left-inverses-and-right-inverses-pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Left inverses and right inverses; Pseudoinverses</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
+<li class="chapter" data-level="5" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html"><i class="fa fa-check"></i><b>5</b> Solutions of linear system Ax = b</a><ul>
+<li class="chapter" data-level="5.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#generalized-inverse"><i class="fa fa-check"></i><b>5.1</b> Generalized inverse</a></li>
+<li class="chapter" data-level="5.2" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>5.2</b> Ill-conditioned matrices</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#the-condition-number"><i class="fa fa-check"></i><b>5.2.1</b> The condition number</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>6</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
-<li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
+<li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
-<li class="chapter" data-level="7" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>7</b> Probability basics</a></li>
-<li class="chapter" data-level="8" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>8</b> Moments</a></li>
+<li class="chapter" data-level="8" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>8</b> Probability basics</a></li>
+<li class="chapter" data-level="9" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>9</b> Moments</a></li>
 <li class="part"><span><b>IV Applications</b></span></li>
-<li class="chapter" data-level="9" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>9</b> Linear models</a><ul>
-<li class="chapter" data-level="9.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>9.1</b> Least square estimation</a></li>
-<li class="chapter" data-level="9.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>9.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="10" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>10</b> Linear models</a><ul>
+<li class="chapter" data-level="10.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>10.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="10.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>10.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="10.3" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>10.3</b> Weighted least squares</a></li>
+<li class="chapter" data-level="10.4" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>10.4</b> Partial least squres</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>10</b> Principal component analysis</a></li>
+<li class="chapter" data-level="11" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>11</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -248,7 +260,7 @@ Since <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_p\)</spa
 <hr>
 
 <div class="corollary">
-<span id="cor:same-nonzero" class="corollary"><strong>Corollary 4.1  </strong></span>Let <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> <span class="math inline">\(A^TA_{n \times n}\)</span> and <span class="math inline">\(AA^T\)</span> has the same set of <em>nonzero</em> eigenvalues.
+<span id="cor:same-nonzero" class="corollary"><strong>Corollary 4.1  </strong></span>Let <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> has the same set of <em>nonzero</em> eigenvalues.
 </div>
 
 <p><strong>PROOF</strong></p>
@@ -263,6 +275,7 @@ Left multiply by <span class="math inline">\(A\)</span></p>
 AA^T(A\boldsymbol{x}) = \lambda (A\boldsymbol{x})
 \]</span>
 We will have to verify that <span class="math inline">\(A\boldsymbol{x}\)</span> is no zero vector before concluding <span class="math inline">\(\lambda\)</span> is also an eigenvector of <span class="math inline">\(AA^T\)</span>. Suppose <span class="math inline">\(A\boldsymbol{x} = 0\)</span>, then <span class="math inline">\(A^TA\boldsymbol{x} =\lambda\boldsymbol{x} = 0\)</span>. Since <span class="math inline">\(\boldsymbol{x}\)</span> is a eigenvector which is nonzero, <span class="math inline">\(\lambda = 0\)</span>, which contradicts our former statement. Thus, any nonzero eigenvalue of <span class="math inline">\(A^TA\)</span> is also an eigenvalue of <span class="math inline">\(AA^T\)</span>.</p>
+<p><span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are known as Gram matrix and left Gram matrix in corollary <a href="vector-spaces.html#prp:gram-matrix">2.1</a></p>
 </div>
 <div id="additional-properties-of-eigenvalues-and-eigenvectors" class="section level2">
 <h2><span class="header-section-number">4.2</span> Additional properties of eigenvalues and eigenvectors</h2>
@@ -336,7 +349,7 @@ Because <span class="math inline">\(P\)</span> contains <span class="math inline
 <p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(B\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 2.2  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
+<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
 </div>
 
 <p><strong>PROOF</strong><br />
@@ -657,7 +670,7 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 \begin{split}
 \boldsymbol{x}^T(A^TA)\boldsymbol{x} &amp;= (\boldsymbol{x}^TA^T)(A\boldsymbol{x}) \\
 &amp;= (A\boldsymbol{x})^T(A\boldsymbol{x}) \\
-&amp;= ||A\boldsymbol{x}||^2
+&amp;= \|A\boldsymbol{x}\|^2
 \end{split}
 \]</span>
 It turns out that the result is the square of the 2-norm of <span class="math inline">\(A\boldsymbol{x}\)</span> (nonnegative). This also tells <span class="math inline">\(A^TA\)</span> is positive definite when <span class="math inline">\(\boldsymbol{x} \not\subseteq \mathcal{N}(A)\)</span></p>
@@ -786,23 +799,23 @@ Since <span class="math inline">\(\boldsymbol{q}_1^T\boldsymbol{x} = \boldsymbol
 <p>The singular value decomposition illustrates a way of decomposing <em>any</em> matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> into the form <span class="math inline">\(U \Sigma V^T\)</span>, where <span class="math inline">\(U = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]\)</span> and <span class="math inline">\(V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]\)</span> are both orthogonal matrices, and <span class="math inline">\(\Sigma\)</span> a diagonal matrix with entries being the square root of the eigenvalues of <span class="math inline">\(A^TA\)</span> (perhaps plus some zeros).</p>
 <p>Before proceeding to the theorem, let’s explore the motivating idea behind SVD. For (square) diagonalizable matrix <span class="math inline">\(A \in \mathbb{S}^{n}\)</span>, the absolute value of the eigenvalues measure the amounts that <span class="math inline">\(A\)</span> stretches or shrinks eigenvectors, consider the ratio between the length of <span class="math inline">\(\boldsymbol{x}\)</span> before and after left multiplied by <span class="math inline">\(A\)</span></p>
 <p><span class="math display">\[
-\frac{||A\boldsymbol{x}||}{||\boldsymbol{x}||} 
-= \frac{||\lambda\boldsymbol{x}||}{||\boldsymbol{x}||}
-= \frac{\lambda||\boldsymbol{x}||}{||\boldsymbol{x}||} = \lambda
+\frac{\|A\boldsymbol{x}\|}{\|\boldsymbol{x}\|} 
+= \frac{\|\lambda\boldsymbol{x}\|}{\|\boldsymbol{x}\|}
+= \frac{\lambda\|\boldsymbol{x}\|}{\|\boldsymbol{x}\|} = \lambda
 \]</span>
 If <span class="math inline">\(\lambda_1\)</span> is the greatest eigenvalue, then the corresponding eigenvector <span class="math inline">\(\boldsymbol{v}_1\)</span> identifies the direction in which <span class="math inline">\(A\)</span>’s stretching effect is greatest.</p>
 <p>So, the question is, can we identify a similar ratio and direction for <em>rectangular</em> matrices <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, even though they does not have eigenvalues and eigenvectors?</p>
-<p>The answer is yes. Note that maximize <span class="math inline">\(\frac{||A\boldsymbol{x}||}{||\boldsymbol{x}||}\)</span> (now <span class="math inline">\(\boldsymbol{x}\)</span> is any vector <span class="math inline">\(\in \mathbb{R}^n\)</span>) is equivalent to maximize <span class="math inline">\(\frac{||A\boldsymbol{x}||^2}{||\boldsymbol{x}||^2}\)</span></p>
+<p>The answer is yes. Note that maximize <span class="math inline">\(\frac{\|A\boldsymbol{x}\|}{\|\boldsymbol{x}\|}\)</span> (now <span class="math inline">\(\boldsymbol{x}\)</span> is any vector <span class="math inline">\(\in \mathbb{R}^n\)</span>) is equivalent to maximize <span class="math inline">\(\frac{\|A\boldsymbol{x}\|^2}{\|\boldsymbol{x}\|^2}\)</span></p>
 <p><span class="math display">\[
 \begin{split}
-\frac{||A\boldsymbol{x}||^2}{||\boldsymbol{x}||^2} &amp;= \frac{(A\boldsymbol{x})^T(A\boldsymbol{x})}{\boldsymbol{x}^T\boldsymbol{x}} \\
+\frac{\|A\boldsymbol{x}\|^2}{\|\boldsymbol{x}\|^2} &amp;= \frac{(A\boldsymbol{x})^T(A\boldsymbol{x})}{\boldsymbol{x}^T\boldsymbol{x}} \\
 &amp;= \frac{\boldsymbol{x}^T(A^TA)\boldsymbol{x}}{\boldsymbol{x}^T\boldsymbol{x}}
 \end{split}
 \]</span>
 Since <span class="math inline">\(A^TA\)</span> is <strong>symmetric</strong>, this is the form of a Rayleigh quotients <a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients">4.6</a>! We know that the largest possible value is of this quotient <span class="math inline">\(\lambda_1\)</span>, the greatest eigenvalue of <span class="math inline">\(A^TA\)</span>, with <span class="math inline">\(\boldsymbol{x} = \boldsymbol{v}_1\)</span>, among the <strong>orthonormal</strong> set <span class="math inline">\(\{\boldsymbol{v}_1, \cdots, \boldsymbol{v}_n\}\)</span>. Note that here <span class="math inline">\(V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]\)</span> is already a orthogonal matrix, previously denoted by <span class="math inline">\(Q\)</span>.</p>
 <p>To sum up, the greatest possible stretching ratio of <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> on a vector <span class="math inline">\(\boldsymbol{x} \in \mathbb{R}^n\)</span> is <span class="math inline">\(\sqrt{\lambda_1}\)</span>. Generally, let <span class="math inline">\(\{\boldsymbol{v}_1, \cdots, \boldsymbol{v}_n\}\)</span> be a orthonormal basis for <span class="math inline">\(\mathbb{R}^n\)</span> consisting of eigenvectors of <span class="math inline">\(A^TA\)</span>, and <span class="math inline">\(\lambda_1, ..., \lambda_n\)</span> be the eigenvalues of <span class="math inline">\(A^TA\)</span>, for <span class="math inline">\(i = 1, \cdots, n\)</span></p>
 <p><span class="math display">\[
-||A\boldsymbol{v}_i|| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
+\|A\boldsymbol{v}_i\| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
 \]</span></p>
 <p>From corollary <a href="eigenthings-and-quadratic-forms.html#cor:ata-pd">4.3</a>, we know that <span class="math inline">\(A^TA\)</span> are positive semidefinite matrices. Thus, <span class="math inline">\(\lambda_i \ge 0, \, i = 1, ..., n\)</span>, and we can find their square root <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>.</p>
 <p><br></p>
@@ -840,7 +853,7 @@ Since <span class="math inline">\(\lambda_{r+1} = \cdots = \lambda_{n} = 0\)</sp
 \]</span></p>
 <p>Thus any <span class="math inline">\(\boldsymbol{y} \in \mathcal{R}(A)\)</span> is in Span<span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span>, and <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span> is an orthogonal basis for <span class="math inline">\(\mathcal{R}(A)\)</span>. This also shows that the column rank of <span class="math inline">\(A\)</span> is equal to its number of nonzero singular values.</p>
 </div>
-<div id="the-singular-value-decomposition" class="section level3">
+<div id="svd-theorem" class="section level3">
 <h3><span class="header-section-number">4.7.2</span> The singular value decomposition</h3>
 <p>Let’s begin SVD by the <span class="math inline">\(m \times n\)</span> diagonal matrix <span class="math inline">\(\Sigma\)</span> of the form</p>
 <p><span class="math display">\[
@@ -980,18 +993,135 @@ AA^T = U (\Sigma\Sigma^T) U^T
 </tbody>
 </table>
 </div>
-<div id="the-condition-number" class="section level3">
-<h3><span class="header-section-number">4.7.3</span> The condition number</h3>
-</div>
 </div>
 <div id="matrix-norms" class="section level2">
 <h2><span class="header-section-number">4.8</span> Matrix norms</h2>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be matrices conformable for the operations below, a matrix norm should at first satisfy 3 axioms of norm:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\|A\| \ge 0\)</span> for all <span class="math inline">\(x \in X\)</span>, with equality if and only if all elements of <span class="math inline">\(A\)</span> is zero (nonnegative)<br />
+</li>
+<li><span class="math inline">\(\|\alpha A\| = |\alpha|\,\|A\|\)</span> (homogeneous)<br />
+</li>
+<li><span class="math inline">\(\|A + B\| &lt; \|A\| + \|B\|\)</span> (triangular inequality)</li>
+</ol>
+<p>Additionally, in the case of square matrices (thus, m = n), some (but not all) matrix norms satisfy the following condition, which is related to the fact that matrices are more than just vectors</p>
+<ol start="4" style="list-style-type: decimal">
+<li><span class="math inline">\(\|AB\| &lt; \|A\|\,\|B\|\)</span> for <span class="math inline">\(A, B \in \mathbb{R}^{n \times n}\)</span></li>
+</ol>
+<p>A matrix norm that satisfies this additional property is called a <strong>submultiplicative</strong> norm.</p>
+<p>There are 2 main categories of matrix norms.</p>
+<ul>
+<li>induced norms (defined in terms of vector norms)<br />
+</li>
+<li>entry-wise norms (treat <span class="math inline">\(A_{m \times n}\)</span> like a long vector with <span class="math inline">\(m \times n\)</span> elements)</li>
+</ul>
+<div id="induced-norms" class="section level3">
+<h3><span class="header-section-number">4.8.1</span> Induced norms</h3>
+<p>Induced norms define matrix norms in terms of vectors, also called <em>operator norm</em> since <span class="math inline">\(A\)</span> acts like an operator in this definition. Note that matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> maps a vector <span class="math inline">\(\boldsymbol{x} \not = 0\)</span> from <span class="math inline">\(\mathbb{R}^n\)</span> to <span class="math inline">\(\mathbb{R}^m\)</span>. In particular, if the p-norm is used for both <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(\mathbb{R}^m\)</span>, then the induced norm is</p>
+<p><span class="math display">\[
+\|A\|_p = \max \frac{\|A\boldsymbol{x}\|_p}{\|\boldsymbol{x}\|_p}
+\]</span>
+The subscript <span class="math inline">\(p\)</span> can be misleading, because the appropriate name for this matrix norm may not be “p-norm”, but rather “induced norm when p-norm is used in both spaces”. The p-norm of a matrix meaning usually means entry-wise p-norms or the Scatten p-norms defined in subsequent sections.</p>
+<p>In the special cases where <span class="math inline">\(p = 1, 2, ..., \infty\)</span>, <span class="math inline">\(\|A\|_p\)</span> is the maximum absolute column sums, largest singular value, and the maximum absolute row sums</p>
+<p><span class="math display">\[
+\begin{aligned}
+\|A\|_1 &amp;= \max \sum_{i=1}^{m}{|A_{ij}|} \\
+\|A\|_2 &amp;= \sigma_1 \\
+\|A\|_{\infty} &amp;= \max \sum_{j=1}^{n}{|A_{ij}|}
+\end{aligned}
+\]</span>
+For symmetric matrix A, we have</p>
+<p><span class="math display">\[
+\|A\|_1 = \|A\|_{\infty}
+\]</span>
+and</p>
+<p><span class="math display">\[
+\|A\|_2 = \lambda_1
+\]</span>
+The induced 2-norm are also called the <strong>spectral norm</strong>.</p>
+<p>By definition, the following inequality holds for induced matrix norms</p>
+<p><span class="math display">\[
+\|A\boldsymbol{x}\|_P \le \|A\|_p\|\boldsymbol{x}\|_p
+\]</span></p>
+<hr>
+
+<div class="proposition">
+<p><span id="prp:unnamed-chunk-14" class="proposition"><strong>Proposition 4.1  </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that</p>
+<span class="math display">\[
+\|AB\|_p \le \|A\|_p\|B\|_p
+\]</span>
+</div>
+
+<p><strong>PROOF</strong></p>
+<p>For any <span class="math inline">\(\boldsymbol{x} \in \mathbb{R}^n\)</span></p>
+<p><span class="math display">\[
+\|AB\boldsymbol{x}\|_p \le \|A\|_p\|B\boldsymbol{x}\|_p \le \|A\|_p\|B\|_p\|\boldsymbol{x}\|_p
+\]</span>
+si</p>
+<p><span class="math display">\[
+\|AB\|_p = \max \frac{\|A\boldsymbol{x}\|_p}{\|\boldsymbol{x}\|_p} \le \max \frac{\|A\|_p\|B\|_p\|\boldsymbol{x}\|_p}{\|\boldsymbol{x}\|_p} = \|A\|_p\|B\|_p
+\]</span></p>
+</div>
+<div id="entry-wise-norm" class="section level3">
+<h3><span class="header-section-number">4.8.2</span> Entry-wise norm</h3>
+<p>Entry-wise norms treat an <span class="math inline">\(m \times n\)</span> matrix as a long vector of size <span class="math inline">\(m \times n\)</span>, denoted by <span class="math inline">\(\text{vec}(A)\)</span>. For example, using the p-norm for vectors, we get</p>
+<p><span class="math display">\[
+\|A\|_{p,p} = \|\text{vec}(A)\|_p = (\sum_{j=1}^n\sum_{i=1}^{m}{|A_{ij}|}^p)^{\frac{1}{p}}
+\]</span></p>
+<p>More generally, the p,q norm is defined by</p>
+<p><span class="math display">\[
+\|A\|_{p, q} = \Bigg (  \sum_{j=1}^n \Big (\sum_{i=1}^{n}{|A_{ij|}}^p \Big)^{\frac{q}{p}}    \Bigg)^{\frac{1}{q}}
+\]</span>
+Another important member norm of this norm family is the <strong>Frobenius norm</strong>, or the F-norm.</p>
+<p><span class="math display">\[
+\| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{A_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
+\]</span>
+where <span class="math inline">\(\sigma_i\)</span> is the nonzero singular value of <span class="math inline">\(A\)</span>.</p>
+</div>
+<div id="other-matrix-norms" class="section level3">
+<h3><span class="header-section-number">4.8.3</span> Other matrix norms</h3>
+<p>One can pick to one of two ways to generalize the F-norm. One is a generalization of the direct definition that F-norm is the 2-norm of <span class="math inline">\(||\text{vec}()||\)</span>. For <span class="math inline">\(p \ge 1\)</span>, it is the <strong>Frobenius-p</strong> norm:</p>
+<p><span class="math display">\[
+\| A \|_{F_p} = \Bigg (\sum_{i,j}{|A_{ij}|^p} \Bigg)^{\frac{1}{p}}
+\]</span>
+The Frobenius p-norm is the ordinary Frobenius norm.</p>
+<p>Another generalization stems from the relationship between F-norm and singular values of <span class="math inline">\(A\)</span>. The <strong>Schatten p norm</strong> or <strong>nuclear p-norm</strong> is the p-norm of the vector composed of <span class="math inline">\(A\)</span>’s singular values</p>
+<p><span class="math display">\[
+\|A\|_{S_p} = \Big( \sum_{i = 1}^{\min(m, n)}{\sigma_i^p}\Big)^{\frac{1}{p}}
+\]</span></p>
+</div>
+<div id="unitary-invariancy" class="section level3">
+<h3><span class="header-section-number">4.8.4</span> Unitary invariancy</h3>
+
+<div class="definition">
+<p><span id="def:unitary-invariant" class="definition"><strong>Definition 4.5  (unitary invariant)  </strong></span>A matrix norm <span class="math inline">\(\|\cdot \|\)</span> is said to be unitary invariant if for all orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> of appropriate size</p>
+<span class="math display">\[
+\|A\| = \|UAV\|
+\]</span>
+</div>
+
+<p>(unitary matrices refers to orthogonal matrices with complex-valued entries, but I focus on real matrices here.)</p>
+<p>Essentially, if a norm depends only on the singular values of a matrix, it is unitary invariant. Since for such norms:</p>
+<p><span class="math display">\[
+\|A\| = \|\Sigma\|
+\]</span>
+Multiply two orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V^T\)</span> on each side,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\|UA V^T\| &amp; = \| U \Sigma V^T\| \\
+\|UAV^T\| &amp;= \|A\|
+\end{aligned}
+\]</span></p>
+
+<div class="todo">
+Does this work for all orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span>?
+</div>
+
+<p>The spectral norm (induced p-norm), F-norm and Schattan norm are all unitary invariant.</p>
+</div>
 </div>
 <div id="low-rank-optimization" class="section level2">
 <h2><span class="header-section-number">4.9</span> Low rank optimization</h2>
-</div>
-<div id="left-inverses-and-right-inverses-pseudoinverses" class="section level2">
-<h2><span class="header-section-number">4.10</span> Left inverses and right inverses; Pseudoinverses</h2>
 
 </div>
 </div>
@@ -1001,7 +1131,7 @@ AA^T = U (\Sigma\Sigma^T) U^T
         </div>
       </div>
 <a href="orthogonality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="matrix-calculus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="solutions-of-linear-system-ax-b.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

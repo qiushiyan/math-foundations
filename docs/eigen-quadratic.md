@@ -91,7 +91,7 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 
 <hr>
 
-\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:same-nonzero"><strong>(\#cor:same-nonzero) </strong></span>Let $A \in \mathbb{R}^{m \times n}$ $A^TA_{n \times n}$ and $AA^T$ has the same set of *nonzero* eigenvalues. </div>\EndKnitrBlock{corollary}
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:same-nonzero"><strong>(\#cor:same-nonzero) </strong></span>Let $A \in \mathbb{R}^{m \times n}$ $A^TA$ and $AA^T$ has the same set of *nonzero* eigenvalues. </div>\EndKnitrBlock{corollary}
 
 **PROOF** 
 
@@ -108,6 +108,8 @@ $$
 AA^T(A\boldsymbol{x}) = \lambda (A\boldsymbol{x})
 $$
 We will have to verify that $A\boldsymbol{x}$ is no zero vector before concluding $\lambda$ is also an eigenvector of $AA^T$. Suppose $A\boldsymbol{x} = 0$, then $A^TA\boldsymbol{x} =\lambda\boldsymbol{x} = 0$. Since $\boldsymbol{x}$ is a eigenvector which is nonzero, $\lambda = 0$, which contradicts our former statement. Thus, any nonzero eigenvalue of $A^TA$ is also an eigenvalue of $AA^T$. 
+
+$A^TA$ and $AA^T$ are known as Gram matrix and left Gram matrix in corollary \@ref(prp:gram-matrix)
 
 ## Additional properties of eigenvalues and eigenvectors  
 
@@ -567,7 +569,7 @@ $$
 \begin{split}
 \boldsymbol{x}^T(A^TA)\boldsymbol{x} &= (\boldsymbol{x}^TA^T)(A\boldsymbol{x}) \\
 &= (A\boldsymbol{x})^T(A\boldsymbol{x}) \\
-&= ||A\boldsymbol{x}||^2
+&= \|A\boldsymbol{x}\|^2
 \end{split}
 $$
 It turns out that the result is the square of the 2-norm of $A\boldsymbol{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\boldsymbol{x} \not\subseteq \mathcal{N}(A)$
@@ -724,19 +726,19 @@ The singular value decomposition illustrates a way of decomposing *any* matrix $
 Before proceeding to the theorem, let's explore the motivating idea behind SVD. For (square) diagonalizable matrix $A \in \mathbb{S}^{n}$, the absolute value of the eigenvalues measure the amounts that $A$ stretches or shrinks eigenvectors, consider the ratio between the length of $\boldsymbol{x}$ before and after left multiplied by $A$ 
 
 $$
-\frac{||A\boldsymbol{x}||}{||\boldsymbol{x}||} 
-= \frac{||\lambda\boldsymbol{x}||}{||\boldsymbol{x}||}
-= \frac{\lambda||\boldsymbol{x}||}{||\boldsymbol{x}||} = \lambda
+\frac{\|A\boldsymbol{x}\|}{\|\boldsymbol{x}\|} 
+= \frac{\|\lambda\boldsymbol{x}\|}{\|\boldsymbol{x}\|}
+= \frac{\lambda\|\boldsymbol{x}\|}{\|\boldsymbol{x}\|} = \lambda
 $$
 If $\lambda_1$ is the greatest eigenvalue, then the corresponding eigenvector $\boldsymbol{v}_1$ identifies the direction in which $A$'s stretching effect is greatest. 
 
 So, the question is, can we identify a similar ratio and direction for *rectangular* matrices $A \in \mathbb{R}^{m \times n}$, even though they does not have eigenvalues and eigenvectors?  
 
-The answer is yes. Note that maximize $\frac{||A\boldsymbol{x}||}{||\boldsymbol{x}||}$ (now $\boldsymbol{x}$ is any vector $\in \mathbb{R}^n$) is equivalent to maximize $\frac{||A\boldsymbol{x}||^2}{||\boldsymbol{x}||^2}$ 
+The answer is yes. Note that maximize $\frac{\|A\boldsymbol{x}\|}{\|\boldsymbol{x}\|}$ (now $\boldsymbol{x}$ is any vector $\in \mathbb{R}^n$) is equivalent to maximize $\frac{\|A\boldsymbol{x}\|^2}{\|\boldsymbol{x}\|^2}$ 
 
 $$
 \begin{split}
-\frac{||A\boldsymbol{x}||^2}{||\boldsymbol{x}||^2} &= \frac{(A\boldsymbol{x})^T(A\boldsymbol{x})}{\boldsymbol{x}^T\boldsymbol{x}} \\
+\frac{\|A\boldsymbol{x}\|^2}{\|\boldsymbol{x}\|^2} &= \frac{(A\boldsymbol{x})^T(A\boldsymbol{x})}{\boldsymbol{x}^T\boldsymbol{x}} \\
 &= \frac{\boldsymbol{x}^T(A^TA)\boldsymbol{x}}{\boldsymbol{x}^T\boldsymbol{x}}
 \end{split}
 $$
@@ -745,7 +747,7 @@ Since $A^TA$ is **symmetric**, this is the form of a Rayleigh quotients \@ref(ra
 To sum up, the greatest possible stretching ratio of $A \in \mathbb{R}^{m \times n}$ on a vector $\boldsymbol{x} \in \mathbb{R}^n$ is $\sqrt{\lambda_1}$. Generally, let $\{\boldsymbol{v}_1, \cdots, \boldsymbol{v}_n\}$ be a orthonormal basis for $\mathbb{R}^n$ consisting of eigenvectors of $A^TA$, and $\lambda_1, ..., \lambda_n$ be the eigenvalues of $A^TA$, for $i = 1, \cdots, n$
 
 $$
-||A\boldsymbol{v}_i|| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
+\|A\boldsymbol{v}_i\| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
 $$
 
 From corollary \@ref(cor:ata-pd), we know that $A^TA$ are positive semidefinite matrices. Thus, $\lambda_i \ge 0, \, i = 1, ..., n$, and we can find their square root $\sigma_i = \sqrt{\lambda_i}$.
@@ -790,7 +792,7 @@ $$
 Thus any $\boldsymbol{y} \in \mathcal{R}(A)$ is in Span$\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$, and $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
 
 
-### The singular value decomposition 
+### The singular value decomposition {#svd-theorem}
 
 Let's begin SVD by the $m \times n$ diagonal matrix $\Sigma$ of the form 
 
@@ -940,21 +942,159 @@ This shed light on the relationship between SVD and the fundamental theorem of l
 
 
 
-### The condition number
 
 
 
 
 ## Matrix norms 
 
+Let $A$ and $B$ be matrices conformable for the operations below, a matrix norm should at first satisfy 3 axioms of norm: 
+
+1. $\|A\| \ge 0$ for all $x \in X$, with equality if and only if all elements of $A$ is zero (nonnegative)  
+2. $\|\alpha A\| = |\alpha|\,\|A\|$ (homogeneous)  
+3. $\|A + B\| < \|A\| + \|B\|$ (triangular inequality)  
+
+Additionally, in the case of square matrices (thus, m = n), some (but not all) matrix norms satisfy the following condition, which is related to the fact that matrices are more than just vectors  
+
+4. $\|AB\| < \|A\|\,\|B\|$ for $A, B \in \mathbb{R}^{n \times n}$
+
+A matrix norm that satisfies this additional property is called a **submultiplicative** norm.      
+
+There are 2 main categories of matrix norms. 
+
+- induced norms (defined in terms of vector norms)  
+- entry-wise norms (treat $A_{m \times n}$ like a long vector with $m \times n$ elements)
+
+
+### Induced norms
+
+Induced norms define matrix norms in terms of vectors, also called *operator norm* since $A$ acts like an operator in this definition. Note that matrix $A \in \mathbb{R}^{m \times n}$ maps a vector $\boldsymbol{x} \not = 0$ from $\mathbb{R}^n$ to $\mathbb{R}^m$. In particular, if the p-norm is used for both $\mathbb{R}^n$ and $\mathbb{R}^m$, then the induced norm is 
+
+$$
+\|A\|_p = \max \frac{\|A\boldsymbol{x}\|_p}{\|\boldsymbol{x}\|_p}
+$$
+The subscript $p$ can be misleading, because the appropriate name for this matrix norm may not be "p-norm", but rather "induced norm when p-norm is used in both spaces". The p-norm of a matrix meaning usually means entry-wise p-norms or the Scatten p-norms defined in subsequent sections. 
+
+In the special cases where $p = 1, 2, ..., \infty$, $\|A\|_p$ is the maximum absolute column sums, largest singular value, and the maximum absolute row sums
+
+$$
+\begin{aligned}
+\|A\|_1 &= \max \sum_{i=1}^{m}{|A_{ij}|} \\
+\|A\|_2 &= \sigma_1 \\
+\|A\|_{\infty} &= \max \sum_{j=1}^{n}{|A_{ij}|}
+\end{aligned}
+$$
+For symmetric matrix A, we have 
+
+$$
+\|A\|_1 = \|A\|_{\infty}
+$$
+and 
+
+$$
+\|A\|_2 = \lambda_1
+$$
+The induced 2-norm are also called the **spectral norm**. 
+
+
+
+By definition, the following inequality holds for induced matrix norms 
+
+$$
+\|A\boldsymbol{x}\|_P \le \|A\|_p\|\boldsymbol{x}\|_p
+$$
+
+
+<hr> 
+
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-14"><strong>(\#prp:unnamed-chunk-14) </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that 
+
+$$
+\|AB\|_p \le \|A\|_p\|B\|_p
+$$</div>\EndKnitrBlock{proposition}
+
+**PROOF**
+
+For any $\boldsymbol{x} \in \mathbb{R}^n$ 
+
+$$
+\|AB\boldsymbol{x}\|_p \le \|A\|_p\|B\boldsymbol{x}\|_p \le \|A\|_p\|B\|_p\|\boldsymbol{x}\|_p
+$$
+si 
+
+$$
+\|AB\|_p = \max \frac{\|A\boldsymbol{x}\|_p}{\|\boldsymbol{x}\|_p} \le \max \frac{\|A\|_p\|B\|_p\|\boldsymbol{x}\|_p}{\|\boldsymbol{x}\|_p} = \|A\|_p\|B\|_p
+$$
+
+
+
+### Entry-wise norm
+
+Entry-wise norms treat an $m \times n$ matrix as a long vector of size $m \times n$, denoted by $\text{vec}(A)$. For example, using the p-norm for vectors, we get 
+
+$$
+\|A\|_{p,p} = \|\text{vec}(A)\|_p = (\sum_{j=1}^n\sum_{i=1}^{m}{|A_{ij}|}^p)^{\frac{1}{p}}
+$$
+
+More generally, the p,q norm is defined by 
+
+$$
+\|A\|_{p, q} = \Bigg (  \sum_{j=1}^n \Big (\sum_{i=1}^{n}{|A_{ij|}}^p \Big)^{\frac{q}{p}}    \Bigg)^{\frac{1}{q}}
+$$
+Another important member norm of this norm family is the **Frobenius norm**, or the F-norm.
+
+$$
+\| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{A_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
+$$
+where $\sigma_i$ is the nonzero singular value of $A$. 
+
+### Other matrix norms 
+
+One can pick to one of two ways to generalize the F-norm. One is a generalization of the direct definition that F-norm is the 2-norm of $||\text{vec}()||$. For $p \ge 1$,  it is the **Frobenius-p** norm:  
+
+$$
+\| A \|_{F_p} = \Bigg (\sum_{i,j}{|A_{ij}|^p} \Bigg)^{\frac{1}{p}}
+$$
+The Frobenius p-norm is the ordinary Frobenius norm. 
+
+Another generalization stems from the relationship between F-norm and singular values of $A$. The **Schatten p norm** or **nuclear p-norm** is the p-norm of the vector composed of $A$'s singular values
+
+$$
+\|A\|_{S_p} = \Big( \sum_{i = 1}^{\min(m, n)}{\sigma_i^p}\Big)^{\frac{1}{p}}
+$$
+
+### Unitary invariancy
 
 
 
 
+\BeginKnitrBlock{definition}\iffalse{-91-117-110-105-116-97-114-121-32-105-110-118-97-114-105-97-110-116-93-}\fi{}<div class="definition"><span class="definition" id="def:unitary-invariant"><strong>(\#def:unitary-invariant)  \iffalse (unitary invariant) \fi{} </strong></span>A matrix norm $\|\cdot \|$ is said to be unitary invariant if for all orthogonal matrices $U$ and $V$ of appropriate size
+
+$$
+\|A\| = \|UAV\|
+$$</div>\EndKnitrBlock{definition}
+
+(unitary matrices refers to orthogonal matrices with complex-valued entries, but I focus on real matrices here.)
+
+Essentially, if a norm depends only on the singular values of a matrix, it is unitary invariant. Since for such norms: 
+
+$$
+\|A\| = \|\Sigma\|
+$$
+Multiply two orthogonal matrices $U$ and $V^T$ on each side,  
+
+$$
+\begin{aligned}
+\|UA V^T\| & = \| U \Sigma V^T\| \\
+\|UAV^T\| &= \|A\|
+\end{aligned}
+$$
+
+\BeginKnitrBlock{todo}<div class="todo">Does this work for all orthogonal matrices $U$ and $V$?</div>\EndKnitrBlock{todo}
+
+The spectral norm (induced p-norm), F-norm and Schattan norm are all unitary invariant. 
 
 ## Low rank optimization 
 
 
-
-## Left inverses and right inverses; Pseudoinverses 
 

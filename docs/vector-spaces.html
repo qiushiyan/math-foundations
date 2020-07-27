@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-26" />
+<meta name="date" content="2020-07-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -98,6 +98,7 @@
 <li class="chapter" data-level="2.4" data-path="vector-spaces.html"><a href="vector-spaces.html#fundamental-theorem"><i class="fa fa-check"></i><b>2.4</b> Fundamental theorem of linear algebra</a></li>
 <li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="vector-spaces.html"><a href="vector-spaces.html#effect-of-operations-on-matrix-rank"><i class="fa fa-check"></i><b>2.5.1</b> Effect of operations on matrix rank</a></li>
+<li class="chapter" data-level="2.5.2" data-path="vector-spaces.html"><a href="vector-spaces.html#gram-matrix"><i class="fa fa-check"></i><b>2.5.2</b> Gram matrix</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
@@ -107,7 +108,7 @@
 <li class="chapter" data-level="3.1.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>3.1.3</b> Orthogonal decomposition</a></li>
 <li class="chapter" data-level="3.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.1.4</b> Best approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#projection-matrices"><i class="fa fa-check"></i><b>3.2</b> Projection matrices</a></li>
+<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#idempotent-and-projection-matrices"><i class="fa fa-check"></i><b>3.2</b> Idempotent and Projection Matrices</a></li>
 <li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt process</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR factorizaiton</a></li>
 </ul></li>
@@ -133,25 +134,36 @@
 <li class="chapter" data-level="4.6" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients"><i class="fa fa-check"></i><b>4.6</b> Rayleigh quotients</a></li>
 <li class="chapter" data-level="4.7" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.7</b> SVD</a><ul>
 <li class="chapter" data-level="4.7.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#singular-values-of-m-x-n-matrix"><i class="fa fa-check"></i><b>4.7.1</b> Singular values of m x n matrix</a></li>
-<li class="chapter" data-level="4.7.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-singular-value-decomposition"><i class="fa fa-check"></i><b>4.7.2</b> The singular value decomposition</a></li>
-<li class="chapter" data-level="4.7.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-condition-number"><i class="fa fa-check"></i><b>4.7.3</b> The condition number</a></li>
+<li class="chapter" data-level="4.7.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd-theorem"><i class="fa fa-check"></i><b>4.7.2</b> The singular value decomposition</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a></li>
+<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#induced-norms"><i class="fa fa-check"></i><b>4.8.1</b> Induced norms</a></li>
+<li class="chapter" data-level="4.8.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#entry-wise-norm"><i class="fa fa-check"></i><b>4.8.2</b> Entry-wise norm</a></li>
+<li class="chapter" data-level="4.8.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#other-matrix-norms"><i class="fa fa-check"></i><b>4.8.3</b> Other matrix norms</a></li>
+<li class="chapter" data-level="4.8.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#unitary-invariancy"><i class="fa fa-check"></i><b>4.8.4</b> Unitary invariancy</a></li>
+</ul></li>
 <li class="chapter" data-level="4.9" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-optimization"><i class="fa fa-check"></i><b>4.9</b> Low rank optimization</a></li>
-<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#left-inverses-and-right-inverses-pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Left inverses and right inverses; Pseudoinverses</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
+<li class="chapter" data-level="5" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html"><i class="fa fa-check"></i><b>5</b> Solutions of linear system Ax = b</a><ul>
+<li class="chapter" data-level="5.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#generalized-inverse"><i class="fa fa-check"></i><b>5.1</b> Generalized inverse</a></li>
+<li class="chapter" data-level="5.2" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>5.2</b> Ill-conditioned matrices</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#the-condition-number"><i class="fa fa-check"></i><b>5.2.1</b> The condition number</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>6</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
-<li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
+<li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
-<li class="chapter" data-level="7" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>7</b> Probability basics</a></li>
-<li class="chapter" data-level="8" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>8</b> Moments</a></li>
+<li class="chapter" data-level="8" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>8</b> Probability basics</a></li>
+<li class="chapter" data-level="9" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>9</b> Moments</a></li>
 <li class="part"><span><b>IV Applications</b></span></li>
-<li class="chapter" data-level="9" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>9</b> Linear models</a><ul>
-<li class="chapter" data-level="9.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>9.1</b> Least square estimation</a></li>
-<li class="chapter" data-level="9.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>9.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="10" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>10</b> Linear models</a><ul>
+<li class="chapter" data-level="10.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>10.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="10.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>10.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="10.3" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>10.3</b> Weighted least squares</a></li>
+<li class="chapter" data-level="10.4" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>10.4</b> Partial least squres</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>10</b> Principal component analysis</a></li>
+<li class="chapter" data-level="11" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>11</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -232,8 +244,8 @@ x_n + y_n
 <p><span class="math display">\[
 \begin{aligned}
 \text{dot product between }  \boldsymbol{x} \text{ and } \boldsymbol{y}: \boldsymbol{x} \cdot\boldsymbol{y} &amp;= \sum_{i=1}^{n}{x_iy_i} \\
-\text{length of } \boldsymbol{x}: ||\boldsymbol{x}|| &amp;= \sqrt{\boldsymbol{x} \cdot \boldsymbol{x}} \\
-\text{distance between } \boldsymbol{x} \text{ and } \boldsymbol{y}: \text{dist}(\boldsymbol{x}, \boldsymbol{y}) &amp;= ||\boldsymbol{x} - \boldsymbol{y}||
+\text{length of } \boldsymbol{x}: \|\boldsymbol{x}\| &amp;= \sqrt{\boldsymbol{x} \cdot \boldsymbol{x}} \\
+\text{distance between } \boldsymbol{x} \text{ and } \boldsymbol{y}: \text{dist}(\boldsymbol{x}, \boldsymbol{y}) &amp;= \|\boldsymbol{x} - \boldsymbol{y}\|
 \end{aligned}
 \]</span></p>
 </div>
@@ -252,31 +264,31 @@ x_n + y_n
 </ol>
 <p><br></p>
 <p>Norms generalize the notion of length from Euclidean space.</p>
-<p>A <strong>norm</strong> on a real vector space <span class="math inline">\(X\)</span> is a function: <span class="math inline">\(||\cdot||: V \rightarrow \mathbb{R}\)</span> that satisfies:</p>
+<p>A <strong>norm</strong> on a real vector space <span class="math inline">\(X\)</span> is a function: <span class="math inline">\(\|\cdot\|: V \rightarrow \mathbb{R}\)</span> that satisfies:</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(||x|| \ge 0\)</span> for all <span class="math inline">\(x \in X\)</span>, with equality if and only if <span class="math inline">\(x = \boldsymbol{0}\)</span> (nonnegative)<br />
+<li><span class="math inline">\(\|x\| \ge 0\)</span> for all <span class="math inline">\(x \in X\)</span>, with equality if and only if <span class="math inline">\(x = \boldsymbol{0}\)</span> (nonnegative)<br />
 </li>
-<li><span class="math inline">\(||\lambda x|| = \lambda ||x||\)</span>, for all <span class="math inline">\(x \in X\)</span> and <span class="math inline">\(\lambda \in \mathbb{R}\)</span> (homogeneous)<br />
+<li><span class="math inline">\(\|\lambda x\| = \lambda \|x\|\)</span>, for all <span class="math inline">\(x \in X\)</span> and <span class="math inline">\(\lambda \in \mathbb{R}\)</span> (homogeneous)<br />
 </li>
-<li><span class="math inline">\(||x + y|| \le ||x|| + ||y||\)</span> (triangular inequality)</li>
+<li><span class="math inline">\(\|x + y\| \le \|x\| + \|y\|\)</span> (triangular inequality)</li>
 </ol>
 <p><strong>A normed space is a metric space with the metric</strong></p>
 <p><span class="math display">\[
-d(\boldsymbol{x}, \boldsymbol{y}) = ||\boldsymbol{x} - \boldsymbol{y}||
+d(\boldsymbol{x}, \boldsymbol{y}) = \|\boldsymbol{x} - \boldsymbol{y}\|
 \]</span></p>
-<p>So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that <span class="math inline">\(d(x, y) = ||x - y||\)</span> satisfies all properties of a metric.</p>
+<p>So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that <span class="math inline">\(d(x, y) = \|x - y\|\)</span> satisfies all properties of a metric.</p>
 <p>The most common function for norms on <span class="math inline">\(\mathbb{R}^n\)</span> are listed below, with <span class="math inline">\(x = [x_1, x_2, ..., x_n]\)</span>.</p>
 <p><span class="math display">\[
 \begin{align*}
-\text{1-norm}: ||\boldsymbol{x}||_1 &amp;= \sum_{i=1}^{n}{|x_i|}\\
-\text{2-norm}: ||\boldsymbol{x}||_2 &amp;= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
-\text{p-norm}: ||\boldsymbol{x}||_p &amp;= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
-\text{maximum norm}: ||\boldsymbol{x}||_{\infty} &amp;= \max\{|x_1|, |x_2|, ..., |x_n|\}
+\text{1-norm}: \|\boldsymbol{x}\|_1 &amp;= \sum_{i=1}^{n}{|x_i|}\\
+\text{2-norm}: \|\boldsymbol{x}\|_2 &amp;= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
+\text{p-norm}: \|\boldsymbol{x}\|_p &amp;= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
+\text{maximum norm}: \|\boldsymbol{x}\|_{\infty} &amp;= \max\{|x_1|, |x_2|, ..., |x_n|\}
 \end{align*}
 \]</span>
 1-norm is also called the Manhattan norm.</p>
 <p>2-norm is the Euclidean norm, the subscript <span class="math inline">\(2\)</span> can be left out in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
-<p>p-norm is a generalization of 1-norm and 2-norm, requiring <span class="math inline">\(p &gt; 1\)</span>. When <span class="math inline">\(p\)</span> turns infinity, <span class="math inline">\(||x||_{\infty}\)</span> is called the maximum norm.</p>
+<p>p-norm is a generalization of 1-norm and 2-norm, requiring <span class="math inline">\(p &gt; 1\)</span>. When <span class="math inline">\(p\)</span> turns infinity, <span class="math inline">\(\|x\|_{\infty}\)</span> is called the maximum norm.</p>
 <p><br></p>
 <p>An <strong>inner product</strong> on a real vector space <span class="math inline">\(X\)</span> is a function <span class="math inline">\(\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}\)</span> satisfying</p>
 <ol style="list-style-type: decimal">
@@ -287,7 +299,7 @@ d(\boldsymbol{x}, \boldsymbol{y}) = ||\boldsymbol{x} - \boldsymbol{y}||
 </ol>
 <p>A vector sapce equipped with such inner product is called a <strong>inner product space</strong>. Note that <strong>all inner product spaces are normed spaces</strong>, because a inner product induce a norm on a vector space:</p>
 <p><span class="math display">\[
-\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = ||\boldsymbol{x}||^2  
+\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = \|\boldsymbol{x}\|^2  
 \]</span>
 The <em>standard inner product</em> defined on <span class="math inline">\(\mathbb{R}^{n}\)</span> is the dot product, given by</p>
 <p><span class="math display">\[
@@ -351,10 +363,10 @@ U + W = \{\boldsymbol{u} + \boldsymbol{v} \;| \; \boldsymbol{w} \in U, \boldsymb
 </div>
 <div id="rank" class="section level2">
 <h2><span class="header-section-number">2.5</span> Rank</h2>
-<p>The <strong>rank</strong> of a subspace its the same as its dimension.</p>
+<p>The <strong>rank</strong> of a vector space is its dimension.</p>
 
-<div class="theorem">
-<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 2.2  </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space.
+<div class="definition">
+<span id="def:unnamed-chunk-2" class="definition"><strong>Definition 1.1  </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space.
 </div>
 
 <p>I often think of rank of <span class="math inline">\(A\)</span> as the total volume of information that the matrix can offer.</p>
@@ -371,16 +383,51 @@ RA = \Lambda C^{-1} \tag{2}
 <p>From (1) we know that row rank of <span class="math inline">\(A\)</span> is identical to that the number of non-zero entries in <span class="math inline">\(\Lambda\)</span>, on the ground that row operations on <span class="math inline">\(A\)</span> does not change its row rank, and <span class="math inline">\(C^{-1}\)</span> only scale diagonal entries of <span class="math inline">\(\Lambda\)</span> to some multiple. Similarly, <span class="math inline">\(AC = R^{-1}\Lambda\)</span> shows that column rank of <span class="math inline">\(A\)</span> is the same as the number of non-zero diagonal entries in <span class="math inline">\(\Lambda\)</span>. Therefore, row rank <span class="math inline">\(=\)</span> column rank.</p>
 <div id="effect-of-operations-on-matrix-rank" class="section level3">
 <h3><span class="header-section-number">2.5.1</span> Effect of operations on matrix rank</h3>
-<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two matrices with ranks <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span></p>
+<p>Let <span class="math inline">\(A, B \in \mathbb{R}^{m \times n}\)</span> have ranks <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span></p>
 
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-3" class="corollary"><strong>Corollary 2.1  </strong></span>1. <span class="math inline">\(|a - b| \le \text{rank}(A + B) \le a + b\)</span></p>
+<p><span id="cor:unnamed-chunk-3" class="corollary"><strong>Corollary 2.1  </strong></span>
+1. <span class="math inline">\(|a - b| \le r(A + B) \le a + b\)</span></p>
 <ol start="2" style="list-style-type: decimal">
-<li><p><span class="math inline">\(\text{rank}(A + B) &lt; \min(a, b)\)</span></p></li>
-<li><p>Multiplying <span class="math inline">\(A\)</span> with a square matrix <span class="math inline">\(B\)</span> of full rank does not change the rank of <span class="math inline">\(A\)</span>.</p></li>
-<li><p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both singular, then <span class="math inline">\(AB\)</span> is non-singular if and only if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both non-singular</p>
+<li><span class="math inline">\(r(AB) &lt; \min(a, b)\)</span>
 </div></li>
 </ol>
+<p><strong>PROOF</strong></p>
+<p>For (1), rows / columns of <span class="math inline">\(A + B\)</span> can be expressed as linear combinations of rows / columns of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
+<p>For (2), Each column of <span class="math inline">\(AB\)</span> is a linear combination of columns of A, and each row is a linear combination of rows of <span class="math inline">\(B\)</span>. Therefore, <span class="math inline">\(r(AB)\)</span> can not exceed either rank of <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>. There is also a corollary on the lower bound of <span class="math inline">\(r(AB)\)</span>, which is <span class="math inline">\(a + b - n\)</span>. Note that <span class="math inline">\(n\)</span> is the shared dimension. I have not found a concise proof about this, but this property leads to a interesting result: when one of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are square and full rank, <span class="math inline">\(\min(r(AB)) = \max(r(AB))\)</span></p>
+
+<div class="corollary">
+<p><span id="cor:unnamed-chunk-4" class="corollary"><strong>Corollary 2.2  </strong></span>
+3. Multiplying <span class="math inline">\(A\)</span> with a square matrix <span class="math inline">\(B\)</span> of full rank does not change the rank of <span class="math inline">\(A\)</span>.</p>
+<ol start="4" style="list-style-type: decimal">
+<li>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both singular, then <span class="math inline">\(AB\)</span> is non-singular if and only if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both non-singular
+</div></li>
+</ol>
+<p><strong>PROOF</strong></p>
+<p>Suppose <span class="math inline">\(B\)</span> is <span class="math inline">\(n \times n\)</span>, the minimum rank of <span class="math inline">\(AB\)</span> is <span class="math inline">\(a + n - n = a\)</span>, and the maximum rank is <span class="math inline">\(\min(a, n) = a\)</span>. Thus, multiplying by a full rank matrixi preserves rank: <span class="math inline">\(r(AB) = r(A)\)</span>. (4) follows naturally after (3).</p>
+</div>
+<div id="gram-matrix" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Gram matrix</h3>
+
+<div class="proposition">
+<span id="prp:gram-matrix" class="proposition"><strong>Proposition 2.1  (Gram matrix)  </strong></span>The matrix <span class="math inline">\(A^TA\)</span> is said to be the gram matrix of column space of <span class="math inline">\(A_{m \times n}\)</span>. The columns of <span class="math inline">\(A\)</span> are linearly independent if and only if <span class="math inline">\(A^TA\)</span> is invertible.
+</div>
+
+<p>When <span class="math inline">\(A^TA\)</span> is invertible, it has rank <span class="math inline">\(n\)</span>. Therefore, each of the factors of <span class="math inline">\(A^TA\)</span> has at least rank <span class="math inline">\(n\)</span>, and this means columns of <span class="math inline">\(A\)</span> are linearly independent (since <span class="math inline">\(r(A) \le \min(m, n)\)</span>).</p>
+<p>Similarly, <span class="math inline">\(AA^T\)</span> are called the left Gram matrix of rowspace of <span class="math inline">\(A\)</span>. And <span class="math inline">\(AA^T\)</span> is invertible if and only rows of <span class="math inline">\(A\)</span> are linearly independent.</p>
+
+<div class="proposition">
+<p><span id="prp:gram-matrix-rank" class="proposition"><strong>Proposition 2.2  </strong></span>For any matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> always have the same rank.</p>
+<span class="math display">\[
+r(A) = r(A^TA) = r(AA^T)
+\]</span>
+</div>
+
+<p><strong>PROOF</strong></p>
+<p>For <span class="math inline">\(r(A) = r(A^TA)\)</span>, suppose <span class="math inline">\(r(A) = r\)</span>, then <span class="math inline">\(\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r\)</span>. Note that for any <span class="math inline">\(\boldsymbol{x}\)</span> that satisfies <span class="math inline">\(A\boldsymbol{x} = 0\)</span>, we have <span class="math inline">\(A^TA\boldsymbol{x} = 0\)</span>. It follows that <span class="math inline">\(A\)</span> <span class="math inline">\(A^TA\)</span> have the same null space, <span class="math inline">\(\mathcal{N}(A) = \mathcal{N}(A^TA)\)</span>. Since <span class="math inline">\(A^TA \in \mathbb{R}^{n \times n}\)</span>, we have <span class="math inline">\(r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r\)</span>.</p>
+<p>For <span class="math inline">\(r(A) = R(AA^T)\)</span>, note that <span class="math inline">\(r(A) = r(A^T)\)</span>, and that <span class="math inline">\(\mathcal{N}(A^T) = \mathcal{N}(AA^T)\)</span>, then the conclusion presents itself.</p>
+<hr>
+<p>From the SVD perspective(Corollary <a href="eigenthings-and-quadratic-forms.html#cor:same-nonzero">4.1</a> and Section <a href="eigenthings-and-quadratic-forms.html#svd-theorem">4.7.2</a>), one can show that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> have the same set of nonzero eigenvalues, and <span class="math inline">\(r(A)\)</span> is the same as the number of nonzero eigenvalues of <span class="math inline">\(A^A\)</span> or <span class="math inline">\(AA^T\)</span>, so that <span class="math inline">\(r(A) = r(A^TA) = r(AA^T)\)</span>.</p>
 
 </div>
 </div>

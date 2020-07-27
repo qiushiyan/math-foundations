@@ -123,9 +123,9 @@ $$
 From the orthogonality of these subspaces, we have 
 
 $$
-0 = (\boldsymbol{v}_w - \boldsymbol{v}_w') \cdot (\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}) = (\boldsymbol{v}_w - \boldsymbol{v}_w') \cdot (\boldsymbol{v}_w - \boldsymbol{v}_w') = ||\boldsymbol{v}_w - \boldsymbol{v}_w'||^2
+0 = (\boldsymbol{v}_w - \boldsymbol{v}_w') \cdot (\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}) = (\boldsymbol{v}_w - \boldsymbol{v}_w') \cdot (\boldsymbol{v}_w - \boldsymbol{v}_w') = \|\boldsymbol{v}_w - \boldsymbol{v}_w'\|^2
 $$
-Similarly we have $||\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}||^2 = 0$. 
+Similarly we have $\|\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}\|^2 = 0$. 
 
 The existence and uniqueness of the decomposition above mean that 
 
@@ -140,7 +140,7 @@ whenever $W$ is a subspace.
 \BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-66-101-115-116-32-65-112-112-114-111-120-105-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:best-approximation"><strong>(\#thm:best-approximation)  \iffalse (The Best Approximation) \fi{} </strong></span>Given $\boldsymbol{y}$ be any vector in $\mathbb{R^n}$, with its subspace $W$, let $\hat{\boldsymbol{y}}$ be the orthogonal projection of $\boldsymbol{y}$ onto $W$. Then $\hat{\boldsymbol{y}}$ is the closest point in $W$ to $\boldsymbol{y}$ in the sense that 
 
 $$
-||\boldsymbol{y} - \hat{\boldsymbol{y}}|| \le ||\boldsymbol{y} - \boldsymbol{v}||
+\|\boldsymbol{y} - \hat{\boldsymbol{y}}\| \le \|\boldsymbol{y} - \boldsymbol{v}\|
 $$</div>\EndKnitrBlock{theorem}
 
 **PROOF**
@@ -153,12 +153,12 @@ Take $\boldsymbol{v}$ distinct from $\hat{\boldsymbol{y}}$ in $W$, we know that 
 </div>
 
 $$
-||\boldsymbol{y}-  \boldsymbol{v}||^2 = ||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2 + ||\boldsymbol{y} -\boldsymbol{\hat{y}}||^2 
+\|\boldsymbol{y}-  \boldsymbol{v}\|^2 = \|\boldsymbol{\hat{y}} - \boldsymbol{v}\|^2 + \|\boldsymbol{y} -\boldsymbol{\hat{y}}\|^2 
 $$
-When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $||\boldsymbol{\hat{y}} - \boldsymbol{v}||^2$ is non-negative, so the error term of choosing $\boldsymbol{v}$ is always larger than that of the orthogonal projection $\boldsymbol{\hat{y}}$.  
+When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $\|\boldsymbol{\hat{y}} - \boldsymbol{v}\|^2$ is non-negative, so the error term of choosing $\boldsymbol{v}$ is always larger than that of the orthogonal projection $\boldsymbol{\hat{y}}$.  
 
 
-## Projection matrices
+## Idempotent and Projection Matrices
 
 $$
 \begin{split}
@@ -188,7 +188,7 @@ Another way to derive projection matrices with matrix calculus
 
 $$
 \begin{split}
-||A\boldsymbol{x} - \boldsymbol{b}||_2^2
+\|A\boldsymbol{x} - \boldsymbol{b}\|_2^2
 &= (A\boldsymbol{x} - \boldsymbol{b})^T(A\boldsymbol{x} - \boldsymbol{b}) \\
 &= \boldsymbol{x}^TA^TA\boldsymbol{x} - 2\boldsymbol{b}^TA\boldsymbol{x} + \boldsymbol{b}^T\boldsymbol{b}
 \end{split}
@@ -242,7 +242,7 @@ $$</div>\EndKnitrBlock{theorem}
 To make $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\}$ an *orthonormal* basis, there is simply one more step of normalization 
 
 $$
-\{\boldsymbol{q}_i = \frac{\boldsymbol{v}_i}{||\boldsymbol{v}_i||}, \;i = 1, ... p\} 
+\{\boldsymbol{q}_i = \frac{\boldsymbol{v}_i}{\|\boldsymbol{v}_i\|}, \;i = 1, ... p\} 
 $$
 
 
@@ -303,7 +303,7 @@ $$
 A direct result is that $Q$ preserves L2 norms 
 
 $$
-||Q\boldsymbol{x}||_2 = \sqrt{(Q\boldsymbol{x})^T(Q\boldsymbol{x})} = \sqrt{\boldsymbol{x}^T\boldsymbol{x}} = ||\boldsymbol{x}||_2
+\|Q\boldsymbol{x}\|_2 = \sqrt{(Q\boldsymbol{x})^T(Q\boldsymbol{x})} = \sqrt{\boldsymbol{x}^T\boldsymbol{x}} = \|\boldsymbol{x}\|_2
 $$
 
 Therefore multiplication by an orthogonal matrix can be considered as a transformation that preserves length, but may rotate or reflect the vector about the origin. 

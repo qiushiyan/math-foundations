@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-26" />
+<meta name="date" content="2020-07-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -98,6 +98,7 @@
 <li class="chapter" data-level="2.4" data-path="vector-spaces.html"><a href="vector-spaces.html#fundamental-theorem"><i class="fa fa-check"></i><b>2.4</b> Fundamental theorem of linear algebra</a></li>
 <li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a><ul>
 <li class="chapter" data-level="2.5.1" data-path="vector-spaces.html"><a href="vector-spaces.html#effect-of-operations-on-matrix-rank"><i class="fa fa-check"></i><b>2.5.1</b> Effect of operations on matrix rank</a></li>
+<li class="chapter" data-level="2.5.2" data-path="vector-spaces.html"><a href="vector-spaces.html#gram-matrix"><i class="fa fa-check"></i><b>2.5.2</b> Gram matrix</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
@@ -107,7 +108,7 @@
 <li class="chapter" data-level="3.1.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>3.1.3</b> Orthogonal decomposition</a></li>
 <li class="chapter" data-level="3.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.1.4</b> Best approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#projection-matrices"><i class="fa fa-check"></i><b>3.2</b> Projection matrices</a></li>
+<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#idempotent-and-projection-matrices"><i class="fa fa-check"></i><b>3.2</b> Idempotent and Projection Matrices</a></li>
 <li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt process</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR factorizaiton</a></li>
 </ul></li>
@@ -133,25 +134,36 @@
 <li class="chapter" data-level="4.6" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients"><i class="fa fa-check"></i><b>4.6</b> Rayleigh quotients</a></li>
 <li class="chapter" data-level="4.7" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.7</b> SVD</a><ul>
 <li class="chapter" data-level="4.7.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#singular-values-of-m-x-n-matrix"><i class="fa fa-check"></i><b>4.7.1</b> Singular values of m x n matrix</a></li>
-<li class="chapter" data-level="4.7.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-singular-value-decomposition"><i class="fa fa-check"></i><b>4.7.2</b> The singular value decomposition</a></li>
-<li class="chapter" data-level="4.7.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#the-condition-number"><i class="fa fa-check"></i><b>4.7.3</b> The condition number</a></li>
+<li class="chapter" data-level="4.7.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd-theorem"><i class="fa fa-check"></i><b>4.7.2</b> The singular value decomposition</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a></li>
+<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a><ul>
+<li class="chapter" data-level="4.8.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#induced-norms"><i class="fa fa-check"></i><b>4.8.1</b> Induced norms</a></li>
+<li class="chapter" data-level="4.8.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#entry-wise-norm"><i class="fa fa-check"></i><b>4.8.2</b> Entry-wise norm</a></li>
+<li class="chapter" data-level="4.8.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#other-matrix-norms"><i class="fa fa-check"></i><b>4.8.3</b> Other matrix norms</a></li>
+<li class="chapter" data-level="4.8.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#unitary-invariancy"><i class="fa fa-check"></i><b>4.8.4</b> Unitary invariancy</a></li>
+</ul></li>
 <li class="chapter" data-level="4.9" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-optimization"><i class="fa fa-check"></i><b>4.9</b> Low rank optimization</a></li>
-<li class="chapter" data-level="4.10" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#left-inverses-and-right-inverses-pseudoinverses"><i class="fa fa-check"></i><b>4.10</b> Left inverses and right inverses; Pseudoinverses</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>5</b> Matrix calculus</a></li>
+<li class="chapter" data-level="5" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html"><i class="fa fa-check"></i><b>5</b> Solutions of linear system Ax = b</a><ul>
+<li class="chapter" data-level="5.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#generalized-inverse"><i class="fa fa-check"></i><b>5.1</b> Generalized inverse</a></li>
+<li class="chapter" data-level="5.2" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>5.2</b> Ill-conditioned matrices</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#the-condition-number"><i class="fa fa-check"></i><b>5.2.1</b> The condition number</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>6</b> Matrix calculus</a></li>
 <li class="part"><span><b>II Calculus</b></span></li>
-<li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
+<li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
-<li class="chapter" data-level="7" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>7</b> Probability basics</a></li>
-<li class="chapter" data-level="8" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>8</b> Moments</a></li>
+<li class="chapter" data-level="8" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>8</b> Probability basics</a></li>
+<li class="chapter" data-level="9" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>9</b> Moments</a></li>
 <li class="part"><span><b>IV Applications</b></span></li>
-<li class="chapter" data-level="9" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>9</b> Linear models</a><ul>
-<li class="chapter" data-level="9.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>9.1</b> Least square estimation</a></li>
-<li class="chapter" data-level="9.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>9.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="10" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>10</b> Linear models</a><ul>
+<li class="chapter" data-level="10.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>10.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="10.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>10.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="10.3" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>10.3</b> Weighted least squares</a></li>
+<li class="chapter" data-level="10.4" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>10.4</b> Partial least squres</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>10</b> Principal component analysis</a></li>
+<li class="chapter" data-level="11" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>11</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>

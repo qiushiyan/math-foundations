@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Linear models | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 10 Linear models | Mathematical Notes for Machine Learning" />
+  <title>Chapter 5 Solutions of linear system Ax = b | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 5 Solutions of linear system Ax = b | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Linear models | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 5 Solutions of linear system Ax = b | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Linear models | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 5 Solutions of linear system Ax = b | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="moments.html"/>
-<link rel="next" href="principal-component-analysis.html"/>
+<link rel="prev" href="eigenthings-and-quadratic-forms.html"/>
+<link rel="next" href="matrix-calculus.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -187,35 +187,28 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="linear-models" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Linear models</h1>
-<div id="least-square-estimation" class="section level2">
-<h2><span class="header-section-number">10.1</span> Least square estimation</h2>
-<p>From theorem <a href="orthogonality.html#thm:best-approximation">3.3</a> we know that</p>
-<p><span class="math display">\[
-\boldsymbol{\beta} = (X^TX)^{-1}X^T\boldsymbol{y}
-\]</span></p>
-<p>thus:</p>
-<p><span class="math display">\[
-\hat{\boldsymbol{y}} = X\boldsymbol{\beta} = X (X^TX)^{-1}X^{T}\boldsymbol{y}
-\]</span></p>
-<p>When columns of the design matrix <span class="math inline">\(A\)</span> are orthogonal, the orthogonal projection of <span class="math inline">\(\boldsymbol{y}\)</span> onto Col<span class="math inline">\(X\)</span> isi given by</p>
-<p><span class="math display">\[
-\hat{\boldsymbol{y}} = \frac{\boldsymbol{x}_0^T\boldsymbol{y}}{\boldsymbol{x}_0^T\boldsymbol{x}_0}\boldsymbol{x}_0 + 
-\frac{\boldsymbol{x}_1^T\boldsymbol{y}}{\boldsymbol{x}_1^T\boldsymbol{x}_1}\boldsymbol{x}_1
-\cdots +
-\frac{\boldsymbol{x}_p^T\boldsymbol{y}}{\boldsymbol{x}_p^T\boldsymbol{x}_p}\boldsymbol{x}_p
-\]</span></p>
+<div id="solutions-of-linear-system-ax-b" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> Solutions of linear system Ax = b</h1>
+<p>A linear system <span class="math inline">\(A\boldsymbol{x} = \boldsymbol{b}\)</span> when <span class="math inline">\(\boldsymbol{b} \not = \boldsymbol{0}\)</span> may behave in any one of three possible ways:</p>
+<ul>
+<li>The system has infinitely many solutions.<br />
+</li>
+<li>The system has a single unique solution.<br />
+</li>
+<li>The system has no solution.</li>
+</ul>
+<div id="generalized-inverse" class="section level2">
+<h2><span class="header-section-number">5.1</span> Generalized inverse</h2>
 </div>
-<div id="maximum-likelihood-estimation" class="section level2">
-<h2><span class="header-section-number">10.2</span> Maximum likelihood estimation</h2>
-</div>
-<div id="weighted-least-squares" class="section level2">
-<h2><span class="header-section-number">10.3</span> Weighted least squares</h2>
-</div>
-<div id="partial-least-squres" class="section level2">
-<h2><span class="header-section-number">10.4</span> Partial least squres</h2>
+<div id="ill-conditioned-matrices" class="section level2">
+<h2><span class="header-section-number">5.2</span> Ill-conditioned matrices</h2>
+<div id="the-condition-number" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> The condition number</h3>
+<p><span class="math display">\[
+\delta x
+\]</span></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -223,8 +216,8 @@
           </div>
         </div>
       </div>
-<a href="moments.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="principal-component-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="eigenthings-and-quadratic-forms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="matrix-calculus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -255,7 +248,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/linear-models.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/linear-system.Rmd",
 "text": "Edit"
 },
 "history": {

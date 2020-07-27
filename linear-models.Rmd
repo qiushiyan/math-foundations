@@ -32,3 +32,7 @@ $$
 $$
 
 ## Maximum likelihood estimation
+
+## Weighted least squares
+
+## Partial least squres
