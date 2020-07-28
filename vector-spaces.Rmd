@@ -256,10 +256,11 @@ From (1) we know that row rank of $A$ is identical to that the number of non-zer
 Let $A, B \in \mathbb{R}^{m \times n}$ have ranks $a$ and $b$
 
 ```{corollary}
+  
 
-1. $|a - b| \le  r(A + B) \le a + b$
+1. $|a - b| \le  r(A + B) \le a + b$  
 
-2. $r(AB) < \min(a, b)$  
+2. $r(AB) < \min(a, b)$   
 ```
 
 
@@ -272,22 +273,27 @@ For (2), Each column of $AB$ is a linear combination of columns of A, and each r
 
 
 ```{corollary}
+  
 
-3. Multiplying $A$ with a square matrix $B$ of full rank does not change the rank of $A$. 
+3. Multiplying $A$ with a square matrix $B$ of full rank does not change the rank of $A$.   
 
 4. If $A$ and $B$ are both singular, then $AB$ is non-singular if and only if $A$ and $B$ are both non-singular 
 ```
 
+
+
 **PROOF**
 
-Suppose $B$ is $n \times n$, the minimum rank of $AB$ is $a + n - n = a$, and the maximum rank is $\min(a, n) = a$. Thus, multiplying by a full rank matrixi preserves rank: $r(AB) = r(A)$. (4) follows naturally after (3). 
+Suppose $B$ is $n \times n$, the minimum rank of $AB$ is $a + n - n = a$, and the maximum rank is $\min(a, n) = a$. Thus, multiplying by a full rank matrix preserves rank: $r(AB) = r(A)$. (4) follows naturally after (3). 
 
 
 ### Gram matrix
 
 ```{proposition gram-matrix, name = "Gram matrix"}
-The matrix $A^TA$ is said to be the gram matrix of column space of $A_{m \times n}$. The columns of $A$ are linearly independent if and only if $A^TA$ is invertible.
+The matrix $A^TA$ is said to be the Gram matrix of column space of $A_{m \times n}$. The columns of $A$ are linearly independent if and only if $A^TA$ is invertible.
 ```
+
+**PROOF**
 
 When $A^TA$ is invertible, it has rank $n$. Therefore,  each of the factors of $A^TA$ has at least rank $n$, and this means columns of $A$ are linearly independent (since $r(A) \le \min(m, n)$). 
 
@@ -303,7 +309,7 @@ $$
 
 **PROOF**
 
-For $r(A) = r(A^TA)$, suppose $r(A) = r$, then $\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r$. Note that for any $\boldsymbol{x}$ that satisfies $A\boldsymbol{x} = 0$, we have $A^TA\boldsymbol{x} = 0$. It follows that $A$ $A^TA$ have the same null space, $\mathcal{N}(A)  = \mathcal{N}(A^TA)$. Since $A^TA \in \mathbb{R}^{n \times n}$, we have $r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r$. 
+For $r(A) = r(A^TA)$, suppose $r(A) = r$, then $\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r$. Note that for any $\boldsymbol{x}$ that satisfies $A\boldsymbol{x} = 0$, we have $A^TA\boldsymbol{x} = 0$. It follows that $A$ and $A^TA$ have the same null space, $\mathcal{N}(A)  = \mathcal{N}(A^TA)$. Since $A^TA \in \mathbb{R}^{n \times n}$, we have $r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r$. 
 
 For $r(A) = R(AA^T)$, note that $r(A) = r(A^T)$,  and that $\mathcal{N}(A^T) = \mathcal{N}(AA^T)$, then the conclusion presents itself. 
 

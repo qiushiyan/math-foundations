@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-27" />
+<meta name="date" content="2020-07-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -386,10 +386,10 @@ RA = \Lambda C^{-1} \tag{2}
 <p>Let <span class="math inline">\(A, B \in \mathbb{R}^{m \times n}\)</span> have ranks <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span></p>
 
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-3" class="corollary"><strong>Corollary 2.1  </strong></span>
-1. <span class="math inline">\(|a - b| \le r(A + B) \le a + b\)</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li><span class="math inline">\(r(AB) &lt; \min(a, b)\)</span>
+<p><span id="cor:unnamed-chunk-3" class="corollary"><strong>Corollary 2.1  </strong></span></p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(|a - b| \le r(A + B) \le a + b\)</span></p></li>
+<li><p><span class="math inline">\(r(AB) &lt; \min(a, b)\)</span></p>
 </div></li>
 </ol>
 <p><strong>PROOF</strong></p>
@@ -397,22 +397,23 @@ RA = \Lambda C^{-1} \tag{2}
 <p>For (2), Each column of <span class="math inline">\(AB\)</span> is a linear combination of columns of A, and each row is a linear combination of rows of <span class="math inline">\(B\)</span>. Therefore, <span class="math inline">\(r(AB)\)</span> can not exceed either rank of <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>. There is also a corollary on the lower bound of <span class="math inline">\(r(AB)\)</span>, which is <span class="math inline">\(a + b - n\)</span>. Note that <span class="math inline">\(n\)</span> is the shared dimension. I have not found a concise proof about this, but this property leads to a interesting result: when one of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are square and full rank, <span class="math inline">\(\min(r(AB)) = \max(r(AB))\)</span></p>
 
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-4" class="corollary"><strong>Corollary 2.2  </strong></span>
-3. Multiplying <span class="math inline">\(A\)</span> with a square matrix <span class="math inline">\(B\)</span> of full rank does not change the rank of <span class="math inline">\(A\)</span>.</p>
-<ol start="4" style="list-style-type: decimal">
-<li>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both singular, then <span class="math inline">\(AB\)</span> is non-singular if and only if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both non-singular
+<p><span id="cor:unnamed-chunk-4" class="corollary"><strong>Corollary 2.2  </strong></span></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Multiplying <span class="math inline">\(A\)</span> with a square matrix <span class="math inline">\(B\)</span> of full rank does not change the rank of <span class="math inline">\(A\)</span>.</p></li>
+<li><p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both singular, then <span class="math inline">\(AB\)</span> is non-singular if and only if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both non-singular</p>
 </div></li>
 </ol>
 <p><strong>PROOF</strong></p>
-<p>Suppose <span class="math inline">\(B\)</span> is <span class="math inline">\(n \times n\)</span>, the minimum rank of <span class="math inline">\(AB\)</span> is <span class="math inline">\(a + n - n = a\)</span>, and the maximum rank is <span class="math inline">\(\min(a, n) = a\)</span>. Thus, multiplying by a full rank matrixi preserves rank: <span class="math inline">\(r(AB) = r(A)\)</span>. (4) follows naturally after (3).</p>
+<p>Suppose <span class="math inline">\(B\)</span> is <span class="math inline">\(n \times n\)</span>, the minimum rank of <span class="math inline">\(AB\)</span> is <span class="math inline">\(a + n - n = a\)</span>, and the maximum rank is <span class="math inline">\(\min(a, n) = a\)</span>. Thus, multiplying by a full rank matrix preserves rank: <span class="math inline">\(r(AB) = r(A)\)</span>. (4) follows naturally after (3).</p>
 </div>
 <div id="gram-matrix" class="section level3">
 <h3><span class="header-section-number">2.5.2</span> Gram matrix</h3>
 
 <div class="proposition">
-<span id="prp:gram-matrix" class="proposition"><strong>Proposition 2.1  (Gram matrix)  </strong></span>The matrix <span class="math inline">\(A^TA\)</span> is said to be the gram matrix of column space of <span class="math inline">\(A_{m \times n}\)</span>. The columns of <span class="math inline">\(A\)</span> are linearly independent if and only if <span class="math inline">\(A^TA\)</span> is invertible.
+<span id="prp:gram-matrix" class="proposition"><strong>Proposition 2.1  (Gram matrix)  </strong></span>The matrix <span class="math inline">\(A^TA\)</span> is said to be the Gram matrix of column space of <span class="math inline">\(A_{m \times n}\)</span>. The columns of <span class="math inline">\(A\)</span> are linearly independent if and only if <span class="math inline">\(A^TA\)</span> is invertible.
 </div>
 
+<p><strong>PROOF</strong></p>
 <p>When <span class="math inline">\(A^TA\)</span> is invertible, it has rank <span class="math inline">\(n\)</span>. Therefore, each of the factors of <span class="math inline">\(A^TA\)</span> has at least rank <span class="math inline">\(n\)</span>, and this means columns of <span class="math inline">\(A\)</span> are linearly independent (since <span class="math inline">\(r(A) \le \min(m, n)\)</span>).</p>
 <p>Similarly, <span class="math inline">\(AA^T\)</span> are called the left Gram matrix of rowspace of <span class="math inline">\(A\)</span>. And <span class="math inline">\(AA^T\)</span> is invertible if and only rows of <span class="math inline">\(A\)</span> are linearly independent.</p>
 
@@ -424,7 +425,7 @@ r(A) = r(A^TA) = r(AA^T)
 </div>
 
 <p><strong>PROOF</strong></p>
-<p>For <span class="math inline">\(r(A) = r(A^TA)\)</span>, suppose <span class="math inline">\(r(A) = r\)</span>, then <span class="math inline">\(\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r\)</span>. Note that for any <span class="math inline">\(\boldsymbol{x}\)</span> that satisfies <span class="math inline">\(A\boldsymbol{x} = 0\)</span>, we have <span class="math inline">\(A^TA\boldsymbol{x} = 0\)</span>. It follows that <span class="math inline">\(A\)</span> <span class="math inline">\(A^TA\)</span> have the same null space, <span class="math inline">\(\mathcal{N}(A) = \mathcal{N}(A^TA)\)</span>. Since <span class="math inline">\(A^TA \in \mathbb{R}^{n \times n}\)</span>, we have <span class="math inline">\(r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r\)</span>.</p>
+<p>For <span class="math inline">\(r(A) = r(A^TA)\)</span>, suppose <span class="math inline">\(r(A) = r\)</span>, then <span class="math inline">\(\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r\)</span>. Note that for any <span class="math inline">\(\boldsymbol{x}\)</span> that satisfies <span class="math inline">\(A\boldsymbol{x} = 0\)</span>, we have <span class="math inline">\(A^TA\boldsymbol{x} = 0\)</span>. It follows that <span class="math inline">\(A\)</span> and <span class="math inline">\(A^TA\)</span> have the same null space, <span class="math inline">\(\mathcal{N}(A) = \mathcal{N}(A^TA)\)</span>. Since <span class="math inline">\(A^TA \in \mathbb{R}^{n \times n}\)</span>, we have <span class="math inline">\(r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r\)</span>.</p>
 <p>For <span class="math inline">\(r(A) = R(AA^T)\)</span>, note that <span class="math inline">\(r(A) = r(A^T)\)</span>, and that <span class="math inline">\(\mathcal{N}(A^T) = \mathcal{N}(AA^T)\)</span>, then the conclusion presents itself.</p>
 <hr>
 <p>From the SVD perspective(Corollary <a href="eigenthings-and-quadratic-forms.html#cor:same-nonzero">4.1</a> and Section <a href="eigenthings-and-quadratic-forms.html#svd-theorem">4.7.2</a>), one can show that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> have the same set of nonzero eigenvalues, and <span class="math inline">\(r(A)\)</span> is the same as the number of nonzero eigenvalues of <span class="math inline">\(A^A\)</span> or <span class="math inline">\(AA^T\)</span>, so that <span class="math inline">\(r(A) = r(A^TA) = r(AA^T)\)</span>.</p>

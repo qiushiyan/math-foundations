@@ -561,7 +561,7 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ata-pd"><strong>(\#cor:ata-pd) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are positive semidefinite matrix</div>\EndKnitrBlock{corollary}
 
-**PROOF**
+**PROOF**  
 
 By definition, $A^TA$ is a positive semidefinite matrix if for any $\boldsymbol{x} \in \mathbb{R}^n$, the quadratic form $\boldsymbol{x}^T(A^TA)\boldsymbol{x} \ge 0$. 
 
@@ -574,7 +574,17 @@ $$
 $$
 It turns out that the result is the square of the 2-norm of $A\boldsymbol{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\boldsymbol{x} \not\subseteq \mathcal{N}(A)$
 
-Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $A^T\boldsymbol{x}$. 
+Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $A^T\boldsymbol{x}$.   
+
+<hr>
+
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ridge-invertible"><strong>(\#cor:ridge-invertible) </strong></span>$A^TA +\lambda I$ and $AA^T + \lambda I$ are always positive definite and invertible for $\lambda > 0$</div>\EndKnitrBlock{corollary}
+
+**PROOF**
+
+From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are positive semidefinite, and that they have the same nonzero eigenvalues from corollary \@ref(cor:same-nonzero). According to Section \@ref(additional-properties-of-eigenvalues-and-eigenvectors), eigenvalues for $P(A)$ are $P(\lambda)$ for polynomial function $P$. Therefore, $A^TA +\lambda I$ and $AA^T + \lambda I$ share a positive set of $n$ eigenvalues $\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda$, so they are PD and invertible.  
+
+
 
 
 ## Rayleigh quotients 
@@ -774,7 +784,7 @@ $$
 \end{split}
 $$
 
-Next, we will show that any vector in $\mathcal{R}(A)$ is a linear a combination of $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$. Note that $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_r\}$ is a orthonormal basis of $A^TA$'s eigenspace $\mathbb{R}$. So for any vector $\boldsymbol{y} = A\boldsymbol{x}$ in $\mathcal{R}(A)$ , we can write $\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n$, thus
+Next, we show that any vector in $\mathcal{R}(A)$ is a linear a combination of $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$. Note that $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is a orthonormal basis of $A^TA$'s eigenspace $\mathbb{R}^n$. Therefore,  for any vector $\boldsymbol{y} = A\boldsymbol{x}$ in $\mathcal{R}(A)$ , there exists $\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n$, thus
 
 $$
 \begin{split}
@@ -1033,7 +1043,7 @@ $$
 Entry-wise norms treat an $m \times n$ matrix as a long vector of size $m \times n$, denoted by $\text{vec}(A)$. For example, using the p-norm for vectors, we get 
 
 $$
-\|A\|_{p,p} = \|\text{vec}(A)\|_p = (\sum_{j=1}^n\sum_{i=1}^{m}{|A_{ij}|}^p)^{\frac{1}{p}}
+\|A\|_{p,p} = \|\text{vec}(A)\|_p = \Bigg(\sum_{j=1}^n\sum_{i=1}^{m}{|A_{ij}|}^p \Bigg)^{\frac{1}{p}}
 $$
 
 More generally, the p,q norm is defined by 
@@ -1046,7 +1056,38 @@ Another important member norm of this norm family is the **Frobenius norm**, or 
 $$
 \| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{A_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
 $$
-where $\sigma_i$ is the nonzero singular value of $A$. 
+where $\sigma_i$ is the nonzero singular value of $A$.  
+
+
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-15"><strong>(\#prp:unnamed-chunk-15) </strong></span>The F-norm is a submultiplicative norm. </div>\EndKnitrBlock{proposition}
+
+**PROOF**
+
+Let $A$ and $B$ are of appropriate size such that
+
+$$
+A = 
+\begin{bmatrix}
+a_1^T \\
+\vdots \\
+a_m^T
+\end{bmatrix}
+, \;
+B = 
+\begin{bmatrix}
+b_1 & \cdots & b_m
+\end{bmatrix} 
+\\
+\quad \\
+\begin{aligned}
+\|AB\| &= \sqrt{\sum_{i, j}{|a_i^Tb_j|^2}} \\
+& \le \sqrt{\sum_{i, j}{\| a_i \|^2 \| b_j\|^2}} \\
+&= \sqrt{\sum_{i}{\|a_i\|^2}} \sqrt{\sum_{j}{\|b_j\|^2}} \\
+&= \|A\| \|B\|
+\end{aligned}
+$$
+
+The first inequality comes from the Cauchy-Schwarz inequality $a \cdot b \le \|a\| \|b\|$
 
 ### Other matrix norms 
 

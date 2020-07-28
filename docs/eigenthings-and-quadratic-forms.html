@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-07-27" />
+<meta name="date" content="2020-07-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -675,6 +675,14 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 \]</span>
 It turns out that the result is the square of the 2-norm of <span class="math inline">\(A\boldsymbol{x}\)</span> (nonnegative). This also tells <span class="math inline">\(A^TA\)</span> is positive definite when <span class="math inline">\(\boldsymbol{x} \not\subseteq \mathcal{N}(A)\)</span></p>
 <p>Similarly, the quadratic form for <span class="math inline">\(AA^T\)</span> can be refactored in to the 2-norm of <span class="math inline">\(A^T\boldsymbol{x}\)</span>.</p>
+<hr>
+
+<div class="corollary">
+<span id="cor:ridge-invertible" class="corollary"><strong>Corollary 4.4  </strong></span><span class="math inline">\(A^TA +\lambda I\)</span> and <span class="math inline">\(AA^T + \lambda I\)</span> are always positive definite and invertible for <span class="math inline">\(\lambda &gt; 0\)</span>
+</div>
+
+<p><strong>PROOF</strong></p>
+<p>From the previous corollary <a href="eigenthings-and-quadratic-forms.html#cor:ata-pd">4.3</a> we know that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are positive semidefinite, and that they have the same nonzero eigenvalues from corollary <a href="eigenthings-and-quadratic-forms.html#cor:same-nonzero">4.1</a>. According to Section <a href="eigenthings-and-quadratic-forms.html#additional-properties-of-eigenvalues-and-eigenvectors">4.2</a>, eigenvalues for <span class="math inline">\(P(A)\)</span> are <span class="math inline">\(P(\lambda)\)</span> for polynomial function <span class="math inline">\(P\)</span>. Therefore, <span class="math inline">\(A^TA +\lambda I\)</span> and <span class="math inline">\(AA^T + \lambda I\)</span> share a positive set of <span class="math inline">\(n\)</span> eigenvalues <span class="math inline">\(\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda\)</span>, so they are PD and invertible.</p>
 </div>
 </div>
 <div id="rayleigh-quotients" class="section level2">
@@ -839,7 +847,7 @@ Since <span class="math inline">\(A^TA\)</span> is <strong>symmetric</strong>, t
 &amp;= 0
 \end{split}
 \]</span></p>
-<p>Next, we will show that any vector in <span class="math inline">\(\mathcal{R}(A)\)</span> is a linear a combination of <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span>. Note that <span class="math inline">\(\{\boldsymbol{v}_1, ..., \boldsymbol{v}_r\}\)</span> is a orthonormal basis of <span class="math inline">\(A^TA\)</span>’s eigenspace <span class="math inline">\(\mathbb{R}\)</span>. So for any vector <span class="math inline">\(\boldsymbol{y} = A\boldsymbol{x}\)</span> in <span class="math inline">\(\mathcal{R}(A)\)</span> , we can write <span class="math inline">\(\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n\)</span>, thus</p>
+<p>Next, we show that any vector in <span class="math inline">\(\mathcal{R}(A)\)</span> is a linear a combination of <span class="math inline">\(\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}\)</span>. Note that <span class="math inline">\(\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}\)</span> is a orthonormal basis of <span class="math inline">\(A^TA\)</span>’s eigenspace <span class="math inline">\(\mathbb{R}^n\)</span>. Therefore, for any vector <span class="math inline">\(\boldsymbol{y} = A\boldsymbol{x}\)</span> in <span class="math inline">\(\mathcal{R}(A)\)</span> , there exists <span class="math inline">\(\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n\)</span>, thus</p>
 <p><span class="math display">\[
 \begin{split}
 \boldsymbol{y} &amp;= A\boldsymbol{x} = A(c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n) \\
@@ -1066,7 +1074,7 @@ si</p>
 <h3><span class="header-section-number">4.8.2</span> Entry-wise norm</h3>
 <p>Entry-wise norms treat an <span class="math inline">\(m \times n\)</span> matrix as a long vector of size <span class="math inline">\(m \times n\)</span>, denoted by <span class="math inline">\(\text{vec}(A)\)</span>. For example, using the p-norm for vectors, we get</p>
 <p><span class="math display">\[
-\|A\|_{p,p} = \|\text{vec}(A)\|_p = (\sum_{j=1}^n\sum_{i=1}^{m}{|A_{ij}|}^p)^{\frac{1}{p}}
+\|A\|_{p,p} = \|\text{vec}(A)\|_p = \Bigg(\sum_{j=1}^n\sum_{i=1}^{m}{|A_{ij}|}^p \Bigg)^{\frac{1}{p}}
 \]</span></p>
 <p>More generally, the p,q norm is defined by</p>
 <p><span class="math display">\[
@@ -1077,6 +1085,35 @@ Another important member norm of this norm family is the <strong>Frobenius norm<
 \| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{A_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
 \]</span>
 where <span class="math inline">\(\sigma_i\)</span> is the nonzero singular value of <span class="math inline">\(A\)</span>.</p>
+
+<div class="proposition">
+<span id="prp:unnamed-chunk-15" class="proposition"><strong>Proposition 4.2  </strong></span>The F-norm is a submultiplicative norm.
+</div>
+
+<p><strong>PROOF</strong></p>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are of appropriate size such that</p>
+<p><span class="math display">\[
+A = 
+\begin{bmatrix}
+a_1^T \\
+\vdots \\
+a_m^T
+\end{bmatrix}
+, \;
+B = 
+\begin{bmatrix}
+b_1 &amp; \cdots &amp; b_m
+\end{bmatrix} 
+\\
+\quad \\
+\begin{aligned}
+\|AB\| &amp;= \sqrt{\sum_{i, j}{|a_i^Tb_j|^2}} \\
+&amp; \le \sqrt{\sum_{i, j}{\| a_i \|^2 \| b_j\|^2}} \\
+&amp;= \sqrt{\sum_{i}{\|a_i\|^2}} \sqrt{\sum_{j}{\|b_j\|^2}} \\
+&amp;= \|A\| \|B\|
+\end{aligned}
+\]</span></p>
+<p>The first inequality comes from the Cauchy-Schwarz inequality <span class="math inline">\(a \cdot b \le \|a\| \|b\|\)</span></p>
 </div>
 <div id="other-matrix-norms" class="section level3">
 <h3><span class="header-section-number">4.8.3</span> Other matrix norms</h3>
