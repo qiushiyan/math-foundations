@@ -276,7 +276,7 @@ are not similar even though they have the same eigenvalues.
 
 ### Jordan matrix
 
-For non-diagonalizable matrices $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
+For non-diagonalizable square matrix $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
 
 
 ```{definition}
@@ -349,7 +349,47 @@ $$
 (A - 1I)\boldsymbol{p}_4 &= \boldsymbol{p}_3 
 \end{aligned}
 $$
-The solutions $\boldsymbol{p}_i$ are called **generalized eigenvectors** of $A$. 
+The solutions $\boldsymbol{p}_i$ are called **generalized eigenvectors** of $A$.  
+
+
+### Cayley-Hamilton theorem  
+
+For any square matrix $A_{n \times n}$, the characteristic polynomial of $\lambda$ is defined as 
+
+$$
+\det(A - \lambda I)
+$$
+
+We can obtain a polynomial of matrix $A$ by substituting $A$ for $\lambda$, and $kI$ for constant terms. For example, the matrix form of the polynomial $3\lambda^2 + 2\lambda + 2$ is $3A^2 + 2A + 2I$. 
+
+```{theorem cayley-hamilton, name = "Cayley-Hamilton Theorem"}  
+
+Let $f(\lambda)$ be the polynomial function of the characteristic polynomial $\det(A - \lambda I)$, where $A$ is a square matrix. Then $f(A)$ evaluates to a zero matrix.
+```
+
+
+**PROOF**  
+
+Though the Caley Hamilton theorem \@ref(thm:cayley-hamilton) applies to any square matrix $A$. Our proof only address the case for diagonalizable matrices.  
+
+When $A$ is digonalizable, the polynomial of $A$ takes the form
+
+$$
+f(A) = Pf(\Lambda)P^{-1}
+$$
+Since $f(\lambda) = \det(A - \lambda I)$, and the diagonal entries of $\Lambda$ are the eigenvalues of $A$. Evaluate $f(\lambda)$ at each diagonal entry of $\Lambda$ will be zero. Thus $f(A)$ is a zero matrix.  
+
+A direct result derived from the Cayley Hamilton theorem is that for every intertible matrix $A$, its inverse $A^{-1}$ can be represented as a polynomial of $A$ with degree $d - 1$.  
+
+<br>
+
+```{proposition, name = "Polynomial representation of matrix inverse"}
+The *inverse* of an invertible square matrix $A$ is a polynomial of $A$ with degree at most $d -1$. 
+```
+
+
+
+
 
 ## Symmetric matrices 
 
