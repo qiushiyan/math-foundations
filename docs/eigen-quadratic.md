@@ -559,7 +559,7 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 <hr>
 
-\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ata-pd"><strong>(\#cor:ata-pd) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are positive semidefinite matrix</div>\EndKnitrBlock{corollary}
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ata-pd"><strong>(\#cor:ata-pd) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are always positive semidefinite matrices</div>\EndKnitrBlock{corollary}
 
 **PROOF**  
 
@@ -578,6 +578,11 @@ Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $
 
 <hr>
 
+
+
+
+<hr>
+
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ridge-invertible"><strong>(\#cor:ridge-invertible) </strong></span>$A^TA +\lambda I$ and $AA^T + \lambda I$ are always positive definite and invertible for $\lambda > 0$</div>\EndKnitrBlock{corollary}
 
 **PROOF**
@@ -585,6 +590,21 @@ Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $
 From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are positive semidefinite, and that they have the same nonzero eigenvalues from corollary \@ref(cor:same-nonzero). According to Section \@ref(additional-properties-of-eigenvalues-and-eigenvectors), eigenvalues for $P(A)$ are $P(\lambda)$ for polynomial function $P$. Therefore, $A^TA +\lambda I$ and $AA^T + \lambda I$ share a positive set of $n$ eigenvalues $\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda$, so they are PD and invertible.  
 
 
+## Cholesky factorization  
+
+\BeginKnitrBlock{lemma}<div class="lemma"><span class="lemma" id="lem:unnamed-chunk-12"><strong>(\#lem:unnamed-chunk-12) </strong></span>A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. </div>\EndKnitrBlock{lemma}
+
+The previous corollary \@ref(cor:ata-pd) shows that if $A = B^TB$ then it is positive definite. Conversely, if $A$ is PSD (or PD), we have $A = Q \Lambda Q^T$ where $\Lambda$'s diagonal entries are all nonnegative. Then we can set $\Lambda ^{1/2} = \Sigma$ and $B = (Q\Sigma)^T$. Then $A = Q\Sigma^2Q^T = (Q\Sigma)(Q\Sigma)^T = B^TB$. 
+
+Note that we could also have stated this lemma using $BB^T$ instead of B T B, and the proof is similar.   
+
+This lemma is inspiring in that for every PD matrix $A \in \mathbb{R}^n$, there exists factorization $A = BB^T$. 
+
+In fact, this factorization is not unique. We can use an orthogonal matrix $P$ to create an orthogonal factorization $A = BB^T = B(PP^T)B^T = (BP)(BP)^T$. With an appropriate choice of $P$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. The uniqueness of this factorization with lower triangular matrix $L$ can be proved with induction. We can also obtain the general formula for $L$ 
+
+$$
+A = P \Lambda P^T \rightarrow L = (P\Lambda^{1/2})
+$$
 
 
 ## Rayleigh quotients 
@@ -670,7 +690,7 @@ The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n
 
 If we add more constraints, for example, that $\boldsymbol{x}$ should be orthogonal to $\boldsymbol{q}_1$, then $\boldsymbol{x}^TA\boldsymbol{x}$ has maximum $\lambda_2$ attained at $\boldsymbol{x} = \lambda_2$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-12"><strong>(\#thm:unnamed-chunk-12) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-13"><strong>(\#thm:unnamed-chunk-13) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
 
 $$
 \boldsymbol{x}^T\boldsymbol{x} =  1, \;\; \boldsymbol{x}^T\boldsymbol{q}_1 = 0, \;\; \dots \;\;, \boldsymbol{x}^T\boldsymbol{q}_{k-1} = 0
@@ -764,7 +784,7 @@ From corollary \@ref(cor:ata-pd), we know that $A^TA$ are positive semidefinite 
 
 <br>  
 
-\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-13"><strong>(\#def:unnamed-chunk-13)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-14"><strong>(\#def:unnamed-chunk-14)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
 
 
 <br>
@@ -1017,7 +1037,7 @@ $$
 
 <hr> 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-14"><strong>(\#prp:unnamed-chunk-14) </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that 
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-15"><strong>(\#prp:unnamed-chunk-15) </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that 
 
 $$
 \|AB\|_p \le \|A\|_p\|B\|_p
@@ -1059,7 +1079,7 @@ $$
 where $\sigma_i$ is the nonzero singular value of $A$.  
 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-15"><strong>(\#prp:unnamed-chunk-15) </strong></span>The F-norm is a submultiplicative norm. </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-16"><strong>(\#prp:unnamed-chunk-16) </strong></span>The F-norm is a submultiplicative norm. </div>\EndKnitrBlock{proposition}
 
 **PROOF**
 

@@ -16,9 +16,10 @@ rmd_files: [
   "orthogonality.Rmd",
   "eigen-quadratic.Rmd",
   "linear-system.Rmd",
-  "matrix-calculus.Rmd",
+
 
   "taylor.Rmd",
+  "matrix-calculus.Rmd",
   
   "probability-basics.Rmd",
   "moments.Rmd",

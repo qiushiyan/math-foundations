@@ -310,7 +310,7 @@ The trace has the following properties:
 7. $\text{tr}(\boldsymbol{a}\boldsymbol{a}^T) = \boldsymbol{a}^T\boldsymbol{a}$
 
 
-## Inverse of a matrix
+## Matrix inversion
 
 ```{block2, type = "rmdnote"}
 Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants). 
@@ -377,6 +377,86 @@ $$
 A^{-1} = \frac{1}{\det A}\text{adj}\, A
 $$
 ```
+
+### The matrix inversion lemma
+
+
+
+
+```{lemma matrix-inversion-lemma, name = "The Matrix Inversion Lemma"}
+Let $A$ be an invertible $n \times n$ square matrix, and $\boldsymbol{v}$ and $\boldsymbol{u}$ be d-dimensional vectors. Then, $A + \boldsymbol{u}\boldsymbol{v}^T$ is invertible if and only if $\boldsymbol{v}^TA\boldsymbol{u} \not = -1$. In such a case, the inverse formula is given by 
+
+$$
+(A + \boldsymbol{u}\boldsymbol{v}^T) = A^{-1} - \frac{A^{-1}\boldsymbol{u}\boldsymbol{v}^TA^{-1}}{1 + \boldsymbol{v}^TA^{-1}\boldsymbol{u}}
+$$
+```
+
+
+<hr>
+
+```{theorem woodbury, name = "Woodbury Identity"}
+Let $A$ be an invertible $n \times n$ square matrix, and $U, V$ nonzero $n \times k$ matrices  for some small values of $k$. Then, $A + UV^T$ is invertible if and only if the $k \times k$ amtrix $(I +V^TA^{-1}U)$ is invertible. In such a case, the inverse formula is given by 
+
+$$
+(A + UV)^{-1} = A^{-1} - A^{-1}U(I + V^TA^{-1}U)^{-1}V^TA^{-1}
+$$
+```
+
+It's easy to find that the Woodbury Identity is an extension of the matrix inversion lemma, where $\boldsymbol{u} \rightarrow U$ and $\boldsymbol{v} \rightarrow V$.
+
+
+
+
+<hr>
+
+```{proposition}
+For square matrix $P$ (**not** assuming invertible), if $I + P$ is invertible, then $(I + P)^{-1}$ satisfies:  
+
+$$
+(I + P)^{-1} = I - (I + P)^{-1}P
+$$
+```
+
+As a quick check, right and left multiply $(I + P)$ to see if we get an identity. 
+
+$$
+\begin{split}
+(I + P)^{-1}(I + P) &= I \\
+&= \Big(I - (I + P)^{-1}P \Big )(I + P) \\
+&= I + P -(1 + P)^{-1}P(I + P) \\
+&= (I + P)( I - (I + P)^{-1}P) \\
+&= (I + P)(I + P)^{-1}\\
+&= I
+\end{split}
+$$
+and left multiply
+
+$$
+\begin{split}
+(I + P)(I + P)^{-1} &= I \\
+&= (I + P)(I - (I + P)^{-1}P) \\
+&= I + P - P\\
+&= I
+\end{split}
+$$
+<hr> 
+
+
+```{proposition push-through-identity, name = "Push Through Identity"}
+Let $U$ and $V$ be $m \times n$ matrices, we have 
+
+$$
+U^T(I + VU^T)^{-1} = (I + U^TV)^{-1}U^T
+$$
+The above result shows the following for any $m \times n$ matrix $A$ and any scalar $\lambda > 0$ 
+
+$$
+A^T(\lambda I + AA^T)^{-1} = (\lambda I + A^TA)^{-1}A^T
+$$
+```
+
+
+
 
 
 ## Matrix multiplication as linear transformation

@@ -300,7 +300,7 @@ The trace has the following properties:
 7. $\text{tr}(\boldsymbol{a}\boldsymbol{a}^T) = \boldsymbol{a}^T\boldsymbol{a}$
 
 
-## Inverse of a matrix
+## Matrix inversion
 
 \BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants). 
 
@@ -362,6 +362,78 @@ $$
 A^{-1} = \frac{1}{\det A}\text{adj}\, A
 $$</div>\EndKnitrBlock{theorem}
 
+### The matrix inversion lemma
+
+
+
+
+\BeginKnitrBlock{lemma}\iffalse{-91-84-104-101-32-77-97-116-114-105-120-32-73-110-118-101-114-115-105-111-110-32-76-101-109-109-97-93-}\fi{}<div class="lemma"><span class="lemma" id="lem:matrix-inversion-lemma"><strong>(\#lem:matrix-inversion-lemma)  \iffalse (The Matrix Inversion Lemma) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ square matrix, and $\boldsymbol{v}$ and $\boldsymbol{u}$ be d-dimensional vectors. Then, $A + \boldsymbol{u}\boldsymbol{v}^T$ is invertible if and only if $\boldsymbol{v}^TA\boldsymbol{u} \not = -1$. In such a case, the inverse formula is given by 
+
+$$
+(A + \boldsymbol{u}\boldsymbol{v}^T) = A^{-1} - \frac{A^{-1}\boldsymbol{u}\boldsymbol{v}^TA^{-1}}{1 + \boldsymbol{v}^TA^{-1}\boldsymbol{u}}
+$$</div>\EndKnitrBlock{lemma}
+
+
+<hr>
+
+\BeginKnitrBlock{theorem}\iffalse{-91-87-111-111-100-98-117-114-121-32-73-100-101-110-116-105-116-121-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:woodbury"><strong>(\#thm:woodbury)  \iffalse (Woodbury Identity) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ square matrix, and $U, V$ nonzero $n \times k$ matrices  for some small values of $k$. Then, $A + UV^T$ is invertible if and only if the $k \times k$ amtrix $(I +V^TA^{-1}U)$ is invertible. In such a case, the inverse formula is given by 
+
+$$
+(A + UV)^{-1} = A^{-1} - A^{-1}U(I + V^TA^{-1}U)^{-1}V^TA^{-1}
+$$</div>\EndKnitrBlock{theorem}
+
+It's easy to find that the Woodbury Identity is an extension of the matrix inversion lemma, where $\boldsymbol{u} \rightarrow U$ and $\boldsymbol{v} \rightarrow V$.
+
+
+
+
+<hr>
+
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-6"><strong>(\#prp:unnamed-chunk-6) </strong></span>For square matrix $P$ (**not** assuming invertible), if $I + P$ is invertible, then $(I + P)^{-1}$ satisfies:  
+
+$$
+(I + P)^{-1} = I - (I + P)^{-1}P
+$$</div>\EndKnitrBlock{proposition}
+
+As a quick check, right and left multiply $(I + P)$ to see if we get an identity. 
+
+$$
+\begin{split}
+(I + P)^{-1}(I + P) &= I \\
+&= \Big(I - (I + P)^{-1}P \Big )(I + P) \\
+&= I + P -(1 + P)^{-1}P(I + P) \\
+&= (I + P)( I - (I + P)^{-1}P) \\
+&= (I + P)(I + P)^{-1}\\
+&= I
+\end{split}
+$$
+and left multiply
+
+$$
+\begin{split}
+(I + P)(I + P)^{-1} &= I \\
+&= (I + P)(I - (I + P)^{-1}P) \\
+&= I + P - P\\
+&= I
+\end{split}
+$$
+<hr> 
+
+
+\BeginKnitrBlock{proposition}\iffalse{-91-80-117-115-104-32-84-104-114-111-117-103-104-32-73-100-101-110-116-105-116-121-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:push-through-identity"><strong>(\#prp:push-through-identity)  \iffalse (Push Through Identity) \fi{} </strong></span>Let $U$ and $V$ be $m \times n$ matrices, we have 
+
+$$
+U^T(I + VU^T)^{-1} = (I + U^TV)^{-1}U^T
+$$
+The above result shows the following for any $m \times n$ matrix $A$ and any scalar $\lambda > 0$ 
+
+$$
+A^T(\lambda I + AA^T)^{-1} = (\lambda I + A^TA)^{-1}A^T
+$$</div>\EndKnitrBlock{proposition}
+
+
+
+
 
 ## Matrix multiplication as linear transformation
 
@@ -379,7 +451,7 @@ $$
 $$
 <hr>
 
-\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-6"><strong>(\#thm:unnamed-chunk-6)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
@@ -410,13 +482,13 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 
 (ref:onto) A mapping is onto $\mathbb{R^m}$
 
-\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-7"><strong>(\#def:unnamed-chunk-7)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of at least one $\boldsymbol{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of at least one $\boldsymbol{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
 
 Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
 
 <br>
 
-\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse (one-to-one mapping) \fi{} </strong></span>A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\boldsymbol{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (one-to-one mapping) \fi{} </strong></span>A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\boldsymbol{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
 
 Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $\mathbb{R^m}$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.  
 

@@ -592,7 +592,7 @@ Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb
 <hr>
 
 ```{corollary ata-pd}
-Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are positive semidefinite matrix
+Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are always positive semidefinite matrices
 ```
 
 **PROOF**  
@@ -612,6 +612,11 @@ Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $
 
 <hr>
 
+
+
+
+<hr>
+
 ```{corollary ridge-invertible}
 $A^TA +\lambda I$ and $AA^T + \lambda I$ are always positive definite and invertible for $\lambda > 0$
 ```
@@ -621,6 +626,44 @@ $A^TA +\lambda I$ and $AA^T + \lambda I$ are always positive definite and invert
 From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are positive semidefinite, and that they have the same nonzero eigenvalues from corollary \@ref(cor:same-nonzero). According to Section \@ref(additional-properties-of-eigenvalues-and-eigenvectors), eigenvalues for $P(A)$ are $P(\lambda)$ for polynomial function $P$. Therefore, $A^TA +\lambda I$ and $AA^T + \lambda I$ share a positive set of $n$ eigenvalues $\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda$, so they are PD and invertible.  
 
 
+## Cholesky factorization  
+
+```{lemma}
+A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. 
+```
+
+<br>
+
+The previous corollary \@ref(cor:ata-pd) shows that if $A = B^TB$ then it is positive definite. Conversely, if $A$ is PSD (or PD), we have $A = Q \Lambda Q^T$ where $\Lambda$'s diagonal entries are all nonnegative. Then we can set $\Lambda ^{1/2} = \Sigma$ and $B = (Q\Sigma)^T$. Then $A = Q\Sigma^2Q^T = (Q\Sigma)(Q\Sigma)^T = B^TB$. 
+
+Note that we could also have stated this lemma using $BB^T$ instead of B T B, and the proof is similar.   
+
+This lemma is inspiring in that for every PD matrix $A \in \mathbb{R}^n$, there exists factorization $A = BB^T$. 
+
+In fact, this factorization is not unique. We can use an orthogonal matrix $P$ to create an orthogonal factorization $A = BB^T = B(PP^T)B^T = (BP)(BP)^T$. With an appropriate choice of $P$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. The uniqueness of this factorization with lower triangular matrix $L$ can be proved with induction. We can also obtain the general formula for $L$ 
+
+$$
+A = P \Lambda P^T \rightarrow L = (P\Lambda^{1/2})
+$$
+
+$$
+\begin{bmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{n1} & \cdots & a_{nn}
+\end{bmatrix}
+= 
+\begin{bmatrix}
+l_{11} & \cdots & 0\\
+\vdots & \ddots & \vdots \\
+l_{n1} & \cdots & l_{nn}
+\end{bmatrix}
+\begin{bmatrix}
+l_{11} & \cdots & l_{n1} \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & l_{nn}
+\end{bmatrix}
+$$
 
 
 ## Rayleigh quotients 
