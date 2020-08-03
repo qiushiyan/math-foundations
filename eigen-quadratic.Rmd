@@ -119,7 +119,7 @@ We will have to verify that $A\boldsymbol{x}$ is no zero vector before concludin
 
 $A^TA$ and $AA^T$ are known as Gram matrix and left Gram matrix in corollary \@ref(prp:gram-matrix)
 
-## Additional properties of eigenvalues and eigenvectors  
+### Additional properties of eigenvalues and eigenvectors  
 
 Let $A \in \mathbb{R}^{n \times n}$ with eigenvalues $\lambda_1, ..., \lambda_n$. Here are some additional properties of this matrix and its eigenvlaues: 
 
@@ -358,6 +358,8 @@ $$
 The solutions $\boldsymbol{p}_i$ are called **generalized eigenvectors** of $A$.  
 
 
+### Simultaneous Diagonalizability   
+
 ### Cayley-Hamilton theorem  
 
 For any square matrix $A_{n \times n}$, the characteristic polynomial of $\lambda$ is defined as 
@@ -393,8 +395,12 @@ A direct result derived from the Cayley Hamilton theorem is that for every inter
 The *inverse* of an invertible square matrix $A$ is a polynomial of $A$ with degree at most $d -1$. 
 ```
 
+Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for nonsingular matrices, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$. $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
 
-
+$$
+A \underbrace{\Big( - g(A) / k\Big)}_{A^{-1}} = I
+$$
+Therefore, $A^{-1}$ is shown to be a polynomial of $A$. 
 
 
 ## Symmetric matrices 

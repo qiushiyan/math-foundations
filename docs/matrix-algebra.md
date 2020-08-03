@@ -92,7 +92,13 @@ E_3 =
 0 & 0 & 5
 \end{bmatrix} 
 $$
-$E_1, E_2, E_3$ represents 3 types of elementary row operations applicable to a $3 \times 3$ matrix, (1) *replacement*; (2) *interchange* and (3) *scaling*. We can verify this by right multiply them with an arbitrary matrix $A$ 
+$E_1, E_2, E_3$ represents 3 types of elementary row operations applicable to a $3 \times 3$ matrix, 
+
+(1) *Row addition*, a scalar multiple of the $i$th row is added to the $j$th row
+
+(2) *Row interchange*, the $i$th row and the $j$th row of the matrix are interchanged  
+
+(3) *Row scaling*, the $i$th row is multiplied by a scalar. 
 
 $$
 \begin{aligned}
@@ -130,10 +136,10 @@ Since row operation are invertible, elementary matrices are invertible. This giv
 
 https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysis/
 
-A *factorization* a matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
+A *factorization* of matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
 
-\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-2"><strong>(\#def:unnamed-chunk-2)  \iffalse (LU factorization) \fi{} </strong></span>  
-Suppose $A$ can be reduced to an echelon form $U$ using row operations that add a multiple ofo oone row to another row *below* it, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
+
+\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-2"><strong>(\#def:unnamed-chunk-2)  \iffalse (LU factorization) \fi{} </strong></span>Suppose $A$ can be reduced to an echelon form $U$ **using only row addition and rowo scaling**, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
 
 $$
 E_p \cdots E_1A = U  
@@ -145,11 +151,82 @@ $$
 A = (E_p \cdots E_1)^{-1}U = LU
 $$
 
-where 
+where $u$ is a the upper triangular row echelon form (or upper trapezoidal), and $L$ an lower triangular matrix
 $$
 L = (E_p \cdots E_1)^{-1}  
 $$</div>\EndKnitrBlock{definition}
 
+LU decomposition express a matrix (don't have to be square or invertible) as the product of a square lower triangular matrix $L$ and a rectangular upper triangular matrix $U$.  
+
+From the definition, we know that row operations on $A$ must only be confined to *row addition* and *row scaling*, but not *row interchange*. Otherwise $(E_p \cdots E_1)^{-1}$ cannot be lower triangular. The most common needs for row exchanges in row reduction is when $a_{11}$ is 0. For example, the following matrix does not have a Lu factorization because it first requires exchanging two rows to produce row echelon form ^[In particular, a non-singular matrix with $a_{11} = 0$ cannot have LU decomposition]  
+
+$$
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+$$
+
+To give a former definition of LU factorization, one can show that if all **principal submatrices are non-singular**^[square matrices whose diagonal entries are those of the original matrix], then the factorization exists. Note that this condition is **not necessary**, the following matrix has a zero in (2, 2) position violating the rule, but it can still be expressed in terms of LU
+
+$$
+\begin{bmatrix}
+2 & 1 & 0 \\
+1 & 0 & 0 \\
+1 & 1 & 1
+\end{bmatrix}
+= 
+\begin{bmatrix}
+2 & 0 & 0 \\
+1 & -\frac{1}{2} & 0 \\
+1 &  \frac{1}{2} & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & \frac{1}{2} & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{bmatrix}
+$$
+
+If an LU factorization exists, we shall notice that the LU form is "asymmetric" on the diagonal, in the sense that L has all $1$s and $U$ has the pivots. We can factor out another diagonal matrix $D$ to also have all $1$s on $U$'s diagonal  
+
+$$
+U = \begin{bmatrix}
+d_{1} \\
+& d_{2} \\
+& & \ddots \\ 
+& & & d_n
+\end{bmatrix}
+\begin{bmatrix}
+1 & u_{12} / d_1 & \cdots & u_{1n}/d_1 \\
+& 1 & \cdots & u_{2n}/d_2 \\
+& & \ddots & \vdots \\
+& & & 1
+\end{bmatrix}
+$$
+
+Then the $Lu$ factorization becomes $A = LDU$, where $L$ and $U$ have ones on its diagonal and $D$ is the diagonal matrix of pivots. 
+
+<hr> 
+
+In cases where row exchanges are needed to produce the echelon form, we can express the elimination process in terms of a permutation matrix $P$ and the other set of row addition operations, defined by $L_1, ..., L_{k}$  
+
+$$
+PL_{k}\cdots L_1A = U
+$$
+
+Note that permutation matrix $P$ satisfies $PP^T = I$. Multiplying both sides with $P^T$ and the inverses of $L_1, ..., L_{k}$, we obtain 
+
+$$
+A = \underbrace{ L_1^{-1} \cdots L_k^{-1}}_{L}P^TU
+$$
+One can try to polish this form  by obtain a decomposition in which the permutation matrix occurs before the lower triangular matrix $L$ ($L$ and $P$ are not the same after reordering)  
+
+$$
+A = P^TLU
+$$
+
+It's also common to write this decomposition as $PA = LU$.
 
 ## Determinants
 

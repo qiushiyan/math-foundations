@@ -111,7 +111,7 @@ We will have to verify that $A\boldsymbol{x}$ is no zero vector before concludin
 
 $A^TA$ and $AA^T$ are known as Gram matrix and left Gram matrix in corollary \@ref(prp:gram-matrix)
 
-## Additional properties of eigenvalues and eigenvectors  
+### Additional properties of eigenvalues and eigenvectors  
 
 Let $A \in \mathbb{R}^{n \times n}$ with eigenvalues $\lambda_1, ..., \lambda_n$. Here are some additional properties of this matrix and its eigenvlaues: 
 
@@ -134,7 +134,11 @@ $$
 - For a polynomial function $P$ the eigenvalues of $P(A)$ are $P(\lambda_1), ..., P(\lambda_n)$
 
 
+### Left eigenvectors and right eigenvectors 
 
+$$
+\boldsymbol{x}A = \lambda\boldsymbol{x}
+$$
 
 ## Diagnolization and similar matrices 
 
@@ -187,7 +191,9 @@ For matrices whose eigenvalues are not distinct, there is still a change that it
 
 1. The characteristic polynomial factors completely into linear factors. This is the case when $A$ has n distinct eigenvalues. 
 
-2. The dimension of the eigenspace for each $\lambda_k$ equals the multiplicity of $\lambda_k$. Thus $A$ with repeated eigenvalues can still be diagonalizable. 
+2. The dimension of the eigenspace for each $\lambda_k$ equals the multiplicity of $\lambda_k$. Thus $A$ with repeated eigenvalues can still be diagonalizable.  
+Repeated eigenvalues create the possibility that a diagonalization might not exist. Particularly, if less than $r_i$ eigenvectors exist for an eigenvalue with multiplicity $r_i$, a diagonalization does not exist. Such a matrix is said to be **deflective**.
+
 
 ### Similarity
 
@@ -262,7 +268,7 @@ are not similar even though they have the same eigenvalues.
 
 ### Jordan matrix
 
-For non-diagonalizable matrices $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
+For non-diagonalizable square matrix $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
 
 
 \BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4) </strong></span>The $n \times n$ matrix $J_{\lambda, n}$ with $\lambda$s on the diagonal, $1$s on the superdiagonal and $0$s elsewhere is called a Jordan matrix. A Jordan matrix in Jordan normal form is a block matrix that has Jordan blocks down its block diagonal and is zero elsewhere</div>\EndKnitrBlock{definition}
@@ -331,7 +337,49 @@ $$
 (A - 1I)\boldsymbol{p}_4 &= \boldsymbol{p}_3 
 \end{aligned}
 $$
-The solutions $\boldsymbol{p}_i$ are called **generalized eigenvectors** of $A$. 
+The solutions $\boldsymbol{p}_i$ are called **generalized eigenvectors** of $A$.  
+
+
+### Simultaneous Diagonalizability   
+
+### Cayley-Hamilton theorem  
+
+For any square matrix $A_{n \times n}$, the characteristic polynomial of $\lambda$ is defined as 
+
+$$
+\det(A - \lambda I)
+$$
+
+We can obtain a polynomial of matrix $A$ by substituting $A$ for $\lambda$, and $kI$ for constant terms. For example, the matrix form of the polynomial $3\lambda^2 + 2\lambda + 2$ is $3A^2 + 2A + 2I$. 
+
+\BeginKnitrBlock{theorem}\iffalse{-91-67-97-121-108-101-121-45-72-97-109-105-108-116-111-110-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cayley-hamilton"><strong>(\#thm:cayley-hamilton)  \iffalse (Cayley-Hamilton Theorem) \fi{} </strong></span>
+Let $f(\lambda)$ be the polynomial function of the characteristic polynomial $\det(A - \lambda I)$, where $A$ is a square matrix. Then $f(A)$ evaluates to a zero matrix.</div>\EndKnitrBlock{theorem}
+
+
+**PROOF**  
+
+Though the Caley Hamilton theorem \@ref(thm:cayley-hamilton) applies to any square matrix $A$. Our proof only address the case for diagonalizable matrices.  
+
+When $A$ is digonalizable, the polynomial of $A$ takes the form
+
+$$
+f(A) = Pf(\Lambda)P^{-1}
+$$
+Since $f(\lambda) = \det(A - \lambda I)$, and the diagonal entries of $\Lambda$ are the eigenvalues of $A$. Evaluate $f(\lambda)$ at each diagonal entry of $\Lambda$ will be zero. Thus $f(A)$ is a zero matrix.  
+
+A direct result derived from the Cayley Hamilton theorem is that for every intertible matrix $A$, its inverse $A^{-1}$ can be represented as a polynomial of $A$ with degree $d - 1$.  
+
+<br>
+
+\BeginKnitrBlock{proposition}\iffalse{-91-80-111-108-121-110-111-109-105-97-108-32-114-101-112-114-101-115-101-110-116-97-116-105-111-110-32-111-102-32-109-97-116-114-105-120-32-105-110-118-101-114-115-101-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-6"><strong>(\#prp:unnamed-chunk-6)  \iffalse (Polynomial representation of matrix inverse) \fi{} </strong></span>The *inverse* of an invertible square matrix $A$ is a polynomial of $A$ with degree at most $d -1$. </div>\EndKnitrBlock{proposition}
+
+Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for nonsingular matrices, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$. $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
+
+$$
+A \underbrace{\Big( - g(A) / k\Big)}_{A^{-1}} = I
+$$
+Therefore, $A^{-1}$ is shown to be a polynomial of $A$. 
+
 
 ## Symmetric matrices 
 
@@ -348,7 +396,7 @@ It is common to denote the set of all symmetric matrices of size $n$ as $\mathbb
 
 Symmetric matrices have some nice properties about diagonalization.  
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-6"><strong>(\#thm:unnamed-chunk-6) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
 
 **PROOF** 
 
@@ -398,7 +446,7 @@ $$
 A^T = (Q \Lambda Q^{T})^T = (Q^T)^T\Lambda^TQ^T= Q \Lambda Q^{T}  = A
 $$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
 
 ### Spectral decomposition 
 
@@ -432,7 +480,7 @@ Eq \@ref(eq:spectral-decomposition) is called the **spectral decomposition**, br
 
 ## Quadratic forms 
 
-\BeginKnitrBlock{definition}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse (Quadratic form) \fi{} </strong></span>A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\boldsymbol{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\boldsymbol{x}) = \boldsymbol{x}^TA\boldsymbol{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (Quadratic form) \fi{} </strong></span>A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\boldsymbol{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\boldsymbol{x}) = \boldsymbol{x}^TA\boldsymbol{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. </div>\EndKnitrBlock{definition}
 
 There exists a one-to-one mapping between symmetric matrix $A$ and the quadratic form. Consider the $3 \times 3$ case: 
 
@@ -531,7 +579,7 @@ From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are
 Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in general. 
 
 <hr>
-\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-10"><strong>(\#thm:unnamed-chunk-10)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
+\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
    
 - positive definite if and only if the eigenvalues of $A$ are all positive  
 
@@ -543,7 +591,7 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 <hr>  
 
-\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-11"><strong>(\#cor:unnamed-chunk-11) </strong></span>Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results **remain to be positive definite**. </div>\EndKnitrBlock{corollary}
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-12"><strong>(\#cor:unnamed-chunk-12) </strong></span>Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results **remain to be positive definite**. </div>\EndKnitrBlock{corollary}
 
 
 - Scalar multiplication of PD matrices $\alpha A$ are PD matrices 
@@ -592,20 +640,50 @@ From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are
 
 ## Cholesky factorization  
 
-\BeginKnitrBlock{lemma}<div class="lemma"><span class="lemma" id="lem:unnamed-chunk-12"><strong>(\#lem:unnamed-chunk-12) </strong></span>A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. </div>\EndKnitrBlock{lemma}
+\BeginKnitrBlock{lemma}<div class="lemma"><span class="lemma" id="lem:unnamed-chunk-13"><strong>(\#lem:unnamed-chunk-13) </strong></span>A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. </div>\EndKnitrBlock{lemma}
+
+<br>
 
 The previous corollary \@ref(cor:ata-pd) shows that if $A = B^TB$ then it is positive definite. Conversely, if $A$ is PSD (or PD), we have $A = Q \Lambda Q^T$ where $\Lambda$'s diagonal entries are all nonnegative. Then we can set $\Lambda ^{1/2} = \Sigma$ and $B = (Q\Sigma)^T$. Then $A = Q\Sigma^2Q^T = (Q\Sigma)(Q\Sigma)^T = B^TB$. 
 
-Note that we could also have stated this lemma using $BB^T$ instead of B T B, and the proof is similar.   
+Note that we could also have stated this lemma using $BB^T$ instead of $B^TB$, and the proof is similar.   
 
 This lemma is inspiring in that for every PD matrix $A \in \mathbb{R}^n$, there exists factorization $A = BB^T$. 
 
-In fact, this factorization is not unique. We can use an orthogonal matrix $P$ to create an orthogonal factorization $A = BB^T = B(PP^T)B^T = (BP)(BP)^T$. With an appropriate choice of $P$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. The uniqueness of this factorization with lower triangular matrix $L$ can be proved with induction. We can also obtain the general formula for $L$ 
+In fact, this factorization is not unique. We can use an orthogonal matrix $P$ to create an additional orthogonal factorization $A = BB^T = B(PP^T)B^T = (BP)(BP)^T$. 
+
+Since the initial $B = P\Lambda^{1/2}$ is full rank, with an appropriate choice of $P$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. 
+
+The uniqueness of this factorization with lower triangular matrix $L$ can be proved with induction. The decomposition of PD matrices into the product of an lower triangular matrix and its transpose is called the **Cholesky factorization**, in this factorization
 
 $$
-A = P \Lambda P^T \rightarrow L = (P\Lambda^{1/2})
+A = LL^T
 $$
 
+To it more clear
+
+$$
+\begin{bmatrix}
+a_{11} & \cdots & a_{1n} \\
+\vdots & \ddots & \vdots \\
+a_{n1} & \cdots & a_{nn}
+\end{bmatrix}
+= 
+\begin{bmatrix}
+l_{11} & \cdots & 0\\
+\vdots & \ddots & \vdots \\
+l_{n1} & \cdots & l_{nn}
+\end{bmatrix}
+\begin{bmatrix}
+l_{11} & \cdots & l_{n1} \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & l_{nn}
+\end{bmatrix}
+$$
+
+Since $L$ is lower triangular, we can solve $L$ from $A = LL^T$ with a system of equations that can be easily solved using back-substitution. For example, $l_{11} = \sqrt{a_{11}}$, and $a_{i1} / l_{11}$. 
+
+The Cholesky factorization is a special case of LU decomposition
 
 ## Rayleigh quotients 
 
@@ -690,7 +768,7 @@ The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n
 
 If we add more constraints, for example, that $\boldsymbol{x}$ should be orthogonal to $\boldsymbol{q}_1$, then $\boldsymbol{x}^TA\boldsymbol{x}$ has maximum $\lambda_2$ attained at $\boldsymbol{x} = \lambda_2$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-13"><strong>(\#thm:unnamed-chunk-13) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-14"><strong>(\#thm:unnamed-chunk-14) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
 
 $$
 \boldsymbol{x}^T\boldsymbol{x} =  1, \;\; \boldsymbol{x}^T\boldsymbol{q}_1 = 0, \;\; \dots \;\;, \boldsymbol{x}^T\boldsymbol{q}_{k-1} = 0
@@ -784,7 +862,7 @@ From corollary \@ref(cor:ata-pd), we know that $A^TA$ are positive semidefinite 
 
 <br>  
 
-\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-14"><strong>(\#def:unnamed-chunk-14)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-15"><strong>(\#def:unnamed-chunk-15)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
 
 
 <br>
@@ -1037,7 +1115,7 @@ $$
 
 <hr> 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-15"><strong>(\#prp:unnamed-chunk-15) </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that 
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-16"><strong>(\#prp:unnamed-chunk-16) </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that 
 
 $$
 \|AB\|_p \le \|A\|_p\|B\|_p
@@ -1079,7 +1157,7 @@ $$
 where $\sigma_i$ is the nonzero singular value of $A$.  
 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-16"><strong>(\#prp:unnamed-chunk-16) </strong></span>The F-norm is a submultiplicative norm. </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-17"><strong>(\#prp:unnamed-chunk-17) </strong></span>The F-norm is a submultiplicative norm. </div>\EndKnitrBlock{proposition}
 
 **PROOF**
 
@@ -1155,7 +1233,9 @@ $$
 
 The spectral norm (induced p-norm), F-norm and Schattan norm are all unitary invariant. 
 
-## Low rank optimization 
+## Low rank approximation 
+
+
 
 
 
