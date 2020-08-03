@@ -142,7 +142,11 @@ $$
 - For a polynomial function $P$ the eigenvalues of $P(A)$ are $P(\lambda_1), ..., P(\lambda_n)$
 
 
+### Left eigenvectors and right eigenvectors 
 
+$$
+\boldsymbol{x}A = \lambda\boldsymbol{x}
+$$
 
 ## Diagnolization and similar matrices 
 
@@ -197,7 +201,9 @@ For matrices whose eigenvalues are not distinct, there is still a change that it
 
 1. The characteristic polynomial factors completely into linear factors. This is the case when $A$ has n distinct eigenvalues. 
 
-2. The dimension of the eigenspace for each $\lambda_k$ equals the multiplicity of $\lambda_k$. Thus $A$ with repeated eigenvalues can still be diagonalizable. 
+2. The dimension of the eigenspace for each $\lambda_k$ equals the multiplicity of $\lambda_k$. Thus $A$ with repeated eigenvalues can still be diagonalizable.  
+Repeated eigenvalues create the possibility that a diagonalization might not exist. Particularly, if less than $r_i$ eigenvectors exist for an eigenvalue with multiplicity $r_i$, a diagonalization does not exist. Such a matrix is said to be **deflective**.
+
 
 ### Similarity
 
@@ -676,15 +682,21 @@ A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if 
 
 The previous corollary \@ref(cor:ata-pd) shows that if $A = B^TB$ then it is positive definite. Conversely, if $A$ is PSD (or PD), we have $A = Q \Lambda Q^T$ where $\Lambda$'s diagonal entries are all nonnegative. Then we can set $\Lambda ^{1/2} = \Sigma$ and $B = (Q\Sigma)^T$. Then $A = Q\Sigma^2Q^T = (Q\Sigma)(Q\Sigma)^T = B^TB$. 
 
-Note that we could also have stated this lemma using $BB^T$ instead of B T B, and the proof is similar.   
+Note that we could also have stated this lemma using $BB^T$ instead of $B^TB$, and the proof is similar.   
 
 This lemma is inspiring in that for every PD matrix $A \in \mathbb{R}^n$, there exists factorization $A = BB^T$. 
 
-In fact, this factorization is not unique. We can use an orthogonal matrix $P$ to create an orthogonal factorization $A = BB^T = B(PP^T)B^T = (BP)(BP)^T$. With an appropriate choice of $P$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. The uniqueness of this factorization with lower triangular matrix $L$ can be proved with induction. We can also obtain the general formula for $L$ 
+In fact, this factorization is not unique. We can use an orthogonal matrix $P$ to create an additional orthogonal factorization $A = BB^T = B(PP^T)B^T = (BP)(BP)^T$. 
+
+Since the initial $B = P\Lambda^{1/2}$ is full rank, with an appropriate choice of $P$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. 
+
+The uniqueness of this factorization with lower triangular matrix $L$ can be proved with induction. The decomposition of PD matrices into the product of an lower triangular matrix and its transpose is called the **Cholesky factorization**, in this factorization
 
 $$
-A = P \Lambda P^T \rightarrow L = (P\Lambda^{1/2})
+A = LL^T
 $$
+
+To it more clear
 
 $$
 \begin{bmatrix}
@@ -705,6 +717,9 @@ l_{11} & \cdots & l_{n1} \\
 \end{bmatrix}
 $$
 
+Since $L$ is lower triangular, we can solve $L$ from $A = LL^T$ with a system of equations that can be easily solved using back-substitution. For example, $l_{11} = \sqrt{a_{11}}$, and $a_{i1} / l_{11}$. 
+
+The Cholesky factorization is a special case of LU decomposition
 
 ## Rayleigh quotients 
 
@@ -1270,7 +1285,9 @@ Does this work for all orthogonal matrices $U$ and $V$?
 
 The spectral norm (induced p-norm), F-norm and Schattan norm are all unitary invariant. 
 
-## Low rank optimization 
+## Low rank approximation 
+
+
 
 
 
