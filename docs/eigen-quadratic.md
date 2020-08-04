@@ -4,17 +4,17 @@
 
 ## Eigenvectors and eigenvalues  
 
-\BeginKnitrBlock{definition}\iffalse{-91-69-105-103-101-110-118-101-99-116-111-114-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:eigen"><strong>(\#def:eigen)  \iffalse (Eigenvectors and eigenvalues) \fi{} </strong></span>An **eigenvector** of an $n \times n$ matrix $A$ is a *nonzero* vector $\boldsymbol{x}$ such that $A\boldsymbol{x} = \lambda\boldsymbol{x}$. 
+\BeginKnitrBlock{definition}\iffalse{-91-69-105-103-101-110-118-101-99-116-111-114-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:eigen"><strong>(\#def:eigen)  \iffalse (Eigenvectors and eigenvalues) \fi{} </strong></span>An **eigenvector** of an $n \times n$ matrix $A$ is a *nonzero* vector $\bar{x}$ such that $A\bar{x} = \lambda\bar{x}$. 
 
-$\lambda$ is the **eigenvalue** of $A$ if there is a nontrivial solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \lambda \boldsymbol{x}$; such an $\boldsymbol{x}$ is called an *eigenvector corresponding to $\lambda$*</div>\EndKnitrBlock{definition}
+$\lambda$ is the **eigenvalue** of $A$ if there is a nontrivial solution $\bar{x}$ of $A\bar{x} = \lambda \bar{x}$; such an $\bar{x}$ is called an *eigenvector corresponding to $\lambda$*</div>\EndKnitrBlock{definition}
 
 To find eigenvalues and corresponding eigenvectors of $A$, we look at the equation 
 
 $$
-(A - \lambda I)\boldsymbol{x}= 0
+(A - \lambda I)\bar{x}= 0
 $$
 
-Since eigenvector $\boldsymbol{x}$ must be nonzero, $(A - \lambda I)$ is a singular matrix 
+Since eigenvector $\bar{x}$ must be nonzero, $(A - \lambda I)$ is a singular matrix 
 
 
 \begin{equation}
@@ -44,50 +44,50 @@ So the roots of characteristic are $a_{11}, a_{22}, a_{33}$ respectively.
 
 There are some useful results about how eigenvalues change after various manipulations. 
 
-1. For any $k, b \in \mathbb{R}$, $\boldsymbol{x}$ is an eigenvector of $kA + bI$ with eigenvalue $k\lambda + b$  
+1. For any $k, b \in \mathbb{R}$, $\bar{x}$ is an eigenvector of $kA + bI$ with eigenvalue $k\lambda + b$  
 
-2. If $A$ is invertible, then $\boldsymbol{x}$ is an eigenvector of $A^{-1}$ with eigenvalue $1/\lambda$ 
+2. If $A$ is invertible, then $\bar{x}$ is an eigenvector of $A^{-1}$ with eigenvalue $1/\lambda$ 
 
-3. $A^{k}\boldsymbol{x} = \lambda^{k}\boldsymbol{x}$ 
+3. $A^{k}\bar{x} = \lambda^{k}\bar{x}$ 
 
 **PROOF**
 
 For (1)
 $$
-(kA + bI)\boldsymbol{x} = kA\boldsymbol{x} + bI\boldsymbol{x} = k \lambda\boldsymbol{x} + b\boldsymbol{x} = (k\lambda + b)\boldsymbol{x} 
+(kA + bI)\bar{x} = kA\bar{x} + bI\bar{x} = k \lambda\bar{x} + b\bar{x} = (k\lambda + b)\bar{x} 
 $$
 
 For(2)
 
 
 $$
-\boldsymbol{x} = A^{-1}A\boldsymbol{x} =  A^{-1}\lambda \boldsymbol{x} = \lambda A^{-1}\boldsymbol{x}
+\bar{x} = A^{-1}A\bar{x} =  A^{-1}\lambda \bar{x} = \lambda A^{-1}\bar{x}
 $$
 
 
 
 The next theorem is important in terms of diagonalization and spectral decomposition
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:distinct-eigenvalue"><strong>(\#thm:distinct-eigenvalue) </strong></span>For distinct eigenvalues $\lambda_1, \cdots, \lambda_r$ of an $n \times n$ matrix A, their corresponding eigenvectors $\boldsymbol{v_1}, ..., \boldsymbol{v_r}$ are linearly independent. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:distinct-eigenvalue"><strong>(\#thm:distinct-eigenvalue) </strong></span>For distinct eigenvalues $\lambda_1, \cdots, \lambda_r$ of an $n \times n$ matrix A, their corresponding eigenvectors $\bar{v_1}, ..., \bar{v_r}$ are linearly independent. </div>\EndKnitrBlock{theorem}
 
 **PROOF**  
 
-Suppose for r distinct eigenvalue  $\lambda_1, \cdots, \lambda_r$, the set $\{\boldsymbol{v_1}, ..., \boldsymbol{v_r}\}$ is not linearly independent, and $p$ is the least index such that $\boldsymbol{v}_{p+1}$ is a linear combination of the preceding vectors. Then there exists scalars $c_1, \cdots, c_p$ such that
+Suppose for r distinct eigenvalue  $\lambda_1, \cdots, \lambda_r$, the set $\{\bar{v_1}, ..., \bar{v_r}\}$ is not linearly independent, and $p$ is the least index such that $\bar{v}_{p+1}$ is a linear combination of the preceding vectors. Then there exists scalars $c_1, \cdots, c_p$ such that
 
 $$
-c_1\boldsymbol{v}_1 + \cdots + c_p\boldsymbol{v}_p = \boldsymbol{v}_{p+1} \tag{1}
+c_1\bar{v}_1 + \cdots + c_p\bar{v}_p = \bar{v}_{p+1} \tag{1}
 $$
-Left multiply by $A$, and note we have $A\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i$ for $i = 1, ..., n$ 
+Left multiply by $A$, and note we have $A\bar{v}_i = \lambda_i\bar{v}_i$ for $i = 1, ..., n$ 
 
 $$
-c_1\lambda_1\boldsymbol{v}_1 + \cdots + c_p\lambda_p\boldsymbol{v}_p = \lambda_{p+1}\boldsymbol{v}_{p+1} \tag{2}
+c_1\lambda_1\bar{v}_1 + \cdots + c_p\lambda_p\bar{v}_p = \lambda_{p+1}\bar{v}_{p+1} \tag{2}
 $$
 Multiplying both sides of (2) by $\lambda_{p+1}$ and subtracting (2) from the result 
 
 $$
-c_1(\lambda_1 - \lambda_{p+1})\boldsymbol{v}_1 +\cdots + c_p(\lambda_p - \lambda_{p+1})\boldsymbol{v}_p = 0 \tag{3}
+c_1(\lambda_1 - \lambda_{p+1})\bar{v}_1 +\cdots + c_p(\lambda_p - \lambda_{p+1})\bar{v}_p = 0 \tag{3}
 $$
-Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weights in (3) must be all zero. Since $\lambda_1, \cdots, \lambda_p$ are distinct, hence $c_i = 0, \, i = 1, ..., p$. But then (5) says that eigenvector $\boldsymbol{v}_{p+1}$ is zero vector, which contradicts definition \@ref(def:eigen)   
+Since $\bar{v}_1, ..., \bar{v}_p$ are linearly independent,  weights in (3) must be all zero. Since $\lambda_1, \cdots, \lambda_p$ are distinct, hence $c_i = 0, \, i = 1, ..., p$. But then (5) says that eigenvector $\bar{v}_{p+1}$ is zero vector, which contradicts definition \@ref(def:eigen)   
 
 <hr>
 
@@ -95,19 +95,19 @@ Since $\boldsymbol{v}_1, ..., \boldsymbol{v}_p$ are linearly independent,  weigh
 
 **PROOF** 
 
-Let $\lambda$ be a nonzero eigenvalue of $A^TA$ and $\boldsymbol{x}$ its eigenvector 
+Let $\lambda$ be a nonzero eigenvalue of $A^TA$ and $\bar{x}$ its eigenvector 
 
 $$
 \begin{split}
-(A^TA)\boldsymbol{x} &= \lambda\boldsymbol{x} \\
+(A^TA)\bar{x} &= \lambda\bar{x} \\
 \end{split}
 $$
 Left multiply by $A$ 
 
 $$
-AA^T(A\boldsymbol{x}) = \lambda (A\boldsymbol{x})
+AA^T(A\bar{x}) = \lambda (A\bar{x})
 $$
-We will have to verify that $A\boldsymbol{x}$ is no zero vector before concluding $\lambda$ is also an eigenvector of $AA^T$. Suppose $A\boldsymbol{x} = 0$, then $A^TA\boldsymbol{x} =\lambda\boldsymbol{x} = 0$. Since $\boldsymbol{x}$ is a eigenvector which is nonzero, $\lambda = 0$, which contradicts our former statement. Thus, any nonzero eigenvalue of $A^TA$ is also an eigenvalue of $AA^T$. 
+We will have to verify that $A\bar{x}$ is no zero vector before concluding $\lambda$ is also an eigenvector of $AA^T$. Suppose $A\bar{x} = 0$, then $A^TA\bar{x} =\lambda\bar{x} = 0$. Since $\bar{x}$ is a eigenvector which is nonzero, $\lambda = 0$, which contradicts our former statement. Thus, any nonzero eigenvalue of $A^TA$ is also an eigenvalue of $AA^T$. 
 
 $A^TA$ and $AA^T$ are known as Gram matrix and left Gram matrix in corollary \@ref(prp:gram-matrix)
 
@@ -137,13 +137,13 @@ $$
 ### Left eigenvectors and right eigenvectors 
 
 $$
-\boldsymbol{x}A = \lambda\boldsymbol{x}
+\bar{x}A = \lambda\bar{x}
 $$
 
 ## Diagnolization and similar matrices 
 
 
-\BeginKnitrBlock{definition}\iffalse{-91-68-105-97-103-111-110-97-108-105-122-97-116-105-111-110-32-116-104-111-101-114-101-109-93-}\fi{}<div class="definition"><span class="definition" id="def:diagonalization"><strong>(\#def:diagonalization)  \iffalse (Diagonalization thoerem) \fi{} </strong></span>An $n \ times n$ matrix $A$ is diagnolizable **if and only if** A has $n$ independent linearly independent eigenvectors. 
+\BeginKnitrBlock{definition}\iffalse{-91-68-105-97-103-111-110-97-108-105-122-97-116-105-111-110-32-116-104-111-101-114-101-109-93-}\fi{}<div class="definition"><span class="definition" id="def:diagonalization"><strong>(\#def:diagonalization)  \iffalse (Diagonalization thoerem) \fi{} </strong></span>An $n \times n$ matrix $A$ is diagnolizable **if and only if** A has $n$ independent linearly independent eigenvectors. 
 
 In such case, in $A = P \Lambda P^{-1}$, the diagonal entries of $D$ are eigenvalues that correpond, respectively, to the eigenvectors of in $P$  
   
@@ -153,9 +153,9 @@ In other words, $A$ is diagnolizable if and only if there are enough eigenvector
 
 $$
 \begin{split}
-AP &= A[\boldsymbol{v}_1 \cdots \boldsymbol{v}_n] \\
-   &= [A\boldsymbol{v}_1 \cdots A\boldsymbol{v}_n] \\ 
-   &= [\lambda_1\boldsymbol{v}_1 \cdots \lambda_n\boldsymbol{v}_n]
+AP &= A[\bar{v}_1 \cdots \bar{v}_n] \\
+   &= [A\bar{v}_1 \cdots A\bar{v}_n] \\ 
+   &= [\lambda_1\bar{v}_1 \cdots \lambda_n\bar{v}_n]
 \end{split}
 $$
 while on the other side of the equation:  
@@ -163,7 +163,7 @@ while on the other side of the equation:
 $$
 \begin{aligned}
 DP &= 
-[\boldsymbol{v}_1 \cdots \boldsymbol{v}_n]
+[\bar{v}_1 \cdots \bar{v}_n]
 \begin{bmatrix}
 \lambda_1 & 0 & \cdots & 0\\
 0  & \lambda_2 & \cdots & 0 \\
@@ -171,7 +171,7 @@ DP &=
 0 & 0 & \cdots & \lambda_n 
 \end{bmatrix} 
  \\
-&= [\lambda_1\boldsymbol{v}_1 \cdots \lambda_n\boldsymbol{v}_n]
+&= [\lambda_1\bar{v}_1 \cdots \lambda_n\bar{v}_n]
 \end{aligned}
 $$
 
@@ -221,14 +221,14 @@ $$
 \det (B - \lambda I)  = \det(A - \lambda I)
 $$
 
-As a result of their identical characteristic polynomial, $B$ and $A$ have the same eigenvalues. We can also show that eigenvector of $B$ is $P\boldsymbol{v}$:
+As a result of their identical characteristic polynomial, $B$ and $A$ have the same eigenvalues. We can also show that eigenvector of $B$ is $P\bar{v}$:
 
 $$
 \begin{aligned}
-A\boldsymbol{v} &= \lambda\boldsymbol{v} \\
-(P^{-1}BP)\boldsymbol{v} &= \lambda\boldsymbol{v} \\
-P(P^{-1}BP)\boldsymbol{v} &= \lambda P\boldsymbol{v} \\
-B(P\boldsymbol{v}) = \lambda P \boldsymbol{v}
+A\bar{v} &= \lambda\bar{v} \\
+(P^{-1}BP)\bar{v} &= \lambda\bar{v} \\
+P(P^{-1}BP)\bar{v} &= \lambda P\bar{v} \\
+B(P\bar{v}) = \lambda P \bar{v}
 \end{aligned}
 $$
 
@@ -243,7 +243,7 @@ To prove this, we need to show that there exists a invertible matrix $A$ such th
 It is easy to show that similarity is **transitive**: if $A$ is similar to $B$, $B$ is similar to $C$, then $A$ is similar to $C$. So similarity means a family of matrices with the same set of eigenvalues, the most special and simplest of which is the diagonal matrix (if this is an diagonalizable family). Some computer algorithms calculate eigenvalues of $A$ in this manner: with a sequential choices of $P$, the off-diagonal elements of $A$ become smaller and smaller until $A$ becomes a triangular matrix or diagonal matrix, whose eigenvalues are simply diagonal entries and is the same as $A$.
 
 
-It is obvious that a diagonalizable matrix $A$ is similar to diagonal matrix $D$, whose diagonal entries are $A$'s eigenvalues $\lambda_i$, and $P = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]^{-1}$ where $\boldsymbol{v}_i, \;i = 1,..., n$ are eigenvectors corresponding to $\lambda_i$. 
+It is obvious that a diagonalizable matrix $A$ is similar to diagonal matrix $D$, whose diagonal entries are $A$'s eigenvalues $\lambda_i$, and $P = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]^{-1}$ where $\bar{v}_i, \;i = 1,..., n$ are eigenvectors corresponding to $\lambda_i$. 
 
 But square matrix $A$ can still be similar to matrices other than $D$ with other choices of $P$, and non-diagonal matrices can also have similar matrices of their own. In fact, **every square matrix is similar to a matrix in Jordan matrix** \@ref(jordan-matrix). 
 
@@ -317,30 +317,50 @@ $$
 To obtain $P$, recall that $P^{-1}AP = J$. Let $P$ have column vectors $p_i, \; i = 1,...,4$, then:
 
 $$
-A[\boldsymbol{p}_1 \; \; \boldsymbol{p}_2 \;\; \boldsymbol{p}_3 \;\; \boldsymbol{p}_4] = [\boldsymbol{p}_1 \; \; \boldsymbol{p}_2 \;\; \boldsymbol{p}_3 \;\; \boldsymbol{p}_4]
+A[\bar{p}_1 \; \; \bar{p}_2 \;\; \bar{p}_3 \;\; \bar{p}_4] = [\bar{p}_1 \; \; \bar{p}_2 \;\; \bar{p}_3 \;\; \bar{p}_4]
 \begin{bmatrix}
 1 & 0 & 0 & 0\\
 0 & 2 & 0 & 0\\
 0 & 0 & 4 & 1\\
 0 & 0 & 0 & 4
 \end{bmatrix}
-= [\boldsymbol{p}_1 \;\; 2\boldsymbol{p}_2 \;\; 4\boldsymbol{p}_3 \;\; \boldsymbol{p}_3 + 4\boldsymbol{p}_4]
+= [\bar{p}_1 \;\; 2\bar{p}_2 \;\; 4\bar{p}_3 \;\; \bar{p}_3 + 4\bar{p}_4]
 $$
 
 We see that 
 
 $$
 \begin{aligned}
-(A - 1I)\boldsymbol{p}_1 &= \boldsymbol{0} \\
-(A - 2I)\boldsymbol{p}_2 &= \boldsymbol{0} \\
-(A - 4I)\boldsymbol{p}_3 &= \boldsymbol{0} \\
-(A - 1I)\boldsymbol{p}_4 &= \boldsymbol{p}_3 
+(A - 1I)\bar{p}_1 &= \bar{0} \\
+(A - 2I)\bar{p}_2 &= \bar{0} \\
+(A - 4I)\bar{p}_3 &= \bar{0} \\
+(A - 1I)\bar{p}_4 &= \bar{p}_3 
 \end{aligned}
 $$
-The solutions $\boldsymbol{p}_i$ are called **generalized eigenvectors** of $A$.  
+The solutions $\bar{p}_i$ are called **generalized eigenvectors** of $A$.  
 
 
-### Simultaneous Diagonalizability   
+### Simultaneous Diagonalization     
+
+A diagonlizable matrix family that share the **same eigenvectors** is called *simultaneously diagonalizable*. This notion is complimentary to a family of similar matrices that are diagonalizable, share eigenvalues but not eigenvectors. 
+
+\BeginKnitrBlock{definition}\iffalse{-91-83-105-109-117-108-116-97-110-101-111-117-115-108-121-32-100-105-97-103-111-110-97-108-105-122-97-98-108-101-93-}\fi{}<div class="definition"><span class="definition" id="def:simultaneous-diagonalizable"><strong>(\#def:simultaneous-diagonalizable)  \iffalse (Simultaneously diagonalizable) \fi{} </strong></span>Two diagonalizable matrices $A$ and $B$ are said to be *simultaneously diagonalizable* if a $n \ times n$ matrix $P$ exists, such that $P^{-1}AP$ and $P^{-1}BP$ are diagonal matrices. In other words 
+
+$$
+A =  P\Lambda_1P^{-1} \\
+B = P\Lambda_2P^{-1}
+$$</div>\EndKnitrBlock{definition}
+
+
+The geometric interpretation of simultaneously diagonalizable matrices is that they perform scaling in the same set of directions. 
+
+
+<hr>
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-6"><strong>(\#thm:unnamed-chunk-6) </strong></span>If $A$ and $B$ are diagonalizable matrices, they are simultaneously diagonalizable if and only if they commute, such that $AB$ = $BA$. </div>\EndKnitrBlock{theorem}
+
+I don't know how to prove this yet. But this theorem is useful in identifying diagonalizable matrices with the same eigenvectors. 
+
 
 ### Cayley-Hamilton theorem  
 
@@ -371,7 +391,7 @@ A direct result derived from the Cayley Hamilton theorem is that for every inter
 
 <br>
 
-\BeginKnitrBlock{proposition}\iffalse{-91-80-111-108-121-110-111-109-105-97-108-32-114-101-112-114-101-115-101-110-116-97-116-105-111-110-32-111-102-32-109-97-116-114-105-120-32-105-110-118-101-114-115-101-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-6"><strong>(\#prp:unnamed-chunk-6)  \iffalse (Polynomial representation of matrix inverse) \fi{} </strong></span>The *inverse* of an invertible square matrix $A$ is a polynomial of $A$ with degree at most $d -1$. </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{proposition}\iffalse{-91-80-111-108-121-110-111-109-105-97-108-32-114-101-112-114-101-115-101-110-116-97-116-105-111-110-32-111-102-32-109-97-116-114-105-120-32-105-110-118-101-114-115-101-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-7"><strong>(\#prp:unnamed-chunk-7)  \iffalse (Polynomial representation of matrix inverse) \fi{} </strong></span>The *inverse* of an invertible square matrix $A$ is a polynomial of $A$ with degree at most $d -1$. </div>\EndKnitrBlock{proposition}
 
 Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for nonsingular matrices, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$. $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
 
@@ -396,31 +416,31 @@ It is common to denote the set of all symmetric matrices of size $n$ as $\mathbb
 
 Symmetric matrices have some nice properties about diagonalization.  
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
 
 **PROOF** 
 
-Let $\boldsymbol{v}_1$ and $\boldsymbol{v}_2$ be eigenvectors that correspond to distinct eigenvalues $\lambda_1$ and $\lambda_2$. Compute 
+Let $\bar{v}_1$ and $\bar{v}_2$ be eigenvectors that correspond to distinct eigenvalues $\lambda_1$ and $\lambda_2$. Compute 
 
 $$
 \begin{split}
-\lambda_1\boldsymbol{v}_1 \cdot \boldsymbol{v}_2 &= (\lambda_1\boldsymbol{v}_1)^T\boldsymbol{v}_2 \\
-&= (\boldsymbol{v}_1^TA^T)\boldsymbol{v}_2 \\
-&= \boldsymbol{v}_1^T(A\boldsymbol{v}_2) \\
-&= \boldsymbol{v}_1^T(\lambda_2\boldsymbol{v}_2) \\
-&= \lambda_2\boldsymbol{v}_1 \cdot \boldsymbol{v}_2
+\lambda_1\bar{v}_1 \cdot \bar{v}_2 &= (\lambda_1\bar{v}_1)^T\bar{v}_2 \\
+&= (\bar{v}_1^TA^T)\bar{v}_2 \\
+&= \bar{v}_1^T(A\bar{v}_2) \\
+&= \bar{v}_1^T(\lambda_2\bar{v}_2) \\
+&= \lambda_2\bar{v}_1 \cdot \bar{v}_2
 \end{split}
 $$
-because $\lambda_1 \not = \lambda_2$, $\boldsymbol{v}_1 \cdot \boldsymbol{v}_2 = 0$.
+because $\lambda_1 \not = \lambda_2$, $\bar{v}_1 \cdot \bar{v}_2 = 0$.
 
-For symmetric matrices $A \in \mathbb{R}^{n \times n}$ without $n$ distinct eigenvalues, it turns out that the dimension of the eigenspace for each $\lambda_k$ always equals the multiplicity of $\lambda_k$. For this reason, if $A$ is a symmetric matrix we can always construct a orthonormal set $\{\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n\}$ from $\{\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n\}$ such that  
+For symmetric matrices $A \in \mathbb{R}^{n \times n}$ without $n$ distinct eigenvalues, it turns out that the dimension of the eigenspace for each $\lambda_k$ always equals the multiplicity of $\lambda_k$. For this reason, if $A$ is a symmetric matrix we can always construct a orthonormal set $\{\bar{q}_1 \;\; \cdots \;\; \bar{q}_n\}$ from $\{\bar{v}_1 \;\; \cdots \;\; \bar{v}_n\}$ such that  
 
 $$
 Q^{T} = 
 \begin{bmatrix}
-\boldsymbol{q}_1^T \\
+\bar{q}_1^T \\
 \vdots \\ 
-\boldsymbol{q}_n^T
+\bar{q}_n^T
 \end{bmatrix}
 = Q^{-1}
 $$
@@ -429,9 +449,9 @@ Recall that matrix $A$ with $n$ linearly independent eigenvectors is diagonaliza
 $$
 A = P \Lambda P^{-1}
 $$
-where $P = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ and $\Lambda$ is a diagonal matrix with eigenvalues on its diagonal entries. 
+where $P = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]$ and $\Lambda$ is a diagonal matrix with eigenvalues on its diagonal entries. 
 
-With symmetric matrices, $\{\boldsymbol{v}_1, \cdots, \boldsymbol{v}_n\}$ must be linearly independent and can be transformed into a orthonormal basis $\{\boldsymbol{q}_1, \cdots, \boldsymbol{q}_n\}$. With orthogonal matrix $Q =[\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n]$, we have
+With symmetric matrices, $\{\bar{v}_1, \cdots, \bar{v}_n\}$ must be linearly independent and can be transformed into a orthonormal basis $\{\bar{q}_1, \cdots, \bar{q}_n\}$. With orthogonal matrix $Q =[\bar{q}_1 \;\; \cdots \;\; \bar{q}_n]$, we have
 
 \begin{equation}
 (\#eq:orthogonal-diagonalization)
@@ -446,23 +466,23 @@ $$
 A^T = (Q \Lambda Q^{T})^T = (Q^T)^T\Lambda^TQ^T= Q \Lambda Q^{T}  = A
 $$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-9"><strong>(\#thm:unnamed-chunk-9) </strong></span>An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. </div>\EndKnitrBlock{theorem}
 
 ### Spectral decomposition 
 
 For orthogonally diagonalizable matrix $A$, we have 
 
 $$
-A = Q \Lambda Q^{T} = [\boldsymbol{q}_1 \;\; \cdots \;\; \boldsymbol{q}_n] 
+A = Q \Lambda Q^{T} = [\bar{q}_1 \;\; \cdots \;\; \bar{q}_n] 
 \begin{bmatrix}
 \lambda_1 & & \\
  & \ddots \\
  & & \lambda_n
 \end{bmatrix}
 \begin{bmatrix}
-\boldsymbol{q}_1^T \\
+\bar{q}_1^T \\
 \vdots \\
-\boldsymbol{q}_n
+\bar{q}_n
 \end{bmatrix}
 $$
 
@@ -470,22 +490,26 @@ It follows that
 
 \begin{equation}
 (\#eq:spectral-decomposition)
-A = \lambda_1\boldsymbol{q}_1\boldsymbol{q}_1^T + \cdots + \lambda_1\boldsymbol{q}_n\boldsymbol{q}_n^T
+A = \lambda_1\bar{q}_1\bar{q}_1^T + \cdots + \lambda_1\bar{q}_n\bar{q}_n^T
 \end{equation}
 
 Eq \@ref(eq:spectral-decomposition) is called the **spectral decomposition**, breaking $A$ into pieces of rank 1 matrix. It got this name because he set of eigenvalues of a matrix $A$ is sometimes called its *spectrum*.  
 
+### A-Rrthogonality  
 
+\BeginKnitrBlock{definition}\iffalse{-91-65-45-79-114-116-104-111-103-111-110-97-108-105-116-121-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-10"><strong>(\#def:unnamed-chunk-10)  \iffalse (A-Orthogonality) \fi{} </strong></span>Column vector $\bar{v}_i$ and $\bar{v}_j$ are said to be *A-orthogonal* if $\bar{v}_i^TA\bar{v}_j$ for some $n \times n$ invertible matrix $A$.</div>\EndKnitrBlock{definition}
+
+Similarly, a set of column vectors $\bar{v}_1, ..., \bar{v}_n$ is A-orthogonal, if and only if $\bar{v}_i^TA\bar{v}_i = 0$ for each pair of vectors. 
 
 
 ## Quadratic forms 
 
-\BeginKnitrBlock{definition}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (Quadratic form) \fi{} </strong></span>A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\boldsymbol{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\boldsymbol{x}) = \boldsymbol{x}^TA\boldsymbol{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-11"><strong>(\#def:unnamed-chunk-11)  \iffalse (Quadratic form) \fi{} </strong></span>A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\bar{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\bar{x}) = \bar{x}^TA\bar{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. </div>\EndKnitrBlock{definition}
 
 There exists a one-to-one mapping between symmetric matrix $A$ and the quadratic form. Consider the $3 \times 3$ case: 
 
 $$
-\boldsymbol{x} =
+\bar{x} =
 \begin{bmatrix}
 x_1 \\
 x_3 \\
@@ -501,7 +525,7 @@ $$
 
 $$
 \begin{split}
-\boldsymbol{x}^TA\boldsymbol{x} &= 
+\bar{x}^TA\bar{x} &= 
 [x_1 \;\; x_2 \;\; x_3]
 \begin{bmatrix}
 a_{11} & a_{12} & a_{13} \\
@@ -521,45 +545,45 @@ $$
 Since $A$ is symmetric, we have $a_{ij} = a_{ji}$, thus 
 
 $$
-\boldsymbol{x}^TA\boldsymbol{x}  = a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + 2a_{12}x_1x_2 + 2a_{13}x_1x_3 + 2a_{23}x_2x_3 \tag{2} 
+\bar{x}^TA\bar{x}  = a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + 2a_{12}x_1x_2 + 2a_{13}x_1x_3 + 2a_{23}x_2x_3 \tag{2} 
 $$
-This verifies that $\boldsymbol{x}^TA\boldsymbol{x}$ when $A \in \mathbb{R}^{n \times n}$ is symmetric does result in a quadratic function of $n$ variables. Conversely, any quadratic function of $n$ variables, like shown in $(2)$, can be expressed in terms of $\boldsymbol{x}^TA\boldsymbol{x}$ with unique choice of symmetric matrix $A \in \mathbb{R}^{n \times n}$.  
+This verifies that $\bar{x}^TA\bar{x}$ when $A \in \mathbb{R}^{n \times n}$ is symmetric does result in a quadratic function of $n$ variables. Conversely, any quadratic function of $n$ variables, like shown in $(2)$, can be expressed in terms of $\bar{x}^TA\bar{x}$ with unique choice of symmetric matrix $A \in \mathbb{R}^{n \times n}$.  
 
 ### Change of variabele 
 
-If $\boldsymbol{x}$ is a variable vector in $\mathbb{R}^n$, then a *change of variable* is an equation of the form 
+If $\bar{x}$ is a variable vector in $\mathbb{R}^n$, then a *change of variable* is an equation of the form 
 
 $$
 \begin{aligned}
-\boldsymbol{x} &= P\boldsymbol{y} \\
-\text{or equivalently} \quad \boldsymbol{y} &= P^{-1}\boldsymbol{x}
+\bar{x} &= P\bar{y} \\
+\text{or equivalently} \quad \bar{y} &= P^{-1}\bar{x}
 \end{aligned}
 $$
 where $P$ is any invertible matrix $\in \mathbb{R}^{n \times n}$
 
-\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-80-114-105-110-99-105-112-97-108-32-65-120-101-115-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:principal-axes"><strong>(\#thm:principal-axes)  \iffalse (The Principal Axes Theorem) \fi{} </strong></span>Let $A$ be an $n \times n$ symmetric matrix. Then there exists an orthogonal change of variable, $\boldsymbol{x} = Q\boldsymbol{y}$, this transform the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ into a quadratic form $\boldsymbol{y}^T\Lambda\boldsymbol{y}$ with no cross-product term.  
+\BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-80-114-105-110-99-105-112-97-108-32-65-120-101-115-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:principal-axes"><strong>(\#thm:principal-axes)  \iffalse (The Principal Axes Theorem) \fi{} </strong></span>Let $A$ be an $n \times n$ symmetric matrix. Then there exists an orthogonal change of variable, $\bar{x} = Q\bar{y}$, this transform the quadratic form $\bar{x}^TA\bar{x}$ into a quadratic form $\bar{y}^T\Lambda\bar{y}$ with no cross-product term.  
 
-$Q$ is constructed with $A$'s orthonormal eigenvectors $\boldsymbol{q}_1, ..., \boldsymbol{q}_n$. According to theorem \@ref(eq:orthogonal-diagonalization): 
+$Q$ is constructed with $A$'s orthonormal eigenvectors $\bar{q}_1, ..., \bar{q}_n$. According to theorem \@ref(eq:orthogonal-diagonalization): 
 
 $$
-\boldsymbol{x}^TA\boldsymbol{x} = (Q\boldsymbol{y})^TA(Q\boldsymbol{y}) = \boldsymbol{y}^TQ^{T}AQ\boldsymbol{y} = \boldsymbol{y}^T \Lambda \boldsymbol{y}
+\bar{x}^TA\bar{x} = (Q\bar{y})^TA(Q\bar{y}) = \bar{y}^TQ^{T}AQ\bar{y} = \bar{y}^T \Lambda \bar{y}
 $$</div>\EndKnitrBlock{theorem}
 
 
 
-The principal axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagonalizable, quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\boldsymbol{x} = Q\boldsymbol{y}$. 
+The principal axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagonalizable, quadratic form $\bar{x}^TA\bar{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\bar{x} = Q\bar{y}$. 
 
 ### Classification of quadratic forms 
 
-- A symmetric matrix $A \in \mathbb{S}^n$ is **positive definite** (PD) if for all non-zero vectors $\boldsymbol{x} \in \mathbb{R}^n,\; \boldsymbol{x}^TA\boldsymbol{x} > 0$. We can denote positive definite matrix $A$ as $A \succ 0$ (or $A > 0$). The set of all positive definite matrices is denoted as $\mathbb{S}_{++}^n$  
+- A symmetric matrix $A \in \mathbb{S}^n$ is **positive definite** (PD) if for all non-zero vectors $\bar{x} \in \mathbb{R}^n,\; \bar{x}^TA\bar{x} > 0$. We can denote positive definite matrix $A$ as $A \succ 0$ (or $A > 0$). The set of all positive definite matrices is denoted as $\mathbb{S}_{++}^n$  
 
-- A symmetric matrix $A \in \mathbb{S}^n$ is **positive semidefinite** (PSD) if for all non-zero vectors $\boldsymbol{x} \in \mathbb{R}^n,\; \boldsymbol{x}^TA\boldsymbol{x} \ge 0$. We can denote positive definite matrix $A$ as $A \succeq 0$ (or $A \ge 0$). The set of all positive semidefinite matrices is denoted as $\mathbb{S}_{+}^n$  
+- A symmetric matrix $A \in \mathbb{S}^n$ is **positive semidefinite** (PSD) if for all non-zero vectors $\bar{x} \in \mathbb{R}^n,\; \bar{x}^TA\bar{x} \ge 0$. We can denote positive definite matrix $A$ as $A \succeq 0$ (or $A \ge 0$). The set of all positive semidefinite matrices is denoted as $\mathbb{S}_{+}^n$  
 
-- A symmetric matrix $A \in \mathbb{S}^n$ is **negative definite** (ND), denoted by $A \prec 0$ (or $A < 0$),  if for all non-zero vectors $\boldsymbol{x} \in \mathbb{R}^n,\; \boldsymbol{x}^TA\boldsymbol{x} < 0$.  
+- A symmetric matrix $A \in \mathbb{S}^n$ is **negative definite** (ND), denoted by $A \prec 0$ (or $A < 0$),  if for all non-zero vectors $\bar{x} \in \mathbb{R}^n,\; \bar{x}^TA\bar{x} < 0$.  
 
-- Similarly, a symmetric matrix $A \in \mathbb{S}^n$ is **negative semidefinite** (NSD), denoted by $A \preceq 0$ (or $A \le 0$),  if for all non-zero vectors $\boldsymbol{x} \in \mathbb{R}^n,\; \boldsymbol{x}^TA\boldsymbol{x} \le 0$.   
+- Similarly, a symmetric matrix $A \in \mathbb{S}^n$ is **negative semidefinite** (NSD), denoted by $A \preceq 0$ (or $A \le 0$),  if for all non-zero vectors $\bar{x} \in \mathbb{R}^n,\; \bar{x}^TA\bar{x} \le 0$.   
 
-- Finally,  a symmetric matrix $A \in \mathbb{S}^n$ is **indefinite**, if it is neither positive semidefinite or negative semidefinite. In other words, if there exists $\boldsymbol{x}, \boldsymbol{x}', \in \mathbb{R}^{n}$ such taht $\boldsymbol{x}^TA\boldsymbol{x} > 0$ and $\boldsymbol{x'}^TA\boldsymbol{x}' > 0$
+- Finally,  a symmetric matrix $A \in \mathbb{S}^n$ is **indefinite**, if it is neither positive semidefinite or negative semidefinite. In other words, if there exists $\bar{x}, \bar{x}', \in \mathbb{R}^{n}$ such taht $\bar{x}^TA\bar{x} > 0$ and $\bar{x'}^TA\bar{x}' > 0$
 
 \BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that when talking about $A$ being PD, PSD, ND, NSD or indefinite, $A$ is always assumed to be **symmetric**.
 
@@ -567,7 +591,7 @@ Also, if $A$ is positive definite, then $−A$ is negative definite and vicevers
 
 From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of $A$ are equivalent: 
 
-- For any $\boldsymbol{x} \in \mathbb{R}^n, \; \boldsymbol{x}^TA\boldsymbol{x} > 0$  
+- For any $\bar{x} \in \mathbb{R}^n, \; \bar{x}^TA\bar{x} > 0$  
 
 - Let $\lambda_i, \; i = 1, ..., n$ be $A$'s eigenvalues, $\lambda_i > 0$  
 
@@ -579,7 +603,7 @@ From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are
 Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in general. 
 
 <hr>
-\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$ and $A$ is: 
+\BeginKnitrBlock{theorem}\iffalse{-91-81-117-97-100-114-97-116-105-99-32-102-111-114-109-115-32-97-110-100-32-101-105-103-101-110-118-97-108-117-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-13"><strong>(\#thm:unnamed-chunk-13)  \iffalse (Quadratic forms and eigenvalues) \fi{} </strong></span>Let $A \in \mathbb{S}^{n}$. Then the quadratic form $\bar{x}^TA\bar{x}$ and $A$ is: 
    
 - positive definite if and only if the eigenvalues of $A$ are all positive  
 
@@ -591,7 +615,7 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 <hr>  
 
-\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-12"><strong>(\#cor:unnamed-chunk-12) </strong></span>Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results **remain to be positive definite**. </div>\EndKnitrBlock{corollary}
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-14"><strong>(\#cor:unnamed-chunk-14) </strong></span>Given positive definite matrices $A, B \in \mathbb{S}^n$ and $\alpha \in \mathbb{R}$, the following results **remain to be positive definite**. </div>\EndKnitrBlock{corollary}
 
 
 - Scalar multiplication of PD matrices $\alpha A$ are PD matrices 
@@ -611,18 +635,18 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 **PROOF**  
 
-By definition, $A^TA$ is a positive semidefinite matrix if for any $\boldsymbol{x} \in \mathbb{R}^n$, the quadratic form $\boldsymbol{x}^T(A^TA)\boldsymbol{x} \ge 0$. 
+By definition, $A^TA$ is a positive semidefinite matrix if for any $\bar{x} \in \mathbb{R}^n$, the quadratic form $\bar{x}^T(A^TA)\bar{x} \ge 0$. 
 
 $$
 \begin{split}
-\boldsymbol{x}^T(A^TA)\boldsymbol{x} &= (\boldsymbol{x}^TA^T)(A\boldsymbol{x}) \\
-&= (A\boldsymbol{x})^T(A\boldsymbol{x}) \\
-&= \|A\boldsymbol{x}\|^2
+\bar{x}^T(A^TA)\bar{x} &= (\bar{x}^TA^T)(A\bar{x}) \\
+&= (A\bar{x})^T(A\bar{x}) \\
+&= \|A\bar{x}\|^2
 \end{split}
 $$
-It turns out that the result is the square of the 2-norm of $A\boldsymbol{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\boldsymbol{x} \not\subseteq \mathcal{N}(A)$
+It turns out that the result is the square of the 2-norm of $A\bar{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\bar{x} \not\subseteq \mathcal{N}(A)$
 
-Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $A^T\boldsymbol{x}$.   
+Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $A^T\bar{x}$.   
 
 <hr>
 
@@ -640,7 +664,7 @@ From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are
 
 ## Cholesky factorization  
 
-\BeginKnitrBlock{lemma}<div class="lemma"><span class="lemma" id="lem:unnamed-chunk-13"><strong>(\#lem:unnamed-chunk-13) </strong></span>A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. </div>\EndKnitrBlock{lemma}
+\BeginKnitrBlock{lemma}<div class="lemma"><span class="lemma" id="lem:unnamed-chunk-15"><strong>(\#lem:unnamed-chunk-15) </strong></span>A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. </div>\EndKnitrBlock{lemma}
 
 <br>
 
@@ -687,42 +711,42 @@ The Cholesky factorization is a special case of LU decomposition
 
 ## Rayleigh quotients 
 
-Let $A \in \mathbb{S}^n$ and $\boldsymbol{x} \in \mathbb{R}^n$, **Rayleigh quotient** is defined as 
+Let $A \in \mathbb{S}^n$ and $\bar{x} \in \mathbb{R}^n$, **Rayleigh quotient** is defined as 
 
 $$
-R_{A}(\boldsymbol{x}) = \frac{\boldsymbol{x}^TA\boldsymbol{x}}{\boldsymbol{x}^T\boldsymbol{x}}
+R_{A}(\bar{x}) = \frac{\bar{x}^TA\bar{x}}{\bar{x}^T\bar{x}}
 $$
 The Rayleigh quotient has some nice properties: 
 
-- scale invariance: for any vector $\boldsymbol{x} \not= 0$ and any scalar $\alpha \not= 0$, $R_{A}(\boldsymbol{x}) = R_{A}(\alpha\boldsymbol{x})$  
+- scale invariance: for any vector $\bar{x} \not= 0$ and any scalar $\alpha \not= 0$, $R_{A}(\bar{x}) = R_{A}(\alpha\bar{x})$  
 
-- If $\boldsymbol{x}$ is a eigenvector of $A$ with eigenvalue $\lambda$, then $R_{A}(\boldsymbol{x}) = \lambda$
+- If $\bar{x}$ is a eigenvector of $A$ with eigenvalue $\lambda$, then $R_{A}(\bar{x}) = \lambda$
 
 - The Rayleigh quotient is bounded by the largest and smallest eigenvalue of $A$, i.e. 
 
 $$
-\lambda_{\text{min}}(A) \le R_{A}(\boldsymbol{x}) \le \lambda_{\text{max}}(A)
+\lambda_{\text{min}}(A) \le R_{A}(\bar{x}) \le \lambda_{\text{max}}(A)
 $$
 
 **PROOF** 
 
-Since the Rayleigh quotient does not depend on the 2-norm of vector $\boldsymbol{x}$, we may assume a unit vector $\boldsymbol{x}^T\boldsymbol{x} = 1$, and Rayleigh quotient simplifies to the quadratic form $\boldsymbol{x}^TA\boldsymbol{x}$. 
+Since the Rayleigh quotient does not depend on the 2-norm of vector $\bar{x}$, we may assume a unit vector $\bar{x}^T\bar{x} = 1$, and Rayleigh quotient simplifies to the quadratic form $\bar{x}^TA\bar{x}$. 
 
-Next, orthogonally diagonalize $A$ as $Q \Lambda Q$, we know that when $\boldsymbol{x} = Q \boldsymbol{y}$: 
+Next, orthogonally diagonalize $A$ as $Q \Lambda Q$, we know that when $\bar{x} = Q \bar{y}$: 
 
 $$
-\boldsymbol{x}^TA\boldsymbol{x} = \boldsymbol{y}^T \Lambda \boldsymbol{y} \tag{1}
+\bar{x}^TA\bar{x} = \bar{y}^T \Lambda \bar{y} \tag{1}
 $$
 Also 
 
 $$
-1= \boldsymbol{x}^T\boldsymbol{x} = (Q\boldsymbol{y})^T Q\boldsymbol{y} = \boldsymbol{y}^TQ^TQ\boldsymbol{y} = \boldsymbol{y}^T\boldsymbol{y} \tag{2}
+1= \bar{x}^T\bar{x} = (Q\bar{y})^T Q\bar{y} = \bar{y}^TQ^TQ\bar{y} = \bar{y}^T\bar{y} \tag{2}
 $$
 
-Expand $\boldsymbol{y}^T \Lambda \boldsymbol{y}$ in (1) we get 
+Expand $\bar{y}^T \Lambda \bar{y}$ in (1) we get 
 
 $$
-\boldsymbol{x}^TA\boldsymbol{x} = \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \tag{3}
+\bar{x}^TA\bar{x} = \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \tag{3}
 $$
 where $\{\lambda_1, ..., \lambda_n\}$ are diagonal entries of $\Lambda$ and eigenvalues of $A$. Let us suppose that the set $\{\lambda_1, \lambda_2, \cdots, \lambda_n\}$ has already been ordered descendingly, so that $\lambda_1 > \lambda_2 > \cdots > \lambda_n$. 
 
@@ -730,18 +754,18 @@ We can obtain the inequality from (3) and the order of eigenvalues:
 
 $$
 \begin{split}
-\boldsymbol{x}^TA\boldsymbol{x} &= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
+\bar{x}^TA\bar{x} &= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
 &\le \lambda_1y_1^2 + \underbrace{\lambda_1y_2^2 + \cdots + \lambda_1y_n^2}_{\lambda_1 \text{ is the greatest eigenvalue}} \\ 
-&\le \lambda_1(\boldsymbol{y}^T\boldsymbol{y}) \\
+&\le \lambda_1(\bar{y}^T\bar{y}) \\
 &= \lambda_1
 \end{split}
 $$
-The equation reach equality if and only if $[y_1, y_2, \cdots, y_n] = [1, 0, \cdots, 0]$. Since $\boldsymbol{x} = Q\boldsymbol{y}$, we have 
+The equation reach equality if and only if $[y_1, y_2, \cdots, y_n] = [1, 0, \cdots, 0]$. Since $\bar{x} = Q\bar{y}$, we have 
 
 $$
-\boldsymbol{x} = 
+\bar{x} = 
 \begin{bmatrix}
-\boldsymbol{q}_1 & \boldsymbol{q}_2 & \cdots & \boldsymbol{q}_n
+\bar{q}_1 & \bar{q}_2 & \cdots & \bar{q}_n
 \end{bmatrix}
 \begin{bmatrix}
 1 \\
@@ -749,9 +773,9 @@ $$
 \vdots \\
 0
 \end{bmatrix}
-= \boldsymbol{q}_1
+= \bar{q}_1
 $$
-Similarly, the minimum of the Rayleigh quotient will be $\lambda_n$, with $\boldsymbol{x} = \boldsymbol{q}_n$. 
+Similarly, the minimum of the Rayleigh quotient will be $\lambda_n$, with $\bar{x} = \bar{q}_n$. 
 
 
 <hr>
@@ -760,56 +784,56 @@ From the optimization perspective, the bound of Rayleigh quotient amounts to a c
 
 $$
 \begin{aligned}
-\text{objective function} &:  \boldsymbol{x}^TA\boldsymbol{x}\\
-\text{subject to}&: \boldsymbol{x}^T\boldsymbol{x} = 1 
+\text{objective function} &:  \bar{x}^TA\bar{x}\\
+\text{subject to}&: \bar{x}^T\bar{x} = 1 
 \end{aligned}
 $$
-The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n$, with $\boldsymbol{x}$ being $\boldsymbol{q}_1$ and $\boldsymbol{q}_n$ respectively. 
+The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n$, with $\bar{x}$ being $\bar{q}_1$ and $\bar{q}_n$ respectively. 
 
-If we add more constraints, for example, that $\boldsymbol{x}$ should be orthogonal to $\boldsymbol{q}_1$, then $\boldsymbol{x}^TA\boldsymbol{x}$ has maximum $\lambda_2$ attained at $\boldsymbol{x} = \lambda_2$
+If we add more constraints, for example, that $\bar{x}$ should be orthogonal to $\bar{q}_1$, then $\bar{x}^TA\bar{x}$ has maximum $\lambda_2$ attained at $\bar{x} = \lambda_2$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-14"><strong>(\#thm:unnamed-chunk-14) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\boldsymbol{x}^T A \boldsymbol{x}$ subject to constraints 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-16"><strong>(\#thm:unnamed-chunk-16) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\bar{x}^T A \bar{x}$ subject to constraints 
 
 $$
-\boldsymbol{x}^T\boldsymbol{x} =  1, \;\; \boldsymbol{x}^T\boldsymbol{q}_1 = 0, \;\; \dots \;\;, \boldsymbol{x}^T\boldsymbol{q}_{k-1} = 0
+\bar{x}^T\bar{x} =  1, \;\; \bar{x}^T\bar{q}_1 = 0, \;\; \dots \;\;, \bar{x}^T\bar{q}_{k-1} = 0
 $$
-is the eigenvalue $\lambda_k$, and this maximum is attained at $\boldsymbol{x} = \boldsymbol{q}_k$</div>\EndKnitrBlock{theorem}
+is the eigenvalue $\lambda_k$, and this maximum is attained at $\bar{x} = \bar{q}_k$</div>\EndKnitrBlock{theorem}
 
 **PROOF**
 
-From $\boldsymbol{x} = P\boldsymbol{y}$ we know that
+From $\bar{x} = P\bar{y}$ we know that
 
 $$
-\boldsymbol{x} = y_1\boldsymbol{q}_1 + \cdots + + y_{k-1}\boldsymbol{q}_{k-1} + y_k\boldsymbol{q}_k + \cdots +  y_{n}\boldsymbol{q}_n 
+\bar{x} = y_1\bar{q}_1 + \cdots + + y_{k-1}\bar{q}_{k-1} + y_k\bar{q}_k + \cdots +  y_{n}\bar{q}_n 
 $$
-Left multiply by $\boldsymbol{q}_1^T$ 
+Left multiply by $\bar{q}_1^T$ 
 
 $$
 \begin{aligned}
-\boldsymbol{q}_1^T\boldsymbol{x} &= y_1\boldsymbol{q}_1^T\boldsymbol{q}_1 + \cdots + + y_{k-1}\boldsymbol{q}_1^T\boldsymbol{q}_{k-1} + y_k\boldsymbol{q}_1^T\boldsymbol{q}_k + \cdots +  y_{n}\boldsymbol{q}_1^T\boldsymbol{q}_n  \\
-&= y_1\boldsymbol{q}_1^T\boldsymbol{q}_1 \\
+\bar{q}_1^T\bar{x} &= y_1\bar{q}_1^T\bar{q}_1 + \cdots + + y_{k-1}\bar{q}_1^T\bar{q}_{k-1} + y_k\bar{q}_1^T\bar{q}_k + \cdots +  y_{n}\bar{q}_1^T\bar{q}_n  \\
+&= y_1\bar{q}_1^T\bar{q}_1 \\
 &= y_1
 \end{aligned} 
 $$
-Since $\boldsymbol{q}_1^T\boldsymbol{x} = \boldsymbol{x}^T\boldsymbol{q}_1 = 0$, we have $y_1 = 0$. Similarly, $y_2 = \cdots = y_{k-1} = 0$, and $\boldsymbol{y}$ becomes $[0 \;\; \cdots \;\; 0 \;\; y_{k} \;\; \cdots \;\; y_n]$. And the inequality now becomes: 
+Since $\bar{q}_1^T\bar{x} = \bar{x}^T\bar{q}_1 = 0$, we have $y_1 = 0$. Similarly, $y_2 = \cdots = y_{k-1} = 0$, and $\bar{y}$ becomes $[0 \;\; \cdots \;\; 0 \;\; y_{k} \;\; \cdots \;\; y_n]$. And the inequality now becomes: 
 
 $$
 \begin{split}
-\boldsymbol{x}^TA\boldsymbol{x} &= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
+\bar{x}^TA\bar{x} &= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\
 &= \lambda_ky_k^2 + \cdots + \lambda_ny_n^ 2 \\
 &\le \lambda_ky_k^2 + \cdots + \lambda_ky_n^2 \\ 
-&\le \lambda_k(\boldsymbol{y}^T\boldsymbol{y}) \\
+&\le \lambda_k(\bar{y}^T\bar{y}) \\
 &= \lambda_k
 \end{split}
 $$
 
-It's easy to see that $\boldsymbol{x}^TA\boldsymbol{x}$ gets its maximum $\lambda_k$ when $y_k = 0$ and other weights being zero. So the solution $\boldsymbol{x}$ can be solved as 
+It's easy to see that $\bar{x}^TA\bar{x}$ gets its maximum $\lambda_k$ when $y_k = 0$ and other weights being zero. So the solution $\bar{x}$ can be solved as 
 
 $$
 \begin{split}
-\boldsymbol{x} &= 
+\bar{x} &= 
 \begin{bmatrix}
-\boldsymbol{q}_1 &  \cdots & \boldsymbol{q}_k &   \boldsymbol{q}_{k+1} & \cdots &\boldsymbol{q}_n
+\bar{q}_1 &  \cdots & \bar{q}_k &   \bar{q}_{k+1} & \cdots &\bar{q}_n
 \end{bmatrix}
 \begin{bmatrix}
 0 \\
@@ -819,7 +843,7 @@ $$
 \vdots \\
 0
 \end{bmatrix} \\
-&= \boldsymbol{q}_k
+&= \bar{q}_k
 \end{split}
 $$
 
@@ -829,75 +853,75 @@ $$
 
 ### Singular values of m x n matrix
 
-The singular value decomposition illustrates a way of decomposing *any* matrix $A \in \mathbb{R}^{m \times n}$ into the form $U \Sigma V^T$, where $U = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]$ and $V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ are both orthogonal matrices, and $\Sigma$ a diagonal matrix with entries being the square root of the eigenvalues of $A^TA$ (perhaps plus some zeros).  
+The singular value decomposition illustrates a way of decomposing *any* matrix $A \in \mathbb{R}^{m \times n}$ into the form $U \Sigma V^T$, where $U = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_n]$ and $V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]$ are both orthogonal matrices, and $\Sigma$ a diagonal matrix with entries being the square root of the eigenvalues of $A^TA$ (perhaps plus some zeros).  
 
-Before proceeding to the theorem, let's explore the motivating idea behind SVD. For (square) diagonalizable matrix $A \in \mathbb{S}^{n}$, the absolute value of the eigenvalues measure the amounts that $A$ stretches or shrinks eigenvectors, consider the ratio between the length of $\boldsymbol{x}$ before and after left multiplied by $A$ 
+Before proceeding to the theorem, let's explore the motivating idea behind SVD. For (square) diagonalizable matrix $A \in \mathbb{S}^{n}$, the absolute value of the eigenvalues measure the amounts that $A$ stretches or shrinks eigenvectors, consider the ratio between the length of $\bar{x}$ before and after left multiplied by $A$ 
 
 $$
-\frac{\|A\boldsymbol{x}\|}{\|\boldsymbol{x}\|} 
-= \frac{\|\lambda\boldsymbol{x}\|}{\|\boldsymbol{x}\|}
-= \frac{\lambda\|\boldsymbol{x}\|}{\|\boldsymbol{x}\|} = \lambda
+\frac{\|A\bar{x}\|}{\|\bar{x}\|} 
+= \frac{\|\lambda\bar{x}\|}{\|\bar{x}\|}
+= \frac{\lambda\|\bar{x}\|}{\|\bar{x}\|} = \lambda
 $$
-If $\lambda_1$ is the greatest eigenvalue, then the corresponding eigenvector $\boldsymbol{v}_1$ identifies the direction in which $A$'s stretching effect is greatest. 
+If $\lambda_1$ is the greatest eigenvalue, then the corresponding eigenvector $\bar{v}_1$ identifies the direction in which $A$'s stretching effect is greatest. 
 
 So, the question is, can we identify a similar ratio and direction for *rectangular* matrices $A \in \mathbb{R}^{m \times n}$, even though they does not have eigenvalues and eigenvectors?  
 
-The answer is yes. Note that maximize $\frac{\|A\boldsymbol{x}\|}{\|\boldsymbol{x}\|}$ (now $\boldsymbol{x}$ is any vector $\in \mathbb{R}^n$) is equivalent to maximize $\frac{\|A\boldsymbol{x}\|^2}{\|\boldsymbol{x}\|^2}$ 
+The answer is yes. Note that maximize $\frac{\|A\bar{x}\|}{\|\bar{x}\|}$ (now $\bar{x}$ is any vector $\in \mathbb{R}^n$) is equivalent to maximize $\frac{\|A\bar{x}\|^2}{\|\bar{x}\|^2}$ 
 
 $$
 \begin{split}
-\frac{\|A\boldsymbol{x}\|^2}{\|\boldsymbol{x}\|^2} &= \frac{(A\boldsymbol{x})^T(A\boldsymbol{x})}{\boldsymbol{x}^T\boldsymbol{x}} \\
-&= \frac{\boldsymbol{x}^T(A^TA)\boldsymbol{x}}{\boldsymbol{x}^T\boldsymbol{x}}
+\frac{\|A\bar{x}\|^2}{\|\bar{x}\|^2} &= \frac{(A\bar{x})^T(A\bar{x})}{\bar{x}^T\bar{x}} \\
+&= \frac{\bar{x}^T(A^TA)\bar{x}}{\bar{x}^T\bar{x}}
 \end{split}
 $$
-Since $A^TA$ is **symmetric**, this is the form of a Rayleigh quotients \@ref(rayleigh-quotients)! We know that the largest possible value is of this quotient $\lambda_1$, the greatest eigenvalue of $A^TA$, with $\boldsymbol{x} = \boldsymbol{v}_1$, among the **orthonormal** set $\{\boldsymbol{v}_1, \cdots, \boldsymbol{v}_n\}$. Note that here $V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ is already a orthogonal matrix, previously denoted by $Q$. 
+Since $A^TA$ is **symmetric**, this is the form of a Rayleigh quotients \@ref(rayleigh-quotients)! We know that the largest possible value is of this quotient $\lambda_1$, the greatest eigenvalue of $A^TA$, with $\bar{x} = \bar{v}_1$, among the **orthonormal** set $\{\bar{v}_1, \cdots, \bar{v}_n\}$. Note that here $V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]$ is already a orthogonal matrix, previously denoted by $Q$. 
 
-To sum up, the greatest possible stretching ratio of $A \in \mathbb{R}^{m \times n}$ on a vector $\boldsymbol{x} \in \mathbb{R}^n$ is $\sqrt{\lambda_1}$. Generally, let $\{\boldsymbol{v}_1, \cdots, \boldsymbol{v}_n\}$ be a orthonormal basis for $\mathbb{R}^n$ consisting of eigenvectors of $A^TA$, and $\lambda_1, ..., \lambda_n$ be the eigenvalues of $A^TA$, for $i = 1, \cdots, n$
+To sum up, the greatest possible stretching ratio of $A \in \mathbb{R}^{m \times n}$ on a vector $\bar{x} \in \mathbb{R}^n$ is $\sqrt{\lambda_1}$. Generally, let $\{\bar{v}_1, \cdots, \bar{v}_n\}$ be a orthonormal basis for $\mathbb{R}^n$ consisting of eigenvectors of $A^TA$, and $\lambda_1, ..., \lambda_n$ be the eigenvalues of $A^TA$, for $i = 1, \cdots, n$
 
 $$
-\|A\boldsymbol{v}_i\| ^ 2 = \boldsymbol{v}_i^T(A^TA)\boldsymbol{v}_i = \lambda_i\boldsymbol{v}_i^T\boldsymbol{v}_i = \lambda_i
+\|A\bar{v}_i\| ^ 2 = \bar{v}_i^T(A^TA)\bar{v}_i = \lambda_i\bar{v}_i^T\bar{v}_i = \lambda_i
 $$
 
 From corollary \@ref(cor:ata-pd), we know that $A^TA$ are positive semidefinite matrices. Thus, $\lambda_i \ge 0, \, i = 1, ..., n$, and we can find their square root $\sigma_i = \sqrt{\lambda_i}$.
 
 <br>  
 
-\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-15"><strong>(\#def:unnamed-chunk-15)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\boldsymbol{v}_1, ..., A\boldsymbol{v}_n$, where $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-83-105-110-103-117-108-97-114-32-118-97-108-117-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-17"><strong>(\#def:unnamed-chunk-17)  \iffalse (Singular values) \fi{} </strong></span>The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\bar{v}_1, ..., A\bar{v}_n$, where $\{\bar{v}_1, ..., \bar{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. </div>\EndKnitrBlock{definition}
 
 
 <br>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:svd-rank"><strong>(\#thm:svd-rank) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:svd-rank"><strong>(\#thm:svd-rank) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\bar{v}_1, ..., A\bar{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
 
 
 **PROOF**  
 
-First, let's examine that $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is a orthogonal basis: any pair of two distinct vectors $A\boldsymbol{v}_i, A\boldsymbol{v}_j, \; i,j = 1, ..., r$ are orthogonal to each other 
+First, let's examine that $\{A\bar{v}_1, ..., A\bar{v}_r\}$ is a orthogonal basis: any pair of two distinct vectors $A\bar{v}_i, A\bar{v}_j, \; i,j = 1, ..., r$ are orthogonal to each other 
 
 $$
 \begin{split}
-(A\boldsymbol{v}_i)^T(A\boldsymbol{v}_j) &=  \boldsymbol{v}_i^TA^TA\boldsymbol{v}_j \\
-&= \boldsymbol{v}_i^T(\lambda_j\boldsymbol{v}_j) \\
+(A\bar{v}_i)^T(A\bar{v}_j) &=  \bar{v}_i^TA^TA\bar{v}_j \\
+&= \bar{v}_i^T(\lambda_j\bar{v}_j) \\
 &= 0
 \end{split}
 $$
 
-Next, we show that any vector in $\mathcal{R}(A)$ is a linear a combination of $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$. Note that $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_n\}$ is a orthonormal basis of $A^TA$'s eigenspace $\mathbb{R}^n$. Therefore,  for any vector $\boldsymbol{y} = A\boldsymbol{x}$ in $\mathcal{R}(A)$ , there exists $\boldsymbol{x} = c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n$, thus
+Next, we show that any vector in $\mathcal{R}(A)$ is a linear a combination of $\{A\bar{v}_1, ..., A\bar{v}_r\}$. Note that $\{\bar{v}_1, ..., \bar{v}_n\}$ is a orthonormal basis of $A^TA$'s eigenspace $\mathbb{R}^n$. Therefore,  for any vector $\bar{y} = A\bar{x}$ in $\mathcal{R}(A)$ , there exists $\bar{x} = c_1\bar{v}_1 + \cdots + c_n\bar{v}_n$, thus
 
 $$
 \begin{split}
-\boldsymbol{y} &= A\boldsymbol{x} = A(c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n) \\
-&= c_1 A \boldsymbol{v}_1 + \cdots + c_r A \boldsymbol{v}_r + c_{r+1} A \boldsymbol{v}_{r+1} + \cdots + c_n A \boldsymbol{v}_n 
+\bar{y} &= A\bar{x} = A(c_1\bar{v}_1 + \cdots + c_n\bar{v}_n) \\
+&= c_1 A \bar{v}_1 + \cdots + c_r A \bar{v}_r + c_{r+1} A \bar{v}_{r+1} + \cdots + c_n A \bar{v}_n 
 \end{split}
 \tag{1}
 $$
-Since $\lambda_{r+1} = \cdots = \lambda_{n} = 0$, $A\boldsymbol{v}_{r+1}, ..., A\boldsymbol{v}_{n}$ have length $0$: they are zero vectors. And (1) is reduced to 
+Since $\lambda_{r+1} = \cdots = \lambda_{n} = 0$, $A\bar{v}_{r+1}, ..., A\bar{v}_{n}$ have length $0$: they are zero vectors. And (1) is reduced to 
 
 $$
-\boldsymbol{y} = c_1 A \boldsymbol{v}_1 + \cdots + c_r A\boldsymbol{v}_r
+\bar{y} = c_1 A \bar{v}_1 + \cdots + c_r A\bar{v}_r
 $$
 
-Thus any $\boldsymbol{y} \in \mathcal{R}(A)$ is in Span$\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$, and $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
+Thus any $\bar{y} \in \mathcal{R}(A)$ is in Span$\{A\bar{v}_1, ..., A\bar{v}_r\}$, and $\{A\bar{v}_1, ..., A\bar{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
 
 
 ### The singular value decomposition {#svd-theorem}
@@ -926,22 +950,22 @@ $$</div>\EndKnitrBlock{theorem}
 
 **PROOF** 
 
-Since $A$ has $r$ nonzero singular values which measure the length of $A\boldsymbol{v}_i, \; i = 1, ...n$, there exists orthogonal basis $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ for $\mathcal{R}(A)$, we can further normalize the set to produce the *orthonormal* set $\boldsymbol{u}_1, ..., \boldsymbol{u}_r$: 
+Since $A$ has $r$ nonzero singular values which measure the length of $A\bar{v}_i, \; i = 1, ...n$, there exists orthogonal basis $\{A\bar{v}_1, ..., A\bar{v}_r\}$ for $\mathcal{R}(A)$, we can further normalize the set to produce the *orthonormal* set $\bar{u}_1, ..., \bar{u}_r$: 
 
 $$
-\boldsymbol{u}_i = \frac{A\boldsymbol{v}_i}{\sigma_i}, \;\; i = 1, ..., r
+\bar{u}_i = \frac{A\bar{v}_i}{\sigma_i}, \;\; i = 1, ..., r
 $$
-Now we can extend $\{\boldsymbol{u}_1, ..., \boldsymbol{u}_r\}$ to an orthonormal basis $\{\boldsymbol{u}_1, ..., \boldsymbol{u}_m\}$ of $\mathbb{R}^m$, and let 
+Now we can extend $\{\bar{u}_1, ..., \bar{u}_r\}$ to an orthonormal basis $\{\bar{u}_1, ..., \bar{u}_m\}$ of $\mathbb{R}^m$, and let 
 
 $$
-U = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_m], \quad V = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]
+U = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_m], \quad V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]
 $$
 
 and $\Sigma$ be as be as in (1) above. Write out
 
 $$
 \begin{split}
-U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_r \;\; \cdots \;\; \boldsymbol{u}_m]_{m \times m}
+U\Sigma &= [\bar{u}_1 \;\; \cdots \;\; \bar{u}_r \;\; \cdots \;\; \bar{u}_m]_{m \times m}
 \begin{bmatrix}
 \sigma_1 \\
 & \ddots &  \\ 
@@ -950,8 +974,8 @@ U\Sigma &= [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_r \;\; \cdots \;\; 
 & & & & \ddots \\
 & & & & & 0 \\
 \end{bmatrix}_{m\times n} \\
-&= [\sigma_1\boldsymbol{u}_1 \;\; \cdots \;\;   \sigma_r\boldsymbol{u}_r \;\; \boldsymbol{0} \;\;  \cdots \;\;  \boldsymbol{0}] \\
-& = [A\boldsymbol{v}_1 \;\; \cdots \;\; A\boldsymbol{v}_r \;\; A\boldsymbol{v}_{r+1} \;\; \cdots \;\; A \boldsymbol{v}_n] \\
+&= [\sigma_1\bar{u}_1 \;\; \cdots \;\;   \sigma_r\bar{u}_r \;\; \bar{0} \;\;  \cdots \;\;  \bar{0}] \\
+& = [A\bar{v}_1 \;\; \cdots \;\; A\bar{v}_r \;\; A\bar{v}_{r+1} \;\; \cdots \;\; A \bar{v}_n] \\
 &= A_{m \times n}V_{n \times n}
 \end{split}
 $$
@@ -961,15 +985,15 @@ And because $V$ is orthogonal
 $$
 A = U \Sigma V^{-1} =  U \Sigma V^{T}
 $$
-$\boldsymbol{u}_i$ and $\boldsymbol{v}_i$ are called *left eigenvector* and right eigenvector of $A$ respectively. 
+$\bar{u}_i$ and $\bar{v}_i$ are called *left eigenvector* and right eigenvector of $A$ respectively. 
 
 It's easy to verify that the spectral decomposition \@ref(spectral-decomposition) is a special case of SVD when $A \in \mathbb{R}^{n}, \;\; m = n$. In that case, $\Sigma$ is a square matrix and $U$ is equal to $V$. 
 
 When $\Sigma$ contains rows or columns of zeros (i.e, $r < \min(m, n)$), we can write SVD in a more compact form. Divide $U, \Sigma, V$ into submatrices
 
 $$
-U = [U_r \;\; U_{m-r}], \quad \text{where } U_r = [\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_r] \\
-V = [V_r \;\; V_{m-r}], \quad \text{where } V_r = [\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_r] \\
+U = [U_r \;\; U_{m-r}], \quad \text{where } U_r = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_r] \\
+V = [V_r \;\; V_{m-r}], \quad \text{where } V_r = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_r] \\
 \Sigma = 
 \begin{bmatrix}
 D & 0 \\
@@ -1001,7 +1025,7 @@ This more compact form is called a reduced **singular value decomposition**.
 Another way to write this is 
 
 $$
-A = \sum_{i=1}^{t}{\sigma_i}\boldsymbol{u}_i\boldsymbol{v}_i
+A = \sum_{i=1}^{t}{\sigma_i}\bar{u}_i\bar{v}_i
 $$
 
 <hr> 
@@ -1012,22 +1036,22 @@ $$
 AA^T = (U \Sigma V^T)(U \Sigma V^T)^T = U \Sigma \Sigma^T VV^TU^T = U (\Sigma\Sigma^T) U^T       \tag{1}
 $$
 
-Therefore, $[\boldsymbol{u}_1 \;\; \cdots \;\; \boldsymbol{u}_n]$ are revealed as the orthonormal basis for $AA^T$'s eigenspace, as $[\boldsymbol{v}_1 \;\; \cdots \;\; \boldsymbol{v}_n]$ are for $A^TA$.   
+Therefore, $[\bar{u}_1 \;\; \cdots \;\; \bar{u}_n]$ are revealed as the orthonormal basis for $AA^T$'s eigenspace, as $[\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]$ are for $A^TA$.   
 
 Formula (1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, because $\Sigma\Sigma^T$ produces nonzero set $\lambda_1, ..., \lambda_r$.  
 
-In fact, if were to ask for a direction in which $A^T$ has its greatest stretching effect instead of $A$, we would still result in the equivalent decomposition $A^T =  V\Sigma U^T$, with $\boldsymbol{v}_i = \frac{A\boldsymbol{u}_i}{\sigma_i}$. 
+In fact, if were to ask for a direction in which $A^T$ has its greatest stretching effect instead of $A$, we would still result in the equivalent decomposition $A^T =  V\Sigma U^T$, with $\bar{v}_i = \frac{A\bar{u}_i}{\sigma_i}$. 
 
-It's also easy to test that $\{A\boldsymbol{u}_1, ..., A\boldsymbol{u}_r\}$ produces an orthogonal basis for $\mathcal{R}(A^T)$ or $\mathcal{R}(A)$. The process is analogous to theorem \@ref(thm:svd-rank) where $\{A\boldsymbol{v}_1, ..., A\boldsymbol{v}_r\}$ are shown to span $\mathcal{R}(A)$. 
+It's also easy to test that $\{A\bar{u}_1, ..., A\bar{u}_r\}$ produces an orthogonal basis for $\mathcal{R}(A^T)$ or $\mathcal{R}(A)$. The process is analogous to theorem \@ref(thm:svd-rank) where $\{A\bar{v}_1, ..., A\bar{v}_r\}$ are shown to span $\mathcal{R}(A)$. 
 
-For any vector $\boldsymbol{y}$ in $\mathcal{R}(A)$, we have 
+For any vector $\bar{y}$ in $\mathcal{R}(A)$, we have 
 
 $$
 \begin{align*}
-\boldsymbol{y} &= A^T\boldsymbol{x} \\
-&= A^T(c_1\boldsymbol{u}_1 + \cdots + c_1\boldsymbol{u}_n) \\
-&= c_1A\boldsymbol{u}_1 + \cdots + c_rA\boldsymbol{u}_r + \boldsymbol{0} + \cdots + \boldsymbol{0} && (\text{because }A\boldsymbol{u}_i = \sigma_i\boldsymbol{v}_i)\\
-&= c_1A\boldsymbol{u}_1 + \cdots + c_rA\boldsymbol{u}_r 
+\bar{y} &= A^T\bar{x} \\
+&= A^T(c_1\bar{u}_1 + \cdots + c_1\bar{u}_n) \\
+&= c_1A\bar{u}_1 + \cdots + c_rA\bar{u}_r + \bar{0} + \cdots + \bar{0} && (\text{because }A\bar{u}_i = \sigma_i\bar{v}_i)\\
+&= c_1A\bar{u}_1 + \cdots + c_rA\bar{u}_r 
 \end{align*}
 $$
 
@@ -1076,10 +1100,10 @@ There are 2 main categories of matrix norms.
 
 ### Induced norms
 
-Induced norms define matrix norms in terms of vectors, also called *operator norm* since $A$ acts like an operator in this definition. Note that matrix $A \in \mathbb{R}^{m \times n}$ maps a vector $\boldsymbol{x} \not = 0$ from $\mathbb{R}^n$ to $\mathbb{R}^m$. In particular, if the p-norm is used for both $\mathbb{R}^n$ and $\mathbb{R}^m$, then the induced norm is 
+Induced norms define matrix norms in terms of vectors, also called *operator norm* since $A$ acts like an operator in this definition. Note that matrix $A \in \mathbb{R}^{m \times n}$ maps a vector $\bar{x} \not = 0$ from $\mathbb{R}^n$ to $\mathbb{R}^m$. In particular, if the p-norm is used for both $\mathbb{R}^n$ and $\mathbb{R}^m$, then the induced norm is 
 
 $$
-\|A\|_p = \max \frac{\|A\boldsymbol{x}\|_p}{\|\boldsymbol{x}\|_p}
+\|A\|_p = \max \frac{\|A\bar{x}\|_p}{\|\bar{x}\|_p}
 $$
 The subscript $p$ can be misleading, because the appropriate name for this matrix norm may not be "p-norm", but rather "induced norm when p-norm is used in both spaces". The p-norm of a matrix meaning usually means entry-wise p-norms or the Scatten p-norms defined in subsequent sections. 
 
@@ -1109,13 +1133,13 @@ The induced 2-norm are also called the **spectral norm**.
 By definition, the following inequality holds for induced matrix norms 
 
 $$
-\|A\boldsymbol{x}\|_P \le \|A\|_p\|\boldsymbol{x}\|_p
+\|A\bar{x}\|_P \le \|A\|_p\|\bar{x}\|_p
 $$
 
 
 <hr> 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-16"><strong>(\#prp:unnamed-chunk-16) </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that 
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-18"><strong>(\#prp:unnamed-chunk-18) </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that 
 
 $$
 \|AB\|_p \le \|A\|_p\|B\|_p
@@ -1123,15 +1147,15 @@ $$</div>\EndKnitrBlock{proposition}
 
 **PROOF**
 
-For any $\boldsymbol{x} \in \mathbb{R}^n$ 
+For any $\bar{x} \in \mathbb{R}^n$ 
 
 $$
-\|AB\boldsymbol{x}\|_p \le \|A\|_p\|B\boldsymbol{x}\|_p \le \|A\|_p\|B\|_p\|\boldsymbol{x}\|_p
+\|AB\bar{x}\|_p \le \|A\|_p\|B\bar{x}\|_p \le \|A\|_p\|B\|_p\|\bar{x}\|_p
 $$
 si 
 
 $$
-\|AB\|_p = \max \frac{\|A\boldsymbol{x}\|_p}{\|\boldsymbol{x}\|_p} \le \max \frac{\|A\|_p\|B\|_p\|\boldsymbol{x}\|_p}{\|\boldsymbol{x}\|_p} = \|A\|_p\|B\|_p
+\|AB\|_p = \max \frac{\|A\bar{x}\|_p}{\|\bar{x}\|_p} \le \max \frac{\|A\|_p\|B\|_p\|\bar{x}\|_p}{\|\bar{x}\|_p} = \|A\|_p\|B\|_p
 $$
 
 
@@ -1157,7 +1181,7 @@ $$
 where $\sigma_i$ is the nonzero singular value of $A$.  
 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-17"><strong>(\#prp:unnamed-chunk-17) </strong></span>The F-norm is a submultiplicative norm. </div>\EndKnitrBlock{proposition}
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-19"><strong>(\#prp:unnamed-chunk-19) </strong></span>The F-norm is a submultiplicative norm. </div>\EndKnitrBlock{proposition}
 
 **PROOF**
 

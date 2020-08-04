@@ -13,22 +13,22 @@ From theorem \@ref(thm:best-approximation) we know that
 
 
 $$
-\boldsymbol{\beta} = (X^TX)^{-1}X^T\boldsymbol{y}
+\bar{\beta} = (X^TX)^{-1}X^T\bar{y}
 $$
 
 thus: 
 
 $$
-\hat{\boldsymbol{y}} = X\boldsymbol{\beta} = X (X^TX)^{-1}X^{T}\boldsymbol{y}
+\hat{\bar{y}} = X\bar{\beta} = X (X^TX)^{-1}X^{T}\bar{y}
 $$
 
-When columns of the design matrix $A$ are orthogonal, the orthogonal projection of $\boldsymbol{y}$ onto Col$X$ isi given by 
+When columns of the design matrix $A$ are orthogonal, the orthogonal projection of $\bar{y}$ onto Col$X$ isi given by 
 
 $$
-\hat{\boldsymbol{y}} = \frac{\boldsymbol{x}_0^T\boldsymbol{y}}{\boldsymbol{x}_0^T\boldsymbol{x}_0}\boldsymbol{x}_0 + 
-\frac{\boldsymbol{x}_1^T\boldsymbol{y}}{\boldsymbol{x}_1^T\boldsymbol{x}_1}\boldsymbol{x}_1
+\hat{\bar{y}} = \frac{\bar{x}_0^T\bar{y}}{\bar{x}_0^T\bar{x}_0}\bar{x}_0 + 
+\frac{\bar{x}_1^T\bar{y}}{\bar{x}_1^T\bar{x}_1}\bar{x}_1
 \cdots +
-\frac{\boldsymbol{x}_p^T\boldsymbol{y}}{\boldsymbol{x}_p^T\boldsymbol{x}_p}\boldsymbol{x}_p
+\frac{\bar{x}_p^T\bar{y}}{\bar{x}_p^T\bar{x}_p}\bar{x}_p
 $$
 
 ## Maximum likelihood estimation

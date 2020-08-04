@@ -11,31 +11,31 @@
 
 ## Matrix multiplication
 
-A common way of looking at matrix-vector multiplication $A\boldsymbol{x}$ is to think of as a linear combination of column vectors in $A$:  
+A common way of looking at matrix-vector multiplication $A\bar{x}$ is to think of as a linear combination of column vectors in $A$:  
 
 $$
 \begin{aligned}
-A\boldsymbol{x} &= [\boldsymbol{a}_1 \;\; \cdots \;\; \boldsymbol{a}_n] 
+A\bar{x} &= [\bar{a}_1 \;\; \cdots \;\; \bar{a}_n] 
 \begin{bmatrix}
 x_1 \\
 \vdots \\
 x_n
 \end{bmatrix} \\
-&= x_1\boldsymbol{a}_1 + \cdots + x_n\boldsymbol{a}_n
+&= x_1\bar{a}_1 + \cdots + x_n\bar{a}_n
 \end{aligned}
 $$
 
 
-Likewise, for any $\boldsymbol{x}^{T} = [x_1, \cdots, x_n]^T$ and matrix $A_{m \times n}$, $x^{T}A$ can be thought of as a linear combination of rows in $A$ to produce a new row vector: 
+Likewise, for any $\bar{x}^{T} = [x_1, \cdots, x_n]^T$ and matrix $A_{m \times n}$, $x^{T}A$ can be thought of as a linear combination of rows in $A$ to produce a new row vector: 
 
 $$
 [x_1 \;\; \cdots \;\; x_n] 
 \begin{bmatrix}
-\boldsymbol{a}_1^T \\
+\bar{a}_1^T \\
 \vdots  \\
-\boldsymbol{a}_n^T
+\bar{a}_n^T
 \end{bmatrix} 
-= x_1\boldsymbol{a}_1^T + \dots + x_n\boldsymbol{a}_n^T
+= x_1\bar{a}_1^T + \dots + x_n\bar{a}_n^T
 $$
 For matrix-matrix multiplication $AB$, besides the dot product definition we can see it as **column row expansion**.  
 
@@ -205,7 +205,7 @@ d_{1} \\
 \end{bmatrix}
 $$
 
-Then the $Lu$ factorization becomes $A = LDU$, where $L$ and $U$ have ones on its diagonal and $D$ is the diagonal matrix of pivots. 
+Then the $LU$ factorization becomes $A = LDU$, where $L$ and $U$ have ones on its diagonal and $D$ is the diagonal matrix of pivots. 
 
 <hr> 
 
@@ -348,16 +348,16 @@ Note that all row operations don't change whether or not a determinant is 0, onl
 
 ### Cramer's rule
 
-Given an $n \times n$ matrix $A$ and $\boldsymbol{b}$ in $\mathbb{\mathbb{R^n}}$, denote $A_i(\boldsymbol{b})$ as the matrix derived by $A$ by **replacing** column $i$ by vector $\boldsymbol{b}$:  
+Given an $n \times n$ matrix $A$ and $\bar{b}$ in $\mathbb{\mathbb{R^n}}$, denote $A_i(\bar{b})$ as the matrix derived by $A$ by **replacing** column $i$ by vector $\bar{b}$:  
 
 $$
-A_i(\boldsymbol{b}) = [\boldsymbol{a}_1 \cdots \underbrace{\boldsymbol{b}}_{\text{column} \,i} \cdots \boldsymbol{a}_n]
+A_i(\bar{b}) = [\bar{a}_1 \cdots \underbrace{\bar{b}}_{\text{column} \,i} \cdots \bar{a}_n]
 $$
 
-\BeginKnitrBlock{theorem}\iffalse{-91-67-114-97-109-101-114-39-115-32-114-117-108-101-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cramer"><strong>(\#thm:cramer)  \iffalse (Cramer's rule) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. For any $\boldsymbol{b}$ in $\mathbb{R^n}$, the unique solution $\boldsymbol{x}$ of $A\boldsymbol{x} = \boldsymbol{b}$ has entries given by: 
+\BeginKnitrBlock{theorem}\iffalse{-91-67-114-97-109-101-114-39-115-32-114-117-108-101-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cramer"><strong>(\#thm:cramer)  \iffalse (Cramer's rule) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. For any $\bar{b}$ in $\mathbb{R^n}$, the unique solution $\bar{x}$ of $A\bar{x} = \bar{b}$ has entries given by: 
 
 $$
-x_i = \frac{\det A_i(\boldsymbol{b})}{\det A}
+x_i = \frac{\det A_i(\bar{b})}{\det A}
 $$</div>\EndKnitrBlock{theorem}
 
 
@@ -374,14 +374,14 @@ The trace has the following properties:
 4. For $A$, $B$ such that $AB$ is square, $\text{tr}(AB) = \text{tr}(BA)$  
 5. Trace of product of multiple matrices is invariant to *cyclic permutations*, $\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$. Note that the reordering cannot be done arbitrarily, fro example $\text{tr}(ABC) \not= \text{tr}(ACG)$ in general. 
 6. Trace is equal to the sum of its eigenvalues (repeated according to multiplicity) $\text{tr}(A) = \sum_{i = 1}^n{\lambda_i}$  
-7. $\text{tr}(\boldsymbol{a}\boldsymbol{a}^T) = \boldsymbol{a}^T\boldsymbol{a}$
+7. $\text{tr}(\bar{a}\bar{a}^T) = \bar{a}^T\bar{a}$
 
 
 ## Matrix inversion
 
 \BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants). 
 
-In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\boldsymbol{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\boldsymbol{x} = \boldsymbol{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
+In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\bar{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\bar{x} = \bar{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
 
 Assume that $A$ and $B$ are both non-singular
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4) </strong></span>If A and B are both invertible matrces, we have
@@ -402,20 +402,20 @@ $$</div>\EndKnitrBlock{theorem}
 
 In \@ref(thm:find-inverse), we know an algorithm of finding inverse matrices by row reducions on the augmented matrix $[A \;\; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
 
-The $j$th column of $A^{-1}$ is a vector $\boldsymbol{x}$ that satisfies:  
+The $j$th column of $A^{-1}$ is a vector $\bar{x}$ that satisfies:  
 
 $$
-A\boldsymbol{x} = \boldsymbol{e}_j
+A\bar{x} = \bar{e}_j
 $$
 By Cramer's rule 
 $$
-\{(i,j) \text{ entry of } A^{-1}\} = x_i = \frac{\det A_i{(\boldsymbol{e}_j)}}{\det A}
+\{(i,j) \text{ entry of } A^{-1}\} = x_i = \frac{\det A_i{(\bar{e}_j)}}{\det A}
 $$
 
-A cofactor expansion \@ref(thm:cofactor-expansion) down column $i$ of $A_i{(\boldsymbol{e}_j)}$ shows that:   
+A cofactor expansion \@ref(thm:cofactor-expansion) down column $i$ of $A_i{(\bar{e}_j)}$ shows that:   
 
 $$
-\det A_i{(\boldsymbol{e}_j)} = (-1)^{i + j}\det A_{ji} = C_{ji}
+\det A_i{(\bar{e}_j)} = (-1)^{i + j}\det A_{ji} = C_{ji}
 $$
 where $C_{ji}$ is a cofactor of $A$. Note that the ($i$, $j$)th entry of $A^{-1}$ is the cofactor $C_{ji}$ divided by $\det A$ (the subscript is reversed). Thus
 
@@ -444,10 +444,10 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
-\BeginKnitrBlock{lemma}\iffalse{-91-84-104-101-32-77-97-116-114-105-120-32-73-110-118-101-114-115-105-111-110-32-76-101-109-109-97-93-}\fi{}<div class="lemma"><span class="lemma" id="lem:matrix-inversion-lemma"><strong>(\#lem:matrix-inversion-lemma)  \iffalse (The Matrix Inversion Lemma) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ square matrix, and $\boldsymbol{v}$ and $\boldsymbol{u}$ be d-dimensional vectors. Then, $A + \boldsymbol{u}\boldsymbol{v}^T$ is invertible if and only if $\boldsymbol{v}^TA\boldsymbol{u} \not = -1$. In such a case, the inverse formula is given by 
+\BeginKnitrBlock{lemma}\iffalse{-91-84-104-101-32-77-97-116-114-105-120-32-73-110-118-101-114-115-105-111-110-32-76-101-109-109-97-93-}\fi{}<div class="lemma"><span class="lemma" id="lem:matrix-inversion-lemma"><strong>(\#lem:matrix-inversion-lemma)  \iffalse (The Matrix Inversion Lemma) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ square matrix, and $\bar{v}$ and $\bar{u}$ be d-dimensional vectors. Then, $A + \bar{u}\bar{v}^T$ is invertible if and only if $\bar{v}^TA\bar{u} \not = -1$. In such a case, the inverse formula is given by 
 
 $$
-(A + \boldsymbol{u}\boldsymbol{v}^T) = A^{-1} - \frac{A^{-1}\boldsymbol{u}\boldsymbol{v}^TA^{-1}}{1 + \boldsymbol{v}^TA^{-1}\boldsymbol{u}}
+(A + \bar{u}\bar{v}^T) = A^{-1} - \frac{A^{-1}\bar{u}\bar{v}^TA^{-1}}{1 + \bar{v}^TA^{-1}\bar{u}}
 $$</div>\EndKnitrBlock{lemma}
 
 
@@ -459,7 +459,7 @@ $$
 (A + UV)^{-1} = A^{-1} - A^{-1}U(I + V^TA^{-1}U)^{-1}V^TA^{-1}
 $$</div>\EndKnitrBlock{theorem}
 
-It's easy to find that the Woodbury Identity is an extension of the matrix inversion lemma, where $\boldsymbol{u} \rightarrow U$ and $\boldsymbol{v} \rightarrow V$.
+It's easy to find that the Woodbury Identity is an extension of the matrix inversion lemma, where $\bar{u} \rightarrow U$ and $\bar{v} \rightarrow V$.
 
 
 
@@ -516,14 +516,14 @@ $$</div>\EndKnitrBlock{proposition}
 
 Another way to look at $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$, besides linear combination of column vectors, is to think of the matrix $A$ as an force that “acts” on a vector $x$ in $\mathbb{R^n}$ by multiplication to produce a new vector called $b$ in $\mathbb{\mathbb{R^m}}$.  
 
-A transformation $T$ from $\mathbb{R^n}$ to $\mathbb{R^m}$ is a rule that assigns each vector \boldsymbol{x} in $\mathbb{R^n}$ a vector $T(x)$ in $\mathbb{R^m}$, which is called the **image** of \boldsymbol{x} (under the action of $T$). 
+A transformation $T$ from $\mathbb{R^n}$ to $\mathbb{R^m}$ is a rule that assigns each vector \bar{x} in $\mathbb{R^n}$ a vector $T(x)$ in $\mathbb{R^m}$, which is called the **image** of \bar{x} (under the action of $T$). 
 
 It can be show that such transformations induced by multiplying a matrix is a type of **linear transformation**, because it satisfies all required properties to be linear:  
 
 $$
 \begin{aligned}
-\text{vector addition} \quad A(\boldsymbol{u} + \boldsymbol{v}) &= A\boldsymbol{u} + A\boldsymbol{v}  \\ 
-\text{scalar multiplication} \quad A(c\boldsymbol{u}) &= cA\boldsymbol{u}
+\text{vector addition} \quad A(\bar{u} + \bar{v}) &= A\bar{u} + A\bar{v}  \\ 
+\text{scalar multiplication} \quad A(c\bar{u}) &= cA\bar{u}
 \end{aligned}
 $$
 <hr>
@@ -534,20 +534,20 @@ $$
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
 $$
   
-In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\boldsymbol{e_j})$, where $\boldsymbol{e_j}$ is the $j$th basis of $\mathbb{R^n}$ </div>\EndKnitrBlock{theorem}
+In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ </div>\EndKnitrBlock{theorem}
 
 **Proof**: 
 
 $$
-\boldsymbol{x} = x_1\boldsymbol{e_1} + \dots + x_n{\boldsymbol{e_n}}
+\bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
 $$
-And because $T(\boldsymbol{x})$ is a linear transformation: 
+And because $T(\bar{x})$ is a linear transformation: 
 
 $$
 \begin{split}
-T(\boldsymbol{x}) &= x_1T(\boldsymbol{e_1}) + \dots + x_nT(\boldsymbol{e_n}) \\
-&= [T(\boldsymbol{e_1}) \, \cdots \, T(\boldsymbol{e_n})]\boldsymbol{x} \\
-&= (A\boldsymbol{x})_{m \times 1}
+T(\bar{x}) &= x_1T(\bar{e_1}) + \dots + x_nT(\bar{e_n}) \\
+&= [T(\bar{e_1}) \, \cdots \, T(\bar{e_n})]\bar{x} \\
+&= (A\bar{x})_{m \times 1}
 \end{split}
 $$
 
@@ -559,15 +559,41 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 
 (ref:onto) A mapping is onto $\mathbb{R^m}$
 
-\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of at least one $\boldsymbol{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
 
-Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\boldsymbol{x}) = \boldsymbol{b}$
+Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$
 
 <br>
 
-\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (one-to-one mapping) \fi{} </strong></span>A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\boldsymbol{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\boldsymbol{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (one-to-one mapping) \fi{} </strong></span>A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
 
-Equivalently, $T$ is one-to-one if, for each $\boldsymbol{b}$ in $\mathbb{R^m}$, the equation $T(\boldsymbol{x}) = \boldsymbol{b}$ has either a unique solution or none at all.  
+Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the equation $T(\bar{x}) = \bar{b}$ has either a unique solution or none at all.  
+
+### Matrix multiplication as geometric operators 
+
+
+$$
+\begin{bmatrix}
+\cos\theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{bmatrix}
+\begin{bmatrix}
+\rho \cos\alpha \\ 
+\rho \sin\alpha 
+\end{bmatrix} =
+\begin{bmatrix} 
+\rho(\cos\theta\cos\alpha - \sin\theta\sin\alpha) \\
+\rho(\sin\theta \cos\alpha + \cos \theta \sin\alpha)
+\end{bmatrix}
+= 
+\begin{bmatrix}
+\rho \cos(\theta + \alpha) \\
+\rho \sin(\theta + \alpha)
+\end{bmatrix}
+$$
+
+
+
 
 ## Statistics and proabability
 

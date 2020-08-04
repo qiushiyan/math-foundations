@@ -5,32 +5,32 @@ Vector spaces, metric spaces, normed spaces, and inner product spaces are places
 
 ## Vector space 
 
-A **vector space** $V$ is a nonempty set, the elements of which are called vectors, also called *linear spaces*. A vector space comes with two operations predefined: vectors can be added together, and vectors can be multiplied by real numbers called scalars. For all vectors $\boldsymbol{u}, \boldsymbol{v}$ and $\boldsymbol{w}$, and all scalars $c$ and $d$ in $V$, the following axioms of vector space must hold:   
+A **vector space** $V$ is a nonempty set, the elements of which are called vectors, also called *linear spaces*. A vector space comes with two operations predefined: vectors can be added together, and vectors can be multiplied by real numbers called scalars. For all vectors $\bar{u}, \bar{v}$ and $\bar{w}$, and all scalars $c$ and $d$ in $V$, the following axioms of vector space must hold:   
 
-1. The sum of $\boldsymbol{u}$ and $\boldsymbol{v}$ is in $V$ 
+1. The sum of $\bar{u}$ and $\bar{v}$ is in $V$ 
 
-2. The scalar multiple of $\boldsymbol{u}$ by c, denoted by $c\boldsymbol{u}$, is in $V$  
+2. The scalar multiple of $\bar{u}$ by c, denoted by $c\bar{u}$, is in $V$  
 
-3. There exists additive identity (denoted by $\boldsymbol{0}$) such that $\boldsymbol{x} + \boldsymbol{0} = \boldsymbol{x}$. Similarly, multiplicative identity (written $\boldsymbol{1}$) means $\boldsymbol{1}\boldsymbol{x} = \boldsymbol{x}$  
+3. There exists additive identity (denoted by $\bar{0}$) such that $\bar{x} + \bar{0} = \bar{x}$. Similarly, multiplicative identity (written $\bar{1}$) means $\bar{1}\bar{x} = \bar{x}$  
 
-4. There exists an additive inverse (written $-\boldsymbol{x}$) such that $-\boldsymbol{x} + \boldsymbol{x} = \boldsymbol{0}$  
+4. There exists an additive inverse (written $-\bar{x}$) such that $-\bar{x} + \bar{x} = \bar{0}$  
 
-5. Communitivity: $\boldsymbol{x} + \boldsymbol{y} = \boldsymbol{y} + \boldsymbol{x}$
+5. Communitivity: $\bar{x} + \bar{y} = \bar{y} + \bar{x}$
 
-6. Associativity: $(\boldsymbol{x} + \boldsymbol{y}) + \boldsymbol{z} = \boldsymbol{x} + (\boldsymbol{y} + \boldsymbol{z})$, and $\alpha(\beta\boldsymbol{x}) = (\alpha\beta)\boldsymbol{x}$  
+6. Associativity: $(\bar{x} + \bar{y}) + \bar{z} = \bar{x} + (\bar{y} + \bar{z})$, and $\alpha(\beta\bar{x}) = (\alpha\beta)\bar{x}$  
 
-7. Distributivity: $\alpha(\boldsymbol{x} + \boldsymbol{y}) = \alpha\boldsymbol{x} + \alpha\boldsymbol{y}$ and $(\alpha + \beta)\boldsymbol{x} = \alpha\boldsymbol{x} + \beta\boldsymbol{x}$
+7. Distributivity: $\alpha(\bar{x} + \bar{y}) = \alpha\bar{x} + \alpha\bar{y}$ and $(\alpha + \beta)\bar{x} = \alpha\bar{x} + \beta\bar{x}$
  
  
-A set of vectors $\boldsymbol{v}_1, ..., \boldsymbol{v}_n \in V$ are set to be *linearly independent* if 
+A set of vectors $\bar{v}_1, ..., \bar{v}_n \in V$ are set to be *linearly independent* if 
 
 $$
 \begin{align*}
-c_1\boldsymbol{v}_1 + \cdots + c_n\boldsymbol{v}_n &= 0 && \text{implies } c_1 = \cdots = c_n
+c_1\bar{v}_1 + \cdots + c_n\bar{v}_n &= 0 && \text{implies } c_1 = \cdots = c_n
 \end{align*}
 $$
 
-The **span** of  $\boldsymbol{v}_1, ..., \boldsymbol{v}_n$  is the set of all vectors that can be expressed as a linear combination of them. 
+The **span** of  $\bar{v}_1, ..., \bar{v}_n$  is the set of all vectors that can be expressed as a linear combination of them. 
 
 ### Euclidean space 
 
@@ -39,26 +39,26 @@ Euclidean space is the quintessential vector space, denoted by $\mathbb{R}^n$.
 The two must-have operations of vector spaces are valid in $\mathbb{R}^n$  
 
 $$
-\boldsymbol{x} = 
+\bar{x} = 
 \begin{bmatrix}
 x_1 \\
 \vdots \\
 x_n
 \end{bmatrix}, \;\;
-\boldsymbol{y} = 
+\bar{y} = 
 \begin{bmatrix}
 y_1 \\
 \vdots \\
 y_n
 \end{bmatrix}, \;\;
 \alpha \in \mathbb{R} \\
-\boldsymbol{x} + \boldsymbol{y} = 
+\bar{x} + \bar{y} = 
 \begin{bmatrix}
 x_1 + y_1 \\
 \vdots \\
 x_n + y_n
 \end{bmatrix}, \;\;
-\alpha\boldsymbol{x} = 
+\alpha\bar{x} = 
 \begin{bmatrix}
 \alpha x_1 \\
 \vdots \\
@@ -70,9 +70,9 @@ Euclidean spaces have other structures defined in addition to the plainest vecto
 
 $$
 \begin{aligned}
-\text{dot product between }  \boldsymbol{x} \text{ and } \boldsymbol{y}: \boldsymbol{x} \cdot\boldsymbol{y} &= \sum_{i=1}^{n}{x_iy_i} \\
-\text{length of } \boldsymbol{x}: \|\boldsymbol{x}\| &= \sqrt{\boldsymbol{x} \cdot \boldsymbol{x}} \\
-\text{distance between } \boldsymbol{x} \text{ and } \boldsymbol{y}: \text{dist}(\boldsymbol{x}, \boldsymbol{y}) &= \|\boldsymbol{x} - \boldsymbol{y}\|
+\text{dot product between }  \bar{x} \text{ and } \bar{y}: \bar{x} \cdot\bar{y} &= \sum_{i=1}^{n}{x_iy_i} \\
+\text{length of } \bar{x}: \|\bar{x}\| &= \sqrt{\bar{x} \cdot \bar{x}} \\
+\text{distance between } \bar{x} \text{ and } \bar{y}: \text{dist}(\bar{x}, \bar{y}) &= \|\bar{x} - \bar{y}\|
 \end{aligned}
 $$
 
@@ -89,9 +89,9 @@ Although metric spaces are not required to be vector spaces, it is always assume
 
 Metrics generalize the notion of distance from Euclidean space. A *metric space* is a set together with a metric on the set (metric spaces don't have to be vector spaces). The metric is a function that defines a concept of distance $\in \mathbb{R}$ between any two members of the set. A metric must satisfies the following properties: 
 
-1. $d(x, y) \ge 0$, with equality if and only if $x = y$. Distances are non-negative, and the only point at zero distance from $x$ is $x$ itself  
-2. $d(x, y) = d(y, x)$. The distance is a symmetric function. 
-3. $d(x, z) \le d(x, y) + d(y, z)$. Distance satisfies triangular inequality. 
+1. $d(\bar{x}, \bar{y}) \ge 0$, with equality if and only if $\bar{x} = \bar{y}$. Distances are non-negative, and the only point at zero distance from $x$ is $x$ itself  
+2. $d(\bar{x}, \bar{y}) = d(\bar{y}, \bar{x})$. The distance is a symmetric function. 
+3. $d(\bar{x}, \bar{z}) \le d(\bar{x}, \bar{y}) + d(\bar{y}, \bar{z})$. Distance satisfies triangular inequality. 
 
 <br>
 
@@ -99,75 +99,107 @@ Norms generalize the notion of length from Euclidean space.
 
 A **norm** on a real vector space $X$ is a function: $\|\cdot\|: V \rightarrow \mathbb{R}$ that satisfies: 
 
-1. $\|x\| \ge 0$ for all $x \in X$, with equality if and only if $x = \boldsymbol{0}$ (nonnegative)  
-2. $\|\lambda x\| = \lambda \|x\|$, for all $x \in X$ and $\lambda \in \mathbb{R}$ (homogeneous)  
-3. $\|x + y\| \le \|x\| + \|y\|$ (triangular inequality)  
+1. $\|\bar{x}\| \ge 0$ for all $\bar{x} \in X$, with equality if and only if $\bar{x} = \bar{0}$ (nonnegative)  
+2. $\|\lambda \bar{x}\| = \lambda \|\bar{x}\|$, for all $\bar{x} \in X$ and $\lambda \in \mathbb{R}$ (homogeneous)  
+3. $\|\bar{x} + \bar{y}\| \le \|\bar{x}\| + \|\bar{y}\|$ (triangular inequality)  
 
 **A normed space is a metric space with the metric** 
 
 $$
-d(\boldsymbol{x}, \boldsymbol{y}) = \|\boldsymbol{x} - \boldsymbol{y}\|
+d(\bar{x}, \bar{y}) = \|\bar{x} - \bar{y}\|
 $$
 
-So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that $d(x, y) = \|x - y\|$ satisfies all properties of a metric. 
+So a normed space is a special case of metric spaces, a metric spcae may not necessarily has a norm associated with it. One can verify that $d(\bar{x}, \bar{y}) = \|\bar{x} - \bar{y}\|$ satisfies all properties of a metric. 
 
-The most common function for norms on $\mathbb{R}^n$ are listed below, with $x = [x_1, x_2, ..., x_n]$. 
+The most common function for norms on $\mathbb{R}^n$ are listed below, with $\bar{x} = [x_1, x_2, ..., x_n]$. 
 
 $$
 \begin{align*}
-\text{1-norm}: \|\boldsymbol{x}\|_1 &= \sum_{i=1}^{n}{|x_i|}\\
-\text{2-norm}: \|\boldsymbol{x}\|_2 &= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
-\text{p-norm}: \|\boldsymbol{x}\|_p &= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
-\text{maximum norm}: \|\boldsymbol{x}\|_{\infty} &= \max\{|x_1|, |x_2|, ..., |x_n|\}
+\text{1-norm}: \|\bar{x}\|_1 &= \sum_{i=1}^{n}{|x_i|}\\
+\text{2-norm}: \|\bar{x}\|_2 &= \sqrt{\sum_{i=1}^{n}{x_i}^2} \\
+\text{p-norm}: \|\bar{x}\|_p &= (\sum_{i=1}^{n}{|x_i|}^p)^{\frac{1}{p}} \quad (p \ge 1) \\
+\text{maximum norm}: \|\bar{x}\|_{\infty} &= \max\{|x_1|, |x_2|, ..., |x_n|\}
 \end{align*}
 $$
+
 1-norm is also called the Manhattan norm. 
 
 2-norm is the Euclidean norm, the subscript $2$ can be left out in $\mathbb{R}^n$. 
 
-p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $\|x\|_{\infty}$ is called the maximum norm. 
+p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $\|\bar{x}\|_{\infty}$ is called the maximum norm. 
 
 <br>
 
 An **inner product** on a real vector space $X$ is a function $\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}$ satisfying 
 
-1. $\langle x, x \rangle \ge 0$, with equality if and only if $x = \boldsymbol{0}$   
-2. $\langle x, y \rangle = \langle y, x \rangle$
-3. $\langle x + y, z\rangle = \langle x, z\rangle + \langle y, z\rangle$ and $\langle \lambda x, y\rangle = \lambda \langle x, y \rangle$
+1. $\langle \bar{x}, \bar{y} \rangle \ge 0$, with equality if and only if $x = \bar{0}$   
+2. $\langle \bar{x}, \bar{y} \rangle = \langle \bar{y}, \bar{x} \rangle$
+3. $\langle \bar{x} + \bar{y}, \bar{z}\rangle = \langle \bar{x}, \bar{z}\rangle + \langle \bar{y}, \bar{z}\rangle$ and $\langle \lambda \bar{x}, \bar{y}\rangle = \lambda \langle \bar{x}, \bar{y} \rangle$
 
 A vector sapce equipped with such inner product is called a **inner product space**. Note that **all inner product spaces are normed spaces**, because a inner product induce a norm on a vector space: 
 
 $$
-\langle \boldsymbol{x}, \boldsymbol{\boldsymbol{x}} \rangle = \|\boldsymbol{x}\|^2  
+\langle \bar{x}, \bar{x} \rangle = \|\bar{x}\|^2  
 $$
 The *standard inner product* defined on $\mathbb{R}^{n}$ is the dot product,  given by 
 
 $$
-\langle \boldsymbol{x}, \boldsymbol{y} \rangle = \sum_{i=1}^{n}{x_iy_i} = \boldsymbol{x}^T\boldsymbol{y}
+\langle \bar{x}, \bar{y} \rangle = \sum_{i=1}^{n}{x_iy_i} = \bar{x}^T\bar{y}
 $$
 
 
 \BeginKnitrBlock{rmdnote}<div class="rmdnote">The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces” (linear topological space if they are assumed to be vector spaces first).  These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.</div>\EndKnitrBlock{rmdnote}
 
+### Restricted definition of inner products in $R^n$
+
+Sometimes it suffice only to generalize the dot product, with the definition of inner product, in Euclidean space $\mathbb{R}^n$ instead of other inner product spaces. For example, many engineering applications measure similarity between vectors using the dot product after stretching the two vectors in some directions, with linear transformation $A$. Therefore, we can given a restricted definition of inner product that is meant to be used in $\mathbb{R}^n$.  
+
+
+\BeginKnitrBlock{definition}\iffalse{-91-82-101-115-116-114-105-99-116-101-100-32-100-101-102-105-110-105-116-105-111-110-32-111-102-32-105-110-110-101-114-32-112-114-111-100-117-99-116-93-}\fi{}<div class="definition"><span class="definition" id="def:restricted-inner-product"><strong>(\#def:restricted-inner-product)  \iffalse (Restricted definition of inner product) \fi{} </strong></span>
+The generalized dot product $\langle \bar{x}, \bar{y}\rangle$ in $\mathbb{R}^n$ between two vectors, is the dot product between $A\bar{x}$ and $A\bar{y}$, for some $n \times n$ non-singular matrix $A$. The inner product $\langle \bar{x}, \bar{y}\rangle$ can also be expressed using the Gram matrix $S = A^TA$
+
+$$
+\langle \bar{x}, \bar{y}\rangle = (A\bar{x})^T(A\bar{y}) = \bar{x}A^TA\bar{y} = \bar{x}^TS\bar{y}
+$$</div>\EndKnitrBlock{definition}
+
+It's easy to see that when $S$ is the identity matrix, the inner product is the dot product.  
+
+This definition of inner product also induces consines and distances with respect to transformation $A$ 
+
+
+$$
+\cos_A{(\bar{x}, \bar{y})} = \frac{\langle \bar{x}, \bar{y}\rangle}{\sqrt{\langle \bar{x}, \bar{x}\rangle}\sqrt{\langle \bar{y}, \bar{y}\rangle}}
+= \frac{\bar{x}S\bar{y}}{\sqrt{\bar{x}S\bar{x}}\sqrt{\bar{y}S\bar{y}}}
+= \frac{(A\bar{x})^T(A\bar{y})}{\|A\bar{x}\|_2\|A\bar{y}\|_2} \\
+\text{dist}(\bar{x}, \bar{y}) = \sqrt{\langle \bar{x} - \bar{y}, \bar{x} - \bar{y} \rangle}
+= \sqrt{(\bar{x} - \bar{y})^TS(\bar{x} - \bar{y})}
+= \|A\bar{x} - A\bar{y} \|_2
+$$
+
+
+
+
+
+
 ## Subspaces
 
 If $V$ is a subspace, then $S \subseteq A$ if 
 
-1. $\boldsymbol{0} \in S$  
+1. $\bar{0} \in S$  
 
-2. $S$ is closed under addition: if $\boldsymbol{x}, \boldsymbol{y} \in S$, then $\boldsymbol{x} + \boldsymbol{y} \in S$  
+2. $S$ is closed under addition: if $\bar{x}, \bar{y} \in S$, then $\bar{x} + \bar{y} \in S$  
 
-3. $S$ is closed under scalar multiplication if $\boldsymbol{x} \in S, \alpha \in \mathbb{R}$ then $\alpha\boldsymbol{x} \in S$
+3. $S$ is closed under scalar multiplication if $\bar{x} \in S, \alpha \in \mathbb{R}$ then $\alpha\bar{x} \in S$
 
 $V$ is always a subspace of itself. 
 
 If $U$ and $W$ are all subspaces of $V$, then the sum of these two subspaces are defined as 
 
 $$
-U + W = \{\boldsymbol{u} + \boldsymbol{v} \;| \; \boldsymbol{w} \in U, \boldsymbol{w} \in W \}
+U + W = \{\bar{u} + \bar{v} \;| \; \bar{w} \in U, \bar{w} \in W \}
 $$
 
-If $U$ and $W$ are perpendicular, in other words, $U \cap W = \boldsymbol{0}$. Then $U + W$ are said to be a **direct sum** and written $U \oplus W$. 
+If $U$ and $W$ are perpendicular, in other words, $U \cap W = \bar{0}$. Then $U + W$ are said to be a **direct sum** and written $U \oplus W$. 
 
 Dimensions of sums of subspaces has the following property 
 
@@ -187,18 +219,18 @@ $$
 The **columnspace** (also called *range*) of matrix $A \in \mathbb{R}^{m \times n}$ is the span of the columns of $A$
 
 $$
-\mathcal{R}(A) = \{\boldsymbol{v} \in \mathbb{R}^m\;|\; \boldsymbol{v} = A\boldsymbol{x}, \, \boldsymbol{x} \in \mathbb{R}^n\}
+\mathcal{R}(A) = \{\bar{v} \in \mathbb{R}^m\;|\; \bar{v} = A\bar{x}, \, \bar{x} \in \mathbb{R}^n\}
 $$
 
 Similarly, the **rowspace** of $A$ is the span of its rows $\mathcal{R}(A^T)$. 
 
-The **nullspace** (also called *kernel*) of $A$ is the set of solutions to $A\boldsymbol{v} = \boldsymbol{0}$ 
+The **nullspace** (also called *kernel*) of $A$ is the set of solutions to $A\bar{v} = \bar{0}$ 
 
 $$
-\mathcal{N}(A) = \{\boldsymbol{x} \in \mathbb{R}^n\;|\;A\boldsymbol{x} = \boldsymbol{0}\}
+\mathcal{N}(A) = \{\bar{x} \in \mathbb{R}^n\;|\;A\bar{x} = \bar{0}\}
 $$
 
-And the left null space is all $\boldsymbol{x}$ that satisfies $A^T\boldsymbol{x} = \boldsymbol{0}$. The word "left" in this context stems from the fact that $A^T\boldsymbol{x}= \boldsymbol{0}$ is equivalent to $\boldsymbol{x}^TA=\boldsymbol{0}$ where y "acts" on A from the left.  
+And the left null space is all $\bar{x}$ that satisfies $A^T\bar{x} = \bar{0}$. The word "left" in this context stems from the fact that $A^T\bar{x}= \bar{0}$ is equivalent to $\bar{x}^TA=\bar{0}$ where y "acts" on A from the left.  
 
 The relationship between these four subspaces present the fundamental theorem of linear algebra 
 
@@ -295,7 +327,7 @@ $$</div>\EndKnitrBlock{proposition}
 
 **PROOF**
 
-For $r(A) = r(A^TA)$, suppose $r(A) = r$, then $\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r$. Note that for any $\boldsymbol{x}$ that satisfies $A\boldsymbol{x} = 0$, we have $A^TA\boldsymbol{x} = 0$. It follows that $A$ and $A^TA$ have the same null space, $\mathcal{N}(A)  = \mathcal{N}(A^TA)$. Since $A^TA \in \mathbb{R}^{n \times n}$, we have $r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r$. 
+For $r(A) = r(A^TA)$, suppose $r(A) = r$, then $\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r$. Note that for any $\bar{x}$ that satisfies $A\bar{x} = 0$, we have $A^TA\bar{x} = 0$. It follows that $A$ and $A^TA$ have the same null space, $\mathcal{N}(A)  = \mathcal{N}(A^TA)$. Since $A^TA \in \mathbb{R}^{n \times n}$, we have $r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r$. 
 
 For $r(A) = R(AA^T)$, note that $r(A) = r(A^T)$,  and that $\mathcal{N}(A^T) = \mathcal{N}(AA^T)$, then the conclusion presents itself. 
 

@@ -10,10 +10,10 @@
 
 ### Orthogonal complements
 
-if vector $\boldsymbol{v}$ is orthogonal to every vector in a subspace $W$ of $\mathbb{R^n}$, then $\boldsymbol{v}$ is said to be orthogonal to $W$. The subspace that contains the set of vectors that are orthogonal to $W$ is called the **orthogonal complement**, denoted by $W^{\perp}$.  
+if vector $\bar{v}$ is orthogonal to every vector in a subspace $W$ of $\mathbb{R^n}$, then $\bar{v}$ is said to be orthogonal to $W$. The subspace that contains the set of vectors that are orthogonal to $W$ is called the **orthogonal complement**, denoted by $W^{\perp}$.  
 
 $$
-W^{\perp} = \{\boldsymbol{v} \in W^{\perp} | \;\boldsymbol{v} \perp \boldsymbol{x} \; \text{for all} \; \boldsymbol{x} \in W\}
+W^{\perp} = \{\bar{v} \in W^{\perp} | \;\bar{v} \perp \bar{x} \; \text{for all} \; \bar{x} \in W\}
 $$
 
 This corresponds to discussions in Section \@ref(fundamental-theorem), where 
@@ -35,40 +35,40 @@ It's easy to verify that $W^{\perp}$ is closed under scalar multiplication, and 
 ### Orthogonal sets and orthogonal basis
 
 An orthogonal set is a set of vectors 
-$\{\boldsymbol{u_1}, \dots, \boldsymbol{u_p}\}$ in $\mathbb{R^n}$, in which each pair of distinct vectors is orthogonal: $\boldsymbol{u_i}^{T} \boldsymbol{u_j} = 0 \quad i\not = j$. Note that the set do not necessarily span the whole $\mathbb{R^n}$, but a subspace $W$. 
+$\{\bar{u_1}, \dots, \bar{u_p}\}$ in $\mathbb{R^n}$, in which each pair of distinct vectors is orthogonal: $\bar{u_i}^{T} \bar{u_j} = 0 \quad i\not = j$. Note that the set do not necessarily span the whole $\mathbb{R^n}$, but a subspace $W$. 
 
 Since vectors in orthogonal sets is mutually perpendicular, they must also be linearly independent and could form a basis for a subspace $W$. In such case, they are called **orthogonal basis**.  
 
 There is a particular advantage in using orthogonal basis rather than other basis, because we can find a easy representation of any vector in $W$.  
 
 ```{theorem}
-For each $\boldsymbol{y}$ in $W$, there exists a linear combination
+For each $\bar{y}$ in $W$, there exists a linear combination
 
 $$
-y = c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p}
+y = c_1\bar{u_1} + \cdots + c_p\bar{u_p}
 $$
   
 and 
 
 $$
-c_i = \frac{\boldsymbol{y} \cdot \boldsymbol{u_i}}{\boldsymbol{u_i} \cdot \boldsymbol{u_i}} \quad i = 1, \cdots, p
+c_i = \frac{\bar{y} \cdot \bar{u_i}}{\bar{u_i} \cdot \bar{u_i}} \quad i = 1, \cdots, p
 $$
   
-where $\{\boldsymbol{u_1}, \dots, \boldsymbol{u_p}\}$ is an orthogonal basis. 
+where $\{\bar{u_1}, \dots, \bar{u_p}\}$ is an orthogonal basis. 
 ```
 
 **Proof**
 
 $$
 \begin{split}
-\boldsymbol{u_1} \cdot \boldsymbol{y} &= \boldsymbol{u_1} \cdot (c_1\boldsymbol{u_1} + \cdots + c_p\boldsymbol{u_p}) \\
-  &= c_1 \boldsymbol{u_1} \cdot \boldsymbol{u_1}
+\bar{u_1} \cdot \bar{y} &= \bar{u_1} \cdot (c_1\bar{u_1} + \cdots + c_p\bar{u_p}) \\
+  &= c_1 \bar{u_1} \cdot \bar{u_1}
 \end{split}
 $$
 So: 
 
 $$
-c_1 = \frac{\boldsymbol{u_1} \cdot \boldsymbol{y}}{\boldsymbol{u_1} \cdot \boldsymbol{u_1}}
+c_1 = \frac{\bar{u_1} \cdot \bar{y}}{\bar{u_1} \cdot \bar{u_1}}
 $$
 
 Derivations for other $c_i$ is similar. 
@@ -77,61 +77,61 @@ Derivations for other $c_i$ is similar.
 
 ### Orthogonal decomposition
 
-**Orthogonal decomposition** split $\boldsymbol{y}$ in $\mathbb{R^n}$ into two vectors, one in $W$ and one in its orthogonal compliment $W^{\perp}$. 
+**Orthogonal decomposition** split $\bar{y}$ in $\mathbb{R^n}$ into two vectors, one in $W$ and one in its orthogonal compliment $W^{\perp}$. 
 
 ```{theorem}
-Let $\mathbb{R}^n$ be a inner product space and $W$ and subspace of $\mathbb{R}^n$. Then every $\boldsymbol{v}$ in $W$ can be written uniquely in the form
+Let $\mathbb{R}^n$ be a inner product space and $W$ and subspace of $\mathbb{R}^n$. Then every $\bar{v}$ in $W$ can be written uniquely in the form
 
 $$
-\boldsymbol{v} = \boldsymbol{v}_w + \boldsymbol{v}_{\perp}
+\bar{v} = \bar{v}_w + \bar{v}_{\perp}
 $$
   
-where $\boldsymbol{v}_w \in W$ and $\boldsymbol{v}_{\perp} \in W^{\perp}$
+where $\bar{v}_w \in W$ and $\bar{v}_{\perp} \in W^{\perp}$
 ```
 
 **PROOF** 
 
-Let $\boldsymbol{u}_1, ..., \boldsymbol{u}_m$ be a orthonormal basis for $W$, there exists linear combination according to Section \@ref(orthogonal-sets-and-orthogonal-basis) 
+Let $\bar{u}_1, ..., \bar{u}_m$ be a orthonormal basis for $W$, there exists linear combination according to Section \@ref(orthogonal-sets-and-orthogonal-basis) 
 
 $$
-\boldsymbol{v}_w = (\boldsymbol{v} \cdot \boldsymbol{u}_1)\boldsymbol{u}_1 + \cdots + (\boldsymbol{v} \cdot \boldsymbol{u}_m)\boldsymbol{u}_m
+\bar{v}_w = (\bar{v} \cdot \bar{u}_1)\bar{u}_1 + \cdots + (\bar{v} \cdot \bar{u}_m)\bar{u}_m
 $$
 and 
 
 $$
-\boldsymbol{v}_{\perp} = \boldsymbol{v} - \boldsymbol{v}_w
+\bar{v}_{\perp} = \bar{v} - \bar{v}_w
 $$
-It is clear that $\boldsymbol{v}_W \in W$. And we can also show that $\boldsymbol{v}_{\perp}$ is perpendicular to $W$ 
+It is clear that $\bar{v}_W \in W$. And we can also show that $\bar{v}_{\perp}$ is perpendicular to $W$ 
 
 $$
 \begin{split}
-\boldsymbol{v}_{\perp} \cdot \boldsymbol{u}_i &= [\boldsymbol{v}- (\boldsymbol{v} \cdot \boldsymbol{u}_1)\boldsymbol{u}_1 - \cdots - (\boldsymbol{v} \cdot \boldsymbol{u}_m)\boldsymbol{u}_m] \cdot \boldsymbol{u}_i \\
-&= (\boldsymbol{v} \cdot \boldsymbol{u}_1) - [(\boldsymbol{v} \cdot \boldsymbol{u}_i)\boldsymbol{u}_i \cdot \boldsymbol{u}_i] \\
+\bar{v}_{\perp} \cdot \bar{u}_i &= [\bar{v}- (\bar{v} \cdot \bar{u}_1)\bar{u}_1 - \cdots - (\bar{v} \cdot \bar{u}_m)\bar{u}_m] \cdot \bar{u}_i \\
+&= (\bar{v} \cdot \bar{u}_1) - [(\bar{v} \cdot \bar{u}_i)\bar{u}_i \cdot \bar{u}_i] \\
 &= 0
 \end{split}
 $$
 
-which implies $\boldsymbol{v}_{\perp} \in W^{\perp}$. 
+which implies $\bar{v}_{\perp} \in W^{\perp}$. 
 
-To prove that $\boldsymbol{v}_w$ and $\boldsymbol{v}_{\perp}$ are unique (does not depend on the choice of basis), let $\boldsymbol{u}_1', ..., \boldsymbol{u}_m'$ be another orthonormal basis for $W$, and define $\boldsymbol{v}_w'$ and $\boldsymbol{v}_{\perp}'$ similarly we want to get $\boldsymbol{v}_w' = \boldsymbol{v}_w$ and $\boldsymbol{v}_{\perp}' = \boldsymbol{v}_{\perp}$. 
+To prove that $\bar{v}_w$ and $\bar{v}_{\perp}$ are unique (does not depend on the choice of basis), let $\bar{u}_1', ..., \bar{u}_m'$ be another orthonormal basis for $W$, and define $\bar{v}_w'$ and $\bar{v}_{\perp}'$ similarly we want to get $\bar{v}_w' = \bar{v}_w$ and $\bar{v}_{\perp}' = \bar{v}_{\perp}$. 
 
 By definition 
 
 $$
-\boldsymbol{v}_w + \boldsymbol{v}_{\perp} = \boldsymbol{v} = \boldsymbol{v}_w' + \boldsymbol{v}_{\perp}' 
+\bar{v}_w + \bar{v}_{\perp} = \bar{v} = \bar{v}_w' + \bar{v}_{\perp}' 
 $$
 
 so 
 
 $$
-\underbrace{\boldsymbol{v}_w - \boldsymbol{v}_w'}_{\in W} = \underbrace{\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}}_{\in W^{\perp}}
+\underbrace{\bar{v}_w - \bar{v}_w'}_{\in W} = \underbrace{\bar{v}_{\perp}' - \bar{v}_{\perp}}_{\in W^{\perp}}
 $$
 From the orthogonality of these subspaces, we have 
 
 $$
-0 = (\boldsymbol{v}_w - \boldsymbol{v}_w') \cdot (\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}) = (\boldsymbol{v}_w - \boldsymbol{v}_w') \cdot (\boldsymbol{v}_w - \boldsymbol{v}_w') = \|\boldsymbol{v}_w - \boldsymbol{v}_w'\|^2
+0 = (\bar{v}_w - \bar{v}_w') \cdot (\bar{v}_{\perp}' - \bar{v}_{\perp}) = (\bar{v}_w - \bar{v}_w') \cdot (\bar{v}_w - \bar{v}_w') = \|\bar{v}_w - \bar{v}_w'\|^2
 $$
-Similarly we have $\|\boldsymbol{v}_{\perp}' - \boldsymbol{v}_{\perp}\|^2 = 0$. 
+Similarly we have $\|\bar{v}_{\perp}' - \bar{v}_{\perp}\|^2 = 0$. 
 
 The existence and uniqueness of the decomposition above mean that 
 
@@ -144,45 +144,45 @@ whenever $W$ is a subspace.
 ### Best approximation 
 
 ```{theorem, label = 'best-approximation', name = "The Best Approximation"}
-Given $\boldsymbol{y}$ be any vector in $\mathbb{R^n}$, with its subspace $W$, let $\hat{\boldsymbol{y}}$ be the orthogonal projection of $\boldsymbol{y}$ onto $W$. Then $\hat{\boldsymbol{y}}$ is the closest point in $W$ to $\boldsymbol{y}$ in the sense that 
+Given $\bar{y}$ be any vector in $\mathbb{R^n}$, with its subspace $W$, let $\hat{\bar{y}}$ be the orthogonal projection of $\bar{y}$ onto $W$. Then $\hat{\bar{y}}$ is the closest point in $W$ to $\bar{y}$ in the sense that 
 
 $$
-\|\boldsymbol{y} - \hat{\boldsymbol{y}}\| \le \|\boldsymbol{y} - \boldsymbol{v}\|
+\|\bar{y} - \hat{\bar{y}}\| \le \|\bar{y} - \bar{v}\|
 $$
 ```
 
 **PROOF**
 
-Take $\boldsymbol{v}$ distinct from $\hat{\boldsymbol{y}}$ in $W$, we know that $\boldsymbol{y} - \hat{\boldsymbol{y}}$ is perpendicular to $\boldsymbol{v}$. According to Pythoagorean theorem, we have
+Take $\bar{v}$ distinct from $\hat{\bar{y}}$ in $W$, we know that $\bar{y} - \hat{\bar{y}}$ is perpendicular to $\bar{v}$. According to Pythoagorean theorem, we have
 
 ```{r, echo = FALSE, fig.cap="figure from page p352, ch6 [@lay2006-3]", out.width = "120%"}
 knitr::include_graphics("images/best-approximation.png")
 ```
 
 $$
-\|\boldsymbol{y}-  \boldsymbol{v}\|^2 = \|\boldsymbol{\hat{y}} - \boldsymbol{v}\|^2 + \|\boldsymbol{y} -\boldsymbol{\hat{y}}\|^2 
+\|\bar{y}-  \bar{v}\|^2 = \|\bar{\hat{y}} - \bar{v}\|^2 + \|\bar{y} -\bar{\hat{y}}\|^2 
 $$
-When $\boldsymbol{v}$ is distinct from $\boldsymbol{\hat{y}}$, $\|\boldsymbol{\hat{y}} - \boldsymbol{v}\|^2$ is non-negative, so the error term of choosing $\boldsymbol{v}$ is always larger than that of the orthogonal projection $\boldsymbol{\hat{y}}$.  
+When $\bar{v}$ is distinct from $\bar{\hat{y}}$, $\|\bar{\hat{y}} - \bar{v}\|^2$ is non-negative, so the error term of choosing $\bar{v}$ is always larger than that of the orthogonal projection $\bar{\hat{y}}$.  
 
 
 ## Idempotent and Projection Matrices
 
 $$
 \begin{split}
-P_S\boldsymbol{v} &= (\boldsymbol{v} \cdot \boldsymbol{u}_1)\boldsymbol{u}_1 + \cdots + (\boldsymbol{v} \cdot \boldsymbol{u}_m)\boldsymbol{u}_m \\
-&= \boldsymbol{v}^T\boldsymbol{u}_1\boldsymbol{u}_1 + \cdots +  \boldsymbol{v}^T\boldsymbol{u}_m\boldsymbol{u}_m\\
-&= (\boldsymbol{u}_1\boldsymbol{u}_1^T)\boldsymbol{v} + \cdots +  (\boldsymbol{u}_m\boldsymbol{u}_m^T)\boldsymbol{v} \\
-&= (\sum_{i=1}^{M}{\boldsymbol{u}_i\boldsymbol{u}_i^T})\boldsymbol{v}\\
+P_S\bar{v} &= (\bar{v} \cdot \bar{u}_1)\bar{u}_1 + \cdots + (\bar{v} \cdot \bar{u}_m)\bar{u}_m \\
+&= \bar{v}^T\bar{u}_1\bar{u}_1 + \cdots +  \bar{v}^T\bar{u}_m\bar{u}_m\\
+&= (\bar{u}_1\bar{u}_1^T)\bar{v} + \cdots +  (\bar{u}_m\bar{u}_m^T)\bar{v} \\
+&= (\sum_{i=1}^{M}{\bar{u}_i\bar{u}_i^T})\bar{v}\\
 &= 
 \begin{bmatrix}
-\boldsymbol{u}_1 & \cdots & \boldsymbol{u}_m
+\bar{u}_1 & \cdots & \bar{u}_m
 \end{bmatrix}
 \begin{bmatrix}
-\boldsymbol{u}_1^T \\
+\bar{u}_1^T \\
 \vdots \\
-\boldsymbol{u}_m^T
-\end{bmatrix}\boldsymbol{x} \\
-&= UU^T\boldsymbol{x}
+\bar{u}_m^T
+\end{bmatrix}\bar{x} \\
+&= UU^T\bar{x}
 \end{split}
 $$
 
@@ -195,69 +195,69 @@ Another way to derive projection matrices with matrix calculus
 
 $$
 \begin{split}
-\|A\boldsymbol{x} - \boldsymbol{b}\|_2^2
-&= (A\boldsymbol{x} - \boldsymbol{b})^T(A\boldsymbol{x} - \boldsymbol{b}) \\
-&= \boldsymbol{x}^TA^TA\boldsymbol{x} - 2\boldsymbol{b}^TA\boldsymbol{x} + \boldsymbol{b}^T\boldsymbol{b}
+\|A\bar{x} - \bar{b}\|_2^2
+&= (A\bar{x} - \bar{b})^T(A\bar{x} - \bar{b}) \\
+&= \bar{x}^TA^TA\bar{x} - 2\bar{b}^TA\bar{x} + \bar{b}^T\bar{b}
 \end{split}
 $$
 
 $$
 \begin{split}
-\nabla_{x}(\boldsymbol{x}^TA^TA\boldsymbol{x} - 2A\boldsymbol{x}\boldsymbol{b} + \boldsymbol{b}^T\boldsymbol{b}) &=\nabla_x(\boldsymbol{x}^TA^TA\boldsymbol{x}) - \nabla_x{2\boldsymbol{b}^TA\boldsymbol{x}} + \nabla_x{\boldsymbol{b}^T\boldsymbol{b}} \\
-&= 2(A^TA)\boldsymbol{x} - 2A^T\boldsymbol{b}
+\nabla_{x}(\bar{x}^TA^TA\bar{x} - 2A\bar{x}\bar{b} + \bar{b}^T\bar{b}) &=\nabla_x(\bar{x}^TA^TA\bar{x}) - \nabla_x{2\bar{b}^TA\bar{x}} + \nabla_x{\bar{b}^T\bar{b}} \\
+&= 2(A^TA)\bar{x} - 2A^T\bar{b}
 
 \end{split}
 $$
 
 $$
-\boldsymbol{x} = (A^TA)^{-1}A^T\boldsymbol{b}
+\bar{x} = (A^TA)^{-1}A^T\bar{b}
 $$
 $$
-A\boldsymbol{x} = A(A^TA)^{-1}A^T\boldsymbol{b} = \hat{\boldsymbol{b}}
+A\bar{x} = A(A^TA)^{-1}A^T\bar{b} = \hat{\bar{b}}
 $$
 
 
 ## Gram-Schmidt process
 
-Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of $\boldsymbol{x}_{i}$ onto the space spanned by the previously created orthogonal set $\{\boldsymbol{v}_{1}, ..., \boldsymbol{v}_{i-1}\}$, and take the term in the orthogonal compliment to be $\boldsymbol{v}_{i}$. 
+Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of $\bar{x}_{i}$ onto the space spanned by the previously created orthogonal set $\{\bar{v}_{1}, ..., \bar{v}_{i-1}\}$, and take the term in the orthogonal compliment to be $\bar{v}_{i}$. 
 
 ```{theorem gram-schmidt, name = "the Gram-Schmidt process"}
-Given a basis $\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\}$ for a nonzero subspace $W$ of $\mathbb{R}^n$, define 
+Given a basis $\{\bar{x}_1, ..., \bar{x}_p\}$ for a nonzero subspace $W$ of $\mathbb{R}^n$, define 
 
 $$
 \begin{aligned}
-\boldsymbol{v}_1 &= \boldsymbol{x}_1 \\
-\boldsymbol{v}_2 &= \boldsymbol{x}_2 - \frac{\boldsymbol{x}_2 \cdot \boldsymbol{v}_1}{\boldsymbol{v}_1 \cdot \boldsymbol{v}_1}\boldsymbol{v}_1 \\
-\boldsymbol{v}_3 &= \boldsymbol{x}_3 
-- \frac{\boldsymbol{x}_3 \cdot \boldsymbol{v}_1}{\boldsymbol{v}_1 \cdot \boldsymbol{v}_1}\boldsymbol{v}_1 
-- \frac{\boldsymbol{x}_3 \cdot \boldsymbol{v}_2}{\boldsymbol{v}_2 \cdot \boldsymbol{v}_2}\boldsymbol{v}_2
+\bar{v}_1 &= \bar{x}_1 \\
+\bar{v}_2 &= \bar{x}_2 - \frac{\bar{x}_2 \cdot \bar{v}_1}{\bar{v}_1 \cdot \bar{v}_1}\bar{v}_1 \\
+\bar{v}_3 &= \bar{x}_3 
+- \frac{\bar{x}_3 \cdot \bar{v}_1}{\bar{v}_1 \cdot \bar{v}_1}\bar{v}_1 
+- \frac{\bar{x}_3 \cdot \bar{v}_2}{\bar{v}_2 \cdot \bar{v}_2}\bar{v}_2
 \\
 & \vdots \\
-\boldsymbol{v}_p &= \boldsymbol{x}_p 
-- \frac{\boldsymbol{x}_p \cdot \boldsymbol{v}_1}{\boldsymbol{v}_1 \cdot \boldsymbol{v}_1}\boldsymbol{v}_1 
-- \frac{\boldsymbol{x}_p \cdot \boldsymbol{v}_2}{\boldsymbol{v}_2 \cdot \boldsymbol{v}_2}\boldsymbol{v}_2
+\bar{v}_p &= \bar{x}_p 
+- \frac{\bar{x}_p \cdot \bar{v}_1}{\bar{v}_1 \cdot \bar{v}_1}\bar{v}_1 
+- \frac{\bar{x}_p \cdot \bar{v}_2}{\bar{v}_2 \cdot \bar{v}_2}\bar{v}_2
 - \cdots
-- \frac{\boldsymbol{x}_p \cdot \boldsymbol{v}_{p-1}}{\boldsymbol{v}_{p-1} \cdot \boldsymbol{v}_{p-1}}\boldsymbol{v}_{p-1}
+- \frac{\bar{x}_p \cdot \bar{v}_{p-1}}{\bar{v}_{p-1} \cdot \bar{v}_{p-1}}\bar{v}_{p-1}
 \end{aligned}
 $$
   
-Then $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\}$ is an orthogonal basis for $W$. In addition 
+Then $\{\bar{v}_1, ..., \bar{v}_p\}$ is an orthogonal basis for $W$. In addition 
 
 $$
-\text{Span}\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\} = \text{Span}\{\boldsymbol{x}_1, ..., \boldsymbol{x}_p\} 
+\text{Span}\{\bar{v}_1, ..., \bar{v}_p\} = \text{Span}\{\bar{x}_1, ..., \bar{x}_p\} 
 $$
 ```
 
-To make $\{\boldsymbol{v}_1, ..., \boldsymbol{v}_p\}$ an *orthonormal* basis, there is simply one more step of normalization 
+To make $\{\bar{v}_1, ..., \bar{v}_p\}$ an *orthonormal* basis, there is simply one more step of normalization 
 
 $$
-\{\boldsymbol{q}_i = \frac{\boldsymbol{v}_i}{\|\boldsymbol{v}_i\|}, \;i = 1, ... p\} 
+\{\bar{q}_i = \frac{\bar{v}_i}{\|\bar{v}_i\|}, \;i = 1, ... p\} 
 $$
 
 
 ### QR factorizaiton 
 
-For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\boldsymbol{x}_1, ..., \boldsymbol{x}_n$, apply the Gram-Schmidt process to $\boldsymbol{x}_1, ..., \boldsymbol{x}_n$ amounts to *factorizing* $A$. 
+For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\bar{x}_1, ..., \bar{x}_n$, apply the Gram-Schmidt process to $\bar{x}_1, ..., \bar{x}_n$ amounts to *factorizing* $A$. 
  
 ```{theorem qr, name = "QR factorization"}
 if $A$ is an $m \times n$ matrix with full column rank, then $A$ can be factored as $A = QR$, where $Q$ is an $m \times n$ matrix whose columns form an orthonormal basis of $\text{Col}\;A$ and $R$ is an $n \times n$ upper triangular invertible matrix with positive entries on its diagonal. 
@@ -265,21 +265,21 @@ if $A$ is an $m \times n$ matrix with full column rank, then $A$ can be factored
 
 **PROOF**  
 
-Because $A_{m \times n}$ is full column rank, we can transform its column vector $\{\boldsymbol{x}_{1}, ..., \boldsymbol{x}_{n}\}$ into a new set of orthonormal basis $\{\boldsymbol{q}_{1}, ..., \boldsymbol{q}_{n}\}$ with Gram-Schmidt process. Let 
+Because $A_{m \times n}$ is full column rank, we can transform its column vector $\{\bar{x}_{1}, ..., \bar{x}_{n}\}$ into a new set of orthonormal basis $\{\bar{q}_{1}, ..., \bar{q}_{n}\}$ with Gram-Schmidt process. Let 
 
 $$
-Q = [\boldsymbol{q}_{1} \;\; \cdots \;\; \boldsymbol{q}_{n}]
+Q = [\bar{q}_{1} \;\; \cdots \;\; \bar{q}_{n}]
 $$
-For $\boldsymbol{x}_i, \; i = {1, ..., n}$ in Span$\{\boldsymbol{x}_1, ... \boldsymbol{x}_k\}$, there exists a set of constant $r_{1k}, ..., r_{kk}$ such that ^[because Span$\{\boldsymbol{x}_1, ... \boldsymbol{x}_k\}$ is the same as Span$\{\boldsymbol{u}_1, ... \boldsymbol{u}_k\}$] 
+For $\bar{x}_i, \; i = {1, ..., n}$ in Span$\{\bar{x}_1, ... \bar{x}_k\}$, there exists a set of constant $r_{1k}, ..., r_{kk}$ such that ^[because Span$\{\bar{x}_1, ... \bar{x}_k\}$ is the same as Span$\{\bar{u}_1, ... \bar{u}_k\}$] 
 
 $$
-\boldsymbol{x}_k = r_{1k}\boldsymbol{q}_{1} + \cdots + r_{kk}\boldsymbol{q}_{k} + 0 \cdot\boldsymbol{q}_{k+1} + \cdots + 0 \cdot \boldsymbol{q}_{n}
+\bar{x}_k = r_{1k}\bar{q}_{1} + \cdots + r_{kk}\bar{q}_{k} + 0 \cdot\bar{q}_{k+1} + \cdots + 0 \cdot \bar{q}_{n}
 $$
 
 So 
 
 $$
-A = [\boldsymbol{x}_{1} \;\; \boldsymbol{x}_{2} \;\; \cdots \;\; \boldsymbol{x}_{n}] = [\boldsymbol{q}_{1} \;\; \boldsymbol{q}_{2} \;\; \cdots \;\; \boldsymbol{q}_{n}] 
+A = [\bar{x}_{1} \;\; \bar{x}_{2} \;\; \cdots \;\; \bar{x}_{n}] = [\bar{q}_{1} \;\; \bar{q}_{2} \;\; \cdots \;\; \bar{q}_{n}] 
 \begin{bmatrix}
 r_{11} & r_{12} & \cdots & r_{1n} \\
 0 & r_{22} & \cdots & r_{2n} \\
@@ -288,7 +288,7 @@ r_{11} & r_{12} & \cdots & r_{1n} \\
 \end{bmatrix} 
 = QR
 $$
-We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ and $\boldsymbol{u}_k$ by $-1$)
+We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ and $\bar{u}_k$ by $-1$)
 
 ## Orthonormal sets and orthogonal matrices
 
@@ -308,13 +308,13 @@ Another way of defining it is that an orthogonal matrix has both **orthonormal c
 Orthogonal matrices have a nice property that they preserve inner products: 
 
 $$
-(Q\boldsymbol{x})^T(Q\boldsymbol{y}) = \boldsymbol{x}^TQ^TQ\boldsymbol{y} = \boldsymbol{x}^TI\boldsymbol{y} = \boldsymbol{x}^T\boldsymbol{y}
+(Q\bar{x})^T(Q\bar{y}) = \bar{x}^TQ^TQ\bar{y} = \bar{x}^TI\bar{y} = \bar{x}^T\bar{y}
 $$
 
 A direct result is that $Q$ preserves L2 norms 
 
 $$
-\|Q\boldsymbol{x}\|_2 = \sqrt{(Q\boldsymbol{x})^T(Q\boldsymbol{x})} = \sqrt{\boldsymbol{x}^T\boldsymbol{x}} = \|\boldsymbol{x}\|_2
+\|Q\bar{x}\|_2 = \sqrt{(Q\bar{x})^T(Q\bar{x})} = \sqrt{\bar{x}^T\bar{x}} = \|\bar{x}\|_2
 $$
 
 Therefore multiplication by an orthogonal matrix can be considered as a transformation that preserves length, but may rotate or reflect the vector about the origin. 
@@ -326,14 +326,14 @@ Note that $Q$ may not necessarily be a square matrix to satisfy $Q^TQ = I$. For 
 ```{definition}
 the **normal equation** 
 $$
-A^TA\boldsymbol{x} = A^T\boldsymbol{b}
+A^TA\bar{x} = A^T\bar{b}
 $$
 ```
 
 $$
 \begin{aligned}
-A^T(\boldsymbol{b} - A\hat{\boldsymbol{x}}) &= \boldsymbol{0}
+A^T(\bar{b} - A\hat{\bar{x}}) &= \bar{0}
 \end{aligned} \\
-A^T\boldsymbol{b} - A^TA\hat{\boldsymbol{x}} = 0 \\
-\hat{\boldsymbol{x}} = (A^TA)^{-1}A^T\boldsymbol{b}
+A^T\bar{b} - A^TA\hat{\bar{x}} = 0 \\
+\hat{\bar{x}} = (A^TA)^{-1}A^T\bar{b}
 $$

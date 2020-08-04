@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 10 Linear models | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 10 Linear models | Mathematical Notes for Machine Learning" />
+  <title>Chapter 13 Linear models | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 13 Linear models | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 10 Linear models | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 13 Linear models | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 10 Linear models | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 13 Linear models | Mathematical Notes for Machine Learning" />
   
   
   
@@ -24,14 +24,14 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-08-04" />
+<meta name="date" content="2020-08-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="moments.html"/>
+<link rel="prev" href="basics-of-optimization.html"/>
 <link rel="next" href="principal-component-analysis.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -67,7 +67,7 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Math foundations in Machine learning</a></li>
+<li><a href="./">Math Notes for Machine Learning</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
@@ -86,7 +86,9 @@
 <li class="chapter" data-level="1.6" data-path="matrix-basics.html"><a href="matrix-basics.html#matrix-inversion"><i class="fa fa-check"></i><b>1.6</b> Matrix inversion</a><ul>
 <li class="chapter" data-level="1.6.1" data-path="matrix-basics.html"><a href="matrix-basics.html#the-matrix-inversion-lemma"><i class="fa fa-check"></i><b>1.6.1</b> The matrix inversion lemma</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="matrix-basics.html"><a href="matrix-basics.html#matrix-multiplication-as-linear-transformation"><i class="fa fa-check"></i><b>1.7</b> Matrix multiplication as linear transformation</a></li>
+<li class="chapter" data-level="1.7" data-path="matrix-basics.html"><a href="matrix-basics.html#matrix-multiplication-as-linear-transformation"><i class="fa fa-check"></i><b>1.7</b> Matrix multiplication as linear transformation</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="matrix-basics.html"><a href="matrix-basics.html#matrix-multiplication-as-geometric-operators"><i class="fa fa-check"></i><b>1.7.1</b> Matrix multiplication as geometric operators</a></li>
+</ul></li>
 <li class="chapter" data-level="1.8" data-path="matrix-basics.html"><a href="matrix-basics.html#statistics-and-proabability"><i class="fa fa-check"></i><b>1.8</b> Statistics and proabability</a><ul>
 <li class="chapter" data-level="1.8.1" data-path="matrix-basics.html"><a href="matrix-basics.html#sample-statistics"><i class="fa fa-check"></i><b>1.8.1</b> Sample statistics</a></li>
 </ul></li>
@@ -95,7 +97,9 @@
 <li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#vector-space"><i class="fa fa-check"></i><b>2.1</b> Vector space</a><ul>
 <li class="chapter" data-level="2.1.1" data-path="vector-spaces.html"><a href="vector-spaces.html#euclidean-space"><i class="fa fa-check"></i><b>2.1.1</b> Euclidean space</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric spaces, normed spaces, inner product spaces</a></li>
+<li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric spaces, normed spaces, inner product spaces</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#restricted-definition-of-inner-products-in-rn"><i class="fa fa-check"></i><b>2.2.1</b> Restricted definition of inner products in <span class="math inline">\(R^n\)</span></a></li>
+</ul></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
 <li class="chapter" data-level="2.4" data-path="vector-spaces.html"><a href="vector-spaces.html#fundamental-theorem"><i class="fa fa-check"></i><b>2.4</b> Fundamental theorem of linear algebra</a></li>
 <li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a><ul>
@@ -127,11 +131,12 @@
 <li class="chapter" data-level="4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>4.2</b> Diagnolization and similar matrices</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#similarity"><i class="fa fa-check"></i><b>4.2.1</b> Similarity</a></li>
 <li class="chapter" data-level="4.2.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#jordan-matrix"><i class="fa fa-check"></i><b>4.2.2</b> Jordan matrix</a></li>
-<li class="chapter" data-level="4.2.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#simultaneous-diagonalizability"><i class="fa fa-check"></i><b>4.2.3</b> Simultaneous Diagonalizability</a></li>
+<li class="chapter" data-level="4.2.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#simultaneous-diagonalization"><i class="fa fa-check"></i><b>4.2.3</b> Simultaneous Diagonalization</a></li>
 <li class="chapter" data-level="4.2.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#cayley-hamilton-theorem"><i class="fa fa-check"></i><b>4.2.4</b> Cayley-Hamilton theorem</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.3</b> Symmetric matrices</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#spectral-decomposition"><i class="fa fa-check"></i><b>4.3.1</b> Spectral decomposition</a></li>
+<li class="chapter" data-level="4.3.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#a-rrthogonality"><i class="fa fa-check"></i><b>4.3.2</b> A-Rrthogonality</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#quadratic-forms"><i class="fa fa-check"></i><b>4.4</b> Quadratic forms</a><ul>
 <li class="chapter" data-level="4.4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#change-of-variabele"><i class="fa fa-check"></i><b>4.4.1</b> Change of variabele</a></li>
@@ -161,16 +166,28 @@
 <li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
 <li class="chapter" data-level="7" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>7</b> Matrix calculus</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
-<li class="chapter" data-level="8" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>8</b> Probability basics</a></li>
-<li class="chapter" data-level="9" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>9</b> Moments</a></li>
-<li class="part"><span><b>IV Applications</b></span></li>
-<li class="chapter" data-level="10" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>10</b> Linear models</a><ul>
-<li class="chapter" data-level="10.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>10.1</b> Least square estimation</a></li>
-<li class="chapter" data-level="10.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>10.2</b> Maximum likelihood estimation</a></li>
-<li class="chapter" data-level="10.3" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>10.3</b> Weighted least squares</a></li>
-<li class="chapter" data-level="10.4" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>10.4</b> Partial least squres</a></li>
+<li class="chapter" data-level="8" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>8</b> Probability basics</a><ul>
+<li class="chapter" data-level="8.1" data-path="probability-basics.html"><a href="probability-basics.html#probabilty-space"><i class="fa fa-check"></i><b>8.1</b> Probabilty space</a></li>
+<li class="chapter" data-level="8.2" data-path="probability-basics.html"><a href="probability-basics.html#counting"><i class="fa fa-check"></i><b>8.2</b> Counting</a></li>
+<li class="chapter" data-level="8.3" data-path="probability-basics.html"><a href="probability-basics.html#conditional-probability"><i class="fa fa-check"></i><b>8.3</b> Conditional probability</a></li>
+<li class="chapter" data-level="8.4" data-path="probability-basics.html"><a href="probability-basics.html#random-variables"><i class="fa fa-check"></i><b>8.4</b> Random variables</a></li>
+<li class="chapter" data-level="8.5" data-path="probability-basics.html"><a href="probability-basics.html#properties-of-expectation-variance-and-covariance"><i class="fa fa-check"></i><b>8.5</b> Properties of expectation, variance, and covariance</a></li>
+<li class="chapter" data-level="8.6" data-path="probability-basics.html"><a href="probability-basics.html#conditional-expectation"><i class="fa fa-check"></i><b>8.6</b> Conditional expectation</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>11</b> Principal component analysis</a></li>
+<li class="chapter" data-level="9" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>9</b> Moments</a></li>
+<li class="chapter" data-level="10" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>10</b> Univariate distributions</a><ul>
+<li class="chapter" data-level="10.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>10.1</b> Uniform distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>11</b> Multivariate distributions</a></li>
+<li class="chapter" data-level="12" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>12</b> Basics of optimization</a></li>
+<li class="part"><span><b>IV Applications</b></span></li>
+<li class="chapter" data-level="13" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>13</b> Linear models</a><ul>
+<li class="chapter" data-level="13.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>13.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="13.2" data-path="linear-models.html"><a href="linear-models.html#maximum-likelihood-estimation"><i class="fa fa-check"></i><b>13.2</b> Maximum likelihood estimation</a></li>
+<li class="chapter" data-level="13.3" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>13.3</b> Weighted least squares</a></li>
+<li class="chapter" data-level="13.4" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>13.4</b> Partial least squres</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>14</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -195,33 +212,33 @@
 
             <section class="normal" id="section-">
 <div id="linear-models" class="section level1">
-<h1><span class="header-section-number">Chapter 10</span> Linear models</h1>
+<h1><span class="header-section-number">Chapter 13</span> Linear models</h1>
 <div id="least-square-estimation" class="section level2">
-<h2><span class="header-section-number">10.1</span> Least square estimation</h2>
+<h2><span class="header-section-number">13.1</span> Least square estimation</h2>
 <p>From theorem <a href="orthogonality.html#thm:best-approximation">3.3</a> we know that</p>
 <p><span class="math display">\[
-\boldsymbol{\beta} = (X^TX)^{-1}X^T\boldsymbol{y}
+\bar{\beta} = (X^TX)^{-1}X^T\bar{y}
 \]</span></p>
 <p>thus:</p>
 <p><span class="math display">\[
-\hat{\boldsymbol{y}} = X\boldsymbol{\beta} = X (X^TX)^{-1}X^{T}\boldsymbol{y}
+\hat{\bar{y}} = X\bar{\beta} = X (X^TX)^{-1}X^{T}\bar{y}
 \]</span></p>
-<p>When columns of the design matrix <span class="math inline">\(A\)</span> are orthogonal, the orthogonal projection of <span class="math inline">\(\boldsymbol{y}\)</span> onto Col<span class="math inline">\(X\)</span> isi given by</p>
+<p>When columns of the design matrix <span class="math inline">\(A\)</span> are orthogonal, the orthogonal projection of <span class="math inline">\(\bar{y}\)</span> onto Col<span class="math inline">\(X\)</span> isi given by</p>
 <p><span class="math display">\[
-\hat{\boldsymbol{y}} = \frac{\boldsymbol{x}_0^T\boldsymbol{y}}{\boldsymbol{x}_0^T\boldsymbol{x}_0}\boldsymbol{x}_0 + 
-\frac{\boldsymbol{x}_1^T\boldsymbol{y}}{\boldsymbol{x}_1^T\boldsymbol{x}_1}\boldsymbol{x}_1
+\hat{\bar{y}} = \frac{\bar{x}_0^T\bar{y}}{\bar{x}_0^T\bar{x}_0}\bar{x}_0 + 
+\frac{\bar{x}_1^T\bar{y}}{\bar{x}_1^T\bar{x}_1}\bar{x}_1
 \cdots +
-\frac{\boldsymbol{x}_p^T\boldsymbol{y}}{\boldsymbol{x}_p^T\boldsymbol{x}_p}\boldsymbol{x}_p
+\frac{\bar{x}_p^T\bar{y}}{\bar{x}_p^T\bar{x}_p}\bar{x}_p
 \]</span></p>
 </div>
 <div id="maximum-likelihood-estimation" class="section level2">
-<h2><span class="header-section-number">10.2</span> Maximum likelihood estimation</h2>
+<h2><span class="header-section-number">13.2</span> Maximum likelihood estimation</h2>
 </div>
 <div id="weighted-least-squares" class="section level2">
-<h2><span class="header-section-number">10.3</span> Weighted least squares</h2>
+<h2><span class="header-section-number">13.3</span> Weighted least squares</h2>
 </div>
 <div id="partial-least-squres" class="section level2">
-<h2><span class="header-section-number">10.4</span> Partial least squres</h2>
+<h2><span class="header-section-number">13.4</span> Partial least squres</h2>
 
 </div>
 </div>
@@ -230,7 +247,7 @@
           </div>
         </div>
       </div>
-<a href="moments.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basics-of-optimization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="principal-component-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

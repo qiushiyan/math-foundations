@@ -17,12 +17,15 @@ rmd_files: [
   "eigen-quadratic.Rmd",
   "linear-system.Rmd",
 
-
   "taylor.Rmd",
   "matrix-calculus.Rmd",
   
   "probability-basics.Rmd",
   "moments.Rmd",
+  "univariate.Rmd",
+  "multivariate.Rmd",
+  
+  "optimization-basics.Rmd",
   
   "linear-models.Rmd",
   "pca.Rmd",

@@ -1,7 +1,7 @@
 --- 
 title: "Mathematical Notes for Machine Learning"
 author: "Qiushi Yan"
-date: "2020-08-04"
+date: "2020-08-05"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib, packages.bib]
@@ -33,7 +33,9 @@ References (books, online courses, videos, papers) include:
   - Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, https://ocw.mit.edu. License: Creative Commons BY-NC-SA.
   
 - **Probability Thoery**  
-  - *Probability for Statistics and Machine Learning: Fundamentals and Advanced   Topics* [@10.5555/2028916]
+  - *Probability for Statistics and Machine Learning: Fundamentals and Advanced Topics* [@10.5555/2028916]
+  - *Introduction to Probability* [@blitzstein2019] 
+  - *Introduction to Probability* [@bertsekas2008introduction]
   - John Tsitsiklis, and Patrick Jaillet. RES.6-012 Introduction to Probability. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, https://ocw.mit.edu. License: Creative Commons BY-NC-SA.
 
 
