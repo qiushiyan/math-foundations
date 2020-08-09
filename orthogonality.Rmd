@@ -19,8 +19,8 @@ $$
 This corresponds to discussions in Section \@ref(fundamental-theorem), where 
 
 $$
-(\text{row}\,A)^{\perp} = \text{Nul}\,A \\
-(\text{col}\,A)^{\perp} = \text{Nul}\,A^T
+\mathcal{R}(A^T) = \mathcal{N}(A) \\
+\mathcal{R}(A) = \mathcal{N}{(A^T)}
 $$
 <br>
 

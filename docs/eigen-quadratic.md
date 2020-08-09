@@ -684,7 +684,7 @@ $$
 A = LL^T
 $$
 
-To it more clear
+To make it more clear
 
 $$
 \begin{bmatrix}

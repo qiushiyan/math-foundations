@@ -17,7 +17,7 @@ A probability space is a triple $(\Omega, \mathcal{F}, \mathbb{P})$ where
 
 - $\mathbb{P}$ is a function that assigns probabilities to events: $\mathbb{P}: \mathcal{F} \rightarrow [0 , 1]$. 
 
-**Axioms of probability** are concerned with the function $\mathbb{P}$  
+**Axioms of probability** are concerned with specific properties of the function $\mathbb{P}$  
 
 1. $\mathbb{P}(A) \ge 0 $ for all $A \in \mathcal{F}$   
 2. $\mathbb{P}(\Omega) = 1$ and $\mathbb{P(\emptyset)} = 0$  
@@ -52,7 +52,12 @@ $$
 Both side of the identity count the ways to break $2n$ people into $n$ partnerships. According to the right side, we can form partnerships by lining up all $2n$ people and making the first and the second a pair, then the third and the fourth a pair, etc. This overcounts by a factor $2^n \cdot n!$ since the order of partnerships does not matter, nor does the order inside each pair. Alternatively, there are $2n - 1$ choices for people 1, $2n - 3$ choices for people 2 (or person 3 if people 2 is paired to people 1), and so on.  
 
 
-## Conditional probability
+## Conditional probability  
+
+```{definition, name = "Conditional probability"}
+
+```
+
 
 
 ## Random variables 

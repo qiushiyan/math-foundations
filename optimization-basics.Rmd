@@ -2,3 +2,28 @@
 # (PART) Optimization {-}
 
 # Basics of optimization 
+
+
+## Univariate optimization 
+
+```{theorem second-derivative, name = "Second derivative test for local extrema"}
+
+
+Suppose $f''(x)$ is continuous on an open interval that contains $x = c$  
+
+1. If $f'(c) = 0$ and $f''(c) > 0$, then $f(x)$ has a local minimum at $x = c$  
+
+2. If $f'(c) = 0$ and $f''(c) < 0$, then $f(x)$ has a local maximum at $x = c$  
+
+3. If $f'(c) = 0$ and $f''(c) = 0$, the the test fails. $f(x)$ my have a local maximum, a local minimum, or neither 
+```
+
+
+
+
+
+
+## Multivariate optimization 
+
+
+## Lagrange multipliers

@@ -19,6 +19,7 @@ rmd_files: [
 
   "taylor.Rmd",
   "matrix-calculus.Rmd",
+  "infinite-series.Rmd",
   
   "probability-basics.Rmd",
   "moments.Rmd",
@@ -26,6 +27,7 @@ rmd_files: [
   "multivariate.Rmd",
   
   "optimization-basics.Rmd",
+  "gradient-descent.Rmd",
   
   "linear-models.Rmd",
   "pca.Rmd",
