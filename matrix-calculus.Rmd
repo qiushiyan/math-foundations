@@ -81,3 +81,23 @@ J = \nabla_x \bar{f} &=
 $$
 ```
 
+## Some useful identities 
+
+```{proposition, name = "Useful matrix calculus identities"}
+
+```
+
+
+
+$$
+\frac{\partial \, \bar{a}^T\bar{w}}{\partial \bar{w}} = \frac{\partial \, \bar{w}^T\bar{a}}{\partial \bar{w}} = \bar{a}^T
+$$
+
+$$
+\frac{\partial \, (\bar{w}^TA\bar{w})}{\partial \bar{w}} = (A + A^T) \bar{w}  \qquad \text{if A is symmetric then } 2 A\bar{x}  
+$$
+
+$$
+\frac{\partial \, (\bar{b}^TB\bar{w})}{\partial \bar{w}}  = \frac{\partial \, (\bar{w}^TB^T\bar{b})}{\partial \bar{w}} = \bar{b}^TB
+$$
+
