@@ -81,23 +81,24 @@ J = \nabla_x \bar{f} &=
 $$
 ```
 
-## Some useful identities 
+## Useful identities in matirx calculus 
 
-```{proposition, name = "Useful matrix calculus identities"}
+Assuming $A$ is a $m \times n$ matrix and $\bar{w}$ an $n \times 1$ column vector, 
 
-```
+|Derivative of|with respect to|output size|result|
+:-:|:-:|:-:|:-:|
+|$A\bar{w}$|$\bar{w}$|matrix $m \times n$|$A$|
+|$\bar{a}^T\bar{w}$ <br> $\bar{w}^T\bar{a}$|$\bar{w}$|row vector $1 \times n$|$\bar{a}^T$|
+|$\bar{b}^TB\bar{w}$ <br> $\bar{w}^TB^T\bar{b}$|$\bar{w}$|row vector $n \times 1$|$\bar{b}^TB$|
+|$\bar{w}^TA\bar{w}$|$\bar{w}$|row vector $1 \times n$|$\bar{w}^T(A + A^T)$ <br> if $A$ is symmetric $2\bar{w}^TA$|
 
 
 
-$$
-\frac{\partial \, \bar{a}^T\bar{w}}{\partial \bar{w}} = \frac{\partial \, \bar{w}^T\bar{a}}{\partial \bar{w}} = \bar{a}^T
-$$
 
-$$
-\frac{\partial \, (\bar{w}^TA\bar{w})}{\partial \bar{w}} = (A + A^T) \bar{w}  \qquad \text{if A is symmetric then } 2 A\bar{x}  
-$$
 
-$$
-\frac{\partial \, (\bar{b}^TB\bar{w})}{\partial \bar{w}}  = \frac{\partial \, (\bar{w}^TB^T\bar{b})}{\partial \bar{w}} = \bar{b}^TB
-$$
+
+
+
+
+
 

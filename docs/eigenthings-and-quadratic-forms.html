@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-08-11" />
+<meta name="date" content="2020-08-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="orthogonality.html"/>
-<link rel="next" href="solutions-of-linear-system-ax-b.html"/>
+<link rel="next" href="singular-value-decomposition.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -144,63 +144,65 @@
 </ul></li>
 <li class="chapter" data-level="4.5" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#cholesky-factorization"><i class="fa fa-check"></i><b>4.5</b> Cholesky factorization</a></li>
 <li class="chapter" data-level="4.6" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients"><i class="fa fa-check"></i><b>4.6</b> Rayleigh quotients</a></li>
-<li class="chapter" data-level="4.7" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd"><i class="fa fa-check"></i><b>4.7</b> SVD</a><ul>
-<li class="chapter" data-level="4.7.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#singular-values-of-m-x-n-matrix"><i class="fa fa-check"></i><b>4.7.1</b> Singular values of m x n matrix</a></li>
-<li class="chapter" data-level="4.7.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#svd-theorem"><i class="fa fa-check"></i><b>4.7.2</b> The singular value decomposition</a></li>
 </ul></li>
-<li class="chapter" data-level="4.8" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#matrix-norms"><i class="fa fa-check"></i><b>4.8</b> Matrix norms</a><ul>
-<li class="chapter" data-level="4.8.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#induced-norms"><i class="fa fa-check"></i><b>4.8.1</b> Induced norms</a></li>
-<li class="chapter" data-level="4.8.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#entry-wise-norm"><i class="fa fa-check"></i><b>4.8.2</b> Entry-wise norm</a></li>
-<li class="chapter" data-level="4.8.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#other-matrix-norms"><i class="fa fa-check"></i><b>4.8.3</b> Other matrix norms</a></li>
-<li class="chapter" data-level="4.8.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#unitary-invariancy"><i class="fa fa-check"></i><b>4.8.4</b> Unitary invariancy</a></li>
+<li class="chapter" data-level="5" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html"><i class="fa fa-check"></i><b>5</b> Singular value decomposition</a><ul>
+<li class="chapter" data-level="5.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#singular-values-of-m-x-n-matrix"><i class="fa fa-check"></i><b>5.1</b> Singular values of m x n matrix</a></li>
+<li class="chapter" data-level="5.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#svd-theorem"><i class="fa fa-check"></i><b>5.2</b> The singular value decomposition</a></li>
+<li class="chapter" data-level="5.3" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#matrix-norms"><i class="fa fa-check"></i><b>5.3</b> Matrix norms</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#induced-norms"><i class="fa fa-check"></i><b>5.3.1</b> Induced norms</a></li>
+<li class="chapter" data-level="5.3.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#entry-wise-norm"><i class="fa fa-check"></i><b>5.3.2</b> Entry-wise norm</a></li>
+<li class="chapter" data-level="5.3.3" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#other-matrix-norms"><i class="fa fa-check"></i><b>5.3.3</b> Other matrix norms</a></li>
+<li class="chapter" data-level="5.3.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#unitary-invariancy"><i class="fa fa-check"></i><b>5.3.4</b> Unitary invariancy</a></li>
 </ul></li>
-<li class="chapter" data-level="4.9" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#low-rank-approximation"><i class="fa fa-check"></i><b>4.9</b> Low rank approximation</a></li>
+<li class="chapter" data-level="5.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#low-rank-approximation"><i class="fa fa-check"></i><b>5.4</b> Low rank approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html"><i class="fa fa-check"></i><b>5</b> Solutions of linear system Ax = b</a><ul>
-<li class="chapter" data-level="5.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#generalized-inverse"><i class="fa fa-check"></i><b>5.1</b> Generalized inverse</a></li>
-<li class="chapter" data-level="5.2" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>5.2</b> Ill-conditioned matrices</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#the-condition-number"><i class="fa fa-check"></i><b>5.2.1</b> The condition number</a></li>
+<li class="chapter" data-level="6" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html"><i class="fa fa-check"></i><b>6</b> Solutions of linear system Ax = b</a><ul>
+<li class="chapter" data-level="6.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#generalized-inverse"><i class="fa fa-check"></i><b>6.1</b> Generalized inverse</a></li>
+<li class="chapter" data-level="6.2" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>6.2</b> Ill-conditioned matrices</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="solutions-of-linear-system-ax-b.html"><a href="solutions-of-linear-system-ax-b.html#the-condition-number"><i class="fa fa-check"></i><b>6.2.1</b> The condition number</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Calculus</b></span></li>
-<li class="chapter" data-level="6" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>6</b> Taylor series and expansion</a></li>
-<li class="chapter" data-level="7" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>7</b> Matrix calculus</a></li>
-<li class="chapter" data-level="8" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html"><i class="fa fa-check"></i><b>8</b> Infinite sequences and series</a></li>
+<li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
+<li class="chapter" data-level="8" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>8</b> Matrix calculus</a><ul>
+<li class="chapter" data-level="8.1" data-path="matrix-calculus.html"><a href="matrix-calculus.html#useful-identities-in-matirx-calculus"><i class="fa fa-check"></i><b>8.1</b> Useful identities in matirx calculus</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html"><i class="fa fa-check"></i><b>9</b> Infinite sequences and series</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
-<li class="chapter" data-level="9" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>9</b> Probability basics</a><ul>
-<li class="chapter" data-level="9.1" data-path="probability-basics.html"><a href="probability-basics.html#probabilty-space"><i class="fa fa-check"></i><b>9.1</b> Probabilty space</a></li>
-<li class="chapter" data-level="9.2" data-path="probability-basics.html"><a href="probability-basics.html#counting"><i class="fa fa-check"></i><b>9.2</b> Counting</a></li>
-<li class="chapter" data-level="9.3" data-path="probability-basics.html"><a href="probability-basics.html#conditional-probability"><i class="fa fa-check"></i><b>9.3</b> Conditional probability</a></li>
-<li class="chapter" data-level="9.4" data-path="probability-basics.html"><a href="probability-basics.html#random-variables"><i class="fa fa-check"></i><b>9.4</b> Random variables</a></li>
-<li class="chapter" data-level="9.5" data-path="probability-basics.html"><a href="probability-basics.html#properties-of-expectation-variance-and-covariance"><i class="fa fa-check"></i><b>9.5</b> Properties of expectation, variance, and covariance</a></li>
-<li class="chapter" data-level="9.6" data-path="probability-basics.html"><a href="probability-basics.html#conditional-expectation"><i class="fa fa-check"></i><b>9.6</b> Conditional expectation</a></li>
+<li class="chapter" data-level="10" data-path="probability-basics.html"><a href="probability-basics.html"><i class="fa fa-check"></i><b>10</b> Probability basics</a><ul>
+<li class="chapter" data-level="10.1" data-path="probability-basics.html"><a href="probability-basics.html#probabilty-space"><i class="fa fa-check"></i><b>10.1</b> Probabilty space</a></li>
+<li class="chapter" data-level="10.2" data-path="probability-basics.html"><a href="probability-basics.html#counting"><i class="fa fa-check"></i><b>10.2</b> Counting</a></li>
+<li class="chapter" data-level="10.3" data-path="probability-basics.html"><a href="probability-basics.html#conditional-probability"><i class="fa fa-check"></i><b>10.3</b> Conditional probability</a></li>
+<li class="chapter" data-level="10.4" data-path="probability-basics.html"><a href="probability-basics.html#random-variables"><i class="fa fa-check"></i><b>10.4</b> Random variables</a></li>
+<li class="chapter" data-level="10.5" data-path="probability-basics.html"><a href="probability-basics.html#properties-of-expectation-variance-and-covariance"><i class="fa fa-check"></i><b>10.5</b> Properties of expectation, variance, and covariance</a></li>
+<li class="chapter" data-level="10.6" data-path="probability-basics.html"><a href="probability-basics.html#conditional-expectation"><i class="fa fa-check"></i><b>10.6</b> Conditional expectation</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>10</b> Moments</a></li>
-<li class="chapter" data-level="11" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>11</b> Univariate distributions</a><ul>
-<li class="chapter" data-level="11.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>11.1</b> Uniform distribution</a></li>
+<li class="chapter" data-level="11" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>11</b> Moments</a></li>
+<li class="chapter" data-level="12" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>12</b> Univariate distributions</a><ul>
+<li class="chapter" data-level="12.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>12.1</b> Uniform distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>12</b> Multivariate distributions</a></li>
+<li class="chapter" data-level="13" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>13</b> Multivariate distributions</a></li>
 <li class="part"><span><b>IV Optimization</b></span></li>
-<li class="chapter" data-level="13" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>13</b> Basics of optimization</a><ul>
-<li class="chapter" data-level="13.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>13.1</b> Univariate optimization</a></li>
-<li class="chapter" data-level="13.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>13.2</b> Multivariate optimization</a></li>
-<li class="chapter" data-level="13.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#lagrange-multipliers"><i class="fa fa-check"></i><b>13.3</b> Lagrange multipliers</a></li>
+<li class="chapter" data-level="14" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>14</b> Basics of optimization</a><ul>
+<li class="chapter" data-level="14.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>14.1</b> Univariate optimization</a></li>
+<li class="chapter" data-level="14.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>14.2</b> Multivariate optimization</a></li>
+<li class="chapter" data-level="14.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#lagrange-multipliers"><i class="fa fa-check"></i><b>14.3</b> Lagrange multipliers</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>14</b> Gradient descent</a></li>
+<li class="chapter" data-level="15" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>15</b> Gradient descent</a></li>
 <li class="part"><span><b>V Applications</b></span></li>
-<li class="chapter" data-level="15" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>15</b> Linear models</a><ul>
-<li class="chapter" data-level="15.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>15.1</b> Ordinary Least Squares</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>15.1.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="16" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>16</b> Linear models</a><ul>
+<li class="chapter" data-level="16.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>16.1</b> Ordinary Least Squares</a><ul>
+<li class="chapter" data-level="16.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>16.1.1</b> Least square estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>15.2</b> Weighted least squares</a></li>
-<li class="chapter" data-level="15.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>15.3</b> Partial least squres</a></li>
-<li class="chapter" data-level="15.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>15.4</b> Regularized regression</a><ul>
-<li class="chapter" data-level="15.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>15.4.1</b> Ridge regression</a></li>
-<li class="chapter" data-level="15.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>15.4.2</b> Lasso regression</a></li>
-<li class="chapter" data-level="15.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>15.4.3</b> Elastic net regression</a></li>
+<li class="chapter" data-level="16.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>16.2</b> Weighted least squares</a></li>
+<li class="chapter" data-level="16.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>16.3</b> Partial least squres</a></li>
+<li class="chapter" data-level="16.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>16.4</b> Regularized regression</a><ul>
+<li class="chapter" data-level="16.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>16.4.1</b> Ridge regression</a></li>
+<li class="chapter" data-level="16.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>16.4.2</b> Lasso regression</a></li>
+<li class="chapter" data-level="16.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>16.4.3</b> Elastic net regression</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>16</b> Principal component analysis</a></li>
+<li class="chapter" data-level="17" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>17</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -946,366 +948,6 @@ Since <span class="math inline">\(\bar{q}_1^T\bar{x} = \bar{x}^T\bar{q}_1 = 0\)<
 &amp;= \bar{q}_k
 \end{split}
 \]</span></p>
-</div>
-<div id="svd" class="section level2">
-<h2><span class="header-section-number">4.7</span> SVD</h2>
-<div id="singular-values-of-m-x-n-matrix" class="section level3">
-<h3><span class="header-section-number">4.7.1</span> Singular values of m x n matrix</h3>
-<p>The singular value decomposition illustrates a way of decomposing <em>any</em> matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> into the form <span class="math inline">\(U \Sigma V^T\)</span>, where <span class="math inline">\(U = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_n]\)</span> and <span class="math inline">\(V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]\)</span> are both orthogonal matrices, and <span class="math inline">\(\Sigma\)</span> a diagonal matrix with entries being the square root of the eigenvalues of <span class="math inline">\(A^TA\)</span> (perhaps plus some zeros).</p>
-<p>Before proceeding to the theorem, let’s explore the motivating idea behind SVD. For (square) diagonalizable matrix <span class="math inline">\(A \in \mathbb{S}^{n}\)</span>, the absolute value of the eigenvalues measure the amounts that <span class="math inline">\(A\)</span> stretches or shrinks eigenvectors, consider the ratio between the length of <span class="math inline">\(\bar{x}\)</span> before and after left multiplied by <span class="math inline">\(A\)</span></p>
-<p><span class="math display">\[
-\frac{\|A\bar{x}\|}{\|\bar{x}\|} 
-= \frac{\|\lambda\bar{x}\|}{\|\bar{x}\|}
-= \frac{\lambda\|\bar{x}\|}{\|\bar{x}\|} = \lambda
-\]</span>
-If <span class="math inline">\(\lambda_1\)</span> is the greatest eigenvalue, then the corresponding eigenvector <span class="math inline">\(\bar{v}_1\)</span> identifies the direction in which <span class="math inline">\(A\)</span>’s stretching effect is greatest.</p>
-<p>So, the question is, can we identify a similar ratio and direction for <em>rectangular</em> matrices <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, even though they does not have eigenvalues and eigenvectors?</p>
-<p>The answer is yes. Note that maximize <span class="math inline">\(\frac{\|A\bar{x}\|}{\|\bar{x}\|}\)</span> (now <span class="math inline">\(\bar{x}\)</span> is any vector <span class="math inline">\(\in \mathbb{R}^n\)</span>) is equivalent to maximize <span class="math inline">\(\frac{\|A\bar{x}\|^2}{\|\bar{x}\|^2}\)</span></p>
-<p><span class="math display">\[
-\begin{split}
-\frac{\|A\bar{x}\|^2}{\|\bar{x}\|^2} &amp;= \frac{(A\bar{x})^T(A\bar{x})}{\bar{x}^T\bar{x}} \\
-&amp;= \frac{\bar{x}^T(A^TA)\bar{x}}{\bar{x}^T\bar{x}}
-\end{split}
-\]</span>
-Since <span class="math inline">\(A^TA\)</span> is <strong>symmetric</strong>, this is the form of a Rayleigh quotients <a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients">4.6</a>! We know that the largest possible value is of this quotient <span class="math inline">\(\lambda_1\)</span>, the greatest eigenvalue of <span class="math inline">\(A^TA\)</span>, with <span class="math inline">\(\bar{x} = \bar{v}_1\)</span>, among the <strong>orthonormal</strong> set <span class="math inline">\(\{\bar{v}_1, \cdots, \bar{v}_n\}\)</span>. Note that here <span class="math inline">\(V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]\)</span> is already a orthogonal matrix, previously denoted by <span class="math inline">\(Q\)</span>.</p>
-<p>To sum up, the greatest possible stretching ratio of <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> on a vector <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span> is <span class="math inline">\(\sqrt{\lambda_1}\)</span>. Generally, let <span class="math inline">\(\{\bar{v}_1, \cdots, \bar{v}_n\}\)</span> be a orthonormal basis for <span class="math inline">\(\mathbb{R}^n\)</span> consisting of eigenvectors of <span class="math inline">\(A^TA\)</span>, and <span class="math inline">\(\lambda_1, ..., \lambda_n\)</span> be the eigenvalues of <span class="math inline">\(A^TA\)</span>, for <span class="math inline">\(i = 1, \cdots, n\)</span></p>
-<p><span class="math display">\[
-\|A\bar{v}_i\| ^ 2 = \bar{v}_i^T(A^TA)\bar{v}_i = \lambda_i\bar{v}_i^T\bar{v}_i = \lambda_i
-\]</span></p>
-<p>From corollary <a href="eigenthings-and-quadratic-forms.html#cor:ata-pd">4.3</a>, we know that <span class="math inline">\(A^TA\)</span> are positive semidefinite matrices. Thus, <span class="math inline">\(\lambda_i \ge 0, \, i = 1, ..., n\)</span>, and we can find their square root <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>.</p>
-<p><br></p>
-
-<div class="definition">
-<span id="def:unnamed-chunk-17" class="definition"><strong>Definition 4.7  (Singular values)  </strong></span>The <strong>singular values</strong> of <span class="math inline">\(A\)</span> are the square roots of the eigenvalues of <span class="math inline">\(A^TA\)</span>, denoted by <span class="math inline">\(\sigma_1, ..., \sigma_n\)</span>. That is, <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>, and they are often arranged in descending order so that <span class="math inline">\(\lambda_1 \ge \cdots \ge \lambda_n\)</span>. Geometrically, singular values of <span class="math inline">\(A\)</span> are the length of the vectors <span class="math inline">\(A\bar{v}_1, ..., A\bar{v}_n\)</span>, where <span class="math inline">\(\{\bar{v}_1, ..., \bar{v}_n\}\)</span> is the <em>orthonormal</em> basis of <span class="math inline">\(A^TA\)</span>’s eigenspace.
-</div>
-
-<p><br></p>
-
-<div class="theorem">
-<span id="thm:svd-rank" class="theorem"><strong>Theorem 4.9  </strong></span>Proceeding from previous definitons of singular values, and suppose <span class="math inline">\(A\)</span> has at least one nonzero singular values. Then <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> is an orthogonal basis for <span class="math inline">\(\mathcal{R}(A)\)</span>, and <span class="math inline">\(\text{rank} \;A = r\)</span>
-</div>
-
-<p><strong>PROOF</strong></p>
-<p>First, let’s examine that <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> is a orthogonal basis: any pair of two distinct vectors <span class="math inline">\(A\bar{v}_i, A\bar{v}_j, \; i,j = 1, ..., r\)</span> are orthogonal to each other</p>
-<p><span class="math display">\[
-\begin{split}
-(A\bar{v}_i)^T(A\bar{v}_j) &amp;=  \bar{v}_i^TA^TA\bar{v}_j \\
-&amp;= \bar{v}_i^T(\lambda_j\bar{v}_j) \\
-&amp;= 0
-\end{split}
-\]</span></p>
-<p>Next, we show that any vector in <span class="math inline">\(\mathcal{R}(A)\)</span> is a linear a combination of <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span>. Note that <span class="math inline">\(\{\bar{v}_1, ..., \bar{v}_n\}\)</span> is a orthonormal basis of <span class="math inline">\(A^TA\)</span>’s eigenspace <span class="math inline">\(\mathbb{R}^n\)</span>. Therefore, for any vector <span class="math inline">\(\bar{y} = A\bar{x}\)</span> in <span class="math inline">\(\mathcal{R}(A)\)</span> , there exists <span class="math inline">\(\bar{x} = c_1\bar{v}_1 + \cdots + c_n\bar{v}_n\)</span>, thus</p>
-<p><span class="math display">\[
-\begin{split}
-\bar{y} &amp;= A\bar{x} = A(c_1\bar{v}_1 + \cdots + c_n\bar{v}_n) \\
-&amp;= c_1 A \bar{v}_1 + \cdots + c_r A \bar{v}_r + c_{r+1} A \bar{v}_{r+1} + \cdots + c_n A \bar{v}_n 
-\end{split}
-\tag{1}
-\]</span>
-Since <span class="math inline">\(\lambda_{r+1} = \cdots = \lambda_{n} = 0\)</span>, <span class="math inline">\(A\bar{v}_{r+1}, ..., A\bar{v}_{n}\)</span> have length <span class="math inline">\(0\)</span>: they are zero vectors. And (1) is reduced to</p>
-<p><span class="math display">\[
-\bar{y} = c_1 A \bar{v}_1 + \cdots + c_r A\bar{v}_r
-\]</span></p>
-<p>Thus any <span class="math inline">\(\bar{y} \in \mathcal{R}(A)\)</span> is in Span<span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span>, and <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> is an orthogonal basis for <span class="math inline">\(\mathcal{R}(A)\)</span>. This also shows that the column rank of <span class="math inline">\(A\)</span> is equal to its number of nonzero singular values.</p>
-</div>
-<div id="svd-theorem" class="section level3">
-<h3><span class="header-section-number">4.7.2</span> The singular value decomposition</h3>
-<p>Let’s begin SVD by the <span class="math inline">\(m \times n\)</span> diagonal matrix <span class="math inline">\(\Sigma\)</span> of the form</p>
-<p><span class="math display">\[
-\Sigma = \begin{bmatrix}
-\sigma_1 \\
-&amp; \ddots &amp;  \\ 
-&amp; &amp; \sigma_r \\
-&amp; &amp; &amp; 0 \\
-&amp; &amp; &amp; &amp; \ddots \\
-&amp; &amp; &amp; &amp; &amp; 0 \\
-\end{bmatrix}
-\tag{1}
-\]</span></p>
-<p>There are <span class="math inline">\(r\)</span> nonzero entries on the diagonal, being <span class="math inline">\(A\)</span>’s nonzero singular values, and the left positions are filled by <span class="math inline">\(0\)</span> to form a <span class="math inline">\(m \times n\)</span> matrix. If <span class="math inline">\(r\)</span> equals <span class="math inline">\(m\)</span> or <span class="math inline">\(n\)</span> or both, some or all of the zero blocks do not appear.</p>
-
-<div class="theorem">
-<p><span id="thm:SVD" class="theorem"><strong>Theorem 4.10  (The Singular Value Decomposition)  </strong></span>Let <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> with rank <span class="math inline">\(r\)</span>. There exists an diagonal matrix <span class="math inline">\(\mathbb{\Sigma} \in \mathbb{R}^{m \times n}\)</span> as in (1) for which the first <span class="math inline">\(r\ \times r\)</span> block is a diagonal matrix with the first <span class="math inline">\(r\)</span> singular values of <span class="math inline">\(A\)</span> on its diagonal, and there exist <span class="math inline">\(U \in \mathbb{R}^{m \times m}\)</span> and <span class="math inline">\(V \in \mathbb{R}^{n \times n}\)</span> such that</p>
-<span class="math display">\[
-A = U \Sigma V^T
-\]</span>
-</div>
-
-<p><strong>PROOF</strong></p>
-<p>Since <span class="math inline">\(A\)</span> has <span class="math inline">\(r\)</span> nonzero singular values which measure the length of <span class="math inline">\(A\bar{v}_i, \; i = 1, ...n\)</span>, there exists orthogonal basis <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> for <span class="math inline">\(\mathcal{R}(A)\)</span>, we can further normalize the set to produce the <em>orthonormal</em> set <span class="math inline">\(\bar{u}_1, ..., \bar{u}_r\)</span>:</p>
-<p><span class="math display">\[
-\bar{u}_i = \frac{A\bar{v}_i}{\sigma_i}, \;\; i = 1, ..., r
-\]</span>
-Now we can extend <span class="math inline">\(\{\bar{u}_1, ..., \bar{u}_r\}\)</span> to an orthonormal basis <span class="math inline">\(\{\bar{u}_1, ..., \bar{u}_m\}\)</span> of <span class="math inline">\(\mathbb{R}^m\)</span>, and let</p>
-<p><span class="math display">\[
-U = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_m], \quad V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]
-\]</span></p>
-<p>and <span class="math inline">\(\Sigma\)</span> be as be as in (1) above. Write out</p>
-<p><span class="math display">\[
-\begin{split}
-U\Sigma &amp;= [\bar{u}_1 \;\; \cdots \;\; \bar{u}_r \;\; \cdots \;\; \bar{u}_m]_{m \times m}
-\begin{bmatrix}
-\sigma_1 \\
-&amp; \ddots &amp;  \\ 
-&amp; &amp; \sigma_r \\
-&amp; &amp; &amp; 0 \\
-&amp; &amp; &amp; &amp; \ddots \\
-&amp; &amp; &amp; &amp; &amp; 0 \\
-\end{bmatrix}_{m\times n} \\
-&amp;= [\sigma_1\bar{u}_1 \;\; \cdots \;\;   \sigma_r\bar{u}_r \;\; \bar{0} \;\;  \cdots \;\;  \bar{0}] \\
-&amp; = [A\bar{v}_1 \;\; \cdots \;\; A\bar{v}_r \;\; A\bar{v}_{r+1} \;\; \cdots \;\; A \bar{v}_n] \\
-&amp;= A_{m \times n}V_{n \times n}
-\end{split}
-\]</span></p>
-<p>And because <span class="math inline">\(V\)</span> is orthogonal</p>
-<p><span class="math display">\[
-A = U \Sigma V^{-1} =  U \Sigma V^{T}
-\]</span>
-<span class="math inline">\(\bar{u}_i\)</span> and <span class="math inline">\(\bar{v}_i\)</span> are called <em>left eigenvector</em> and right eigenvector of <span class="math inline">\(A\)</span> respectively.</p>
-<p>It’s easy to verify that the spectral decomposition <a href="eigenthings-and-quadratic-forms.html#spectral-decomposition">4.3.1</a> is a special case of SVD when <span class="math inline">\(A \in \mathbb{R}^{n}, \;\; m = n\)</span>. In that case, <span class="math inline">\(\Sigma\)</span> is a square matrix and <span class="math inline">\(U\)</span> is equal to <span class="math inline">\(V\)</span>.</p>
-<p>When <span class="math inline">\(\Sigma\)</span> contains rows or columns of zeros (i.e, <span class="math inline">\(r &lt; \min(m, n)\)</span>), we can write SVD in a more compact form. Divide <span class="math inline">\(U, \Sigma, V\)</span> into submatrices</p>
-<p><span class="math display">\[
-U = [U_r \;\; U_{m-r}], \quad \text{where } U_r = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_r] \\
-V = [V_r \;\; V_{m-r}], \quad \text{where } V_r = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_r] \\
-\Sigma = 
-\begin{bmatrix}
-D &amp; 0 \\
-0 &amp; 0
-\end{bmatrix}
-\quad \text{where } D = 
-\begin{bmatrix}
-\lambda_1 \\ 
- &amp; \ddots \\
- &amp; &amp; \lambda_r
-\end{bmatrix}
-\]</span>
-The partitioned matrix multiplication shows that</p>
-<p><span class="math display">\[
-A = [U_r \;\; U_{m-r}]
-\begin{bmatrix}
-D &amp; 0 \\
-0 &amp; 0
-\end{bmatrix}
-\begin{bmatrix}
-V_r^T \\
-V_{n-r}^T
-\end{bmatrix}
-= U_rDV_{r}^T
-\]</span>
-This more compact form is called a reduced <strong>singular value decomposition</strong>.</p>
-<p>Another way to write this is</p>
-<p><span class="math display">\[
-A = \sum_{i=1}^{t}{\sigma_i}\bar{u}_i\bar{v}_i
-\]</span></p>
-<hr>
-<p>Right multiply the non-compact form <span class="math inline">\(A = U\Sigma V^T\)</span> by <span class="math inline">\(A^T\)</span> , we get the spectral decomposition of symmetric matrix <span class="math inline">\(AA^T\)</span>.</p>
-<p><span class="math display">\[
-AA^T = (U \Sigma V^T)(U \Sigma V^T)^T = U \Sigma \Sigma^T VV^TU^T = U (\Sigma\Sigma^T) U^T       \tag{1}
-\]</span></p>
-<p>Therefore, <span class="math inline">\([\bar{u}_1 \;\; \cdots \;\; \bar{u}_n]\)</span> are revealed as the orthonormal basis for <span class="math inline">\(AA^T\)</span>’s eigenspace, as <span class="math inline">\([\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]\)</span> are for <span class="math inline">\(A^TA\)</span>.</p>
-<p>Formula (1) echoes the fact that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> have the same set of nonzero eigenvalues, because <span class="math inline">\(\Sigma\Sigma^T\)</span> produces nonzero set <span class="math inline">\(\lambda_1, ..., \lambda_r\)</span>.</p>
-<p>In fact, if were to ask for a direction in which <span class="math inline">\(A^T\)</span> has its greatest stretching effect instead of <span class="math inline">\(A\)</span>, we would still result in the equivalent decomposition <span class="math inline">\(A^T = V\Sigma U^T\)</span>, with <span class="math inline">\(\bar{v}_i = \frac{A\bar{u}_i}{\sigma_i}\)</span>.</p>
-<p>It’s also easy to test that <span class="math inline">\(\{A\bar{u}_1, ..., A\bar{u}_r\}\)</span> produces an orthogonal basis for <span class="math inline">\(\mathcal{R}(A^T)\)</span> or <span class="math inline">\(\mathcal{R}(A)\)</span>. The process is analogous to theorem <a href="eigenthings-and-quadratic-forms.html#thm:svd-rank">4.9</a> where <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> are shown to span <span class="math inline">\(\mathcal{R}(A)\)</span>.</p>
-<p>For any vector <span class="math inline">\(\bar{y}\)</span> in <span class="math inline">\(\mathcal{R}(A)\)</span>, we have</p>
-<p><span class="math display">\[
-\begin{align*}
-\bar{y} &amp;= A^T\bar{x} \\
-&amp;= A^T(c_1\bar{u}_1 + \cdots + c_1\bar{u}_n) \\
-&amp;= c_1A\bar{u}_1 + \cdots + c_rA\bar{u}_r + \bar{0} + \cdots + \bar{0} &amp;&amp; (\text{because }A\bar{u}_i = \sigma_i\bar{v}_i)\\
-&amp;= c_1A\bar{u}_1 + \cdots + c_rA\bar{u}_r 
-\end{align*}
-\]</span></p>
-<p>Thus, SVD can be thought of an connection between two spectral decomposition</p>
-<p><span class="math display">\[
-A^TA = V (\Sigma^T\Sigma)V^T  \\
-AA^T = U (\Sigma\Sigma^T) U^T
-\]</span></p>
-<p>This shed light on the relationship between SVD and the fundamental theorem of linear algebra <a href="vector-spaces.html#thm:fundamental-theorem">2.1</a></p>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Subspace</th>
-<th align="center">Columns</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><span class="math inline">\(\mathcal{R}(A)\)</span></td>
-<td align="center">the first <span class="math inline">\(r\)</span> columns of <span class="math inline">\(U\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\mathcal{R}(A^T)\)</span></td>
-<td align="center">the first <span class="math inline">\(r\)</span> columns of <span class="math inline">\(V\)</span></td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(\mathcal{N}(A)\)</span></td>
-<td align="center">the last <span class="math inline">\(n - r\)</span> columns of <span class="math inline">\(V\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\mathcal{N}(A^T)\)</span></td>
-<td align="center">the last <span class="math inline">\(m - r\)</span> columns of <span class="math inline">\(U\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="matrix-norms" class="section level2">
-<h2><span class="header-section-number">4.8</span> Matrix norms</h2>
-<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be matrices conformable for the operations below, a matrix norm should at first satisfy 3 axioms of norm:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\|A\| \ge 0\)</span> for all <span class="math inline">\(x \in X\)</span>, with equality if and only if all elements of <span class="math inline">\(A\)</span> is zero (nonnegative)<br />
-</li>
-<li><span class="math inline">\(\|\alpha A\| = |\alpha|\,\|A\|\)</span> (homogeneous)<br />
-</li>
-<li><span class="math inline">\(\|A + B\| &lt; \|A\| + \|B\|\)</span> (triangular inequality)</li>
-</ol>
-<p>Additionally, in the case of square matrices (thus, m = n), some (but not all) matrix norms satisfy the following condition, which is related to the fact that matrices are more than just vectors</p>
-<ol start="4" style="list-style-type: decimal">
-<li><span class="math inline">\(\|AB\| &lt; \|A\|\,\|B\|\)</span> for <span class="math inline">\(A, B \in \mathbb{R}^{n \times n}\)</span></li>
-</ol>
-<p>A matrix norm that satisfies this additional property is called a <strong>submultiplicative</strong> norm.</p>
-<p>There are 2 main categories of matrix norms.</p>
-<ul>
-<li>induced norms (defined in terms of vector norms)<br />
-</li>
-<li>entry-wise norms (treat <span class="math inline">\(A_{m \times n}\)</span> like a long vector with <span class="math inline">\(m \times n\)</span> elements)</li>
-</ul>
-<div id="induced-norms" class="section level3">
-<h3><span class="header-section-number">4.8.1</span> Induced norms</h3>
-<p>Induced norms define matrix norms in terms of vectors, also called <em>operator norm</em> since <span class="math inline">\(A\)</span> acts like an operator in this definition. Note that matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> maps a vector <span class="math inline">\(\bar{x} \not = 0\)</span> from <span class="math inline">\(\mathbb{R}^n\)</span> to <span class="math inline">\(\mathbb{R}^m\)</span>. In particular, if the p-norm is used for both <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(\mathbb{R}^m\)</span>, then the induced norm is</p>
-<p><span class="math display">\[
-\|A\|_p = \max \frac{\|A\bar{x}\|_p}{\|\bar{x}\|_p}
-\]</span>
-The subscript <span class="math inline">\(p\)</span> can be misleading, because the appropriate name for this matrix norm may not be “p-norm”, but rather “induced norm when p-norm is used in both spaces”. The p-norm of a matrix meaning usually means entry-wise p-norms or the Scatten p-norms defined in subsequent sections.</p>
-<p>In the special cases where <span class="math inline">\(p = 1, 2, ..., \infty\)</span>, <span class="math inline">\(\|A\|_p\)</span> is the maximum absolute column sums, largest singular value, and the maximum absolute row sums</p>
-<p><span class="math display">\[
-\begin{aligned}
-\|A\|_1 &amp;= \max \sum_{i=1}^{m}{|A_{ij}|} \\
-\|A\|_2 &amp;= \sigma_1 \\
-\|A\|_{\infty} &amp;= \max \sum_{j=1}^{n}{|A_{ij}|}
-\end{aligned}
-\]</span>
-For symmetric matrix A, we have</p>
-<p><span class="math display">\[
-\|A\|_1 = \|A\|_{\infty}
-\]</span>
-and</p>
-<p><span class="math display">\[
-\|A\|_2 = \lambda_1
-\]</span>
-The induced 2-norm are also called the <strong>spectral norm</strong>.</p>
-<p>By definition, the following inequality holds for induced matrix norms</p>
-<p><span class="math display">\[
-\|A\bar{x}\|_P \le \|A\|_p\|\bar{x}\|_p
-\]</span></p>
-<hr>
-
-<div class="proposition">
-<p><span id="prp:unnamed-chunk-18" class="proposition"><strong>Proposition 4.2  </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that</p>
-<span class="math display">\[
-\|AB\|_p \le \|A\|_p\|B\|_p
-\]</span>
-</div>
-
-<p><strong>PROOF</strong></p>
-<p>For any <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span></p>
-<p><span class="math display">\[
-\|AB\bar{x}\|_p \le \|A\|_p\|B\bar{x}\|_p \le \|A\|_p\|B\|_p\|\bar{x}\|_p
-\]</span>
-si</p>
-<p><span class="math display">\[
-\|AB\|_p = \max \frac{\|A\bar{x}\|_p}{\|\bar{x}\|_p} \le \max \frac{\|A\|_p\|B\|_p\|\bar{x}\|_p}{\|\bar{x}\|_p} = \|A\|_p\|B\|_p
-\]</span></p>
-</div>
-<div id="entry-wise-norm" class="section level3">
-<h3><span class="header-section-number">4.8.2</span> Entry-wise norm</h3>
-<p>Entry-wise norms treat an <span class="math inline">\(m \times n\)</span> matrix as a long vector of size <span class="math inline">\(m \times n\)</span>, denoted by <span class="math inline">\(\text{vec}(A)\)</span>. For example, using the p-norm for vectors, we get</p>
-<p><span class="math display">\[
-\|A\|_{p,p} = \|\text{vec}(A)\|_p = \Bigg(\sum_{j=1}^n\sum_{i=1}^{m}{|A_{ij}|}^p \Bigg)^{\frac{1}{p}}
-\]</span></p>
-<p>More generally, the p,q norm is defined by</p>
-<p><span class="math display">\[
-\|A\|_{p, q} = \Bigg (  \sum_{j=1}^n \Big (\sum_{i=1}^{n}{|A_{ij|}}^p \Big)^{\frac{q}{p}}    \Bigg)^{\frac{1}{q}}
-\]</span>
-Another important member norm of this norm family is the <strong>Frobenius norm</strong>, or the F-norm.</p>
-<p><span class="math display">\[
-\| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{A_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
-\]</span>
-where <span class="math inline">\(\sigma_i\)</span> is the nonzero singular value of <span class="math inline">\(A\)</span>.</p>
-
-<div class="proposition">
-<span id="prp:unnamed-chunk-19" class="proposition"><strong>Proposition 4.3  </strong></span>The F-norm is a submultiplicative norm.
-</div>
-
-<p><strong>PROOF</strong></p>
-<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are of appropriate size such that</p>
-<p><span class="math display">\[
-A = 
-\begin{bmatrix}
-a_1^T \\
-\vdots \\
-a_m^T
-\end{bmatrix}
-, \;
-B = 
-\begin{bmatrix}
-b_1 &amp; \cdots &amp; b_m
-\end{bmatrix} 
-\\
-\quad \\
-\begin{aligned}
-\|AB\| &amp;= \sqrt{\sum_{i, j}{|a_i^Tb_j|^2}} \\
-&amp; \le \sqrt{\sum_{i, j}{\| a_i \|^2 \| b_j\|^2}} \\
-&amp;= \sqrt{\sum_{i}{\|a_i\|^2}} \sqrt{\sum_{j}{\|b_j\|^2}} \\
-&amp;= \|A\| \|B\|
-\end{aligned}
-\]</span></p>
-<p>The first inequality comes from the Cauchy-Schwarz inequality <span class="math inline">\(a \cdot b \le \|a\| \|b\|\)</span></p>
-</div>
-<div id="other-matrix-norms" class="section level3">
-<h3><span class="header-section-number">4.8.3</span> Other matrix norms</h3>
-<p>One can pick to one of two ways to generalize the F-norm. One is a generalization of the direct definition that F-norm is the 2-norm of <span class="math inline">\(||\text{vec}()||\)</span>. For <span class="math inline">\(p \ge 1\)</span>, it is the <strong>Frobenius-p</strong> norm:</p>
-<p><span class="math display">\[
-\| A \|_{F_p} = \Bigg (\sum_{i,j}{|A_{ij}|^p} \Bigg)^{\frac{1}{p}}
-\]</span>
-The Frobenius p-norm is the ordinary Frobenius norm.</p>
-<p>Another generalization stems from the relationship between F-norm and singular values of <span class="math inline">\(A\)</span>. The <strong>Schatten p norm</strong> or <strong>nuclear p-norm</strong> is the p-norm of the vector composed of <span class="math inline">\(A\)</span>’s singular values</p>
-<p><span class="math display">\[
-\|A\|_{S_p} = \Big( \sum_{i = 1}^{\min(m, n)}{\sigma_i^p}\Big)^{\frac{1}{p}}
-\]</span></p>
-</div>
-<div id="unitary-invariancy" class="section level3">
-<h3><span class="header-section-number">4.8.4</span> Unitary invariancy</h3>
-
-<div class="definition">
-<p><span id="def:unitary-invariant" class="definition"><strong>Definition 4.8  (unitary invariant)  </strong></span>A matrix norm <span class="math inline">\(\|\cdot \|\)</span> is said to be unitary invariant if for all orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> of appropriate size</p>
-<span class="math display">\[
-\|A\| = \|UAV\|
-\]</span>
-</div>
-
-<p>(unitary matrices refers to orthogonal matrices with complex-valued entries, but I focus on real matrices here.)</p>
-<p>Essentially, if a norm depends only on the singular values of a matrix, it is unitary invariant. Since for such norms:</p>
-<p><span class="math display">\[
-\|A\| = \|\Sigma\|
-\]</span>
-Multiply two orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V^T\)</span> on each side,</p>
-<p><span class="math display">\[
-\begin{aligned}
-\|UA V^T\| &amp; = \| U \Sigma V^T\| \\
-\|UAV^T\| &amp;= \|A\|
-\end{aligned}
-\]</span></p>
-
-<div class="todo">
-Does this work for all orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span>?
-</div>
-
-<p>The spectral norm (induced p-norm), F-norm and Schattan norm are all unitary invariant.</p>
-</div>
-</div>
-<div id="low-rank-approximation" class="section level2">
-<h2><span class="header-section-number">4.9</span> Low rank approximation</h2>
 
 </div>
 </div>
@@ -1315,7 +957,7 @@ Does this work for all orthogonal matrices <span class="math inline">\(U\)</span
         </div>
       </div>
 <a href="orthogonality.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions-of-linear-system-ax-b.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="singular-value-decomposition.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

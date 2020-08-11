@@ -79,3 +79,24 @@ J = \nabla_x \bar{f} &=
 \end{split}
 $$</div>\EndKnitrBlock{definition}
 
+## Useful identities in matirx calculus 
+
+Assuming $A$ is a $m \times n$ matrix and $\bar{w}$ an $n \times 1$ column vector, 
+
+|Derivative of|with respect to|output size|result|
+:-:|:-:|:-:|:-:|
+|$A\bar{w}$|$\bar{w}$|matrix $m \times n$|$A$|
+|$\bar{a}^T\bar{w}$ <br> $\bar{w}^T\bar{a}$|$\bar{w}$|row vector $1 \times n$|$\bar{a}^T$|
+|$\bar{b}^TB\bar{w}$ <br> $\bar{w}^TB^T\bar{b}$|$\bar{w}$|row vector $n \times 1$|$\bar{b}^TB$|
+|$\bar{w}^TA\bar{w}$|$\bar{w}$|row vector $1 \times n$|$\bar{w}^T(A + A^T)$ <br> if $A$ is symmetric $2\bar{w}^TA$|
+
+
+
+
+
+
+
+
+
+
+
