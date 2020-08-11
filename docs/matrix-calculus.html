@@ -297,7 +297,7 @@ J = \nabla_x \bar{f} &amp;=
 
 <div id="useful-identities-in-matirx-calculus" class="section level2">
 <h2><span class="header-section-number">8.1</span> Useful identities in matirx calculus</h2>
-<p>Assuming <span class="math inline">\(A\)</span> is a <span class="math inline">\(m \times n\)</span> matrix and <span class="math inline">\(\bar{w}\)</span> an <span class="math inline">\(n \times 1\)</span> column vector,</p>
+<p>Assuming <span class="math inline">\(A\)</span> is a <span class="math inline">\(m \times n\)</span> matrix and <span class="math inline">\(\bar{w}\)</span> an <span class="math inline">\(n \times 1\)</span> column vector, and let others be of comforbale sizes, we adopt the numerator layout to show some commonly used identities in matrix calculus.</p>
 <table>
 <colgroup>
 <col width="25%" />
@@ -329,7 +329,7 @@ J = \nabla_x \bar{f} &amp;=
 <tr class="odd">
 <td align="center"><span class="math inline">\(\bar{b}^TB\bar{w}\)</span> <br> <span class="math inline">\(\bar{w}^TB^T\bar{b}\)</span></td>
 <td align="center"><span class="math inline">\(\bar{w}\)</span></td>
-<td align="center">row vector <span class="math inline">\(n \times 1\)</span></td>
+<td align="center">row vector <span class="math inline">\(1 \times n\)</span></td>
 <td align="center"><span class="math inline">\(\bar{b}^TB\)</span></td>
 </tr>
 <tr class="even">
@@ -338,8 +338,25 @@ J = \nabla_x \bar{f} &amp;=
 <td align="center">row vector <span class="math inline">\(1 \times n\)</span></td>
 <td align="center"><span class="math inline">\(\bar{w}^T(A + A^T)\)</span> <br> if <span class="math inline">\(A\)</span> is symmetric <span class="math inline">\(2\bar{w}^TA\)</span></td>
 </tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\bar{w}^T\bar{w}\)</span></td>
+<td align="center"><span class="math inline">\(\bar{w}\)</span></td>
+<td align="center">row vector <span class="math inline">\(1 \times n\)</span></td>
+<td align="center"><span class="math inline">\(2\bar{w}^T\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\bar{f}(X)^T\)</span></td>
+<td align="center"><span class="math inline">\(X\)</span></td>
+<td align="center">-</td>
+<td align="center"><span class="math inline">\(\Big (\frac{\partial \bar{f}(X)}{\partial X}\Big )^T\)</span></td>
+</tr>
 </tbody>
 </table>
+<p>The major <strong>downside</strong> of using the numerator layout is that, since we define gradient to be a row vector, we have to constantly transpose the gradient into a column vector in order to perform gradient descent updates on the column vector <span class="math inline">\(\bar{w}\)</span>. In other words, we have to write the update in matrix calculus notation as follows:</p>
+<p><span class="math display">\[
+\bar{w} \Leftarrow \bar{w}- \alpha \cdot (\nabla L)^T 
+\]</span>
+where <span class="math inline">\(\nabla L\)</span> is the gradient of loss function <span class="math inline">\(L\)</span>.</p>
 
 </div>
 </div>

@@ -2,7 +2,6 @@
 # Matrix calculus  
 
 
-
 > Matrix calculus refers to a number of different notations that use matrices and vectors to collect the derivative of each component of the dependent variable with respect to each component of the independent variable. 
 
 $$
@@ -83,19 +82,28 @@ $$
 
 ## Useful identities in matirx calculus 
 
-Assuming $A$ is a $m \times n$ matrix and $\bar{w}$ an $n \times 1$ column vector, 
+Assuming $A$ is a $m \times n$ matrix and $\bar{w}$ an $n \times 1$ column vector, and let others be of comforbale sizes,  we adopt the numerator layout to show some commonly used identities in matrix calculus. 
 
 |Derivative of|with respect to|output size|result|
 :-:|:-:|:-:|:-:|
 |$A\bar{w}$|$\bar{w}$|matrix $m \times n$|$A$|
 |$\bar{a}^T\bar{w}$ <br> $\bar{w}^T\bar{a}$|$\bar{w}$|row vector $1 \times n$|$\bar{a}^T$|
-|$\bar{b}^TB\bar{w}$ <br> $\bar{w}^TB^T\bar{b}$|$\bar{w}$|row vector $n \times 1$|$\bar{b}^TB$|
+|$\bar{b}^TB\bar{w}$ <br> $\bar{w}^TB^T\bar{b}$|$\bar{w}$|row vector $1 \times n$|$\bar{b}^TB$|
 |$\bar{w}^TA\bar{w}$|$\bar{w}$|row vector $1 \times n$|$\bar{w}^T(A + A^T)$ <br> if $A$ is symmetric $2\bar{w}^TA$|
+|$\bar{w}^T\bar{w}$|$\bar{w}$|row vector $1 \times n$|$2\bar{w}^T$|
+|$\bar{f}(X)^T$|$X$|-|$\Big (\frac{\partial \bar{f}(X)}{\partial X}\Big )^T$|
 
 
 
 
 
+
+The major **downside** of using the numerator layout is that, since we define gradient to be a row vector,  we have to constantly transpose the gradient into a column vector in order to perform gradient descent updates on the column vector $\bar{w}$. In other words, we have to write the update in matrix calculus notation as follows:
+
+$$
+\bar{w} \Leftarrow \bar{w}- \alpha \cdot (\nabla L)^T 
+$$
+where $\nabla L$ is the gradient of loss function $L$. 
 
 
 
