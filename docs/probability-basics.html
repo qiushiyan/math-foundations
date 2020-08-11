@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-08-07" />
+<meta name="date" content="2020-08-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -186,20 +186,21 @@
 <li class="chapter" data-level="13.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>13.2</b> Multivariate optimization</a></li>
 <li class="chapter" data-level="13.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#lagrange-multipliers"><i class="fa fa-check"></i><b>13.3</b> Lagrange multipliers</a></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>14</b> Gradient descent</a></li>
 <li class="part"><span><b>V Applications</b></span></li>
-<li class="chapter" data-level="14" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>14</b> Linear models</a><ul>
-<li class="chapter" data-level="14.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>14.1</b> Ordinary Least Squares</a><ul>
-<li class="chapter" data-level="14.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>14.1.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="15" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>15</b> Linear models</a><ul>
+<li class="chapter" data-level="15.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>15.1</b> Ordinary Least Squares</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>15.1.1</b> Least square estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>14.2</b> Weighted least squares</a></li>
-<li class="chapter" data-level="14.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>14.3</b> Partial least squres</a></li>
-<li class="chapter" data-level="14.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>14.4</b> Regularized regression</a><ul>
-<li class="chapter" data-level="14.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>14.4.1</b> Ridge regression</a></li>
-<li class="chapter" data-level="14.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>14.4.2</b> Lasso regression</a></li>
-<li class="chapter" data-level="14.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>14.4.3</b> Elastic net regression</a></li>
+<li class="chapter" data-level="15.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>15.2</b> Weighted least squares</a></li>
+<li class="chapter" data-level="15.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>15.3</b> Partial least squres</a></li>
+<li class="chapter" data-level="15.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>15.4</b> Regularized regression</a><ul>
+<li class="chapter" data-level="15.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>15.4.1</b> Ridge regression</a></li>
+<li class="chapter" data-level="15.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>15.4.2</b> Lasso regression</a></li>
+<li class="chapter" data-level="15.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>15.4.3</b> Elastic net regression</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>15</b> Principal component analysis</a></li>
+<li class="chapter" data-level="16" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>16</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -254,7 +255,7 @@
 <p>Additionally, there are several useful identities in combination problems. The formal algebraic proof can be cumbersome, instead, here we draw on story proofs from the “Introduction to Probability” book <span class="citation">(K. Blitzstein and Hwang <a href="references.html#ref-blitzstein2019" role="doc-biblioref">2019</a>)</span>.</p>
 
 <div class="proposition">
-<span id="prp:vandermonde-identity" class="proposition"><strong>Proposition 9.1  </strong></span><span class="math display">\[
+<span id="prp:vandermonde-identity" class="proposition"><strong>Proposition 9.1  (Vandermonde’s identity)  </strong></span><span class="math display">\[
 \binom{m + n}{k} = \sum_{j = 0}^{k}\binom{m}{j} \binom{n}{k  -j}
 \]</span>
 </div>
@@ -268,7 +269,7 @@
 \]</span>
 </div>
 
-<p>Both side of the identity count the ways to break <span class="math inline">\(2n\)</span> people into <span class="math inline">\(n\)</span> partnerships. According to the right side, we can form partnerships by lining up all <span class="math inline">\(2n\)</span> people and making the first and the second a pair, then the third and the fourth a pair, etc. This overcounts by a factor <span class="math inline">\(2^n \cdot n!\)</span> since the order of partnerships does not matter, nor does the order inside each pair. Alternatively, there are <span class="math inline">\(2n - 1\)</span> choices for people 1, <span class="math inline">\(2n - 3\)</span> choices for people 2 (or person 3 if people 2 is paired to people 1), and so on.</p>
+<p>Both side of the identity count the ways to break <span class="math inline">\(2n\)</span> people into <span class="math inline">\(n\)</span> partnerships. According to the left side, we can form partnerships by lining up all <span class="math inline">\(2n\)</span> people and making the first and the second a pair, then the third and the fourth a pair, etc. This overcounts by a factor <span class="math inline">\(2^n \cdot n!\)</span> since the order of partnerships does not matter, nor does the order inside each pair. Alternatively, there are <span class="math inline">\(2n - 1\)</span> choices for people 1, <span class="math inline">\(2n - 3\)</span> choices for people 2 (or person 3 if people 2 is paired to people 1), and so on.</p>
 </div>
 <div id="conditional-probability" class="section level2">
 <h2><span class="header-section-number">9.3</span> Conditional probability</h2>

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Solutions of linear system Ax = b | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 5 Solutions of linear system Ax = b | Mathematical Notes for Machine Learning" />
+  <title>Chapter 14 Gradient descent | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 14 Gradient descent | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Solutions of linear system Ax = b | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 14 Gradient descent | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Solutions of linear system Ax = b | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 14 Gradient descent | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="eigenthings-and-quadratic-forms.html"/>
-<link rel="next" href="taylor-series-and-expansion.html"/>
+<link rel="prev" href="basics-of-optimization.html"/>
+<link rel="next" href="linear-models.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -224,28 +224,12 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="solutions-of-linear-system-ax-b" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Solutions of linear system Ax = b</h1>
-<p>A linear system <span class="math inline">\(A\bar{x} = \bar{b}\)</span> when <span class="math inline">\(\bar{b} \not = \bar{0}\)</span> may behave in any one of three possible ways:</p>
-<ul>
-<li><p>The system has no solution. This occurs when <span class="math inline">\(\bar{b} \not \in \mathcal{R}(A)\)</span>. In such cases we try to find <em>best fits</em> that meets certain optimization requirements.</p></li>
-<li><p>The system has a single unique solution. This occurs when <span class="math inline">\(\bar{b} \in \mathcal{R}(A)\)</span>, and <span class="math inline">\(A\)</span> has linearly independent columns, then there exists an unique linear combination <span class="math inline">\(a_1x_1 + \cdots + a_nx_n = \bar{b}\)</span>. In the special case when <span class="math inline">\(A\)</span> is square, the solution is simply <span class="math inline">\(\bar{x} = A^{-1}\bar{b}\)</span></p></li>
-<li><p>The system has infinitely many solutions. This is the case when <span class="math inline">\(\bar{b} \in \mathcal{R}(A)\)</span> and columns of <span class="math inline">\(A\)</span> are linearly dependent, with <em>free columns</em>. Any linear combination of current solutions would still satisfy <span class="math inline">\(A\bar{x} = \bar{b}\)</span></p></li>
-</ul>
-<p>In the first scenario, the linear system is called <strong>inconsistent</strong> because there is no <span class="math inline">\(\bar{x}\)</span> that satisfies each equation in the system. Linear systems in the second and third scenario are called <strong>consistent</strong> because there is at least one solution.</p>
-<div id="generalized-inverse" class="section level2">
-<h2><span class="header-section-number">5.1</span> Generalized inverse</h2>
-</div>
-<div id="ill-conditioned-matrices" class="section level2">
-<h2><span class="header-section-number">5.2</span> Ill-conditioned matrices</h2>
-<div id="the-condition-number" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> The condition number</h3>
+<div id="gradient-descent" class="section level1">
+<h1><span class="header-section-number">Chapter 14</span> Gradient descent</h1>
 <p><span class="math display">\[
-\delta x
+f(x + \ksei )
 \]</span></p>
 
-</div>
-</div>
 </div>
 
 
@@ -255,8 +239,8 @@
           </div>
         </div>
       </div>
-<a href="eigenthings-and-quadratic-forms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="taylor-series-and-expansion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="basics-of-optimization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="linear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -287,7 +271,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/linear-system.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/gradient-descent.Rmd",
 "text": "Edit"
 },
 "history": {

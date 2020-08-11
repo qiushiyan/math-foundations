@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 14 Linear models | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 14 Linear models | Mathematical Notes for Machine Learning" />
+  <title>Chapter 15 Linear models | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 15 Linear models | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 14 Linear models | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 15 Linear models | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 14 Linear models | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 15 Linear models | Mathematical Notes for Machine Learning" />
   
   
   
@@ -24,14 +24,14 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-08-07" />
+<meta name="date" content="2020-08-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="basics-of-optimization.html"/>
+<link rel="prev" href="gradient-descent.html"/>
 <link rel="next" href="principal-component-analysis.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -186,20 +186,21 @@
 <li class="chapter" data-level="13.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>13.2</b> Multivariate optimization</a></li>
 <li class="chapter" data-level="13.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#lagrange-multipliers"><i class="fa fa-check"></i><b>13.3</b> Lagrange multipliers</a></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>14</b> Gradient descent</a></li>
 <li class="part"><span><b>V Applications</b></span></li>
-<li class="chapter" data-level="14" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>14</b> Linear models</a><ul>
-<li class="chapter" data-level="14.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>14.1</b> Ordinary Least Squares</a><ul>
-<li class="chapter" data-level="14.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>14.1.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="15" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>15</b> Linear models</a><ul>
+<li class="chapter" data-level="15.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>15.1</b> Ordinary Least Squares</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>15.1.1</b> Least square estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>14.2</b> Weighted least squares</a></li>
-<li class="chapter" data-level="14.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>14.3</b> Partial least squres</a></li>
-<li class="chapter" data-level="14.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>14.4</b> Regularized regression</a><ul>
-<li class="chapter" data-level="14.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>14.4.1</b> Ridge regression</a></li>
-<li class="chapter" data-level="14.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>14.4.2</b> Lasso regression</a></li>
-<li class="chapter" data-level="14.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>14.4.3</b> Elastic net regression</a></li>
+<li class="chapter" data-level="15.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>15.2</b> Weighted least squares</a></li>
+<li class="chapter" data-level="15.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>15.3</b> Partial least squres</a></li>
+<li class="chapter" data-level="15.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>15.4</b> Regularized regression</a><ul>
+<li class="chapter" data-level="15.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>15.4.1</b> Ridge regression</a></li>
+<li class="chapter" data-level="15.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>15.4.2</b> Lasso regression</a></li>
+<li class="chapter" data-level="15.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>15.4.3</b> Elastic net regression</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>15</b> Principal component analysis</a></li>
+<li class="chapter" data-level="16" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>16</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -224,11 +225,11 @@
 
             <section class="normal" id="section-">
 <div id="linear-models" class="section level1">
-<h1><span class="header-section-number">Chapter 14</span> Linear models</h1>
+<h1><span class="header-section-number">Chapter 15</span> Linear models</h1>
 <div id="ordinary-least-squares" class="section level2">
-<h2><span class="header-section-number">14.1</span> Ordinary Least Squares</h2>
+<h2><span class="header-section-number">15.1</span> Ordinary Least Squares</h2>
 <div id="least-square-estimation" class="section level3">
-<h3><span class="header-section-number">14.1.1</span> Least square estimation</h3>
+<h3><span class="header-section-number">15.1.1</span> Least square estimation</h3>
 <p>From theorem <a href="orthogonality.html#thm:best-approximation">3.3</a> we know that</p>
 <p><span class="math display">\[
 \bar{\beta} = (X^TX)^{-1}X^T\bar{y}
@@ -249,21 +250,21 @@
 </div>
 </div>
 <div id="weighted-least-squares" class="section level2">
-<h2><span class="header-section-number">14.2</span> Weighted least squares</h2>
+<h2><span class="header-section-number">15.2</span> Weighted least squares</h2>
 </div>
 <div id="partial-least-squres" class="section level2">
-<h2><span class="header-section-number">14.3</span> Partial least squres</h2>
+<h2><span class="header-section-number">15.3</span> Partial least squres</h2>
 </div>
 <div id="regularized-regression" class="section level2">
-<h2><span class="header-section-number">14.4</span> Regularized regression</h2>
+<h2><span class="header-section-number">15.4</span> Regularized regression</h2>
 <div id="ridge-regression" class="section level3">
-<h3><span class="header-section-number">14.4.1</span> Ridge regression</h3>
+<h3><span class="header-section-number">15.4.1</span> Ridge regression</h3>
 </div>
 <div id="lasso-regression" class="section level3">
-<h3><span class="header-section-number">14.4.2</span> Lasso regression</h3>
+<h3><span class="header-section-number">15.4.2</span> Lasso regression</h3>
 </div>
 <div id="elastic-net-regression" class="section level3">
-<h3><span class="header-section-number">14.4.3</span> Elastic net regression</h3>
+<h3><span class="header-section-number">15.4.3</span> Elastic net regression</h3>
 
 </div>
 </div>
@@ -273,7 +274,7 @@
           </div>
         </div>
       </div>
-<a href="basics-of-optimization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="gradient-descent.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="principal-component-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

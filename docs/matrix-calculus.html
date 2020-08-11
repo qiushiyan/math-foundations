@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-08-07" />
+<meta name="date" content="2020-08-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -186,20 +186,21 @@
 <li class="chapter" data-level="13.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>13.2</b> Multivariate optimization</a></li>
 <li class="chapter" data-level="13.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#lagrange-multipliers"><i class="fa fa-check"></i><b>13.3</b> Lagrange multipliers</a></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>14</b> Gradient descent</a></li>
 <li class="part"><span><b>V Applications</b></span></li>
-<li class="chapter" data-level="14" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>14</b> Linear models</a><ul>
-<li class="chapter" data-level="14.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>14.1</b> Ordinary Least Squares</a><ul>
-<li class="chapter" data-level="14.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>14.1.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="15" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>15</b> Linear models</a><ul>
+<li class="chapter" data-level="15.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>15.1</b> Ordinary Least Squares</a><ul>
+<li class="chapter" data-level="15.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>15.1.1</b> Least square estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="14.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>14.2</b> Weighted least squares</a></li>
-<li class="chapter" data-level="14.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>14.3</b> Partial least squres</a></li>
-<li class="chapter" data-level="14.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>14.4</b> Regularized regression</a><ul>
-<li class="chapter" data-level="14.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>14.4.1</b> Ridge regression</a></li>
-<li class="chapter" data-level="14.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>14.4.2</b> Lasso regression</a></li>
-<li class="chapter" data-level="14.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>14.4.3</b> Elastic net regression</a></li>
+<li class="chapter" data-level="15.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>15.2</b> Weighted least squares</a></li>
+<li class="chapter" data-level="15.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>15.3</b> Partial least squres</a></li>
+<li class="chapter" data-level="15.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>15.4</b> Regularized regression</a><ul>
+<li class="chapter" data-level="15.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>15.4.1</b> Ridge regression</a></li>
+<li class="chapter" data-level="15.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>15.4.2</b> Lasso regression</a></li>
+<li class="chapter" data-level="15.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>15.4.3</b> Elastic net regression</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>15</b> Principal component analysis</a></li>
+<li class="chapter" data-level="16" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>16</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -276,8 +277,12 @@ In this way, we think of a vector-valued function <span class="math inline">\(\b
 <div class="definition">
 <span id="def:jacobian" class="definition"><strong>Definition 7.1  (Jacobian)  </strong></span><span class="math display">\[
 \begin{split}
-J = \nabla_x \bar{f} &amp;= 
-[\frac{\partial \bar{f}}{\partial x_1} \; \cdots \; \frac{\partial \bar{f}}{\partial x_n}] \\ 
+J = \nabla_x \bar{f} &amp;=
+\begin{bmatrix}
+\frac{\partial \bar{f}}{\partial x_1} 
+&amp; \cdots 
+&amp;\frac{\partial \bar{f}}{\partial x_n}
+\end{bmatrix}
 &amp;=
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_1}{\partial x_n} \\

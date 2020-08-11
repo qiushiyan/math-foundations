@@ -64,8 +64,12 @@ We obtain the "full" gradient of $\bar{f}$ with respect of $\bar{x}$.
 
 \BeginKnitrBlock{definition}\iffalse{-91-74-97-99-111-98-105-97-110-93-}\fi{}<div class="definition"><span class="definition" id="def:jacobian"><strong>(\#def:jacobian)  \iffalse (Jacobian) \fi{} </strong></span>$$
 \begin{split}
-J = \nabla_x \bar{f} &= 
-[\frac{\partial \bar{f}}{\partial x_1} \; \cdots \; \frac{\partial \bar{f}}{\partial x_n}] \\ 
+J = \nabla_x \bar{f} &=
+\begin{bmatrix}
+\frac{\partial \bar{f}}{\partial x_1} 
+& \cdots 
+&\frac{\partial \bar{f}}{\partial x_n}
+\end{bmatrix}
 &=
 \begin{bmatrix}
 \frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial f_1}{\partial x_n} \\

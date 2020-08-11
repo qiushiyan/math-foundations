@@ -31,7 +31,7 @@ A probability space is a triple $(\Omega, \mathcal{F}, \mathbb{P})$ where
 
 Additionally, there are several useful identities in combination problems. The formal algebraic proof can be cumbersome, instead, here we draw on story proofs from the "Introduction to Probability" book [@blitzstein2019]. 
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:vandermonde-identity"><strong>(\#prp:vandermonde-identity) </strong></span>$$
+\BeginKnitrBlock{proposition}\iffalse{-91-86-97-110-100-101-114-109-111-110-100-101-39-115-32-105-100-101-110-116-105-116-121-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:vandermonde-identity"><strong>(\#prp:vandermonde-identity)  \iffalse (Vandermonde's identity) \fi{} </strong></span>$$
 \binom{m + n}{k} = \sum_{j = 0}^{k}\binom{m}{j} \binom{n}{k  -j}
 $$</div>\EndKnitrBlock{proposition}
 
@@ -45,7 +45,7 @@ $$
 $$</div>\EndKnitrBlock{proposition}
 
 
-Both side of the identity count the ways to break $2n$ people into $n$ partnerships. According to the right side, we can form partnerships by lining up all $2n$ people and making the first and the second a pair, then the third and the fourth a pair, etc. This overcounts by a factor $2^n \cdot n!$ since the order of partnerships does not matter, nor does the order inside each pair. Alternatively, there are $2n - 1$ choices for people 1, $2n - 3$ choices for people 2 (or person 3 if people 2 is paired to people 1), and so on.  
+Both side of the identity count the ways to break $2n$ people into $n$ partnerships. According to the left side, we can form partnerships by lining up all $2n$ people and making the first and the second a pair, then the third and the fourth a pair, etc. This overcounts by a factor $2^n \cdot n!$ since the order of partnerships does not matter, nor does the order inside each pair. Alternatively, there are $2n - 1$ choices for people 1, $2n - 3$ choices for people 2 (or person 3 if people 2 is paired to people 1), and so on.  
 
 
 ## Conditional probability  
