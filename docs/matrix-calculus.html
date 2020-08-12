@@ -165,7 +165,8 @@
 <li class="part"><span><b>II Calculus</b></span></li>
 <li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
 <li class="chapter" data-level="8" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>8</b> Matrix calculus</a><ul>
-<li class="chapter" data-level="8.1" data-path="matrix-calculus.html"><a href="matrix-calculus.html#useful-identities-in-matirx-calculus"><i class="fa fa-check"></i><b>8.1</b> Useful identities in matirx calculus</a></li>
+<li class="chapter" data-level="8.1" data-path="matrix-calculus.html"><a href="matrix-calculus.html#the-chain-rule"><i class="fa fa-check"></i><b>8.1</b> The chain rule</a></li>
+<li class="chapter" data-level="8.2" data-path="matrix-calculus.html"><a href="matrix-calculus.html#useful-identities-in-matirx-calculus"><i class="fa fa-check"></i><b>8.2</b> Useful identities in matirx calculus</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html"><i class="fa fa-check"></i><b>9</b> Infinite sequences and series</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
@@ -179,9 +180,22 @@
 </ul></li>
 <li class="chapter" data-level="11" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>11</b> Moments</a></li>
 <li class="chapter" data-level="12" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>12</b> Univariate distributions</a><ul>
-<li class="chapter" data-level="12.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>12.1</b> Uniform distribution</a></li>
+<li class="chapter" data-level="12.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>12.1</b> Uniform distribution</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#log-normal-distribution"><i class="fa fa-check"></i><b>12.1.1</b> Log normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>13</b> Multivariate distributions</a></li>
+<li class="chapter" data-level="12.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#binomial-distribution"><i class="fa fa-check"></i><b>12.2</b> Binomial distribution</a></li>
+<li class="chapter" data-level="12.3" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-distribution"><i class="fa fa-check"></i><b>12.3</b> Poisson distribution</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-process"><i class="fa fa-check"></i><b>12.3.1</b> Poisson process</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="univariate-distributions.html"><a href="univariate-distributions.html#exponential-distribution"><i class="fa fa-check"></i><b>12.4</b> Exponential distribution</a></li>
+<li class="chapter" data-level="12.5" data-path="univariate-distributions.html"><a href="univariate-distributions.html#gamma-distribution"><i class="fa fa-check"></i><b>12.5</b> Gamma distribution</a></li>
+<li class="chapter" data-level="12.6" data-path="univariate-distributions.html"><a href="univariate-distributions.html#inverse-gamma-distribution"><i class="fa fa-check"></i><b>12.6</b> Inverse Gamma distribution</a></li>
+<li class="chapter" data-level="12.7" data-path="univariate-distributions.html"><a href="univariate-distributions.html#beta-distribution"><i class="fa fa-check"></i><b>12.7</b> Beta distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>13</b> Multivariate distributions</a><ul>
+<li class="chapter" data-level="13.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>13.1</b> Multivariate normal distribution</a></li>
+<li class="chapter" data-level="13.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#dirichlet-distributon"><i class="fa fa-check"></i><b>13.2</b> Dirichlet distributon</a></li>
+</ul></li>
 <li class="part"><span><b>IV Optimization</b></span></li>
 <li class="chapter" data-level="14" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>14</b> Basics of optimization</a><ul>
 <li class="chapter" data-level="14.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>14.1</b> Univariate optimization</a></li>
@@ -295,8 +309,11 @@ J = \nabla_x \bar{f} &amp;=
 \]</span>
 </div>
 
+<div id="the-chain-rule" class="section level2">
+<h2><span class="header-section-number">8.1</span> The chain rule</h2>
+</div>
 <div id="useful-identities-in-matirx-calculus" class="section level2">
-<h2><span class="header-section-number">8.1</span> Useful identities in matirx calculus</h2>
+<h2><span class="header-section-number">8.2</span> Useful identities in matirx calculus</h2>
 <p>Assuming <span class="math inline">\(A\)</span> is a <span class="math inline">\(m \times n\)</span> matrix and <span class="math inline">\(\bar{w}\)</span> an <span class="math inline">\(n \times 1\)</span> column vector, and let others be of comforbale sizes, we adopt the numerator layout to show some commonly used identities in matrix calculus.</p>
 <table>
 <colgroup>
@@ -354,9 +371,9 @@ J = \nabla_x \bar{f} &amp;=
 </table>
 <p>The major <strong>downside</strong> of using the numerator layout is that, since we define gradient to be a row vector, we have to constantly transpose the gradient into a column vector in order to perform gradient descent updates on the column vector <span class="math inline">\(\bar{w}\)</span>. In other words, we have to write the update in matrix calculus notation as follows:</p>
 <p><span class="math display">\[
-\bar{w} \Leftarrow \bar{w}- \alpha \cdot (\nabla L)^T 
+\bar{w}_{i + 1} \Leftarrow \bar{w}_i- \alpha \cdot (\nabla L)^T 
 \]</span>
-where <span class="math inline">\(\nabla L\)</span> is the gradient of loss function <span class="math inline">\(L\)</span>.</p>
+where <span class="math inline">\(\nabla L\)</span> is the gradient of loss function <span class="math inline">\(L\)</span> at <span class="math inline">\(\bar{w}_i\)</span>.</p>
 
 </div>
 </div>

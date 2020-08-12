@@ -80,6 +80,11 @@ J = \nabla_x \bar{f} &=
 $$
 ```
 
+
+## The chain rule
+
+
+
 ## Useful identities in matirx calculus 
 
 Assuming $A$ is a $m \times n$ matrix and $\bar{w}$ an $n \times 1$ column vector, and let others be of comforbale sizes,  we adopt the numerator layout to show some commonly used identities in matrix calculus. 
@@ -101,9 +106,9 @@ Assuming $A$ is a $m \times n$ matrix and $\bar{w}$ an $n \times 1$ column vecto
 The major **downside** of using the numerator layout is that, since we define gradient to be a row vector,  we have to constantly transpose the gradient into a column vector in order to perform gradient descent updates on the column vector $\bar{w}$. In other words, we have to write the update in matrix calculus notation as follows:
 
 $$
-\bar{w} \Leftarrow \bar{w}- \alpha \cdot (\nabla L)^T 
+\bar{w}_{i + 1} \Leftarrow \bar{w}_i- \alpha \cdot (\nabla L)^T 
 $$
-where $\nabla L$ is the gradient of loss function $L$. 
+where $\nabla L$ is the gradient of loss function $L$ at $\bar{w}_i$. 
 
 
 

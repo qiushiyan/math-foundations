@@ -165,7 +165,8 @@
 <li class="part"><span><b>II Calculus</b></span></li>
 <li class="chapter" data-level="7" data-path="taylor-series-and-expansion.html"><a href="taylor-series-and-expansion.html"><i class="fa fa-check"></i><b>7</b> Taylor series and expansion</a></li>
 <li class="chapter" data-level="8" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>8</b> Matrix calculus</a><ul>
-<li class="chapter" data-level="8.1" data-path="matrix-calculus.html"><a href="matrix-calculus.html#useful-identities-in-matirx-calculus"><i class="fa fa-check"></i><b>8.1</b> Useful identities in matirx calculus</a></li>
+<li class="chapter" data-level="8.1" data-path="matrix-calculus.html"><a href="matrix-calculus.html#the-chain-rule"><i class="fa fa-check"></i><b>8.1</b> The chain rule</a></li>
+<li class="chapter" data-level="8.2" data-path="matrix-calculus.html"><a href="matrix-calculus.html#useful-identities-in-matirx-calculus"><i class="fa fa-check"></i><b>8.2</b> Useful identities in matirx calculus</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="infinite-sequences-and-series.html"><a href="infinite-sequences-and-series.html"><i class="fa fa-check"></i><b>9</b> Infinite sequences and series</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
@@ -179,9 +180,22 @@
 </ul></li>
 <li class="chapter" data-level="11" data-path="moments.html"><a href="moments.html"><i class="fa fa-check"></i><b>11</b> Moments</a></li>
 <li class="chapter" data-level="12" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>12</b> Univariate distributions</a><ul>
-<li class="chapter" data-level="12.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>12.1</b> Uniform distribution</a></li>
+<li class="chapter" data-level="12.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>12.1</b> Uniform distribution</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#log-normal-distribution"><i class="fa fa-check"></i><b>12.1.1</b> Log normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>13</b> Multivariate distributions</a></li>
+<li class="chapter" data-level="12.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#binomial-distribution"><i class="fa fa-check"></i><b>12.2</b> Binomial distribution</a></li>
+<li class="chapter" data-level="12.3" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-distribution"><i class="fa fa-check"></i><b>12.3</b> Poisson distribution</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-process"><i class="fa fa-check"></i><b>12.3.1</b> Poisson process</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="univariate-distributions.html"><a href="univariate-distributions.html#exponential-distribution"><i class="fa fa-check"></i><b>12.4</b> Exponential distribution</a></li>
+<li class="chapter" data-level="12.5" data-path="univariate-distributions.html"><a href="univariate-distributions.html#gamma-distribution"><i class="fa fa-check"></i><b>12.5</b> Gamma distribution</a></li>
+<li class="chapter" data-level="12.6" data-path="univariate-distributions.html"><a href="univariate-distributions.html#inverse-gamma-distribution"><i class="fa fa-check"></i><b>12.6</b> Inverse Gamma distribution</a></li>
+<li class="chapter" data-level="12.7" data-path="univariate-distributions.html"><a href="univariate-distributions.html#beta-distribution"><i class="fa fa-check"></i><b>12.7</b> Beta distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>13</b> Multivariate distributions</a><ul>
+<li class="chapter" data-level="13.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>13.1</b> Multivariate normal distribution</a></li>
+<li class="chapter" data-level="13.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#dirichlet-distributon"><i class="fa fa-check"></i><b>13.2</b> Dirichlet distributon</a></li>
+</ul></li>
 <li class="part"><span><b>IV Optimization</b></span></li>
 <li class="chapter" data-level="14" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>14</b> Basics of optimization</a><ul>
 <li class="chapter" data-level="14.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>14.1</b> Univariate optimization</a></li>
@@ -233,8 +247,7 @@
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
-<p>This document aims to collect notes on various mathematical topics relevant to machine learning problems, including linear algebra, calculus, probability theory, and possibly optimization (statistics should be in another stand-alone document).</p>
-<p>The document is generated by the <strong>bookdown</strong> package <span class="citation">(Xie <a href="references.html#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>.</p>
+<p>This document aims to cover various mathematical topics relevant to machine learning problems, including linear algebra, calculus, probability theory, and possibly optimization (statistics should be in another stand-alone document). Since it currently serves mainly as a self-reminder, some basic knowledge (especially in the calculus part) that are already familiar to me are skipped. Other than that I try to put things in a logical, consistent order.</p>
 <p>References (books, online courses, videos, papers) include:</p>
 <ul>
 <li><strong>general</strong>
@@ -263,6 +276,7 @@
 <li>John Tsitsiklis, and Patrick Jaillet. RES.6-012 Introduction to Probability. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, <a href="https://ocw.mit.edu" class="uri">https://ocw.mit.edu</a>. License: Creative Commons BY-NC-SA.</li>
 </ul></li>
 </ul>
+<p>The document is generated by the <strong>bookdown</strong> package <span class="citation">(Xie <a href="references.html#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>.</p>
 
 </div>
 
