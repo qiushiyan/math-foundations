@@ -536,7 +536,7 @@ $$
   
 In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ </div>\EndKnitrBlock{theorem}
 
-**Proof**: 
+<div class = "proof"> Proof </div>
 
 $$
 \bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}

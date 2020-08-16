@@ -29,7 +29,7 @@ Eq \@ref(eq:characteristic-equation) is called the **characteristic equation** o
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-1"><strong>(\#thm:unnamed-chunk-1) </strong></span>Eigenvalues of a trangular matrix are its diagonal entries.</div>\EndKnitrBlock{theorem}
 
 
-**PROOF**  
+<div class = "proof"> Proof </div>  
 
 Consider the $3 \times 3$ case. If $A$ is upper triangular, then $A - \lambda I$ has the form 
 
@@ -50,7 +50,7 @@ There are some useful results about how eigenvalues change after various manipul
 
 3. $A^{k}\bar{x} = \lambda^{k}\bar{x}$ 
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 For (1)
 $$
@@ -70,7 +70,7 @@ The next theorem is important in terms of diagonalization and spectral decomposi
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:distinct-eigenvalue"><strong>(\#thm:distinct-eigenvalue) </strong></span>For distinct eigenvalues $\lambda_1, \cdots, \lambda_r$ of an $n \times n$ matrix A, their corresponding eigenvectors $\bar{v_1}, ..., \bar{v_r}$ are linearly independent. </div>\EndKnitrBlock{theorem}
 
-**PROOF**  
+<div class = "proof"> Proof </div>  
 
 Suppose for r distinct eigenvalue  $\lambda_1, \cdots, \lambda_r$, the set $\{\bar{v_1}, ..., \bar{v_r}\}$ is not linearly independent, and $p$ is the least index such that $\bar{v}_{p+1}$ is a linear combination of the preceding vectors. Then there exists scalars $c_1, \cdots, c_p$ such that
 
@@ -93,7 +93,7 @@ Since $\bar{v}_1, ..., \bar{v}_p$ are linearly independent,  weights in (3) must
 
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:same-nonzero"><strong>(\#cor:same-nonzero) </strong></span>Let $A \in \mathbb{R}^{m \times n}$ $A^TA$ and $AA^T$ has the same set of *nonzero* eigenvalues. </div>\EndKnitrBlock{corollary}
 
-**PROOF** 
+<div class = "proof"> Proof </div> 
 
 Let $\lambda$ be a nonzero eigenvalue of $A^TA$ and $\bar{x}$ its eigenvector 
 
@@ -149,7 +149,7 @@ In such case, in $A = P \Lambda P^{-1}$, the diagonal entries of $D$ are eigenva
   
 In other words, $A$ is diagnolizable if and only if there are enough eigenvectors in form a basis of $R^n$, called an **eigenvector basis** of $R^n$ </div>\EndKnitrBlock{definition}
 
-**Proof** 
+<div class = "proof"> Proof </div> 
 
 $$
 \begin{split}
@@ -204,7 +204,7 @@ If $A$ and $B$ are both $n \times n$ matrices, then $A$ **is similar to** $B$ if
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>If $A$ and $B$ are similar, they have the same eigenvalues. </div>\EndKnitrBlock{theorem}
 
-**PROOF**  
+<div class = "proof"> Proof </div>  
 If $B = P^{-1}AP$, then 
 
 $$
@@ -376,7 +376,7 @@ We can obtain a polynomial of matrix $A$ by substituting $A$ for $\lambda$, and 
 Let $f(\lambda)$ be the polynomial function of the characteristic polynomial $\det(A - \lambda I)$, where $A$ is a square matrix. Then $f(A)$ evaluates to a zero matrix.</div>\EndKnitrBlock{theorem}
 
 
-**PROOF**  
+<div class = "proof"> Proof </div>  
 
 Though the Caley Hamilton theorem \@ref(thm:cayley-hamilton) applies to any square matrix $A$. Our proof only address the case for diagonalizable matrices.  
 
@@ -418,7 +418,7 @@ Symmetric matrices have some nice properties about diagonalization.
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
 
-**PROOF** 
+<div class = "proof"> Proof </div> 
 
 Let $\bar{v}_1$ and $\bar{v}_2$ be eigenvectors that correspond to distinct eigenvalues $\lambda_1$ and $\lambda_2$. Compute 
 
@@ -633,7 +633,7 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ata-pd"><strong>(\#cor:ata-pd) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are always positive semidefinite matrices</div>\EndKnitrBlock{corollary}
 
-**PROOF**  
+<div class = "proof"> Proof </div>  
 
 By definition, $A^TA$ is a positive semidefinite matrix if for any $\bar{x} \in \mathbb{R}^n$, the quadratic form $\bar{x}^T(A^TA)\bar{x} \ge 0$. 
 
@@ -657,7 +657,7 @@ Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $
 
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ridge-invertible"><strong>(\#cor:ridge-invertible) </strong></span>$A^TA +\lambda I$ and $AA^T + \lambda I$ are always positive definite and invertible for $\lambda > 0$</div>\EndKnitrBlock{corollary}
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are positive semidefinite, and that they have the same nonzero eigenvalues from corollary \@ref(cor:same-nonzero). According to Section \@ref(additional-properties-of-eigenvalues-and-eigenvectors), eigenvalues for $P(A)$ are $P(\lambda)$ for polynomial function $P$. Therefore, $A^TA +\lambda I$ and $AA^T + \lambda I$ share a positive set of $n$ eigenvalues $\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda$, so they are PD and invertible.  
 
@@ -728,7 +728,7 @@ $$
 \lambda_{\text{min}}(A) \le R_{A}(\bar{x}) \le \lambda_{\text{max}}(A)
 $$
 
-**PROOF** 
+<div class = "proof"> Proof </div> 
 
 Since the Rayleigh quotient does not depend on the 2-norm of vector $\bar{x}$, we may assume a unit vector $\bar{x}^T\bar{x} = 1$, and Rayleigh quotient simplifies to the quadratic form $\bar{x}^TA\bar{x}$. 
 
@@ -799,7 +799,7 @@ $$
 $$
 is the eigenvalue $\lambda_k$, and this maximum is attained at $\bar{x} = \bar{q}_k$</div>\EndKnitrBlock{theorem}
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 From $\bar{x} = P\bar{y}$ we know that
 

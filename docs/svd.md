@@ -43,7 +43,7 @@ From corollary \@ref(cor:ata-pd), we know that $A^TA$ are positive semidefinite 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:svd-rank"><strong>(\#thm:svd-rank) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\bar{v}_1, ..., A\bar{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
 
 
-**PROOF**  
+<div class = "proof"> Proof </div>  
 
 First, let's examine that $\{A\bar{v}_1, ..., A\bar{v}_r\}$ is a orthogonal basis: any pair of two distinct vectors $A\bar{v}_i, A\bar{v}_j, \; i,j = 1, ..., r$ are orthogonal to each other 
 
@@ -97,7 +97,7 @@ $$
 A = U \Sigma V^T
 $$</div>\EndKnitrBlock{theorem}
 
-**PROOF** 
+<div class = "proof"> Proof </div> 
 
 Since $A$ has $r$ nonzero singular values which measure the length of $A\bar{v}_i, \; i = 1, ...n$, there exists orthogonal basis $\{A\bar{v}_1, ..., A\bar{v}_r\}$ for $\mathcal{R}(A)$, we can further normalize the set to produce the *orthonormal* set $\bar{u}_1, ..., \bar{u}_r$: 
 
@@ -294,7 +294,7 @@ $$
 \|AB\|_p \le \|A\|_p\|B\|_p
 $$</div>\EndKnitrBlock{proposition}
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 For any $\bar{x} \in \mathbb{R}^n$ 
 
@@ -332,7 +332,7 @@ where $\sigma_i$ is the nonzero singular value of $A$.
 
 \BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-3"><strong>(\#prp:unnamed-chunk-3) </strong></span>The F-norm is a submultiplicative norm. </div>\EndKnitrBlock{proposition}
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 Let $A$ and $B$ are of appropriate size such that
 

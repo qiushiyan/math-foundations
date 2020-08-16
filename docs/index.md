@@ -1,7 +1,7 @@
 --- 
 title: "Mathematical Notes for Machine Learning"
 author: "Qiushi Yan"
-date: "2020-08-12"
+date: "2020-08-16"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib, packages.bib]
@@ -15,6 +15,8 @@ github-repo: enixam/math-foundations
 # Preface {-}  
 
 This document aims to cover various mathematical topics relevant to machine learning problems, including linear algebra, calculus, probability theory, and possibly optimization (statistics should be in another stand-alone document). Since it currently serves mainly as a self-reminder, some basic knowledge (especially in the calculus part) that are already familiar to me are skipped. Other than that I try to put things in a logical, consistent order.  
+
+
 
 
 References (books, online courses, videos, papers) include:  

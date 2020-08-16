@@ -32,7 +32,7 @@ f_1(\bar{x}) \\
 f_m(\bar{x})
 \end{bmatrix}
 $$
-In this way, we think of a vector-valued function $\bar{f}$, as a vector of functions $[f_1, ..., f_m]^T, \; f_i: \mathbb{R}^n \rightarrow \mathbb{R}$. Thus, the partial derivative of $f_i$ with respect vector of $\bar{x}$ is a gradient 
+In this way, we think of a vector-valued function $\bar{f}$, as a vector of scalar functions $[f_1, ..., f_m]^T, \; f_i: \mathbb{R}^n \rightarrow \mathbb{R}$. Thus, partial derivatives of $f_i$ with respect vector of $\bar{x}$ is the gradient 
 
 $$
 \frac{\partial f_i}{\partial \bar{x}} =

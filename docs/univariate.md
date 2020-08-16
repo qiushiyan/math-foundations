@@ -9,6 +9,7 @@ f_X(x) =
 0  & \text{otherwise}
 \end{cases}
 $$
+
 ## Normal distribution 
 
 ### Log normal distribution 

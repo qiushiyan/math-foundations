@@ -289,7 +289,7 @@ Let $A, B \in \mathbb{R}^{m \times n}$ have ranks $a$ and $b$
 
 
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 For (1), rows / columns of $A + B$ can be expressed as linear combinations of rows / columns of $A$ and $B$. 
 
@@ -304,7 +304,7 @@ For (2), Each column of $AB$ is a linear combination of columns of A, and each r
 
 
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 Suppose $B$ is $n \times n$, the minimum rank of $AB$ is $a + n - n = a$, and the maximum rank is $\min(a, n) = a$. Thus, multiplying by a full rank matrix preserves rank: $r(AB) = r(A)$. (4) follows naturally after (3). 
 
@@ -313,7 +313,7 @@ Suppose $B$ is $n \times n$, the minimum rank of $AB$ is $a + n - n = a$, and th
 
 \BeginKnitrBlock{proposition}\iffalse{-91-71-114-97-109-32-109-97-116-114-105-120-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:gram-matrix"><strong>(\#prp:gram-matrix)  \iffalse (Gram matrix) \fi{} </strong></span>The matrix $A^TA$ is said to be the Gram matrix of column space of $A_{m \times n}$. The columns of $A$ are linearly independent if and only if $A^TA$ is invertible.</div>\EndKnitrBlock{proposition}
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 When $A^TA$ is invertible, it has rank $n$. Therefore,  each of the factors of $A^TA$ has at least rank $n$, and this means columns of $A$ are linearly independent (since $r(A) \le \min(m, n)$). 
 
@@ -325,7 +325,7 @@ $$
 r(A) = r(A^TA) = r(AA^T)
 $$</div>\EndKnitrBlock{proposition}
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 For $r(A) = r(A^TA)$, suppose $r(A) = r$, then $\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r$. Note that for any $\bar{x}$ that satisfies $A\bar{x} = 0$, we have $A^TA\bar{x} = 0$. It follows that $A$ and $A^TA$ have the same null space, $\mathcal{N}(A)  = \mathcal{N}(A^TA)$. Since $A^TA \in \mathbb{R}^{n \times n}$, we have $r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r$. 
 

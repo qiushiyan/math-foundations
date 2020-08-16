@@ -53,7 +53,7 @@ $$
   
 where $\{\bar{u_1}, \dots, \bar{u_p}\}$ is an orthogonal basis. </div>\EndKnitrBlock{theorem}
 
-**Proof**
+<div class = "proof"> Proof </div>
 
 $$
 \begin{split}
@@ -83,7 +83,7 @@ $$
   
 where $\bar{v}_w \in W$ and $\bar{v}_{\perp} \in W^{\perp}$</div>\EndKnitrBlock{theorem}
 
-**PROOF** 
+<div class = "proof"> Proof </div> 
 
 Let $\bar{u}_1, ..., \bar{u}_m$ be a orthonormal basis for $W$, there exists linear combination according to Section \@ref(orthogonal-sets-and-orthogonal-basis) 
 
@@ -143,7 +143,7 @@ $$
 \|\bar{y} - \hat{\bar{y}}\| \le \|\bar{y} - \bar{v}\|
 $$</div>\EndKnitrBlock{theorem}
 
-**PROOF**
+<div class = "proof"> Proof </div>
 
 Take $\bar{v}$ distinct from $\hat{\bar{y}}$ in $W$, we know that $\bar{y} - \hat{\bar{y}}$ is perpendicular to $\bar{v}$. According to Pythoagorean theorem, we have
 
@@ -252,7 +252,7 @@ For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\bar{x}_1
  
 \BeginKnitrBlock{theorem}\iffalse{-91-81-82-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:qr"><strong>(\#thm:qr)  \iffalse (QR factorization) \fi{} </strong></span>if $A$ is an $m \times n$ matrix with full column rank, then $A$ can be factored as $A = QR$, where $Q$ is an $m \times n$ matrix whose columns form an orthonormal basis of $\text{Col}\;A$ and $R$ is an $n \times n$ upper triangular invertible matrix with positive entries on its diagonal. </div>\EndKnitrBlock{theorem}
 
-**PROOF**  
+<div class = "proof"> Proof </div>  
 
 Because $A_{m \times n}$ is full column rank, we can transform its column vector $\{\bar{x}_{1}, ..., \bar{x}_{n}\}$ into a new set of orthonormal basis $\{\bar{q}_{1}, ..., \bar{q}_{n}\}$ with Gram-Schmidt process. Let 
 

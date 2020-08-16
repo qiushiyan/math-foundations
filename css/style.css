@@ -55,6 +55,22 @@ p.flushright {
   text-align: right;
 }
 
+/* Proof formating --------------------------------------------*/
+
+
+.proof {
+  display: block;
+  font-size: 1.1em;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  background-color: #DEE9F6;
+  border: solid 5px #EEF4FA;
+  padding: 0.5em;
+  margin: 1em 0;
+}
+
+
 /* Sidebar formating --------------------------------------------*/
 
 .sidebar {
