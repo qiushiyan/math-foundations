@@ -16,7 +16,7 @@ $$
 
 
 
-## Binomial distribution 
+## Binomial distribution and Beta distribution
 
 
 
@@ -29,7 +29,7 @@ $$
 ### Poisson process
 
 
-## Exponential distribution 
+## Exponential distribution and Gamma distribution
 
 The exponential distribution describes the length of time between occurrences, and can be derived directly from poisson distribution. Given a poisson random variable $X \sim \text{Poisson}(\lambda)$, we compute the probability of the time $T$ to the first occurence is greater than $t$ 
 
@@ -65,10 +65,7 @@ $$
 E(X) = \frac{1}{\lambda} \\
 \text{Var}(X) = \frac{1}{\lambda^2}
 $$
-
-## Gamma distribution 
-
-
+<hr>
 
 The gamma distribution can be parameterized in terms of a shape parameter $\alpha$ and an rate parameter $\beta$. 
 
@@ -90,10 +87,19 @@ $$
 X \sim \Gamma(\alpha, \beta) \equiv \text{Gamma}(\alpha, \beta)
 $$
 
+### Properties
 
 
 
-## Inverse Gamma distribution 
+
+
+
+
+
+
+
+
+### Inverse Gamma distribution 
 
 
 ## Beta distribution 

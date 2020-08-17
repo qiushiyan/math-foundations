@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-08-16" />
+<meta name="date" content="2020-08-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -178,20 +178,22 @@
 <li class="chapter" data-level="11" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html"><i class="fa fa-check"></i><b>11</b> Random variables and moments</a><ul>
 <li class="chapter" data-level="11.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>11.1</b> Properties of expectation and variance</a></li>
 <li class="chapter" data-level="11.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#other-summaries-of-distribution-of-random-variables"><i class="fa fa-check"></i><b>11.2</b> Other summaries of distribution of random variables</a></li>
+<li class="chapter" data-level="11.3" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#moment-generating-functions"><i class="fa fa-check"></i><b>11.3</b> Moment generating functions</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>12</b> Univariate distributions</a><ul>
 <li class="chapter" data-level="12.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>12.1</b> Uniform distribution</a></li>
 <li class="chapter" data-level="12.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#normal-distribution"><i class="fa fa-check"></i><b>12.2</b> Normal distribution</a><ul>
 <li class="chapter" data-level="12.2.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#log-normal-distribution"><i class="fa fa-check"></i><b>12.2.1</b> Log normal distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="univariate-distributions.html"><a href="univariate-distributions.html#binomial-distribution"><i class="fa fa-check"></i><b>12.3</b> Binomial distribution</a></li>
+<li class="chapter" data-level="12.3" data-path="univariate-distributions.html"><a href="univariate-distributions.html#binomial-distribution-and-beta-distribution"><i class="fa fa-check"></i><b>12.3</b> Binomial distribution and Beta distribution</a></li>
 <li class="chapter" data-level="12.4" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-distribution"><i class="fa fa-check"></i><b>12.4</b> Poisson distribution</a><ul>
 <li class="chapter" data-level="12.4.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-process"><i class="fa fa-check"></i><b>12.4.1</b> Poisson process</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="univariate-distributions.html"><a href="univariate-distributions.html#exponential-distribution"><i class="fa fa-check"></i><b>12.5</b> Exponential distribution</a></li>
-<li class="chapter" data-level="12.6" data-path="univariate-distributions.html"><a href="univariate-distributions.html#gamma-distribution"><i class="fa fa-check"></i><b>12.6</b> Gamma distribution</a></li>
-<li class="chapter" data-level="12.7" data-path="univariate-distributions.html"><a href="univariate-distributions.html#inverse-gamma-distribution"><i class="fa fa-check"></i><b>12.7</b> Inverse Gamma distribution</a></li>
-<li class="chapter" data-level="12.8" data-path="univariate-distributions.html"><a href="univariate-distributions.html#beta-distribution"><i class="fa fa-check"></i><b>12.8</b> Beta distribution</a></li>
+<li class="chapter" data-level="12.5" data-path="univariate-distributions.html"><a href="univariate-distributions.html#exponential-distribution-and-gamma-distribution"><i class="fa fa-check"></i><b>12.5</b> Exponential distribution and Gamma distribution</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#properties"><i class="fa fa-check"></i><b>12.5.1</b> Properties</a></li>
+<li class="chapter" data-level="12.5.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#inverse-gamma-distribution"><i class="fa fa-check"></i><b>12.5.2</b> Inverse Gamma distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="12.6" data-path="univariate-distributions.html"><a href="univariate-distributions.html#beta-distribution"><i class="fa fa-check"></i><b>12.6</b> Beta distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>13</b> Multivariate distributions</a><ul>
 <li class="chapter" data-level="13.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>13.1</b> Multivariate normal distribution</a></li>
@@ -245,6 +247,22 @@
 <h1><span class="header-section-number">Chapter 11</span> Random variables and moments</h1>
 <div id="properties-of-expectation-and-variance" class="section level2">
 <h2><span class="header-section-number">11.1</span> Properties of expectation and variance</h2>
+<p>This section provides some properties of <span class="math inline">\(E(X)\)</span> and <span class="math inline">\(\text{Var}(X)\)</span> commonly-used in probabilistic calculations. Suppose all expectations <span class="math inline">\(E(\cdot)\)</span> exists</p>
+<ul>
+<li><p><strong>Non-negativity</strong>: If <span class="math inline">\(X \ge 0\)</span> then <span class="math inline">\(E(X) \ge 0\)</span><br />
+</p></li>
+<li><p><strong>Linearity of expectation</strong></p>
+<ul>
+<li><span class="math inline">\(E(\alpha X) = \alpha E(X)\)</span> (<span class="math inline">\(\alpha\)</span> is constant)<br />
+</li>
+<li><span class="math inline">\(E(X + Y) = E(X) + E(Y)\)</span> (<span class="math inline">\(Y\)</span> is also r.v., and <strong>not</strong> necessarily independent of <span class="math inline">\(X\)</span>). More generally, for any r.v. <span class="math inline">\(X_1, ..., X_n\)</span> <span class="math inline">\(E(X_1 + \cdots + X_n) =\sum_{i=1}^n{E(X_i)}\)</span></li>
+</ul></li>
+<li><p><strong>Monotonicity</strong>: If <span class="math inline">\(X \le Y\)</span>, then <span class="math inline">\(E(X) \le E(Y)\)</span></p></li>
+<li><p><strong>Non-multiplicativity</strong>:<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> <span class="math inline">\(E(XY) = E(X)E(Y) + \text{Cov}(X, Y)\)</span>. This means in general <span class="math inline">\(E(XY) \not= E(X)E(Y)\)</span> holds except that <span class="math inline">\(X, Y\)</span> are independent (although this is not a necessary condition)</p></li>
+<li><p><strong>law of the unconscious statistician (LOTUS)</strong>. Suppose <span class="math inline">\(g(X)\)</span> is a function of <span class="math inline">\(X\)</span>. If <span class="math inline">\(X\)</span> is discrete then <span class="math inline">\(E[g(X)] = \sum g(x)f_X(x)\)</span>, and if <span class="math inline">\(X\)</span> is continuous <span class="math inline">\(E[g(X)] = \int g(x)f(x)dx\)</span></p></li>
+<li><p><span class="math inline">\(E(X^2) = \text{Var}(X) + [E(X)]^2\)</span><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p></li>
+</ul>
+<p>An important extension of the previous identity is used listed in the following lemma.</p>
 
 <div class="lemma">
 <p><span id="lem:mean-square-expectation" class="lemma"><strong>Lemma 11.1  </strong></span>
@@ -255,7 +273,11 @@ E(X  - c)^2 = \text{Var}(X) + (\mu - c)^2
 where <span class="math inline">\(c = 0\)</span>
 </div>
 
-<p><strong>PROOF</strong></p>
+
+<div class="proof">
+Proof
+</div>
+
 <p>Use the fact that variance is not affected when adding a constant</p>
 <p><span class="math display">\[
 \begin{split}
@@ -264,18 +286,45 @@ where <span class="math inline">\(c = 0\)</span>
 &amp;= E(X - c)^2 - (\mu - c)^2
 \end{split}
 \]</span></p>
+<hr>
+<p>For <span class="math inline">\(\text{Var}(X)\)</span>, we have the following properties</p>
+<ul>
+<li><p><strong>non-negative</strong>: <span class="math inline">\(\text{Var}(X) \ge 0\)</span> with equality only if <span class="math inline">\(X\)</span> follows degenerate distribution<br />
+</p></li>
+<li><p><strong>invariant to adding constant</strong>: <span class="math inline">\(\text{Var}(X + \alpha) = \text{Var}(X)\)</span></p></li>
+<li><p>If all values are scaled by a constant, the variance is scaled by the square of that constant: <span class="math inline">\(\text{Var}(\alpha X) = \alpha^2\text{Var}(X)\)</span></p></li>
+<li><p>The variance of a sum of two random variables is given by</p></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Var}(aX + bY) &amp;= a^2\text{Var}(X) + b^2\text{Var}(Y) + 2ab \cdot\text{Cov}(X, Y) \\
+\text{Var}(aX - bY) &amp;= a^2\text{Var}(X) + b^2\text{Var}(Y) - 2ab \cdot\text{Cov}(X, Y)
+\end{aligned}
+\]</span>
+By extension, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are uncorrelated, <span class="math inline">\(\text{Var}(aX + bY) = a^2\text{Var}(X) + b^2\text{Var}(Y)\)</span></p>
+<ul>
+<li><strong>variance-covariance operations</strong>: the variance of a linear combination of r.v. is the sum of variance plus all pairs of covariances</li>
+</ul>
+<p><span class="math display">\[
+\text{Var}(\sum_{i=1}^{n} \alpha_i X_i) =
+\sum_{i=1}^{n} \alpha^2 \text{Var}(X_i) + \sum_{i \not = j}a_ia_j \text{Cov}(X_i, X_j)
+\]</span></p>
 </div>
 <div id="other-summaries-of-distribution-of-random-variables" class="section level2">
 <h2><span class="header-section-number">11.2</span> Other summaries of distribution of random variables</h2>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 1.1  </strong></span>Let <span class="math inline">\(X\)</span> be an r.v. with expectation <span class="math inline">\(E(X) = \mu\)</span>, and let <span class="math inline">\(m\)</span> be the median of <span class="math inline">\(X\)</span></p>
+<p><span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>Let <span class="math inline">\(X\)</span> be an r.v. with expectation <span class="math inline">\(E(X) = \mu\)</span>, and let <span class="math inline">\(m\)</span> be the median of <span class="math inline">\(X\)</span></p>
 <ul>
 <li><p>The value of <span class="math inline">\(c\)</span> that minimizes the mean squared error <span class="math inline">\(E(X - c)^2\)</span> is <span class="math inline">\(c = \mu\)</span></p></li>
 <li><p>The value of <span class="math inline">\(c\)</span> that minimizes the mean absolute error <span class="math inline">\(E |X - c|\)</span> is <span class="math inline">\(c = m\)</span></p>
 </div></li>
 </ul>
-<p><strong>PROOF</strong></p>
+
+<div class="proof">
+Proof
+</div>
+
 <p>In the case of mean squared error, we have <span class="math inline">\(E(X - c)^2 = \text{Var}(X) + (\mu - c)^2\)</span> according to lemma <a href="random-variables-and-moments.html#lem:mean-square-expectation">11.1</a>. Therefore, the quantity is minimized when <span class="math inline">\(c = \mu\)</span>.</p>
 <p>As for the mean absolute error, we need to show that <span class="math inline">\(E|X - m| \le E |X - a|\)</span> for any <span class="math inline">\(a\)</span>, which is equivalent to <span class="math inline">\(E(|X - a| - |X - m|) \ge 0\)</span>. Assume <span class="math inline">\(m &lt; a\)</span> without loss of generality, if <span class="math inline">\(X \le m\)</span> then</p>
 <p><span class="math display">\[
@@ -299,8 +348,73 @@ E(Y) &amp;= E(Y | X \le m)P(X \le m) +E(Y | X &gt; m)P(X \gt m) \\
 \end{split}
 \]</span>
 Since for median <span class="math inline">\(m\)</span> we know <span class="math inline">\(P(X \le m) \le \frac{1}{2}\)</span>, we get <span class="math inline">\(E(Y) \ge 0\)</span> with equality when <span class="math inline">\(a = m\)</span>. This means the mean absolute error <span class="math inline">\(E|X - a|\)</span> is minimized when <span class="math inline">\(a\)</span> is the median of <span class="math inline">\(X\)</span>.</p>
+</div>
+<div id="moment-generating-functions" class="section level2">
+<h2><span class="header-section-number">11.3</span> Moment generating functions</h2>
+
+<div class="theorem">
+<p><span id="thm:mgf-moment" class="theorem"><strong>Theorem 11.1  (Moments via derivaties of MGF)  </strong></span>The <span class="math inline">\(n\)</span>th momment of r.v. <span class="math inline">\(X\)</span> is the <span class="math inline">\(n\)</span>th derivative of its MGF evaluated at zero</p>
+<span class="math display">\[
+E(X^n) = M^{n}(0)
+\]</span>
+</div>
+
+<div class="proof">
+Proof
+</div>
+<p>The Taylor expansion of <span class="math inline">\(M(t)\)</span> about <span class="math inline">\(0\)</span> is</p>
+<p><span class="math display">\[
+M(t) = \sum_{n=1}^{\infty} M^{(n)}(0) \frac{t^n}{n!}
+\]</span></p>
+<p>On the other hand, use the fact that the Taylor expansion of <span class="math inline">\(e^x\)</span> about <span class="math inline">\(0\)</span> is <span class="math inline">\(\sum \frac{x^n}{n!}\)</span>, we have</p>
+<p><span class="math display">\[
+\begin{split}
+M(t)  &amp;= E(e^{tX}) \\
+&amp;= E(\sum_{n = 0}^{\infty} \frac{X^nt^n}{n!}) \\
+&amp;= \sum_{n = 0}^{\infty} E(X^n)\frac{t^n}{n!} \qquad \text{due to techinical conditions of MGF}\\ 
+\end{split} 
+\]</span></p>
+<p>Matching the coefficients of the two expansions, we get <span class="math inline">\(E(X^n) = M^{(n)}(0)\)</span></p>
+<p>Note that expectation of infinite sum <span class="math inline">\(E(\sum_{i = 0}^{\infty}X_i)\)</span> may not be equal to <span class="math inline">\(\sum_{n=0}^{\infty}E(X_I)\)</span>. In other words, linearity of expectation may not hold for infinite sums. However, the definition of MGF has a technical condition – MGF is finite on some open interval <span class="math inline">\((-a, a)\)</span> containing <span class="math inline">\(0\)</span> – which ensures the linearity property used in the following formula.</p>
+
+<div class="theorem">
+<span id="thm:mgf-distribution" class="theorem"><strong>Theorem 11.2  (One-to-one relationship between MGF and distribution)  </strong></span>The MGF of a random variable determines its distribution. If two random variables have the same MGF, then they follow the same distribution.
+</div>
+
+
+<div class="theorem">
+<p><span id="thm:mgf-convolution" class="theorem"><strong>Theorem 11.3  (MGF and convolutions)  </strong></span>The MGF of the convolution (sum) of two independent r.v. <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, is the product of the individual MGFs. This is because</p>
+</div>
+
+<p><span class="math display">\[
+\begin{split}
+M_{X + Y}(t) &amp;= E(e^{t(X + Y)}) \\
+&amp;= E(e^{tX} \cdot e^{tY})\\
+&amp;= E(e^{tX}) \cdot E(e^{tY}) \qquad \text{X and Y are independent}\\
+&amp;= M_X(t) \cdot M_Y(t)
+\end{split}
+\]</span></p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="4">
+<li id="fn4"><p>Proof: <span class="math inline">\(E(XY) = E(X)E(Y) + \text{Cov}(X, Y)\)</span>. Start with covariance <span class="math display">\[\begin{split}
+\text{Cov}(X, Y) &amp;= E[(X - \mu_x)(Y - \mu_y)] \\
+&amp;= E(XY - X\mu_y - Y\mu_x + \mu_x\mu_y) \\
+&amp;= E(XY) - \mu_yE(X) - \mu_xE(Y) + \mu_x\mu_y \\
+&amp;= E(XY) - 2\mu_x\mu_y + \mu_x\mu_y \\
+&amp; = E(XY) - \mu_x\mu_y
+\end{split}\]</span><a href="random-variables-and-moments.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Proof: <span class="math inline">\(E(X^2) = \text{Var}(X) + \big( E(X) \big)\)</span>. <span class="math display">\[
+\begin{split}
+E(X^2) &amp;= E \big[ (X \pm \mu)^2 \big] \\
+&amp;= E(X - \mu)^2 + \mu^2 + 2 \mu E(X -\mu) \qquad \text{the 3rd term is zero} \\
+&amp;= \text{Var}(X) + [E(X)]^2
+\end{split}
+\]</span><a href="random-variables-and-moments.html#fnref5" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

@@ -3,7 +3,38 @@
 
 ## Properties of expectation and variance 
 
+This section provides some properties of $E(X)$ and $\text{Var}(X)$ commonly-used in probabilistic calculations. Suppose all expectations $E(\cdot)$ exists 
 
+
+- **Non-negativity**: If $X \ge 0$ then $E(X) \ge 0$  
+- **Linearity of expectation**  
+    - $E(\alpha X) = \alpha E(X)$ ($\alpha$ is constant)  
+    - $E(X + Y) = E(X) + E(Y)$ ($Y$ is also r.v., and **not** necessarily independent of $X$). More generally,  for any r.v. $X_1, ..., X_n$ $E(X_1 + \cdots + X_n) =\sum_{i=1}^n{E(X_i)}$  
+    
+
+- **Monotonicity**: If $X \le Y$, then $E(X) \le E(Y)$  
+
+- **Non-multiplicativity** ^[Proof: $E(XY) = E(X)E(Y) + \text{Cov}(X, Y)$. Start with covariance $$\begin{split}
+\text{Cov}(X, Y) &= E[(X - \mu_x)(Y - \mu_y)] \\
+&= E(XY - X\mu_y - Y\mu_x + \mu_x\mu_y) \\
+&= E(XY) - \mu_yE(X) - \mu_xE(Y) + \mu_x\mu_y \\
+&= E(XY) - 2\mu_x\mu_y + \mu_x\mu_y \\
+& = E(XY) - \mu_x\mu_y
+\end{split}$$]: $E(XY) = E(X)E(Y) + \text{Cov}(X, Y)$. This means in general $E(XY) \not= E(X)E(Y)$ holds except that $X, Y$ are independent (although this is not a necessary condition) 
+
+- **law of the unconscious statistician (LOTUS)**. Suppose $g(X)$ is a function of $X$. If $X$ is discrete then $E[g(X)] = \sum g(x)f_X(x)$, and if $X$ is continuous $E[g(X)] = \int g(x)f(x)dx$  
+
+- $E(X^2) = \text{Var}(X) + [E(X)]^2$ ^[Proof: $E(X^2) = \text{Var}(X) + \big( E(X) \big)$. $$
+\begin{split}
+E(X^2) &= E \big[ (X \pm \mu)^2 \big] \\
+&= E(X - \mu)^2 + \mu^2 + 2 \mu E(X -\mu) \qquad \text{the 3rd term is zero} \\
+&= \text{Var}(X) + [E(X)]^2
+\end{split}
+$$]
+
+
+
+An important extension of the previous identity is used listed in the following lemma. 
 
 ```{lemma mean-square-expectation}
 
@@ -18,7 +49,15 @@ where $c = 0$
 ```
 
 
-**PROOF**
+
+
+
+
+
+```{block2, type = "proof"}
+Proof
+```
+
 
 Use the fact that variance is not affected when adding a constant 
 
@@ -28,6 +67,33 @@ $$
 &= E(X - c)^2 - (E(X - c))^2 \\ 
 &= E(X - c)^2 - (\mu - c)^2
 \end{split}
+$$
+
+<hr> 
+
+For $\text{Var}(X)$, we have the following properties 
+
+- **non-negative**: $\text{Var}(X) \ge 0$ with equality only if $X$ follows degenerate distribution  
+- **invariant to adding constant**: $\text{Var}(X + \alpha) = \text{Var}(X)$  
+
+- If all values are scaled by a constant, the variance is scaled by the square of that constant:  $\text{Var}(\alpha X) = \alpha^2\text{Var}(X)$  
+
+- The variance of a sum of two random variables is given by 
+
+$$
+\begin{aligned}
+\text{Var}(aX + bY) &= a^2\text{Var}(X) + b^2\text{Var}(Y) + 2ab \cdot\text{Cov}(X, Y) \\
+\text{Var}(aX - bY) &= a^2\text{Var}(X) + b^2\text{Var}(Y) - 2ab \cdot\text{Cov}(X, Y)
+\end{aligned}
+$$
+By extension, if $X$ and $Y$ are uncorrelated, $\text{Var}(aX + bY) = a^2\text{Var}(X) + b^2\text{Var}(Y)$
+
+
+- **variance-covariance operations**: the variance of a linear combination of r.v. is the sum of variance plus all pairs of covariances 
+
+$$
+\text{Var}(\sum_{i=1}^{n} \alpha_i X_i) =
+\sum_{i=1}^{n} \alpha^2 \text{Var}(X_i) + \sum_{i \not = j}a_ia_j \text{Cov}(X_i, X_j)
 $$
 
 
@@ -42,7 +108,10 @@ Let $X$ be an r.v. with expectation $E(X) = \mu$, and let $m$ be the median of $
 ```
 
 
-**PROOF**  
+```{block2, type = "proof"}
+Proof
+```
+
 
 In the case of mean squared error, we have $E(X - c)^2 = \text{Var}(X) + (\mu - c)^2$ according to lemma \@ref(lem:mean-square-expectation). Therefore, the quantity is minimized when $c = \mu$.  
 
@@ -76,3 +145,58 @@ E(Y) &= E(Y | X \le m)P(X \le m) +E(Y | X > m)P(X \gt m) \\
 \end{split}
 $$
 Since for median $m$ we know $P(X \le m) \le \frac{1}{2}$, we get $E(Y) \ge 0$ with equality when $a = m$. This means the mean absolute error $E|X - a|$ is minimized when $a$ is the median of $X$. 
+
+
+## Moment generating functions 
+
+```{theorem mgf-moment, name = "Moments via derivaties of MGF"}
+The $n$th momment of r.v. $X$ is the $n$th derivative of its MGF evaluated at zero
+
+$$
+E(X^n) = M^{n}(0)
+$$
+```
+
+<div class = "proof"> Proof </div>
+
+The Taylor expansion of $M(t)$ about $0$ is
+
+$$
+M(t) = \sum_{n=1}^{\infty} M^{(n)}(0) \frac{t^n}{n!}
+$$
+
+On the other hand, use the fact that the Taylor expansion of $e^x$ about $0$ is $\sum \frac{x^n}{n!}$, we have
+
+ 
+
+$$
+\begin{split}
+M(t)  &= E(e^{tX}) \\
+&= E(\sum_{n = 0}^{\infty} \frac{X^nt^n}{n!}) \\
+&= \sum_{n = 0}^{\infty} E(X^n)\frac{t^n}{n!} \qquad \text{due to techinical conditions of MGF}\\ 
+\end{split} 
+$$
+
+Matching the coefficients of the two expansions, we get $E(X^n) = M^{(n)}(0)$
+
+Note that expectation of infinite sum $E(\sum_{i = 0}^{\infty}X_i)$ may not be equal to $\sum_{n=0}^{\infty}E(X_I)$. In other words, linearity of expectation may not hold for infinite sums. However, the definition of MGF has a technical condition -- MGF is finite on some open interval $(-a, a)$ containing $0$ -- which ensures the linearity property used in the following formula.  
+
+
+```{theorem mgf-distribution, name = "One-to-one relationship between MGF and distribution"}
+The MGF of a random variable determines its distribution. If two random variables have the same MGF, then they follow the same distribution. 
+```
+
+```{theorem mgf-convolution, name = "MGF and convolutions"}
+The MGF of the convolution (sum) of two independent r.v. $X$ and $Y$, is the product of the individual MGFs. This is because 
+
+
+```
+
+$$
+\begin{split}
+M_{X + Y}(t) &= E(e^{t(X + Y)}) \\
+&= E(e^{tX} \cdot e^{tY})\\
+&= E(e^{tX}) \cdot E(e^{tY}) \qquad \text{X and Y are independent}\\
+&= M_X(t) \cdot M_Y(t)
+\end{split}
+$$
