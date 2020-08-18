@@ -157,7 +157,9 @@ E(X^n) = M^{n}(0)
 $$
 ```
 
-<div class = "proof"> Proof </div>
+```{block2, type = "proof"}
+Proof
+```
 
 The Taylor expansion of $M(t)$ about $0$ is
 
