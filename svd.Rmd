@@ -402,7 +402,7 @@ $$
 
 
 
-```{definition unitary-invariant, name = "unitary invariant"}
+```{definition unitary-invariant, name = "unitary invariant norms"}
 A matrix norm $\|\cdot \|$ is said to be unitary invariant if for all orthogonal matrices $U$ and $V$ of appropriate size
 
 $$
@@ -442,6 +442,25 @@ $$
 
 
 
-## Low rank approximation 
+## Low rank approximation  
+
+```{theorem eckart-young, name = "Eckart–Young–Mirsky"}
+Let $\|\cdot\|$ be a unitary invariant norm. Suppose $A \in \mathbb{R}^{m \times n}$ where $m > n$, has svd $A = \sum_{i = 1}^n \sigma_i \bar{u}_i \bar{v}^T_i$. Then the best rank-k approximation to $A$, where $k \le \text{rank}(A)$, is given by 
+
+$$
+A_k = \sum _{i=1}^{k}\sigma_i \bar{u}_i \bar{v}_i^T
+$$
+
+in the sense that for any other rank-k matrix $\tilde{A}$
+
+$$
+\|A -  A_k \| \le \|A - \tilde{A} \|
+$$
+```
 
 
+A measure of the quality of the approximation is given by 
+
+$$
+\frac{\|A_k\|^2}{\| A\|^2} = \frac{\sigma_1^2 + \cdots + \sigma_k^2}{\sigma_1^2 + \cdots + \sigma_r^2}
+$$
