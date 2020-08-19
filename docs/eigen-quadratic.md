@@ -373,6 +373,7 @@ $$
 We can obtain a polynomial of matrix $A$ by substituting $A$ for $\lambda$, and $kI$ for constant terms. For example, the matrix form of the polynomial $3\lambda^2 + 2\lambda + 2$ is $3A^2 + 2A + 2I$. 
 
 \BeginKnitrBlock{theorem}\iffalse{-91-67-97-121-108-101-121-45-72-97-109-105-108-116-111-110-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cayley-hamilton"><strong>(\#thm:cayley-hamilton)  \iffalse (Cayley-Hamilton Theorem) \fi{} </strong></span>
+
 Let $f(\lambda)$ be the polynomial function of the characteristic polynomial $\det(A - \lambda I)$, where $A$ is a square matrix. Then $f(A)$ evaluates to a zero matrix.</div>\EndKnitrBlock{theorem}
 
 
@@ -393,7 +394,7 @@ A direct result derived from the Cayley Hamilton theorem is that for every inter
 
 \BeginKnitrBlock{proposition}\iffalse{-91-80-111-108-121-110-111-109-105-97-108-32-114-101-112-114-101-115-101-110-116-97-116-105-111-110-32-111-102-32-109-97-116-114-105-120-32-105-110-118-101-114-115-101-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-7"><strong>(\#prp:unnamed-chunk-7)  \iffalse (Polynomial representation of matrix inverse) \fi{} </strong></span>The *inverse* of an invertible square matrix $A$ is a polynomial of $A$ with degree at most $d -1$. </div>\EndKnitrBlock{proposition}
 
-Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for nonsingular matrices, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$. $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
+Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for nonsingular matrices. If the product of all eigenvalues are $k$, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$, where $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
 
 $$
 A \underbrace{\Big( - g(A) / k\Big)}_{A^{-1}} = I

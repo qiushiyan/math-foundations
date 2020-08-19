@@ -31,11 +31,6 @@ A set $S$ is said to be convex, if for every pair of points $\bar{w}_1, \bar{w}_
 
 Intuitively, convexity means if we connect $\bar{w}_1, \bar{w}_2$ with a straight line, then all points along the line must be in set $S$. For example, an open interval $(a, b)$ on the 1-dimensional number line is a convex set. 
 
-
-```r
-knitr::include_graphics("images/convex-set.png")
-```
-
 <img src="images/convex-set.png" width="232" style="display: block; margin: auto;" />
 
 An property of convex set $S$ is that, given $r$ points $\bar{w}_1, ..., \bar{w}_r$ and $r$ nonnegative numbers $\lambda_1, ..., \lambda_r$ such that $\lambda_1 + \cdots + \lambda_r = 1$ ,the affine combination 

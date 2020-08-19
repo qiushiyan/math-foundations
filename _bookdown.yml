@@ -26,6 +26,7 @@ rmd_files: [
   "moments.Rmd",
   "univariate.Rmd",
   "multivariate.Rmd",
+  "markov-chain.Rmd",
   
   "optimization-basics.Rmd",
   "gradient-descent.Rmd",

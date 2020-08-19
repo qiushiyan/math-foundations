@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-08-18" />
+<meta name="date" content="2020-08-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,70 +53,6 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="css\style.css" type="text/css" />
 </head>
@@ -216,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#induced-norms"><i class="fa fa-check"></i><b>5.3.1</b> Induced norms</a></li>
 <li class="chapter" data-level="5.3.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#entry-wise-norm"><i class="fa fa-check"></i><b>5.3.2</b> Entry-wise norm</a></li>
 <li class="chapter" data-level="5.3.3" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#other-matrix-norms"><i class="fa fa-check"></i><b>5.3.3</b> Other matrix norms</a></li>
-<li class="chapter" data-level="5.3.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#unitary-invariancy"><i class="fa fa-check"></i><b>5.3.4</b> Unitary invariancy</a></li>
+<li class="chapter" data-level="5.3.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#unitary-invariant-norms"><i class="fa fa-check"></i><b>5.3.4</b> Unitary invariant norms</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#low-rank-approximation"><i class="fa fa-check"></i><b>5.4</b> Low rank approximation</a></li>
 </ul></li>
@@ -263,28 +199,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="13.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>13.1</b> Multivariate normal distribution</a></li>
 <li class="chapter" data-level="13.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#dirichlet-distributon"><i class="fa fa-check"></i><b>13.2</b> Dirichlet distributon</a></li>
 </ul></li>
+<li class="chapter" data-level="14" data-path="markov-chain.html"><a href="markov-chain.html"><i class="fa fa-check"></i><b>14</b> Markov Chain</a></li>
 <li class="part"><span><b>IV Optimization</b></span></li>
-<li class="chapter" data-level="14" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>14</b> Basics of optimization</a><ul>
-<li class="chapter" data-level="14.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>14.1</b> Univariate optimization</a></li>
-<li class="chapter" data-level="14.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>14.2</b> Multivariate optimization</a></li>
-<li class="chapter" data-level="14.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#convex-functions"><i class="fa fa-check"></i><b>14.3</b> Convex functions</a></li>
-<li class="chapter" data-level="14.4" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#lagrange-multipliers"><i class="fa fa-check"></i><b>14.4</b> Lagrange multipliers</a></li>
+<li class="chapter" data-level="15" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>15</b> Basics of optimization</a><ul>
+<li class="chapter" data-level="15.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>15.1</b> Univariate optimization</a></li>
+<li class="chapter" data-level="15.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>15.2</b> Multivariate optimization</a></li>
+<li class="chapter" data-level="15.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#convex-functions"><i class="fa fa-check"></i><b>15.3</b> Convex functions</a></li>
+<li class="chapter" data-level="15.4" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#lagrange-multipliers"><i class="fa fa-check"></i><b>15.4</b> Lagrange multipliers</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>15</b> Gradient descent</a></li>
+<li class="chapter" data-level="16" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>16</b> Gradient descent</a></li>
 <li class="part"><span><b>V Applications</b></span></li>
-<li class="chapter" data-level="16" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>16</b> Linear models</a><ul>
-<li class="chapter" data-level="16.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>16.1</b> Ordinary Least Squares</a><ul>
-<li class="chapter" data-level="16.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>16.1.1</b> Least square estimation</a></li>
+<li class="chapter" data-level="17" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>17</b> Linear models</a><ul>
+<li class="chapter" data-level="17.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>17.1</b> Ordinary Least Squares</a><ul>
+<li class="chapter" data-level="17.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>17.1.1</b> Least square estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>16.2</b> Weighted least squares</a></li>
-<li class="chapter" data-level="16.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>16.3</b> Partial least squres</a></li>
-<li class="chapter" data-level="16.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>16.4</b> Regularized regression</a><ul>
-<li class="chapter" data-level="16.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>16.4.1</b> Ridge regression</a></li>
-<li class="chapter" data-level="16.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>16.4.2</b> Lasso regression</a></li>
-<li class="chapter" data-level="16.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>16.4.3</b> Elastic net regression</a></li>
+<li class="chapter" data-level="17.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>17.2</b> Weighted least squares</a></li>
+<li class="chapter" data-level="17.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squres"><i class="fa fa-check"></i><b>17.3</b> Partial least squres</a></li>
+<li class="chapter" data-level="17.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>17.4</b> Regularized regression</a><ul>
+<li class="chapter" data-level="17.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>17.4.1</b> Ridge regression</a></li>
+<li class="chapter" data-level="17.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso-regression"><i class="fa fa-check"></i><b>17.4.2</b> Lasso regression</a></li>
+<li class="chapter" data-level="17.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net-regression"><i class="fa fa-check"></i><b>17.4.3</b> Elastic net regression</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>17</b> Principal component analysis</a></li>
+<li class="chapter" data-level="18" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>18</b> Principal component analysis</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -337,7 +274,7 @@ Since <span class="math inline">\(A^TA\)</span> is <strong>symmetric</strong>, t
 <p><br></p>
 
 <div class="definition">
-<span id="def:unnamed-chunk-1" class="definition"><strong>Definition 5.1  (Singular values)  </strong></span>The <strong>singular values</strong> of <span class="math inline">\(A\)</span> are the square roots of the eigenvalues of <span class="math inline">\(A^TA\)</span>, denoted by <span class="math inline">\(\sigma_1, ..., \sigma_n\)</span>. That is, <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>, and they are often arranged in descending order so that <span class="math inline">\(\lambda_1 \ge \cdots \ge \lambda_n\)</span>. Geometrically, singular values of <span class="math inline">\(A\)</span> are the length of the vectors <span class="math inline">\(A\bar{v}_1, ..., A\bar{v}_n\)</span>, where <span class="math inline">\(\{\bar{v}_1, ..., \bar{v}_n\}\)</span> is the <em>orthonormal</em> basis of <span class="math inline">\(A^TA\)</span>’s eigenspace.
+<span id="def:singular-value" class="definition"><strong>Definition 5.1  (Singular values)  </strong></span>The singular values of <span class="math inline">\(A\)</span> are the square roots of the eigenvalues of <span class="math inline">\(A^TA\)</span>, denoted by <span class="math inline">\(\sigma_1, ..., \sigma_n\)</span>. That is, <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>, and they are often arranged in descending order so that <span class="math inline">\(\lambda_1 \ge \cdots \ge \lambda_n\)</span>. Geometrically, singular values of <span class="math inline">\(A\)</span> are the length of the vectors <span class="math inline">\(A\bar{v}_1, ..., A\bar{v}_n\)</span>, where <span class="math inline">\(\{\bar{v}_1, ..., \bar{v}_n\}\)</span> is the <em>orthonormal</em> basis of <span class="math inline">\(A^TA\)</span>’s eigenspace.
 </div>
 
 <p><br></p>
@@ -457,7 +394,7 @@ V_{n-r}^T
 \end{bmatrix}
 = U_rDV_{r}^T
 \]</span>
-This more compact form is called a reduced <strong>singular value decomposition</strong>.</p>
+This more compact form is called the <strong>reduced form of SVD</strong>.</p>
 <p>Another way to write this is</p>
 <p><span class="math display">\[
 A = \sum_{i=1}^{t}{\sigma_i}\bar{u}_i\bar{v}_i
@@ -470,7 +407,7 @@ AA^T = (U \Sigma V^T)(U \Sigma V^T)^T = U \Sigma \Sigma^T VV^TU^T = U (\Sigma\Si
 <p>Therefore, <span class="math inline">\([\bar{u}_1 \;\; \cdots \;\; \bar{u}_n]\)</span> are revealed as the orthonormal basis for <span class="math inline">\(AA^T\)</span>’s eigenspace, as <span class="math inline">\([\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]\)</span> are for <span class="math inline">\(A^TA\)</span>.</p>
 <p>Formula (1) echoes the fact that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> have the same set of nonzero eigenvalues, because <span class="math inline">\(\Sigma\Sigma^T\)</span> produces nonzero set <span class="math inline">\(\lambda_1, ..., \lambda_r\)</span>.</p>
 <p>In fact, if were to ask for a direction in which <span class="math inline">\(A^T\)</span> has its greatest stretching effect instead of <span class="math inline">\(A\)</span>, we would still result in the equivalent decomposition <span class="math inline">\(A^T = V\Sigma U^T\)</span>, with <span class="math inline">\(\bar{v}_i = \frac{A\bar{u}_i}{\sigma_i}\)</span>.</p>
-<p>It’s also easy to test that <span class="math inline">\(\{A\bar{u}_1, ..., A\bar{u}_r\}\)</span> produces an orthogonal basis for <span class="math inline">\(\mathcal{R}(A^T)\)</span> or <span class="math inline">\(\mathcal{R}(A)\)</span>. The process is analogous to theorem <a href="singular-value-decomposition.html#thm:svd-rank">5.1</a> where <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> are shown to span <span class="math inline">\(\mathcal{R}(A)\)</span>.</p>
+<p>It’s also easy to test that <span class="math inline">\(\{A\bar{u}_1, ..., A\bar{u}_r\}\)</span> produces an orthogonal basis for <span class="math inline">\(\mathcal{R}(A^T)\)</span> . The process is analogous to theorem <a href="singular-value-decomposition.html#thm:svd-rank">5.1</a> where <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> are shown to span <span class="math inline">\(\mathcal{R}(A)\)</span>.</p>
 <p>For any vector <span class="math inline">\(\bar{y}\)</span> in <span class="math inline">\(\mathcal{R}(A)\)</span>, we have</p>
 <p><span class="math display">\[
 \begin{align*}
@@ -565,7 +502,7 @@ The induced 2-norm are also called the <strong>spectral norm</strong>.</p>
 <hr>
 
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-2" class="proposition"><strong>Proposition 5.1  </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that</p>
+<p><span id="prp:unnamed-chunk-1" class="proposition"><strong>Proposition 5.1  </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that</p>
 <span class="math display">\[
 \|AB\|_p \le \|A\|_p\|B\|_p
 \]</span>
@@ -587,25 +524,27 @@ si</p>
 <h3><span class="header-section-number">5.3.2</span> Entry-wise norm</h3>
 <p>Entry-wise norms treat an <span class="math inline">\(m \times n\)</span> matrix as a long vector of size <span class="math inline">\(m \times n\)</span>, denoted by <span class="math inline">\(\text{vec}(A)\)</span>. For example, using the p-norm for vectors, we get</p>
 <p><span class="math display">\[
-\|A\|_{p,p} = \|\text{vec}(A)\|_p = \Bigg(\sum_{j=1}^n\sum_{i=1}^{m}{|A_{ij}|}^p \Bigg)^{\frac{1}{p}}
+\|A\|_{p,p} = \|\text{vec}(A)\|_p = \Bigg(\sum_{j=1}^n\sum_{i=1}^{m}{|a_{ij}|}^p \Bigg)^{\frac{1}{p}}
 \]</span></p>
 <p>More generally, the p,q norm is defined by</p>
 <p><span class="math display">\[
-\|A\|_{p, q} = \Bigg (  \sum_{j=1}^n \Big (\sum_{i=1}^{n}{|A_{ij|}}^p \Big)^{\frac{q}{p}}    \Bigg)^{\frac{1}{q}}
+\|A\|_{p, q} = \Bigg (  \sum_{j=1}^n \Big (\sum_{i=1}^{n}{|a_{ij}|}^p \Big)^{\frac{q}{p}}    \Bigg)^{\frac{1}{q}}
 \]</span>
 Another important member norm of this norm family is the <strong>Frobenius norm</strong>, or the F-norm.</p>
 <p><span class="math display">\[
-\| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{A_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
+\| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{a_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
 \]</span>
 where <span class="math inline">\(\sigma_i\)</span> is the nonzero singular value of <span class="math inline">\(A\)</span>.</p>
 
 <div class="proposition">
-<span id="prp:unnamed-chunk-3" class="proposition"><strong>Proposition 5.2  </strong></span>The F-norm is a submultiplicative norm.
+<span id="prp:unnamed-chunk-2" class="proposition"><strong>Proposition 5.2  </strong></span>The F-norm is a submultiplicative norm.
 </div>
+
 
 <div class="proof">
 Proof
 </div>
+
 <p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are of appropriate size such that</p>
 <p><span class="math display">\[
 A = 
@@ -622,7 +561,7 @@ b_1 &amp; \cdots &amp; b_m
 \\
 \quad \\
 \begin{aligned}
-\|AB\| &amp;= \sqrt{\sum_{i, j}{|a_i^Tb_j|^2}} \\
+\|AB\| &amp;= \sqrt{\sum_{i, j}{(a_i^Tb_j)^2}} \\
 &amp; \le \sqrt{\sum_{i, j}{\| a_i \|^2 \| b_j\|^2}} \\
 &amp;= \sqrt{\sum_{i}{\|a_i\|^2}} \sqrt{\sum_{j}{\|b_j\|^2}} \\
 &amp;= \|A\| \|B\|
@@ -632,18 +571,23 @@ b_1 &amp; \cdots &amp; b_m
 </div>
 <div id="other-matrix-norms" class="section level3">
 <h3><span class="header-section-number">5.3.3</span> Other matrix norms</h3>
-<p>One can pick to one of two ways to generalize the F-norm. One is a generalization of the direct definition that F-norm is the 2-norm of <span class="math inline">\(||\text{vec}()||\)</span>. For <span class="math inline">\(p \ge 1\)</span>, it is the <strong>Frobenius-p</strong> norm:</p>
+<p>One can pick to one of two ways to generalize the F-norm. One is a generalization of the direct definition that F-norm is <span class="math inline">\(||\text{vec}(A)||_2\)</span>. For <span class="math inline">\(p \ge 1\)</span>, it is the <strong>Frobenius-p</strong> norm:</p>
 <p><span class="math display">\[
-\| A \|_{F_p} = \Bigg (\sum_{i,j}{|A_{ij}|^p} \Bigg)^{\frac{1}{p}}
+\| A \|_{F_p} = \Bigg (\sum_{i,j}{|a_{ij}|^p} \Bigg)^{\frac{1}{p}}
 \]</span>
 The Frobenius p-norm is the ordinary Frobenius norm.</p>
-<p>Another generalization stems from the relationship between F-norm and singular values of <span class="math inline">\(A\)</span>. The <strong>Schatten p norm</strong> or <strong>nuclear p-norm</strong> is the p-norm of the vector composed of <span class="math inline">\(A\)</span>’s singular values</p>
+<p>Another generalization stems from the relationship between F-norm and singular values of <span class="math inline">\(A\)</span>. The <strong>Schatten p norm</strong> is the p-norm of the vector composed of <span class="math inline">\(A\)</span>’s singular values</p>
 <p><span class="math display">\[
-\|A\|_{S_p} = \Big( \sum_{i = 1}^{\min(m, n)}{\sigma_i^p}\Big)^{\frac{1}{p}}
+\|A\|_{S_p} = \Big( \sum_{i = 1}^{\min(m, n)}{\sigma_i}^p\Big)^{\frac{1}{p}}
+\]</span></p>
+<p>The most familiar choices of <span class="math inline">\(p\)</span> are <span class="math inline">\(1, 2, ..., \infty\)</span>. Spectral norm and F-norm can be viewed as special cases of the Schatten norm. The case <span class="math inline">\(p = 2\)</span> yields the F-norm, and <span class="math inline">\(p = \infty\)</span> the spectral norm.</p>
+<p>Finally, <span class="math inline">\(p = 1\)</span> yields the <strong>nuclear norm</strong> (also known as the trace norm), defined as</p>
+<p><span class="math display">\[
+\|A\|_N = \sigma_1 + \cdots + \sigma_r
 \]</span></p>
 </div>
-<div id="unitary-invariancy" class="section level3">
-<h3><span class="header-section-number">5.3.4</span> Unitary invariancy</h3>
+<div id="unitary-invariant-norms" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Unitary invariant norms</h3>
 
 <div class="definition">
 <p><span id="def:unitary-invariant" class="definition"><strong>Definition 5.2  (unitary invariant)  </strong></span>A matrix norm <span class="math inline">\(\|\cdot \|\)</span> is said to be unitary invariant if for all orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> of appropriate size</p>
@@ -653,23 +597,26 @@ The Frobenius p-norm is the ordinary Frobenius norm.</p>
 </div>
 
 <p>(unitary matrices refers to orthogonal matrices with complex-valued entries, but I focus on real matrices here.)</p>
-<p>Essentially, if a norm depends only on the singular values of a matrix, it is unitary invariant. Since for such norms:</p>
+<p>We mentioned that spectral norm, F-norm and nuclear norm are all unitary invariant norms. More than that, these 3 norms of any matrix stay the <strong>same</strong> when <span class="math inline">\(A\)</span> is multiplied by an orthogonal matrix.</p>
+<p>Essentially, <strong>if a norm depends only on the singular values of a matrix</strong>, it is unitary invariant. Since for such norms:</p>
 <p><span class="math display">\[
-\|A\| = \|\Sigma\|
+\|A\| = \|\Sigma\| \qquad \text{because the norm only depend on singular values}
 \]</span>
 Multiply two orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V^T\)</span> on each side,</p>
 <p><span class="math display">\[
 \begin{aligned}
-\|UA V^T\| &amp; = \| U \Sigma V^T\| \\
+\|UA V^T\| &amp; = \| U \Sigma V^T\| \qquad \text{multiply by orthogonal matrix does not change norm}\\
 \|UAV^T\| &amp;= \|A\|
 \end{aligned}
 \]</span></p>
-
-<div class="todo">
-Does this work for all orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span>?
-</div>
-
-<p>The spectral norm (induced p-norm), F-norm and Schattan norm are all unitary invariant.</p>
+<p>The spectral norm (induced p-norm), F-norm and Schatten norm are all unitary invariant. Because they can all be expressed in terms of singular values of <span class="math inline">\(A\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\|A\|_2 &amp;= \sigma_1 \\
+\|A\|_F &amp;= \sqrt{\sigma_1^2 + \cdots + \sigma_r^2} \\
+\|A\|_N &amp;= \sigma_1 + \cdots + \sigma_r
+\end{aligned}
+\]</span></p>
 </div>
 </div>
 <div id="low-rank-approximation" class="section level2">

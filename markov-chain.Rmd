@@ -1,0 +1,20 @@
+
+# Markov Chain 
+
+
+```{definition markov-chain, name = "Markov chain"}
+
+```
+
+
+
+```{definition irreducible, name = "Irreducible and reducible chain"}
+
+```
+
+
+
+```{definition aperiodic, name = "Aperiodic and periodic chain"}
+
+```
+

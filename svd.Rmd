@@ -35,8 +35,8 @@ From corollary \@ref(cor:ata-pd), we know that $A^TA$ are positive semidefinite 
 
 <br>  
 
-```{definition, name = "Singular values"}
-The **singular values** of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\bar{v}_1, ..., A\bar{v}_n$, where $\{\bar{v}_1, ..., \bar{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. 
+```{definition singular-value, name = "Singular values"}
+The singular values of $A$ are the square roots of the eigenvalues of $A^TA$, denoted by $\sigma_1, ..., \sigma_n$. That is,  $\sigma_i = \sqrt{\lambda_i}$, and they are often arranged in descending order so that $\lambda_1 \ge \cdots \ge \lambda_n$. Geometrically, singular values of $A$ are the length of the vectors $A\bar{v}_1, ..., A\bar{v}_n$, where $\{\bar{v}_1, ..., \bar{v}_n\}$ is the *orthonormal* basis of $A^TA$'s eigenspace. 
 ```
 
 
@@ -175,7 +175,7 @@ V_{n-r}^T
 \end{bmatrix}
 = U_rDV_{r}^T
 $$
-This more compact form is called a reduced **singular value decomposition**.  
+This more compact form is called the **reduced form of SVD**.  
 
 Another way to write this is 
 
@@ -197,7 +197,7 @@ Formula (1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero 
 
 In fact, if were to ask for a direction in which $A^T$ has its greatest stretching effect instead of $A$, we would still result in the equivalent decomposition $A^T =  V\Sigma U^T$, with $\bar{v}_i = \frac{A\bar{u}_i}{\sigma_i}$. 
 
-It's also easy to test that $\{A\bar{u}_1, ..., A\bar{u}_r\}$ produces an orthogonal basis for $\mathcal{R}(A^T)$ or $\mathcal{R}(A)$. The process is analogous to theorem \@ref(thm:svd-rank) where $\{A\bar{v}_1, ..., A\bar{v}_r\}$ are shown to span $\mathcal{R}(A)$. 
+It's also easy to test that $\{A\bar{u}_1, ..., A\bar{u}_r\}$ produces an orthogonal basis for $\mathcal{R}(A^T)$ . The process is analogous to theorem \@ref(thm:svd-rank) where $\{A\bar{v}_1, ..., A\bar{v}_r\}$ are shown to span $\mathcal{R}(A)$. 
 
 For any vector $\bar{y}$ in $\mathcal{R}(A)$, we have 
 
@@ -322,18 +322,18 @@ $$
 Entry-wise norms treat an $m \times n$ matrix as a long vector of size $m \times n$, denoted by $\text{vec}(A)$. For example, using the p-norm for vectors, we get 
 
 $$
-\|A\|_{p,p} = \|\text{vec}(A)\|_p = \Bigg(\sum_{j=1}^n\sum_{i=1}^{m}{|A_{ij}|}^p \Bigg)^{\frac{1}{p}}
+\|A\|_{p,p} = \|\text{vec}(A)\|_p = \Bigg(\sum_{j=1}^n\sum_{i=1}^{m}{|a_{ij}|}^p \Bigg)^{\frac{1}{p}}
 $$
 
 More generally, the p,q norm is defined by 
 
 $$
-\|A\|_{p, q} = \Bigg (  \sum_{j=1}^n \Big (\sum_{i=1}^{n}{|A_{ij|}}^p \Big)^{\frac{q}{p}}    \Bigg)^{\frac{1}{q}}
+\|A\|_{p, q} = \Bigg (  \sum_{j=1}^n \Big (\sum_{i=1}^{n}{|a_{ij}|}^p \Big)^{\frac{q}{p}}    \Bigg)^{\frac{1}{q}}
 $$
 Another important member norm of this norm family is the **Frobenius norm**, or the F-norm.
 
 $$
-\| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{A_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
+\| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{a_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
 $$
 where $\sigma_i$ is the nonzero singular value of $A$.  
 
@@ -342,7 +342,9 @@ where $\sigma_i$ is the nonzero singular value of $A$.
 The F-norm is a submultiplicative norm. 
 ```
 
-<div class = "proof"> Proof </div>
+```{block2, type = "proof"}
+Proof
+```
 
 Let $A$ and $B$ are of appropriate size such that
 
@@ -361,7 +363,7 @@ b_1 & \cdots & b_m
 \\
 \quad \\
 \begin{aligned}
-\|AB\| &= \sqrt{\sum_{i, j}{|a_i^Tb_j|^2}} \\
+\|AB\| &= \sqrt{\sum_{i, j}{(a_i^Tb_j)^2}} \\
 & \le \sqrt{\sum_{i, j}{\| a_i \|^2 \| b_j\|^2}} \\
 &= \sqrt{\sum_{i}{\|a_i\|^2}} \sqrt{\sum_{j}{\|b_j\|^2}} \\
 &= \|A\| \|B\|
@@ -372,20 +374,30 @@ The first inequality comes from the Cauchy-Schwarz inequality $a \cdot b \le \|a
 
 ### Other matrix norms 
 
-One can pick to one of two ways to generalize the F-norm. One is a generalization of the direct definition that F-norm is the 2-norm of $||\text{vec}()||$. For $p \ge 1$,  it is the **Frobenius-p** norm:  
+One can pick to one of two ways to generalize the F-norm. One is a generalization of the direct definition that F-norm is $||\text{vec}(A)||_2$. For $p \ge 1$,  it is the **Frobenius-p** norm:  
 
 $$
-\| A \|_{F_p} = \Bigg (\sum_{i,j}{|A_{ij}|^p} \Bigg)^{\frac{1}{p}}
+\| A \|_{F_p} = \Bigg (\sum_{i,j}{|a_{ij}|^p} \Bigg)^{\frac{1}{p}}
 $$
 The Frobenius p-norm is the ordinary Frobenius norm. 
 
-Another generalization stems from the relationship between F-norm and singular values of $A$. The **Schatten p norm** or **nuclear p-norm** is the p-norm of the vector composed of $A$'s singular values
+Another generalization stems from the relationship between F-norm and singular values of $A$. The **Schatten p norm**  is the p-norm of the vector composed of $A$'s singular values
 
 $$
-\|A\|_{S_p} = \Big( \sum_{i = 1}^{\min(m, n)}{\sigma_i^p}\Big)^{\frac{1}{p}}
+\|A\|_{S_p} = \Big( \sum_{i = 1}^{\min(m, n)}{\sigma_i}^p\Big)^{\frac{1}{p}}
 $$
 
-### Unitary invariancy
+The most familiar choices of $p$ are $1, 2, ..., \infty$. Spectral norm and F-norm can be viewed as special cases of the Schatten norm. The case $p = 2$ yields the F-norm, and $p = \infty$ the spectral norm. 
+
+Finally, $p = 1$ yields the **nuclear norm** (also known as the trace norm), defined as 
+
+$$
+\|A\|_N = \sigma_1 + \cdots + \sigma_r
+$$
+
+
+
+### Unitary invariant norms
 
 
 
@@ -400,25 +412,35 @@ $$
 
 (unitary matrices refers to orthogonal matrices with complex-valued entries, but I focus on real matrices here.)
 
-Essentially, if a norm depends only on the singular values of a matrix, it is unitary invariant. Since for such norms: 
+We mentioned that spectral norm, F-norm and nuclear norm are all unitary invariant norms. More than that, these 3 norms of any matrix stay the **same** when $A$ is multiplied by an orthogonal matrix. 
+
+Essentially, **if a norm depends only on the singular values of a matrix**, it is unitary invariant. Since for such norms: 
 
 $$
-\|A\| = \|\Sigma\|
+\|A\| = \|\Sigma\| \qquad \text{because the norm only depend on singular values}
 $$
 Multiply two orthogonal matrices $U$ and $V^T$ on each side,  
 
 $$
 \begin{aligned}
-\|UA V^T\| & = \| U \Sigma V^T\| \\
+\|UA V^T\| & = \| U \Sigma V^T\| \qquad \text{multiply by orthogonal matrix does not change norm}\\
 \|UAV^T\| &= \|A\|
 \end{aligned}
 $$
 
-```{block2, type = "todo"}
-Does this work for all orthogonal matrices $U$ and $V$?
-```
 
-The spectral norm (induced p-norm), F-norm and Schattan norm are all unitary invariant. 
+
+The spectral norm (induced p-norm), F-norm and Schatten norm are all unitary invariant. Because they can all be expressed in terms of singular values of $A$ 
+
+$$
+\begin{aligned}
+\|A\|_2 &= \sigma_1 \\
+\|A\|_F &= \sqrt{\sigma_1^2 + \cdots + \sigma_r^2} \\
+\|A\|_N &= \sigma_1 + \cdots + \sigma_r
+\end{aligned}
+$$
+
+
 
 ## Low rank approximation 
 

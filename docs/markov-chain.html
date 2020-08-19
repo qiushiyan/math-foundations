@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 Matrix calculus | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 8 Matrix calculus | Mathematical Notes for Machine Learning" />
+  <title>Chapter 14 Markov Chain | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 14 Markov Chain | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 Matrix calculus | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 14 Markov Chain | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 Matrix calculus | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 14 Markov Chain | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="taylor-series-and-expansion.html"/>
-<link rel="next" href="infinite-sequences-and-series.html"/>
+<link rel="prev" href="multivariate-distributions.html"/>
+<link rel="next" href="basics-of-optimization.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -245,150 +245,35 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="matrix-calculus" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> Matrix calculus</h1>
-<blockquote>
-<p>Matrix calculus refers to a number of different notations that use matrices and vectors to collect the derivative of each component of the dependent variable with respect to each component of the independent variable.</p>
-</blockquote>
-<p><span class="math display">\[
-\frac{\partial{f(x)}}{\partial{x}} 
-\]</span></p>
-<p>Differentiate a scalar by a vector.</p>
-<p><span class="math display">\[
-\frac{\partial f(x_1, ..., x_n)}{\partial (x_1, ..., x_n)}
-= 
-\begin{bmatrix}
-\frac{\partial f}{\partial x_1} &amp; \cdots &amp; \frac{\partial f}{\partial x_n}
-\end{bmatrix}
-\]</span></p>
-<p>One important thing here is we define the gradient of <span class="math inline">\(f(x_1, ..., x_n)\)</span> to be a <strong>row vector</strong>. This is also called the <em>numerator layout</em>, as opposed the <em>denominator</em> layout where gradient is defined as a row vector.</p>
-<p>Next, we come to cases when we differentiate a vector by a vector (i.e., the gradient of a vector-valued function). The function <span class="math inline">\(\bar{f}: \mathbb{R}^n \rightarrow \mathbb{R}^m\)</span> takes a <span class="math inline">\(n\)</span>-dimensional vector <span class="math inline">\(\bar{x} = [x_1, ..., x_n]\)</span> as input, and output a <span class="math inline">\(m\)</span>-dimensional vector. The corresponding vector of function value is given as</p>
-<p><span class="math display">\[
-\bar{f}(\bar{x}) = 
-\begin{bmatrix}
-f_1(\bar{x}) \\
-\vdots \\
-f_m(\bar{x})
-\end{bmatrix}
-\]</span>
-In this way, we think of a vector-valued function <span class="math inline">\(\bar{f}\)</span>, as a vector of scalar functions <span class="math inline">\([f_1, ..., f_m]^T, \; f_i: \mathbb{R}^n \rightarrow \mathbb{R}\)</span>. Thus, partial derivatives of <span class="math inline">\(f_i\)</span> with respect vector of <span class="math inline">\(\bar{x}\)</span> is the gradient</p>
-<p><span class="math display">\[
-\frac{\partial f_i}{\partial \bar{x}} =
-\begin{bmatrix}
-\frac{\partial f_i}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_i}{\partial x_n}
-\end{bmatrix}
-\]</span></p>
-<p>Further, the partial derivative of <span class="math inline">\(\bar{f}\)</span> with respect to scalar <span class="math inline">\(x_i, \; i = 1,...,n\)</span> is simply a column vector of partial derivatives <span class="math inline">\(\frac{\partial \bar{f}_j}{\partial x_i}\)</span></p>
-<p><span class="math display">\[
-\frac{\partial \bar{f}(\bar{x})}{\partial x_i} = 
-\begin{bmatrix}
-\frac{\partial f_1 }{\partial x_i} \\
-\vdots \\
-\frac{\partial f_m }{\partial x_i}
-\end{bmatrix} 
-= 
-\begin{bmatrix}
-\lim _{h \to \infty}\frac{f_1(x_1, ..., x_i + h, ..., x_n)}{h} \\
-\vdots \\
-\lim _{h \to \infty}\frac{f_m(x_1, ..., x_i + h, ..., x_n)}{h} 
-\end{bmatrix}
-\]</span></p>
-<p>We obtain the “full” gradient of <span class="math inline">\(\bar{f}\)</span> with respect of <span class="math inline">\(\bar{x}\)</span>.</p>
+<div id="markov-chain" class="section level1">
+<h1><span class="header-section-number">Chapter 14</span> Markov Chain</h1>
 
 <div class="definition">
-<span id="def:jacobian" class="definition"><strong>Definition 8.1  (Jacobian)  </strong></span><span class="math display">\[
-\begin{split}
-J = \nabla_x \bar{f} &amp;=
-\begin{bmatrix}
-\frac{\partial \bar{f}}{\partial x_1} 
-&amp; \cdots 
-&amp;\frac{\partial \bar{f}}{\partial x_n}
-\end{bmatrix}
-&amp;=
-\begin{bmatrix}
-\frac{\partial f_1}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_1}{\partial x_n} \\
-\vdots &amp; &amp; \vdots \\ 
-\frac{\partial f_m}{\partial x_1} &amp; \cdots &amp; \frac{\partial f_m}{\partial x_n}
-\end{bmatrix}
-\end{split}
-\]</span>
+<span id="def:markov-chain" class="definition"><strong>Definition 14.1  (Markov chain)  </strong></span>
 </div>
 
-<div id="the-chain-rule" class="section level2">
-<h2><span class="header-section-number">8.1</span> The chain rule</h2>
+
+<div class="definition">
+<span id="def:irreducible" class="definition"><strong>Definition 14.2  (Irreducible and reducible chain)  </strong></span>
 </div>
-<div id="useful-identities-in-matirx-calculus" class="section level2">
-<h2><span class="header-section-number">8.2</span> Useful identities in matirx calculus</h2>
-<p>Assuming <span class="math inline">\(A\)</span> is a <span class="math inline">\(m \times n\)</span> matrix and <span class="math inline">\(\bar{w}\)</span> an <span class="math inline">\(n \times 1\)</span> column vector, and let others be of comforbale sizes, we adopt the numerator layout to show some commonly used identities in matrix calculus.</p>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Derivative of</th>
-<th align="center">with respect to</th>
-<th align="center">output size</th>
-<th align="center">result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><span class="math inline">\(A\bar{w}\)</span></td>
-<td align="center"><span class="math inline">\(\bar{w}\)</span></td>
-<td align="center">matrix <span class="math inline">\(m \times n\)</span></td>
-<td align="center"><span class="math inline">\(A\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\bar{a}^T\bar{w}\)</span> <br> <span class="math inline">\(\bar{w}^T\bar{a}\)</span></td>
-<td align="center"><span class="math inline">\(\bar{w}\)</span></td>
-<td align="center">row vector <span class="math inline">\(1 \times n\)</span></td>
-<td align="center"><span class="math inline">\(\bar{a}^T\)</span></td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(\bar{b}^TB\bar{w}\)</span> <br> <span class="math inline">\(\bar{w}^TB^T\bar{b}\)</span></td>
-<td align="center"><span class="math inline">\(\bar{w}\)</span></td>
-<td align="center">row vector <span class="math inline">\(1 \times n\)</span></td>
-<td align="center"><span class="math inline">\(\bar{b}^TB\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\bar{w}^TA\bar{w}\)</span></td>
-<td align="center"><span class="math inline">\(\bar{w}\)</span></td>
-<td align="center">row vector <span class="math inline">\(1 \times n\)</span></td>
-<td align="center"><span class="math inline">\(\bar{w}^T(A + A^T)\)</span> <br> if <span class="math inline">\(A\)</span> is symmetric <span class="math inline">\(2\bar{w}^TA\)</span></td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(\bar{w}^T\bar{w}\)</span></td>
-<td align="center"><span class="math inline">\(\bar{w}\)</span></td>
-<td align="center">row vector <span class="math inline">\(1 \times n\)</span></td>
-<td align="center"><span class="math inline">\(2\bar{w}^T\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\bar{f}(X)^T\)</span></td>
-<td align="center"><span class="math inline">\(X\)</span></td>
-<td align="center">-</td>
-<td align="center"><span class="math inline">\(\Big (\frac{\partial \bar{f}(X)}{\partial X}\Big )^T\)</span></td>
-</tr>
-</tbody>
-</table>
-<p>The major <strong>downside</strong> of using the numerator layout is that, since we define gradient to be a row vector, we have to constantly transpose the gradient into a column vector in order to perform gradient descent updates on the column vector <span class="math inline">\(\bar{w}\)</span>. In other words, we have to write the update in matrix calculus notation as follows:</p>
-<p><span class="math display">\[
-\bar{w}_{i + 1} \Leftarrow \bar{w}_i- \alpha \cdot (\nabla L)^T 
-\]</span>
-where <span class="math inline">\(\nabla L\)</span> is the gradient of loss function <span class="math inline">\(L\)</span> at <span class="math inline">\(\bar{w}_i\)</span>.</p>
+
+
+<div class="definition">
+<span id="def:aperiodic" class="definition"><strong>Definition 14.3  (Aperiodic and periodic chain)  </strong></span>
+</div>
+
 
 </div>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="taylor-series-and-expansion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="infinite-sequences-and-series.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="multivariate-distributions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basics-of-optimization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -419,7 +304,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/matrix-calculus.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/markov-chain.Rmd",
 "text": "Edit"
 },
 "history": {

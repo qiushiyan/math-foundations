@@ -400,7 +400,7 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
-In \@ref(thm:find-inverse), we know an algorithm of finding inverse matrices by row reducions on the augmented matrix $[A \;\; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
+In \@ref(thm:find-inverse), we know an algorithm of finding inverse matrices by row reductions on the augmented matrix $[A \;\; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
 
 The $j$th column of $A^{-1}$ is a vector $\bar{x}$ that satisfies:  
 
@@ -438,6 +438,11 @@ The right side of Eq \@ref(eq:inverse-adjugate) is called the *adjugate* of $A$,
 $$
 A^{-1} = \frac{1}{\det A}\text{adj}\, A
 $$</div>\EndKnitrBlock{theorem}
+
+<hr> 
+
+Interestingly, theorem \@ref(thm:cayley-hamilton) in later chapters shows that for intertible matrix $A$, its inverse $A^{-1}$ can be represented as a polynomial of $A$.
+
 
 ### The matrix inversion lemma
 

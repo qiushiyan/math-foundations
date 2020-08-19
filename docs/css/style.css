@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:400,400i,700,700i|Merriweather:400,400i,700,700i|Roboto+Mono:400,400i,500,500i');
 
 h1, h2, h3, h4, h5, h6, .book-summary {
-  font-family: 'Merriweather Sans', sans-serif;
+  font-family: 'Merriweather', sans-serif;
   letter-spacing: -0.02em !important;
 }
 
@@ -10,11 +10,11 @@ h1.title {
 }
 
 .book.font-family-0 {
-  font-family: 'Merriweather', serif !important;
+  font-family: 'Helvetica', serif !important;
 }
 
 .book.font-family-1 {
-  font-family: 'Merriweather Sans', sans-serif !important;
+  font-family: 'Helvetica', sans-serif !important;
 }
 
 #header .title {

@@ -396,6 +396,7 @@ We can obtain a polynomial of matrix $A$ by substituting $A$ for $\lambda$, and 
 
 ```{theorem cayley-hamilton, name = "Cayley-Hamilton Theorem"}  
 
+
 Let $f(\lambda)$ be the polynomial function of the characteristic polynomial $\det(A - \lambda I)$, where $A$ is a square matrix. Then $f(A)$ evaluates to a zero matrix.
 ```
 
@@ -419,7 +420,7 @@ A direct result derived from the Cayley Hamilton theorem is that for every inter
 The *inverse* of an invertible square matrix $A$ is a polynomial of $A$ with degree at most $d -1$. 
 ```
 
-Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for nonsingular matrices, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$. $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
+Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for nonsingular matrices. If the product of all eigenvalues are $k$, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$, where $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
 
 $$
 A \underbrace{\Big( - g(A) / k\Big)}_{A^{-1}} = I
