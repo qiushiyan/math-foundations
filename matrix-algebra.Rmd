@@ -2,7 +2,7 @@
 # (PART) Linear Algebra {-}
 
 
-# Matrix basics
+# Basic matrix algebra
 
 
 
@@ -567,7 +567,9 @@ $$
 In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ 
 ```
 
-<div class = "proof"> Proof </div>
+```{block2, type = "proof"}
+Proof
+```
 
 $$
 \bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
@@ -591,18 +593,37 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 (ref:onto) A mapping is onto $\mathbb{R^m}$
 
 ```{definition, name = "(ref:onto)"}
+
+
 A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}
 ```
 
-Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$
+Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$ for any $\bar{b}$ in $\mathbb{R}^m$
 
 <br>
 
 ```{definition, name = "one-to-one mapping"} 
+
+
 A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$
 ```
 
-Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the equation $T(\bar{x}) = \bar{b}$ has either a unique solution or none at all.  
+Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the equation $T(\bar{x}) = \bar{b}$ has either a unique solution or none at all.   
+
+<br>
+
+```{theorem}
+Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
+
+- $T$ maps $mathbb{R}^n$ onto $\mathbb{R}^m$ if only if columns of $A$ span $\mathbb{R}^m$  
+
+- $R$ is one-to-one if and only if columns of $A$ are linearly independent 
+```
+
+
+
+
+
 
 ### Matrix multiplication as geometric operators 
 
@@ -629,9 +650,4 @@ $$
 
 
 
-
-## Statistics and proabability
-
-
-### Sample statistics
 

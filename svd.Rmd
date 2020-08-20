@@ -458,6 +458,11 @@ $$
 $$
 ```
 
+```{block2, type = "todo"}
+Proof for Eckart-Young theorem
+```
+
+
 
 A measure of the quality of the approximation is given by 
 

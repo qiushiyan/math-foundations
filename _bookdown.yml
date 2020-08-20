@@ -18,7 +18,7 @@ rmd_files: [
   "svd.Rmd",
   "linear-system.Rmd",
 
-  "taylor.Rmd",
+  "basic-concepts-calculus.Rmd",
   "matrix-calculus.Rmd",
   "infinite-series.Rmd",
   

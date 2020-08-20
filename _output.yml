@@ -2,11 +2,8 @@ bookdown::gitbook:
   split_by: chapter
   css: css/style.css
   config:
-    fontsettings:
-      theme: white
-      family: serif
-      size: 2
     toc:
+      collapse: section
       before: |
         <li><a href="./">Math Notes for Machine Learning</a></li>
       after: |

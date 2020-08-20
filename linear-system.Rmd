@@ -1,5 +1,5 @@
 
-# Solutions of linear system Ax = b
+# Solutions of linear system Ax = b {#linear-system}
 
 A linear system $A\bar{x} = \bar{b}$ when $\bar{b} \not = \bar{0}$ may behave in any one of three possible ways:
 

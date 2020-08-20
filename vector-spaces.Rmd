@@ -5,7 +5,7 @@ Vector spaces, metric spaces, normed spaces, and inner product spaces are places
 
 ## Vector space 
 
-A **vector space** $V$ is a nonempty set, the elements of which are called vectors, also called *linear spaces*. A vector space comes with two operations predefined: vectors can be added together, and vectors can be multiplied by real numbers called scalars. For all vectors $\bar{u}, \bar{v}$ and $\bar{w}$, and all scalars $c$ and $d$ in $V$, the following axioms of vector space must hold:   
+A **vector space** $V$ is a nonempty set,  also called *linear spaces*, the elements of which are called vectors,. A vector space comes with two operations predefined: vectors can be added together, and vectors can be multiplied by real numbers called scalars. For all vectors $\bar{u}, \bar{v}$ and $\bar{w}$, and all scalars $c$ and $d$ in $V$, the following axioms of vector space must hold:   
 
 1. The sum of $\bar{u}$ and $\bar{v}$ is in $V$ 
 
@@ -22,11 +22,11 @@ A **vector space** $V$ is a nonempty set, the elements of which are called vecto
 7. Distributivity: $\alpha(\bar{x} + \bar{y}) = \alpha\bar{x} + \alpha\bar{y}$ and $(\alpha + \beta)\bar{x} = \alpha\bar{x} + \beta\bar{x}$
  
  
-A set of vectors $\bar{v}_1, ..., \bar{v}_n \in V$ are set to be *linearly independent* if 
+A set of vectors $\bar{v}_1, ..., \bar{v}_n \in V$ are set to be *linearly independent* if the following equation has only a traivial solution 
 
 $$
 \begin{align*}
-c_1\bar{v}_1 + \cdots + c_n\bar{v}_n &= 0 && \text{implies } c_1 = \cdots = c_n
+c_1\bar{v}_1 + \cdots + c_n\bar{v}_n &= 0 && \text{implies } c_1 = \cdots = c_n = 0 
 \end{align*}
 $$
 
@@ -316,7 +316,9 @@ For (2), Each column of $AB$ is a linear combination of columns of A, and each r
 
 
 
-<div class = "proof"> Proof </div>
+```{block2, type = "proof"}
+Proof
+```
 
 Suppose $B$ is $n \times n$, the minimum rank of $AB$ is $a + n - n = a$, and the maximum rank is $\min(a, n) = a$. Thus, multiplying by a full rank matrix preserves rank: $r(AB) = r(A)$. (4) follows naturally after (3). 
 
@@ -327,7 +329,10 @@ Suppose $B$ is $n \times n$, the minimum rank of $AB$ is $a + n - n = a$, and th
 The matrix $A^TA$ is said to be the Gram matrix of column space of $A_{m \times n}$. The columns of $A$ are linearly independent if and only if $A^TA$ is invertible.
 ```
 
-<div class = "proof"> Proof </div>
+```{block2, type = "proof"}
+Proof
+```
+
 
 When $A^TA$ is invertible, it has rank $n$. Therefore,  each of the factors of $A^TA$ has at least rank $n$, and this means columns of $A$ are linearly independent (since $r(A) \le \min(m, n)$). 
 
@@ -341,7 +346,10 @@ r(A) = r(A^TA) = r(AA^T)
 $$
 ```
 
-<div class = "proof"> Proof </div>
+```{block2, type = "proof"}
+Proof
+```
+
 
 For $r(A) = r(A^TA)$, suppose $r(A) = r$, then $\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r$. Note that for any $\bar{x}$ that satisfies $A\bar{x} = 0$, we have $A^TA\bar{x} = 0$. It follows that $A$ and $A^TA$ have the same null space, $\mathcal{N}(A)  = \mathcal{N}(A^TA)$. Since $A^TA \in \mathbb{R}^{n \times n}$, we have $r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r$. 
 
@@ -351,3 +359,147 @@ For $r(A) = R(AA^T)$, note that $r(A) = r(A^T)$,  and that $\mathcal{N}(A^T) = \
 
 From the SVD perspective(Corollary \@ref(cor:same-nonzero) and Section \@ref(svd-theorem)), one can show that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, and $r(A)$ is the same as the number of nonzero eigenvalues of $A^A$ or $AA^T$, so that $r(A) = r(A^TA) = r(AA^T)$.   
 
+
+## Bases and coordinate systems
+
+```{definition basis, name = "basis of a vector space"}
+Let $V$ be a subspace of $\mathbb{R}^n$. An indexed set of vectors $\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_r\}$ is said to be a basis of $V$, if $\mathcal{B}$ spans $V$ (these $r$ vectors are linearly independent)
+```
+
+Note that $\bar{a}_1, ..., \bar{a}_r$ are n-dimensional vectors themselves, though $V$, the subspace they span, is a hyperplane that has dimension strictly less than $n$ when $r < n$. 
+
+
+```{definition coordinates, name = "coordinates"}
+The coordinates of $\bar{v}$ relative to basis $\mathcal{B}$ (or the $\mathcal{B}$-coordinates of $\bar{v}$, denoted by $[\bar{v}]_{\mathcal{B}}$) are the weights $x_1, ..., x_r$ such that $\bar{x} = x_1\bar{a}_1 + \cdots +  x_r\bar{a}_n$
+```
+
+
+```{theorem unique-coordinate, name = "Unique coordinate vector"}
+Let $\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_n\}$ be a basis of $V$. Then for any vector $\bar{v} \in V$, there exists a unique coordinate vector $\bar{x} = [x_1, ..., x_r]$ such that
+
+$$
+\bar{v} = x_1\bar{a}_1 + \cdots + x_r\bar{a}_r
+$$
+```
+
+Suppose $\bar{v}$ has another representation 
+
+$$
+\bar{v} = y_1\bar{a}_1 + \cdots + y_r\bar{a}_r
+$$
+Then, subtracting we have 
+
+$$
+\bar{0} = \bar{x} - \bar{x} = (x_1 - y_1)\bar{a}_1 + \cdots + (x_r - y_r)\bar{a}_r
+$$
+Since $\{\bar{a}_1, ..., \bar{a}_r\}$ is a linearly independent set, we have $x_i = y_i$ for $1 \le i \le r$. Thus, the coordinates $\bar{x}$ of any vector in $V$ in terms of a certain basis is always unique.
+
+
+
+Note that the coordinate vector of the n-dimensional vector $\bar{v}$ contains $r$ components instead of $n$, each of which corresponds to a weight associated with one basis in $\mathcal{B}$
+
+The default basis in $\mathbb{R}^n$, is the collection of $n$ n-dimensional vectors $\{\bar{e}_1, ..., \bar{e}_n\}$. Each of $\bar{e}_i$ contains a $1$ in the $i$th entry and a value of $0$ in all other entries. 
+
+$$
+\bar{e}_1 = 
+\begin{bmatrix}
+1 \\
+0 \\
+\vdots \\
+0
+\end{bmatrix}
+,\, 
+\bar{e}_2 = 
+\begin{bmatrix}
+0 \\
+1 \\
+\vdots \\
+0 \\
+\end{bmatrix}
+, \, \cdots
+,\, \bar{e}_n = 
+\begin{bmatrix}
+0 \\ 
+0 \\
+\vdots \\
+1 
+\end{bmatrix}
+$$
+
+
+
+The next question is, given $\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_r\}$, how can we find the unique coordinates of $\bar{v}$, which is by default expressed in terms of the standard basis. 
+
+We start by a special case where $\bar{a}_1, ..., \bar{a}_r$ forms a **orthonormal** basis of $V$, then the coordinates are simply the dot products of $\bar{x}$ with these vectors. By taking the dot product of both sides of $\bar{v} = \sum x_i\bar{a}_i$ with each $\bar{a}_i$ and using $\bar{a}_i^T\bar{a}_i = 1, \, \bar{a}_i^T\bar{a}_j = 0$, we can show that $x_i = \bar{a}_i^T\bar{v}$. 
+
+This is a frequently used result that, if $\bar{a}_i$ is a unit vector, $\bar{a}_i^T\bar{v}$ will project $\bar{v}$ onto $\bar{a}_i$ and return a coordinate component of $\bar{v}$ in terms of $\bar{a}_i$. Moreover, we get the whole coordinate vector of $\bar{v}$ with respect to $[\bar{a}_1 \, \cdots \bar{a}_r]$ by 
+
+$$
+\begin{aligned}
+A &= [\bar{a}_1 \, \cdots \bar{a}_r] \\
+A^T\bar{v} &=
+\begin{bmatrix}
+\bar{a}_1^T\bar{v} \\
+\vdots  \\
+\bar{a}_r\bar{v}
+\end{bmatrix} 
+= 
+\begin{bmatrix}
+x_1 \\
+\vdots \\
+x_r \\
+\end{bmatrix}
+\end{aligned} 
+$$
+
+
+When the set $\bar{a}_1, ..., \bar{a}_r$ are not orthonormal, a general strategy is solving the system of equations $A\bar{x} = \bar{v}$. This boils down to a problem extensively discussed in Chapter \@ref(linear-system). 
+
+If $V$ is simply $\mathbb{R}^n$, then $A$ is square and invertible, then $\bar{x}$ is found by $A^{-1}\bar{v}$. Difficult cases are $A$ is not square, or $\bar{v}$ does not lie in the hyperplane defined by $\bar{a}_1, ..., \bar{a}_r$ and therefore defies valid coordinates. Finding $\bar{x}$ now becomes a classic least square problem (Section \@ref(lesat-squares-problems)). This results in the following (the best fit solution)
+
+$$
+\bar{x} = (A^TA)^{-1}A^T\bar{v}
+$$
+
+
+### Change of basis
+
+Previous discussions involve different representations of $\bar{x}$ with respect to two basis, one of which is standard basis in $\mathbb{R}^n$. This section deals with transformations between two non-standard basis. 
+
+Now suppose $A = [\bar{a}_1, ..., \bar{a}_n]$ and $B = [\bar{b}_1, ..., \bar{b}_n]$ are both bases for $\mathbb{R}^n$. And the vector $\bar{x}$ has coordinates $\bar{x}_a, \bar{x}_b$ with respect to $A$ and $B$ respectively. The goal is to find an $n \times n$ matrix that transforms one coordinate to another 
+
+$$
+\bar{x}_b = P_{a \rightarrow b}\,\bar{x}
+$$
+
+
+To find $P_{a \rightarrow b}$, we use the fact that $A\bar{x}_b$ and $B\bar{x}_a$ represents the same vector $x$. We have the following 
+
+$$
+A\bar{x}_a = B \bar{x}_b = \bar{x}
+$$
+
+Since $B$ is invertible, we have
+
+$$
+\bar{x}_b = \underbrace{B^{-1}A}_{P_{a \rightarrow b}}\bar{x}_a
+$$
+
+$B^{-1}A$ is called the **change-of-basis/coordinate matrix from $\mathcal{A}$ to $\mathcal{B}$**, because it converts coordinates from one system to another. When $B$ is large, finding its inverse can be challenging. Though, when $\{\bar{b}_1, ..., \bar{b}_n\}$ is an orthonormal basis, the transformation matrix simplify to $B^TA$. Additionally, if $A$ corresponds to the standard basis, the transformation matrix is $B^T$, as shown before. 
+
+Such change-of-basis transformation can be performed between basis sets that define some other r-dimensional hyperplane $V$ rather than $\mathbb{R}^n$. Moreover, the two basis set could even represent different hyperplane in $\mathbb{R}^n$. We demonstrate such a case below. 
+
+Let $A = [\bar{a}_1 \, \cdots \, \bar{a}_r]$ and $B = [\bar{b}_1 \, \cdots \, \bar{b}_r]$ be two matrices whose columns are bases from different hyperplanes in $\mathbb{R}^n$, and let $\bar{v}$ lie in $A$'s hyperplane. In this case, $A\bar{x}_a \not = B\bar{x}_b$ because $B\bar{x}_b$ is only a best-fit solution of $\bar{v}$. This is again a least square problem. We have the following 
+
+$$
+B^T(A\bar{x}_a - B\bar{x}_b) = \bar{0}
+$$
+Therefore 
+
+$$
+\bar{x}_b = \underbrace{(B^TB)^{-1}B^TA}_{P_{a \rightarrow b}}\bar{x}_a
+$$
+
+<br> 
+
+Change of basis has various applications in machine learning, such as discrete wavelet transform (P.60, Ch2, @DBLP:books/sp/Aggarwal20). In time series analysis, a time series of length $n$ would result in a vector from $\mathbb{R}^{n}$, and $n$ can be extremely large. Since consecutive sample points tend to be similar, we may take larger interest in a few variations across time, rather than the whole long vector. The *Haar wavelet transformation* performs a basis transformation with a view to exxtracting important variations, making the original time series vector reasonably sparse.  

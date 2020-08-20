@@ -2,7 +2,7 @@
 # (PART) Linear Algebra {-}
 
 
-# Matrix basics
+# Basic matrix algebra
 
 
 
@@ -541,7 +541,7 @@ $$
   
 In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ </div>\EndKnitrBlock{theorem}
 
-<div class = "proof"> Proof </div>
+\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
 
 $$
 \bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
@@ -564,15 +564,32 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 
 (ref:onto) A mapping is onto $\mathbb{R^m}$
 
-\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse ((ref:onto)) \fi{} </strong></span>
 
-Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$
+A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
+
+Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$ for any $\bar{b}$ in $\mathbb{R}^m$
 
 <br>
 
-\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (one-to-one mapping) \fi{} </strong></span>A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-10"><strong>(\#def:unnamed-chunk-10)  \iffalse (one-to-one mapping) \fi{} </strong></span>
 
-Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the equation $T(\bar{x}) = \bar{b}$ has either a unique solution or none at all.  
+A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
+
+Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the equation $T(\bar{x}) = \bar{b}$ has either a unique solution or none at all.   
+
+<br>
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11) </strong></span>Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
+
+- $T$ maps $mathbb{R}^n$ onto $\mathbb{R}^m$ if only if columns of $A$ span $\mathbb{R}^m$  
+
+- $R$ is one-to-one if and only if columns of $A$ are linearly independent </div>\EndKnitrBlock{theorem}
+
+
+
+
+
 
 ### Matrix multiplication as geometric operators 
 
@@ -599,9 +616,4 @@ $$
 
 
 
-
-## Statistics and proabability
-
-
-### Sample statistics
 

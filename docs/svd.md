@@ -390,7 +390,7 @@ $$
 
 
 
-\BeginKnitrBlock{definition}\iffalse{-91-117-110-105-116-97-114-121-32-105-110-118-97-114-105-97-110-116-93-}\fi{}<div class="definition"><span class="definition" id="def:unitary-invariant"><strong>(\#def:unitary-invariant)  \iffalse (unitary invariant) \fi{} </strong></span>A matrix norm $\|\cdot \|$ is said to be unitary invariant if for all orthogonal matrices $U$ and $V$ of appropriate size
+\BeginKnitrBlock{definition}\iffalse{-91-117-110-105-116-97-114-121-32-105-110-118-97-114-105-97-110-116-32-110-111-114-109-115-93-}\fi{}<div class="definition"><span class="definition" id="def:unitary-invariant"><strong>(\#def:unitary-invariant)  \iffalse (unitary invariant norms) \fi{} </strong></span>A matrix norm $\|\cdot \|$ is said to be unitary invariant if for all orthogonal matrices $U$ and $V$ of appropriate size
 
 $$
 \|A\| = \|UAV\|
@@ -428,6 +428,26 @@ $$
 
 
 
-## Low rank approximation 
+## Low rank approximation  
+
+\BeginKnitrBlock{theorem}\iffalse{-91-69-99-107-97-114-116-8211-89-111-117-110-103-8211-77-105-114-115-107-121-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:eckart-young"><strong>(\#thm:eckart-young)  \iffalse (Eckart–Young–Mirsky) \fi{} </strong></span>Let $\|\cdot\|$ be a unitary invariant norm. Suppose $A \in \mathbb{R}^{m \times n}$ where $m > n$, has svd $A = \sum_{i = 1}^n \sigma_i \bar{u}_i \bar{v}^T_i$. Then the best rank-k approximation to $A$, where $k \le \text{rank}(A)$, is given by 
+
+$$
+A_k = \sum _{i=1}^{k}\sigma_i \bar{u}_i \bar{v}_i^T
+$$
+
+in the sense that for any other rank-k matrix $\tilde{A}$
+
+$$
+\|A -  A_k \| \le \|A - \tilde{A} \|
+$$</div>\EndKnitrBlock{theorem}
+
+\BeginKnitrBlock{todo}<div class="todo">Proof for Eckart-Young theorem</div>\EndKnitrBlock{todo}
 
 
+
+A measure of the quality of the approximation is given by 
+
+$$
+\frac{\|A_k\|^2}{\| A\|^2} = \frac{\sigma_1^2 + \cdots + \sigma_k^2}{\sigma_1^2 + \cdots + \sigma_r^2}
+$$
