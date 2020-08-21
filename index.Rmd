@@ -14,7 +14,7 @@ github-repo: enixam/math-foundations
 
 # Preface {-}  
 
-This document aims to cover various mathematical topics relevant to machine learning problems, including linear algebra, calculus, probability theory, and possibly optimization (statistics should be in another stand-alone document). Since it currently serves mainly as a self-reminder, some basic knowledge (especially in the calculus part) that are already familiar to me are skipped. Other than that I try to put things in a logical, consistent order.  
+This document aims to cover various mathematical topics relevant to machine learning applications, including linear algebra, multivariate calculus, probability theory, and optimization (statistics should be in another stand-alone document). Since it currently serves mainly as review on those subjects, some basic knowledge (especially in multivariate calculus) that are already familiar to me are skipped. Other than that I try to put things in a logical, consistent order.  
 
 
 
@@ -22,18 +22,23 @@ This document aims to cover various mathematical topics relevant to machine lear
 References (books, online courses, videos, papers) include:  
 
 - **general**
-  - [Mathematics for Machine Learning](http://gwthomas.github.io/docs/math4ml.pdf) by Garret Thomas
+  - [*Mathematics for Machine Learning*](http://gwthomas.github.io/docs/math4ml.pdf) by Garret Thomas
   - *Mathematics for Machine Learning* [@Deisenroth2020]
+  - [*Advanced Data Analysis from an Elementary Point of View*](http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/) by Cosma Rohilla Shalizi
   
 - **Linear Algebra**
   - *Linear Algebra and its Applications* [@lay2006-3]  
   - *Linear Algebra and Optimization for Machine Learning* [@DBLP:books/sp/Aggarwal20]  
   - *Matrix Algebra: Theory, Computations, and Applications in Statistics* [@10.5555/1534802]
   - *Linear Algebra and its Applications* [@strang2006linear]  
-  - [Linear Algebra Review and Reference](http://cs229.stanford.edu/section/cs229-linalg.pdf) on Stanford's cs229 website   
-  - Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, https://ocw.mit.edu. License: Creative Commons BY-NC-SA.
+  - [*Linear Algebra Review and Reference*](http://cs229.stanford.edu/section/cs229-linalg.pdf) on Stanford's cs229 website   
+  - Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, https://ocw.mit.edu. License: Creative Commons BY-NC-SA.  
   
-- **Probability Thoery**  
+- **Multivariate Calculus**
+  - *Thomas's Calculus* [@weir2018thomas]
+  - Steve Butler. [Multivariate Calculus](https://www.calc3.org/). Lowa State
+  
+- **Probability Theory**  
   - *Probability for Statistics and Machine Learning: Fundamentals and Advanced Topics* [@10.5555/2028916]
   - *Introduction to Probability* [@blitzstein2019] 
   - *Introduction to Probability* [@bertsekas2008introduction]

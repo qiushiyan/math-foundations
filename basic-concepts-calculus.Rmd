@@ -3,6 +3,10 @@
 
 # Basic concepts in multivariate calculus
 
-## Gradient, Divergence, Curl, and Laplacian
+## Gradient and directional derivative  
+
+## Divergence, Curl, and Laplacian
+
+## Multiple integral 
 
 ## Taylor series and expansion
