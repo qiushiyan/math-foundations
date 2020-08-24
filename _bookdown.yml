@@ -18,14 +18,15 @@ rmd_files: [
   "svd.Rmd",
   "linear-system.Rmd",
 
-  "basic-concepts-calculus.Rmd",
+  "partial.Rmd",
   "matrix-calculus.Rmd",
-  "infinite-series.Rmd",
+  "taylor-series.Rmd",
+  "multiple-integral.Rmd",
   
   "probability-basics.Rmd",
   "moments.Rmd",
-  "univariate.Rmd",
-  "multivariate.Rmd",
+  "univariate-dist.Rmd",
+  "multivariate-dist.Rmd",
   "markov-chain.Rmd",
   
   "optimization-basics.Rmd",

@@ -1,0 +1,81 @@
+
+# (PART) Multivariate Calculus {-}
+
+# Partial derivatives
+
+## Limit and continuity 
+
+Limits and continuity in one dimension
+
+Limits and continuity in higher dimensions
+
+## Partial derivative 
+
+
+
+### Gradient and directional derivative  
+
+We want to know the instant rate of change at $P_0 = (x_0, y_0)$, when moving towards the direction $\bar{u} = [u_1, u_2]$ a tiny step of length $h$. 
+
+
+```{definition directional-derivative, name = "Directional derivative"}
+
+```
+
+
+$$
+\Big(\frac{df}{dh} \Big)_{\bar{u}, P_0}  = \lim_{h \to 0} \frac{f(x_0 + hu_1, y_0 + hu_2) - f(x_0, y_0)}{h}
+$$
+The concise version using vector notation is 
+
+$$
+\lim_{h \to 0} \frac{f(\bar{x}  +  h\bar{u}) - f(\bar{x})}{h}
+$$
+
+
+$$
+x = x_0 + hu_1, \quad y = y_0 + hu_2
+$$
+
+$$
+\begin{split}
+\Big(\frac{df}{dh} \Big)_{\bar{u}, P_0}  &= \frac{\partial f}{\partial x} \biggr |_{P_0} \frac{dx}{dh} +      \frac{\partial f}{\partial y} \biggr |_{P_0} \frac{dy}{dh} \\
+&= \frac{\partial f}{\partial x} \biggr |_{P_0}u_1 + \frac{\partial f}{\partial y} \biggr |_{P_0}u_2 \\
+&= \nabla f |_{P_0} \cdot \bar{u}
+\end{split}
+$$
+
+
+## Differentails 
+
+We first review the definition of differential in single variable calculus. In single variable calculus, the change in function $f$ as $x$ changes from $a$ to $a + \Delta x$ is 
+$$
+\Delta y = f(a + \Delta x) - f(a)
+$$
+
+The corresponding change in the tangent line $L$ at from $a$ to $a + \Delta x$ is 
+
+$$
+\begin{split}
+\Delta L &= \underbrace{f(a) + f'(a)(a + \Delta x - a)}_{L(a + \Delta x)} - \underbrace{f(a)}_{L(a)} \\
+&= f'(a)\Delta x
+\end{split}
+$$
+
+
+When $\Delta x$ is a infinitely small number $dx$ (but nonzero), we can use $\Delta L$ to approximate $\Delta y$. In such case, let $dy$ or $df$ represents the the amount the tangent line rises or falls when $x$ changes by an tiny amount $\Delta x = dx$. This amount is called a differential. In other words, the differential $dy$ is the change $\Delta L$ in the linearization of $f$ when $x = a$ changes by an amount $dx$.  
+
+Now let $a$ be any point $x$ in $f$'s domain, the differential $dy$ (or $df$) is
+
+$$
+dy = f'(x)\Delta x
+$$
+
+### Continuity, partial derivatives and differentiability
+
+
+
+## Divergence, Curl, and Laplacian
+
+ 
+
