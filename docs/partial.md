@@ -18,11 +18,9 @@ Limits and continuity in higher dimensions
 We want to know the instant rate of change at $P_0 = (x_0, y_0)$, when moving towards the direction $\bar{u} = [u_1, u_2]$ a tiny step of length $h$. 
 
 
-```{definition directional-derivative, name = "Directional derivative"}
-$$
+\BeginKnitrBlock{definition}\iffalse{-91-68-105-114-101-99-116-105-111-110-97-108-32-100-101-114-105-118-97-116-105-118-101-93-}\fi{}<div class="definition"><span class="definition" id="def:directional-derivative"><strong>(\#def:directional-derivative)  \iffalse (Directional derivative) \fi{} </strong></span>$$
 \Big(\frac{df}{dh} \Big)_{\bar{u}, P_0}  = \lim_{h \to 0} \frac{f(x_0 + hu_1, y_0 + hu_2) - f(x_0, y_0)}{h}
-$$
-```
+$$</div>\EndKnitrBlock{definition}
 
 
 
@@ -52,8 +50,7 @@ D_{\bar{u}}f = |\nabla f| |\bar{u}| \cos\theta = |\nabla f| \cos\theta
 $$
 
 
-```{theorem property-directional-derivative, name = "Properties of directional derivatives"}
-That function $f$ increases most rapidly in the direction of the gradient vector $\nabla f$ at $P$. The directional derivative (instant increasing rate of change) in this direction is 
+\BeginKnitrBlock{theorem}\iffalse{-91-80-114-111-112-101-114-116-105-101-115-32-111-102-32-100-105-114-101-99-116-105-111-110-97-108-32-100-101-114-105-118-97-116-105-118-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:property-directional-derivative"><strong>(\#thm:property-directional-derivative)  \iffalse (Properties of directional derivatives) \fi{} </strong></span>That function $f$ increases most rapidly in the direction of the gradient vector $\nabla f$ at $P$. The directional derivative (instant increasing rate of change) in this direction is 
 
 $$
 D_{\bar{u}}f = |\nabla f| \cos{0} = |\nabla f|
@@ -63,8 +60,7 @@ Likewise, $f$ decreases most rapidly in the direction of $-\nabla f$. The direct
 
 $$
 D_{\bar{u}}f = |\nabla f| \cos{\pi} = - |\nabla f|
-$$
-```
+$$</div>\EndKnitrBlock{theorem}
 
 
 
@@ -93,8 +89,7 @@ where $\varepsilon_1, \varepsilon_2 \to 0$ as $\Delta x, \Delta y \to 0$. When $
 $$
 f(x, y) \approx L(x, y) = f(x_0, y_0) + f_x (x - x_0) + f_y  (y - y_0)
 $$
-```{definition two-linearization}
-The **Linearization** of a function $f(x, y)$ at a differentiable point $(x_0, y_0)$ is 
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:two-linearization"><strong>(\#def:two-linearization) </strong></span>The **Linearization** of a function $f(x, y)$ at a differentiable point $(x_0, y_0)$ is 
 
 $$
 L(x, y ) = f(x_0, y_0) + f_x (x - x_0) + f_y (y - y_0) 
@@ -103,8 +98,7 @@ The approximation
 $$
 f(x, y) \approx L(x, y)
 $$
-is called the **standard linear approximation** of $f$ at $(x_0, y_0)$
-```
+is called the **standard linear approximation** of $f$ at $(x_0, y_0)$</div>\EndKnitrBlock{definition}
 
 In the two variable case, $L(x, y)$ denotes a plane tangent to the surface $z = f(x, y)$ at point $(x_0, y_0)$
 
@@ -166,14 +160,12 @@ $$
 $$
 We take $dx = \Delta x$ and $dy = \Delta y$. We then have the following definition of the *differential* or *total differential* of $f$. 
 
-```{definition differential}
-When moving from $(x_0, y_0)$ to a nearby point $(x_0 + dx, y_0  + dy)$, the resulting change 
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:differential"><strong>(\#def:differential) </strong></span>When moving from $(x_0, y_0)$ to a nearby point $(x_0 + dx, y_0  + dy)$, the resulting change 
 
 $$
 df = f(x_0, y_0) + f_xdx + f_y dy
 $$
-in the linearization of $f$ is called the **total differential of $f$**.
-```
+in the linearization of $f$ is called the **total differential of $f$**.</div>\EndKnitrBlock{definition}
 
 
 

@@ -345,12 +345,10 @@ From the SVD perspective(Corollary \@ref(cor:same-nonzero) and Section \@ref(svd
 Note that $\bar{a}_1, ..., \bar{a}_r$ are n-dimensional vectors themselves, though $V$, the subspace they span, is a hyperplane that has dimension strictly less than $n$ when $r < n$. 
 
 
-\BeginKnitrBlock{definition}\iffalse{-91-99-111-111-114-100-105-110-97-116-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:coordinates"><strong>(\#def:coordinates)  \iffalse (coordinates) \fi{} </strong></span>
-
-The coordinates of $\bar{v}$ relative to basis $\mathcal{B}$ (or the $\mathcal{B}$-coordinates of $\bar{v}$, denoted by $[\bar{v}]_{\mathcal{B}}$) are the weights $x_1, ..., x_r$ such that $\bar{x} = x_1\bar{a}_1 + \cdots +  x_r\bar{a}_n$</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-99-111-111-114-100-105-110-97-116-101-115-93-}\fi{}<div class="definition"><span class="definition" id="def:coordinates"><strong>(\#def:coordinates)  \iffalse (coordinates) \fi{} </strong></span>The coordinates of $\bar{v}$ relative to basis $\mathcal{B}$ (or the $\mathcal{B}$-coordinates of $\bar{v}$, denoted by $[\bar{v}]_{\mathcal{B}}$) are the weights $x_1, ..., x_r$ such that $\bar{x} = x_1\bar{a}_1 + \cdots +  x_r\bar{a}_n$</div>\EndKnitrBlock{definition}
 
 
-\BeginKnitrBlock{theorem}\iffalse{-91-85-110-105-113-117-101-32-99-111-111-114-100-105-110-97-116-101-32-118-101-99-116-111-114-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unique-coordinate"><strong>(\#thm:unique-coordinate)  \iffalse (Unique coordinate vector) \fi{} </strong></span>Let $\mathcal{B} = \{\bar{a}_1, ..., \bar{r}_n\}$ be a basis of $V$. Then for any vector $\bar{v} \in V$, there exists a unique coordinate vector $\bar{x} = [x_1, ..., x_r]$ such that
+\BeginKnitrBlock{theorem}\iffalse{-91-85-110-105-113-117-101-32-99-111-111-114-100-105-110-97-116-101-32-118-101-99-116-111-114-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unique-coordinate"><strong>(\#thm:unique-coordinate)  \iffalse (Unique coordinate vector) \fi{} </strong></span>Let $\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_n\}$ be a basis of $V$. Then for any vector $\bar{v} \in V$, there exists a unique coordinate vector $\bar{x} = [x_1, ..., x_r]$ such that
 
 $$
 \bar{v} = x_1\bar{a}_1 + \cdots + x_r\bar{a}_r
@@ -459,11 +457,11 @@ $$
 \bar{x}_b = \underbrace{B^{-1}A}_{P_{a \rightarrow b}}\bar{x}_a
 $$
 
-$0^{-1}A$ is called the **change-of-basis/coordinate matrix from $\mathcal{A}$ to $\mathcal{B}$**, because it converts coordinates from one system to another. When $B$ is large, finding its inverse can be challenging. Though, when $\{\bar{b}_1, ..., \bar{b}_n\}$ is an orthonormal basis, the transformation matrix simplify to $B^TA$. Additionally, if $A$ corresponds to the standard basis, the transformation matrix is $B^T$, as shown before. 
+$B^{-1}A$ is called the **change-of-basis/coordinate matrix from $\mathcal{A}$ to $\mathcal{B}$**, because it converts coordinates from one system to another. When $B$ is large, finding its inverse can be challenging. Though, when $\{\bar{b}_1, ..., \bar{b}_n\}$ is an orthonormal basis, the transformation matrix simplify to $B^TA$. Additionally, if $A$ corresponds to the standard basis, the transformation matrix is $B^T$, as shown before. 
 
 Such change-of-basis transformation can be performed between basis sets that define some other r-dimensional hyperplane $V$ rather than $\mathbb{R}^n$. Moreover, the two basis set could even represent different hyperplane in $\mathbb{R}^n$. We demonstrate such a case below. 
 
-Let $A = [\bar{a}_1 \, \cdots \, \bar{a}_r]$ and $B = [\bar{b}_1 \, \cdots \, \bar{b}_r]$ be two matrices whose columns are bases from different hyperplanes in $\mathbb{R}^n$, and let $\bar{v}$ lie in $A$'s hyperplane. In this case, $A\bar{x}_a \not = B\bar{x}_b$ because $B\bar{x}_b$ is a best-fit solution of $\bar{v}$. This is again a least square problem. We have the following 
+Let $A = [\bar{a}_1 \, \cdots \, \bar{a}_r]$ and $B = [\bar{b}_1 \, \cdots \, \bar{b}_r]$ be two matrices whose columns are bases from different hyperplanes in $\mathbb{R}^n$, and let $\bar{v}$ lie in $A$'s hyperplane. In this case, $A\bar{x}_a \not = B\bar{x}_b$ because $B\bar{x}_b$ is only a best-fit solution of $\bar{v}$. This is again a least square problem. We have the following 
 
 $$
 B^T(A\bar{x}_a - B\bar{x}_b) = \bar{0}
@@ -476,4 +474,4 @@ $$
 
 <br> 
 
-Change of basis has various applications in machine learning, such as discrete wavelet transform (P60, Ch2, [-@DBLP:books/sp/Aggarwal20]). In time series analysis, a time series of length $n$ would result in a vector from $\mathbb{R}^{n}$, and $n$ can be extremely large. Since consecutive sample points tend to be similar, we may take larger interest in a few variations across time, rather than the whole long vector. The *Haar wavelet transformation* performs a basis transformation with a view to exxtracting important variations, making the original time series vector reasonably sparse.  
+Change of basis has various applications in machine learning, such as discrete wavelet transform (P.60, Ch2, @DBLP:books/sp/Aggarwal20). In time series analysis, a time series of length $n$ would result in a vector from $\mathbb{R}^{n}$, and $n$ can be extremely large. Since consecutive sample points tend to be similar, we may take larger interest in a few variations across time, rather than the whole long vector. The *Haar wavelet transformation* performs a basis transformation with a view to exxtracting important variations, making the original time series vector reasonably sparse.  

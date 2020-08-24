@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 17 Gradient descent | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 17 Gradient descent | Mathematical Notes for Machine Learning" />
+  <title>Chapter 7 Partial derivatives | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 7 Partial derivatives | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 17 Gradient descent | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 7 Partial derivatives | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 17 Gradient descent | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 7 Partial derivatives | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="basics-of-optimization.html"/>
-<link rel="next" href="linear-models.html"/>
+<link rel="prev" href="linear-system.html"/>
+<link rel="next" href="matrix-calculus.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -258,20 +258,157 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="gradient-descent" class="section level1">
-<h1><span class="header-section-number">Chapter 17</span> Gradient descent</h1>
+<div id="partial-derivatives" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Partial derivatives</h1>
+<div id="limit-and-continuity" class="section level2">
+<h2><span class="header-section-number">7.1</span> Limit and continuity</h2>
+<p>Limits and continuity in one dimension</p>
+<p>Limits and continuity in higher dimensions</p>
+</div>
+<div id="partial-derivative" class="section level2">
+<h2><span class="header-section-number">7.2</span> Partial derivative</h2>
+<div id="gradient-and-directional-derivative" class="section level3">
+<h3><span class="header-section-number">7.2.1</span> Gradient and directional derivative</h3>
+<p>We want to know the instant rate of change at <span class="math inline">\(P_0 = (x_0, y_0)\)</span>, when moving towards the direction <span class="math inline">\(\bar{u} = [u_1, u_2]\)</span> a tiny step of length <span class="math inline">\(h\)</span>.</p>
 
+<div class="definition">
+<span id="def:directional-derivative" class="definition"><strong>Definition 7.1  (Directional derivative)  </strong></span><span class="math display">\[
+\Big(\frac{df}{dh} \Big)_{\bar{u}, P_0}  = \lim_{h \to 0} \frac{f(x_0 + hu_1, y_0 + hu_2) - f(x_0, y_0)}{h}
+\]</span>
 </div>
 
+<p>The concise version using vector notation is</p>
+<p><span class="math display">\[
+\lim_{h \to 0} \frac{f(\bar{x}  +  h\bar{u}) - f(\bar{x})}{h}
+\]</span></p>
+<p><span class="math display">\[
+x = x_0 + hu_1, \quad y = y_0 + hu_2
+\]</span></p>
+<p>use the chain rule
+<span class="math display">\[
+\begin{split}
+\Big(\frac{df}{dh} \Big)_{\bar{u}, P_0}  &amp;= \frac{\partial f}{\partial x} \biggr |_{P_0} \frac{dx}{dh} +      \frac{\partial f}{\partial y} \biggr |_{P_0} \frac{dy}{dh} \\
+&amp;= \frac{\partial f}{\partial x} \biggr |_{P_0}u_1 + \frac{\partial f}{\partial y} \biggr |_{P_0}u_2 \\
+&amp;= \nabla f |_{P_0} \cdot \bar{u}
+\end{split}
+\]</span>
+Expand the dot product, we get</p>
+<p><span class="math display">\[
+D_{\bar{u}}f = |\nabla f| |\bar{u}| \cos\theta = |\nabla f| \cos\theta
+\]</span></p>
 
+<div class="theorem">
+<p><span id="thm:property-directional-derivative" class="theorem"><strong>Theorem 7.1  (Properties of directional derivatives)  </strong></span>That function <span class="math inline">\(f\)</span> increases most rapidly in the direction of the gradient vector <span class="math inline">\(\nabla f\)</span> at <span class="math inline">\(P\)</span>. The directional derivative (instant increasing rate of change) in this direction is</p>
+<p><span class="math display">\[
+D_{\bar{u}}f = |\nabla f| \cos{0} = |\nabla f|
+\]</span></p>
+<p>Likewise, <span class="math inline">\(f\)</span> decreases most rapidly in the direction of <span class="math inline">\(-\nabla f\)</span>. The directional derivative in this direction is</p>
+<span class="math display">\[
+D_{\bar{u}}f = |\nabla f| \cos{\pi} = - |\nabla f|
+\]</span>
+</div>
 
+</div>
+<div id="linearization-of-two-variable-functions" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Linearization of two-variable functions</h3>
+<p>Linearization of univariate function <span class="math inline">\(f(x)\)</span> centered at <span class="math inline">\(x = a\)</span> is the point-slope equation</p>
+<p><span class="math display">\[
+L(x) = f(a) + f&#39;(a)(x - a) 
+\]</span></p>
+<p>Now we move to functions of two variables. Suppose a differentiable function <span class="math inline">\(f(x, y)\)</span> and its partial derivatives exist at a point <span class="math inline">\(f(x_0, y_0)\)</span>. If we move to a nearby point <span class="math inline">\((x_0 + \Delta x, y_0 + \Delta y)\)</span>, the change in <span class="math inline">\(f\)</span> is</p>
+<p><span class="math display">\[
+\Delta f = f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0) 
+\]</span></p>
+<p>Like in the single variable case (Eq <a href="partial-derivatives.html#eq:one-differential">(7.1)</a>), the change in <span class="math inline">\(f\)</span> is</p>
+<p><span class="math display">\[
+f(x, y) - f(x_0, y_0) = f_x \Delta x + f_y \Delta y + \varepsilon_1\Delta x + \varepsilon_2 \Delta y
+\]</span>
+where <span class="math inline">\(\varepsilon_1, \varepsilon_2 \to 0\)</span> as <span class="math inline">\(\Delta x, \Delta y \to 0\)</span>. When <span class="math inline">\(\Delta x, \Delta y \to 0\)</span>, the error term will be even smaller and we have the linear approximation</p>
+<span class="math display">\[
+f(x, y) \approx L(x, y) = f(x_0, y_0) + f_x (x - x_0) + f_y  (y - y_0)
+\]</span>
+
+<div class="definition">
+<p><span id="def:two-linearization" class="definition"><strong>Definition 7.2  </strong></span>The <strong>Linearization</strong> of a function <span class="math inline">\(f(x, y)\)</span> at a differentiable point <span class="math inline">\((x_0, y_0)\)</span> is</p>
+<span class="math display">\[
+L(x, y ) = f(x_0, y_0) + f_x (x - x_0) + f_y (y - y_0) 
+\]</span>
+The approximation
+<span class="math display">\[
+f(x, y) \approx L(x, y)
+\]</span>
+is called the <strong>standard linear approximation</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\((x_0, y_0)\)</span>
+</div>
+
+<p>In the two variable case, <span class="math inline">\(L(x, y)\)</span> denotes a plane tangent to the surface <span class="math inline">\(z = f(x, y)\)</span> at point <span class="math inline">\((x_0, y_0)\)</span></p>
+</div>
+</div>
+<div id="differentials" class="section level2">
+<h2><span class="header-section-number">7.3</span> Differentials</h2>
+<p>We first review the definition of differential in single variable calculus. In single variable calculus, the change in function <span class="math inline">\(f\)</span> as <span class="math inline">\(x\)</span> changes from <span class="math inline">\(a\)</span> to <span class="math inline">\(a + \Delta x\)</span> is
+<span class="math display">\[
+\Delta y = f(a + \Delta x) - f(a)
+\]</span></p>
+<p>The corresponding change in the standard linearization <span class="math inline">\(L(x)\)</span> from <span class="math inline">\(a\)</span> to <span class="math inline">\(a + \Delta x\)</span> is</p>
+<p><span class="math display">\[
+\begin{split}
+\Delta L &amp;= \underbrace{f(a) + f&#39;(a)(a + \Delta x - a)}_{L(a + \Delta x)} - \underbrace{f(a)}_{L(a)} \\
+&amp;= f&#39;(a)\Delta x
+\end{split}
+\]</span></p>
+<p>When <span class="math inline">\(\Delta x\)</span> is a infinitely small number <span class="math inline">\(dx\)</span> (but nonzero), we can use <span class="math inline">\(\Delta L\)</span> to approximate <span class="math inline">\(\Delta y\)</span>. In such a case, let <span class="math inline">\(dy\)</span> or <span class="math inline">\(df\)</span> represents the the amount the tangent line rises or falls when <span class="math inline">\(x\)</span> changes by an tiny amount <span class="math inline">\(\Delta x = dx\)</span>. This amount is called a <em>differential</em>. In other words, the differential <span class="math inline">\(dy\)</span> is the change <span class="math inline">\(\Delta L\)</span> in the linearization of <span class="math inline">\(f\)</span> when <span class="math inline">\(x = a\)</span> changes by an amount <span class="math inline">\(dx\)</span>.</p>
+<p>Now let <span class="math inline">\(a\)</span> be any point <span class="math inline">\(x\)</span> in <span class="math inline">\(f\)</span>’s domain, the differential <span class="math inline">\(dy\)</span> (or <span class="math inline">\(df\)</span>) is</p>
+<p><span class="math display">\[
+dy = f&#39;(x)\Delta x
+\]</span>
+The error between <span class="math inline">\(\Delta y\)</span> (true change) and <span class="math inline">\(dy\)</span> (approximate change) at <span class="math inline">\(x = a\)</span> is given by</p>
+<p><span class="math display">\[
+\begin{split}
+\Delta y - dy &amp;= \underbrace{f(a + \Delta x) - f(a)}_{\text{true change}}  - \underbrace{f&#39;(a)\Delta x}_{\text{approximate change}} \\
+&amp;= \underbrace{\Big(\frac{f(a + \Delta x) - f(a)}{\Delta x} - f&#39;(a)\Big)}_{\varepsilon} \Delta x \\
+&amp;= \varepsilon \Delta x
+\end{split}
+\]</span></p>
+<p>when <span class="math inline">\(\Delta x \to 0\)</span>, the difference quotient</p>
+<p><span class="math display">\[
+\frac{f(a + \Delta x) - f(a)}{\Delta x} \to f&#39;(a)
+\]</span>
+Thus <span class="math inline">\(\varepsilon \to 0\)</span> as <span class="math inline">\(\Delta x \to 0\)</span>, and <span class="math inline">\(\Delta y\)</span> can be reexpressed as</p>
+<p><span class="math display" id="eq:one-differential">\[\begin{equation}
+\tag{7.1}
+\Delta y = dy + \varepsilon \Delta x = f&#39;(a)\Delta x + \varepsilon \Delta x
+\end{equation}\]</span></p>
+<p><br></p>
+<p>In the two variable case, the change in linearization is</p>
+<p><span class="math display">\[
+\Delta L =  f_x \Delta x + f_y \Delta y
+\]</span>
+We take <span class="math inline">\(dx = \Delta x\)</span> and <span class="math inline">\(dy = \Delta y\)</span>. We then have the following definition of the <em>differential</em> or <em>total differential</em> of <span class="math inline">\(f\)</span>.</p>
+
+<div class="definition">
+<p><span id="def:differential" class="definition"><strong>Definition 7.3  </strong></span>When moving from <span class="math inline">\((x_0, y_0)\)</span> to a nearby point <span class="math inline">\((x_0 + dx, y_0 + dy)\)</span>, the resulting change</p>
+<span class="math display">\[
+df = f(x_0, y_0) + f_xdx + f_y dy
+\]</span>
+in the linearization of <span class="math inline">\(f\)</span> is called the <strong>total differential of <span class="math inline">\(f\)</span></strong>.
+</div>
+
+<div id="continuity-partial-derivatives-and-differentiability" class="section level3">
+<h3><span class="header-section-number">7.3.1</span> Continuity, partial derivatives and differentiability</h3>
+</div>
+</div>
+<div id="divergence-curl-and-laplacian" class="section level2">
+<h2><span class="header-section-number">7.4</span> Divergence, Curl, and Laplacian</h2>
+
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="basics-of-optimization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="linear-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="linear-system.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="matrix-calculus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -302,7 +439,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/gradient-descent.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/partial.Rmd",
 "text": "Edit"
 },
 "history": {
