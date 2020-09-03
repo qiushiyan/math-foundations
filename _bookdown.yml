@@ -34,5 +34,6 @@ rmd_files: [
   
   "linear-models.Rmd",
   "pca.Rmd",
+  "text-mining.Rmd",
   "references.Rmd"
 ]

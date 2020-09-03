@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 18 Linear Models | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 18 Linear Models | Mathematical Notes for Machine Learning" />
+  <title>Chapter 20 Text Mining | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 20 Text Mining | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 18 Linear Models | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 20 Text Mining | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 18 Linear Models | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 20 Text Mining | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="gradient-descent.html"/>
-<link rel="next" href="principal-component-analysis.html"/>
+<link rel="prev" href="principal-component-analysis.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -261,58 +261,17 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="linear-models" class="section level1">
-<h1><span class="header-section-number">Chapter 18</span> Linear Models</h1>
-<div id="ordinary-least-squares" class="section level2">
-<h2><span class="header-section-number">18.1</span> Ordinary Least Squares</h2>
-<div id="least-square-estimation" class="section level3">
-<h3><span class="header-section-number">18.1.1</span> Least Square Estimation</h3>
-<p>From theorem <a href="orthogonality.html#thm:best-approximation">3.3</a> we know that</p>
-<p><span class="math display">\[
-\bar{\beta} = (X^TX)^{-1}X^T\bar{y}
-\]</span></p>
-<p>thus:</p>
-<p><span class="math display">\[
-\hat{\bar{y}} = X\bar{\beta} = X (X^TX)^{-1}X^{T}\bar{y}
-\]</span></p>
-<p>When columns of the design matrix <span class="math inline">\(A\)</span> are orthogonal, the orthogonal projection of <span class="math inline">\(\bar{y}\)</span> onto <span class="math inline">\(\mathcal{R}(X)\)</span> is given by</p>
-<p><span class="math display">\[
-\hat{\bar{y}} = \frac{\bar{x}_0^T\bar{y}}{\bar{x}_0^T\bar{x}_0}\bar{x}_0 + 
-\frac{\bar{x}_1^T\bar{y}}{\bar{x}_1^T\bar{x}_1}\bar{x}_1
-\cdots +
-\frac{\bar{x}_p^T\bar{y}}{\bar{x}_p^T\bar{x}_p}\bar{x}_p
-\]</span>
-### Maximum Likelihood Estimation</p>
-<p>The log likelihood function is given by</p>
-</div>
-</div>
-<div id="weighted-least-squares" class="section level2">
-<h2><span class="header-section-number">18.2</span> Weighted Least Squares</h2>
-</div>
-<div id="partial-least-squares" class="section level2">
-<h2><span class="header-section-number">18.3</span> Partial Least Squares</h2>
-</div>
-<div id="regularized-regression" class="section level2">
-<h2><span class="header-section-number">18.4</span> Regularized Regression</h2>
-<div id="ridge-regression" class="section level3">
-<h3><span class="header-section-number">18.4.1</span> Ridge Regression</h3>
-</div>
-<div id="lasso" class="section level3">
-<h3><span class="header-section-number">18.4.2</span> Lasso</h3>
-</div>
-<div id="elastic-net" class="section level3">
-<h3><span class="header-section-number">18.4.3</span> Elastic Net</h3>
+<div id="text-mining" class="section level1">
+<h1><span class="header-section-number">Chapter 20</span> Text Mining</h1>
 
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="gradient-descent.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="principal-component-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="principal-component-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -343,7 +302,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/linear-models.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/text-mining.Rmd",
 "text": "Edit"
 },
 "history": {

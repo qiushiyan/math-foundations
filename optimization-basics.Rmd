@@ -1,10 +1,10 @@
 
 # (PART) Optimization {-}
 
-# Basics of optimization 
+# Basics of Optimization 
 
 
-## Univariate optimization 
+## Univariate Optimization 
 
 ```{theorem second-derivative, name = "Second derivative test for local extrema"}
 
@@ -23,10 +23,10 @@ Suppose $f''(x)$ is continuous on an open interval that contains $x = c$
 
 
 
-## Multivariate optimization 
+## Multivariate Optimization 
 
 
-## Convex functions 
+## Convex Functions 
 
 ```{definition convex-set, name = "Convext set"}
 
@@ -66,6 +66,6 @@ $$
 
 
 
-## Lagrange multipliers
+## Method of Lagrange Multiplier
 
 

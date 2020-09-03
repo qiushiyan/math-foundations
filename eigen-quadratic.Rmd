@@ -1,8 +1,8 @@
 
-# Eigenthings and quadratic forms
+# Eigenthings and Quadratic Forms
 
 
-## Eigenvectors and eigenvalues  
+## Eigenvectors and Eigenvalues  
 
 ```{definition eigen, name = "Eigenvectors and eigenvalues"}
 An **eigenvector** of an $n \times n$ matrix $A$ is a *nonzero* vector $\bar{x}$ such that $A\bar{x} = \lambda\bar{x}$. 
@@ -119,9 +119,9 @@ We will have to verify that $A\bar{x}$ is no zero vector before concluding $\lam
 
 $A^TA$ and $AA^T$ are known as Gram matrix and left Gram matrix in corollary \@ref(prp:gram-matrix)
 
-### Additional properties of eigenvalues and eigenvectors  
+### Additional Properties of Eigenvalues and Eigenvectors  
 
-Let $A \in \mathbb{R}^{n \times n}$ with eigenvalues $\lambda_1, ..., \lambda_n$. Here are some additional properties of this matrix and its eigenvlaues: 
+Let $A \in \mathbb{R}^{n \times n}$ with eigenvalues $\lambda_1, ..., \lambda_n$. Here are some additional properties of this matrix and its eigenvalues: 
 
 - The trace of $A$ is the sum of all eigenvalues
 
@@ -142,13 +142,13 @@ $$
 - For a polynomial function $P$ the eigenvalues of $P(A)$ are $P(\lambda_1), ..., P(\lambda_n)$
 
 
-### Left eigenvectors and right eigenvectors 
+### Left Eigenvectors and Right Eigenvectors 
 
 $$
 \bar{x}A = \lambda\bar{x}
 $$
 
-## Diagnolization and similar matrices 
+## Diagnolization and Similar Matrices 
 
 
 ```{definition diagonalization, name = "Diagonalization thoerem"}
@@ -280,7 +280,7 @@ $$
 are not similar even though they have the same eigenvalues. 
 
 
-### Jordan matrix
+### Jordan Matrix
 
 For non-diagonalizable square matrix $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
 
@@ -363,7 +363,7 @@ The solutions $\bar{p}_i$ are called **generalized eigenvectors** of $A$.
 A diagonlizable matrix family that share the **same eigenvectors** is called *simultaneously diagonalizable*. This notion is complimentary to a family of similar matrices that are diagonalizable, share eigenvalues but not eigenvectors. 
 
 ```{definition simultaneous-diagonalizable, name = "Simultaneously diagonalizable"}
-Two diagonalizable matrices $A$ and $B$ are said to be *simultaneously diagonalizable* if a $n \ times n$ matrix $P$ exists, such that $P^{-1}AP$ and $P^{-1}BP$ are diagonal matrices. In other words 
+Two diagonalizable matrices $A$ and $B$ are said to be *simultaneously diagonalizable* if a $n \times n$ matrix $P$ exists, such that $P^{-1}AP$ and $P^{-1}BP$ are diagonal matrices. In other words 
 
 $$
 A =  P\Lambda_1P^{-1} \\
@@ -381,10 +381,29 @@ The geometric interpretation of simultaneously diagonalizable matrices is that t
 If $A$ and $B$ are diagonalizable matrices, they are simultaneously diagonalizable if and only if they commute, such that $AB$ = $BA$. 
 ```
 
-I don't know how to prove this yet. But this theorem is useful in identifying diagonalizable matrices with the same eigenvectors. 
+
+This theorem is useful in identifying diagonalizable matrices with the same eigenvectors. 
 
 
-### Cayley-Hamilton theorem  
+
+For example, the matrices 
+
+$$
+\begin{bmatrix}
+1 & 0 \\
+0 & 0
+\end{bmatrix}
+\quad 
+\text{and}
+\quad
+\begin{bmatrix}
+1 & 1 \\
+0 & 0
+\end{bmatrix}
+$$
+are not simultaneously diagonalizable because they do not commute. 
+
+### Cayley-Hamilton Theorem  
 
 For any square matrix $A_{n \times n}$, the characteristic polynomial of $\lambda$ is defined as 
 
@@ -405,22 +424,22 @@ Let $f(\lambda)$ be the polynomial function of the characteristic polynomial $\d
 
 Though the Caley Hamilton theorem \@ref(thm:cayley-hamilton) applies to any square matrix $A$. Our proof only address the case for diagonalizable matrices.  
 
-When $A$ is digonalizable, the polynomial of $A$ takes the form
+When $A$ is diagonalizable, the polynomial of $A$ takes the form
 
 $$
 f(A) = Pf(\Lambda)P^{-1}
 $$
 Since $f(\lambda) = \det(A - \lambda I)$, and the diagonal entries of $\Lambda$ are the eigenvalues of $A$. Evaluate $f(\lambda)$ at each diagonal entry of $\Lambda$ will be zero. Thus $f(A)$ is a zero matrix.  
 
-A direct result derived from the Cayley Hamilton theorem is that for every intertible matrix $A$, its inverse $A^{-1}$ can be represented as a polynomial of $A$ with degree $d - 1$.  
+A direct result derived from the Cayley Hamilton theorem is that for every invertible matrix $A$, its inverse $A^{-1}$ can be represented as a polynomial of $A$ with degree $d - 1$.  
 
-<br>
+<r>
 
 ```{proposition, name = "Polynomial representation of matrix inverse"}
 The *inverse* of an invertible square matrix $A$ is a polynomial of $A$ with degree at most $d -1$. 
 ```
 
-Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for nonsingular matrices. If the product of all eigenvalues are $k$, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$, where $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
+Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for non-singular matrices. If the product of all eigenvalues are $k$, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$, where $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
 
 $$
 A \underbrace{\Big( - g(A) / k\Big)}_{A^{-1}} = I
@@ -428,7 +447,7 @@ $$
 Therefore, $A^{-1}$ is shown to be a polynomial of $A$. 
 
 
-## Symmetric matrices 
+## Symmetric Matrices 
 
 A *square* matrix $A \in \mathbb{R}^{n \times n}$ is *symmetric* if $A = A^{T}$, and *anti-symmetric* if $A = - A^{T}$. 
 
@@ -499,7 +518,7 @@ $$
 An $n \times n$ matrix $A$ is orthogonally diagonalizable if an only if $A$ is a symmetric matrix. 
 ```
 
-### Spectral decomposition 
+### Spectral Decomposition 
 
 For orthogonally diagonalizable matrix $A$, we have 
 
@@ -526,16 +545,16 @@ A = \lambda_1\bar{q}_1\bar{q}_1^T + \cdots + \lambda_1\bar{q}_n\bar{q}_n^T
 
 Eq \@ref(eq:spectral-decomposition) is called the **spectral decomposition**, breaking $A$ into pieces of rank 1 matrix. It got this name because he set of eigenvalues of a matrix $A$ is sometimes called its *spectrum*.  
 
-### A-Rrthogonality  
+### A-Orthogonality  
 
 ```{definition, name = "A-Orthogonality"}
-Column vector $\bar{v}_i$ and $\bar{v}_j$ are said to be *A-orthogonal* if $\bar{v}_i^TA\bar{v}_j$ for some $n \times n$ invertible matrix $A$.
+Column vector $\bar{v}_i$ and $\bar{v}_j$ are said to be *A-orthogonal* if $\bar{v}_i^TA\bar{v}_j = 0$ for some $n \times n$ invertible matrix $A$.
 ```
 
 Similarly, a set of column vectors $\bar{v}_1, ..., \bar{v}_n$ is A-orthogonal, if and only if $\bar{v}_i^TA\bar{v}_i = 0$ for each pair of vectors. 
 
 
-## Quadratic forms 
+## Quadratic Forms 
 
 ```{definition, name = "Quadratic form"}
 A **quadratic form** on $\mathbb{R}^n$ is a function $Q$ defined on $\mathbb{R}^n$ whose value at a vector $\bar{x}$ in $\mathbb{R}^n$ can be computed by an expression of the form $Q(\bar{x}) = \bar{x}^TA\bar{x}$, where $A \in \mathbb{R}^{n \times n}$ is a **symmetric** matrix. $A$ is called the matrix of the quadraticc form. 
@@ -584,7 +603,7 @@ $$
 $$
 This verifies that $\bar{x}^TA\bar{x}$ when $A \in \mathbb{R}^{n \times n}$ is symmetric does result in a quadratic function of $n$ variables. Conversely, any quadratic function of $n$ variables, like shown in $(2)$, can be expressed in terms of $\bar{x}^TA\bar{x}$ with unique choice of symmetric matrix $A \in \mathbb{R}^{n \times n}$.  
 
-### Change of variabele 
+### Change of Variable 
 
 If $\bar{x}$ is a variable vector in $\mathbb{R}^n$, then a *change of variable* is an equation of the form 
 
@@ -610,7 +629,7 @@ $$
 
 The principal axes theorem \@ref(thm:principal-axes) shows that if $A$ is diagonalizable, quadratic form $\bar{x}^TA\bar{x}$ can be reexpressed into the form $\lambda_1y_1^2 + \lambda_2y_2^2 +  \cdots + \lambda_ny_n^2$ with change of variables $\bar{x} = Q\bar{y}$. 
 
-### Classification of quadratic forms 
+### Classification of Quadratic Forms 
 
 - A symmetric matrix $A \in \mathbb{S}^n$ is **positive definite** (PD) if for all non-zero vectors $\bar{x} \in \mathbb{R}^n,\; \bar{x}^TA\bar{x} > 0$. We can denote positive definite matrix $A$ as $A \succ 0$ (or $A > 0$). The set of all positive definite matrices is denoted as $\mathbb{S}_{++}^n$  
 
@@ -709,7 +728,7 @@ $A^TA +\lambda I$ and $AA^T + \lambda I$ are always positive definite and invert
 From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are positive semidefinite, and that they have the same nonzero eigenvalues from corollary \@ref(cor:same-nonzero). According to Section \@ref(additional-properties-of-eigenvalues-and-eigenvectors), eigenvalues for $P(A)$ are $P(\lambda)$ for polynomial function $P$. Therefore, $A^TA +\lambda I$ and $AA^T + \lambda I$ share a positive set of $n$ eigenvalues $\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda$, so they are PD and invertible.  
 
 
-## Cholesky factorization  
+## Cholesky Factorization  
 
 ```{lemma}
 A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. 
@@ -758,7 +777,7 @@ Since $L$ is lower triangular, we can solve $L$ from $A = LL^T$ with a system of
 
 The Cholesky factorization is a special case of LU decomposition
 
-## Rayleigh quotients 
+## Rayleigh Quotients 
 
 Let $A \in \mathbb{S}^n$ and $\bar{x} \in \mathbb{R}^n$, **Rayleigh quotient** is defined as 
 

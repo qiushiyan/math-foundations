@@ -1,11 +1,11 @@
 
 # (PART) Probability Theory {-}
 
-# Probability basics
+# Basics of Probability Theory
 
 The probability section should be rather applied, without delving into deeper branch of analysis and measure theory. 
 
-## Probabilty space 
+## Probabilty Space 
 
 A probability space is a triple $(\Omega, \mathcal{F}, \mathbb{P})$ where 
 
@@ -48,7 +48,7 @@ $$</div>\EndKnitrBlock{proposition}
 Both side of the identity count the ways to break $2n$ people into $n$ partnerships. According to the left side, we can form partnerships by lining up all $2n$ people and making the first and the second a pair, then the third and the fourth a pair, etc. This overcounts by a factor $2^n \cdot n!$ since the order of partnerships does not matter, nor does the order inside each pair. Alternatively, there are $2n - 1$ choices for people 1, $2n - 3$ choices for people 2 (or person 3 if people 2 is paired to people 1), and so on.  
 
 
-## Conditional probability  
+## Conditional Probability  
 
 \BeginKnitrBlock{definition}\iffalse{-91-67-111-110-100-105-116-105-111-110-97-108-32-112-114-111-98-97-98-105-108-105-116-121-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-1"><strong>(\#def:unnamed-chunk-1)  \iffalse (Conditional probability) \fi{} </strong></span></div>\EndKnitrBlock{definition}
 

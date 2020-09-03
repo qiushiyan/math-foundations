@@ -5,10 +5,10 @@
 
 
 
-## Orthogonal decomposition 
+## Orthogonal Decomposition 
 
 
-### Orthogonal complements
+### Orthogonal Complements
 
 if vector $\bar{v}$ is orthogonal to every vector in a subspace $W$ of $\mathbb{R^n}$, then $\bar{v}$ is said to be orthogonal to $W$. The subspace that contains the set of vectors that are orthogonal to $W$ is called the **orthogonal complement**, denoted by $W^{\perp}$.  
 
@@ -30,7 +30,7 @@ It's easy to verify that $W^{\perp}$ is closed under scalar multiplication, and 
 
 
 
-### Orthogonal sets and orthogonal basis
+### Orthogonal Sets and Orthogonal Basis
 
 An orthogonal set is a set of vectors 
 $\{\bar{u_1}, \dots, \bar{u_p}\}$ in $\mathbb{R^n}$, in which each pair of distinct vectors is orthogonal: $\bar{u_i}^{T} \bar{u_j} = 0 \quad i\not = j$. Note that the set do not necessarily span the whole $\mathbb{R^n}$, but a subspace $W$. 
@@ -71,7 +71,7 @@ Derivations for other $c_i$ is similar.
 
 
 
-### Orthogonal decomposition
+### Orthogonal Decomposition
 
 **Orthogonal decomposition** split $\bar{y}$ in $\mathbb{R^n}$ into two vectors, one in $W$ and one in its orthogonal compliment $W^{\perp}$. 
 
@@ -135,7 +135,7 @@ $$
 
 whenever $W$ is a subspace. 
 
-### Best approximation 
+### Best Approximation 
 
 \BeginKnitrBlock{theorem}\iffalse{-91-84-104-101-32-66-101-115-116-32-65-112-112-114-111-120-105-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:best-approximation"><strong>(\#thm:best-approximation)  \iffalse (The Best Approximation) \fi{} </strong></span>Given $\bar{y}$ be any vector in $\mathbb{R^n}$, with its subspace $W$, let $\hat{\bar{y}}$ be the orthogonal projection of $\bar{y}$ onto $W$. Then $\hat{\bar{y}}$ is the closest point in $W$ to $\bar{y}$ in the sense that 
 
@@ -210,7 +210,7 @@ A\bar{x} = A(A^TA)^{-1}A^T\bar{b} = \hat{\bar{b}}
 $$
 
 
-## Gram-Schmidt process
+## Gram-Schmidt Process
 
 Then Gram-Schmidt process is a simple algorithm that transforms a set of linearly independent vectors into orthogonal or orthonormal basis for a subspace. In its essence, it is a sequential projection of $\bar{x}_{i}$ onto the space spanned by the previously created orthogonal set $\{\bar{v}_{1}, ..., \bar{v}_{i-1}\}$, and take the term in the orthogonal compliment to be $\bar{v}_{i}$. 
 
@@ -246,7 +246,7 @@ $$
 $$
 
 
-### QR factorizaiton 
+### QR Factorizaiton 
 
 For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\bar{x}_1, ..., \bar{x}_n$, apply the Gram-Schmidt process to $\bar{x}_1, ..., \bar{x}_n$ amounts to *factorizing* $A$. 
  
@@ -279,11 +279,11 @@ r_{11} & r_{12} & \cdots & r_{1n} \\
 $$
 We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ and $\bar{u}_k$ by $-1$)
 
-## Orthonormal sets and orthogonal matrices
+## Orthonormal Sets and Orthogonal Matrices
 
 An orthogonal set whose components are all unit vectors is said to be **orthonormal** sets. 
 
-### Orthogonal matrices  
+### Orthogonal Matrices  
 
 An *orthogonal matrix* is a square matrix $Q$ whose inverse is its transpose:  
 
@@ -310,7 +310,7 @@ Therefore multiplication by an orthogonal matrix can be considered as a transfor
 
 Note that $Q$ may not necessarily be a square matrix to satisfy $Q^TQ = I$. For exmaple $Q \in \mathbb{R}^{m \times n}, n < m$, but its columns and rows can still be orthonormal, then $QQ^T = I$. But in most cases the term orthogonal implies a square matrix $Q$. 
 
-## Lesat squares problems 
+## Lesat Squares Problems 
 
 \BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5) </strong></span>the **normal equation** 
 $$

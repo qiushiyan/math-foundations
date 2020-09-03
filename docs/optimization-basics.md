@@ -1,10 +1,10 @@
 
 # (PART) Optimization {-}
 
-# Basics of optimization 
+# Basics of Optimization 
 
 
-## Univariate optimization 
+## Univariate Optimization 
 
 \BeginKnitrBlock{theorem}\iffalse{-91-83-101-99-111-110-100-32-100-101-114-105-118-97-116-105-118-101-32-116-101-115-116-32-102-111-114-32-108-111-99-97-108-32-101-120-116-114-101-109-97-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:second-derivative"><strong>(\#thm:second-derivative)  \iffalse (Second derivative test for local extrema) \fi{} </strong></span>
 
@@ -21,10 +21,10 @@ Suppose $f''(x)$ is continuous on an open interval that contains $x = c$
 
 
 
-## Multivariate optimization 
+## Multivariate Optimization 
 
 
-## Convex functions 
+## Convex Functions 
 
 \BeginKnitrBlock{definition}\iffalse{-91-67-111-110-118-101-120-116-32-115-101-116-93-}\fi{}<div class="definition"><span class="definition" id="def:convex-set"><strong>(\#def:convex-set)  \iffalse (Convext set) \fi{} </strong></span>
 A set $S$ is said to be convex, if for every pair of points $\bar{w}_1, \bar{w}_2 \in S$, point $\lambda\bar{w}_1 + (1 - \lambda)\bar{w}_2$ must also be in $S$ for all $\lambda \in (0, 1)$ </div>\EndKnitrBlock{definition}
@@ -58,6 +58,6 @@ $$</div>\EndKnitrBlock{definition}
 
 
 
-## Lagrange multipliers
+## Method of Lagrange Multiplier
 
 

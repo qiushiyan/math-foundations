@@ -1,4 +1,4 @@
-# Taylor series
+# Taylor Series
 
 
 
@@ -25,4 +25,4 @@ $$
 \text{error of linearization} \le \frac{1}{2}M(|x - x_0|^2 - |y - y_0|^2)
 $$
 
-## Convergence of taylor series
+## Convergence of Taylor Series

@@ -1,9 +1,9 @@
 
-# Vector spaces 
+# Vector Spaces 
 
 Vector spaces, metric spaces, normed spaces, and inner product spaces are places where computations in linear algebra happen. These spaces are defined more or less to generalize properties of Euclidean space.  
 
-## Vector space 
+## Vector Space 
 
 A **vector space** $V$ is a nonempty set,  also called *linear spaces*, the elements of which are called vectors,. A vector space comes with two operations predefined: vectors can be added together, and vectors can be multiplied by real numbers called scalars. For all vectors $\bar{u}, \bar{v}$ and $\bar{w}$, and all scalars $c$ and $d$ in $V$, the following axioms of vector space must hold:   
 
@@ -32,7 +32,7 @@ $$
 
 The **span** of  $\bar{v}_1, ..., \bar{v}_n$  is the set of all vectors that can be expressed as a linear combination of them. 
 
-### Euclidean space 
+### Euclidean Space 
 
 Euclidean space is the quintessential vector space, denoted by $\mathbb{R}^n$. 
 
@@ -78,7 +78,7 @@ $$
 
 
 
-## Metric spaces, normed spaces, inner product spaces
+## Metric Spaces, Normed Spaces, Inner Product Spaces
 
 
 Metric spaces, normed spaces and inner product spaces capture important properties of Euclidean space in a more general way (distance, length, angle). 
@@ -150,7 +150,7 @@ $$
 
 \BeginKnitrBlock{rmdnote}<div class="rmdnote">The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces” (linear topological space if they are assumed to be vector spaces first).  These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.</div>\EndKnitrBlock{rmdnote}
 
-### Restricted definition of inner products in $R^n$
+### Restricted Definition of Inner Products in $R^n$
 
 Sometimes it suffice only to generalize the dot product, with the definition of inner product, in Euclidean space $\mathbb{R}^n$ instead of other inner product spaces. For example, many engineering applications measure similarity between vectors using the dot product after stretching the two vectors in some directions, with linear transformation $A$. Therefore, we can given a restricted definition of inner product that is meant to be used in $\mathbb{R}^n$.  
 
@@ -214,7 +214,7 @@ $$
 $$
 
 
-## Fundamental theorem of linear algebra  {#fundamental-theorem}
+## Fundamental Theorem of Linear Algebra  {#fundamental-theorem}
 
 The **columnspace** (also called *range*) of matrix $A \in \mathbb{R}^{m \times n}$ is the span of the columns of $A$
 
@@ -277,7 +277,7 @@ $$
 
 From (1) we know that row rank of $A$ is identical to that the number of non-zero entries in $\Lambda$, on the ground that row operations on $A$ does not change its row rank, and $C^{-1}$ only scale diagonal entries of $\Lambda$ to some multiple. Similarly, $AC = R^{-1}\Lambda$ shows that column rank of $A$ is the same as the number of non-zero diagonal entries in $\Lambda$. Therefore, row rank $=$ column rank. 
 
-### Effect of operations on matrix rank  
+### Effect of Operations on Matrix Rank  
 
 Let $A, B \in \mathbb{R}^{m \times n}$ have ranks $a$ and $b$
 
@@ -309,7 +309,7 @@ For (2), Each column of $AB$ is a linear combination of columns of A, and each r
 Suppose $B$ is $n \times n$, the minimum rank of $AB$ is $a + n - n = a$, and the maximum rank is $\min(a, n) = a$. Thus, multiplying by a full rank matrix preserves rank: $r(AB) = r(A)$. (4) follows naturally after (3). 
 
 
-### Gram matrix
+### Gram Matrix
 
 \BeginKnitrBlock{proposition}\iffalse{-91-71-114-97-109-32-109-97-116-114-105-120-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:gram-matrix"><strong>(\#prp:gram-matrix)  \iffalse (Gram matrix) \fi{} </strong></span>The matrix $A^TA$ is said to be the Gram matrix of column space of $A_{m \times n}$. The columns of $A$ are linearly independent if and only if $A^TA$ is invertible.</div>\EndKnitrBlock{proposition}
 
@@ -338,7 +338,7 @@ For $r(A) = R(AA^T)$, note that $r(A) = r(A^T)$,  and that $\mathcal{N}(A^T) = \
 From the SVD perspective(Corollary \@ref(cor:same-nonzero) and Section \@ref(svd-theorem)), one can show that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, and $r(A)$ is the same as the number of nonzero eigenvalues of $A^A$ or $AA^T$, so that $r(A) = r(A^TA) = r(AA^T)$.   
 
 
-## Bases and coordinate systems
+## Bases and Coordinate Systems
 
 \BeginKnitrBlock{definition}\iffalse{-91-98-97-115-105-115-32-111-102-32-97-32-118-101-99-116-111-114-32-115-112-97-99-101-93-}\fi{}<div class="definition"><span class="definition" id="def:basis"><strong>(\#def:basis)  \iffalse (basis of a vector space) \fi{} </strong></span>Let $V$ be a subspace of $\mathbb{R}^n$. An indexed set of vectors $\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_r\}$ is said to be a basis of $V$, if $\mathcal{B}$ spans $V$ (these $r$ vectors are linearly independent)</div>\EndKnitrBlock{definition}
 
@@ -434,7 +434,7 @@ $$
 $$
 
 
-### Change of basis
+### Change of Basis
 
 Previous discussions involve different representations of $\bar{x}$ with respect to two basis, one of which is standard basis in $\mathbb{R}^n$. This section deals with transformations between two non-standard basis. 
 

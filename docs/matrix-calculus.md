@@ -1,5 +1,5 @@
 
-# Matrix calculus  
+# Matrix Calculus  
 
 
 > Matrix calculus refers to a number of different notations that use matrices and vectors to collect the derivative of each component of the dependent variable with respect to each component of the independent variable. 
@@ -79,17 +79,17 @@ J = \nabla_x \bar{f} &=
 $$</div>\EndKnitrBlock{definition}
 
 
-## The chain rule
+## The Chain Rule
 
 
 
-## Useful identities in matirx calculus 
+## Useful Identities in Matirx Calculus 
 
-Assuming $A$ is a $m \times n$ matrix and $\bar{w}$ an $n \times 1$ column vector, and let others be of comforbale sizes,  we adopt the numerator layout to show some commonly used identities in matrix calculus. 
+Assuming $A$ is a $m \times n$ matrix and $\bar{w}$ an $n \times 1$ column vector, and let others be of conformbale sizes,  we adopt the numerator layout to show some commonly used identities in matrix calculus. 
 
 |Derivative of|with respect to|output size|result|
 :-:|:-:|:-:|:-:|
-|$A\bar{w}$|$\bar{w}$|matrix $m \times n$|$A$|
+|$A\bar{w}$ <br> $\bar{w}^TA$|$\bar{w}$ |matrix $m \times n$ <br> matrix $n \times m$ |$A$ <br> $A^T$|
 |$\bar{a}^T\bar{w}$ <br> $\bar{w}^T\bar{a}$|$\bar{w}$|row vector $1 \times n$|$\bar{a}^T$|
 |$\bar{b}^TB\bar{w}$ <br> $\bar{w}^TB^T\bar{b}$|$\bar{w}$|row vector $1 \times n$|$\bar{b}^TB$|
 |$\bar{w}^TA\bar{w}$|$\bar{w}$|row vector $1 \times n$|$\bar{w}^T(A + A^T)$ <br> if $A$ is symmetric $2\bar{w}^TA$|

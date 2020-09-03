@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 18 Linear Models | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 18 Linear Models | Mathematical Notes for Machine Learning" />
+  <title>Chapter 11 Basics of Probability Theory | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 11 Basics of Probability Theory | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 18 Linear Models | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 11 Basics of Probability Theory | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 18 Linear Models | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 11 Basics of Probability Theory | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="gradient-descent.html"/>
-<link rel="next" href="principal-component-analysis.html"/>
+<link rel="prev" href="multiple-integral.html"/>
+<link rel="next" href="random-variables-and-moments.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -261,49 +261,61 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="linear-models" class="section level1">
-<h1><span class="header-section-number">Chapter 18</span> Linear Models</h1>
-<div id="ordinary-least-squares" class="section level2">
-<h2><span class="header-section-number">18.1</span> Ordinary Least Squares</h2>
-<div id="least-square-estimation" class="section level3">
-<h3><span class="header-section-number">18.1.1</span> Least Square Estimation</h3>
-<p>From theorem <a href="orthogonality.html#thm:best-approximation">3.3</a> we know that</p>
-<p><span class="math display">\[
-\bar{\beta} = (X^TX)^{-1}X^T\bar{y}
-\]</span></p>
-<p>thus:</p>
-<p><span class="math display">\[
-\hat{\bar{y}} = X\bar{\beta} = X (X^TX)^{-1}X^{T}\bar{y}
-\]</span></p>
-<p>When columns of the design matrix <span class="math inline">\(A\)</span> are orthogonal, the orthogonal projection of <span class="math inline">\(\bar{y}\)</span> onto <span class="math inline">\(\mathcal{R}(X)\)</span> is given by</p>
-<p><span class="math display">\[
-\hat{\bar{y}} = \frac{\bar{x}_0^T\bar{y}}{\bar{x}_0^T\bar{x}_0}\bar{x}_0 + 
-\frac{\bar{x}_1^T\bar{y}}{\bar{x}_1^T\bar{x}_1}\bar{x}_1
-\cdots +
-\frac{\bar{x}_p^T\bar{y}}{\bar{x}_p^T\bar{x}_p}\bar{x}_p
-\]</span>
-### Maximum Likelihood Estimation</p>
-<p>The log likelihood function is given by</p>
+<div id="basics-of-probability-theory" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Basics of Probability Theory</h1>
+<p>The probability section should be rather applied, without delving into deeper branch of analysis and measure theory.</p>
+<div id="probabilty-space" class="section level2">
+<h2><span class="header-section-number">11.1</span> Probabilty Space</h2>
+<p>A probability space is a triple <span class="math inline">\((\Omega, \mathcal{F}, \mathbb{P})\)</span> where</p>
+<ul>
+<li><p><span class="math inline">\(\Omega\)</span> is the set of all possible events in an experiment, called the <strong>sample space</strong></p></li>
+<li><p><span class="math inline">\(\mathcal{F}\)</span> is a subset of <span class="math inline">\(\Omega\)</span>, containing some of the events usually denoted by <span class="math inline">\(A\)</span>. Events may be a singleton set <span class="math inline">\({\omega}\)</span> or contain more than one sample point. The complement of event <span class="math inline">\(A\)</span> is another event, <span class="math inline">\(A^c\)</span>. As we can only define probabilities for such subsets of <span class="math inline">\(\Omega\)</span> that are tied together like a family, <span class="math inline">\(\mathcal{F}\)</span> is assumed to be a <strong><span class="math inline">\(\sigma\)</span>-field</strong> which satisfy</p>
+<ol style="list-style-type: decimal">
+<li>If <span class="math inline">\(A \in \mathcal{F}\)</span> then <span class="math inline">\(A^c \in \mathcal{F}\)</span><br />
+</li>
+<li>If <span class="math inline">\(A_i \in \mathcal{F}, \;i = 1,...,n\)</span> is a countable sequence of sets, then <span class="math inline">\(A_1 \cup A_2 \cup ... \cup A_n \in \mathcal{F}\)</span></li>
+</ol></li>
+<li><p><span class="math inline">\(\mathbb{P}\)</span> is a function that assigns probabilities to events: <span class="math inline">\(\mathbb{P}: \mathcal{F} \rightarrow [0 , 1]\)</span>.</p></li>
+</ul>
+<p><strong>Axioms of probability</strong> are concerned with specific properties of the function <span class="math inline">\(\mathbb{P}\)</span></p>
+<ol style="list-style-type: decimal">
+<li>$(A) 0 $ for all <span class="math inline">\(A \in \mathcal{F}\)</span><br />
+</li>
+<li><span class="math inline">\(\mathbb{P}(\Omega) = 1\)</span> and <span class="math inline">\(\mathbb{P(\emptyset)} = 0\)</span><br />
+</li>
+<li>If <span class="math inline">\(A_1, ..., A_n\)</span> are disjoint sets (<span class="math inline">\(A_i \cup A_j = \emptyset\)</span>)</li>
+</ol>
 </div>
-</div>
-<div id="weighted-least-squares" class="section level2">
-<h2><span class="header-section-number">18.2</span> Weighted Least Squares</h2>
-</div>
-<div id="partial-least-squares" class="section level2">
-<h2><span class="header-section-number">18.3</span> Partial Least Squares</h2>
-</div>
-<div id="regularized-regression" class="section level2">
-<h2><span class="header-section-number">18.4</span> Regularized Regression</h2>
-<div id="ridge-regression" class="section level3">
-<h3><span class="header-section-number">18.4.1</span> Ridge Regression</h3>
-</div>
-<div id="lasso" class="section level3">
-<h3><span class="header-section-number">18.4.2</span> Lasso</h3>
-</div>
-<div id="elastic-net" class="section level3">
-<h3><span class="header-section-number">18.4.3</span> Elastic Net</h3>
+<div id="counting" class="section level2">
+<h2><span class="header-section-number">11.2</span> Counting</h2>
+<hr>
+<p>Additionally, there are several useful identities in combination problems. The formal algebraic proof can be cumbersome, instead, here we draw on story proofs from the “Introduction to Probability” book <span class="citation">(K. Blitzstein and Hwang <a href="references.html#ref-blitzstein2019" role="doc-biblioref">2019</a>)</span>.</p>
 
+<div class="proposition">
+<span id="prp:vandermonde-identity" class="proposition"><strong>Proposition 11.1  (Vandermonde’s identity)  </strong></span><span class="math display">\[
+\binom{m + n}{k} = \sum_{j = 0}^{k}\binom{m}{j} \binom{n}{k  -j}
+\]</span>
 </div>
+
+<p>Suppose we want to select a size <span class="math inline">\(k\)</span> committee out of <span class="math inline">\(m\)</span> juniors and <span class="math inline">\(n\)</span> seniors. The left side shows there are obviously <span class="math inline">\(\binom{m + n}{k}\)</span> probabilities. On the other side of the story, given there are <span class="math inline">\(j\)</span> juniors in the committee, there must be <span class="math inline">\(k - j\)</span> seniors in the committee. The right-hand side sums up the cases varying <span class="math inline">\(k\)</span>.</p>
+
+<div class="proposition">
+<span id="prp:partnerships" class="proposition"><strong>Proposition 11.2  (Partnerships Problem)  </strong></span>
+<span class="math display">\[
+\frac{(2n)!}{2^n \cdot n!} = (2n -1 ) \cdot (2n -3) \cdots 3 \cdot 1
+\]</span>
+</div>
+
+<p>Both side of the identity count the ways to break <span class="math inline">\(2n\)</span> people into <span class="math inline">\(n\)</span> partnerships. According to the left side, we can form partnerships by lining up all <span class="math inline">\(2n\)</span> people and making the first and the second a pair, then the third and the fourth a pair, etc. This overcounts by a factor <span class="math inline">\(2^n \cdot n!\)</span> since the order of partnerships does not matter, nor does the order inside each pair. Alternatively, there are <span class="math inline">\(2n - 1\)</span> choices for people 1, <span class="math inline">\(2n - 3\)</span> choices for people 2 (or person 3 if people 2 is paired to people 1), and so on.</p>
+</div>
+<div id="conditional-probability" class="section level2">
+<h2><span class="header-section-number">11.3</span> Conditional Probability</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-1" class="definition"><strong>Definition 11.1  (Conditional probability)  </strong></span>
+</div>
+
+
 </div>
 </div>
             </section>
@@ -311,8 +323,8 @@
           </div>
         </div>
       </div>
-<a href="gradient-descent.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="principal-component-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="multiple-integral.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="random-variables-and-moments.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -343,7 +355,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/linear-models.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/probability-basics.Rmd",
 "text": "Edit"
 },
 "history": {

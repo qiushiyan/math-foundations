@@ -1,5 +1,5 @@
 
-# Solutions of linear system Ax = b {#linear-system}
+# Solutions of Linear System Ax = b {#linear-system}
 
 A linear system $A\bar{x} = \bar{b}$ when $\bar{b} \not = \bar{0}$ may behave in any one of three possible ways:
 
@@ -13,12 +13,12 @@ A linear system $A\bar{x} = \bar{b}$ when $\bar{b} \not = \bar{0}$ may behave in
 In the first scenario, the linear system is called **inconsistent** because there is no $\bar{x}$ that satisfies each equation in the system. Linear systems in the second and third scenario are called **consistent** because there is at least one solution.  
 
 
-## Generalized inverse
+## Generalized Inverse
 
 
-## Ill-conditioned matrices 
+## Ill-Conditioned Matrices 
 
-### The condition number
+### Condition Number
 
 
 $$

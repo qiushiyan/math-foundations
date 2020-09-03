@@ -1,6 +1,6 @@
-# Singular value decomposition  
+# Singular Value Decomposition  
 
-## Singular values of m x n matrix
+## Singular Values 
 
 The singular value decomposition illustrates a way of decomposing *any* matrix $A \in \mathbb{R}^{m \times n}$ into the form $U \Sigma V^T$, where $U = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_n]$ and $V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]$ are both orthogonal matrices, and $\Sigma$ a diagonal matrix with entries being the square root of the eigenvalues of $A^TA$ (perhaps plus some zeros).  
 
@@ -77,7 +77,7 @@ $$
 Thus any $\bar{y} \in \mathcal{R}(A)$ is in Span$\{A\bar{v}_1, ..., A\bar{v}_r\}$, and $\{A\bar{v}_1, ..., A\bar{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
 
 
-## The singular value decomposition {#svd-theorem}
+## SVD {#svd-theorem}
 
 Let's begin SVD by the $m \times n$ diagonal matrix $\Sigma$ of the form 
 
@@ -233,7 +233,7 @@ This shed light on the relationship between SVD and the fundamental theorem of l
 
 
 
-## Matrix norms 
+## Matrix Norms 
 
 Let $A$ and $B$ be matrices conformable for the operations below, a matrix norm should at first satisfy 3 axioms of norm: 
 
@@ -253,7 +253,7 @@ There are 2 main categories of matrix norms.
 - entry-wise norms (treat $A_{m \times n}$ like a long vector with $m \times n$ elements)
 
 
-### Induced norms
+### Induced Norms
 
 Induced norms define matrix norms in terms of vectors, also called *operator norm* since $A$ acts like an operator in this definition. Note that matrix $A \in \mathbb{R}^{m \times n}$ maps a vector $\bar{x} \not = 0$ from $\mathbb{R}^n$ to $\mathbb{R}^m$. In particular, if the p-norm is used for both $\mathbb{R}^n$ and $\mathbb{R}^m$, then the induced norm is 
 
@@ -317,7 +317,7 @@ $$
 
 
 
-### Entry-wise norm
+### Entry-wise Norm
 
 Entry-wise norms treat an $m \times n$ matrix as a long vector of size $m \times n$, denoted by $\text{vec}(A)$. For example, using the p-norm for vectors, we get 
 
@@ -372,7 +372,7 @@ $$
 
 The first inequality comes from the Cauchy-Schwarz inequality $a \cdot b \le \|a\| \|b\|$
 
-### Other matrix norms 
+### Other Matrix Norms 
 
 One can pick to one of two ways to generalize the F-norm. One is a generalization of the direct definition that F-norm is $||\text{vec}(A)||_2$. For $p \ge 1$,  it is the **Frobenius-p** norm:  
 
@@ -397,7 +397,7 @@ $$
 
 
 
-### Unitary invariant norms
+### Unitary Invariant Norms
 
 
 
@@ -442,7 +442,7 @@ $$
 
 
 
-## Low rank approximation  
+## Low Rank Approximation  
 
 ```{theorem eckart-young, name = "Eckart–Young–Mirsky"}
 Let $\|\cdot\|$ be a unitary invariant norm. Suppose $A \in \mathbb{R}^{m \times n}$ where $m > n$, has svd $A = \sum_{i = 1}^n \sigma_i \bar{u}_i \bar{v}^T_i$. Then the best rank-k approximation to $A$, where $k \le \text{rank}(A)$, is given by 

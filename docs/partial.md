@@ -1,19 +1,19 @@
 
 # (PART) Multivariate Calculus {-}
 
-# Partial derivatives
+# Partial Derivatives
 
-## Limit and continuity 
+## Limit and Continuity 
 
 Limits and continuity in one dimension
 
 Limits and continuity in higher dimensions
 
-## Partial derivative 
+## Partial Derivative 
 
 
 
-### Gradient and directional derivative  
+### Gradient and Directional Derivative  
 
 We want to know the instant rate of change at $P_0 = (x_0, y_0)$, when moving towards the direction $\bar{u} = [u_1, u_2]$ a tiny step of length $h$. 
 
@@ -65,7 +65,7 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
-### Linearization of two-variable functions 
+### Linearization of Two-variable Functions 
 
 Linearization of univariate function $f(x)$ centered at $x = a$ is the point-slope equation
 
@@ -170,7 +170,7 @@ in the linearization of $f$ is called the **total differential of $f$**.</div>\E
 
 
 
-### Continuity, partial derivatives and differentiability
+### Continuity, Partial Derivatives and Differentiability
 
 
 

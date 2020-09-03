@@ -1,7 +1,7 @@
 
 # Random variables and moments 
 
-## Properties of expectation and variance 
+## Properties of Expectation and Variance 
 
 This section provides some properties of $E(X)$ and $\text{Var}(X)$ commonly-used in probabilistic calculations. Suppose all expectations $E(\cdot)$ exists 
 
@@ -93,7 +93,10 @@ $$
 $$
 
 
-## Other summaries of distribution of random variables 
+### Random vectors 
+
+
+## Other Summaries 
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>Let $X$ be an r.v. with expectation $E(X) = \mu$, and let $m$ be the median of $X$  
 
@@ -139,7 +142,7 @@ $$
 Since for median $m$ we know $P(X \le m) \le \frac{1}{2}$, we get $E(Y) \ge 0$ with equality when $a = m$. This means the mean absolute error $E|X - a|$ is minimized when $a$ is the median of $X$. 
 
 
-## Moment generating functions 
+## Moment Generating Functions 
 
 \BeginKnitrBlock{theorem}\iffalse{-91-77-111-109-101-110-116-115-32-118-105-97-32-100-101-114-105-118-97-116-105-101-115-32-111-102-32-77-71-70-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:mgf-moment"><strong>(\#thm:mgf-moment)  \iffalse (Moments via derivaties of MGF) \fi{} </strong></span>The $n$th momment of r.v. $X$ is the $n$th derivative of its MGF evaluated at zero
 

@@ -1,6 +1,6 @@
-# Univariate distributions 
+# Univariate Distributions 
 
-## Uniform distribution 
+## Uniform Distribution 
 
 $$
 f_X(x) = 
@@ -10,26 +10,26 @@ f_X(x) =
 \end{cases}
 $$
 
-## Normal distribution 
+## Normal Distribution 
 
-### Log normal distribution 
-
-
-
-## Binomial distribution and Beta distribution
+### Log Normal Distribution 
 
 
 
-## Poisson distribution 
+## Binomial Distribution and Beta Distribution
+
+
+
+## Poisson Distribution 
 
 $$
 P(X = x) = \frac{\lambda ^x e^{-\lambda}}{x!}
 $$
 
-### Poisson process
+### Poisson Process
 
 
-## Exponential distribution and Gamma distribution
+## Exponential Distribution and Gamma Distribution
 
 The exponential distribution describes the length of time between occurrences, and can be derived directly from poisson distribution. Given a poisson random variable $X \sim \text{Poisson}(\lambda)$, we compute the probability of the time $T$ to the first occurence is greater than $t$ 
 
@@ -99,7 +99,7 @@ $$
 
 
 
-### Inverse Gamma distribution 
+### Inverse Gamma Distribution 
 
 
-## Beta distribution 
+## Beta Distribution 

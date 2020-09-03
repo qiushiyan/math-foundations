@@ -1,11 +1,11 @@
 
 # (PART) Applications {-}
 
-# Linear models
+# Linear Models
 
 ## Ordinary Least Squares
 
-### Least square estimation 
+### Least Square Estimation 
 
 From theorem \@ref(thm:best-approximation) we know that 
 
@@ -27,7 +27,7 @@ $$
 \cdots +
 \frac{\bar{x}_p^T\bar{y}}{\bar{x}_p^T\bar{x}_p}\bar{x}_p
 $$
-### Maximum likelihood estimation
+### Maximum Likelihood Estimation
 
 The log likelihood function is given by 
 
@@ -35,15 +35,14 @@ The log likelihood function is given by
 
 
 
-## Weighted least squares
+## Weighted Least Squares
 
-## Partial least squres  
+## Partial Least Squares  
 
 
-## Regularized regression
+## Regularized Regression
 
-### Ridge regression
+### Ridge Regression
 
-### Lasso regression
-
-### Elastic net regression
+### Lasso
+### Elastic Net
