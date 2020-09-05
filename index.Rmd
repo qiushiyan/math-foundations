@@ -33,6 +33,7 @@ References (books, online courses, videos, papers) include:
   - *Linear Algebra and its Applications* [@strang2006linear]  
   - [*Linear Algebra Review and Reference*](http://cs229.stanford.edu/section/cs229-linalg.pdf) on Stanford's cs229 website   
   - Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, https://ocw.mit.edu. License: Creative Commons BY-NC-SA.  
+  - N. Johnston. [*Advanced Linear and Matrix Algebra*](http://www.njohnston.ca/publications/advanced-linear-and-matrix-algebra/). Springer International Publishing, 2020.[@johnston2020advanced]
   
 - **Multivariate Calculus**
   - *Thomas's Calculus* [@weir2018thomas]

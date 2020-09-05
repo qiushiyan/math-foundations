@@ -236,10 +236,32 @@ It's also common to write this decomposition as $PA = LU$.
 
 ## Determinants
 
+In the $2 \times 2$ case, the determinant of $A$ is simply 
+
+$$
+\begin{vmatrix}
+a & b \\
+c & d \\
+\end{vmatrix}
+= ad - bc
+$$
+
+When $A$ is $3 \times 3$,  we still get a not-too-messy explicit formula to compute its determinant 
+
+$$
+\begin{vmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}
+= a_{11}a_{22} a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21} a_{32}  - a_{13}a_{22}a_{31} - a_{12}a_{21} a_{33} - a_{11}a_{23}a_{32} 
+$$
+
+This is the sum of products on the foward diagonal minus the sum of products on the backward diagonal. 
 
 ### Cofactor Expansion
 
-The $(i, j)\text{-cofactor}$ of $A$ is a number $C_{ij}$ in $\mathbb{R}$ given by 
+Cofactor expansion is a more practical way to compute determinant of bigger matrices. The $(i, j)\text{-cofactor}$ of $A$ is a number $C_{ij}$ in $\mathbb{R}$ given by 
 
 $$
 C_{ij} = (-1)^{i + j} \det A_{ij}
@@ -287,7 +309,7 @@ A list of arithmetic properties of determinants, A is an $n\times n$ matrix:
 3. $\det(AB) = \det(A)\det(B)$ (although $AB \not = BA$ in general), it follows that  $\det(A^n) = \det(A)^n$  
 4. $\det(A^{-1}) = 1 / \det(A)$, if $A$ is invertible
 5. determinant is equal to the product of eigenvalues(counting multiplicity) $\det(A)  = \prod_{i=1}^n{\lambda_i}$  
-6. If the $i$-th row (column) in A is a sum of the $i$-th row (column) of a matrix $B$ and the $i$-th row (column) of a matrix $C$ and all other rows in $B$ and $C$ are equal to the corresponding rows in $A$ (that is $B$ and $C$ differ from $A$ by one row only), then $\det(A)=\det(B)+\det(C)$. This can be proven by cofactor expansion across the $i$th row. The same applies to columns. 
+6. If the $i$-th row (column) in A is a sum of the $i$-th row (column) of a matrix $B$ and the $i$-th row (column) of a matrix $C$ and all other rows in $B$ and $C$ are equal to the corresponding rows in $A$ (that is, $B$ and $C$ differ in one row only), then $\det(A)=\det(B)+\det(C)$. This can be proven by cofactor expansion across the $i$th row. The same applies to columns. 
 
 Row operations on $A$ has the following effect on $\det A$
 

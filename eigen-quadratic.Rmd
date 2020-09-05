@@ -282,7 +282,7 @@ are not similar even though they have the same eigenvalues.
 
 ### Jordan Matrix
 
-For non-diagonalizable square matrix $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
+For non-diagonalizable square matrix $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as near to a diagonal matrix as possible.  
 
 
 ```{definition}
@@ -303,7 +303,7 @@ $$
 & & & & & & & & \lambda_n
 \end{bmatrix}
 $$
-An illustration from [wikipedia](https://en.wikipedia.org/wiki/Jordan_normal_form), the circled area is the Jordan blcok. 
+An illustration from [wikipedia](https://en.wikipedia.org/wiki/Jordan_normal_form), the circled area is the Jordan block. 
 ```{r, out.width = "40%", echo = FALSE}
 knitr::include_graphics("images/jordan-blocks.png")
 ```
@@ -653,10 +653,20 @@ From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are
 
 - Let $\lambda_i, \; i = 1, ..., n$ be $A$'s eigenvalues, $\lambda_i > 0$  
 
-- All leading determinants of $A > 0$  
-
 - All pivots are $> 0$  
 
+- All leading determinants of $A > 0$  
+
+For the last criterion, leading determinant is the determinant of the top-left $k \times k$ lock of $A$ for all $1 \le k \le n$. There is formal theorem on this 
+
+```{theorem sylvester-criterion, name =  "Sylvester's Criterion"}
+A symmetric matrix $A$ is positive definite if and only if the determinant of the top-left $k \times k$ block of $A$ is strictly positive for all $1 \le k \le n$
+```
+
+Sylvester's criterion is more complicated for positive semidefinite matrices, we have to check more matrices rather than just the top-left one. 
+
+
+<br>
 
 Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in general. 
 
