@@ -2,14 +2,14 @@
 # (PART) Linear Algebra {-}
 
 
-# Basic matrix algebra
+# Basic Matrix Algebra
 
 
 
 
 
 
-## Matrix multiplication
+## Matrix Multiplication
 
 A common way of looking at matrix-vector multiplication $A\bar{x}$ is to think of as a linear combination of column vectors in $A$:  
 
@@ -132,7 +132,7 @@ Since row operation are invertible, elementary matrices are invertible. This giv
 
 
 
-## LU factorization 
+## LU Factorization 
 
 https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysis/
 
@@ -230,10 +230,32 @@ It's also common to write this decomposition as $PA = LU$.
 
 ## Determinants
 
+In the $2 \times 2$ case, the determinant of $A$ is simply 
 
-### Cofactor expansion
+$$
+\begin{vmatrix}
+a & b \\
+c & d \\
+\end{vmatrix}
+= ad - bc
+$$
 
-The $(i, j)\text{-cofactor}$ of $A$ is a number $C_{ij}$ in $\mathbb{R}$ given by 
+When $A$ is $3 \times 3$,  we still get a not-too-messy explicit formula to compute its determinant 
+
+$$
+\begin{vmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix}
+= a_{11}a_{22} a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21} a_{32}  - a_{13}a_{22}a_{31} - a_{12}a_{21} a_{33} - a_{11}a_{23}a_{32} 
+$$
+
+This is the sum of products on the foward diagonal minus the sum of products on the backward diagonal. 
+
+### Cofactor Expansion
+
+Cofactor expansion is a more practical way to compute determinant of bigger matrices. The $(i, j)\text{-cofactor}$ of $A$ is a number $C_{ij}$ in $\mathbb{R}$ given by 
 
 $$
 C_{ij} = (-1)^{i + j} \det A_{ij}
@@ -255,7 +277,7 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
-### Geometric interpretation of determinant 
+### Geometric Interpretation of Determinant 
 
 Given matrix $A_{n \times n}$  
 
@@ -270,7 +292,7 @@ $$
 where $a_1, ..., a_n$ are row vectors of A. Then $|\det A|$ is the volume of parallelotope constrained by $a_1, ..., a_n$. When $A$ is $2\times2$, $|\det A|$ is simply the area of the parallelogram defined by two side $a_1, a_2$
 
 
-### Properties of determinant 
+### Properties of Determinant 
 
 A list of arithmetic properties of determinants, A is an $n\times n$ matrix: 
 
@@ -279,7 +301,7 @@ A list of arithmetic properties of determinants, A is an $n\times n$ matrix:
 3. $\det(AB) = \det(A)\det(B)$ (although $AB \not = BA$ in general), it follows that  $\det(A^n) = \det(A)^n$  
 4. $\det(A^{-1}) = 1 / \det(A)$, if $A$ is invertible
 5. determinant is equal to the product of eigenvalues(counting multiplicity) $\det(A)  = \prod_{i=1}^n{\lambda_i}$  
-6. If the $i$-th row (column) in A is a sum of the $i$-th row (column) of a matrix $B$ and the $i$-th row (column) of a matrix $C$ and all other rows in $B$ and $C$ are equal to the corresponding rows in $A$ (that is $B$ and $C$ differ from $A$ by one row only), then $\det(A)=\det(B)+\det(C)$. This can be proven by cofactor expansion across the $i$th row. The same applies to columns. 
+6. If the $i$-th row (column) in A is a sum of the $i$-th row (column) of a matrix $B$ and the $i$-th row (column) of a matrix $C$ and all other rows in $B$ and $C$ are equal to the corresponding rows in $A$ (that is, $B$ and $C$ differ in one row only), then $\det(A)=\det(B)+\det(C)$. This can be proven by cofactor expansion across the $i$th row. The same applies to columns. 
 
 Row operations on $A$ has the following effect on $\det A$
 
@@ -292,7 +314,7 @@ Row operations on $A$ has the following effect on $\det A$
 The first two effects can be easily understood in connection with geometric meaning of determinant. As for the third one, let us represent A with row vectors
 
 $$
-A = 
+|A| = 
 \begin{vmatrix}
 a_1^T \\ 
 \vdots \\
@@ -306,7 +328,7 @@ $$
 Then $B$, after performing replacing (add a multiple of the $j$th row to the $i$th row) on $A$, becomes  
 
 $$
-B = 
+|B| = 
 \begin{vmatrix}
 a_1^T \\ 
 \vdots \\
@@ -346,7 +368,7 @@ The second matrix on the right side has determinant $0$, and $\det A$ stays the 
 Note that all row operations don't change whether or not a determinant is 0, only change it by a non-zero factor or change its sign.  
 
 
-### Cramer's rule
+### Cramer's Rule
 
 Given an $n \times n$ matrix $A$ and $\bar{b}$ in $\mathbb{\mathbb{R^n}}$, denote $A_i(\bar{b})$ as the matrix derived by $A$ by **replacing** column $i$ by vector $\bar{b}$:  
 
@@ -368,8 +390,8 @@ The *trace* of square matrix $A$ is the sum of its diagonal entries $\sum_{i = 1
 
 The trace has the following properties:  
 
-1. $\text{tr}(A + B) = \text{tr}A + \text{tr}B$  
-2. $\text{tr}(kA) = k\text{tr}A$, $k$ is a scalar     
+1. $\text{tr}(A + B) = \text{tr}(A) + \text{tr}(B)$  
+2. $\text{tr}(kA) = k\,\text{tr}(A)$, $k$ is a scalar     
 3. $\text{tr}(A^T) = \text{tr}(A)$  
 4. For $A$, $B$ such that $AB$ is square, $\text{tr}(AB) = \text{tr}(BA)$  
 5. Trace of product of multiple matrices is invariant to *cyclic permutations*, $\text{tr}(ABC) = \text{tr}(BCA) = \text{tr}(CAB)$. Note that the reordering cannot be done arbitrarily, fro example $\text{tr}(ABC) \not= \text{tr}(ACG)$ in general. 
@@ -377,7 +399,7 @@ The trace has the following properties:
 7. $\text{tr}(\bar{a}\bar{a}^T) = \bar{a}^T\bar{a}$
 
 
-## Matrix inversion
+## Matrix Inversion
 
 \BeginKnitrBlock{rmdnote}<div class="rmdnote">Note that the inverse of a matrix is only defined for square matrces, so is determinants in Section \@ref(determinants). 
 
@@ -400,7 +422,7 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
-In \@ref(thm:find-inverse), we know an algorithm of finding inverse matrices by row reductions on the augmented matrix $[A \;\; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
+In \@ref(thm:find-inverse), we derive an algorithm of finding inverse matrices by row reductions on the augmented matrix $[A \; | \; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
 
 The $j$th column of $A^{-1}$ is a vector $\bar{x}$ that satisfies:  
 
@@ -441,10 +463,10 @@ $$</div>\EndKnitrBlock{theorem}
 
 <hr> 
 
-Interestingly, theorem \@ref(thm:cayley-hamilton) in later chapters shows that for intertible matrix $A$, its inverse $A^{-1}$ can be represented as a polynomial of $A$.
+Interestingly, theorem \@ref(thm:cayley-hamilton) in later chapters shows that for invertible matrix $A$, its inverse $A^{-1}$ can be represented as a polynomial of $A$.
 
 
-### The matrix inversion lemma
+### The Matrix Inversion Lemma
 
 
 
@@ -517,7 +539,7 @@ $$</div>\EndKnitrBlock{proposition}
 
 
 
-## Matrix multiplication as linear transformation
+## Matrix Multiplication as Linear Transformation
 
 Another way to look at $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$, besides linear combination of column vectors, is to think of the matrix $A$ as an force that “acts” on a vector $x$ in $\mathbb{R^n}$ by multiplication to produce a new vector called $b$ in $\mathbb{\mathbb{R^m}}$.  
 
@@ -591,7 +613,7 @@ Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the eq
 
 
 
-### Matrix multiplication as geometric operators 
+### Matrix Multiplication as Geometric Operators 
 
 
 $$

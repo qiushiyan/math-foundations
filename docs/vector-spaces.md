@@ -136,7 +136,7 @@ An **inner product** on a real vector space $X$ is a function $\langle \cdot, \c
 2. $\langle \bar{x}, \bar{y} \rangle = \langle \bar{y}, \bar{x} \rangle$
 3. $\langle \bar{x} + \bar{y}, \bar{z}\rangle = \langle \bar{x}, \bar{z}\rangle + \langle \bar{y}, \bar{z}\rangle$ and $\langle \lambda \bar{x}, \bar{y}\rangle = \lambda \langle \bar{x}, \bar{y} \rangle$
 
-A vector sapce equipped with such inner product is called a **inner product space**. Note that **all inner product spaces are normed spaces**, because a inner product induce a norm on a vector space: 
+A vector space equipped with such inner product is called a **inner product space**. Note that **all inner product spaces are normed spaces**, because a inner product induce a norm on a vector space: 
 
 $$
 \langle \bar{x}, \bar{x} \rangle = \|\bar{x}\|^2  
@@ -156,15 +156,15 @@ Sometimes it suffice only to generalize the dot product, with the definition of 
 
 
 \BeginKnitrBlock{definition}\iffalse{-91-82-101-115-116-114-105-99-116-101-100-32-100-101-102-105-110-105-116-105-111-110-32-111-102-32-105-110-110-101-114-32-112-114-111-100-117-99-116-93-}\fi{}<div class="definition"><span class="definition" id="def:restricted-inner-product"><strong>(\#def:restricted-inner-product)  \iffalse (Restricted definition of inner product) \fi{} </strong></span>
-The generalized dot product $\langle \bar{x}, \bar{y}\rangle$ in $\mathbb{R}^n$ between two vectors, is the dot product between $A\bar{x}$ and $A\bar{y}$, for some $n \times n$ non-singular matrix $A$. The inner product $\langle \bar{x}, \bar{y}\rangle$ can also be expressed using the Gram matrix $S = A^TA$
+The generalized dot product $\langle \bar{x}, \bar{y}\rangle$ in $\mathbb{R}^n$ between two vectors, is the dot product between $A\bar{x}$ and $A\bar{y}$, for some $n \times n$ **positive definite matrix $S$**. The inner product $\langle \bar{x}, \bar{y}\rangle$ can also be expressed using the Gram matrix $S = A^TA$</div>\EndKnitrBlock{definition}
 
 $$
-\langle \bar{x}, \bar{y}\rangle = (A\bar{x})^T(A\bar{y}) = \bar{x}A^TA\bar{y} = \bar{x}^TS\bar{y}
-$$</div>\EndKnitrBlock{definition}
+\langle \bar{x}, \bar{y}\rangle =\bar{x}^TS\bar{y}  = \bar{x}(A^TA)\bar{y} 
+$$
 
-It's easy to see that when $S$ is the identity matrix, the inner product is the dot product.  
+It's easy to see that when $S$ is the identity matrix, the inner product is the dot product. $S$ being positive semidefinite ensures $\bar{x}^TS\bar{y}$ satisfies axioms of inner product.     
 
-This definition of inner product also induces consines and distances with respect to transformation $A$ 
+This definition of inner product also induces angles and distances with respect to transformation $A$ 
 
 
 $$

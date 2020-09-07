@@ -140,8 +140,12 @@ $$
 \bar{x}A = \lambda\bar{x}
 $$
 
-## Diagnolization and Similar Matrices 
 
+
+
+
+
+## Diagnolization and Similar Matrices 
 
 \BeginKnitrBlock{definition}\iffalse{-91-68-105-97-103-111-110-97-108-105-122-97-116-105-111-110-32-116-104-111-101-114-101-109-93-}\fi{}<div class="definition"><span class="definition" id="def:diagonalization"><strong>(\#def:diagonalization)  \iffalse (Diagonalization thoerem) \fi{} </strong></span>An $n \times n$ matrix $A$ is diagnolizable **if and only if** A has $n$ independent linearly independent eigenvectors. 
 
@@ -268,7 +272,7 @@ are not similar even though they have the same eigenvalues.
 
 ### Jordan Matrix
 
-For non-diagonalizable square matrix $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as nearest to a diagonal matrix as possible.  
+For non-diagonalizable square matrix $A_{n \times n}$, the goal is to with similar transformation $P^{-1}AP$ construct a matrix that is as near to a diagonal matrix as possible.  
 
 
 \BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4) </strong></span>The $n \times n$ matrix $J_{\lambda, n}$ with $\lambda$s on the diagonal, $1$s on the superdiagonal and $0$s elsewhere is called a Jordan matrix. A Jordan matrix in Jordan normal form is a block matrix that has Jordan blocks down its block diagonal and is zero elsewhere</div>\EndKnitrBlock{definition}
@@ -287,7 +291,7 @@ $$
 & & & & & & & & \lambda_n
 \end{bmatrix}
 $$
-An illustration from [wikipedia](https://en.wikipedia.org/wiki/Jordan_normal_form), the circled area is the Jordan blcok. 
+An illustration from [wikipedia](https://en.wikipedia.org/wiki/Jordan_normal_form), the circled area is the Jordan block. 
 <img src="images/jordan-blocks.png" width="40%" style="display: block; margin: auto;" />
 
 Though the purpose of this section was not the computation details of Jordan matrices, it helps to give a concrete example. Consider $A$
@@ -615,10 +619,18 @@ From theorem \@ref(thm:principal-axes), we know that the sign of eigenvalues are
 
 - Let $\lambda_i, \; i = 1, ..., n$ be $A$'s eigenvalues, $\lambda_i > 0$  
 
-- All leading determinants of $A > 0$  
-
 - All pivots are $> 0$  
 
+- All leading determinants of $A > 0$  
+
+For the last criterion, leading determinant is the determinant of the top-left $k \times k$ lock of $A$ for all $1 \le k \le n$. There is formal theorem on this 
+
+\BeginKnitrBlock{theorem}\iffalse{-91-83-121-108-118-101-115-116-101-114-39-115-32-67-114-105-116-101-114-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:sylvester-criterion"><strong>(\#thm:sylvester-criterion)  \iffalse (Sylvester's Criterion) \fi{} </strong></span>A symmetric matrix $A$ is positive definite if and only if the determinant of the top-left $k \times k$ block of $A$ is strictly positive for all $1 \le k \le n$</div>\EndKnitrBlock{theorem}
+
+Sylvester's criterion is more complicated for positive semidefinite matrices, we have to check more matrices rather than just the top-left one. 
+
+
+<br>
 
 Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in general. 
 
@@ -666,12 +678,7 @@ $$
 $$
 It turns out that the result is the square of the 2-norm of $A\bar{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\bar{x} \not\subseteq \mathcal{N}(A)$
 
-Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $A^T\bar{x}$.   
-
-<hr>
-
-
-
+Similarly, the quadratic form for $AA^T$ can be refactored in to the standard norm of $A^T\bar{x}$.   
 
 <hr>
 
@@ -682,9 +689,95 @@ Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $
 From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are positive semidefinite, and that they have the same nonzero eigenvalues from corollary \@ref(cor:same-nonzero). According to Section \@ref(additional-properties-of-eigenvalues-and-eigenvectors), eigenvalues for $P(A)$ are $P(\lambda)$ for polynomial function $P$. Therefore, $A^TA +\lambda I$ and $AA^T + \lambda I$ share a positive set of $n$ eigenvalues $\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda$, so they are PD and invertible.  
 
 
+### Gershgorin Discs and Diagonal Dominance
+
+This section introduces one more criterion for positive definite matrices. We first present the Gershgorin Disc Theorem, which is more convenient to be expressed in terms of complex matrices.
+
+
+\BeginKnitrBlock{theorem}\iffalse{-91-71-101-114-115-104-103-111-114-105-110-32-68-105-115-99-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-15"><strong>(\#thm:unnamed-chunk-15)  \iffalse (Gershgorin Disc Theorem) \fi{} </strong></span>Let $A \in \mathcal{M}_n(\mathbb{C})$ and define the following objects 
+
+- $r_i = \sum_{j \not = i}|a_{ij}|$ (the sum of the off-diagonal entries of the $i$-th row of $A$)  
+
+- $D(a_{ii}, r_i)$ is the closed disc in the complex plane centered at $a_{ii}$ with radius $r_i$. 
+
+Then every eigenvalue of $A$ is in at least one of the $D(a_{ii}, r_i)$ (called *Gershigorin discs*)
+</div>\EndKnitrBlock{theorem}
+
+
+As an illustration taken from Wikipedia, the following figure presents 4 Gershgorin discs of the matrix 
+
+$$
+\begin{bmatrix}
+10 & -1 & 0 & 1 \\
+0.2 & 8 & 0.2 & 0.2 \\
+1 & 1 & 2 & 1 \\
+-1 & -1 & -1 & -11
+\end{bmatrix}
+$$
+
+In this case, all elements and eigenvalues are real. Therefore, Gershgorin discs are circles centered at the real number line. 
+
+<img src="images/gershgorin-disc.png" width="640" style="display: block; margin: auto;" />
+
+
+
+\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
+
+
+Let $\lambda$ be an eigenvalue of $A$ with associated eigenvector $\bar{v}$. Suppose the largest entry of $\bar{v}$ is
+$v_i$, we scale $\bar{v}$ such that $v_i = 1$ and all other elements less than $1$. Note $\lambda$ and $i$ are arbitrary, for example, the associated eigenvector of the 3rd eigenvalue may have the largest entry at $v_5$. 
+
+By the definition of  matrix multiplication, we know $[A \bar{v}]_i = \sum_{j = 1}^{n}a_{ij}v_j = a_{ij}v_i + \sum_{j \not = i}a_{ij}v_j$. Also $\lambda$ is an eigenvalue and $v_i = 1$, thus $[A\bar{v}]_i = \lambda v_ia$. Then
+
+$$
+a_{ij}\underbrace{v_i}_{1} + \sum_{j \not = i}a_{ij}v_j =  \lambda\underbrace{v_i}_{1}
+$$
+
+$$
+\lambda - a_{ii} = \sum_{j \not = i}a_{ij}v_j
+$$
+
+Take absolute values on both sides and use the triangle equality
+
+$$
+|\lambda - a_{ii}| = |\sum_{j \not = i}a_{ij}v_j| \le \sum_{j \not = i} |a_{ij}||v_j| \qquad (v_j \le 1) 
+$$
+
+$$
+|\lambda - a_{ii}| \le  \sum_{j \not = i} |a_{ij}| = r_i
+$$
+In other words, for any eigenvalue $\lambda$, the distance between $\lambda$ and $a_{ii}$ is less than $r_i$, where $i$ is the index at which $\lambda$'s associated eigenvector take its largest value. 
+
+For diagonal entries, all $r_i = 0$, thus their eigenvalues are exactly diagonal entries. 
+
+In cases where the off diagonal entries of $A$ are very small, then $A$'s eigenvalue will be very close to diagonal entries. This leads to the notion of diagonal dominance. 
+
+\BeginKnitrBlock{theorem}\iffalse{-91-68-105-97-103-111-110-97-108-32-100-111-109-105-110-97-110-116-32-109-97-116-114-105-120-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:diagonal-dominance"><strong>(\#thm:diagonal-dominance)  \iffalse (Diagonal dominant matrix) \fi{} </strong></span>
+Suppose that $A \in \mathcal{M}_n{(\mathbb{C})}$, then $A$ is called 
+
+1. **diagonally dominant** if $|a_{ii}| \ge \sum_{j \not = i}|a_{ij}|$ for all $1 \le i \le n$ and 
+
+2. **strictly diagonally dominant** if $|a_{ii}| > \sum_{j \not = i}|a_{ij}|$ for all $1 \le i \le n$
+</div>\EndKnitrBlock{theorem}
+
+
+A strictly diagonally dominant matrix is non-singular, because all of its Gershgorin discs do not touch zero. This result is known the *Levy-Desplanques theorem*
+
+
+\BeginKnitrBlock{corollary}\iffalse{-91-110-111-110-45-110-101-103-97-116-105-118-101-32-100-105-97-103-111-110-97-108-32-101-110-116-114-105-101-115-32-97-110-100-32-100-105-97-103-111-110-97-108-32-100-111-109-105-110-97-110-99-101-32-105-109-112-108-105-101-115-32-80-83-68-93-}\fi{}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-18"><strong>(\#cor:unnamed-chunk-18)  \iffalse (non-negative diagonal entries and diagonal dominance implies PSD) \fi{} </strong></span>
+
+Suppose that $A \in \mathcal{M}_n{(\mathbb{C})}$ has **non-negative** diagonal entries
+
+- If $A$ is diagonally dominant then it is positive semidefinite  
+
+- If $A$ is strictly dominant then it is positive definite</div>\EndKnitrBlock{corollary}
+
+Note that this is a one-way theorem, unlike the criterion using eigenvalues, pivots and leading matrices. A PD matrix may not be diagonally dominant.  
+
+
 ## Cholesky Factorization  
 
-\BeginKnitrBlock{lemma}<div class="lemma"><span class="lemma" id="lem:unnamed-chunk-15"><strong>(\#lem:unnamed-chunk-15) </strong></span>A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. </div>\EndKnitrBlock{lemma}
+\BeginKnitrBlock{lemma}<div class="lemma"><span class="lemma" id="lem:unnamed-chunk-19"><strong>(\#lem:unnamed-chunk-19) </strong></span>A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. </div>\EndKnitrBlock{lemma}
 
 <br>
 
@@ -812,7 +905,7 @@ The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n
 
 If we add more constraints, for example, that $\bar{x}$ should be orthogonal to $\bar{q}_1$, then $\bar{x}^TA\bar{x}$ has maximum $\lambda_2$ attained at $\bar{x} = \lambda_2$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-16"><strong>(\#thm:unnamed-chunk-16) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\bar{x}^T A \bar{x}$ subject to constraints 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-20"><strong>(\#thm:unnamed-chunk-20) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\bar{x}^T A \bar{x}$ subject to constraints 
 
 $$
 \bar{x}^T\bar{x} =  1, \;\; \bar{x}^T\bar{q}_1 = 0, \;\; \dots \;\;, \bar{x}^T\bar{q}_{k-1} = 0

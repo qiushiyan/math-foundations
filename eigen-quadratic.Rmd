@@ -148,8 +148,12 @@ $$
 \bar{x}A = \lambda\bar{x}
 $$
 
-## Diagnolization and Similar Matrices 
 
+
+
+
+
+## Diagnolization and Similar Matrices 
 
 ```{definition diagonalization, name = "Diagonalization thoerem"}
 An $n \times n$ matrix $A$ is diagnolizable **if and only if** A has $n$ independent linearly independent eigenvectors. 
@@ -720,12 +724,7 @@ $$
 $$
 It turns out that the result is the square of the 2-norm of $A\bar{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\bar{x} \not\subseteq \mathcal{N}(A)$
 
-Similarly, the quadratic form for $AA^T$ can be refactored in to the 2-norm of $A^T\bar{x}$.   
-
-<hr>
-
-
-
+Similarly, the quadratic form for $AA^T$ can be refactored in to the standard norm of $A^T\bar{x}$.   
 
 <hr>
 
@@ -736,6 +735,102 @@ $A^TA +\lambda I$ and $AA^T + \lambda I$ are always positive definite and invert
 <div class = "proof"> Proof </div>
 
 From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are positive semidefinite, and that they have the same nonzero eigenvalues from corollary \@ref(cor:same-nonzero). According to Section \@ref(additional-properties-of-eigenvalues-and-eigenvectors), eigenvalues for $P(A)$ are $P(\lambda)$ for polynomial function $P$. Therefore, $A^TA +\lambda I$ and $AA^T + \lambda I$ share a positive set of $n$ eigenvalues $\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda$, so they are PD and invertible.  
+
+
+### Gershgorin Discs and Diagonal Dominance
+
+This section introduces one more criterion for positive definite matrices. We first present the Gershgorin Disc Theorem, which is more convenient to be expressed in terms of complex matrices.
+
+
+```{theorem, name = "Gershgorin Disc Theorem"}
+Let $A \in \mathcal{M}_n(\mathbb{C})$ and define the following objects 
+
+- $r_i = \sum_{j \not = i}|a_{ij}|$ (the sum of the off-diagonal entries of the $i$-th row of $A$)  
+
+- $D(a_{ii}, r_i)$ is the closed disc in the complex plane centered at $a_{ii}$ with radius $r_i$. 
+
+Then every eigenvalue of $A$ is in at least one of the $D(a_{ii}, r_i)$ (called *Gershigorin discs*)
+
+```
+
+
+As an illustration taken from Wikipedia, the following figure presents 4 Gershgorin discs of the matrix 
+
+$$
+\begin{bmatrix}
+10 & -1 & 0 & 1 \\
+0.2 & 8 & 0.2 & 0.2 \\
+1 & 1 & 2 & 1 \\
+-1 & -1 & -1 & -11
+\end{bmatrix}
+$$
+
+In this case, all elements and eigenvalues are real. Therefore, Gershgorin discs are circles centered at the real number line. 
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/gershgorin-disc.png")
+```
+
+
+
+```{block2, type = "proof"}
+Proof
+```
+
+
+Let $\lambda$ be an eigenvalue of $A$ with associated eigenvector $\bar{v}$. Suppose the largest entry of $\bar{v}$ is
+$v_i$, we scale $\bar{v}$ such that $v_i = 1$ and all other elements less than $1$. Note $\lambda$ and $i$ are arbitrary, for example, the associated eigenvector of the 3rd eigenvalue may have the largest entry at $v_5$. 
+
+By the definition of  matrix multiplication, we know $[A \bar{v}]_i = \sum_{j = 1}^{n}a_{ij}v_j = a_{ij}v_i + \sum_{j \not = i}a_{ij}v_j$. Also $\lambda$ is an eigenvalue and $v_i = 1$, thus $[A\bar{v}]_i = \lambda v_ia$. Then
+
+$$
+a_{ij}\underbrace{v_i}_{1} + \sum_{j \not = i}a_{ij}v_j =  \lambda\underbrace{v_i}_{1}
+$$
+
+$$
+\lambda - a_{ii} = \sum_{j \not = i}a_{ij}v_j
+$$
+
+Take absolute values on both sides and use the triangle equality
+
+$$
+|\lambda - a_{ii}| = |\sum_{j \not = i}a_{ij}v_j| \le \sum_{j \not = i} |a_{ij}||v_j| \qquad (v_j \le 1) 
+$$
+
+$$
+|\lambda - a_{ii}| \le  \sum_{j \not = i} |a_{ij}| = r_i
+$$
+In other words, for any eigenvalue $\lambda$, the distance between $\lambda$ and $a_{ii}$ is less than $r_i$, where $i$ is the index at which $\lambda$'s associated eigenvector take its largest value. 
+
+For diagonal entries, all $r_i = 0$, thus their eigenvalues are exactly diagonal entries. 
+
+In cases where the off diagonal entries of $A$ are very small, then $A$'s eigenvalue will be very close to diagonal entries. This leads to the notion of diagonal dominance. 
+
+```{theorem diagonal-dominance, name = "Diagonal dominant matrix"}
+
+Suppose that $A \in \mathcal{M}_n{(\mathbb{C})}$, then $A$ is called 
+
+1. **diagonally dominant** if $|a_{ii}| \ge \sum_{j \not = i}|a_{ij}|$ for all $1 \le i \le n$ and 
+
+2. **strictly diagonally dominant** if $|a_{ii}| > \sum_{j \not = i}|a_{ij}|$ for all $1 \le i \le n$
+
+```
+
+
+A strictly diagonally dominant matrix is non-singular, because all of its Gershgorin discs do not touch zero. This result is known the *Levy-Desplanques theorem*
+
+
+```{corollary, name = "non-negative diagonal entries and diagonal dominance implies PSD"}
+
+
+Suppose that $A \in \mathcal{M}_n{(\mathbb{C})}$ has **non-negative** diagonal entries
+
+- If $A$ is diagonally dominant then it is positive semidefinite  
+
+- If $A$ is strictly dominant then it is positive definite
+```
+
+Note that this is a one-way theorem, unlike the criterion using eigenvalues, pivots and leading matrices. A PD matrix may not be diagonally dominant.  
 
 
 ## Cholesky Factorization  
@@ -752,9 +847,9 @@ Note that we could also have stated this lemma using $BB^T$ instead of $B^TB$, a
 
 This lemma is inspiring in that for every PD matrix $A \in \mathbb{R}^n$, there exists factorization $A = BB^T$. 
 
-In fact, this factorization is not unique. We can use an orthogonal matrix $P$ to create an additional orthogonal factorization $A = BB^T = B(PP^T)B^T = (BP)(BP)^T$. 
+In fact, this factorization is not unique. We can use an orthogonal matrix $Q$ to create an additional orthogonal factorization $A = BB^T = B(QQ^T)B^T = (BQ)(BQ)^T$. And let $BQ$ be our new $B$, we get another factorization.  
 
-Since the initial $B = P\Lambda^{1/2}$ is full rank, with an appropriate choice of $P$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. 
+Since the initial $B = P\Lambda^{1/2}$ is full rank, with an appropriate choice of $Q$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. This is essentailly a coordinate transformation in Section \@ref(change-of-basis)
 
 The uniqueness of this factorization with lower triangular matrix $L$ can be proved with induction. The decomposition of PD matrices into the product of an lower triangular matrix and its transpose is called the **Cholesky factorization**, in this factorization
 
