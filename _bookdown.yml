@@ -29,6 +29,8 @@ rmd_files: [
   "multivariate-dist.Rmd",
   "markov-chain.Rmd",
   
+  "learning-problem.Rmd",
+  
   "optimization-basics.Rmd",
   "gradient-descent.Rmd",
   

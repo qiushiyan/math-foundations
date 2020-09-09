@@ -14,7 +14,7 @@ github-repo: enixam/math-foundations
 
 # Preface {-}  
 
-This document aims to cover various mathematical topics relevant to machine learning applications, including linear algebra, multivariate calculus, probability theory, and optimization (statistics should be in another stand-alone document). Since it currently serves mainly as review on those subjects, some basic knowledge (especially in multivariate calculus) that are already familiar to me are skipped. Other than that I try to put things in a logical, consistent order.  
+This document aims to cover various mathematical topics relevant to machine learning applications, including linear algebra, multivariate calculus, probability theory, learning theory, and optimization (statistics should be in another stand-alone document). Since it currently serves mainly as review on those subjects, some basic knowledge (especially in multivariate calculus) that are already familiar to me are skipped. Other than that I try to put things in a logical, consistent order.  
 
 
 
