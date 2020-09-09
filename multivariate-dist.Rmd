@@ -1,6 +1,8 @@
 # Multivariate Distributions 
 
 
+
+
 ## Multivariate Normal Distribution 
 
 
@@ -21,8 +23,16 @@ $$
 ```
 
 
+### Chi-square Distribution 
+
+```{corollary}
+If $\boldsymbol{Y} \sim N(\boldsymbol{0}, I)$, and $A$ is an idempotent matrix. Then $\boldsymbol{Y}^TA\boldsymbol{Y}$ follows $\chi^2_m$, where $m$ is the number of $A$'s eigenvalues equall to $1$. 
+```
 
 
+```{block2, type = "proof"}
+Proof
+```
 
 
 ## Dirichlet Distributon 
