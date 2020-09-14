@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 13 Univariate Distributions | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 13 Univariate Distributions | Mathematical Notes for Machine Learning" />
+  <title>Chapter 16 The Learning Problem | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 16 The Learning Problem | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 13 Univariate Distributions | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 16 The Learning Problem | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 13 Univariate Distributions | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 16 The Learning Problem | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="random-variables-and-moments.html"/>
-<link rel="next" href="multivariate-distributions.html"/>
+<link rel="prev" href="markov-chain.html"/>
+<link rel="next" href="basics-of-optimization.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -266,103 +266,20 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="univariate-distributions" class="section level1">
-<h1><span class="header-section-number">Chapter 13</span> Univariate Distributions</h1>
-<div id="uniform-distribution" class="section level2">
-<h2><span class="header-section-number">13.1</span> Uniform Distribution</h2>
-<p><span class="math display">\[
-f_X(x) = 
-\begin{cases}
-\frac{1}{a - b} &amp; a \le x \le b \\
-0  &amp; \text{otherwise}
-\end{cases}
-\]</span></p>
-</div>
-<div id="normal-distribution" class="section level2">
-<h2><span class="header-section-number">13.2</span> Normal Distribution</h2>
-<div id="log-normal-distribution" class="section level3">
-<h3><span class="header-section-number">13.2.1</span> Log Normal Distribution</h3>
-</div>
-</div>
-<div id="binomial-distribution-and-beta-distribution" class="section level2">
-<h2><span class="header-section-number">13.3</span> Binomial Distribution and Beta Distribution</h2>
-</div>
-<div id="poisson-distribution" class="section level2">
-<h2><span class="header-section-number">13.4</span> Poisson Distribution</h2>
-<p><span class="math display">\[
-P(X = x) = \frac{\lambda ^x e^{-\lambda}}{x!}
-\]</span></p>
-<div id="poisson-process" class="section level3">
-<h3><span class="header-section-number">13.4.1</span> Poisson Process</h3>
-</div>
-</div>
-<div id="exponential-distribution-and-gamma-distribution" class="section level2">
-<h2><span class="header-section-number">13.5</span> Exponential Distribution and Gamma Distribution</h2>
-<p>The exponential distribution describes the length of time between occurrences, and can be derived directly from poisson distribution. Given a poisson random variable <span class="math inline">\(X \sim \text{Poisson}(\lambda)\)</span>, we compute the probability of the time <span class="math inline">\(T\)</span> to the first occurence is greater than <span class="math inline">\(t\)</span></p>
-<p><span class="math display">\[
-P(T &gt; t) = P(X = 0; \lambda t) = e^{-\lambda t}
-\]</span>
-Note that poisson distribution of <span class="math inline">\(X\)</span> is paramterized by $$ this time. This is because in a poisson process, if events occur on a average at the rate of <span class="math inline">\(\lambda\)</span> per unit of time, then there will be on average <span class="math inline">\(\lambda t\)</span> occurrences per <span class="math inline">\(t\)</span> units of time.</p>
-<p>Conversely, the probability that an event does occur during <span class="math inline">\(t\)</span> units of time is given by</p>
-<p><span class="math display">\[
-P(T \le t) = 1 - e^{-\lambda t}
-\]</span>
-The pdf of <span class="math inline">\(T\)</span> is the derivative of <span class="math inline">\(P(T \le t)\)</span></p>
-<p><span class="math display">\[
-f(T) = \lambda e^{-\lambda t}
-\]</span>
-After notation changes <span class="math inline">\(T \rightarrow X\)</span>, we conclude that a nonnegative random variable <span class="math inline">\(X\)</span> has the exponential distribution with parameter <span class="math inline">\(\lambda &gt; 0\)</span> if it has pdf</p>
-<p><span class="math display">\[
-f(X) = -\lambda e^{\lambda x}
-\]</span>
-<span class="math inline">\(X\)</span> is denoted</p>
-<p><span class="math display">\[
-X \sim \text{Exp}(\lambda)
-\]</span></p>
-<span class="math display">\[
-E(X) = \frac{1}{\lambda} \\
-\text{Var}(X) = \frac{1}{\lambda^2}
-\]</span>
-<hr>
-<p>The gamma distribution can be parameterized in terms of a shape parameter <span class="math inline">\(\alpha\)</span> and an rate parameter <span class="math inline">\(\beta\)</span>.</p>
-<p>When <span class="math inline">\(\alpha\)</span> is a positive integer, the Gamma distribution describes the the sum of <span class="math inline">\(\alpha\)</span> independent exponentially distributed random variables, each of which has a mean of <span class="math inline">\(1/\beta\)</span>.</p>
-<p>A random variable <span class="math inline">\(X\)</span> that is gamma-distributed with shape <span class="math inline">\(\alpha\)</span> and rate <span class="math inline">\(\beta\)</span> has pdf</p>
-<p><span class="math display">\[
-f(x) = \frac{\beta^\alpha x^{\alpha - 1}e^{-\beta x}}{\Gamma (\alpha)} \qquad 
-\]</span>
-More on Gamma function (denominator).<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p>
-<p><span class="math inline">\(X\)</span> is denoted</p>
-<p><span class="math display">\[
-X \sim \Gamma(\alpha, \beta) \equiv \text{Gamma}(\alpha, \beta)
-\]</span></p>
-<div id="properties" class="section level3">
-<h3><span class="header-section-number">13.5.1</span> Properties</h3>
-</div>
-<div id="inverse-gamma-distribution" class="section level3">
-<h3><span class="header-section-number">13.5.2</span> Inverse Gamma Distribution</h3>
-</div>
-</div>
-<div id="beta-distribution" class="section level2">
-<h2><span class="header-section-number">13.6</span> Beta Distribution</h2>
+<div id="the-learning-problem" class="section level1">
+<h1><span class="header-section-number">Chapter 16</span> The Learning Problem</h1>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="6">
-<li id="fn6"><p>
-The Gamma function <span class="math inline">\(\Gamma\)</span> is one commonly used extension of the factorial function to complex numbers. For positive integer <span class="math inline">\(n\)</span>, <span class="math inline">\(\Gamma(n) = (n - 1)!\)</span>.
-For complex numbers with a positive real part the gamma function is defined via a convergent improper integral
-<span class="math display">\[\Gamma(z)  = \int_{0}^{\infty}x^{z -1}e^{-x} dx\]</span><a href="univariate-distributions.html#fnref6" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="random-variables-and-moments.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="multivariate-distributions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="markov-chain.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basics-of-optimization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -393,7 +310,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/univariate-dist.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/learning-problem.Rmd",
 "text": "Edit"
 },
 "history": {

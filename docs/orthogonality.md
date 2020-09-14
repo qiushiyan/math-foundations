@@ -158,7 +158,7 @@ $$
 When $\bar{v}$ is distinct from $\bar{\hat{y}}$, $\|\bar{\hat{y}} - \bar{v}\|^2$ is non-negative, so the error term of choosing $\bar{v}$ is always larger than that of the orthogonal projection $\bar{\hat{y}}$.  
 
 
-## Idempotent and Projection Matrices
+## Projection and idempotent matrices
 
 $$
 \begin{split}
@@ -174,12 +174,15 @@ P_S\bar{v} &= (\bar{v} \cdot \bar{u}_1)\bar{u}_1 + \cdots + (\bar{v} \cdot \bar{
 \bar{u}_1^T \\
 \vdots \\
 \bar{u}_m^T
-\end{bmatrix}\bar{x} \\
-&= UU^T\bar{x}
+\end{bmatrix}\bar{v} \\
+&= UU^T\bar{v}
 \end{split}
 $$
 
-In practical problems, there are times when it is more convenient to use matrix at hand rather than producing an orthonormal basis. 
+In practical problems, it is more convenient to use matrix at hand rather than producing an orthonormal basis. 
+
+
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-5"><strong>(\#cor:unnamed-chunk-5) </strong></span>Idempotent matrices have eigenvalues either $1$ or $0$. </div>\EndKnitrBlock{corollary}
 
 
 <hr>
@@ -198,7 +201,6 @@ $$
 \begin{split}
 \nabla_{x}(\bar{x}^TA^TA\bar{x} - 2A\bar{x}\bar{b} + \bar{b}^T\bar{b}) &=\nabla_x(\bar{x}^TA^TA\bar{x}) - \nabla_x{2\bar{b}^TA\bar{x}} + \nabla_x{\bar{b}^T\bar{b}} \\
 &= 2(A^TA)\bar{x} - 2A^T\bar{b}
-
 \end{split}
 $$
 
@@ -312,7 +314,7 @@ Note that $Q$ may not necessarily be a square matrix to satisfy $Q^TQ = I$. For 
 
 ## Lesat Squares Problems 
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5) </strong></span>the **normal equation** 
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6) </strong></span>the **normal equation** 
 $$
 A^TA\bar{x} = A^T\bar{b}
 $$</div>\EndKnitrBlock{definition}

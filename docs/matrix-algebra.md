@@ -124,6 +124,7 @@ a_{21} & a_{22} & a_{23} \\
 $$
 Thus, any row operation on $A$ is equivalent to left multiply a corresponding elementary matrix $E$.  
 
+
 Since row operation are invertible, elementary matrices are invertible. This gives a general way of finding the inverse matrix of $A$.  
 
 \BeginKnitrBlock{theorem}\iffalse{-91-97-110-32-97-108-103-111-114-105-116-104-109-32-102-111-114-32-102-105-110-100-105-110-103-32-105-110-118-101-114-115-101-32-109-97-116-114-105-99-101-115-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:find-inverse"><strong>(\#thm:find-inverse)  \iffalse (an algorithm for finding inverse matrices) \fi{} </strong></span>Row reduce the augmented matrix $[A \;\; I]$, when $A$ becomes $I$, $I$ becomes $A^{-1}$. Otherwise $A^{-1}$ is not invertible. </div>\EndKnitrBlock{theorem}
@@ -139,7 +140,7 @@ https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysi
 A *factorization* of matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
 
 
-\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-2"><strong>(\#def:unnamed-chunk-2)  \iffalse (LU factorization) \fi{} </strong></span>Suppose $A$ can be reduced to an echelon form $U$ **using only row addition and rowo scaling**, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
+\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-2"><strong>(\#def:unnamed-chunk-2)  \iffalse (LU factorization) \fi{} </strong></span>Suppose $A$ can be reduced to an echelon form $U$ **using only row addition and row scaling**, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
 
 $$
 E_p \cdots E_1A = U  
@@ -156,9 +157,9 @@ $$
 L = (E_p \cdots E_1)^{-1}  
 $$</div>\EndKnitrBlock{definition}
 
-LU decomposition express a matrix (don't have to be square or invertible) as the product of a square lower triangular matrix $L$ and a rectangular upper triangular matrix $U$.  
+LU decomposition expresses a matrix (don't have to be square or invertible) as the product of a square lower triangular matrix $L$ and a rectangular upper triangular matrix $U$.  
 
-From the definition, we know that row operations on $A$ must only be confined to *row addition* and *row scaling*, but not *row interchange*. Otherwise $(E_p \cdots E_1)^{-1}$ cannot be lower triangular. The most common needs for row exchanges in row reduction is when $a_{11}$ is 0. For example, the following matrix does not have a Lu factorization because it first requires exchanging two rows to produce row echelon form ^[In particular, a non-singular matrix with $a_{11} = 0$ cannot have LU decomposition]  
+From the definition, we know that row operations on $A$ must only be confined to *row addition* and *row scaling*, but not *row interchange*. Otherwise $(E_p \cdots E_1)^{-1}$ cannot be lower triangular. The most common needs for row exchanges in row reduction is when $a_{11}$ is 0. For example, the following matrix does not have a LU factorization because it first requires exchanging two rows to produce row echelon form ^[In particular, a non-singular matrix with $a_{11} = 0$ cannot have LU decomposition]  
 
 $$
 \begin{bmatrix}
@@ -300,7 +301,7 @@ A list of arithmetic properties of determinants, A is an $n\times n$ matrix:
 2. $\det(kA) = k^n \det(A)$
 3. $\det(AB) = \det(A)\det(B)$ (although $AB \not = BA$ in general), it follows that  $\det(A^n) = \det(A)^n$  
 4. $\det(A^{-1}) = 1 / \det(A)$, if $A$ is invertible
-5. determinant is equal to the product of eigenvalues(counting multiplicity) $\det(A)  = \prod_{i=1}^n{\lambda_i}$  
+5. determinant is equal to the product of eigenvalues (counting multiplicity) $\det(A)  = \prod_{i=1}^n{\lambda_i}$  
 6. If the $i$-th row (column) in A is a sum of the $i$-th row (column) of a matrix $B$ and the $i$-th row (column) of a matrix $C$ and all other rows in $B$ and $C$ are equal to the corresponding rows in $A$ (that is, $B$ and $C$ differ in one row only), then $\det(A)=\det(B)+\det(C)$. This can be proven by cofactor expansion across the $i$th row. The same applies to columns. 
 
 Row operations on $A$ has the following effect on $\det A$
@@ -311,11 +312,16 @@ Row operations on $A$ has the following effect on $\det A$
 
 - Add a multiple of one row to another row has **no** effect on determinant 
 
-The first two effects can be easily understood in connection with geometric meaning of determinant. As for the third one, let us represent A with row vectors
+
+Note that all row operations don't change whether or not a determinant is 0, only change it by a non-zero factor or change its sign.  
+
+
+
+The first two effects can be easily understood in connection with geometric meaning of determinant. What third property means is illustrated by the following example. Represent $B$ and $C$ with row vectors
 
 $$
-|A| = 
-\begin{vmatrix}
+B = 
+\begin{bmatrix}
 a_1^T \\ 
 \vdots \\
 a_i^T \\
@@ -323,13 +329,24 @@ a_i^T \\
 a_j^T \\ 
 \vdots \\
 a_n^T
-\end{vmatrix}
+\end{bmatrix}
+,
+C  = 
+\begin{bmatrix}
+a_1^T \\ 
+\vdots \\
+ ka_j^T \\
+\vdots \\
+a_j^T \\ 
+\vdots \\
+a_n^T
+\end{bmatrix}
 $$
-Then $B$, after performing replacing (add a multiple of the $j$th row to the $i$th row) on $A$, becomes  
+And define $A$ as
 
 $$
-|B| = 
-\begin{vmatrix}
+A = 
+\begin{bmatrix}
 a_1^T \\ 
 \vdots \\
 a_i^T + ka_j^T \\
@@ -337,35 +354,11 @@ a_i^T + ka_j^T \\
 a_j^T \\ 
 \vdots \\
 a_n^T
-\end{vmatrix}
+\end{bmatrix}
 $$
-By property 6 $\det(A) = \det(B) + \det(C)$ when $B$ and $C$ only differs from $A$ by the same row. So $\det A$ can be broke down into two parts 
+It is obvious that here $A$ is on purpose the result of $B$ after performing row addition (add a multiple of the $j$th row to the $i$th row). And by property 6 $\det(A) = \det(B) + \det(C)$.  Also in this case, $C$ has determinant $0$, and this property indeed proves that row addition does not change determinant. In more general cases, $|C|$ definitely does not have to be zero.
 
-$$
-|A| = 
-\begin{vmatrix}
-a_1^T \\ 
-\vdots \\
-a_i^T \\
-\vdots \\
-a_j^T \\ 
-\vdots \\
-a_n^T
-\end{vmatrix} 
-+ 
-\begin{vmatrix}
-a_1^T \\ 
-\vdots \\
-ka_j^T \\
-\vdots \\
-a_j^T \\ 
-\vdots \\
-a_n^T
-\end{vmatrix} 
-$$
-The second matrix on the right side has determinant $0$, and $\det A$ stays the same after replacing. 
 
-Note that all row operations don't change whether or not a determinant is 0, only change it by a non-zero factor or change its sign.  
 
 
 ### Cramer's Rule
@@ -422,7 +415,7 @@ $$</div>\EndKnitrBlock{theorem}
 
 
 
-In \@ref(thm:find-inverse), we derive an algorithm of finding inverse matrices by row reductions on the augmented matrix $[A \; | \; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
+In Section \@ref(thm:find-inverse), we derive an algorithm of finding inverse matrices by row reductions on the augmented matrix $[A \; | \; I]$. However, Cramer's rule \@ref(thm:cramer) leads to a general formula of calculating  $A^{-1}$, if it exists.  
 
 The $j$th column of $A^{-1}$ is a vector $\bar{x}$ that satisfies:  
 

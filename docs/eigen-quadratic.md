@@ -787,9 +787,9 @@ Note that we could also have stated this lemma using $BB^T$ instead of $B^TB$, a
 
 This lemma is inspiring in that for every PD matrix $A \in \mathbb{R}^n$, there exists factorization $A = BB^T$. 
 
-In fact, this factorization is not unique. We can use an orthogonal matrix $P$ to create an additional orthogonal factorization $A = BB^T = B(PP^T)B^T = (BP)(BP)^T$. 
+In fact, this factorization is not unique. We can use an orthogonal matrix $Q$ to create an additional orthogonal factorization $A = BB^T = B(QQ^T)B^T = (BQ)(BQ)^T$. And let $BQ$ be our new $B$, we get another factorization.  
 
-Since the initial $B = P\Lambda^{1/2}$ is full rank, with an appropriate choice of $P$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. 
+Since the initial $B = P\Lambda^{1/2}$ is full rank, with an appropriate choice of $Q$, we can turn the $PB$ into an **lower triangular matrix** $L$ such that $A = LL^T$. This is essentailly a coordinate transformation in Section \@ref(change-of-basis)
 
 The uniqueness of this factorization with lower triangular matrix $L$ can be proved with induction. The decomposition of PD matrices into the product of an lower triangular matrix and its transpose is called the **Cholesky factorization**, in this factorization
 

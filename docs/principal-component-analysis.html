@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 19 Principal Component Analysis | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 19 Principal Component Analysis | Mathematical Notes for Machine Learning" />
+  <title>Chapter 20 Principal Component Analysis | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 20 Principal Component Analysis | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 19 Principal Component Analysis | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 20 Principal Component Analysis | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 19 Principal Component Analysis | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 20 Principal Component Analysis | Mathematical Notes for Machine Learning" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-09-07" />
+<meta name="date" content="2020-09-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -114,7 +114,7 @@
 <li class="chapter" data-level="3.1.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>3.1.3</b> Orthogonal Decomposition</a></li>
 <li class="chapter" data-level="3.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.1.4</b> Best Approximation</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#idempotent-and-projection-matrices"><i class="fa fa-check"></i><b>3.2</b> Idempotent and Projection Matrices</a></li>
+<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#projection-and-idempotent-matrices"><i class="fa fa-check"></i><b>3.2</b> Projection and idempotent matrices</a></li>
 <li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt Process</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR Factorizaiton</a></li>
 </ul></li>
@@ -212,33 +212,37 @@
 <li class="chapter" data-level="13.6" data-path="univariate-distributions.html"><a href="univariate-distributions.html#beta-distribution"><i class="fa fa-check"></i><b>13.6</b> Beta Distribution</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>14</b> Multivariate Distributions</a><ul>
-<li class="chapter" data-level="14.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>14.1</b> Multivariate Normal Distribution</a></li>
+<li class="chapter" data-level="14.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>14.1</b> Multivariate Normal Distribution</a><ul>
+<li class="chapter" data-level="14.1.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#chi-square-distribution"><i class="fa fa-check"></i><b>14.1.1</b> Chi-square Distribution</a></li>
+</ul></li>
 <li class="chapter" data-level="14.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#dirichlet-distributon"><i class="fa fa-check"></i><b>14.2</b> Dirichlet Distributon</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="markov-chain.html"><a href="markov-chain.html"><i class="fa fa-check"></i><b>15</b> Markov Chain</a></li>
-<li class="part"><span><b>IV Optimization</b></span></li>
-<li class="chapter" data-level="16" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>16</b> Basics of Optimization</a><ul>
-<li class="chapter" data-level="16.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>16.1</b> Univariate Optimization</a></li>
-<li class="chapter" data-level="16.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>16.2</b> Multivariate Optimization</a></li>
-<li class="chapter" data-level="16.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#convex-functions"><i class="fa fa-check"></i><b>16.3</b> Convex Functions</a></li>
-<li class="chapter" data-level="16.4" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#method-of-lagrange-multiplier"><i class="fa fa-check"></i><b>16.4</b> Method of Lagrange Multiplier</a></li>
+<li class="part"><span><b>IV Learning Theory</b></span></li>
+<li class="chapter" data-level="16" data-path="the-learning-problem.html"><a href="the-learning-problem.html"><i class="fa fa-check"></i><b>16</b> The Learning Problem</a></li>
+<li class="part"><span><b>V Optimization</b></span></li>
+<li class="chapter" data-level="17" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>17</b> Basics of Optimization</a><ul>
+<li class="chapter" data-level="17.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>17.1</b> Univariate Optimization</a></li>
+<li class="chapter" data-level="17.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>17.2</b> Multivariate Optimization</a></li>
+<li class="chapter" data-level="17.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#convex-functions"><i class="fa fa-check"></i><b>17.3</b> Convex Functions</a></li>
+<li class="chapter" data-level="17.4" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#method-of-lagrange-multiplier"><i class="fa fa-check"></i><b>17.4</b> Method of Lagrange Multiplier</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>17</b> Gradient Descent</a></li>
-<li class="part"><span><b>V Applications</b></span></li>
-<li class="chapter" data-level="18" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>18</b> Linear Models</a><ul>
-<li class="chapter" data-level="18.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>18.1</b> Ordinary Least Squares</a><ul>
-<li class="chapter" data-level="18.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>18.1.1</b> Least Square Estimation</a></li>
+<li class="chapter" data-level="18" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>18</b> Gradient Descent</a></li>
+<li class="part"><span><b>VI Applications</b></span></li>
+<li class="chapter" data-level="19" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>19</b> Linear Models</a><ul>
+<li class="chapter" data-level="19.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>19.1</b> Ordinary Least Squares</a><ul>
+<li class="chapter" data-level="19.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>19.1.1</b> Least Square Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="18.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>18.2</b> Weighted Least Squares</a></li>
-<li class="chapter" data-level="18.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squares"><i class="fa fa-check"></i><b>18.3</b> Partial Least Squares</a></li>
-<li class="chapter" data-level="18.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>18.4</b> Regularized Regression</a><ul>
-<li class="chapter" data-level="18.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>18.4.1</b> Ridge Regression</a></li>
-<li class="chapter" data-level="18.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso"><i class="fa fa-check"></i><b>18.4.2</b> Lasso</a></li>
-<li class="chapter" data-level="18.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net"><i class="fa fa-check"></i><b>18.4.3</b> Elastic Net</a></li>
+<li class="chapter" data-level="19.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>19.2</b> Weighted Least Squares</a></li>
+<li class="chapter" data-level="19.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squares"><i class="fa fa-check"></i><b>19.3</b> Partial Least Squares</a></li>
+<li class="chapter" data-level="19.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>19.4</b> Regularized Regression</a><ul>
+<li class="chapter" data-level="19.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>19.4.1</b> Ridge Regression</a></li>
+<li class="chapter" data-level="19.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso"><i class="fa fa-check"></i><b>19.4.2</b> Lasso</a></li>
+<li class="chapter" data-level="19.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net"><i class="fa fa-check"></i><b>19.4.3</b> Elastic Net</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>19</b> Principal Component Analysis</a></li>
-<li class="chapter" data-level="20" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>20</b> Text Mining</a></li>
+<li class="chapter" data-level="20" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>20</b> Principal Component Analysis</a></li>
+<li class="chapter" data-level="21" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>21</b> Text Mining</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -263,7 +267,7 @@
 
             <section class="normal" id="section-">
 <div id="principal-component-analysis" class="section level1">
-<h1><span class="header-section-number">Chapter 19</span> Principal Component Analysis</h1>
+<h1><span class="header-section-number">Chapter 20</span> Principal Component Analysis</h1>
 
 </div>
             </section>
