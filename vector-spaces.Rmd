@@ -80,6 +80,7 @@ $$
 
 ## Metric Spaces, Normed Spaces, Inner Product Spaces
 
+### Metric and Norm
 
 Metric spaces, normed spaces and inner product spaces capture important properties of Euclidean space in a more general way (distance, length, angle). 
 
@@ -126,9 +127,106 @@ $$
 
 2-norm is the Euclidean norm, the subscript $2$ can be left out in $\mathbb{R}^n$. 
 
-p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $\|\bar{x}\|_{\infty}$ is called the maximum norm. 
+p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $\|\bar{x}\|_{\infty}$ is called the maximum norm.
 
-<br>
+The book *Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares* introduces some other topics related to norm. 
+
+**Root-mean-square value**. The root-mean-square (RMS) value of an $n$-vector $\bar{x}$ is defined as 
+
+$$
+\boldsymbol{\text{rms}}(x) = \sqrt{\frac{x_1^2 + \cdots + x_n^2}{n}} = \frac{\| \bar{x}\|}{\sqrt{n}}
+$$
+
+
+RMS is useful when comparing norms of vectors with different dimensions, because the value is independent of $n$, and it tells what a "typical" value of $|x_i|$ is.  The norm of a vector with all entries being the same value of $\alpha$ will be $\sqrt{n}|\alpha|$, yet its rms value will be $|\alpha|$.
+
+**Norm of a sum**. The norm of the sum of two vectors $\bar{x}$ and $\bar{y}$ is 
+
+$$
+\|\bar{x} + \bar{y}\| = \sqrt{\|\bar{x}\|^2 + 2\bar{x}^T\bar{y} +  \|\bar{y} \|^2}
+$$
+
+This can be proven by expanding $(\bar{x} + \bar{y})^T(\bar{x} + \bar{y})$
+
+**Norm of block vectors**. The norm-squared of a stacked vector is the sum of norm-square values of its subvectors. For example, if we stack 3 vectors $\bar{a}, \bar{b}, \bar{c}$ to form a longer vector $\bar{d}$
+
+$$
+\bar{d} = 
+\begin{bmatrix}
+\bar{a} \\
+\bar{b} \\
+\bar{c}
+\end{bmatrix}
+$$
+
+We have 
+
+$$
+\| d\|^2 = \bar{a}^T\bar{a} + \bar{b}^T\bar{b} + \bar{c}^T\bar{c} = \|\bar{a}\|^2 + \|\bar{b}\|^2 + \|\bar{c}\|^2
+$$
+Another way of writing this is 
+
+$$
+\|(\bar{a}, \bar{b}, \bar{c})\| = \sqrt{ \|\bar{a}\|^2 + \|\bar{b}\|^2 + \|\bar{c}\|^2} = \|(\|\bar{a} \|, \|\bar{b} \|, \|\bar{c}\|)\|
+$$
+
+**Chebyshev inequality**
+
+
+$$
+\frac{\|\bar{x}\|^2}{k} \ge a^2
+$$
+
+Note that $\text{rms}(\bar{x}) = \|\bar{x}\| / \sqrt{n}$, so that $\|\bar{x}\|^2 = n \, \text{rms}(\bar{x})^2$. Then we have 
+
+$$
+\Big(\frac{\text{rms}(\bar{x})}{a}\Big)^2 \ge \frac{k}{n}
+$$
+
+
+**Average, RMS value, and standard deviation**. The mean and standard deviation of vector $\bar{x}$ can be written in the form 
+
+$$
+\begin{aligned}
+\mu &=  \frac{1}{n}\bar{1}^T\bar{x} \\
+\sigma &= \frac{\|\bar{x} - \mu\bar{1}\| }{\sqrt{n}}
+\end{aligned}
+$$
+
+Then we have the following relationship 
+
+$$
+\text{rms}(\bar{x})^2 = \mu^2 + \sigma^2
+$$
+
+```{block2, type = "proof"}
+Proof
+```
+
+
+$$
+\begin{split}
+\sigma^2 
+& = \frac{1}{n} \|\bar{x} -   \frac{1}{n}\bar{1}^T\bar{x}\bar{1}\|^2 \\
+&= \frac{1}{n}[\bar{x}^T\bar{x} + \Big((\frac{1}{n}\bar{1}^T\bar{x})\bar{1}\Big)^T\Big((\frac{1}{n}\bar{1}^T\bar{x})\bar{1}\Big) - 2\bar{x}^T(\frac{1}{n}\bar{1}^T\bar{x})\bar{1}]  \qquad \mbox{norm of sum} \\
+&= \frac{1}{n}[\bar{x}^T\bar{x} + \frac{1}{n}(\bar{1}^T\bar{x})^2 - \frac{2}{n}(\bar{1}^T\bar{x})^2] \\
+&= \frac{1}{n}\bar{x}^T\bar{x} - \frac{1}{n^2}(\bar{1}^T\bar{x})^2 \\
+&= \text{rms}(\bar{x}) - \mu^2
+
+\end{split}
+$$
+
+
+
+
+
+
+
+
+
+
+
+### Inner Product and Cross Product
 
 An **inner product** on a real vector space $X$ is a function $\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}$ satisfying 
 
@@ -141,6 +239,8 @@ A vector space equipped with such inner product is called a **inner product spac
 $$
 \langle \bar{x}, \bar{x} \rangle = \|\bar{x}\|^2  
 $$
+
+
 The *standard inner product* defined on $\mathbb{R}^{n}$ is the dot product,  given by 
 
 $$
@@ -187,7 +287,7 @@ $$
 
 ## Subspaces
 
-If $V$ is a subspace, then $S \subseteq A$ if 
+If $A$ is a vector space, then $S$ is a subspace of $A$ (denoted $S \subseteq A$) if 
 
 1. $\bar{0} \in S$  
 
@@ -195,7 +295,7 @@ If $V$ is a subspace, then $S \subseteq A$ if
 
 3. $S$ is closed under scalar multiplication if $\bar{x} \in S, \alpha \in \mathbb{R}$ then $\alpha\bar{x} \in S$
 
-$V$ is always a subspace of itself. 
+According to this definition, and vector space is always a subspace of itself. 
 
 If $U$ and $W$ are all subspaces of $V$, then the sum of these two subspaces are defined as 
 
@@ -205,7 +305,7 @@ $$
 
 If $U$ and $W$ are perpendicular, in other words, $U \cap W = \bar{0}$. Then $U + W$ are said to be a **direct sum** and written $U \oplus W$. 
 
-Dimensions of sums of subspaces has the following property 
+Dimensions of the sum of subspaces has the following property 
 
 $$
 \text{dim}(U + W) = \text{dim}(U) + \text{dim}(W) - \text{dim}(U \cap W)
@@ -502,4 +602,8 @@ $$
 
 <br> 
 
-Change of basis has various applications in machine learning, such as discrete wavelet transform (P.60, Ch2, @DBLP:books/sp/Aggarwal20). In time series analysis, a time series of length $n$ would result in a vector from $\mathbb{R}^{n}$, and $n$ can be extremely large. Since consecutive sample points tend to be similar, we may take larger interest in a few variations across time, rather than the whole long vector. The *Haar wavelet transformation* performs a basis transformation with a view to exxtracting important variations, making the original time series vector reasonably sparse.  
+Change of basis has various applications in machine learning, such as discrete wavelet transform (P.60, Ch2, @DBLP:books/sp/Aggarwal20). In time series analysis, a time series of length $n$ would result in a vector from $\mathbb{R}^{n}$, and $n$ can be extremely large. Since consecutive sample points tend to be similar, we may take larger interest in a few variations across time, rather than the whole long vector. The *Haar wavelet transformation* performs a basis transformation with a view to extracting important variations, making the original time series vector reasonably sparse.  
+
+
+## Complexity of Vector Computations
+

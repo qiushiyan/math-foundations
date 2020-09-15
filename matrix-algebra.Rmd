@@ -64,6 +64,11 @@ $$
 Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix. 
 
 
+### Complexity
+
+An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero en
+
+
 
 ## Elemetary matrix and row operations  
 
@@ -662,7 +667,5 @@ $$
 \rho \sin(\theta + \alpha)
 \end{bmatrix}
 $$
-
-
 
 
