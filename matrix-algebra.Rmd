@@ -64,9 +64,74 @@ $$
 Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix. 
 
 
+The following subsections follows Chapter 7 of VMLS [@boyd2018introduction], introducing  some special matrices and their effect in matrix multiplication, and conclude with a summary of complexity (number of flops needed) in common matrix operations. 
+
+
+### Geometric Transformations 
+
+**scaling**
+
+
+**dilation**
+
+**rotation**
+
+$$
+\begin{bmatrix}
+\cos\theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{bmatrix}
+\begin{bmatrix}
+\rho \cos\alpha \\ 
+\rho \sin\alpha 
+\end{bmatrix} =
+\begin{bmatrix} 
+\rho(\cos\theta\cos\alpha - \sin\theta\sin\alpha) \\
+\rho(\sin\theta \cos\alpha + \cos \theta \sin\alpha)
+\end{bmatrix}
+= 
+\begin{bmatrix}
+\rho \cos(\theta + \alpha) \\
+\rho \sin(\theta + \alpha)
+\end{bmatrix}
+$$
+
+**reflection**
+
+
+### Selector matrix 
+
+Let the standard basis in $\mathcal{R}^n$ be 
+
+$$
+\begin{aligned}
+\bar{e}_1^T  &= [1, 0, \cdots, ..., 0] \\
+\bar{e}_2^T  &= [0, 1, \cdots, ..., 0] \\
+& \vdots  \\
+\bar{e}_n^T  &= [0, 0, \cdots, ..., 1] 
+\end{aligned}
+$$
+
+Then an $n \times n$ matrix $A$ formed by a subset of such vectors are called a selector matrix. 
+
+### Convolution
+
+
 ### Complexity
 
-An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero en
+An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly $16\text{nnz}(A)$ bytes. 
+
+
+Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (number of flops) of common matrix operations are listed below 
+
+|Operation|Expression|Complexity|Explanation|
+|:-:|:-:|:-:|:-:|
+|matrix addition|$A + B$|$mn$ <br> and $\min(\text{nnz}(A), \text{nnz}(B))$ if one of $A$ and $B$ is sparse|For any entry $i,j$ for which one of $A_{ij}$ and $B_{ij}$ is zero, no arithmetic operations are needed to find  $(A + B)_{ij}$|
+|scalar multiplication|$kA$|$mn$ <br> $\text{nnz}(A)$ when $A$ is sparse||
+|transposition|$A^T$|$0$|Computing $A^T$ needs only copying, but no flops|
+|matrix-vector multiplication|$A\bar{x}$|$m(2n - 1)$|equivalent to $m$ inner products between rows of $A$ and $\bar{x}$|
+|matrix-vector multiplication when $A$ is sparse|between $\text{nnz}(A)$ and $2\text{nnz}(A) - 1$|$A\bar{x}$|First we need $\text{nnz}(A)$ multiplications, and certain number of additions. We need most additions when nonzero entries are arranged next to each other, and least when they are separated in different columns and rows (for example for diagonal matrix $A$, we need no additions at all)|
+
 
 
 
@@ -598,8 +663,8 @@ And because $T(\bar{x})$ is a linear transformation:
 
 $$
 \begin{split}
-T(\bar{x}) &= x_1T(\bar{e_1}) + \dots + x_nT(\bar{e_n}) \\
-&= [T(\bar{e_1}) \, \cdots \, T(\bar{e_n})]\bar{x} \\
+T(\bar{x}) &= x_1T(\bar{e}_1) + \dots + x_nT(\bar{e}_n) \\
+&= [T(\bar{e}_1) \, \cdots \, T(\bar{e}_n)]\bar{x} \\
 &= (A\bar{x})_{m \times 1}
 \end{split}
 $$
@@ -613,8 +678,6 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 (ref:onto) A mapping is onto $\mathbb{R^m}$
 
 ```{definition, name = "(ref:onto)"}
-
-
 A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}
 ```
 
@@ -645,27 +708,6 @@ Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ 
 
 
 
-### Matrix Multiplication as Geometric Operators 
 
-
-$$
-\begin{bmatrix}
-\cos\theta & -\sin \theta \\
-\sin \theta & \cos \theta
-\end{bmatrix}
-\begin{bmatrix}
-\rho \cos\alpha \\ 
-\rho \sin\alpha 
-\end{bmatrix} =
-\begin{bmatrix} 
-\rho(\cos\theta\cos\alpha - \sin\theta\sin\alpha) \\
-\rho(\sin\theta \cos\alpha + \cos \theta \sin\alpha)
-\end{bmatrix}
-= 
-\begin{bmatrix}
-\rho \cos(\theta + \alpha) \\
-\rho \sin(\theta + \alpha)
-\end{bmatrix}
-$$
 
 

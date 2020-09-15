@@ -1,7 +1,7 @@
 --- 
 title: "Mathematical Notes for Machine Learning"
 author: "Qiushi Yan"
-date: "2020-09-14"
+date: "2020-09-15"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib, packages.bib]

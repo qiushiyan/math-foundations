@@ -1,1 +1,0 @@
-# Infinite sequences and series

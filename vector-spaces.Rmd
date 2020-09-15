@@ -129,7 +129,7 @@ $$
 
 p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $\|\bar{x}\|_{\infty}$ is called the maximum norm.
 
-The book *Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares* introduces some other topics related to norm. 
+The VMLS book [@boyd2018introduction] introduces some other topics related to norm. 
 
 **Root-mean-square value**. The root-mean-square (RMS) value of an $n$-vector $\bar{x}$ is defined as 
 
@@ -212,7 +212,6 @@ $$
 &= \frac{1}{n}[\bar{x}^T\bar{x} + \frac{1}{n}(\bar{1}^T\bar{x})^2 - \frac{2}{n}(\bar{1}^T\bar{x})^2] \\
 &= \frac{1}{n}\bar{x}^T\bar{x} - \frac{1}{n^2}(\bar{1}^T\bar{x})^2 \\
 &= \text{rms}(\bar{x}) - \mu^2
-
 \end{split}
 $$
 
