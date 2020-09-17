@@ -43,7 +43,7 @@ For matrix-matrix multiplication $AB$, besides the dot product definition we can
 
 (ref:cr-expansion) Column-row expansion of $AB$
 
-\BeginKnitrBlock{theorem}\iffalse{-91-40-114-101-102-58-99-114-45-101-120-112-97-110-115-105-111-110-41-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-1"><strong>(\#thm:unnamed-chunk-1)  \iffalse ((ref:cr-expansion)) \fi{} </strong></span>
+\BeginKnitrBlock{theorem}\iffalse{-91-40-114-101-102-58-99-114-45-101-120-112-97-110-115-105-111-110-41-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cr-expansion"><strong>(\#thm:cr-expansion)  \iffalse ((ref:cr-expansion)) \fi{} </strong></span>
 if $A$ is $m \times n$ and $B$ is $n \times p$, then 
 
 $$
@@ -62,7 +62,7 @@ $$</div>\EndKnitrBlock{theorem}
 Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix. 
 
 
-The following subsections introduce some special matrices and their effect in matrix multiplication, and conclude with a summary of complexity (number of flops needed) in common matrix operations. 
+The following subsections follows Chapter 7 of VMLS [@boyd2018introduction], introducing  some special matrices and their effect in matrix multiplication.  
 
 
 ### Geometric Transformations 
@@ -110,23 +110,79 @@ $$
 \end{aligned}
 $$
 
-Then an $n \times n$ matrix $A$ formed by a subset of such vectors are called a selector matrix. 
+Then an $m \times n$ matrix $A$ formed by a subset of such vectors are called a selector matrix. In other words, an $m \times n$ selector matrix $A$ is one in which each row is a standard unit vector 
+
+$$
+A = \begin{bmatrix}
+\bar{e}_{k_1}^T \\ 
+\vdots \\
+\bar{e}_{k_m}^T
+\end{bmatrix}
+$$
+
+where $1 \le k_1, ..., k_m \le n$. When a selector matrix multiplies a vector $\bar{x}$, it returned the $k_i$th entry of $\bar{x}$ on the $i$th entry of $y = A\bar{x}$. For example, we can construct a $4 \times n$ selector matrix
+
+$$
+A = 
+\begin{bmatrix}
+\bar{e}_2^T \\
+\bar{e}_1^T \\ 
+\bar{e}_5^T \\ 
+\bar{e}_8^T
+\end{bmatrix}
+$$
+When multiplying $\bar{x}$
+
+$$
+\begin{bmatrix}
+\bar{e}_2^T \\
+\bar{e}_1^T \\ 
+\bar{e}_5^T \\
+\bar{e}_8^T
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+\vdots \\ 
+x_n 
+\end{bmatrix}
+= 
+\begin{bmatrix}
+x_2 \\
+x_1 \\
+x_5 \\
+x_8
+\end{bmatrix}
+$$
+The identity matrix, and the reverser matrix 
+
+$$
+A = 
+\begin{bmatrix}
+\bar{e}_n^T \\ 
+\vdots \\
+\bar{e}_1^T
+\end{bmatrix}
+= 
+\begin{bmatrix}
+0 & 0 & \cdots & 0 & 1 \\
+0 & 0 & \cdots & 1 & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+1 & 0 & \cdots & 0 & 0
+\end{bmatrix}
+$$
+are one of the selector matrices family. 
+
+Selector matrices have important applications in down-sampling, image cropping, and permutation. (P.144, VSLM) 
 
 
-### Complexity
+### Discrete Convolution
 
-An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly $16\text{nnz}(A)$ bytes. 
+The (discrete) *convolution* of an $n$-vector $a$ $a$ and $m$-vector $b$ is a $(n + m - 1)$-vector, denoted $a * b$, with entries
 
+$$
+c_k = \sum_{i + j = k + 1}a_ib_j, \quad k = 1, ..., n + m - 1
+$$
 
-Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (number of flops) of common matrix operations are listed below 
-
-|Operation|Expression|Complexity|Explanation|
-|:-:|:-:|:-:|:-:|
-|matrix addition|$A + B$|$mn$ <br> and $\min(\text{nnz}(A), \text{nnz}(B))$ if one of $A$ and $B$ is sparse|For any entry $i,j$ for which one of $A_{ij}$ and $B_{ij}$ is zero, no arithmetic operations are needed to find  $(A + B)_{ij}$|
-|scalar multiplication|$kA$|$mn$ <br> $\text{nnz}(A)$ when $A$ is sparse||
-|transposition|$A^T$|$0$|Computing $A^T$ needs only copying, but no flops|
-|matrix-vector multiplication|$A\bar{x}$|$m(2n - 1)$|equivalent to $m$ inner products between rows of $A$ and $\bar{x}$|
-|matrix-vector multiplication when $A$ is sparse|between $\text{nnz}(A)$ and $ 2\text{nnz}(A) - 1$|First we need $\text{nnz}(A)$ multiplications, and certain number of additions. We need most additions when nonzero entries are arranged next to each other, and least when they are separated in different columns and rows (for example for diagonal matrix $A$, we need no additions at all)|
 
 
 
@@ -208,7 +264,7 @@ https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysi
 A *factorization* of matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
 
 
-\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-2"><strong>(\#def:unnamed-chunk-2)  \iffalse (LU factorization) \fi{} </strong></span>Suppose $A$ can be reduced to an echelon form $U$ **using only row addition and row scaling**, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
+\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-1"><strong>(\#def:unnamed-chunk-1)  \iffalse (LU factorization) \fi{} </strong></span>Suppose $A$ can be reduced to an echelon form $U$ **using only row addition and row scaling**, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
 
 $$
 E_p \cdots E_1A = U  
@@ -467,7 +523,7 @@ The trace has the following properties:
 In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\bar{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\bar{x} = \bar{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
 
 Assume that $A$ and $B$ are both non-singular
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4) </strong></span>If A and B are both invertible matrces, we have
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>If A and B are both invertible matrces, we have
 
 $$
 (A^{-1})^{-1} = A  
@@ -516,7 +572,7 @@ C_{1n} & C_{2n} & \cdots & C_{nn} \\
 
 The right side of Eq \@ref(eq:inverse-adjugate) is called the *adjugate* of $A$, often denoted by $\text{adj}\, A$.  
 
-\BeginKnitrBlock{theorem}\iffalse{-91-65-110-32-73-110-118-101-114-115-101-32-70-111-114-109-117-108-97-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-5"><strong>(\#thm:unnamed-chunk-5)  \iffalse (An Inverse Formula) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. Then 
+\BeginKnitrBlock{theorem}\iffalse{-91-65-110-32-73-110-118-101-114-115-101-32-70-111-114-109-117-108-97-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4)  \iffalse (An Inverse Formula) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. Then 
 
 $$
 A^{-1} = \frac{1}{\det A}\text{adj}\, A
@@ -554,7 +610,7 @@ It's easy to find that the Woodbury Identity is an extension of the matrix inver
 
 <hr>
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-6"><strong>(\#prp:unnamed-chunk-6) </strong></span>For square matrix $P$ (**not** assuming invertible), if $I + P$ is invertible, then $(I + P)^{-1}$ satisfies:  
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-5"><strong>(\#prp:unnamed-chunk-5) </strong></span>For square matrix $P$ (**not** assuming invertible), if $I + P$ is invertible, then $(I + P)^{-1}$ satisfies:  
 
 $$
 (I + P)^{-1} = I - (I + P)^{-1}P
@@ -616,7 +672,7 @@ $$
 $$
 <hr>
 
-\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-6"><strong>(\#thm:unnamed-chunk-6)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
@@ -647,13 +703,13 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 
 (ref:onto) A mapping is onto $\mathbb{R^m}$
 
-\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
 
 Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$ for any $\bar{b}$ in $\mathbb{R}^m$
 
 <br>
 
-\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-10"><strong>(\#def:unnamed-chunk-10)  \iffalse (one-to-one mapping) \fi{} </strong></span>
+\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (one-to-one mapping) \fi{} </strong></span>
 
 A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
 
@@ -661,7 +717,7 @@ Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the eq
 
 <br>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-11"><strong>(\#thm:unnamed-chunk-11) </strong></span>Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-10"><strong>(\#thm:unnamed-chunk-10) </strong></span>Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
 
 - $T$ maps $mathbb{R}^n$ onto $\mathbb{R}^m$ if only if columns of $A$ span $\mathbb{R}^m$  
 
@@ -669,9 +725,23 @@ Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the eq
 
 
 
+## Complexity of Matrix Computation
+
+This chapter concludes with a summary of complexity (number of flops needed) in common matrix computations.
 
 
+An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly $16\text{nnz}(A)$ bytes. 
 
+
+Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (number of flops) of common matrix operations are listed below 
+
+|Operation|Expression|Complexity|Explanation|
+|:-:|:-:|:-:|:-:|
+|matrix addition|$A + B$|$mn$ <br> and $\min(\text{nnz}(A), \text{nnz}(B))$ if one of $A$ and $B$ is sparse|For any entry $i,j$ for which one of $A_{ij}$ and $B_{ij}$ is zero, no arithmetic operations are needed to find  $(A + B)_{ij}$|
+|scalar multiplication|$kA$|$mn$ <br> $\text{nnz}(A)$ when $A$ is sparse||
+|transposition|$A^T$|$0$|Computing $A^T$ needs only copying, but no flops|
+|matrix-vector multiplication|$A\bar{x}$|$m(2n - 1)$|equivalent to $m$ inner products between rows of $A$ and $\bar{x}$|
+|matrix-vector multiplication when $A$ is sparse|between $\text{nnz}(A)$ and $2\text{nnz}(A) - 1$|$A\bar{x}$|First we need $\text{nnz}(A)$ multiplications, and certain number of additions. We need most additions when nonzero entries are arranged next to each other, and least when they are separated in different columns and rows (for example for diagonal matrix $A$, we need no additions at all)|
 
 
 

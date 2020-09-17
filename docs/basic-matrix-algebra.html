@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-09-15" />
+<meta name="date" content="2020-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -76,7 +76,7 @@
 <li class="chapter" data-level="1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication"><i class="fa fa-check"></i><b>1.1</b> Matrix Multiplication</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#geometric-transformations"><i class="fa fa-check"></i><b>1.1.1</b> Geometric Transformations</a></li>
 <li class="chapter" data-level="1.1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#selector-matrix"><i class="fa fa-check"></i><b>1.1.2</b> Selector matrix</a></li>
-<li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity"><i class="fa fa-check"></i><b>1.1.3</b> Complexity</a></li>
+<li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#discrete-convolution"><i class="fa fa-check"></i><b>1.1.3</b> Discrete Convolution</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#elemetary-matrix-and-row-operations"><i class="fa fa-check"></i><b>1.2</b> Elemetary matrix and row operations</a></li>
 <li class="chapter" data-level="1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#lu-factorization"><i class="fa fa-check"></i><b>1.3</b> LU Factorization</a></li>
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.6.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#the-matrix-inversion-lemma"><i class="fa fa-check"></i><b>1.6.1</b> The Matrix Inversion Lemma</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication-as-linear-transformation"><i class="fa fa-check"></i><b>1.7</b> Matrix Multiplication as Linear Transformation</a></li>
+<li class="chapter" data-level="1.8" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity-of-matrix-computation"><i class="fa fa-check"></i><b>1.8</b> Complexity of Matrix Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector Spaces</a><ul>
 <li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#vector-space"><i class="fa fa-check"></i><b>2.1</b> Vector Space</a><ul>
@@ -98,7 +99,7 @@
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric Spaces, Normed Spaces, Inner Product Spaces</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-and-norm"><i class="fa fa-check"></i><b>2.2.1</b> Metric and Norm</a></li>
-<li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-product-and-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Product and Cross Product</a></li>
+<li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-produc-outer-product-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Produc, Outer Product, Cross Product</a></li>
 <li class="chapter" data-level="2.2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#restricted-definition-of-inner-products-in-rn"><i class="fa fa-check"></i><b>2.2.3</b> Restricted Definition of Inner Products in <span class="math inline">\(R^n\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
@@ -120,13 +121,12 @@
 <li class="chapter" data-level="3.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.1.4</b> Best Approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#projection-and-idempotent-matrices"><i class="fa fa-check"></i><b>3.2</b> Projection and idempotent matrices</a></li>
-<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt Process</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR Factorizaiton</a></li>
+<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt Process</a></li>
+<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.4</b> QR Factorizaiton</a></li>
+<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.5</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.5.1</b> Orthogonal Matrices</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.4</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.4.1</b> Orthogonal Matrices</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#lesat-squares-problems"><i class="fa fa-check"></i><b>3.5</b> Lesat Squares Problems</a></li>
+<li class="chapter" data-level="3.6" data-path="orthogonality.html"><a href="orthogonality.html#lesat-squares-problems"><i class="fa fa-check"></i><b>3.6</b> Lesat Squares Problems</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and Quadratic Forms</a><ul>
 <li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and Eigenvalues</a><ul>
@@ -302,7 +302,7 @@ For matrix-matrix multiplication <span class="math inline">\(AB\)</span>, beside
 
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 1.1  (Column-row expansion of <span class="math inline">\(AB\)</span>)  </strong></span>
+<p><span id="thm:cr-expansion" class="theorem"><strong>Theorem 1.1  (Column-row expansion of <span class="math inline">\(AB\)</span>)  </strong></span>
 if <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times n\)</span> and <span class="math inline">\(B\)</span> is <span class="math inline">\(n \times p\)</span>, then</p>
 <span class="math display">\[
 \begin{aligned}
@@ -318,7 +318,7 @@ AB &amp;= [\text{col}_1(A) \cdots \text{col}_n(A)]
 </div>
 
 <p>Note that each <span class="math inline">\(\text{col}_1(A)\text{row}_1(B)\)</span> is a rank 1 <span class="math inline">\(m \times p\)</span> matrix.</p>
-<p>The following subsections introduce some special matrices and their effect in matrix multiplication, and conclude with a summary of complexity (number of flops needed) in common matrix operations.</p>
+<p>The following subsections follows Chapter 7 of VMLS <span class="citation">(Boyd and Vandenberghe <a href="references.html#ref-boyd2018introduction" role="doc-biblioref">2018</a>)</span>, introducing some special matrices and their effect in matrix multiplication.</p>
 <div id="geometric-transformations" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> Geometric Transformations</h3>
 <p><strong>scaling</strong></p>
@@ -356,60 +356,70 @@ AB &amp;= [\text{col}_1(A) \cdots \text{col}_n(A)]
 \bar{e}_n^T  &amp;= [0, 0, \cdots, ..., 1] 
 \end{aligned}
 \]</span></p>
-<p>Then an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> formed by a subset of such vectors are called a selector matrix.</p>
+<p>Then an <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(A\)</span> formed by a subset of such vectors are called a selector matrix. In other words, an <span class="math inline">\(m \times n\)</span> selector matrix <span class="math inline">\(A\)</span> is one in which each row is a standard unit vector</p>
+<p><span class="math display">\[
+A = \begin{bmatrix}
+\bar{e}_{k_1}^T \\ 
+\vdots \\
+\bar{e}_{k_m}^T
+\end{bmatrix}
+\]</span></p>
+<p>where <span class="math inline">\(1 \le k_1, ..., k_m \le n\)</span>. When a selector matrix multiplies a vector <span class="math inline">\(\bar{x}\)</span>, it returned the <span class="math inline">\(k_i\)</span>th entry of <span class="math inline">\(\bar{x}\)</span> on the <span class="math inline">\(i\)</span>th entry of <span class="math inline">\(y = A\bar{x}\)</span>. For example, we can construct a <span class="math inline">\(4 \times n\)</span> selector matrix</p>
+<p><span class="math display">\[
+A = 
+\begin{bmatrix}
+\bar{e}_2^T \\
+\bar{e}_1^T \\ 
+\bar{e}_5^T \\ 
+\bar{e}_8^T
+\end{bmatrix}
+\]</span>
+When multiplying <span class="math inline">\(\bar{x}\)</span></p>
+<p><span class="math display">\[
+\begin{bmatrix}
+\bar{e}_2^T \\
+\bar{e}_1^T \\ 
+\bar{e}_5^T \\
+\bar{e}_8^T
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+\vdots \\ 
+x_n 
+\end{bmatrix}
+= 
+\begin{bmatrix}
+x_2 \\
+x_1 \\
+x_5 \\
+x_8
+\end{bmatrix}
+\]</span>
+The identity matrix, and the reverser matrix</p>
+<p><span class="math display">\[
+A = 
+\begin{bmatrix}
+\bar{e}_n^T \\ 
+\vdots \\
+\bar{e}_1^T
+\end{bmatrix}
+= 
+\begin{bmatrix}
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; \cdots &amp; 1 &amp; 0 \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\
+1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0
+\end{bmatrix}
+\]</span>
+are one of the selector matrices family.</p>
+<p>Selector matrices have important applications in down-sampling, image cropping, and permutation. (P.144, VSLM)</p>
 </div>
-<div id="complexity" class="section level3">
-<h3><span class="header-section-number">1.1.3</span> Complexity</h3>
-<p>An <span class="math inline">\(m \times n\)</span> matrix is often represented by an <span class="math inline">\(m \times n\)</span> array of floating numbers in a computer, requiring <span class="math inline">\(8mn\)</span> bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index <span class="math inline">\(i\)</span> (integer), column index <span class="math inline">\(j\)</span> (integer) and its value <span class="math inline">\(A_{ij}\)</span> (floating point). Let <span class="math inline">\(\text{nnz}(A)\)</span> be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly <span class="math inline">\(16\text{nnz}(A)\)</span> bytes.</p>
-<p>Let <span class="math inline">\(A\)</span> be an <span class="math inline">\(m \times n\)</span> matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (number of flops) of common matrix operations are listed below</p>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Operation</th>
-<th align="center">Expression</th>
-<th align="center">Complexity</th>
-<th align="center">Explanation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">matrix addition</td>
-<td align="center"><span class="math inline">\(A + B\)</span></td>
-<td align="center"><span class="math inline">\(mn\)</span> <br> and <span class="math inline">\(\min(\text{nnz}(A), \text{nnz}(B))\)</span> if one of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is sparse</td>
-<td align="center">For any entry <span class="math inline">\(i,j\)</span> for which one of <span class="math inline">\(A_{ij}\)</span> and <span class="math inline">\(B_{ij}\)</span> is zero, no arithmetic operations are needed to find <span class="math inline">\((A + B)_{ij}\)</span></td>
-</tr>
-<tr class="even">
-<td align="center">scalar multiplication</td>
-<td align="center"><span class="math inline">\(kA\)</span></td>
-<td align="center"><span class="math inline">\(mn\)</span> <br> <span class="math inline">\(\text{nnz}(A)\)</span> when <span class="math inline">\(A\)</span> is sparse</td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">transposition</td>
-<td align="center"><span class="math inline">\(A^T\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-<td align="center">Computing <span class="math inline">\(A^T\)</span> needs only copying, but no flops</td>
-</tr>
-<tr class="even">
-<td align="center">matrix-vector multiplication</td>
-<td align="center"><span class="math inline">\(A\bar{x}\)</span></td>
-<td align="center"><span class="math inline">\(m(2n - 1)\)</span></td>
-<td align="center">equivalent to <span class="math inline">\(m\)</span> inner products between rows of <span class="math inline">\(A\)</span> and <span class="math inline">\(\bar{x}\)</span></td>
-</tr>
-<tr class="odd">
-<td align="center">matrix-vector multiplication when <span class="math inline">\(A\)</span> is sparse</td>
-<td align="center">between <span class="math inline">\(\text{nnz}(A)\)</span> and $ 2(A) - 1$</td>
-<td align="center">First we need <span class="math inline">\(\text{nnz}(A)\)</span> multiplications, and certain number of additions. We need most additions when nonzero entries are arranged next to each other, and least when they are separated in different columns and rows (for example for diagonal matrix <span class="math inline">\(A\)</span>, we need no additions at all)</td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
+<div id="discrete-convolution" class="section level3">
+<h3><span class="header-section-number">1.1.3</span> Discrete Convolution</h3>
+<p>The (discrete) <em>convolution</em> of an <span class="math inline">\(n\)</span>-vector <span class="math inline">\(a\)</span> <span class="math inline">\(a\)</span> and <span class="math inline">\(m\)</span>-vector <span class="math inline">\(b\)</span> is a <span class="math inline">\((n + m - 1)\)</span>-vector, denoted <span class="math inline">\(a * b\)</span>, with entries</p>
+<p><span class="math display">\[
+c_k = \sum_{i + j = k + 1}a_ib_j, \quad k = 1, ..., n + m - 1
+\]</span></p>
 </div>
 </div>
 <div id="elemetary-matrix-and-row-operations" class="section level2">
@@ -481,7 +491,7 @@ Thus, any row operation on <span class="math inline">\(A\)</span> is equivalent 
 <p>A <em>factorization</em> of matrix <span class="math inline">\(A\)</span> is an equation that expresses <span class="math inline">\(A\)</span> as a product of two or more matrices.</p>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-2" class="definition"><strong>Definition 1.1  (LU factorization)  </strong></span>Suppose <span class="math inline">\(A\)</span> can be reduced to an echelon form <span class="math inline">\(U\)</span> <strong>using only row addition and row scaling</strong>, there exist a set of unit lower trangular matrices <span class="math inline">\(E_1, \dots, E_p\)</span> such that</p>
+<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definition 1.1  (LU factorization)  </strong></span>Suppose <span class="math inline">\(A\)</span> can be reduced to an echelon form <span class="math inline">\(U\)</span> <strong>using only row addition and row scaling</strong>, there exist a set of unit lower trangular matrices <span class="math inline">\(E_1, \dots, E_p\)</span> such that</p>
 <p><span class="math display">\[
 E_p \cdots E_1A = U  
 \]</span></p>
@@ -711,7 +721,7 @@ In practice <span class="math inline">\(A^{-1}\)</span> is seldom computed, beca
 Assume that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both non-singular
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-4" class="theorem"><strong>Theorem 1.5  </strong></span>If A and B are both invertible matrces, we have</p>
+<p><span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 1.5  </strong></span>If A and B are both invertible matrces, we have</p>
 <p><span class="math display">\[
 (A^{-1})^{-1} = A  
 \]</span></p>
@@ -750,14 +760,14 @@ C_{1n} &amp; C_{2n} &amp; \cdots &amp; C_{nn} \\
 <p>The right side of Eq <a href="basic-matrix-algebra.html#eq:inverse-adjugate">(1.1)</a> is called the <em>adjugate</em> of <span class="math inline">\(A\)</span>, often denoted by <span class="math inline">\(\text{adj}\, A\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-5" class="theorem"><strong>Theorem 1.6  (An Inverse Formula)  </strong></span>Let <span class="math inline">\(A\)</span> be an invertible <span class="math inline">\(n \times n\)</span> matrix. Then</p>
+<p><span id="thm:unnamed-chunk-4" class="theorem"><strong>Theorem 1.6  (An Inverse Formula)  </strong></span>Let <span class="math inline">\(A\)</span> be an invertible <span class="math inline">\(n \times n\)</span> matrix. Then</p>
 <span class="math display">\[
 A^{-1} = \frac{1}{\det A}\text{adj}\, A
 \]</span>
 </div>
 
 <hr>
-<p>Interestingly, theorem <a href="eigenthings-and-quadratic-forms.html#thm:cayley-hamilton">4.3</a> in later chapters shows that for invertible matrix <span class="math inline">\(A\)</span>, its inverse <span class="math inline">\(A^{-1}\)</span> can be represented as a polynomial of <span class="math inline">\(A\)</span>.</p>
+<p>Interestingly, theorem <a href="eigenthings-and-quadratic-forms.html#thm:cayley-hamilton">4.2</a> in later chapters shows that for invertible matrix <span class="math inline">\(A\)</span>, its inverse <span class="math inline">\(A^{-1}\)</span> can be represented as a polynomial of <span class="math inline">\(A\)</span>.</p>
 <div id="the-matrix-inversion-lemma" class="section level3">
 <h3><span class="header-section-number">1.6.1</span> The Matrix Inversion Lemma</h3>
 
@@ -781,7 +791,7 @@ A^{-1} = \frac{1}{\det A}\text{adj}\, A
 <hr>
 
 <div class="proposition">
-<p><span id="prp:unnamed-chunk-6" class="proposition"><strong>Proposition 1.1  </strong></span>For square matrix <span class="math inline">\(P\)</span> (<strong>not</strong> assuming invertible), if <span class="math inline">\(I + P\)</span> is invertible, then <span class="math inline">\((I + P)^{-1}\)</span> satisfies:</p>
+<p><span id="prp:unnamed-chunk-5" class="proposition"><strong>Proposition 1.1  </strong></span>For square matrix <span class="math inline">\(P\)</span> (<strong>not</strong> assuming invertible), if <span class="math inline">\(I + P\)</span> is invertible, then <span class="math inline">\((I + P)^{-1}\)</span> satisfies:</p>
 <span class="math display">\[
 (I + P)^{-1} = I - (I + P)^{-1}P
 \]</span>
@@ -836,7 +846,7 @@ A^T(\lambda I + AA^T)^{-1} = (\lambda I + A^TA)^{-1}A^T
 <hr>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-7" class="theorem"><strong>Theorem 1.8  (left multiplication as linear transformation)  </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> be a linear transformation. Then there exists a <strong>unique</strong> matrix <span class="math inline">\(A\)</span> such that:</p>
+<p><span id="thm:unnamed-chunk-6" class="theorem"><strong>Theorem 1.8  (left multiplication as linear transformation)  </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> be a linear transformation. Then there exists a <strong>unique</strong> matrix <span class="math inline">\(A\)</span> such that:</p>
 <p><span class="math display">\[
 T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
 \]</span></p>
@@ -865,14 +875,14 @@ T(\bar{x}) &amp;= x_1T(\bar{e}_1) + \dots + x_nT(\bar{e}_n) \\
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-9" class="definition"><strong>Definition 1.2  (A mapping is onto <span class="math inline">\(\mathbb{R^m}\)</span>)  </strong></span>A mapping <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> is said to be <strong>onto</strong>  if each <span class="math inline">\(\bar{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span> is the image of at least one <span class="math inline">\(\bar{x}\)</span> in 
+<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 1.2  (A mapping is onto <span class="math inline">\(\mathbb{R^m}\)</span>)  </strong></span>A mapping <span class="math inline">\(T: \mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> is said to be <strong>onto</strong>  if each <span class="math inline">\(\bar{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span> is the image of at least one <span class="math inline">\(\bar{x}\)</span> in 
 </div>
 
 <p>Equivalently, <span class="math inline">\(T\)</span> is onto <span class="math inline">\(\mathbb{R^m}\)</span> means that there exists at least one solution of <span class="math inline">\(T(\bar{x}) = \bar{b}\)</span> for any <span class="math inline">\(\bar{b}\)</span> in <span class="math inline">\(\mathbb{R}^m\)</span></p>
 <p><br></p>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-10" class="definition"><strong>Definition 1.3  (one-to-one mapping)  </strong></span></p>
+<p><span id="def:unnamed-chunk-9" class="definition"><strong>Definition 1.3  (one-to-one mapping)  </strong></span></p>
 A mapping T: <span class="math inline">\(\mathbb{R^n} \rightarrow \mathbb{R^m}\)</span> is said to be <strong>one-to-one</strong> if each <span class="math inline">\(\bar{b}\)</span> in <span class="math inline">\(\mathbb{R^m}\)</span> is the image of <em>at most</em> one <span class="math inline">\(\bar{x}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span>
 </div>
 
@@ -880,12 +890,66 @@ A mapping T: <span class="math inline">\(\mathbb{R^n} \rightarrow \mathbb{R^m}\)
 <p><br></p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-11" class="theorem"><strong>Theorem 1.9  </strong></span>Let <span class="math inline">\(\mathbb{R}^n \rightarrow \mathbb{R}^m\)</span> be a linear transformation, and <span class="math inline">\(A\)</span> the standard matrix. Then</p>
+<p><span id="thm:unnamed-chunk-10" class="theorem"><strong>Theorem 1.9  </strong></span>Let <span class="math inline">\(\mathbb{R}^n \rightarrow \mathbb{R}^m\)</span> be a linear transformation, and <span class="math inline">\(A\)</span> the standard matrix. Then</p>
 <ul>
 <li><p><span class="math inline">\(T\)</span> maps <span class="math inline">\(mathbb{R}^n\)</span> onto <span class="math inline">\(\mathbb{R}^m\)</span> if only if columns of <span class="math inline">\(A\)</span> span <span class="math inline">\(\mathbb{R}^m\)</span></p></li>
 <li><p><span class="math inline">\(R\)</span> is one-to-one if and only if columns of <span class="math inline">\(A\)</span> are linearly independent</p>
 </div></li>
 </ul>
+</div>
+<div id="complexity-of-matrix-computation" class="section level2">
+<h2><span class="header-section-number">1.8</span> Complexity of Matrix Computation</h2>
+<p>This chapter concludes with a summary of complexity (number of flops needed) in common matrix computations.</p>
+<p>An <span class="math inline">\(m \times n\)</span> matrix is often represented by an <span class="math inline">\(m \times n\)</span> array of floating numbers in a computer, requiring <span class="math inline">\(8mn\)</span> bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index <span class="math inline">\(i\)</span> (integer), column index <span class="math inline">\(j\)</span> (integer) and its value <span class="math inline">\(A_{ij}\)</span> (floating point). Let <span class="math inline">\(\text{nnz}(A)\)</span> be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly <span class="math inline">\(16\text{nnz}(A)\)</span> bytes.</p>
+<p>Let <span class="math inline">\(A\)</span> be an <span class="math inline">\(m \times n\)</span> matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (number of flops) of common matrix operations are listed below</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Operation</th>
+<th align="center">Expression</th>
+<th align="center">Complexity</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">matrix addition</td>
+<td align="center"><span class="math inline">\(A + B\)</span></td>
+<td align="center"><span class="math inline">\(mn\)</span> <br> and <span class="math inline">\(\min(\text{nnz}(A), \text{nnz}(B))\)</span> if one of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is sparse</td>
+<td align="center">For any entry <span class="math inline">\(i,j\)</span> for which one of <span class="math inline">\(A_{ij}\)</span> and <span class="math inline">\(B_{ij}\)</span> is zero, no arithmetic operations are needed to find <span class="math inline">\((A + B)_{ij}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">scalar multiplication</td>
+<td align="center"><span class="math inline">\(kA\)</span></td>
+<td align="center"><span class="math inline">\(mn\)</span> <br> <span class="math inline">\(\text{nnz}(A)\)</span> when <span class="math inline">\(A\)</span> is sparse</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">transposition</td>
+<td align="center"><span class="math inline">\(A^T\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center">Computing <span class="math inline">\(A^T\)</span> needs only copying, but no flops</td>
+</tr>
+<tr class="even">
+<td align="center">matrix-vector multiplication</td>
+<td align="center"><span class="math inline">\(A\bar{x}\)</span></td>
+<td align="center"><span class="math inline">\(m(2n - 1)\)</span></td>
+<td align="center">equivalent to <span class="math inline">\(m\)</span> inner products between rows of <span class="math inline">\(A\)</span> and <span class="math inline">\(\bar{x}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center">matrix-vector multiplication when <span class="math inline">\(A\)</span> is sparse</td>
+<td align="center">between <span class="math inline">\(\text{nnz}(A)\)</span> and <span class="math inline">\(2\text{nnz}(A) - 1\)</span></td>
+<td align="center"><span class="math inline">\(A\bar{x}\)</span></td>
+<td align="center">First we need <span class="math inline">\(\text{nnz}(A)\)</span> multiplications, and certain number of additions. We need most additions when nonzero entries are arranged next to each other, and least when they are separated in different columns and rows (for example for diagonal matrix <span class="math inline">\(A\)</span>, we need no additions at all)</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>

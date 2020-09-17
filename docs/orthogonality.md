@@ -248,7 +248,7 @@ $$
 $$
 
 
-### QR Factorizaiton 
+## QR Factorizaiton 
 
 For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\bar{x}_1, ..., \bar{x}_n$, apply the Gram-Schmidt process to $\bar{x}_1, ..., \bar{x}_n$ amounts to *factorizing* $A$. 
  
@@ -256,18 +256,42 @@ For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\bar{x}_1
 
 <div class = "proof"> Proof </div>  
 
-Because $A_{m \times n}$ is full column rank, we can transform its column vector $\{\bar{x}_{1}, ..., \bar{x}_{n}\}$ into a new set of orthonormal basis $\{\bar{q}_{1}, ..., \bar{q}_{n}\}$ with Gram-Schmidt process. Let 
+Because $A_{m \times n}$ is full column rank, we can transform its column vector $\{\bar{a}_{1}, ..., \bar{a}_{n}\}$ into a new set of orthonormal basis $\{\bar{q}_{1}, ..., \bar{q}_{n}\}$ with Gram-Schmidt process. Let 
 
 $$
 Q = [\bar{q}_{1} \;\; \cdots \;\; \bar{q}_{n}]
 $$
-For $\bar{x}_i, \; i = {1, ..., n}$ in Span$\{\bar{x}_1, ... \bar{x}_k\}$, there exists a set of constant $r_{1k}, ..., r_{kk}$ such that ^[because Span$\{\bar{x}_1, ... \bar{x}_k\}$ is the same as Span$\{\bar{u}_1, ... \bar{u}_k\}$] 
+
+To find $R$, let's consider how the Gram-Schmidt process works. We create $\{\bar{q}_{1}, \cdots, \bar{q}_{n}\}$ by (for simplicity exclude the vector symbol)
+
+$$
+\begin{aligned}
+u_1 &= a_1 && q_1 = \frac{u_1}{\|u_1\|} \\
+u_2 &= a_2 - (a_2 \cdot u_1)u_1 && q_2 = \frac{u_2}{\|u_2 \|} \\
+u_3 &=  a_3 - (a_3 \cdot u_1)u_1 - (a_3 \cdot u_2)u_2 && q_3 = \frac{q_3}{\|q_3\|} \\ 
+\vdots  \\
+u_n  &= a_n - \sum_{i = 1}^{n}(a_n \cdot u_i)u_i && q_n = \frac{u_n}{\|u_n\|}
+\end{aligned}
+$$
+
+Then solve for $a_i$ over the newly produced orthonormal basis. Recall the geometric interpretation of Gram-Schmidt Process, the representation of $a_1$ depends only on $q_1$, $a_2$ depends only on $q_1$ and $q_2$, $a_3$ depends only on $q_1, q_2, q_3$ and so on 
+
+$$
+\begin{aligned}
+a_1 &=  (q_1 \cdot a_1) q_1 \\
+a_2 &= (q_1 \cdot a_2) q_1 + (q_2 \cdot a_2)q_2 \\
+a_3 &= (q_1 \cdot a_3)q_1 + (q_2 \cdot a_3)q_2 + (q_3 \cdot a_3)q_3  \\
+\vdots \\
+a_n &= \sum_{i=1}^{n}(q_i \cdot a_n)q_i
+\end{aligned}
+$$
+The set equations above is essentially expressing $a_i$ by their coordinates associated with the orthonormal basis $q_i$. As a summary, for any column of $A$, there exists a set of constant $r_{1k}, ..., r_{kk}$ where $r_{ik} = q_i \cdot a_k$, such that
 
 $$
 \bar{x}_k = r_{1k}\bar{q}_{1} + \cdots + r_{kk}\bar{q}_{k} + 0 \cdot\bar{q}_{k+1} + \cdots + 0 \cdot \bar{q}_{n}
 $$
 
-So 
+Therefore 
 
 $$
 A = [\bar{x}_{1} \;\; \bar{x}_{2} \;\; \cdots \;\; \bar{x}_{n}] = [\bar{q}_{1} \;\; \bar{q}_{2} \;\; \cdots \;\; \bar{q}_{n}] 

@@ -129,7 +129,7 @@ $$
 
 p-norm is a generalization of 1-norm and 2-norm, requiring $p > 1$. When $p$ turns infinity, $\|\bar{x}\|_{\infty}$ is called the maximum norm.
 
-The book *Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares* introduces some other topics related to norm. 
+The VMLS book [@boyd2018introduction] introduces some other topics related to norm. 
 
 **Root-mean-square value**. The root-mean-square (RMS) value of an $n$-vector $\bar{x}$ is defined as 
 
@@ -223,7 +223,7 @@ $$
 
 
 
-### Inner Product and Cross Product
+### Inner Produc, Outer Product, Cross Product
 
 An **inner product** on a real vector space $X$ is a function $\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}$ satisfying 
 
@@ -246,6 +246,199 @@ $$
 
 
 \BeginKnitrBlock{rmdnote}<div class="rmdnote">The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces” (linear topological space if they are assumed to be vector spaces first).  These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.</div>\EndKnitrBlock{rmdnote}
+
+
+The **outer product** of an $m$ vector $\bar{a}$ and an $\bar{b}$ is given by $\bar{a}\bar{b}^T$, which is an **rank 1** $m \times n$ matrix
+
+$$
+\bar{a}\bar{b}^T = 
+\begin{bmatrix}
+a_1b_1 & a_1b_2 & \cdots & a_1b_n \\
+a_2b_1 & a_2b_2 & \cdots & a_2b_n \\
+\vdots & \vdots & & \vdots \\
+a_nb_1 & a_nb_2 & \cdots & a_nb_n 
+\end{bmatrix}
+$$
+The outer product is not symmetric, i.e. ($\bar{a}\bar{b}^T \not = \bar{b}\bar{a}^T$)
+
+If we express an $m \times n$ matrix $A$ in terms of its columns $a_1, ..., a_n$ and the $n \times p$ matrix $B$ in terms of its rows $b_1, ..., b_p$
+
+$$
+A = 
+\begin{bmatrix}
+a_1 & \cdots & a_n
+\end{bmatrix}, \quad
+B = 
+\begin{bmatrix}
+b_1^T \\
+\vdots \\
+b_n^T
+\end{bmatrix}
+$$
+The the matrix multiplication $AB$ can be expressed as the sum of outer products between $a_i$ and $b_i$
+
+$$
+AB = a_1b_1^T + \cdots + a_nb_n^T
+$$
+This echoes theorem \@ref(thm:cr-expansion), where matrix multiplication is computed via column row expansion. 
+
+<br> 
+
+Next, we bring in the concept of cross product which may not be so significant in the linear algebra section, but it will shine in multivariate integral calculus. 
+
+The **cross product** between $\bar{u}$ and $\bar{v}$ is a **vector** perpendicular to $\bar{u}$, $\bar{v}$ and the plane formed by them, with length equal to 
+
+
+$$
+\|\bar{u} \times \bar{v} \| = \|\bar{u}\| \|\bar{v}\| \sin \theta
+$$
+
+Let $\bar{n}$ denote the unit vector perpendicular to the plane containing $\bar{u}$ and $\bar{v}$, the cross product can be written as 
+
+$$
+\bar{u} \times \bar{v} = \|\bar{u}\| \|\bar{v}\| \sin (\theta)\bar{n}
+$$
+
+Though this formula is rarely helpful we because the main usage of cross product is finding the direction $\bar{n}$. 
+
+In most cases, we only consider cross product in 3D spaces, although it can be generalized to higher dimensions.
+
+Since the sines of $0$ and $\pi$, it makes sense that the cross product of two parallel vectors is zero. 
+
+The cross product obeys the following laws 
+
+1. $r\bar{u} \times s\bar{v} = rs (\bar{u} \times \bar{v})$
+
+2. order matters: $\bar{u} \times \bar{v} = -\bar{v} \times \bar{u}$ 
+
+3. Distributive: $\bar{u} \times (\bar{v} + \bar{w})= \bar{u} \times \bar{v} + \bar{u} \times \bar{w}$
+
+4. Not associative: $\bar{u} \times (\bar{v} \times \bar{w}) = (\bar{u} \cdot \bar{w})\bar{v} - (\bar{u} \cdot \bar{v})\bar{w}$
+
+To get a general formula of cross product, we consider the cross product among 3 standard basis $i = [1, 0, 0], j = [0, 1, 0], k = [0, 0, 1]$ 
+
+
+<div class="figure" style="text-align: center">
+<img src="images/cross-product.png" alt="Figure 12.30 FROM Thomas Calculus, 14th edition" width="200" />
+<p class="caption">(\#fig:unnamed-chunk-3)Figure 12.30 FROM Thomas Calculus, 14th edition</p>
+</div>
+
+$$
+\begin{aligned}
+i \times j &= k \\
+j \times k &= i \\
+k \times i &= j
+\end{aligned}
+$$
+and 
+
+$$
+i \times i  = j \times j = k \times k = 0
+$$
+
+Then the cross product between $\bar{u}$ and $\bar{v}$ can be written as 
+
+$$
+\begin{split}
+\bar{u} \times \bar{v} &= (u_1\boldsymbol{i} + u_2\boldsymbol{j} + u_3\boldsymbol{k}) \times (v_1\boldsymbol{i} + v_2\boldsymbol{j} + v_3\boldsymbol{k}) \\
+&= (u_1v_1)\boldsymbol{i} \times \boldsymbol{i} + (u_1v_2)\boldsymbol{i} \times \boldsymbol{j} + (u_1v_3) \boldsymbol{i} \times \boldsymbol{k} \\
+&{\quad} + (u_2v_1)\boldsymbol{j} \times \boldsymbol{i} + (u_2v_2)\boldsymbol{j} \times \boldsymbol{j} + (u_2v_3)\boldsymbol{j} \times \boldsymbol{k} \\
+&{\quad} + (u_3v_1)\boldsymbol{k} \times \boldsymbol{i} + (u_3v_2)\boldsymbol{k} \times \boldsymbol{j} + (u_3v_3)\boldsymbol{k} \times \boldsymbol{k} \\
+&= (u_2v_3 - u_3v_2)\boldsymbol{i} - (u_1v_3 - u_3v_1)\boldsymbol{j} + (u_1v_2 - u_2v_1)\boldsymbol{k} \\
+&=  \begin{bmatrix}
+u_2v_3 - u_3v_2 \\
+u_1v_3 - u_3v_1 \\
+u_1v_2 - u_2v_1
+\end{bmatrix}
+\end{split}
+$$
+This result is same as the determinant of the following matrix (think of  $\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}$) as scalars during the computation)
+
+$$
+\bar{u} \times \bar{v} = 
+\begin{vmatrix}
+\boldsymbol{i} & \boldsymbol{j} & \boldsymbol{k} \\
+u_1 & u_2 & u_3 \\
+v_1 & v_2 & v_3 
+\end{vmatrix}
+$$
+
+The main use for cross product will be finding a vector which is perpendicular to two given vectors. We can make use of the magnitude as well. Recall the magnitude of the cross product
+
+$$
+\| \bar{u} \times \bar{v} \| = \|\bar{u}\| \|v\|\sin\theta
+$$
+
+
+This is the area of the following parallelogram defined by $\bar{u}$ and $\bar{v}$
+
+
+<div class="figure" style="text-align: center">
+<img src="images/cross-product-2.png" alt="Figure 12.31 FROM Thomas Calculus, 14th edition" width="199" />
+<p class="caption">(\#fig:unnamed-chunk-4)Figure 12.31 FROM Thomas Calculus, 14th edition</p>
+</div>
+So let's review what the dot product gives us: its a vector perpendicular to the plane containing $\bar{u}$ and $\bar{v}$, the length of that vector is equal to the area of the parallelogram formed by $\bar{u}$ and $\bar{v}$. 
+
+As one application of the cross product, we have the following theorem. 
+
+
+\BeginKnitrBlock{theorem}\iffalse{-91-86-111-108-117-109-101-32-111-102-32-97-32-80-97-114-97-108-108-101-108-101-112-105-112-101-100-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:volume-cross-product"><strong>(\#thm:volume-cross-product)  \iffalse (Volume of a Parallelepiped) \fi{} </strong></span>The volume of a parallelepiped with adjacent edges given by vectors $\bar{u}, \bar{v}$ and $\bar{w}$ is the absolute value of the *triple scalar product*
+
+$$
+V = |\bar{u} \cdot (\bar{v} \times \bar{w})|
+$$</div>\EndKnitrBlock{theorem}
+
+
+<div class="figure" style="text-align: center">
+<img src="images/cross-product-3.png" alt="Figure 2.59 from https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product" width="308" />
+<p class="caption">(\#fig:unnamed-chunk-5)Figure 2.59 from https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product</p>
+</div>
+
+\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
+
+The area of the base of the parallelepiped is given by $\|\bar{v} \times \bar{w}\|$, the height is $\bar{u}$ projected on to the resulting vector from the dot product. So we have
+
+$$
+\begin{split}
+V &= \|\text{proj}_{\bar{v} \times \bar{w}} \bar{u} \|\|\bar{v} \times \bar{w}\| \\
+&= |\frac{\bar{u} \cdot (\bar{v} \times \bar{w})}{\| \bar{v} \times \bar{w} \|} |\| \bar{v} \times \bar{w} \| \\
+&= |\bar{u} \cdot (\bar{v} \times \bar{w})|
+\end{split}
+$$
+
+
+Looking back at the formula for $\bar{v} \times \bar{w}$, we can see that this term is the absolute value of the following determinant according to cofactor expansion 
+
+$$
+\begin{vmatrix}
+\bar{u}^T \\
+\bar{v}^T \\
+\bar{w}^T \\
+\end{vmatrix}
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Restricted Definition of Inner Products in $R^n$
 
@@ -352,7 +545,7 @@ If the rank (defined next section) of $A \in \mathbb{R}^{m \times n}$ is $r$
 
 The **rank** of a vector space is its dimension. 
 
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-3"><strong>(\#def:unnamed-chunk-3) </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space. </div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-7"><strong>(\#def:unnamed-chunk-7) </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space. </div>\EndKnitrBlock{definition}
 
 I often think of rank of $A$ as the total volume of information that the matrix can offer.   
 
@@ -378,7 +571,7 @@ From (1) we know that row rank of $A$ is identical to that the number of non-zer
 
 Let $A, B \in \mathbb{R}^{m \times n}$ have ranks $a$ and $b$
 
-\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-4"><strong>(\#cor:unnamed-chunk-4) </strong></span>  
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-8"><strong>(\#cor:unnamed-chunk-8) </strong></span>  
 
 1. $|a - b| \le  r(A + B) \le a + b$  
 
@@ -393,7 +586,7 @@ For (1), rows / columns of $A + B$ can be expressed as linear combinations of ro
 For (2), Each column of $AB$ is a linear combination of columns of A, and each row is a linear combination of rows of $B$. Therefore, $r(AB)$ can not exceed either rank of $A$ or $B$. There is also a corollary on the lower bound of $r(AB)$, which is $a + b - n$. Note that $n$ is the shared dimension. I have not found a concise proof about this, but this property leads to a interesting result: when one of $A$ and $B$ are square and full rank, $\min(r(AB)) = \max(r(AB))$
 
 
-\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-5"><strong>(\#cor:unnamed-chunk-5) </strong></span>  
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-9"><strong>(\#cor:unnamed-chunk-9) </strong></span>  
 
 3. Multiplying $A$ with a square matrix $B$ of full rank does not change the rank of $A$.   
 

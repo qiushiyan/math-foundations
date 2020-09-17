@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-09-15" />
+<meta name="date" content="2020-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -76,7 +76,7 @@
 <li class="chapter" data-level="1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication"><i class="fa fa-check"></i><b>1.1</b> Matrix Multiplication</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#geometric-transformations"><i class="fa fa-check"></i><b>1.1.1</b> Geometric Transformations</a></li>
 <li class="chapter" data-level="1.1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#selector-matrix"><i class="fa fa-check"></i><b>1.1.2</b> Selector matrix</a></li>
-<li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity"><i class="fa fa-check"></i><b>1.1.3</b> Complexity</a></li>
+<li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#discrete-convolution"><i class="fa fa-check"></i><b>1.1.3</b> Discrete Convolution</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#elemetary-matrix-and-row-operations"><i class="fa fa-check"></i><b>1.2</b> Elemetary matrix and row operations</a></li>
 <li class="chapter" data-level="1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#lu-factorization"><i class="fa fa-check"></i><b>1.3</b> LU Factorization</a></li>
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.6.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#the-matrix-inversion-lemma"><i class="fa fa-check"></i><b>1.6.1</b> The Matrix Inversion Lemma</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication-as-linear-transformation"><i class="fa fa-check"></i><b>1.7</b> Matrix Multiplication as Linear Transformation</a></li>
+<li class="chapter" data-level="1.8" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity-of-matrix-computation"><i class="fa fa-check"></i><b>1.8</b> Complexity of Matrix Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector Spaces</a><ul>
 <li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#vector-space"><i class="fa fa-check"></i><b>2.1</b> Vector Space</a><ul>
@@ -98,7 +99,7 @@
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric Spaces, Normed Spaces, Inner Product Spaces</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-and-norm"><i class="fa fa-check"></i><b>2.2.1</b> Metric and Norm</a></li>
-<li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-product-and-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Product and Cross Product</a></li>
+<li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-produc-outer-product-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Produc, Outer Product, Cross Product</a></li>
 <li class="chapter" data-level="2.2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#restricted-definition-of-inner-products-in-rn"><i class="fa fa-check"></i><b>2.2.3</b> Restricted Definition of Inner Products in <span class="math inline">\(R^n\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
@@ -120,13 +121,12 @@
 <li class="chapter" data-level="3.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.1.4</b> Best Approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#projection-and-idempotent-matrices"><i class="fa fa-check"></i><b>3.2</b> Projection and idempotent matrices</a></li>
-<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt Process</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR Factorizaiton</a></li>
+<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt Process</a></li>
+<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.4</b> QR Factorizaiton</a></li>
+<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.5</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.5.1</b> Orthogonal Matrices</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.4</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.4.1</b> Orthogonal Matrices</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#lesat-squares-problems"><i class="fa fa-check"></i><b>3.5</b> Lesat Squares Problems</a></li>
+<li class="chapter" data-level="3.6" data-path="orthogonality.html"><a href="orthogonality.html#lesat-squares-problems"><i class="fa fa-check"></i><b>3.6</b> Lesat Squares Problems</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and Quadratic Forms</a><ul>
 <li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and Eigenvalues</a><ul>
@@ -289,7 +289,7 @@ W^{\perp} = \{\bar{v} \in W^{\perp} | \;\bar{v} \perp \bar{x} \; \text{for all} 
 <br></p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 1.1  </strong></span>If <span class="math inline">\(W\)</span> is a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>, <span class="math inline">\(W^{\perp}\)</span> is also a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>.
+<span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 3.1  </strong></span>If <span class="math inline">\(W\)</span> is a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>, <span class="math inline">\(W^{\perp}\)</span> is also a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>.
 </div>
 
 <p>It’s easy to verify that <span class="math inline">\(W^{\perp}\)</span> is closed under scalar multiplication, and under vector addition, and that any vector in <span class="math inline">\(W\)</span> has <span class="math inline">\(n\)</span> components. So that <span class="math inline">\(W^{\perp}\)</span> is a subspace of <span class="math inline">\(\mathbb{R}^n\)</span></p>
@@ -302,7 +302,7 @@ W^{\perp} = \{\bar{v} \in W^{\perp} | \;\bar{v} \perp \bar{x} \; \text{for all} 
 <p>There is a particular advantage in using orthogonal basis rather than other basis, because we can find a easy representation of any vector in <span class="math inline">\(W\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>For each <span class="math inline">\(\bar{y}\)</span> in <span class="math inline">\(W\)</span>, there exists a linear combination</p>
+<p><span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.2  </strong></span>For each <span class="math inline">\(\bar{y}\)</span> in <span class="math inline">\(W\)</span>, there exists a linear combination</p>
 <p><span class="math display">\[
 y = c_1\bar{u_1} + \cdots + c_p\bar{u_p}
 \]</span></p>
@@ -333,7 +333,7 @@ c_1 = \frac{\bar{u_1} \cdot \bar{y}}{\bar{u_1} \cdot \bar{u_1}}
 <p><strong>Orthogonal decomposition</strong> split <span class="math inline">\(\bar{y}\)</span> in <span class="math inline">\(\mathbb{R^n}\)</span> into two vectors, one in <span class="math inline">\(W\)</span> and one in its orthogonal compliment <span class="math inline">\(W^{\perp}\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 3.2  </strong></span>Let <span class="math inline">\(\mathbb{R}^n\)</span> be a inner product space and <span class="math inline">\(W\)</span> and subspace of <span class="math inline">\(\mathbb{R}^n\)</span>. Then every <span class="math inline">\(\bar{v}\)</span> in <span class="math inline">\(W\)</span> can be written uniquely in the form</p>
+<p><span id="thm:unnamed-chunk-3" class="theorem"><strong>Theorem 1.5  </strong></span>Let <span class="math inline">\(\mathbb{R}^n\)</span> be a inner product space and <span class="math inline">\(W\)</span> and subspace of <span class="math inline">\(\mathbb{R}^n\)</span>. Then every <span class="math inline">\(\bar{v}\)</span> in <span class="math inline">\(W\)</span> can be written uniquely in the form</p>
 <p><span class="math display">\[
 \bar{v} = \bar{v}_w + \bar{v}_{\perp}
 \]</span></p>
@@ -397,7 +397,7 @@ Proof
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="images/best-approximation.png" alt="figure from page p352, ch6 [@lay2006-3]" width="120%" />
 <p class="caption">
-Figure 3.1: figure from page p352, ch6 <span class="citation">(Lay <a href="references.html#ref-lay2006-3" role="doc-biblioref">2006</a>)</span>
+Figure 2.2: figure from page p352, ch6 <span class="citation">(Lay <a href="references.html#ref-lay2006-3" role="doc-biblioref">2006</a>)</span>
 </p>
 </div>
 <p><span class="math display">\[
@@ -429,7 +429,7 @@ P_S\bar{v} &amp;= (\bar{v} \cdot \bar{u}_1)\bar{u}_1 + \cdots + (\bar{v} \cdot \
 <p>In practical problems, it is more convenient to use matrix at hand rather than producing an orthonormal basis.</p>
 
 <div class="corollary">
-<span id="cor:unnamed-chunk-5" class="corollary"><strong>Corollary 2.2  </strong></span>Idempotent matrices have eigenvalues either <span class="math inline">\(1\)</span> or <span class="math inline">\(0\)</span>.
+<span id="cor:unnamed-chunk-5" class="corollary"><strong>Corollary 3.1  </strong></span>Idempotent matrices have eigenvalues either <span class="math inline">\(1\)</span> or <span class="math inline">\(0\)</span>.
 </div>
 
 <hr>
@@ -486,8 +486,9 @@ A\bar{x} = A(A^TA)^{-1}A^T\bar{b} = \hat{\bar{b}}
 <p><span class="math display">\[
 \{\bar{q}_i = \frac{\bar{v}_i}{\|\bar{v}_i\|}, \;i = 1, ... p\} 
 \]</span></p>
-<div id="qr-factorizaiton" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> QR Factorizaiton</h3>
+</div>
+<div id="qr-factorizaiton" class="section level2">
+<h2><span class="header-section-number">3.4</span> QR Factorizaiton</h2>
 <p>For <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> with linearly independent columns <span class="math inline">\(\bar{x}_1, ..., \bar{x}_n\)</span>, apply the Gram-Schmidt process to <span class="math inline">\(\bar{x}_1, ..., \bar{x}_n\)</span> amounts to <em>factorizing</em> <span class="math inline">\(A\)</span>.</p>
 
 <div class="theorem">
@@ -497,15 +498,35 @@ A\bar{x} = A(A^TA)^{-1}A^T\bar{b} = \hat{\bar{b}}
 <div class="proof">
 Proof
 </div>
-<p>Because <span class="math inline">\(A_{m \times n}\)</span> is full column rank, we can transform its column vector <span class="math inline">\(\{\bar{x}_{1}, ..., \bar{x}_{n}\}\)</span> into a new set of orthonormal basis <span class="math inline">\(\{\bar{q}_{1}, ..., \bar{q}_{n}\}\)</span> with Gram-Schmidt process. Let</p>
+<p>Because <span class="math inline">\(A_{m \times n}\)</span> is full column rank, we can transform its column vector <span class="math inline">\(\{\bar{a}_{1}, ..., \bar{a}_{n}\}\)</span> into a new set of orthonormal basis <span class="math inline">\(\{\bar{q}_{1}, ..., \bar{q}_{n}\}\)</span> with Gram-Schmidt process. Let</p>
 <p><span class="math display">\[
 Q = [\bar{q}_{1} \;\; \cdots \;\; \bar{q}_{n}]
+\]</span></p>
+<p>To find <span class="math inline">\(R\)</span>, let’s consider how the Gram-Schmidt process works. We create <span class="math inline">\(\{\bar{q}_{1}, \cdots, \bar{q}_{n}\}\)</span> by (for simplicity exclude the vector symbol)</p>
+<p><span class="math display">\[
+\begin{aligned}
+u_1 &amp;= a_1 &amp;&amp; q_1 = \frac{u_1}{\|u_1\|} \\
+u_2 &amp;= a_2 - (a_2 \cdot u_1)u_1 &amp;&amp; q_2 = \frac{u_2}{\|u_2 \|} \\
+u_3 &amp;=  a_3 - (a_3 \cdot u_1)u_1 - (a_3 \cdot u_2)u_2 &amp;&amp; q_3 = \frac{q_3}{\|q_3\|} \\ 
+\vdots  \\
+u_n  &amp;= a_n - \sum_{i = 1}^{n}(a_n \cdot u_i)u_i &amp;&amp; q_n = \frac{u_n}{\|u_n\|}
+\end{aligned}
+\]</span></p>
+<p>Then solve for <span class="math inline">\(a_i\)</span> over the newly produced orthonormal basis. Recall the geometric interpretation of Gram-Schmidt Process, the representation of <span class="math inline">\(a_1\)</span> depends only on <span class="math inline">\(q_1\)</span>, <span class="math inline">\(a_2\)</span> depends only on <span class="math inline">\(q_1\)</span> and <span class="math inline">\(q_2\)</span>, <span class="math inline">\(a_3\)</span> depends only on <span class="math inline">\(q_1, q_2, q_3\)</span> and so on</p>
+<p><span class="math display">\[
+\begin{aligned}
+a_1 &amp;=  (q_1 \cdot a_1) q_1 \\
+a_2 &amp;= (q_1 \cdot a_2) q_1 + (q_2 \cdot a_2)q_2 \\
+a_3 &amp;= (q_1 \cdot a_3)q_1 + (q_2 \cdot a_3)q_2 + (q_3 \cdot a_3)q_3  \\
+\vdots \\
+a_n &amp;= \sum_{i=1}^{n}(q_i \cdot a_n)q_i
+\end{aligned}
 \]</span>
-For <span class="math inline">\(\bar{x}_i, \; i = {1, ..., n}\)</span> in Span<span class="math inline">\(\{\bar{x}_1, ... \bar{x}_k\}\)</span>, there exists a set of constant <span class="math inline">\(r_{1k}, ..., r_{kk}\)</span> such that<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+The set equations above is essentially expressing <span class="math inline">\(a_i\)</span> by their coordinates associated with the orthonormal basis <span class="math inline">\(q_i\)</span>. As a summary, for any column of <span class="math inline">\(A\)</span>, there exists a set of constant <span class="math inline">\(r_{1k}, ..., r_{kk}\)</span> where <span class="math inline">\(r_{ik} = q_i \cdot a_k\)</span>, such that</p>
 <p><span class="math display">\[
 \bar{x}_k = r_{1k}\bar{q}_{1} + \cdots + r_{kk}\bar{q}_{k} + 0 \cdot\bar{q}_{k+1} + \cdots + 0 \cdot \bar{q}_{n}
 \]</span></p>
-<p>So</p>
+<p>Therefore</p>
 <p><span class="math display">\[
 A = [\bar{x}_{1} \;\; \bar{x}_{2} \;\; \cdots \;\; \bar{x}_{n}] = [\bar{q}_{1} \;\; \bar{q}_{2} \;\; \cdots \;\; \bar{q}_{n}] 
 \begin{bmatrix}
@@ -518,12 +539,11 @@ r_{11} &amp; r_{12} &amp; \cdots &amp; r_{1n} \\
 \]</span>
 We could assume that <span class="math inline">\(r_{kk} \ge 0\)</span>. (if <span class="math inline">\(r_{kk} &lt; 0\)</span>, multiply both <span class="math inline">\(r_{kk}\)</span> and <span class="math inline">\(\bar{u}_k\)</span> by <span class="math inline">\(-1\)</span>)</p>
 </div>
-</div>
 <div id="orthonormal-sets-and-orthogonal-matrices" class="section level2">
-<h2><span class="header-section-number">3.4</span> Orthonormal Sets and Orthogonal Matrices</h2>
+<h2><span class="header-section-number">3.5</span> Orthonormal Sets and Orthogonal Matrices</h2>
 <p>An orthogonal set whose components are all unit vectors is said to be <strong>orthonormal</strong> sets.</p>
 <div id="orthogonal-matrices" class="section level3">
-<h3><span class="header-section-number">3.4.1</span> Orthogonal Matrices</h3>
+<h3><span class="header-section-number">3.5.1</span> Orthogonal Matrices</h3>
 <p>An <em>orthogonal matrix</em> is a square matrix <span class="math inline">\(Q\)</span> whose inverse is its transpose:</p>
 <p><span class="math display" id="eq:orthogonal-matrix">\[
 \tag{3.1}
@@ -543,7 +563,7 @@ QQ^T = Q^TQ = I
 </div>
 </div>
 <div id="lesat-squares-problems" class="section level2">
-<h2><span class="header-section-number">3.5</span> Lesat Squares Problems</h2>
+<h2><span class="header-section-number">3.6</span> Lesat Squares Problems</h2>
 
 <div class="definition">
 <span id="def:unnamed-chunk-6" class="definition"><strong>Definition 3.1  </strong></span>the <strong>normal equation</strong>
@@ -561,12 +581,6 @@ A^T\bar{b} - A^TA\hat{\bar{x}} = 0 \\
 \]</span></p>
 
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="3">
-<li id="fn3"><p>because Span<span class="math inline">\(\{\bar{x}_1, ... \bar{x}_k\}\)</span> is the same as Span<span class="math inline">\(\{\bar{u}_1, ... \bar{u}_k\}\)</span><a href="orthogonality.html#fnref3" class="footnote-back">↩︎</a></p></li>
-</ol>
 </div>
             </section>
 

@@ -43,7 +43,7 @@ For matrix-matrix multiplication $AB$, besides the dot product definition we can
 
 (ref:cr-expansion) Column-row expansion of $AB$
 
-```{theorem, name = "(ref:cr-expansion)"}
+```{theorem cr-expansion, name = "(ref:cr-expansion)"}
 
 if $A$ is $m \times n$ and $B$ is $n \times p$, then 
 
@@ -64,7 +64,7 @@ $$
 Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix. 
 
 
-The following subsections follows Chapter 7 of VMLS [@boyd2018introduction], introducing  some special matrices and their effect in matrix multiplication, and conclude with a summary of complexity (number of flops needed) in common matrix operations. 
+The following subsections follows Chapter 7 of VMLS [@boyd2018introduction], introducing  some special matrices and their effect in matrix multiplication.  
 
 
 ### Geometric Transformations 
@@ -112,27 +112,102 @@ $$
 \end{aligned}
 $$
 
-Then an $n \times n$ matrix $A$ formed by a subset of such vectors are called a selector matrix. 
+Then an $m \times n$ matrix $A$ formed by a subset of such vectors are called a selector matrix. In other words, an $m \times n$ selector matrix $A$ is one in which each row is a standard unit vector 
 
-### Convolution
+$$
+A = \begin{bmatrix}
+\bar{e}_{k_1}^T \\ 
+\vdots \\
+\bar{e}_{k_m}^T
+\end{bmatrix}
+$$
+
+where $1 \le k_1, ..., k_m \le n$. When a selector matrix multiplies a vector $\bar{x}$, it returned the $k_i$th entry of $\bar{x}$ on the $i$th entry of $y = A\bar{x}$. For example, we can construct a $4 \times n$ selector matrix
+
+$$
+A = 
+\begin{bmatrix}
+\bar{e}_2^T \\
+\bar{e}_1^T \\ 
+\bar{e}_5^T \\ 
+\bar{e}_8^T
+\end{bmatrix}
+$$
+When multiplying $\bar{x}$
+
+$$
+\begin{bmatrix}
+\bar{e}_2^T \\
+\bar{e}_1^T \\ 
+\bar{e}_5^T \\
+\bar{e}_8^T
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+\vdots \\ 
+x_n 
+\end{bmatrix}
+= 
+\begin{bmatrix}
+x_2 \\
+x_1 \\
+x_5 \\
+x_8
+\end{bmatrix}
+$$
+The identity matrix, and the reverser matrix 
+
+$$
+A = 
+\begin{bmatrix}
+\bar{e}_n^T \\ 
+\vdots \\
+\bar{e}_1^T
+\end{bmatrix}
+= 
+\begin{bmatrix}
+0 & 0 & \cdots & 0 & 1 \\
+0 & 0 & \cdots & 1 & 0 \\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+1 & 0 & \cdots & 0 & 0
+\end{bmatrix}
+$$
+are one of the selector matrices family. 
+
+Selector matrices have important applications in down-sampling, image cropping, and permutation. (P.144, VSLM) 
 
 
-### Complexity
+### Discrete Convolution
 
-An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly $16\text{nnz}(A)$ bytes. 
+The (discrete) *convolution* of an $n$-vector $a$ $a$ and $m$-vector $b$ is a $(n + m - 1)$-vector, denoted $a * b$, with entries
 
+$$
+c_k = \sum_{i + j = k + 1}a_ib_j, \quad k = 1, ..., n + m - 1
+$$
 
-Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (number of flops) of common matrix operations are listed below 
+For example, the convolution of $n = 5$ and $m = 3$ is 
 
-|Operation|Expression|Complexity|Explanation|
-|:-:|:-:|:-:|:-:|
-|matrix addition|$A + B$|$mn$ <br> and $\min(\text{nnz}(A), \text{nnz}(B))$ if one of $A$ and $B$ is sparse|For any entry $i,j$ for which one of $A_{ij}$ and $B_{ij}$ is zero, no arithmetic operations are needed to find  $(A + B)_{ij}$|
-|scalar multiplication|$kA$|$mn$ <br> $\text{nnz}(A)$ when $A$ is sparse||
-|transposition|$A^T$|$0$|Computing $A^T$ needs only copying, but no flops|
-|matrix-vector multiplication|$A\bar{x}$|$m(2n - 1)$|equivalent to $m$ inner products between rows of $A$ and $\bar{x}$|
-|matrix-vector multiplication when $A$ is sparse|between $\text{nnz}(A)$ and $2\text{nnz}(A) - 1$|$A\bar{x}$|First we need $\text{nnz}(A)$ multiplications, and certain number of additions. We need most additions when nonzero entries are arranged next to each other, and least when they are separated in different columns and rows (for example for diagonal matrix $A$, we need no additions at all)|
+$$
+\begin{aligned}
+c_1 &= a_1b_1 \\
+c_2 &= a_1b_2 + a_2b_1  \\
+c_3 &= a_1b_3 + a_2b_2 + a_3b_1 \\
+c_4 &= a_2b_3 + a_3b_2 + a_4b_1 \\
+c_5 &= a_3b_3 + a_4b_2 + a_5b_1 \\
+c_6 &= a_4b_3 + a_5b_2 \\
+c_7 &= a_5b_3
+\end{aligned}
+$$
+A important application of convolution arises in polynomial multiplication. If $a$ and $b$ represent coefficients of two polynomials 
 
+$$
+p(x) = a_1 + a_2x + \cdots + a_nx^{n-1}, \quad q(x) = b_1 + b_2x + \cdots + b_mx^{m - 1}
+$$
+then the coefficients of the product polynomial $p(x)q(x)$ are represented by $c = a * b$ 
 
+$$
+p(x)q(x) = c_1 + c_2x + \cdots + c_{n + m - 1}x^{n + m - 2}
+$$
 
 
 ## Elemetary matrix and row operations  
@@ -705,9 +780,23 @@ Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ 
 
 
 
+## Complexity of Matrix Computation
+
+This chapter concludes with a summary of complexity (number of flops needed) in common matrix computations.
 
 
+An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly $16\text{nnz}(A)$ bytes. 
 
+
+Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (number of flops) of common matrix operations are listed below 
+
+|Operation|Expression|Complexity|Explanation|
+|:-:|:-:|:-:|:-:|
+|matrix addition|$A + B$|$mn$ <br> and $\min(\text{nnz}(A), \text{nnz}(B))$ if one of $A$ and $B$ is sparse|For any entry $i,j$ for which one of $A_{ij}$ and $B_{ij}$ is zero, no arithmetic operations are needed to find  $(A + B)_{ij}$|
+|scalar multiplication|$kA$|$mn$ <br> $\text{nnz}(A)$ when $A$ is sparse||
+|transposition|$A^T$|$0$|Computing $A^T$ needs only copying, but no flops|
+|matrix-vector multiplication|$A\bar{x}$|$m(2n - 1)$|equivalent to $m$ inner products between rows of $A$ and $\bar{x}$|
+|matrix-vector multiplication when $A$ is sparse|between $\text{nnz}(A)$ and $2\text{nnz}(A) - 1$|$A\bar{x}$|First we need $\text{nnz}(A)$ multiplications, and certain number of additions. We need most additions when nonzero entries are arranged next to each other, and least when they are separated in different columns and rows (for example for diagonal matrix $A$, we need no additions at all)|
 
 
 

@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-09-15" />
+<meta name="date" content="2020-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -76,7 +76,7 @@
 <li class="chapter" data-level="1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication"><i class="fa fa-check"></i><b>1.1</b> Matrix Multiplication</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#geometric-transformations"><i class="fa fa-check"></i><b>1.1.1</b> Geometric Transformations</a></li>
 <li class="chapter" data-level="1.1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#selector-matrix"><i class="fa fa-check"></i><b>1.1.2</b> Selector matrix</a></li>
-<li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity"><i class="fa fa-check"></i><b>1.1.3</b> Complexity</a></li>
+<li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#discrete-convolution"><i class="fa fa-check"></i><b>1.1.3</b> Discrete Convolution</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#elemetary-matrix-and-row-operations"><i class="fa fa-check"></i><b>1.2</b> Elemetary matrix and row operations</a></li>
 <li class="chapter" data-level="1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#lu-factorization"><i class="fa fa-check"></i><b>1.3</b> LU Factorization</a></li>
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.6.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#the-matrix-inversion-lemma"><i class="fa fa-check"></i><b>1.6.1</b> The Matrix Inversion Lemma</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication-as-linear-transformation"><i class="fa fa-check"></i><b>1.7</b> Matrix Multiplication as Linear Transformation</a></li>
+<li class="chapter" data-level="1.8" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity-of-matrix-computation"><i class="fa fa-check"></i><b>1.8</b> Complexity of Matrix Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector Spaces</a><ul>
 <li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#vector-space"><i class="fa fa-check"></i><b>2.1</b> Vector Space</a><ul>
@@ -98,7 +99,7 @@
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric Spaces, Normed Spaces, Inner Product Spaces</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-and-norm"><i class="fa fa-check"></i><b>2.2.1</b> Metric and Norm</a></li>
-<li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-product-and-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Product and Cross Product</a></li>
+<li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-produc-outer-product-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Produc, Outer Product, Cross Product</a></li>
 <li class="chapter" data-level="2.2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#restricted-definition-of-inner-products-in-rn"><i class="fa fa-check"></i><b>2.2.3</b> Restricted Definition of Inner Products in <span class="math inline">\(R^n\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
@@ -120,13 +121,12 @@
 <li class="chapter" data-level="3.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.1.4</b> Best Approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#projection-and-idempotent-matrices"><i class="fa fa-check"></i><b>3.2</b> Projection and idempotent matrices</a></li>
-<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt Process</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR Factorizaiton</a></li>
+<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt Process</a></li>
+<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.4</b> QR Factorizaiton</a></li>
+<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.5</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.5.1</b> Orthogonal Matrices</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.4</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.4.1</b> Orthogonal Matrices</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#lesat-squares-problems"><i class="fa fa-check"></i><b>3.5</b> Lesat Squares Problems</a></li>
+<li class="chapter" data-level="3.6" data-path="orthogonality.html"><a href="orthogonality.html#lesat-squares-problems"><i class="fa fa-check"></i><b>3.6</b> Lesat Squares Problems</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and Quadratic Forms</a><ul>
 <li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and Eigenvalues</a><ul>
@@ -293,7 +293,7 @@
 <p>Eq <a href="eigenthings-and-quadratic-forms.html#eq:characteristic-equation">(4.1)</a> is called the <strong>characteristic equation</strong> of matrix <span class="math inline">\(A\)</span>. This is a scalar equation containing information about eigenvalues and eigenvectors of a square matrix <span class="math inline">\(A\)</span>.</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 1.1  </strong></span>Eigenvalues of a trangular matrix are its diagonal entries.
+<span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 3.1  </strong></span>Eigenvalues of a trangular matrix are its diagonal entries.
 </div>
 
 <div class="proof">
@@ -450,7 +450,7 @@ Repeated eigenvalues create the possibility that a diagonalization might not exi
 <p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(B\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
+<span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.2  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
 </div>
 
 <div class="proof">
@@ -584,7 +584,7 @@ B = P\Lambda_2P^{-1}
 <hr>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-6" class="theorem"><strong>Theorem 4.2  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are diagonalizable matrices, they are simultaneously diagonalizable if and only if they commute, such that <span class="math inline">\(AB\)</span> = <span class="math inline">\(BA\)</span>.
+<span id="thm:unnamed-chunk-6" class="theorem"><strong>Theorem 1.8  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are diagonalizable matrices, they are simultaneously diagonalizable if and only if they commute, such that <span class="math inline">\(AB\)</span> = <span class="math inline">\(BA\)</span>.
 </div>
 
 <p>This theorem is useful in identifying diagonalizable matrices with the same eigenvectors.</p>
@@ -613,14 +613,14 @@ are not simultaneously diagonalizable because they do not commute.</p>
 <p>We can obtain a polynomial of matrix <span class="math inline">\(A\)</span> by substituting <span class="math inline">\(A\)</span> for <span class="math inline">\(\lambda\)</span>, and <span class="math inline">\(kI\)</span> for constant terms. For example, the matrix form of the polynomial <span class="math inline">\(3\lambda^2 + 2\lambda + 2\)</span> is <span class="math inline">\(3A^2 + 2A + 2I\)</span>.</p>
 
 <div class="theorem">
-<p><span id="thm:cayley-hamilton" class="theorem"><strong>Theorem 4.3  (Cayley-Hamilton Theorem)  </strong></span></p>
+<p><span id="thm:cayley-hamilton" class="theorem"><strong>Theorem 4.2  (Cayley-Hamilton Theorem)  </strong></span></p>
 Let <span class="math inline">\(f(\lambda)\)</span> be the polynomial function of the characteristic polynomial <span class="math inline">\(\det(A - \lambda I)\)</span>, where <span class="math inline">\(A\)</span> is a square matrix. Then <span class="math inline">\(f(A)\)</span> evaluates to a zero matrix.
 </div>
 
 <div class="proof">
 Proof
 </div>
-<p>Though the Caley Hamilton theorem <a href="eigenthings-and-quadratic-forms.html#thm:cayley-hamilton">4.3</a> applies to any square matrix <span class="math inline">\(A\)</span>. Our proof only address the case for diagonalizable matrices.</p>
+<p>Though the Caley Hamilton theorem <a href="eigenthings-and-quadratic-forms.html#thm:cayley-hamilton">4.2</a> applies to any square matrix <span class="math inline">\(A\)</span>. Our proof only address the case for diagonalizable matrices.</p>
 <p>When <span class="math inline">\(A\)</span> is diagonalizable, the polynomial of <span class="math inline">\(A\)</span> takes the form</p>
 <p><span class="math display">\[
 f(A) = Pf(\Lambda)P^{-1}
@@ -651,7 +651,7 @@ A = \frac{1}{2}(A + A^T) + \frac{1}{2}(A - A^T)
 <p>Symmetric matrices have some nice properties about diagonalization.</p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-8" class="theorem"><strong>Theorem 4.4  </strong></span>If <span class="math inline">\(A\)</span> is symmetric, eigenvectors from distinct eigenvalues are <strong>orthogonal</strong>.
+<span id="thm:unnamed-chunk-8" class="theorem"><strong>Theorem 4.3  </strong></span>If <span class="math inline">\(A\)</span> is symmetric, eigenvectors from distinct eigenvalues are <strong>orthogonal</strong>.
 </div>
 
 <div class="proof">
@@ -695,7 +695,7 @@ A^T = (Q \Lambda Q^{T})^T = (Q^T)^T\Lambda^TQ^T= Q \Lambda Q^{T}  = A
 \]</span></p>
 
 <div class="theorem">
-<span id="thm:unnamed-chunk-9" class="theorem"><strong>Theorem 4.5  </strong></span>An <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is orthogonally diagonalizable if an only if <span class="math inline">\(A\)</span> is a symmetric matrix.
+<span id="thm:unnamed-chunk-9" class="theorem"><strong>Theorem 4.4  </strong></span>An <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is orthogonally diagonalizable if an only if <span class="math inline">\(A\)</span> is a symmetric matrix.
 </div>
 
 <div id="spectral-decomposition" class="section level3">
@@ -725,7 +725,7 @@ A = \lambda_1\bar{q}_1\bar{q}_1^T + \cdots + \lambda_1\bar{q}_n\bar{q}_n^T
 <h3><span class="header-section-number">4.3.2</span> A-Orthogonality</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-10" class="definition"><strong>Definition 1.3  (A-Orthogonality)  </strong></span>Column vector <span class="math inline">\(\bar{v}_i\)</span> and <span class="math inline">\(\bar{v}_j\)</span> are said to be <em>A-orthogonal</em> if <span class="math inline">\(\bar{v}_i^TA\bar{v}_j = 0\)</span> for some <span class="math inline">\(n \times n\)</span> invertible matrix <span class="math inline">\(A\)</span>.
+<span id="def:unnamed-chunk-10" class="definition"><strong>Definition 4.5  (A-Orthogonality)  </strong></span>Column vector <span class="math inline">\(\bar{v}_i\)</span> and <span class="math inline">\(\bar{v}_j\)</span> are said to be <em>A-orthogonal</em> if <span class="math inline">\(\bar{v}_i^TA\bar{v}_j = 0\)</span> for some <span class="math inline">\(n \times n\)</span> invertible matrix <span class="math inline">\(A\)</span>.
 </div>
 
 <p>Similarly, a set of column vectors <span class="math inline">\(\bar{v}_1, ..., \bar{v}_n\)</span> is A-orthogonal, if and only if <span class="math inline">\(\bar{v}_i^TA\bar{v}_i = 0\)</span> for each pair of vectors.</p>
@@ -735,7 +735,7 @@ A = \lambda_1\bar{q}_1\bar{q}_1^T + \cdots + \lambda_1\bar{q}_n\bar{q}_n^T
 <h2><span class="header-section-number">4.4</span> Quadratic Forms</h2>
 
 <div class="definition">
-<span id="def:unnamed-chunk-11" class="definition"><strong>Definition 4.5  (Quadratic form)  </strong></span>A <strong>quadratic form</strong> on <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math inline">\(Q\)</span> defined on <span class="math inline">\(\mathbb{R}^n\)</span> whose value at a vector <span class="math inline">\(\bar{x}\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span> can be computed by an expression of the form <span class="math inline">\(Q(\bar{x}) = \bar{x}^TA\bar{x}\)</span>, where <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is a <strong>symmetric</strong> matrix. <span class="math inline">\(A\)</span> is called the matrix of the quadraticc form.
+<span id="def:unnamed-chunk-11" class="definition"><strong>Definition 4.6  (Quadratic form)  </strong></span>A <strong>quadratic form</strong> on <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math inline">\(Q\)</span> defined on <span class="math inline">\(\mathbb{R}^n\)</span> whose value at a vector <span class="math inline">\(\bar{x}\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span> can be computed by an expression of the form <span class="math inline">\(Q(\bar{x}) = \bar{x}^TA\bar{x}\)</span>, where <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is a <strong>symmetric</strong> matrix. <span class="math inline">\(A\)</span> is called the matrix of the quadraticc form.
 </div>
 
 <p>There exists a one-to-one mapping between symmetric matrix <span class="math inline">\(A\)</span> and the quadratic form. Consider the <span class="math inline">\(3 \times 3\)</span> case:</p>
@@ -789,14 +789,14 @@ This verifies that <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> when <
 where <span class="math inline">\(P\)</span> is any invertible matrix <span class="math inline">\(\in \mathbb{R}^{n \times n}\)</span></p>
 
 <div class="theorem">
-<p><span id="thm:principal-axes" class="theorem"><strong>Theorem 4.6  (The Principal Axes Theorem)  </strong></span>Let <span class="math inline">\(A\)</span> be an <span class="math inline">\(n \times n\)</span> symmetric matrix. Then there exists an orthogonal change of variable, <span class="math inline">\(\bar{x} = Q\bar{y}\)</span>, this transform the quadratic form <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> into a quadratic form <span class="math inline">\(\bar{y}^T\Lambda\bar{y}\)</span> with no cross-product term.</p>
+<p><span id="thm:principal-axes" class="theorem"><strong>Theorem 4.5  (The Principal Axes Theorem)  </strong></span>Let <span class="math inline">\(A\)</span> be an <span class="math inline">\(n \times n\)</span> symmetric matrix. Then there exists an orthogonal change of variable, <span class="math inline">\(\bar{x} = Q\bar{y}\)</span>, this transform the quadratic form <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> into a quadratic form <span class="math inline">\(\bar{y}^T\Lambda\bar{y}\)</span> with no cross-product term.</p>
 <p><span class="math inline">\(Q\)</span> is constructed with <span class="math inline">\(A\)</span>’s orthonormal eigenvectors <span class="math inline">\(\bar{q}_1, ..., \bar{q}_n\)</span>. According to theorem <a href="eigenthings-and-quadratic-forms.html#eq:orthogonal-diagonalization">(4.2)</a>:</p>
 <span class="math display">\[
 \bar{x}^TA\bar{x} = (Q\bar{y})^TA(Q\bar{y}) = \bar{y}^TQ^{T}AQ\bar{y} = \bar{y}^T \Lambda \bar{y}
 \]</span>
 </div>
 
-<p>The principal axes theorem <a href="eigenthings-and-quadratic-forms.html#thm:principal-axes">4.6</a> shows that if <span class="math inline">\(A\)</span> is diagonalizable, quadratic form <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> can be reexpressed into the form <span class="math inline">\(\lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2\)</span> with change of variables <span class="math inline">\(\bar{x} = Q\bar{y}\)</span>.</p>
+<p>The principal axes theorem <a href="eigenthings-and-quadratic-forms.html#thm:principal-axes">4.5</a> shows that if <span class="math inline">\(A\)</span> is diagonalizable, quadratic form <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> can be reexpressed into the form <span class="math inline">\(\lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2\)</span> with change of variables <span class="math inline">\(\bar{x} = Q\bar{y}\)</span>.</p>
 </div>
 <div id="classification-of-quadratic-forms" class="section level3">
 <h3><span class="header-section-number">4.4.2</span> Classification of Quadratic Forms</h3>
@@ -813,7 +813,7 @@ where <span class="math inline">\(P\)</span> is any invertible matrix <span clas
 Also, if <span class="math inline">\(A\)</span> is positive definite, then <span class="math inline">\(−A\)</span> is negative definite and viceversa. Likewise, if <span class="math inline">\(A\)</span> is positive semidefinite then <span class="math inline">\(−A\)</span> is negative semidefinite and vice versa. If <span class="math inline">\(A\)</span> is indefinite, then so is <span class="math inline">\(−A\)</span>.
 </div>
 
-<p>From theorem <a href="eigenthings-and-quadratic-forms.html#thm:principal-axes">4.6</a>, we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of <span class="math inline">\(A\)</span> are equivalent:</p>
+<p>From theorem <a href="eigenthings-and-quadratic-forms.html#thm:principal-axes">4.5</a>, we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of <span class="math inline">\(A\)</span> are equivalent:</p>
 <ul>
 <li><p>For any <span class="math inline">\(\bar{x} \in \mathbb{R}^n, \; \bar{x}^TA\bar{x} &gt; 0\)</span></p></li>
 <li><p>Let <span class="math inline">\(\lambda_i, \; i = 1, ..., n\)</span> be <span class="math inline">\(A\)</span>’s eigenvalues, <span class="math inline">\(\lambda_i &gt; 0\)</span></p></li>
@@ -823,7 +823,7 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 <p>For the last criterion, leading determinant is the determinant of the top-left <span class="math inline">\(k \times k\)</span> lock of <span class="math inline">\(A\)</span> for all <span class="math inline">\(1 \le k \le n\)</span>. There is formal theorem on this</p>
 
 <div class="theorem">
-<span id="thm:sylvester-criterion" class="theorem"><strong>Theorem 4.7  (Sylvester’s Criterion)  </strong></span>A symmetric matrix <span class="math inline">\(A\)</span> is positive definite if and only if the determinant of the top-left <span class="math inline">\(k \times k\)</span> block of <span class="math inline">\(A\)</span> is strictly positive for all <span class="math inline">\(1 \le k \le n\)</span>
+<span id="thm:sylvester-criterion" class="theorem"><strong>Theorem 4.6  (Sylvester’s Criterion)  </strong></span>A symmetric matrix <span class="math inline">\(A\)</span> is positive definite if and only if the determinant of the top-left <span class="math inline">\(k \times k\)</span> block of <span class="math inline">\(A\)</span> is strictly positive for all <span class="math inline">\(1 \le k \le n\)</span>
 </div>
 
 <p>Sylvester’s criterion is more complicated for positive semidefinite matrices, we have to check more matrices rather than just the top-left one.</p>
@@ -832,7 +832,7 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 <hr>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-13" class="theorem"><strong>Theorem 4.8  (Quadratic forms and eigenvalues)  </strong></span>Let <span class="math inline">\(A \in \mathbb{S}^{n}\)</span>. Then the quadratic form <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> and <span class="math inline">\(A\)</span> is:</p>
+<p><span id="thm:unnamed-chunk-13" class="theorem"><strong>Theorem 4.7  (Quadratic forms and eigenvalues)  </strong></span>Let <span class="math inline">\(A \in \mathbb{S}^{n}\)</span>. Then the quadratic form <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> and <span class="math inline">\(A\)</span> is:</p>
 <ul>
 <li><p>positive definite if and only if the eigenvalues of <span class="math inline">\(A\)</span> are all positive</p></li>
 <li><p>negative definite if and only if the eigenvalues of <span class="math inline">\(A\)</span> are all negative</p></li>
@@ -886,7 +886,7 @@ Proof
 <p>This section introduces one more criterion for positive definite matrices. We first present the Gershgorin Disc Theorem, which is more convenient to be expressed in terms of complex matrices.</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-15" class="theorem"><strong>Theorem 4.9  (Gershgorin Disc Theorem)  </strong></span>Let <span class="math inline">\(A \in \mathcal{M}_n(\mathbb{C})\)</span> and define the following objects</p>
+<p><span id="thm:unnamed-chunk-15" class="theorem"><strong>Theorem 4.8  (Gershgorin Disc Theorem)  </strong></span>Let <span class="math inline">\(A \in \mathcal{M}_n(\mathbb{C})\)</span> and define the following objects</p>
 <ul>
 <li><p><span class="math inline">\(r_i = \sum_{j \not = i}|a_{ij}|\)</span> (the sum of the off-diagonal entries of the <span class="math inline">\(i\)</span>-th row of <span class="math inline">\(A\)</span>)</p></li>
 <li><p><span class="math inline">\(D(a_{ii}, r_i)\)</span> is the closed disc in the complex plane centered at <span class="math inline">\(a_{ii}\)</span> with radius <span class="math inline">\(r_i\)</span>.</p></li>
@@ -931,7 +931,7 @@ In other words, for any eigenvalue <span class="math inline">\(\lambda\)</span>,
 <p>In cases where the off diagonal entries of <span class="math inline">\(A\)</span> are very small, then <span class="math inline">\(A\)</span>’s eigenvalue will be very close to diagonal entries. This leads to the notion of diagonal dominance.</p>
 
 <div class="theorem">
-<p><span id="thm:diagonal-dominance" class="theorem"><strong>Theorem 4.10  (Diagonal dominant matrix)  </strong></span>
+<p><span id="thm:diagonal-dominance" class="theorem"><strong>Theorem 4.9  (Diagonal dominant matrix)  </strong></span>
 Suppose that <span class="math inline">\(A \in \mathcal{M}_n{(\mathbb{C})}\)</span>, then <span class="math inline">\(A\)</span> is called</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>diagonally dominant</strong> if <span class="math inline">\(|a_{ii}| \ge \sum_{j \not = i}|a_{ij}|\)</span> for all <span class="math inline">\(1 \le i \le n\)</span> and</p></li>
@@ -1059,7 +1059,7 @@ The maximum and minimum of the objective function are <span class="math inline">
 <p>If we add more constraints, for example, that <span class="math inline">\(\bar{x}\)</span> should be orthogonal to <span class="math inline">\(\bar{q}_1\)</span>, then <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> has maximum <span class="math inline">\(\lambda_2\)</span> attained at <span class="math inline">\(\bar{x} = \lambda_2\)</span></p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-20" class="theorem"><strong>Theorem 4.11  </strong></span>Let <span class="math inline">\(A \in \mathbb{S}^n\)</span> with orthogonal diagonalization <span class="math inline">\(A = Q\Lambda Q^T\)</span>, where the entries on the diagonal of <span class="math inline">\(\Lambda\)</span> are arranged so that <span class="math inline">\(\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n\)</span>. Then for <span class="math inline">\(k = 2, ...\)</span>, the maximum of value of <span class="math inline">\(\bar{x}^T A \bar{x}\)</span> subject to constraints</p>
+<p><span id="thm:unnamed-chunk-20" class="theorem"><strong>Theorem 4.10  </strong></span>Let <span class="math inline">\(A \in \mathbb{S}^n\)</span> with orthogonal diagonalization <span class="math inline">\(A = Q\Lambda Q^T\)</span>, where the entries on the diagonal of <span class="math inline">\(\Lambda\)</span> are arranged so that <span class="math inline">\(\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n\)</span>. Then for <span class="math inline">\(k = 2, ...\)</span>, the maximum of value of <span class="math inline">\(\bar{x}^T A \bar{x}\)</span> subject to constraints</p>
 <span class="math display">\[
 \bar{x}^T\bar{x} =  1, \;\; \bar{x}^T\bar{q}_1 = 0, \;\; \dots \;\;, \bar{x}^T\bar{q}_{k-1} = 0
 \]</span>

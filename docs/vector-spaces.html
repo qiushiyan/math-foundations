@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-09-15" />
+<meta name="date" content="2020-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -76,7 +76,7 @@
 <li class="chapter" data-level="1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication"><i class="fa fa-check"></i><b>1.1</b> Matrix Multiplication</a><ul>
 <li class="chapter" data-level="1.1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#geometric-transformations"><i class="fa fa-check"></i><b>1.1.1</b> Geometric Transformations</a></li>
 <li class="chapter" data-level="1.1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#selector-matrix"><i class="fa fa-check"></i><b>1.1.2</b> Selector matrix</a></li>
-<li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity"><i class="fa fa-check"></i><b>1.1.3</b> Complexity</a></li>
+<li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#discrete-convolution"><i class="fa fa-check"></i><b>1.1.3</b> Discrete Convolution</a></li>
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#elemetary-matrix-and-row-operations"><i class="fa fa-check"></i><b>1.2</b> Elemetary matrix and row operations</a></li>
 <li class="chapter" data-level="1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#lu-factorization"><i class="fa fa-check"></i><b>1.3</b> LU Factorization</a></li>
@@ -91,6 +91,7 @@
 <li class="chapter" data-level="1.6.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#the-matrix-inversion-lemma"><i class="fa fa-check"></i><b>1.6.1</b> The Matrix Inversion Lemma</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication-as-linear-transformation"><i class="fa fa-check"></i><b>1.7</b> Matrix Multiplication as Linear Transformation</a></li>
+<li class="chapter" data-level="1.8" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity-of-matrix-computation"><i class="fa fa-check"></i><b>1.8</b> Complexity of Matrix Computation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector Spaces</a><ul>
 <li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#vector-space"><i class="fa fa-check"></i><b>2.1</b> Vector Space</a><ul>
@@ -98,7 +99,7 @@
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric Spaces, Normed Spaces, Inner Product Spaces</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-and-norm"><i class="fa fa-check"></i><b>2.2.1</b> Metric and Norm</a></li>
-<li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-product-and-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Product and Cross Product</a></li>
+<li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-produc-outer-product-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Produc, Outer Product, Cross Product</a></li>
 <li class="chapter" data-level="2.2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#restricted-definition-of-inner-products-in-rn"><i class="fa fa-check"></i><b>2.2.3</b> Restricted Definition of Inner Products in <span class="math inline">\(R^n\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
@@ -120,13 +121,12 @@
 <li class="chapter" data-level="3.1.4" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.1.4</b> Best Approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#projection-and-idempotent-matrices"><i class="fa fa-check"></i><b>3.2</b> Projection and idempotent matrices</a></li>
-<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt Process</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.3.1</b> QR Factorizaiton</a></li>
+<li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.3</b> Gram-Schmidt Process</a></li>
+<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorizaiton"><i class="fa fa-check"></i><b>3.4</b> QR Factorizaiton</a></li>
+<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.5</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.5.1</b> Orthogonal Matrices</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.4</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.4.1</b> Orthogonal Matrices</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#lesat-squares-problems"><i class="fa fa-check"></i><b>3.5</b> Lesat Squares Problems</a></li>
+<li class="chapter" data-level="3.6" data-path="orthogonality.html"><a href="orthogonality.html#lesat-squares-problems"><i class="fa fa-check"></i><b>3.6</b> Lesat Squares Problems</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and Quadratic Forms</a><ul>
 <li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and Eigenvalues</a><ul>
@@ -375,7 +375,7 @@ d(\bar{x}, \bar{y}) = \|\bar{x} - \bar{y}\|
 <p>1-norm is also called the Manhattan norm.</p>
 <p>2-norm is the Euclidean norm, the subscript <span class="math inline">\(2\)</span> can be left out in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <p>p-norm is a generalization of 1-norm and 2-norm, requiring <span class="math inline">\(p &gt; 1\)</span>. When <span class="math inline">\(p\)</span> turns infinity, <span class="math inline">\(\|\bar{x}\|_{\infty}\)</span> is called the maximum norm.</p>
-<p>The book <em>Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares</em> introduces some other topics related to norm.</p>
+<p>The VMLS book <span class="citation">(Boyd and Vandenberghe <a href="references.html#ref-boyd2018introduction" role="doc-biblioref">2018</a>)</span> introduces some other topics related to norm.</p>
 <p><strong>Root-mean-square value</strong>. The root-mean-square (RMS) value of an <span class="math inline">\(n\)</span>-vector <span class="math inline">\(\bar{x}\)</span> is defined as</p>
 <p><span class="math display">\[
 \boldsymbol{\text{rms}}(x) = \sqrt{\frac{x_1^2 + \cdots + x_n^2}{n}} = \frac{\| \bar{x}\|}{\sqrt{n}}
@@ -438,8 +438,8 @@ Proof
 \end{split}
 \]</span></p>
 </div>
-<div id="inner-product-and-cross-product" class="section level3">
-<h3><span class="header-section-number">2.2.2</span> Inner Product and Cross Product</h3>
+<div id="inner-produc-outer-product-cross-product" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Inner Produc, Outer Product, Cross Product</h3>
 <p>An <strong>inner product</strong> on a real vector space <span class="math inline">\(X\)</span> is a function <span class="math inline">\(\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}\)</span> satisfying</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\langle \bar{x}, \bar{y} \rangle \ge 0\)</span>, with equality if and only if <span class="math inline">\(x = \bar{0}\)</span><br />
@@ -460,6 +460,145 @@ Proof
 The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces” (linear topological space if they are assumed to be vector spaces first). These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.
 </div>
 
+<p>The <strong>outer product</strong> of an <span class="math inline">\(m\)</span> vector <span class="math inline">\(\bar{a}\)</span> and an <span class="math inline">\(\bar{b}\)</span> is given by <span class="math inline">\(\bar{a}\bar{b}^T\)</span>, which is an <strong>rank 1</strong> <span class="math inline">\(m \times n\)</span> matrix</p>
+<p><span class="math display">\[
+\bar{a}\bar{b}^T = 
+\begin{bmatrix}
+a_1b_1 &amp; a_1b_2 &amp; \cdots &amp; a_1b_n \\
+a_2b_1 &amp; a_2b_2 &amp; \cdots &amp; a_2b_n \\
+\vdots &amp; \vdots &amp; &amp; \vdots \\
+a_nb_1 &amp; a_nb_2 &amp; \cdots &amp; a_nb_n 
+\end{bmatrix}
+\]</span>
+The outer product is not symmetric, i.e. (<span class="math inline">\(\bar{a}\bar{b}^T \not = \bar{b}\bar{a}^T\)</span>)</p>
+<p>If we express an <span class="math inline">\(m \times n\)</span> matrix <span class="math inline">\(A\)</span> in terms of its columns <span class="math inline">\(a_1, ..., a_n\)</span> and the <span class="math inline">\(n \times p\)</span> matrix <span class="math inline">\(B\)</span> in terms of its rows <span class="math inline">\(b_1, ..., b_p\)</span></p>
+<p><span class="math display">\[
+A = 
+\begin{bmatrix}
+a_1 &amp; \cdots &amp; a_n
+\end{bmatrix}, \quad
+B = 
+\begin{bmatrix}
+b_1^T \\
+\vdots \\
+b_n^T
+\end{bmatrix}
+\]</span>
+The the matrix multiplication <span class="math inline">\(AB\)</span> can be expressed as the sum of outer products between <span class="math inline">\(a_i\)</span> and <span class="math inline">\(b_i\)</span></p>
+<p><span class="math display">\[
+AB = a_1b_1^T + \cdots + a_nb_n^T
+\]</span>
+This echoes theorem <a href="basic-matrix-algebra.html#thm:cr-expansion">1.1</a>, where matrix multiplication is computed via column row expansion.</p>
+<p><br></p>
+<p>Next, we bring in the concept of cross product which may not be so significant in the linear algebra section, but it will shine in multivariate integral calculus.</p>
+<p>The <strong>cross product</strong> between <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span> is a <strong>vector</strong> perpendicular to <span class="math inline">\(\bar{u}\)</span>, <span class="math inline">\(\bar{v}\)</span> and the plane formed by them, with length equal to</p>
+<p><span class="math display">\[
+\|\bar{u} \times \bar{v} \| = \|\bar{u}\| \|\bar{v}\| \sin \theta
+\]</span></p>
+<p>Let <span class="math inline">\(\bar{n}\)</span> denote the unit vector perpendicular to the plane containing <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span>, the cross product can be written as</p>
+<p><span class="math display">\[
+\bar{u} \times \bar{v} = \|\bar{u}\| \|\bar{v}\| \sin (\theta)\bar{n}
+\]</span></p>
+<p>Though this formula is rarely helpful we because the main usage of cross product is finding the direction <span class="math inline">\(\bar{n}\)</span>.</p>
+<p>In most cases, we only consider cross product in 3D spaces, although it can be generalized to higher dimensions.</p>
+<p>Since the sines of <span class="math inline">\(0\)</span> and <span class="math inline">\(\pi\)</span>, it makes sense that the cross product of two parallel vectors is zero.</p>
+<p>The cross product obeys the following laws</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(r\bar{u} \times s\bar{v} = rs (\bar{u} \times \bar{v})\)</span></p></li>
+<li><p>order matters: <span class="math inline">\(\bar{u} \times \bar{v} = -\bar{v} \times \bar{u}\)</span></p></li>
+<li><p>Distributive: <span class="math inline">\(\bar{u} \times (\bar{v} + \bar{w})= \bar{u} \times \bar{v} + \bar{u} \times \bar{w}\)</span></p></li>
+<li><p>Not associative: <span class="math inline">\(\bar{u} \times (\bar{v} \times \bar{w}) = (\bar{u} \cdot \bar{w})\bar{v} - (\bar{u} \cdot \bar{v})\bar{w}\)</span></p></li>
+</ol>
+<p>To get a general formula of cross product, we consider the cross product among 3 standard basis <span class="math inline">\(i = [1, 0, 0], j = [0, 1, 0], k = [0, 0, 1]\)</span></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<img src="images/cross-product.png" alt="Figure 12.30 FROM Thomas Calculus, 14th edition" width="200" />
+<p class="caption">
+Figure 2.1: Figure 12.30 FROM Thomas Calculus, 14th edition
+</p>
+</div>
+<p><span class="math display">\[
+\begin{aligned}
+i \times j &amp;= k \\
+j \times k &amp;= i \\
+k \times i &amp;= j
+\end{aligned}
+\]</span>
+and</p>
+<p><span class="math display">\[
+i \times i  = j \times j = k \times k = 0
+\]</span></p>
+<p>Then the cross product between <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span> can be written as</p>
+<p><span class="math display">\[
+\begin{split}
+\bar{u} \times \bar{v} &amp;= (u_1\boldsymbol{i} + u_2\boldsymbol{j} + u_3\boldsymbol{k}) \times (v_1\boldsymbol{i} + v_2\boldsymbol{j} + v_3\boldsymbol{k}) \\
+&amp;= (u_1v_1)\boldsymbol{i} \times \boldsymbol{i} + (u_1v_2)\boldsymbol{i} \times \boldsymbol{j} + (u_1v_3) \boldsymbol{i} \times \boldsymbol{k} \\
+&amp;{\quad} + (u_2v_1)\boldsymbol{j} \times \boldsymbol{i} + (u_2v_2)\boldsymbol{j} \times \boldsymbol{j} + (u_2v_3)\boldsymbol{j} \times \boldsymbol{k} \\
+&amp;{\quad} + (u_3v_1)\boldsymbol{k} \times \boldsymbol{i} + (u_3v_2)\boldsymbol{k} \times \boldsymbol{j} + (u_3v_3)\boldsymbol{k} \times \boldsymbol{k} \\
+&amp;= (u_2v_3 - u_3v_2)\boldsymbol{i} - (u_1v_3 - u_3v_1)\boldsymbol{j} + (u_1v_2 - u_2v_1)\boldsymbol{k} \\
+&amp;=  \begin{bmatrix}
+u_2v_3 - u_3v_2 \\
+u_1v_3 - u_3v_1 \\
+u_1v_2 - u_2v_1
+\end{bmatrix}
+\end{split}
+\]</span>
+This result is same as the determinant of the following matrix (think of <span class="math inline">\(\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}\)</span>) as scalars during the computation)</p>
+<p><span class="math display">\[
+\bar{u} \times \bar{v} = 
+\begin{vmatrix}
+\boldsymbol{i} &amp; \boldsymbol{j} &amp; \boldsymbol{k} \\
+u_1 &amp; u_2 &amp; u_3 \\
+v_1 &amp; v_2 &amp; v_3 
+\end{vmatrix}
+\]</span></p>
+<p>The main use for cross product will be finding a vector which is perpendicular to two given vectors. We can make use of the magnitude as well. Recall the magnitude of the cross product</p>
+<p><span class="math display">\[
+\| \bar{u} \times \bar{v} \| = \|\bar{u}\| \|v\|\sin\theta
+\]</span></p>
+<p>This is the area of the following parallelogram defined by <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span></p>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<img src="images/cross-product-2.png" alt="Figure 12.31 FROM Thomas Calculus, 14th edition" width="199" />
+<p class="caption">
+Figure 2.2: Figure 12.31 FROM Thomas Calculus, 14th edition
+</p>
+</div>
+<p>So let’s review what the dot product gives us: its a vector perpendicular to the plane containing <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span>, the length of that vector is equal to the area of the parallelogram formed by <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span>.</p>
+<p>As one application of the cross product, we have the following theorem.</p>
+
+<div class="theorem">
+<p><span id="thm:volume-cross-product" class="theorem"><strong>Theorem 2.1  (Volume of a Parallelepiped)  </strong></span>The volume of a parallelepiped with adjacent edges given by vectors <span class="math inline">\(\bar{u}, \bar{v}\)</span> and <span class="math inline">\(\bar{w}\)</span> is the absolute value of the <em>triple scalar product</em></p>
+<span class="math display">\[
+V = |\bar{u} \cdot (\bar{v} \times \bar{w})|
+\]</span>
+</div>
+
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<img src="images/cross-product-3.png" alt="Figure 2.59 from https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product" width="308" />
+<p class="caption">
+Figure 2.3: Figure 2.59 from <a href="https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product" class="uri">https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product</a>
+</p>
+</div>
+
+<div class="proof">
+Proof
+</div>
+
+<p>The area of the base of the parallelepiped is given by <span class="math inline">\(\|\bar{v} \times \bar{w}\|\)</span>, the height is <span class="math inline">\(\bar{u}\)</span> projected on to the resulting vector from the dot product. So we have</p>
+<p><span class="math display">\[
+\begin{split}
+V &amp;= \|\text{proj}_{\bar{v} \times \bar{w}} \bar{u} \|\|\bar{v} \times \bar{w}\| \\
+&amp;= |\frac{\bar{u} \cdot (\bar{v} \times \bar{w})}{\| \bar{v} \times \bar{w} \|} |\| \bar{v} \times \bar{w} \| \\
+&amp;= |\bar{u} \cdot (\bar{v} \times \bar{w})|
+\end{split}
+\]</span></p>
+<p>Looking back at the formula for <span class="math inline">\(\bar{v} \times \bar{w}\)</span>, we can see that this term is the absolute value of the following determinant according to cofactor expansion</p>
+<p><span class="math display">\[
+\begin{vmatrix}
+\bar{u}^T \\
+\bar{v}^T \\
+\bar{w}^T \\
+\end{vmatrix}
+\]</span></p>
 </div>
 <div id="restricted-definition-of-inner-products-in-rn" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Restricted Definition of Inner Products in <span class="math inline">\(R^n\)</span></h3>
@@ -523,7 +662,7 @@ U + W = \{\bar{u} + \bar{v} \;| \; \bar{w} \in U, \bar{w} \in W \}
 <p>The relationship between these four subspaces present the fundamental theorem of linear algebra</p>
 
 <div class="theorem">
-<p><span id="thm:fundamental-theorem" class="theorem"><strong>Theorem 2.1  (The fundamental theorem of Linear Algebra)  </strong></span></p>
+<p><span id="thm:fundamental-theorem" class="theorem"><strong>Theorem 2.2  (The fundamental theorem of Linear Algebra)  </strong></span></p>
 <ul>
 <li><p><span class="math inline">\(\mathcal{R}(A) = \mathcal{N}(A^T)^{\perp}\)</span>, and <span class="math inline">\(\dim(\mathcal{R}(A)) + \dim(\mathcal{N}(A^T)) = m\)</span></p></li>
 <li><p><span class="math inline">\(\mathcal{R}(A^T) = \mathcal{N}(A)^{\perp}\)</span>, and <span class="math inline">\(\dim(\mathcal{R}(A^T)) + \dim(\mathcal{N}(A)) = n\)</span></p>
@@ -540,7 +679,7 @@ U + W = \{\bar{u} + \bar{v} \;| \; \bar{w} \in U, \bar{w} \in W \}
 <p>The <strong>rank</strong> of a vector space is its dimension.</p>
 
 <div class="definition">
-<span id="def:unnamed-chunk-3" class="definition"><strong>Definition 2.2  </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space.
+<span id="def:unnamed-chunk-7" class="definition"><strong>Definition 2.2  </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space.
 </div>
 
 <p>I often think of rank of <span class="math inline">\(A\)</span> as the total volume of information that the matrix can offer.</p>
@@ -560,7 +699,7 @@ RA = \Lambda C^{-1} \tag{2}
 <p>Let <span class="math inline">\(A, B \in \mathbb{R}^{m \times n}\)</span> have ranks <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span></p>
 
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-4" class="corollary"><strong>Corollary 2.1  </strong></span></p>
+<p><span id="cor:unnamed-chunk-8" class="corollary"><strong>Corollary 2.1  </strong></span></p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(|a - b| \le r(A + B) \le a + b\)</span></p></li>
 <li><p><span class="math inline">\(r(AB) &lt; \min(a, b)\)</span></p>
@@ -573,7 +712,7 @@ Proof
 <p>For (2), Each column of <span class="math inline">\(AB\)</span> is a linear combination of columns of A, and each row is a linear combination of rows of <span class="math inline">\(B\)</span>. Therefore, <span class="math inline">\(r(AB)\)</span> can not exceed either rank of <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>. There is also a corollary on the lower bound of <span class="math inline">\(r(AB)\)</span>, which is <span class="math inline">\(a + b - n\)</span>. Note that <span class="math inline">\(n\)</span> is the shared dimension. I have not found a concise proof about this, but this property leads to a interesting result: when one of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are square and full rank, <span class="math inline">\(\min(r(AB)) = \max(r(AB))\)</span></p>
 
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-5" class="corollary"><strong>Corollary 2.2  </strong></span></p>
+<p><span id="cor:unnamed-chunk-9" class="corollary"><strong>Corollary 2.2  </strong></span></p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Multiplying <span class="math inline">\(A\)</span> with a square matrix <span class="math inline">\(B\)</span> of full rank does not change the rank of <span class="math inline">\(A\)</span>.</p></li>
 <li><p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both singular, then <span class="math inline">\(AB\)</span> is non-singular if and only if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both non-singular</p>
@@ -634,7 +773,7 @@ Proof
 
 
 <div class="theorem">
-<p><span id="thm:unique-coordinate" class="theorem"><strong>Theorem 2.2  (Unique coordinate vector)  </strong></span>Let <span class="math inline">\(\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_n\}\)</span> be a basis of <span class="math inline">\(V\)</span>. Then for any vector <span class="math inline">\(\bar{v} \in V\)</span>, there exists a unique coordinate vector <span class="math inline">\(\bar{x} = [x_1, ..., x_r]\)</span> such that</p>
+<p><span id="thm:unique-coordinate" class="theorem"><strong>Theorem 2.3  (Unique coordinate vector)  </strong></span>Let <span class="math inline">\(\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_n\}\)</span> be a basis of <span class="math inline">\(V\)</span>. Then for any vector <span class="math inline">\(\bar{v} \in V\)</span>, there exists a unique coordinate vector <span class="math inline">\(\bar{x} = [x_1, ..., x_r]\)</span> such that</p>
 <span class="math display">\[
 \bar{v} = x_1\bar{a}_1 + \cdots + x_r\bar{a}_r
 \]</span>
@@ -697,7 +836,7 @@ x_r \\
 \end{aligned} 
 \]</span></p>
 <p>When the set <span class="math inline">\(\bar{a}_1, ..., \bar{a}_r\)</span> are not orthonormal, a general strategy is solving the system of equations <span class="math inline">\(A\bar{x} = \bar{v}\)</span>. This boils down to a problem extensively discussed in Chapter <a href="linear-system.html#linear-system">6</a>.</p>
-<p>If <span class="math inline">\(V\)</span> is simply <span class="math inline">\(\mathbb{R}^n\)</span>, then <span class="math inline">\(A\)</span> is square and invertible, then <span class="math inline">\(\bar{x}\)</span> is found by <span class="math inline">\(A^{-1}\bar{v}\)</span>. Difficult cases are <span class="math inline">\(A\)</span> is not square, or <span class="math inline">\(\bar{v}\)</span> does not lie in the hyperplane defined by <span class="math inline">\(\bar{a}_1, ..., \bar{a}_r\)</span> and therefore defies valid coordinates. Finding <span class="math inline">\(\bar{x}\)</span> now becomes a classic least square problem (Section <a href="orthogonality.html#lesat-squares-problems">3.5</a>). This results in the following (the best fit solution)</p>
+<p>If <span class="math inline">\(V\)</span> is simply <span class="math inline">\(\mathbb{R}^n\)</span>, then <span class="math inline">\(A\)</span> is square and invertible, then <span class="math inline">\(\bar{x}\)</span> is found by <span class="math inline">\(A^{-1}\bar{v}\)</span>. Difficult cases are <span class="math inline">\(A\)</span> is not square, or <span class="math inline">\(\bar{v}\)</span> does not lie in the hyperplane defined by <span class="math inline">\(\bar{a}_1, ..., \bar{a}_r\)</span> and therefore defies valid coordinates. Finding <span class="math inline">\(\bar{x}\)</span> now becomes a classic least square problem (Section <a href="orthogonality.html#lesat-squares-problems">3.6</a>). This results in the following (the best fit solution)</p>
 <p><span class="math display">\[
 \bar{x} = (A^TA)^{-1}A^T\bar{v}
 \]</span></p>
