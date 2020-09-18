@@ -70,5 +70,5 @@ f_m({\bar{a}})
 = \boldsymbol{f}(\bar{a}) + \nabla\boldsymbol{f}(\bar{a})(\bar{x} - \bar{a})
 $$
 
-where $\nabla\boldsymbol{f}(\bar{a})$ is the Jacobian (Section \@ref(def:jacobian)) of vector-valued function $\boldsymbol{f}$ evaluated at $\bar{a}$. 
+where $\nabla\boldsymbol{f}(\bar{a})$ is the Jacobian (Definition \@ref(def:jacobian)) of vector-valued function $\boldsymbol{f}$ evaluated at $\bar{a}$. 
 

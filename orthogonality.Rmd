@@ -301,6 +301,24 @@ $$
 \{\bar{q}_i = \frac{\bar{v}_i}{\|\bar{v}_i\|}, \;i = 1, ... p\} 
 $$
 
+If the vectors $\bar{x}_1, \cdots, \bar{x}_{j-1}$ are linearly independent, but $\bar{a}_1, ..., \bar{a}_j$ are linearly independent. We can come up with an algorithm for Gram-Schmidt process that terminates automatically when it produced most orthonormal basis vectors. 
+
+```{block2, type = "algorithm"}
+**Gram–Schmidt algorithm**
+
+given $n$-vectors $\bar{x}_1, ..., \bar{x}_p$. Let $u_1 = \bar{x}_1$ and $q_1 = \frac{\bar{u}_1}{\|\bar{u}_1 \|}$ (assuming $x_1$ is not zero), for $i  =  2, ..., k$ 
+
+  1. Orthogonalization: $u_i = \bar{x}_i - (\bar{q}_1 \cdot \bar{x}_i)\bar{q}_1 - \cdots -  (\bar{q}_{i-1} \cdot \bar{x}_i)\bar{q}_{i-1}$  
+  
+  2. Test for linear independence. If $\bar{u}_i = \bar{0}$, quit and return $\bar{q}_i, ..., \bar{q}_{i- 1}$ as the orthonormal basis for $\mathbb{R}^{i - 1}$ 
+  
+  3. Normalization: $\bar{q}_i = \frac{\bar{u}_i}{\|\bar{u}_i \|}$
+```
+
+
+  
+
+
 The Gram-Schmidt basis does not expose any specific properties of a vector with the help of its coordinates. The discrete cosine transform
 uses a basis with trigonometric properties in order to expose periodicity in a time series. (see Section 2.7.3 of LAOML [@DBLP:books/sp/Aggarwal20]) 
 
@@ -369,5 +387,5 @@ We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ an
 
 ## Complexity 
 
-
+**Compleity of the **
 

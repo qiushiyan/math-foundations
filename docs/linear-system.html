@@ -163,9 +163,13 @@
 <li class="chapter" data-level="5.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#low-rank-approximation"><i class="fa fa-check"></i><b>5.4</b> Low Rank Approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="linear-system.html"><a href="linear-system.html"><i class="fa fa-check"></i><b>6</b> Solutions of Linear System Ax = b</a><ul>
-<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#lesat-squares-problems"><i class="fa fa-check"></i><b>6.1</b> Lesat Squares Problems</a></li>
-<li class="chapter" data-level="6.2" data-path="linear-system.html"><a href="linear-system.html#generalized-inverse"><i class="fa fa-check"></i><b>6.2</b> Generalized Inverse</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="linear-system.html"><a href="linear-system.html#left-and-right-inverse"><i class="fa fa-check"></i><b>6.2.1</b> Left and Right Inverse</a></li>
+<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#when-a-is-square"><i class="fa fa-check"></i><b>6.1</b> When A is square</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="linear-system.html"><a href="linear-system.html#invertible-a"><i class="fa fa-check"></i><b>6.1.1</b> Invertible A</a></li>
+<li class="chapter" data-level="6.1.2" data-path="linear-system.html"><a href="linear-system.html#uninvertible-a"><i class="fa fa-check"></i><b>6.1.2</b> Uninvertible A</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="linear-system.html"><a href="linear-system.html#when-a-has-independent-columns-or-rows"><i class="fa fa-check"></i><b>6.2</b> When A has independent columns or rows</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="linear-system.html"><a href="linear-system.html#lesat-squares-problems"><i class="fa fa-check"></i><b>6.2.1</b> Lesat Squares Problems</a></li>
+<li class="chapter" data-level="6.2.2" data-path="linear-system.html"><a href="linear-system.html#left-and-right-inverse"><i class="fa fa-check"></i><b>6.2.2</b> Left and Right Inverse</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="linear-system.html"><a href="linear-system.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>6.3</b> Ill-Conditioned Matrices</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="linear-system.html"><a href="linear-system.html#condition-number"><i class="fa fa-check"></i><b>6.3.1</b> Condition Number</a></li>
@@ -279,19 +283,76 @@
             <section class="normal" id="section-">
 <div id="linear-system" class="section level1">
 <h1><span class="header-section-number">Chapter 6</span> Solutions of Linear System Ax = b</h1>
-<p>A linear system <span class="math inline">\(A\bar{x} = \bar{b}\)</span> when <span class="math inline">\(\bar{b} \not = \bar{0}\)</span> may behave in any one of three possible ways:</p>
+<p>A linear system <span class="math inline">\(Ax= b\)</span> when <span class="math inline">\(b = 0\)</span><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> may behave in any one of three possible ways:</p>
 <ul>
-<li><p>The system has no solution. This occurs when <span class="math inline">\(\bar{b} \not \in \mathcal{R}(A)\)</span>. In such cases we try to find <em>best fits</em> that meets certain optimization requirements. For example, to make <span class="math inline">\(\|A\bar{x} - \bar{b}\|\)</span> as small as possible. Such a solution is called the <em>best fit</em>.</p></li>
-<li><p>The system has a single unique solution. This occurs when <span class="math inline">\(\bar{b} \in \mathcal{R}(A)\)</span>, and <span class="math inline">\(A\)</span> has linearly independent columns, then there exists an unique linear combination <span class="math inline">\(a_1x_1 + \cdots + a_nx_n = \bar{b}\)</span>. In the special case when <span class="math inline">\(A\)</span> is square, the solution is simply <span class="math inline">\(\bar{x} = A^{-1}\bar{b}\)</span></p></li>
-<li><p>The system has infinitely many solutions. This is the case when <span class="math inline">\(\bar{b} \in \mathcal{R}(A)\)</span> and columns of <span class="math inline">\(A\)</span> are linearly dependent, with <em>free columns</em>. Any linear combination of current solutions would still satisfy <span class="math inline">\(A\bar{x} = \bar{b}\)</span>. In this case, we want to make <span class="math inline">\(\| \bar{x} \|^2\)</span> as small as possible. This is called the <em>conciseness criterion</em>.</p></li>
+<li><p>The system has no solution. This occurs when <span class="math inline">\(b \not \in \mathcal{R}(A)\)</span>. In such cases we try to find <em>best fits</em> that meets certain optimization requirements. For example, to make <span class="math inline">\(\|Ax - b\|\)</span> as small as possible. Such a solution is called the <em>best fit</em>.</p></li>
+<li><p>The system has a single unique solution. This occurs when <span class="math inline">\(b \in \mathcal{R}(A)\)</span>, and <span class="math inline">\(A\)</span> has linearly independent columns, then there exists an unique linear combination <span class="math inline">\(a_1x_1 + \cdots + a_nx_n = b\)</span>. In the special case when <span class="math inline">\(A\)</span> is square, the solution is simply <span class="math inline">\(x = A^{-1}b\)</span></p></li>
+<li><p>The system has infinitely many solutions. This is the case when <span class="math inline">\(b \in \mathcal{R}(A)\)</span> and columns of <span class="math inline">\(A\)</span> are linearly dependent, with <em>free columns</em>. Any linear combination of current solutions would still satisfy <span class="math inline">\(Ax = b\)</span>. In this case, we want to make <span class="math inline">\(\| x \|^2\)</span> as small as possible. This is called the <em>conciseness criterion</em>.</p></li>
 </ul>
-<p>Moreover, suppose <span class="math inline">\(\bar{b} \not \in \mathcal{R}(A)\)</span> which means rows and columns of <span class="math inline">\(A\)</span> are both linearly dependent. There are typically infinite many solutions that have the same optimial value in terms of <span class="math inline">\(\|A\bar{x} - \bar{} \|\)</span></p>
-<p>In the first scenario, the linear system is called <strong>inconsistent</strong> because there is no <span class="math inline">\(\bar{x}\)</span> that satisfies each equation in the system. Linear systems in the second and third scenario are called <strong>consistent</strong> because there is at least one solution.</p>
-<div id="lesat-squares-problems" class="section level2">
-<h2><span class="header-section-number">6.1</span> Lesat Squares Problems</h2>
+<p>Moreover, suppose <span class="math inline">\(b \not \in \mathcal{R}(A)\)</span> which means rows and columns of <span class="math inline">\(A\)</span> are both linearly dependent. There are typically infinite many solutions that have the same optimal value in terms of <span class="math inline">\(\|Ax -b\|\)</span></p>
+<p>In the first scenario, the linear system is called <strong>inconsistent</strong> because there is no <span class="math inline">\(x\)</span> that satisfies each equation in the system. Linear systems in the second and third scenario are called <strong>consistent</strong> because there is at least one solution.</p>
+<div id="when-a-is-square" class="section level2">
+<h2><span class="header-section-number">6.1</span> When A is square</h2>
+<div id="invertible-a" class="section level3">
+<h3><span class="header-section-number">6.1.1</span> Invertible A</h3>
+<p>The simplest case happens when <span class="math inline">\(A\)</span> is square and invertible, the unque solution of linear system <span class="math inline">\(Ax = b\)</span> is given by</p>
+<p><span class="math display">\[
+x = A^{-1}b
+\]</span></p>
+<p>For square matrix <span class="math inline">\(A\)</span>, the following criteria for invertibility are equivalent</p>
+<ul>
+<li><p>columns of <span class="math inline">\(A\)</span> are independent; the left null space is empty</p></li>
+<li><p>rows of <span class="math inline">\(A\)</span> are independent; the null space is empty</p></li>
+<li><p><span class="math inline">\(|A| \not = 0\)</span></p></li>
+<li><p>eigenvalues of <span class="math inline">\(A\)</span> are nonzero (singular values of <span class="math inline">\(A\)</span> are nonzero)</p></li>
+<li><p><span class="math inline">\(A\)</span> is digonalizable</p></li>
+</ul>
+<p>However, direct computation of <span class="math inline">\(A^{-1}\)</span> could be very hard especially when <span class="math inline">\(A\)</span> is large. Cramer’s rule {<a href="basic-matrix-algebra.html#thm:cramer">1.6</a>}, or the general formula using <span class="math inline">\(A^*\)</span> mainly serve for theoretical purposes and come with prohibitive complexity. Therefore, we need more effective algorithm for finding <span class="math inline">\(A^{-1}\)</span></p>
+<p><strong>Inverse via QR factorization</strong>. In Section <a href="#qr-factorization"><strong>??</strong></a>, we show that a full rank square matrix <span class="math inline">\(A\)</span> can be factored into an orthogonal matrix <span class="math inline">\(Q\)</span> and an upper triangular matrix <span class="math inline">\(R\)</span> with positive diagonal entries. Hence <span class="math inline">\(Q\)</span> and <span class="math inline">\(R\)</span> are invertible, we have</p>
+<p><span class="math display">\[
+\begin{aligned}
+Ax &amp;= b \\
+QRx &amp;= b \\
+Rx &amp;= Q^{-1}b = Q^Tb
+\end{aligned}
+\]</span>
+This means that to find the solution <span class="math inline">\(x\)</span>, we need to solve the new linear system <span class="math inline">\(Rx = Q^Tb\)</span>. The new coefficient matrix <span class="math inline">\(R\)</span> is upper triangular, let <span class="math inline">\(Q^Tb\)</span> be our new <span class="math inline">\(b\)</span>, we write out the equations as</p>
+<p><span class="math display">\[
+\begin{aligned}
+R_{11}x_1 + R_{12}x_2 + \cdots + R_{1, n - 1}x_{n-1} + R_{1n}x_n   &amp;= b_1 \\
+R_{22}x_2 + \cdots + R_{2, n - 1}x_{n-1} + R_{2n}x_n   &amp;= b_2 \\
+&amp; \vdots \\
+R_{n-1, n -1}x_{n - 1} + R_{n - 1, n}x_{n} &amp;= b_{n - 1} \\
+R_{nn}x_n &amp;= b_n
+\end{aligned}
+\]</span>
+If we move our eyes bottom-up, we immediately know <span class="math inline">\(x_n = b_n / R_{nn}\)</span>. Substitute this into the second to last equation</p>
+<p><span class="math display">\[
+x_{n - 1} = \frac{b_{n-1} - R_{n-1,n} b_n / R_{nn}}{R_{n-1,n-1}}
+\]</span></p>
+<p>It follows that there exists a efficient algorithm to find the solution <span class="math inline">\(x\)</span> in the order <span class="math inline">\(x_n, x_{n - 1}, ..., x_2, x_1\)</span>, known as <em>back substitution</em>.</p>
+
+<div class="algorithm">
+<p><strong>Back Substitution</strong></p>
+<p>For the linear system <span class="math inline">\(Rx = b\)</span>, where <span class="math inline">\(R\)</span> is an <span class="math inline">\(n \times n\)</span> upper triangular matrix with nonzero diagonal entries, the solution <span class="math inline">\(x = [x_1, ..., x_n]\)</span> are given by</p>
+<p>For <span class="math inline">\(i = n, ..., 1\)</span></p>
+<span class="math display">\[
+x_i = (b_i - R_{i, i + 1}x_{i + 1} - \cdots - R_{i, n}x_{n}) / R_{ii}
+\]</span>
+</div>
+
+</div>
+<div id="uninvertible-a" class="section level3">
+<h3><span class="header-section-number">6.1.2</span> Uninvertible A</h3>
+</div>
+</div>
+<div id="when-a-has-independent-columns-or-rows" class="section level2">
+<h2><span class="header-section-number">6.2</span> When A has independent columns or rows</h2>
+<div id="lesat-squares-problems" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> Lesat Squares Problems</h3>
 
 <div class="definition">
-<span id="def:unnamed-chunk-1" class="definition"><strong>Definition 6.1  </strong></span>the <strong>normal equation</strong>
+<span id="def:unnamed-chunk-2" class="definition"><strong>Definition 6.1  </strong></span>the <strong>normal equation</strong>
 <span class="math display">\[
 A^TA\bar{x} = A^T\bar{b}
 \]</span>
@@ -305,10 +366,8 @@ A^T\bar{b} - A^TA\hat{\bar{x}} = 0 \\
 \hat{\bar{x}} = (A^TA)^{-1}A^T\bar{b}
 \]</span></p>
 </div>
-<div id="generalized-inverse" class="section level2">
-<h2><span class="header-section-number">6.2</span> Generalized Inverse</h2>
 <div id="left-and-right-inverse" class="section level3">
-<h3><span class="header-section-number">6.2.1</span> Left and Right Inverse</h3>
+<h3><span class="header-section-number">6.2.2</span> Left and Right Inverse</h3>
 </div>
 </div>
 <div id="ill-conditioned-matrices" class="section level2">
@@ -325,6 +384,12 @@ A^T\bar{b} - A^TA\hat{\bar{x}} = 0 \\
 
 
 
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>For simplicity I exclude most <span class="math inline">\(\bar{\cdot}\)</span> sign for vector notation, lower case letters typically denote a vector unless there is a need for mixed usage of scalars and vectors<a href="linear-system.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>

@@ -163,9 +163,13 @@
 <li class="chapter" data-level="5.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#low-rank-approximation"><i class="fa fa-check"></i><b>5.4</b> Low Rank Approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="linear-system.html"><a href="linear-system.html"><i class="fa fa-check"></i><b>6</b> Solutions of Linear System Ax = b</a><ul>
-<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#lesat-squares-problems"><i class="fa fa-check"></i><b>6.1</b> Lesat Squares Problems</a></li>
-<li class="chapter" data-level="6.2" data-path="linear-system.html"><a href="linear-system.html#generalized-inverse"><i class="fa fa-check"></i><b>6.2</b> Generalized Inverse</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="linear-system.html"><a href="linear-system.html#left-and-right-inverse"><i class="fa fa-check"></i><b>6.2.1</b> Left and Right Inverse</a></li>
+<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#when-a-is-square"><i class="fa fa-check"></i><b>6.1</b> When A is square</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="linear-system.html"><a href="linear-system.html#invertible-a"><i class="fa fa-check"></i><b>6.1.1</b> Invertible A</a></li>
+<li class="chapter" data-level="6.1.2" data-path="linear-system.html"><a href="linear-system.html#uninvertible-a"><i class="fa fa-check"></i><b>6.1.2</b> Uninvertible A</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="linear-system.html"><a href="linear-system.html#when-a-has-independent-columns-or-rows"><i class="fa fa-check"></i><b>6.2</b> When A has independent columns or rows</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="linear-system.html"><a href="linear-system.html#lesat-squares-problems"><i class="fa fa-check"></i><b>6.2.1</b> Lesat Squares Problems</a></li>
+<li class="chapter" data-level="6.2.2" data-path="linear-system.html"><a href="linear-system.html#left-and-right-inverse"><i class="fa fa-check"></i><b>6.2.2</b> Left and Right Inverse</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="linear-system.html"><a href="linear-system.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>6.3</b> Ill-Conditioned Matrices</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="linear-system.html"><a href="linear-system.html#condition-number"><i class="fa fa-check"></i><b>6.3.1</b> Condition Number</a></li>
@@ -524,6 +528,17 @@ A\bar{x} = A(A^TA)^{-1}A^T\bar{b} = \hat{\bar{b}}
 <p><span class="math display">\[
 \{\bar{q}_i = \frac{\bar{v}_i}{\|\bar{v}_i\|}, \;i = 1, ... p\} 
 \]</span></p>
+<p>If the vectors <span class="math inline">\(\bar{x}_1, \cdots, \bar{x}_{j-1}\)</span> are linearly independent, but <span class="math inline">\(\bar{a}_1, ..., \bar{a}_j\)</span> are linearly independent. We can come up with an algorithm for Gram-Schmidt process that terminates automatically when it produced most orthonormal basis vectors.</p>
+
+<div class="algorithm">
+<p><strong>Gram–Schmidt algorithm</strong></p>
+<p>given <span class="math inline">\(n\)</span>-vectors <span class="math inline">\(\bar{x}_1, ..., \bar{x}_p\)</span>. Let <span class="math inline">\(u_1 = \bar{x}_1\)</span> and <span class="math inline">\(q_1 = \frac{\bar{u}_1}{\|\bar{u}_1 \|}\)</span> (assuming <span class="math inline">\(x_1\)</span> is not zero), for <span class="math inline">\(i = 2, ..., k\)</span></p>
+<ol style="list-style-type: decimal">
+<li><p>Orthogonalization: <span class="math inline">\(u_i = \bar{x}_i - (\bar{q}_1 \cdot \bar{x}_i)\bar{q}_1 - \cdots - (\bar{q}_{i-1} \cdot \bar{x}_i)\bar{q}_{i-1}\)</span></p></li>
+<li><p>Test for linear independence. If <span class="math inline">\(\bar{u}_i = \bar{0}\)</span>, quit and return <span class="math inline">\(\bar{q}_i, ..., \bar{q}_{i- 1}\)</span> as the orthonormal basis for <span class="math inline">\(\mathbb{R}^{i - 1}\)</span></p></li>
+<li><p>Normalization: <span class="math inline">\(\bar{q}_i = \frac{\bar{u}_i}{\|\bar{u}_i \|}\)</span></p>
+</div></li>
+</ol>
 <p>The Gram-Schmidt basis does not expose any specific properties of a vector with the help of its coordinates. The discrete cosine transform
 uses a basis with trigonometric properties in order to expose periodicity in a time series. (see Section 2.7.3 of LAOML <span class="citation">(Aggarwal <a href="references.html#ref-DBLP:books/sp/Aggarwal20" role="doc-biblioref">2020</a>)</span>)</p>
 </div>
@@ -581,6 +596,7 @@ We could assume that <span class="math inline">\(r_{kk} \ge 0\)</span>. (if <spa
 </div>
 <div id="complexity" class="section level2">
 <h2><span class="header-section-number">3.6</span> Complexity</h2>
+<p><strong>Compleity of the </strong></p>
 
 </div>
 </div>

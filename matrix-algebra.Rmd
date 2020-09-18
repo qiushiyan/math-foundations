@@ -834,7 +834,7 @@ $$
 This chapter concludes with a summary of complexity (number of flops needed) in common matrix computations.
 
 
-An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly $16\text{nnz}(A)$ bytes. 
+An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for one element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly $16\text{nnz}(A)$ bytes. 
 
 
 Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (approximate number of flops) of common matrix operations are listed below 
@@ -864,7 +864,7 @@ The second method is $A(BC)$. We first compute product $BC$ ($2npq$ flops) and t
 The two complexity are equal when 
 
 $$
-\frac{1}{n} + \frac{1}{q} < \frac{1}{m} + \frac{1}{p}
+\frac{1}{n} + \frac{1}{q} = \frac{1}{m} + \frac{1}{p}
 $$
 
 When $m = p$ and $n = q$: 

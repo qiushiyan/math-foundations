@@ -163,9 +163,13 @@
 <li class="chapter" data-level="5.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#low-rank-approximation"><i class="fa fa-check"></i><b>5.4</b> Low Rank Approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="linear-system.html"><a href="linear-system.html"><i class="fa fa-check"></i><b>6</b> Solutions of Linear System Ax = b</a><ul>
-<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#lesat-squares-problems"><i class="fa fa-check"></i><b>6.1</b> Lesat Squares Problems</a></li>
-<li class="chapter" data-level="6.2" data-path="linear-system.html"><a href="linear-system.html#generalized-inverse"><i class="fa fa-check"></i><b>6.2</b> Generalized Inverse</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="linear-system.html"><a href="linear-system.html#left-and-right-inverse"><i class="fa fa-check"></i><b>6.2.1</b> Left and Right Inverse</a></li>
+<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#when-a-is-square"><i class="fa fa-check"></i><b>6.1</b> When A is square</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="linear-system.html"><a href="linear-system.html#invertible-a"><i class="fa fa-check"></i><b>6.1.1</b> Invertible A</a></li>
+<li class="chapter" data-level="6.1.2" data-path="linear-system.html"><a href="linear-system.html#uninvertible-a"><i class="fa fa-check"></i><b>6.1.2</b> Uninvertible A</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="linear-system.html"><a href="linear-system.html#when-a-has-independent-columns-or-rows"><i class="fa fa-check"></i><b>6.2</b> When A has independent columns or rows</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="linear-system.html"><a href="linear-system.html#lesat-squares-problems"><i class="fa fa-check"></i><b>6.2.1</b> Lesat Squares Problems</a></li>
+<li class="chapter" data-level="6.2.2" data-path="linear-system.html"><a href="linear-system.html#left-and-right-inverse"><i class="fa fa-check"></i><b>6.2.2</b> Left and Right Inverse</a></li>
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="linear-system.html"><a href="linear-system.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>6.3</b> Ill-Conditioned Matrices</a><ul>
 <li class="chapter" data-level="6.3.1" data-path="linear-system.html"><a href="linear-system.html#condition-number"><i class="fa fa-check"></i><b>6.3.1</b> Condition Number</a></li>
@@ -292,9 +296,9 @@
 <li><span class="math inline">\(E(X + Y) = E(X) + E(Y)\)</span> (<span class="math inline">\(Y\)</span> is also r.v., and <strong>not</strong> necessarily independent of <span class="math inline">\(X\)</span>). More generally, for any r.v. <span class="math inline">\(X_1, ..., X_n\)</span> <span class="math inline">\(E(X_1 + \cdots + X_n) =\sum_{i=1}^n{E(X_i)}\)</span></li>
 </ul></li>
 <li><p><strong>Monotonicity</strong>: If <span class="math inline">\(X \le Y\)</span>, then <span class="math inline">\(E(X) \le E(Y)\)</span></p></li>
-<li><p><strong>Non-multiplicativity</strong>:<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> <span class="math inline">\(E(XY) = E(X)E(Y) + \text{Cov}(X, Y)\)</span>. This means in general <span class="math inline">\(E(XY) \not= E(X)E(Y)\)</span> holds except that <span class="math inline">\(X, Y\)</span> are independent (although this is not a necessary condition)</p></li>
+<li><p><strong>Non-multiplicativity</strong>:<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> <span class="math inline">\(E(XY) = E(X)E(Y) + \text{Cov}(X, Y)\)</span>. This means in general <span class="math inline">\(E(XY) \not= E(X)E(Y)\)</span> holds except that <span class="math inline">\(X, Y\)</span> are independent (although this is not a necessary condition)</p></li>
 <li><p><strong>law of the unconscious statistician (LOTUS)</strong>. Suppose <span class="math inline">\(g(X)\)</span> is a function of <span class="math inline">\(X\)</span>. If <span class="math inline">\(X\)</span> is discrete then <span class="math inline">\(E[g(X)] = \sum g(x)f_X(x)\)</span>, and if <span class="math inline">\(X\)</span> is continuous <span class="math inline">\(E[g(X)] = \int g(x)f(x)dx\)</span></p></li>
-<li><p><span class="math inline">\(E(X^2) = \text{Var}(X) + [E(X)]^2\)</span><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p></li>
+<li><p><span class="math inline">\(E(X^2) = \text{Var}(X) + [E(X)]^2\)</span><a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a></p></li>
 </ul>
 <p>An important extension of the previous identity is used listed in the following lemma.</p>
 
@@ -438,21 +442,21 @@ M_{X + Y}(t) &amp;= E(e^{t(X + Y)}) \\
 </div>
 <div class="footnotes">
 <hr />
-<ol start="3">
-<li id="fn3"><p>Proof: <span class="math inline">\(E(XY) = E(X)E(Y) + \text{Cov}(X, Y)\)</span>. Start with covariance <span class="math display">\[\begin{split}
+<ol start="4">
+<li id="fn4"><p>Proof: <span class="math inline">\(E(XY) = E(X)E(Y) + \text{Cov}(X, Y)\)</span>. Start with covariance <span class="math display">\[\begin{split}
 \text{Cov}(X, Y) &amp;= E[(X - \mu_x)(Y - \mu_y)] \\
 &amp;= E(XY - X\mu_y - Y\mu_x + \mu_x\mu_y) \\
 &amp;= E(XY) - \mu_yE(X) - \mu_xE(Y) + \mu_x\mu_y \\
 &amp;= E(XY) - 2\mu_x\mu_y + \mu_x\mu_y \\
 &amp; = E(XY) - \mu_x\mu_y
-\end{split}\]</span><a href="random-variables-and-moments.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>Proof: <span class="math inline">\(E(X^2) = \text{Var}(X) + \big( E(X) \big)\)</span>. <span class="math display">\[
+\end{split}\]</span><a href="random-variables-and-moments.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>Proof: <span class="math inline">\(E(X^2) = \text{Var}(X) + \big( E(X) \big)\)</span>. <span class="math display">\[
 \begin{split}
 E(X^2) &amp;= E \big[ (X \pm \mu)^2 \big] \\
 &amp;= E(X - \mu)^2 + \mu^2 + 2 \mu E(X -\mu) \qquad \text{the 3rd term is zero} \\
 &amp;= \text{Var}(X) + [E(X)]^2
 \end{split}
-\]</span><a href="random-variables-and-moments.html#fnref4" class="footnote-back">↩︎</a></p></li>
+\]</span><a href="random-variables-and-moments.html#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
