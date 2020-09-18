@@ -33,7 +33,7 @@ It's easy to verify that $W^{\perp}$ is closed under scalar multiplication, and 
 ### Orthogonal Sets and Orthogonal Basis
 
 An orthogonal set is a set of vectors 
-$\{\bar{u_1}, \dots, \bar{u_p}\}$ in $\mathbb{R^n}$, in which each pair of distinct vectors is orthogonal: $\bar{u_i}^{T} \bar{u_j} = 0 \quad i\not = j$. Note that the set do not necessarily span the whole $\mathbb{R^n}$, but a subspace $W$. 
+$\{\bar{u}_1, \dots, \bar{u}_p\}$ in $\mathbb{R^n}$, in which each pair of distinct vectors is orthogonal: $\bar{u}_i^{T} \bar{u}_j = 0 \quad i\not = j$. Note that the set do not necessarily span the whole $\mathbb{R^n}$, but a subspace $W$. 
 
 Since vectors in orthogonal sets is mutually perpendicular, they must also be linearly independent and could form a basis for a subspace $W$. In such case, they are called **orthogonal basis**.  
 
@@ -42,29 +42,29 @@ There is a particular advantage in using orthogonal basis rather than other basi
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>For each $\bar{y}$ in $W$, there exists a linear combination
 
 $$
-y = c_1\bar{u_1} + \cdots + c_p\bar{u_p}
+y = c_1\bar{u}_1 + \cdots + c_p\bar{u}_p
 $$
   
 and 
 
 $$
-c_i = \frac{\bar{y} \cdot \bar{u_i}}{\bar{u_i} \cdot \bar{u_i}} \quad i = 1, \cdots, p
+c_i = \frac{\bar{y} \cdot \bar{u}_i}{\bar{u}_i \cdot \bar{u}_i} \quad i = 1, \cdots, p
 $$
   
-where $\{\bar{u_1}, \dots, \bar{u_p}\}$ is an orthogonal basis. </div>\EndKnitrBlock{theorem}
+where $\{\bar{u}_1, \dots, \bar{u}_p\}$ is an orthogonal basis. </div>\EndKnitrBlock{theorem}
 
 <div class = "proof"> Proof </div>
 
 $$
 \begin{split}
-\bar{u_1} \cdot \bar{y} &= \bar{u_1} \cdot (c_1\bar{u_1} + \cdots + c_p\bar{u_p}) \\
-  &= c_1 \bar{u_1} \cdot \bar{u_1}
+\bar{u}_1 \cdot \bar{y} &= \bar{u}_1 \cdot (c_1\bar{u}_1 + \cdots + c_p\bar{u}_p) \\
+  &= c_1 \bar{u}_1 \cdot \bar{u}_1
 \end{split}
 $$
 So: 
 
 $$
-c_1 = \frac{\bar{u_1} \cdot \bar{y}}{\bar{u_1} \cdot \bar{u_1}}
+c_1 = \frac{\bar{u}_1 \cdot \bar{y}}{\bar{u}_1 \cdot \bar{u}_1}
 $$
 
 Derivations for other $c_i$ is similar. 
@@ -134,6 +134,49 @@ $$
 $$
 
 whenever $W$ is a subspace. 
+
+## Orthonormal Sets and Orthogonal Matrices
+
+An orthogonal set whose components are all *unit vectors* is said to be *orthonormal* sets. 
+
+According this definition, we can easily create an orthonormal set using the original orthogonal set after perform scaling. If $\{\bar{u}_1, \dots, \bar{u}_p\}$ forms an orthogonal set in $\mathbb{R^n}$, then an orthonormal set will be $\{\bar{q}_1, \dots, \bar{q}_p\}$
+
+$$
+\begin{aligned}
+\bar{q}_1 &= \frac{\bar{u}_1}{\|\bar{u}_1\|} \\
+\bar{q}_2 &= \frac{\bar{u}_2}{\|\bar{u}_2\|} \\
+\vdots \\
+\bar{q}_p &= \frac{\bar{u}_p}{\|\bar{u}_p\|}
+\end{aligned}
+$$
+
+### Orthogonal Matrices  
+
+An *orthogonal matrix* is a square matrix $Q$ whose inverse is its transpose:  
+
+$$
+(\#eq:orthogonal-matrix)
+QQ^T = Q^TQ = I
+$$
+
+Another way of defining it is that an orthogonal matrix has both **orthonormal columns** and **orthonormal rows**.  
+
+Orthogonal matrices have a nice property that they preserve inner products: 
+
+$$
+(Q\bar{x})^T(Q\bar{y}) = \bar{x}^TQ^TQ\bar{y} = \bar{x}^TI\bar{y} = \bar{x}^T\bar{y}
+$$
+
+A direct result is that $Q$ preserves L2 norms 
+
+$$
+\|Q\bar{x}\|_2 = \sqrt{(Q\bar{x})^T(Q\bar{x})} = \sqrt{\bar{x}^T\bar{x}} = \|\bar{x}\|_2
+$$
+
+Therefore multiplication by an orthogonal matrix can be considered as a transformation that preserves length, but may rotate or reflect the vector about the origin. 
+
+Note that $Q$ may not necessarily be a square matrix to satisfy $Q^TQ = I$. For exmaple $Q \in \mathbb{R}^{m \times n}, n < m$, but its columns and rows can still be orthonormal, then $QQ^T = I$. But in most cases the term orthogonal implies a square matrix $Q$. 
+
 
 ### Best Approximation 
 
@@ -247,6 +290,9 @@ $$
 \{\bar{q}_i = \frac{\bar{v}_i}{\|\bar{v}_i\|}, \;i = 1, ... p\} 
 $$
 
+The Gram-Schmidt basis does not expose any specific properties of a vector with the help of its coordinates. The discrete cosine transform
+uses a basis with trigonometric properties in order to expose periodicity in a time series. (see Section 2.7.3 of LAOML [@DBLP:books/sp/Aggarwal20]) 
+
 
 ## QR Factorizaiton 
 
@@ -305,48 +351,10 @@ r_{11} & r_{12} & \cdots & r_{1n} \\
 $$
 We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ and $\bar{u}_k$ by $-1$)
 
-## Orthonormal Sets and Orthogonal Matrices
 
-An orthogonal set whose components are all unit vectors is said to be **orthonormal** sets. 
 
-### Orthogonal Matrices  
 
-An *orthogonal matrix* is a square matrix $Q$ whose inverse is its transpose:  
+## Complexity 
 
-$$
-(\#eq:orthogonal-matrix)
-QQ^T = Q^TQ = I
-$$
 
-Another way of defining it is that an orthogonal matrix has both **orthonormal columns** and **orthonormal rows**.  
 
-Orthogonal matrices have a nice property that they preserve inner products: 
-
-$$
-(Q\bar{x})^T(Q\bar{y}) = \bar{x}^TQ^TQ\bar{y} = \bar{x}^TI\bar{y} = \bar{x}^T\bar{y}
-$$
-
-A direct result is that $Q$ preserves L2 norms 
-
-$$
-\|Q\bar{x}\|_2 = \sqrt{(Q\bar{x})^T(Q\bar{x})} = \sqrt{\bar{x}^T\bar{x}} = \|\bar{x}\|_2
-$$
-
-Therefore multiplication by an orthogonal matrix can be considered as a transformation that preserves length, but may rotate or reflect the vector about the origin. 
-
-Note that $Q$ may not necessarily be a square matrix to satisfy $Q^TQ = I$. For exmaple $Q \in \mathbb{R}^{m \times n}, n < m$, but its columns and rows can still be orthonormal, then $QQ^T = I$. But in most cases the term orthogonal implies a square matrix $Q$. 
-
-## Lesat Squares Problems 
-
-\BeginKnitrBlock{definition}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6) </strong></span>the **normal equation** 
-$$
-A^TA\bar{x} = A^T\bar{b}
-$$</div>\EndKnitrBlock{definition}
-
-$$
-\begin{aligned}
-A^T(\bar{b} - A\hat{\bar{x}}) &= \bar{0}
-\end{aligned} \\
-A^T\bar{b} - A^TA\hat{\bar{x}} = 0 \\
-\hat{\bar{x}} = (A^TA)^{-1}A^T\bar{b}
-$$

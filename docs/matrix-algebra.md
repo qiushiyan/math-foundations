@@ -97,7 +97,77 @@ $$
 **reflection**
 
 
-### Selector matrix 
+### Matrix Multiplication as Linear Transformation
+
+They are matrices whose multiplication effect do that fall into specific geometric categories like scaling, dilation, and rotation. They do, in some sense, exert the same type of influence on vectors through multiplication. 
+
+It turns out that another way to look at $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$, besides linear combination of column vectors, is to think of the matrix $A$ as an force that “acts” on a vector $x$ in $\mathbb{R^n}$ by multiplication to produce a new vector called $b$ in $\mathbb{\mathbb{R^m}}$.  
+
+A transformation $T$ from $\mathbb{R^n}$ to $\mathbb{R^m}$ is a rule that assigns each vector \bar{x} in $\mathbb{R^n}$ a vector $T(x)$ in $\mathbb{R^m}$, which is called the **image** of \bar{x} (under the action of $T$). 
+
+It can be show that such transformations induced by multiplying a matrix is a type of **linear transformation**, because it satisfies all required properties to be linear:  
+
+$$
+\begin{aligned}
+\text{vector addition} \quad A(\bar{u} + \bar{v}) &= A\bar{u} + A\bar{v}  \\ 
+\text{scalar multiplication} \quad A(c\bar{u}) &= cA\bar{u}
+\end{aligned}
+$$
+<hr>
+
+\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-1"><strong>(\#thm:unnamed-chunk-1)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+  
+$$
+T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
+$$
+  
+In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ </div>\EndKnitrBlock{theorem}
+
+\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
+
+$$
+\bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
+$$
+And because $T(\bar{x})$ is a linear transformation: 
+
+$$
+\begin{split}
+T(\bar{x}) &= x_1T(\bar{e}_1) + \dots + x_nT(\bar{e}_n) \\
+&= [T(\bar{e}_1) \, \cdots \, T(\bar{e}_n)]\bar{x} \\
+&= (A\bar{x})_{m \times 1}
+\end{split}
+$$
+
+In other words, the transformation is specified once we know what all basis in $\mathbb{R^n}$ become in $\mathbb{R^m}$.
+
+The matrix $A$ is called the **standard matrix for the linear transformation** $T$.  
+
+<hr>
+
+(ref:onto) A mapping is onto $\mathbb{R^m}$
+
+\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-3"><strong>(\#def:unnamed-chunk-3)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
+
+Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$ for any $\bar{b}$ in $\mathbb{R}^m$
+
+<br>
+
+\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4)  \iffalse (one-to-one mapping) \fi{} </strong></span>
+
+A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
+
+Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the equation $T(\bar{x}) = \bar{b}$ has either a unique solution or none at all.   
+
+<br>
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-5"><strong>(\#thm:unnamed-chunk-5) </strong></span>Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
+
+- $T$ maps $mathbb{R}^n$ onto $\mathbb{R}^m$ if only if columns of $A$ span $\mathbb{R}^m$  
+
+- $R$ is one-to-one if and only if columns of $A$ are linearly independent </div>\EndKnitrBlock{theorem}
+
+
+### Selector Matrix 
 
 Let the standard basis in $\mathcal{R}^n$ be 
 
@@ -183,8 +253,74 @@ $$
 c_k = \sum_{i + j = k + 1}a_ib_j, \quad k = 1, ..., n + m - 1
 $$
 
+For example, the convolution of $n = 5$ and $m = 3$ is 
 
+$$
+\begin{aligned}
+c_1 &= a_1b_1 \\
+c_2 &= a_1b_2 + a_2b_1  \\
+c_3 &= a_1b_3 + a_2b_2 + a_3b_1 \\
+c_4 &= a_2b_3 + a_3b_2 + a_4b_1 \\
+c_5 &= a_3b_3 + a_4b_2 + a_5b_1 \\
+c_6 &= a_4b_3 + a_5b_2 \\
+c_7 &= a_5b_3
+\end{aligned}
+$$
+A important application of convolution arises in polynomial multiplication. If $a$ and $b$ represent coefficients of two polynomials 
 
+$$
+p(x) = a_1 + a_2x + \cdots + a_nx^{n-1}, \quad q(x) = b_1 + b_2x + \cdots + b_mx^{m - 1}
+$$
+then the coefficients of the product polynomial $p(x)q(x)$ are represented by $c = a * b$ 
+
+$$
+p(x)q(x) = c_1 + c_2x + \cdots + c_{n + m - 1}x^{n + m - 2}
+$$
+With this interpretation using polynomial multiplication, we can quickly verify some properties of convolution 
+
+- symmetric $a * b = b * a$  
+
+- associative $(a * b) * c = a * (b * c)$   
+
+- $a * b = 0$ if and only if one of $a$ and $b$ are zero vectors. 
+
+How is convolution related to matrix multiplication. A basic fact is that for a fixed $a$, $a * b$ is a linear function of $b$, and likewise for $b$. This mean $a * b$ can be expressed as a matrix-vector product 
+
+$$
+a * b = T(b)a = T(a)b
+$$
+
+According to the relationship between matrix multiplication and linear transformation, we conclude that $T(b)$ and $T(a)$ are matrices that are determined and constructed by the elemetns of $b$ and $a$ respectively. 
+
+Refer to the previous example, we have
+
+$$
+T(b) = 
+\begin{bmatrix}
+b_1 & 0 & 0 & 0 & 0 \\
+b_2 & b_1 & 0 & 0 & 0 \\
+b_3 & b_2 & b_1 & 0 & 0 \\
+0 & b_3 & b_2 & b_1 &0 \\
+0 & 0 & b_3 & b_2 & b_1 \\
+0 & 0 & 0 & b_3 & b_2 \\
+0 & 0 & 0 & 0 & b_3 
+\end{bmatrix},
+\quad 
+T(a) = 
+\begin{bmatrix}
+a_1 & 0 & 0 \\
+a_2 & a_1 & 0 \\
+a_3 & a_2 & a_1 \\
+a_4 & a_3 & a_2 \\
+a_5 & a_4 &  a_3 \\
+0 & a_5 & a_4 \\
+0 & 0 & a_5
+\end{bmatrix}
+$$
+
+$T(a)$ and $T(b)$ both have the same values along any diagonal, a property characterizing the so-called *Toeplitz* matrices. 
+
+Convolution has computational applications in areas like time series smoothing, first order differences and audio filtering. (P. 150, VMLS)
 
 
 ## Elemetary matrix and row operations  
@@ -264,7 +400,7 @@ https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysi
 A *factorization* of matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
 
 
-\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-1"><strong>(\#def:unnamed-chunk-1)  \iffalse (LU factorization) \fi{} </strong></span>Suppose $A$ can be reduced to an echelon form $U$ **using only row addition and row scaling**, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
+\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6)  \iffalse (LU factorization) \fi{} </strong></span>Suppose $A$ can be reduced to an echelon form $U$ **using only row addition and row scaling**, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
 
 $$
 E_p \cdots E_1A = U  
@@ -523,7 +659,7 @@ The trace has the following properties:
 In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\bar{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\bar{x} = \bar{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
 
 Assume that $A$ and $B$ are both non-singular
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-3"><strong>(\#thm:unnamed-chunk-3) </strong></span>If A and B are both invertible matrces, we have
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8) </strong></span>If A and B are both invertible matrces, we have
 
 $$
 (A^{-1})^{-1} = A  
@@ -572,7 +708,7 @@ C_{1n} & C_{2n} & \cdots & C_{nn} \\
 
 The right side of Eq \@ref(eq:inverse-adjugate) is called the *adjugate* of $A$, often denoted by $\text{adj}\, A$.  
 
-\BeginKnitrBlock{theorem}\iffalse{-91-65-110-32-73-110-118-101-114-115-101-32-70-111-114-109-117-108-97-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4)  \iffalse (An Inverse Formula) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. Then 
+\BeginKnitrBlock{theorem}\iffalse{-91-65-110-32-73-110-118-101-114-115-101-32-70-111-114-109-117-108-97-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-9"><strong>(\#thm:unnamed-chunk-9)  \iffalse (An Inverse Formula) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. Then 
 
 $$
 A^{-1} = \frac{1}{\det A}\text{adj}\, A
@@ -610,7 +746,7 @@ It's easy to find that the Woodbury Identity is an extension of the matrix inver
 
 <hr>
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-5"><strong>(\#prp:unnamed-chunk-5) </strong></span>For square matrix $P$ (**not** assuming invertible), if $I + P$ is invertible, then $(I + P)^{-1}$ satisfies:  
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-10"><strong>(\#prp:unnamed-chunk-10) </strong></span>For square matrix $P$ (**not** assuming invertible), if $I + P$ is invertible, then $(I + P)^{-1}$ satisfies:  
 
 $$
 (I + P)^{-1} = I - (I + P)^{-1}P
@@ -656,72 +792,6 @@ $$</div>\EndKnitrBlock{proposition}
 
 
 
-## Matrix Multiplication as Linear Transformation
-
-Another way to look at $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$, besides linear combination of column vectors, is to think of the matrix $A$ as an force that “acts” on a vector $x$ in $\mathbb{R^n}$ by multiplication to produce a new vector called $b$ in $\mathbb{\mathbb{R^m}}$.  
-
-A transformation $T$ from $\mathbb{R^n}$ to $\mathbb{R^m}$ is a rule that assigns each vector \bar{x} in $\mathbb{R^n}$ a vector $T(x)$ in $\mathbb{R^m}$, which is called the **image** of \bar{x} (under the action of $T$). 
-
-It can be show that such transformations induced by multiplying a matrix is a type of **linear transformation**, because it satisfies all required properties to be linear:  
-
-$$
-\begin{aligned}
-\text{vector addition} \quad A(\bar{u} + \bar{v}) &= A\bar{u} + A\bar{v}  \\ 
-\text{scalar multiplication} \quad A(c\bar{u}) &= cA\bar{u}
-\end{aligned}
-$$
-<hr>
-
-\BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-6"><strong>(\#thm:unnamed-chunk-6)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
-  
-$$
-T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
-$$
-  
-In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ </div>\EndKnitrBlock{theorem}
-
-\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
-
-$$
-\bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
-$$
-And because $T(\bar{x})$ is a linear transformation: 
-
-$$
-\begin{split}
-T(\bar{x}) &= x_1T(\bar{e}_1) + \dots + x_nT(\bar{e}_n) \\
-&= [T(\bar{e}_1) \, \cdots \, T(\bar{e}_n)]\bar{x} \\
-&= (A\bar{x})_{m \times 1}
-\end{split}
-$$
-
-In other words, the transformation is specified once we know what all basis in $\mathbb{R^n}$ become in $\mathbb{R^m}$.
-
-The matrix $A$ is called the **standard matrix for the linear transformation** $T$.  
-
-<hr>
-
-(ref:onto) A mapping is onto $\mathbb{R^m}$
-
-\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-8"><strong>(\#def:unnamed-chunk-8)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
-
-Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$ for any $\bar{b}$ in $\mathbb{R}^m$
-
-<br>
-
-\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-9"><strong>(\#def:unnamed-chunk-9)  \iffalse (one-to-one mapping) \fi{} </strong></span>
-
-A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
-
-Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the equation $T(\bar{x}) = \bar{b}$ has either a unique solution or none at all.   
-
-<br>
-
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-10"><strong>(\#thm:unnamed-chunk-10) </strong></span>Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
-
-- $T$ maps $mathbb{R}^n$ onto $\mathbb{R}^m$ if only if columns of $A$ span $\mathbb{R}^m$  
-
-- $R$ is one-to-one if and only if columns of $A$ are linearly independent </div>\EndKnitrBlock{theorem}
 
 
 
@@ -733,15 +803,56 @@ This chapter concludes with a summary of complexity (number of flops needed) in 
 An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly $16\text{nnz}(A)$ bytes. 
 
 
-Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (number of flops) of common matrix operations are listed below 
+Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (approximate number of flops) of common matrix operations are listed below 
 
 |Operation|Expression|Complexity|Explanation|
 |:-:|:-:|:-:|:-:|
 |matrix addition|$A + B$|$mn$ <br> and $\min(\text{nnz}(A), \text{nnz}(B))$ if one of $A$ and $B$ is sparse|For any entry $i,j$ for which one of $A_{ij}$ and $B_{ij}$ is zero, no arithmetic operations are needed to find  $(A + B)_{ij}$|
 |scalar multiplication|$kA$|$mn$ <br> $\text{nnz}(A)$ when $A$ is sparse||
-|transposition|$A^T$|$0$|Computing $A^T$ needs only copying, but no flops|
 |matrix-vector multiplication|$A\bar{x}$|$m(2n - 1)$|equivalent to $m$ inner products between rows of $A$ and $\bar{x}$|
 |matrix-vector multiplication when $A$ is sparse|between $\text{nnz}(A)$ and $2\text{nnz}(A) - 1$|$A\bar{x}$|First we need $\text{nnz}(A)$ multiplications, and certain number of additions. We need most additions when nonzero entries are arranged next to each other, and least when they are separated in different columns and rows (for example for diagonal matrix $A$, we need no additions at all)|
+|matrix-matrix multiplication|$A_{m \times n}B_{n \times p}$|$2mnp$|$2n - 1$ for each inner product between rows of $A$ and columns of $B$, with $m \times p$ inner products in total, which is roughly $2mnp$ flops|
+|sparse matrix multiplication|$AB$|no more than $2\min\{\text{nnz}(A)p, \text{nnz}(B)m\}$|Suppose $A$ is sparse $m \times n$, and $B$ is normal $n \times p$. Then the inner product of the $i$th row $\bar{a}_i^T$ and the $j$th column of $B$ requires no more than $2\text{nnz}(\bar{a}_i^T)$ flops. That adds up to $2\text{nnz}(A)p$ in total. If $B$ is sparse then the number $2\text{nnz}(B)m$ flops. In cases they are both spares, the required flops will be no more than the minimum of these two quantities |
+|transposition|$A^T$|$0$|Computing $A^T$ needs only copying, but no flops|
+|Convolution|$a * b = T(a)b = T(b)a$|$2mn$||
+
+One interesting discovery in the complexity of matrix product is that order matters. Different order of computing the same expression can result in different complexity. We first consider the vector product $ab^Tc$, where they are all $n$-th vectors. If we first evaluate $ab^T$, the cost is $n^2$ flops, and the cost of matrix-vector product $(ab^T)c$ is $2n^2$ flops. The total cost is $3n^2$ flops. If we first evaluate $b^Tc$ and then multiply by $a$, the total cost is $3n$ flops. Also, the first order requires storing an intermediate $n \times n$ matrix, while the latter only stores a scalar. 
+
+Next, consider the product of three matrices 
+
+$$
+D = A_{m \times n}B_{n \times p}C_{p \times q}
+$$
+The first method is $(AB)C$. The complexity of $AB$ and $(AB)C$ are $2mnp$ and $2mpq$. for a total of $2mp(n + q)$ flops. 
+
+The second method is $A(BC)$. We first compute product $BC$ ($2npq$ flops) and then form $D = A(BC)$, for a total of $2nq(m + p)$ flops. 
+
+The two complexity are equal when 
+
+$$
+\frac{1}{n} + \frac{1}{q} < \frac{1}{m} + \frac{1}{p}
+$$
+
+When $m = p$ and $n = q$: 
+
+$$
+\begin{aligned}
+\text{first method}&: \mathcal{O}(m^2n) \\
+\text{second method}&: \mathcal{O}(mn^2)
+\end{aligned}
+$$
+
+Therefore the complexity can vary dramatically according to the order of computing, when there is a great difference between $m$ and $n$.
+
+
+
+
+
+
+
+
+
+
 
 
 

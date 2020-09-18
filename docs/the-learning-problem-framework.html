@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Singular Value Decomposition | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 5 Singular Value Decomposition | Mathematical Notes for Machine Learning" />
+  <title>Chapter 16 The Learning Problem Framework | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 16 The Learning Problem Framework | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Singular Value Decomposition | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 16 The Learning Problem Framework | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Singular Value Decomposition | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 16 The Learning Problem Framework | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="eigenthings-and-quadratic-forms.html"/>
-<link rel="next" href="linear-system.html"/>
+<link rel="prev" href="markov-chain.html"/>
+<link rel="next" href="basics-of-optimization.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -277,413 +277,28 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="singular-value-decomposition" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Singular Value Decomposition</h1>
-<div id="singular-values" class="section level2">
-<h2><span class="header-section-number">5.1</span> Singular Values</h2>
-<p>The singular value decomposition illustrates a way of decomposing <em>any</em> matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> into the form <span class="math inline">\(U \Sigma V^T\)</span>, where <span class="math inline">\(U = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_n]\)</span> and <span class="math inline">\(V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]\)</span> are both orthogonal matrices, and <span class="math inline">\(\Sigma\)</span> a diagonal matrix with entries being the square root of the eigenvalues of <span class="math inline">\(A^TA\)</span> (perhaps plus some zeros).</p>
-<p>Before proceeding to the theorem, let’s explore the motivating idea behind SVD. For (square) diagonalizable matrix <span class="math inline">\(A \in \mathbb{S}^{n}\)</span>, the absolute value of the eigenvalues measure the amounts that <span class="math inline">\(A\)</span> stretches or shrinks eigenvectors, consider the ratio between the length of <span class="math inline">\(\bar{x}\)</span> before and after left multiplied by <span class="math inline">\(A\)</span></p>
-<p><span class="math display">\[
-\frac{\|A\bar{x}\|}{\|\bar{x}\|} 
-= \frac{\|\lambda\bar{x}\|}{\|\bar{x}\|}
-= \frac{\lambda\|\bar{x}\|}{\|\bar{x}\|} = \lambda
-\]</span>
-If <span class="math inline">\(\lambda_1\)</span> is the greatest eigenvalue, then the corresponding eigenvector <span class="math inline">\(\bar{v}_1\)</span> identifies the direction in which <span class="math inline">\(A\)</span>’s stretching effect is greatest.</p>
-<p>So, the question is, can we identify a similar ratio and direction for <em>rectangular</em> matrices <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, even though they does not have eigenvalues and eigenvectors?</p>
-<p>The answer is yes. Note that maximize <span class="math inline">\(\frac{\|A\bar{x}\|}{\|\bar{x}\|}\)</span> (now <span class="math inline">\(\bar{x}\)</span> is any vector <span class="math inline">\(\in \mathbb{R}^n\)</span>) is equivalent to maximize <span class="math inline">\(\frac{\|A\bar{x}\|^2}{\|\bar{x}\|^2}\)</span></p>
-<p><span class="math display">\[
-\begin{split}
-\frac{\|A\bar{x}\|^2}{\|\bar{x}\|^2} &amp;= \frac{(A\bar{x})^T(A\bar{x})}{\bar{x}^T\bar{x}} \\
-&amp;= \frac{\bar{x}^T(A^TA)\bar{x}}{\bar{x}^T\bar{x}}
-\end{split}
-\]</span>
-Since <span class="math inline">\(A^TA\)</span> is <strong>symmetric</strong>, this is the form of a Rayleigh quotients <a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients">4.6</a>! We know that the largest possible value is of this quotient <span class="math inline">\(\lambda_1\)</span>, the greatest eigenvalue of <span class="math inline">\(A^TA\)</span>, with <span class="math inline">\(\bar{x} = \bar{v}_1\)</span>, among the <strong>orthonormal</strong> set <span class="math inline">\(\{\bar{v}_1, \cdots, \bar{v}_n\}\)</span>. Note that here <span class="math inline">\(V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]\)</span> is already a orthogonal matrix, previously denoted by <span class="math inline">\(Q\)</span>.</p>
-<p>To sum up, the greatest possible stretching ratio of <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> on a vector <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span> is <span class="math inline">\(\sqrt{\lambda_1}\)</span>. Generally, let <span class="math inline">\(\{\bar{v}_1, \cdots, \bar{v}_n\}\)</span> be a orthonormal basis for <span class="math inline">\(\mathbb{R}^n\)</span> consisting of eigenvectors of <span class="math inline">\(A^TA\)</span>, and <span class="math inline">\(\lambda_1, ..., \lambda_n\)</span> be the eigenvalues of <span class="math inline">\(A^TA\)</span>, for <span class="math inline">\(i = 1, \cdots, n\)</span></p>
-<p><span class="math display">\[
-\|A\bar{v}_i\| ^ 2 = \bar{v}_i^T(A^TA)\bar{v}_i = \lambda_i\bar{v}_i^T\bar{v}_i = \lambda_i
-\]</span></p>
-<p>From corollary <a href="eigenthings-and-quadratic-forms.html#cor:ata-pd">4.4</a>, we know that <span class="math inline">\(A^TA\)</span> are positive semidefinite matrices. Thus, <span class="math inline">\(\lambda_i \ge 0, \, i = 1, ..., n\)</span>, and we can find their square root <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>.</p>
-<p><br></p>
-
-<div class="definition">
-<span id="def:singular-value" class="definition"><strong>Definition 5.1  (Singular values)  </strong></span>The singular values of <span class="math inline">\(A\)</span> are the square roots of the eigenvalues of <span class="math inline">\(A^TA\)</span>, denoted by <span class="math inline">\(\sigma_1, ..., \sigma_n\)</span>. That is, <span class="math inline">\(\sigma_i = \sqrt{\lambda_i}\)</span>, and they are often arranged in descending order so that <span class="math inline">\(\lambda_1 \ge \cdots \ge \lambda_n\)</span>. Geometrically, singular values of <span class="math inline">\(A\)</span> are the length of the vectors <span class="math inline">\(A\bar{v}_1, ..., A\bar{v}_n\)</span>, where <span class="math inline">\(\{\bar{v}_1, ..., \bar{v}_n\}\)</span> is the <em>orthonormal</em> basis of <span class="math inline">\(A^TA\)</span>’s eigenspace.
-</div>
-
-<p><br></p>
-
-<div class="theorem">
-<span id="thm:svd-rank" class="theorem"><strong>Theorem 5.1  </strong></span>Proceeding from previous definitons of singular values, and suppose <span class="math inline">\(A\)</span> has at least one nonzero singular values. Then <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> is an orthogonal basis for <span class="math inline">\(\mathcal{R}(A)\)</span>, and <span class="math inline">\(\text{rank} \;A = r\)</span>
-</div>
-
-<div class="proof">
-Proof
-</div>
-<p>First, let’s examine that <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> is a orthogonal basis: any pair of two distinct vectors <span class="math inline">\(A\bar{v}_i, A\bar{v}_j, \; i,j = 1, ..., r\)</span> are orthogonal to each other</p>
-<p><span class="math display">\[
-\begin{split}
-(A\bar{v}_i)^T(A\bar{v}_j) &amp;=  \bar{v}_i^TA^TA\bar{v}_j \\
-&amp;= \bar{v}_i^T(\lambda_j\bar{v}_j) \\
-&amp;= 0
-\end{split}
-\]</span></p>
-<p>Next, we show that any vector in <span class="math inline">\(\mathcal{R}(A)\)</span> is a linear a combination of <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span>. Note that <span class="math inline">\(\{\bar{v}_1, ..., \bar{v}_n\}\)</span> is a orthonormal basis of <span class="math inline">\(A^TA\)</span>’s eigenspace <span class="math inline">\(\mathbb{R}^n\)</span>. Therefore, for any vector <span class="math inline">\(\bar{y} = A\bar{x}\)</span> in <span class="math inline">\(\mathcal{R}(A)\)</span> , there exists <span class="math inline">\(\bar{x} = c_1\bar{v}_1 + \cdots + c_n\bar{v}_n\)</span>, thus</p>
-<p><span class="math display">\[
-\begin{split}
-\bar{y} &amp;= A\bar{x} = A(c_1\bar{v}_1 + \cdots + c_n\bar{v}_n) \\
-&amp;= c_1 A \bar{v}_1 + \cdots + c_r A \bar{v}_r + c_{r+1} A \bar{v}_{r+1} + \cdots + c_n A \bar{v}_n 
-\end{split}
-\tag{1}
-\]</span>
-Since <span class="math inline">\(\lambda_{r+1} = \cdots = \lambda_{n} = 0\)</span>, <span class="math inline">\(A\bar{v}_{r+1}, ..., A\bar{v}_{n}\)</span> have length <span class="math inline">\(0\)</span>: they are zero vectors. And (1) is reduced to</p>
-<p><span class="math display">\[
-\bar{y} = c_1 A \bar{v}_1 + \cdots + c_r A\bar{v}_r
-\]</span></p>
-<p>Thus any <span class="math inline">\(\bar{y} \in \mathcal{R}(A)\)</span> is in Span<span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span>, and <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> is an orthogonal basis for <span class="math inline">\(\mathcal{R}(A)\)</span>. This also shows that the column rank of <span class="math inline">\(A\)</span> is equal to its number of nonzero singular values.</p>
-</div>
-<div id="svd-theorem" class="section level2">
-<h2><span class="header-section-number">5.2</span> SVD</h2>
-<p>Let’s begin SVD by the <span class="math inline">\(m \times n\)</span> diagonal matrix <span class="math inline">\(\Sigma\)</span> of the form</p>
-<p><span class="math display">\[
-\Sigma = \begin{bmatrix}
-\sigma_1 \\
-&amp; \ddots &amp;  \\ 
-&amp; &amp; \sigma_r \\
-&amp; &amp; &amp; 0 \\
-&amp; &amp; &amp; &amp; \ddots \\
-&amp; &amp; &amp; &amp; &amp; 0 \\
-\end{bmatrix}
-\tag{1}
-\]</span></p>
-<p>There are <span class="math inline">\(r\)</span> nonzero entries on the diagonal, being <span class="math inline">\(A\)</span>’s nonzero singular values, and the left positions are filled by <span class="math inline">\(0\)</span> to form a <span class="math inline">\(m \times n\)</span> matrix. If <span class="math inline">\(r\)</span> equals <span class="math inline">\(m\)</span> or <span class="math inline">\(n\)</span> or both, some or all of the zero blocks do not appear.</p>
-
-<div class="theorem">
-<p><span id="thm:SVD" class="theorem"><strong>Theorem 5.2  (The Singular Value Decomposition)  </strong></span>Let <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> with rank <span class="math inline">\(r\)</span>. There exists an diagonal matrix <span class="math inline">\(\mathbb{\Sigma} \in \mathbb{R}^{m \times n}\)</span> as in (1) for which the first <span class="math inline">\(r\ \times r\)</span> block is a diagonal matrix with the first <span class="math inline">\(r\)</span> singular values of <span class="math inline">\(A\)</span> on its diagonal, and there exist <span class="math inline">\(U \in \mathbb{R}^{m \times m}\)</span> and <span class="math inline">\(V \in \mathbb{R}^{n \times n}\)</span> such that</p>
-<span class="math display">\[
-A = U \Sigma V^T
-\]</span>
-</div>
-
-<div class="proof">
-Proof
-</div>
-<p>Since <span class="math inline">\(A\)</span> has <span class="math inline">\(r\)</span> nonzero singular values which measure the length of <span class="math inline">\(A\bar{v}_i, \; i = 1, ...n\)</span>, there exists orthogonal basis <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> for <span class="math inline">\(\mathcal{R}(A)\)</span>, we can further normalize the set to produce the <em>orthonormal</em> set <span class="math inline">\(\bar{u}_1, ..., \bar{u}_r\)</span>:</p>
-<p><span class="math display">\[
-\bar{u}_i = \frac{A\bar{v}_i}{\sigma_i}, \;\; i = 1, ..., r
-\]</span>
-Now we can extend <span class="math inline">\(\{\bar{u}_1, ..., \bar{u}_r\}\)</span> to an orthonormal basis <span class="math inline">\(\{\bar{u}_1, ..., \bar{u}_m\}\)</span> of <span class="math inline">\(\mathbb{R}^m\)</span>, and let</p>
-<p><span class="math display">\[
-U = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_m], \quad V = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]
-\]</span></p>
-<p>and <span class="math inline">\(\Sigma\)</span> be as be as in (1) above. Write out</p>
-<p><span class="math display">\[
-\begin{split}
-U\Sigma &amp;= [\bar{u}_1 \;\; \cdots \;\; \bar{u}_r \;\; \cdots \;\; \bar{u}_m]_{m \times m}
-\begin{bmatrix}
-\sigma_1 \\
-&amp; \ddots &amp;  \\ 
-&amp; &amp; \sigma_r \\
-&amp; &amp; &amp; 0 \\
-&amp; &amp; &amp; &amp; \ddots \\
-&amp; &amp; &amp; &amp; &amp; 0 \\
-\end{bmatrix}_{m\times n} \\
-&amp;= [\sigma_1\bar{u}_1 \;\; \cdots \;\;   \sigma_r\bar{u}_r \;\; \bar{0} \;\;  \cdots \;\;  \bar{0}] \\
-&amp; = [A\bar{v}_1 \;\; \cdots \;\; A\bar{v}_r \;\; A\bar{v}_{r+1} \;\; \cdots \;\; A \bar{v}_n] \\
-&amp;= A_{m \times n}V_{n \times n}
-\end{split}
-\]</span></p>
-<p>And because <span class="math inline">\(V\)</span> is orthogonal</p>
-<p><span class="math display">\[
-A = U \Sigma V^{-1} =  U \Sigma V^{T}
-\]</span>
-<span class="math inline">\(\bar{u}_i\)</span> and <span class="math inline">\(\bar{v}_i\)</span> are called <em>left eigenvector</em> and right eigenvector of <span class="math inline">\(A\)</span> respectively.</p>
-<p>It’s easy to verify that the spectral decomposition <a href="eigenthings-and-quadratic-forms.html#spectral-decomposition">4.3.1</a> is a special case of SVD when <span class="math inline">\(A \in \mathbb{R}^{n}, \;\; m = n\)</span>. In that case, <span class="math inline">\(\Sigma\)</span> is a square matrix and <span class="math inline">\(U\)</span> is equal to <span class="math inline">\(V\)</span>.</p>
-<p>When <span class="math inline">\(\Sigma\)</span> contains rows or columns of zeros (i.e, <span class="math inline">\(r &lt; \min(m, n)\)</span>), we can write SVD in a more compact form. Divide <span class="math inline">\(U, \Sigma, V\)</span> into submatrices</p>
-<p><span class="math display">\[
-U = [U_r \;\; U_{m-r}], \quad \text{where } U_r = [\bar{u}_1 \;\; \cdots \;\; \bar{u}_r] \\
-V = [V_r \;\; V_{m-r}], \quad \text{where } V_r = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_r] \\
-\Sigma = 
-\begin{bmatrix}
-D &amp; 0 \\
-0 &amp; 0
-\end{bmatrix}
-\quad \text{where } D = 
-\begin{bmatrix}
-\lambda_1 \\ 
- &amp; \ddots \\
- &amp; &amp; \lambda_r
-\end{bmatrix}
-\]</span>
-The partitioned matrix multiplication shows that</p>
-<p><span class="math display">\[
-A = [U_r \;\; U_{m-r}]
-\begin{bmatrix}
-D &amp; 0 \\
-0 &amp; 0
-\end{bmatrix}
-\begin{bmatrix}
-V_r^T \\
-V_{n-r}^T
-\end{bmatrix}
-= U_rDV_{r}^T
-\]</span>
-This more compact form is called the <strong>reduced form of SVD</strong>.</p>
-<p>Another way to write this is</p>
-<p><span class="math display">\[
-A = \sum_{i=1}^{t}{\sigma_i}\bar{u}_i\bar{v}_i
-\]</span></p>
-<hr>
-<p>Right multiply the non-compact form <span class="math inline">\(A = U\Sigma V^T\)</span> by <span class="math inline">\(A^T\)</span> , we get the spectral decomposition of symmetric matrix <span class="math inline">\(AA^T\)</span>.</p>
-<p><span class="math display">\[
-AA^T = (U \Sigma V^T)(U \Sigma V^T)^T = U \Sigma \Sigma^T VV^TU^T = U (\Sigma\Sigma^T) U^T       \tag{1}
-\]</span></p>
-<p>Therefore, <span class="math inline">\([\bar{u}_1 \;\; \cdots \;\; \bar{u}_n]\)</span> are revealed as the orthonormal basis for <span class="math inline">\(AA^T\)</span>’s eigenspace, as <span class="math inline">\([\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]\)</span> are for <span class="math inline">\(A^TA\)</span>.</p>
-<p>Formula (1) echoes the fact that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> have the same set of nonzero eigenvalues, because <span class="math inline">\(\Sigma\Sigma^T\)</span> produces nonzero set <span class="math inline">\(\lambda_1, ..., \lambda_r\)</span>.</p>
-<p>In fact, if were to ask for a direction in which <span class="math inline">\(A^T\)</span> has its greatest stretching effect instead of <span class="math inline">\(A\)</span>, we would still result in the equivalent decomposition <span class="math inline">\(A^T = V\Sigma U^T\)</span>, with <span class="math inline">\(\bar{v}_i = \frac{A\bar{u}_i}{\sigma_i}\)</span>.</p>
-<p>It’s also easy to test that <span class="math inline">\(\{A\bar{u}_1, ..., A\bar{u}_r\}\)</span> produces an orthogonal basis for <span class="math inline">\(\mathcal{R}(A^T)\)</span> . The process is analogous to theorem <a href="singular-value-decomposition.html#thm:svd-rank">5.1</a> where <span class="math inline">\(\{A\bar{v}_1, ..., A\bar{v}_r\}\)</span> are shown to span <span class="math inline">\(\mathcal{R}(A)\)</span>.</p>
-<p>For any vector <span class="math inline">\(\bar{y}\)</span> in <span class="math inline">\(\mathcal{R}(A)\)</span>, we have</p>
-<p><span class="math display">\[
-\begin{align*}
-\bar{y} &amp;= A^T\bar{x} \\
-&amp;= A^T(c_1\bar{u}_1 + \cdots + c_1\bar{u}_n) \\
-&amp;= c_1A\bar{u}_1 + \cdots + c_rA\bar{u}_r + \bar{0} + \cdots + \bar{0} &amp;&amp; (\text{because }A\bar{u}_i = \sigma_i\bar{v}_i)\\
-&amp;= c_1A\bar{u}_1 + \cdots + c_rA\bar{u}_r 
-\end{align*}
-\]</span></p>
-<p>Thus, SVD can be thought of an connection between two spectral decomposition</p>
-<p><span class="math display">\[
-A^TA = V (\Sigma^T\Sigma)V^T  \\
-AA^T = U (\Sigma\Sigma^T) U^T
-\]</span></p>
-<p>This shed light on the relationship between SVD and the fundamental theorem of linear algebra <a href="vector-spaces.html#thm:fundamental-theorem">2.2</a></p>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Subspace</th>
-<th align="center">Columns</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><span class="math inline">\(\mathcal{R}(A)\)</span></td>
-<td align="center">the first <span class="math inline">\(r\)</span> columns of <span class="math inline">\(U\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\mathcal{R}(A^T)\)</span></td>
-<td align="center">the first <span class="math inline">\(r\)</span> columns of <span class="math inline">\(V\)</span></td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(\mathcal{N}(A)\)</span></td>
-<td align="center">the last <span class="math inline">\(n - r\)</span> columns of <span class="math inline">\(V\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\mathcal{N}(A^T)\)</span></td>
-<td align="center">the last <span class="math inline">\(m - r\)</span> columns of <span class="math inline">\(U\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="matrix-norms" class="section level2">
-<h2><span class="header-section-number">5.3</span> Matrix Norms</h2>
-<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be matrices conformable for the operations below, a matrix norm should at first satisfy 3 axioms of norm:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\|A\| \ge 0\)</span> for all <span class="math inline">\(x \in X\)</span>, with equality if and only if all elements of <span class="math inline">\(A\)</span> is zero (nonnegative)<br />
-</li>
-<li><span class="math inline">\(\|\alpha A\| = |\alpha|\,\|A\|\)</span> (homogeneous)<br />
-</li>
-<li><span class="math inline">\(\|A + B\| &lt; \|A\| + \|B\|\)</span> (triangular inequality)</li>
-</ol>
-<p>Additionally, in the case of square matrices (thus, m = n), some (but not all) matrix norms satisfy the following condition, which is related to the fact that matrices are more than just vectors</p>
-<ol start="4" style="list-style-type: decimal">
-<li><span class="math inline">\(\|AB\| &lt; \|A\|\,\|B\|\)</span> for <span class="math inline">\(A, B \in \mathbb{R}^{n \times n}\)</span></li>
-</ol>
-<p>A matrix norm that satisfies this additional property is called a <strong>submultiplicative</strong> norm.</p>
-<p>There are 2 main categories of matrix norms.</p>
+<div id="the-learning-problem-framework" class="section level1">
+<h1><span class="header-section-number">Chapter 16</span> The Learning Problem Framework</h1>
+<div id="the-pac-learning-framework" class="section level2">
+<h2><span class="header-section-number">16.1</span> The PAC Learning Framework</h2>
+<p>Let</p>
 <ul>
-<li>induced norms (defined in terms of vector norms)<br />
-</li>
-<li>entry-wise norms (treat <span class="math inline">\(A_{m \times n}\)</span> like a long vector with <span class="math inline">\(m \times n\)</span> elements)</li>
+<li><p><span class="math inline">\(\mathcal{X}\)</span> be the <em>input space</em> containing all data points or instances</p></li>
+<li><p><span class="math inline">\(\mathcal{Y}\)</span> be the <em>output space</em></p></li>
 </ul>
-<div id="induced-norms" class="section level3">
-<h3><span class="header-section-number">5.3.1</span> Induced Norms</h3>
-<p>Induced norms define matrix norms in terms of vectors, also called <em>operator norm</em> since <span class="math inline">\(A\)</span> acts like an operator in this definition. Note that matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> maps a vector <span class="math inline">\(\bar{x} \not = 0\)</span> from <span class="math inline">\(\mathbb{R}^n\)</span> to <span class="math inline">\(\mathbb{R}^m\)</span>. In particular, if the p-norm is used for both <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(\mathbb{R}^m\)</span>, then the induced norm is</p>
-<p><span class="math display">\[
-\|A\|_p = \max \frac{\|A\bar{x}\|_p}{\|\bar{x}\|_p}
-\]</span>
-The subscript <span class="math inline">\(p\)</span> can be misleading, because the appropriate name for this matrix norm may not be “p-norm”, but rather “induced norm when p-norm is used in both spaces”. The p-norm of a matrix meaning usually means entry-wise p-norms or the Scatten p-norms defined in subsequent sections.</p>
-<p>In the special cases where <span class="math inline">\(p = 1, 2, ..., \infty\)</span>, <span class="math inline">\(\|A\|_p\)</span> is the maximum absolute column sums, largest singular value, and the maximum absolute row sums</p>
-<p><span class="math display">\[
-\begin{aligned}
-\|A\|_1 &amp;= \max \sum_{i=1}^{m}{|A_{ij}|} \\
-\|A\|_2 &amp;= \sigma_1 \\
-\|A\|_{\infty} &amp;= \max \sum_{j=1}^{n}{|A_{ij}|}
-\end{aligned}
-\]</span>
-For symmetric matrix A, we have</p>
-<p><span class="math display">\[
-\|A\|_1 = \|A\|_{\infty}
-\]</span>
-and</p>
-<p><span class="math display">\[
-\|A\|_2 = \lambda_1
-\]</span>
-The induced 2-norm are also called the <strong>spectral norm</strong>.</p>
-<p>By definition, the following inequality holds for induced matrix norms</p>
-<p><span class="math display">\[
-\|A\bar{x}\|_P \le \|A\|_p\|\bar{x}\|_p
-\]</span></p>
-<hr>
-
-<div class="proposition">
-<p><span id="prp:unnamed-chunk-1" class="proposition"><strong>Proposition 5.1  </strong></span>Induced matrix norms satisfies the additional submultiplicative property in that</p>
-<span class="math display">\[
-\|AB\|_p \le \|A\|_p\|B\|_p
-\]</span>
-</div>
-
-<div class="proof">
-Proof
-</div>
-<p>For any <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span></p>
-<p><span class="math display">\[
-\|AB\bar{x}\|_p \le \|A\|_p\|B\bar{x}\|_p \le \|A\|_p\|B\|_p\|\bar{x}\|_p
-\]</span>
-si</p>
-<p><span class="math display">\[
-\|AB\|_p = \max \frac{\|A\bar{x}\|_p}{\|\bar{x}\|_p} \le \max \frac{\|A\|_p\|B\|_p\|\bar{x}\|_p}{\|\bar{x}\|_p} = \|A\|_p\|B\|_p
-\]</span></p>
-</div>
-<div id="entry-wise-norm" class="section level3">
-<h3><span class="header-section-number">5.3.2</span> Entry-wise Norm</h3>
-<p>Entry-wise norms treat an <span class="math inline">\(m \times n\)</span> matrix as a long vector of size <span class="math inline">\(m \times n\)</span>, denoted by <span class="math inline">\(\text{vec}(A)\)</span>. For example, using the p-norm for vectors, we get</p>
-<p><span class="math display">\[
-\|A\|_{p,p} = \|\text{vec}(A)\|_p = \Bigg(\sum_{j=1}^n\sum_{i=1}^{m}{|a_{ij}|}^p \Bigg)^{\frac{1}{p}}
-\]</span></p>
-<p>More generally, the p,q norm is defined by</p>
-<p><span class="math display">\[
-\|A\|_{p, q} = \Bigg (  \sum_{j=1}^n \Big (\sum_{i=1}^{n}{|a_{ij}|}^p \Big)^{\frac{q}{p}}    \Bigg)^{\frac{1}{q}}
-\]</span>
-Another important member norm of this norm family is the <strong>Frobenius norm</strong>, or the F-norm.</p>
-<p><span class="math display">\[
-\| A\|_F = \sqrt{\sum_{j=1}^n\sum_{j=1}^{m}{a_{ij}^2}} = \sqrt{\text{tr}(A^TA)} = \sqrt{\sum_{i=1}^{\min(m,n)}{\sigma_i^2}}  
-\]</span>
-where <span class="math inline">\(\sigma_i\)</span> is the nonzero singular value of <span class="math inline">\(A\)</span>.</p>
-
-<div class="proposition">
-<span id="prp:unnamed-chunk-2" class="proposition"><strong>Proposition 5.2  </strong></span>The F-norm is a submultiplicative norm.
-</div>
-
-
-<div class="proof">
-Proof
-</div>
-
-<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are of appropriate size such that</p>
-<p><span class="math display">\[
-A = 
-\begin{bmatrix}
-a_1^T \\
-\vdots \\
-a_m^T
-\end{bmatrix}
-, \;
-B = 
-\begin{bmatrix}
-b_1 &amp; \cdots &amp; b_m
-\end{bmatrix} 
-\\
-\quad \\
-\begin{aligned}
-\|AB\| &amp;= \sqrt{\sum_{i, j}{(a_i^Tb_j)^2}} \\
-&amp; \le \sqrt{\sum_{i, j}{\| a_i \|^2 \| b_j\|^2}} \\
-&amp;= \sqrt{\sum_{i}{\|a_i\|^2}} \sqrt{\sum_{j}{\|b_j\|^2}} \\
-&amp;= \|A\| \|B\|
-\end{aligned}
-\]</span></p>
-<p>The first inequality comes from the Cauchy-Schwarz inequality <span class="math inline">\(a \cdot b \le \|a\| \|b\|\)</span></p>
-</div>
-<div id="other-matrix-norms" class="section level3">
-<h3><span class="header-section-number">5.3.3</span> Other Matrix Norms</h3>
-<p>One can pick to one of two ways to generalize the F-norm. One is a generalization of the direct definition that F-norm is <span class="math inline">\(||\text{vec}(A)||_2\)</span>. For <span class="math inline">\(p \ge 1\)</span>, it is the <strong>Frobenius-p</strong> norm:</p>
-<p><span class="math display">\[
-\| A \|_{F_p} = \Bigg (\sum_{i,j}{|a_{ij}|^p} \Bigg)^{\frac{1}{p}}
-\]</span>
-The Frobenius p-norm is the ordinary Frobenius norm.</p>
-<p>Another generalization stems from the relationship between F-norm and singular values of <span class="math inline">\(A\)</span>. The <strong>Schatten p norm</strong> is the p-norm of the vector composed of <span class="math inline">\(A\)</span>’s singular values</p>
-<p><span class="math display">\[
-\|A\|_{S_p} = \Big( \sum_{i = 1}^{\min(m, n)}{\sigma_i}^p\Big)^{\frac{1}{p}}
-\]</span></p>
-<p>The most familiar choices of <span class="math inline">\(p\)</span> are <span class="math inline">\(1, 2, ..., \infty\)</span>. Spectral norm and F-norm can be viewed as special cases of the Schatten norm. The case <span class="math inline">\(p = 2\)</span> yields the F-norm, and <span class="math inline">\(p = \infty\)</span> the spectral norm.</p>
-<p>Finally, <span class="math inline">\(p = 1\)</span> yields the <strong>nuclear norm</strong> (also known as the trace norm), defined as</p>
-<p><span class="math display">\[
-\|A\|_N = \sigma_1 + \cdots + \sigma_r
-\]</span></p>
-</div>
-<div id="unitary-invariant-norms" class="section level3">
-<h3><span class="header-section-number">5.3.4</span> Unitary Invariant Norms</h3>
-
-<div class="definition">
-<p><span id="def:unitary-invariant" class="definition"><strong>Definition 5.2  (unitary invariant norms)  </strong></span>A matrix norm <span class="math inline">\(\|\cdot \|\)</span> is said to be unitary invariant if for all orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V\)</span> of appropriate size</p>
-<span class="math display">\[
-\|A\| = \|UAV\|
-\]</span>
-</div>
-
-<p>(unitary matrices refers to orthogonal matrices with complex-valued entries, but I focus on real matrices here.)</p>
-<p>We mentioned that spectral norm, F-norm and nuclear norm are all unitary invariant norms. More than that, these 3 norms of any matrix stay the <strong>same</strong> when <span class="math inline">\(A\)</span> is multiplied by an orthogonal matrix.</p>
-<p>Essentially, <strong>if a norm depends only on the singular values of a matrix</strong>, it is unitary invariant. Since for such norms:</p>
-<p><span class="math display">\[
-\|A\| = \|\Sigma\| \qquad \text{because the norm only depend on singular values}
-\]</span>
-Multiply two orthogonal matrices <span class="math inline">\(U\)</span> and <span class="math inline">\(V^T\)</span> on each side,</p>
-<p><span class="math display">\[
-\begin{aligned}
-\|UA V^T\| &amp; = \| U \Sigma V^T\| \qquad \text{multiply by orthogonal matrix does not change norm}\\
-\|UAV^T\| &amp;= \|A\|
-\end{aligned}
-\]</span></p>
-<p>The spectral norm (induced p-norm), F-norm and Schatten norm are all unitary invariant. Because they can all be expressed in terms of singular values of <span class="math inline">\(A\)</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-\|A\|_2 &amp;= \sigma_1 \\
-\|A\|_F &amp;= \sqrt{\sigma_1^2 + \cdots + \sigma_r^2} \\
-\|A\|_N &amp;= \sigma_1 + \cdots + \sigma_r
-\end{aligned}
-\]</span></p>
-</div>
-</div>
-<div id="low-rank-approximation" class="section level2">
-<h2><span class="header-section-number">5.4</span> Low Rank Approximation</h2>
-
-<div class="theorem">
-<p><span id="thm:eckart-young" class="theorem"><strong>Theorem 5.3  (Eckart–Young–Mirsky)  </strong></span>Let <span class="math inline">\(\|\cdot\|\)</span> be a unitary invariant norm. Suppose <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> where <span class="math inline">\(m &gt; n\)</span>, has svd <span class="math inline">\(A = \sum_{i = 1}^n \sigma_i \bar{u}_i \bar{v}^T_i\)</span>. Then the best rank-k approximation to <span class="math inline">\(A\)</span>, where <span class="math inline">\(k \le \text{rank}(A)\)</span>, is given by</p>
-<p><span class="math display">\[
-A_k = \sum _{i=1}^{k}\sigma_i \bar{u}_i \bar{v}_i^T
-\]</span></p>
-<p>in the sense that for any other rank-k matrix <span class="math inline">\(\tilde{A}\)</span></p>
-<span class="math display">\[
-\|A -  A_k \| \le \|A - \tilde{A} \|
-\]</span>
-</div>
-
-
-<div class="todo">
-Proof for Eckart-Young theorem
-</div>
-
-<p>A measure of the quality of the approximation is given by</p>
-<p><span class="math display">\[
-\frac{\|A_k\|^2}{\| A\|^2} = \frac{\sigma_1^2 + \cdots + \sigma_k^2}{\sigma_1^2 + \cdots + \sigma_r^2}
-\]</span></p>
 
 </div>
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="eigenthings-and-quadratic-forms.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="linear-system.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="markov-chain.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basics-of-optimization.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -714,7 +329,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/svd.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/learning-problem.Rmd",
 "text": "Edit"
 },
 "history": {

@@ -1,3 +1,14 @@
 # (PART) Learning Theory {-}
 
-# The Learning Problem 
+# The Learning Problem Framework 
+
+
+
+## The PAC Learning Framework 
+
+
+Let
+
+- $\mathcal{X}$ be the *input space* containing all data points or instances
+
+- $\mathcal{Y}$ be the *output space*

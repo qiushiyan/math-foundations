@@ -315,7 +315,7 @@ The cross product obeys the following laws
 
 4. Not associative: $\bar{u} \times (\bar{v} \times \bar{w}) = (\bar{u} \cdot \bar{w})\bar{v} - (\bar{u} \cdot \bar{v})\bar{w}$
 
-To get a general formula of cross product, we consider the cross product among 3 standard basis $i = [1, 0, 0], j = [0, 1, 0], k = [0, 0, 1]$ 
+To get a general formula of cross product, we consider the cross product among 3 standard basis $\boldsymbol{i} = [1, 0, 0], \boldsymbol{j} = [0, 1, 0], \boldsymbol{k} = [0, 0, 1]$ 
 
 
 <div class="figure" style="text-align: center">
@@ -325,15 +325,15 @@ To get a general formula of cross product, we consider the cross product among 3
 
 $$
 \begin{aligned}
-i \times j &= k \\
-j \times k &= i \\
-k \times i &= j
+\boldsymbol{i} \times \boldsymbol{j} &= \boldsymbol{k} \\
+\boldsymbol{j} \times \boldsymbol{k} &= \boldsymbol{i} \\
+\boldsymbol{k} \times \boldsymbol{i} &= \boldsymbol{j}
 \end{aligned}
 $$
 and 
 
 $$
-i \times i  = j \times j = k \times k = 0
+\boldsymbol{i} \times \boldsymbol{i} = \boldsymbol{j} \times \boldsymbol{j} = \boldsymbol{k} \times \boldsymbol{k} = 0
 $$
 
 Then the cross product between $\bar{u}$ and $\bar{v}$ can be written as 

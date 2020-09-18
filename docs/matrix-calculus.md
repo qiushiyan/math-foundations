@@ -19,20 +19,20 @@ $$
 \end{bmatrix}
 $$
 
-One important thing here is we define the gradient of $f(x_1, ..., x_n)$ to be a **row vector**. This is also called the *numerator layout*, as opposed the *denominator* layout where gradient is defined as a row vector.  
+One important thing here is we define the gradient of $f(x_1, ..., x_n)$ to be a **row vector**. This is also called the *numerator layout*, as opposed the *denominator* layout where gradient is defined as a column vector.  
 
 
 Next, we come to cases when we differentiate a vector by a vector (i.e., the gradient of a vector-valued function). The function $\bar{f}: \mathbb{R}^n \rightarrow \mathbb{R}^m$ takes a $n$-dimensional vector $\bar{x} = [x_1, ..., x_n]$ as input, and output a $m$-dimensional vector. The corresponding vector of function value is given as  
 
 $$
-\bar{f}(\bar{x}) = 
+\boldsymbol{f}(\bar{x}) = 
 \begin{bmatrix}
 f_1(\bar{x}) \\
 \vdots \\
 f_m(\bar{x})
 \end{bmatrix}
 $$
-In this way, we think of a vector-valued function $\bar{f}$, as a vector of scalar functions $[f_1, ..., f_m]^T, \; f_i: \mathbb{R}^n \rightarrow \mathbb{R}$. Thus, partial derivatives of $f_i$ with respect vector of $\bar{x}$ is the gradient 
+In this way, we think of a vector-valued function $\boldsymbol{f}$, as a vector of scalar functions $[f_1, ..., f_m]^T, \; f_i: \mathbb{R}^n \rightarrow \mathbb{R}$. Thus, partial derivatives of $f_i$ with respect vector of $\bar{x}$ is the gradient 
 
 $$
 \frac{\partial f_i}{\partial \bar{x}} =
@@ -44,7 +44,7 @@ $$
 Further, the partial derivative of $\bar{f}$ with respect to scalar $x_i, \; i = 1,...,n$ is simply a column vector of partial derivatives $\frac{\partial \bar{f}_j}{\partial x_i}$  
 
 $$
-\frac{\partial \bar{f}(\bar{x})}{\partial x_i} = 
+\frac{\partial \boldsymbol{f}(\bar{x})}{\partial x_i} = 
 \begin{bmatrix}
 \frac{\partial f_1 }{\partial x_i} \\
 \vdots \\
