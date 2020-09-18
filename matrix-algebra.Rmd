@@ -99,7 +99,87 @@ $$
 **reflection**
 
 
-### Selector matrix 
+### Matrix Multiplication as Linear Transformation
+
+They are matrices whose multiplication effect do that fall into specific geometric categories like scaling, dilation, and rotation. They do, in some sense, exert the same type of influence on vectors through multiplication. 
+
+It turns out that another way to look at $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$, besides linear combination of column vectors, is to think of the matrix $A$ as an force that “acts” on a vector $x$ in $\mathbb{R^n}$ by multiplication to produce a new vector called $b$ in $\mathbb{\mathbb{R^m}}$.  
+
+A transformation $T$ from $\mathbb{R^n}$ to $\mathbb{R^m}$ is a rule that assigns each vector \bar{x} in $\mathbb{R^n}$ a vector $T(x)$ in $\mathbb{R^m}$, which is called the **image** of \bar{x} (under the action of $T$). 
+
+It can be show that such transformations induced by multiplying a matrix is a type of **linear transformation**, because it satisfies all required properties to be linear:  
+
+$$
+\begin{aligned}
+\text{vector addition} \quad A(\bar{u} + \bar{v}) &= A\bar{u} + A\bar{v}  \\ 
+\text{scalar multiplication} \quad A(c\bar{u}) &= cA\bar{u}
+\end{aligned}
+$$
+<hr>
+
+```{theorem, name = "left multiplication as linear transformation"}
+There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
+  
+$$
+T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
+$$
+  
+In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ 
+```
+
+```{block2, type = "proof"}
+Proof
+```
+
+$$
+\bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
+$$
+And because $T(\bar{x})$ is a linear transformation: 
+
+$$
+\begin{split}
+T(\bar{x}) &= x_1T(\bar{e}_1) + \dots + x_nT(\bar{e}_n) \\
+&= [T(\bar{e}_1) \, \cdots \, T(\bar{e}_n)]\bar{x} \\
+&= (A\bar{x})_{m \times 1}
+\end{split}
+$$
+
+In other words, the transformation is specified once we know what all basis in $\mathbb{R^n}$ become in $\mathbb{R^m}$.
+
+The matrix $A$ is called the **standard matrix for the linear transformation** $T$.  
+
+<hr>
+
+(ref:onto) A mapping is onto $\mathbb{R^m}$
+
+```{definition, name = "(ref:onto)"}
+A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}
+```
+
+Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$ for any $\bar{b}$ in $\mathbb{R}^m$
+
+<br>
+
+```{definition, name = "one-to-one mapping"} 
+
+
+A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$
+```
+
+Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the equation $T(\bar{x}) = \bar{b}$ has either a unique solution or none at all.   
+
+<br>
+
+```{theorem}
+Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
+
+- $T$ maps $mathbb{R}^n$ onto $\mathbb{R}^m$ if only if columns of $A$ span $\mathbb{R}^m$  
+
+- $R$ is one-to-one if and only if columns of $A$ are linearly independent 
+```
+
+
+### Selector Matrix 
 
 Let the standard basis in $\mathcal{R}^n$ be 
 
@@ -208,6 +288,51 @@ then the coefficients of the product polynomial $p(x)q(x)$ are represented by $c
 $$
 p(x)q(x) = c_1 + c_2x + \cdots + c_{n + m - 1}x^{n + m - 2}
 $$
+With this interpretation using polynomial multiplication, we can quickly verify some properties of convolution 
+
+- symmetric $a * b = b * a$  
+
+- associative $(a * b) * c = a * (b * c)$   
+
+- $a * b = 0$ if and only if one of $a$ and $b$ are zero vectors. 
+
+How is convolution related to matrix multiplication. A basic fact is that for a fixed $a$, $a * b$ is a linear function of $b$, and likewise for $b$. This mean $a * b$ can be expressed as a matrix-vector product 
+
+$$
+a * b = T(b)a = T(a)b
+$$
+
+According to the relationship between matrix multiplication and linear transformation, we conclude that $T(b)$ and $T(a)$ are matrices that are determined and constructed by the elemetns of $b$ and $a$ respectively. 
+
+Refer to the previous example, we have
+
+$$
+T(b) = 
+\begin{bmatrix}
+b_1 & 0 & 0 & 0 & 0 \\
+b_2 & b_1 & 0 & 0 & 0 \\
+b_3 & b_2 & b_1 & 0 & 0 \\
+0 & b_3 & b_2 & b_1 &0 \\
+0 & 0 & b_3 & b_2 & b_1 \\
+0 & 0 & 0 & b_3 & b_2 \\
+0 & 0 & 0 & 0 & b_3 
+\end{bmatrix},
+\quad 
+T(a) = 
+\begin{bmatrix}
+a_1 & 0 & 0 \\
+a_2 & a_1 & 0 \\
+a_3 & a_2 & a_1 \\
+a_4 & a_3 & a_2 \\
+a_5 & a_4 &  a_3 \\
+0 & a_5 & a_4 \\
+0 & 0 & a_5
+\end{bmatrix}
+$$
+
+$T(a)$ and $T(b)$ both have the same values along any diagonal, a property characterizing the so-called *Toeplitz* matrices. 
+
+Convolution has computational applications in areas like time series smoothing, first order differences and audio filtering. (P. 150, VMLS)
 
 
 ## Elemetary matrix and row operations  
@@ -701,82 +826,6 @@ $$
 
 
 
-## Matrix Multiplication as Linear Transformation
-
-Another way to look at $A_{m \times n} \, x _{ n \times 1} = b_{m \times 1}$, besides linear combination of column vectors, is to think of the matrix $A$ as an force that “acts” on a vector $x$ in $\mathbb{R^n}$ by multiplication to produce a new vector called $b$ in $\mathbb{\mathbb{R^m}}$.  
-
-A transformation $T$ from $\mathbb{R^n}$ to $\mathbb{R^m}$ is a rule that assigns each vector \bar{x} in $\mathbb{R^n}$ a vector $T(x)$ in $\mathbb{R^m}$, which is called the **image** of \bar{x} (under the action of $T$). 
-
-It can be show that such transformations induced by multiplying a matrix is a type of **linear transformation**, because it satisfies all required properties to be linear:  
-
-$$
-\begin{aligned}
-\text{vector addition} \quad A(\bar{u} + \bar{v}) &= A\bar{u} + A\bar{v}  \\ 
-\text{scalar multiplication} \quad A(c\bar{u}) &= cA\bar{u}
-\end{aligned}
-$$
-<hr>
-
-```{theorem, name = "left multiplication as linear transformation"}
-There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
-  
-$$
-T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
-$$
-  
-In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ 
-```
-
-```{block2, type = "proof"}
-Proof
-```
-
-$$
-\bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
-$$
-And because $T(\bar{x})$ is a linear transformation: 
-
-$$
-\begin{split}
-T(\bar{x}) &= x_1T(\bar{e}_1) + \dots + x_nT(\bar{e}_n) \\
-&= [T(\bar{e}_1) \, \cdots \, T(\bar{e}_n)]\bar{x} \\
-&= (A\bar{x})_{m \times 1}
-\end{split}
-$$
-
-In other words, the transformation is specified once we know what all basis in $\mathbb{R^n}$ become in $\mathbb{R^m}$.
-
-The matrix $A$ is called the **standard matrix for the linear transformation** $T$.  
-
-<hr>
-
-(ref:onto) A mapping is onto $\mathbb{R^m}$
-
-```{definition, name = "(ref:onto)"}
-A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}
-```
-
-Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$ for any $\bar{b}$ in $\mathbb{R}^m$
-
-<br>
-
-```{definition, name = "one-to-one mapping"} 
-
-
-A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$
-```
-
-Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the equation $T(\bar{x}) = \bar{b}$ has either a unique solution or none at all.   
-
-<br>
-
-```{theorem}
-Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
-
-- $T$ maps $mathbb{R}^n$ onto $\mathbb{R}^m$ if only if columns of $A$ span $\mathbb{R}^m$  
-
-- $R$ is one-to-one if and only if columns of $A$ are linearly independent 
-```
 
 
 
@@ -788,15 +837,56 @@ This chapter concludes with a summary of complexity (number of flops needed) in 
 An $m \times n$ matrix is often represented by an $m \times n$ array of floating numbers in a computer, requiring $8mn$ bytes (8 bytes for on element). In the case of a sparse matrix, we can store only the nonzero entries with row index $i$ (integer), column index $j$ (integer) and its value $A_{ij}$ (floating point). Let $\text{nnz}(A)$ be the number of nonzero entries, since we only need 4 bytes to store a integer, storing a sparse matrix requires roughly $16\text{nnz}(A)$ bytes. 
 
 
-Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (number of flops) of common matrix operations are listed below 
+Let $A$ be an $m \times n$ matrix, and other matrices / vectors be of conformable size for arithmetic operations. The complexity (approximate number of flops) of common matrix operations are listed below 
 
 |Operation|Expression|Complexity|Explanation|
 |:-:|:-:|:-:|:-:|
 |matrix addition|$A + B$|$mn$ <br> and $\min(\text{nnz}(A), \text{nnz}(B))$ if one of $A$ and $B$ is sparse|For any entry $i,j$ for which one of $A_{ij}$ and $B_{ij}$ is zero, no arithmetic operations are needed to find  $(A + B)_{ij}$|
 |scalar multiplication|$kA$|$mn$ <br> $\text{nnz}(A)$ when $A$ is sparse||
-|transposition|$A^T$|$0$|Computing $A^T$ needs only copying, but no flops|
 |matrix-vector multiplication|$A\bar{x}$|$m(2n - 1)$|equivalent to $m$ inner products between rows of $A$ and $\bar{x}$|
 |matrix-vector multiplication when $A$ is sparse|between $\text{nnz}(A)$ and $2\text{nnz}(A) - 1$|$A\bar{x}$|First we need $\text{nnz}(A)$ multiplications, and certain number of additions. We need most additions when nonzero entries are arranged next to each other, and least when they are separated in different columns and rows (for example for diagonal matrix $A$, we need no additions at all)|
+|matrix-matrix multiplication|$A_{m \times n}B_{n \times p}$|$2mnp$|$2n - 1$ for each inner product between rows of $A$ and columns of $B$, with $m \times p$ inner products in total, which is roughly $2mnp$ flops|
+|sparse matrix multiplication|$AB$|no more than $2\min\{\text{nnz}(A)p, \text{nnz}(B)m\}$|Suppose $A$ is sparse $m \times n$, and $B$ is normal $n \times p$. Then the inner product of the $i$th row $\bar{a}_i^T$ and the $j$th column of $B$ requires no more than $2\text{nnz}(\bar{a}_i^T)$ flops. That adds up to $2\text{nnz}(A)p$ in total. If $B$ is sparse then the number $2\text{nnz}(B)m$ flops. In cases they are both spares, the required flops will be no more than the minimum of these two quantities |
+|transposition|$A^T$|$0$|Computing $A^T$ needs only copying, but no flops|
+|Convolution|$a * b = T(a)b = T(b)a$|$2mn$||
+
+One interesting discovery in the complexity of matrix product is that order matters. Different order of computing the same expression can result in different complexity. We first consider the vector product $ab^Tc$, where they are all $n$-th vectors. If we first evaluate $ab^T$, the cost is $n^2$ flops, and the cost of matrix-vector product $(ab^T)c$ is $2n^2$ flops. The total cost is $3n^2$ flops. If we first evaluate $b^Tc$ and then multiply by $a$, the total cost is $3n$ flops. Also, the first order requires storing an intermediate $n \times n$ matrix, while the latter only stores a scalar. 
+
+Next, consider the product of three matrices 
+
+$$
+D = A_{m \times n}B_{n \times p}C_{p \times q}
+$$
+The first method is $(AB)C$. The complexity of $AB$ and $(AB)C$ are $2mnp$ and $2mpq$. for a total of $2mp(n + q)$ flops. 
+
+The second method is $A(BC)$. We first compute product $BC$ ($2npq$ flops) and then form $D = A(BC)$, for a total of $2nq(m + p)$ flops. 
+
+The two complexity are equal when 
+
+$$
+\frac{1}{n} + \frac{1}{q} < \frac{1}{m} + \frac{1}{p}
+$$
+
+When $m = p$ and $n = q$: 
+
+$$
+\begin{aligned}
+\text{first method}&: \mathcal{O}(m^2n) \\
+\text{second method}&: \mathcal{O}(mn^2)
+\end{aligned}
+$$
+
+Therefore the complexity can vary dramatically according to the order of computing, when there is a great difference between $m$ and $n$.
+
+
+
+
+
+
+
+
+
+
 
 
 
