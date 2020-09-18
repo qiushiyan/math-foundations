@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Mathematical Notes for Machine Learning" />
+  <title>Chapter 7 Special Matrices | Mathematical Notes for Machine Learning</title>
+  <meta name="description" content="Chapter 7 Special Matrices | Mathematical Notes for Machine Learning" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 7 Special Matrices | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 7 Special Matrices | Mathematical Notes for Machine Learning" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="basic-matrix-algebra.html"/>
+<link rel="prev" href="linear-system.html"/>
+<link rel="next" href="partial-derivatives.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -282,57 +282,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Mathematical Notes for Machine Learning</h1>
-<p class="author"><em>Qiushi Yan</em></p>
-<p class="date"><em>2020-09-18</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p>This document aims to cover various mathematical topics relevant to machine learning applications, including linear algebra, multivariate calculus, probability theory, computational learning theory, and optimization (statistics should be in another stand-alone document).</p>
-<p>Here is an short outline of each big part</p>
-<p>…</p>
-<p>Major references (books, online courses, videos, papers) include:</p>
-<ul>
-<li><strong>general</strong>
-<ul>
-<li><a href="http://gwthomas.github.io/docs/math4ml.pdf"><em>Mathematics for Machine Learning</em></a> by Garret Thomas</li>
-<li><em>Mathematics for Machine Learning</em> <span class="citation">(Deisenroth, Faisal, and Ong <a href="references.html#ref-Deisenroth2020" role="doc-biblioref">2020</a>)</span></li>
-<li><a href="http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/"><em>Advanced Data Analysis from an Elementary Point of View</em></a> by Cosma Rohilla Shalizi</li>
-</ul></li>
-<li><strong>Linear Algebra</strong>
-<ul>
-<li><em>Linear Algebra and its Applications</em> <span class="citation">(Lay <a href="references.html#ref-lay2006-3" role="doc-biblioref">2006</a>)</span><br />
-</li>
-<li><em>Linear Algebra and Optimization for Machine Learning</em> <span class="citation">(Aggarwal <a href="references.html#ref-DBLP:books/sp/Aggarwal20" role="doc-biblioref">2020</a>)</span><br />
-</li>
-<li><em>Matrix Algebra: Theory, Computations, and Applications in Statistics</em> <span class="citation">(Gentle <a href="references.html#ref-10.5555/1534802" role="doc-biblioref">2017</a>)</span></li>
-<li><em>Linear Algebra and its Applications</em> <span class="citation">(Strang <a href="references.html#ref-strang2006linear" role="doc-biblioref">2006</a>)</span><br />
-</li>
-<li><a href="http://cs229.stanford.edu/section/cs229-linalg.pdf"><em>Linear Algebra Review and Reference</em></a> on Stanford’s cs229 website<br />
-</li>
-<li>Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, <a href="https://ocw.mit.edu" class="uri">https://ocw.mit.edu</a>. License: Creative Commons BY-NC-SA.<br />
-</li>
-<li>N. Johnston. <a href="http://www.njohnston.ca/publications/advanced-linear-and-matrix-algebra/"><em>Advanced Linear and Matrix Algebra</em></a>. Springer International Publishing, 2020.<span class="citation">(Johnston <a href="references.html#ref-johnston2020advanced" role="doc-biblioref">2020</a>)</span></li>
-</ul></li>
-<li><strong>Multivariate Calculus</strong>
-<ul>
-<li><em>Thomas’s Calculus</em> <span class="citation">(Weir, Thomas, and Hass <a href="references.html#ref-weir2018thomas" role="doc-biblioref">2018</a>)</span></li>
-<li>Steve Butler. <a href="https://www.calc3.org/">Multivariate Calculus</a>. Lowa State</li>
-</ul></li>
-<li><strong>Probability Theory</strong>
-<ul>
-<li><em>Probability for Statistics and Machine Learning: Fundamentals and Advanced Topics</em> <span class="citation">(DasGupta <a href="references.html#ref-10.5555/2028916" role="doc-biblioref">2011</a>)</span></li>
-<li><em>Introduction to Probability</em> <span class="citation">(K. Blitzstein and Hwang <a href="references.html#ref-blitzstein2019" role="doc-biblioref">2019</a>)</span></li>
-<li><em>Introduction to Probability</em> <span class="citation">(Bertsekas and Tsitsiklis <a href="references.html#ref-bertsekas2008introduction" role="doc-biblioref">2008</a>)</span></li>
-<li>John Tsitsiklis, and Patrick Jaillet. RES.6-012 Introduction to Probability. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, <a href="https://ocw.mit.edu" class="uri">https://ocw.mit.edu</a>. License: Creative Commons BY-NC-SA.</li>
-</ul></li>
-<li><strong>Computational Learning Theory</strong>
-<ul>
-<li><em>Learning from Data</em> <span class="citation">(Abu-Mostafa, Magdon-Ismail, and Lin <a href="references.html#ref-10.5555/2207825" role="doc-biblioref">2012</a>)</span></li>
-</ul></li>
-</ul>
-<p>The document is generated by the <strong>bookdown</strong> package <span class="citation">(Xie <a href="references.html#ref-R-bookdown" role="doc-biblioref">2020</a>)</span>.</p>
+<div id="special-matrices" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Special Matrices</h1>
 
 </div>
 
@@ -343,8 +294,8 @@
           </div>
         </div>
       </div>
-
-<a href="basic-matrix-algebra.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="linear-system.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="partial-derivatives.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -375,7 +326,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/index.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/special-matrices.Rmd",
 "text": "Edit"
 },
 "history": {

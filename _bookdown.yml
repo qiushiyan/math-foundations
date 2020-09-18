@@ -17,6 +17,7 @@ rmd_files: [
   "eigen-quadratic.Rmd",
   "svd.Rmd",
   "linear-system.Rmd",
+  "special-matrices.Rmd",
 
   "partial.Rmd",
   "matrix-calculus.Rmd",

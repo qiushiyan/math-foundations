@@ -273,32 +273,32 @@ Given a basis $\{\bar{x}_1, ..., \bar{x}_p\}$ for a nonzero subspace $W$ of $\ma
 
 $$
 \begin{aligned}
-\bar{v}_1 &= \bar{x}_1 \\
-\bar{v}_2 &= \bar{x}_2 - \frac{\bar{x}_2 \cdot \bar{v}_1}{\bar{v}_1 \cdot \bar{v}_1}\bar{v}_1 \\
-\bar{v}_3 &= \bar{x}_3 
-- \frac{\bar{x}_3 \cdot \bar{v}_1}{\bar{v}_1 \cdot \bar{v}_1}\bar{v}_1 
-- \frac{\bar{x}_3 \cdot \bar{v}_2}{\bar{v}_2 \cdot \bar{v}_2}\bar{v}_2
+\bar{u}_1 &= \bar{x}_1 \\
+\bar{u}_2 &= \bar{x}_2 - \frac{\bar{x}_2 \cdot \bar{u}_1}{\bar{u}_1 \cdot \bar{u}_1}\bar{u}_1 \\
+\bar{u}_3 &= \bar{x}_3 
+- \frac{\bar{x}_3 \cdot \bar{u}_1}{\bar{u}_1 \cdot \bar{u}_1}\bar{u}_1 
+- \frac{\bar{x}_3 \cdot \bar{u}_2}{\bar{u}_2 \cdot \bar{u}_2}\bar{u}_2
 \\
 & \vdots \\
-\bar{v}_p &= \bar{x}_p 
-- \frac{\bar{x}_p \cdot \bar{v}_1}{\bar{v}_1 \cdot \bar{v}_1}\bar{v}_1 
-- \frac{\bar{x}_p \cdot \bar{v}_2}{\bar{v}_2 \cdot \bar{v}_2}\bar{v}_2
+\bar{u}_p &= \bar{x}_p 
+- \frac{\bar{x}_p \cdot \bar{u}_1}{\bar{u}_1 \cdot \bar{u}_1}\bar{u}_1 
+- \frac{\bar{x}_p \cdot \bar{u}_2}{\bar{u}_2 \cdot \bar{u}_2}\bar{u}_2
 - \cdots
-- \frac{\bar{x}_p \cdot \bar{v}_{p-1}}{\bar{v}_{p-1} \cdot \bar{v}_{p-1}}\bar{v}_{p-1}
+- \frac{\bar{x}_p \cdot \bar{u}_{p-1}}{\bar{u}_{p-1} \cdot \bar{u}_{p-1}}\bar{u}_{p-1}
 \end{aligned}
 $$
   
-Then $\{\bar{v}_1, ..., \bar{v}_p\}$ is an orthogonal basis for $W$. In addition 
+Then $\{\bar{u}_1, ..., \bar{u}_p\}$ is an orthogonal basis for $W$. In addition 
 
 $$
-\text{Span}\{\bar{v}_1, ..., \bar{v}_p\} = \text{Span}\{\bar{x}_1, ..., \bar{x}_p\} 
+\text{Span}\{\bar{u}_1, ..., \bar{u}_p\} = \text{Span}\{\bar{x}_1, ..., \bar{x}_p\} 
 $$
 ```
 
-To make $\{\bar{v}_1, ..., \bar{v}_p\}$ an *orthonormal* basis, there is simply one more step of normalization 
+To make $\{\bar{u}_1, ..., \bar{u}_p\}$ an *orthonormal* basis, there is simply one more step of normalization 
 
 $$
-\{\bar{q}_i = \frac{\bar{v}_i}{\|\bar{v}_i\|}, \;i = 1, ... p\} 
+\{\bar{q}_i = \frac{\bar{u}_i}{\|\bar{u}_i\|}, \;i = 1, ... p\} 
 $$
 
 If the vectors $\bar{x}_1, \cdots, \bar{x}_{j-1}$ are linearly independent, but $\bar{a}_1, ..., \bar{a}_j$ are linearly independent. We can come up with an algorithm for Gram-Schmidt process that terminates automatically when it produced most orthonormal basis vectors. 
@@ -323,7 +323,7 @@ The Gram-Schmidt basis does not expose any specific properties of a vector with 
 uses a basis with trigonometric properties in order to expose periodicity in a time series. (see Section 2.7.3 of LAOML [@DBLP:books/sp/Aggarwal20]) 
 
 
-## QR Factorizaiton 
+## QR Factorization 
 
 For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\bar{x}_1, ..., \bar{x}_n$, apply the Gram-Schmidt process to $\bar{x}_1, ..., \bar{x}_n$ amounts to *factorizing* $A$. 
  

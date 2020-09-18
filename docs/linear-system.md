@@ -1,7 +1,7 @@
 
 # Solutions of Linear System Ax = b {#linear-system}
 
-A linear system $Ax= b$ when $b = 0$ ^[For simplicity I exclude most $\bar{\cdot}$ sign for vector notation, lower case letters typically denote a vector unless there is a need for mixed usage of scalars and vectors] may behave in any one of three possible ways:
+A linear system $Ax= b$ when $b = 0$ ^[For simplicity I exclude most $\bar{}$ sign for vector notation, lower case letters typically denote a vector unless there is a need for mixed usage of scalars and vectors] may behave in any one of three possible ways:
 
 - The system has no solution. This occurs when $b \not \in \mathcal{R}(A)$. In such cases we try to find *best fits* that meets certain optimization requirements. For example, to make $\|Ax  - b\|$ as small as possible. Such a solution is called the *best fit*. 
 
