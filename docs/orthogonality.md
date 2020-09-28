@@ -312,9 +312,9 @@ uses a basis with trigonometric properties in order to expose periodicity in a t
 
 ## QR Factorization 
 
-For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\bar{x}_1, ..., \bar{x}_n$, apply the Gram-Schmidt process to $\bar{x}_1, ..., \bar{x}_n$ amounts to *factorizing* $A$. 
+For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\bar{a}_1, ..., \bar{a}_n$, apply the Gram-Schmidt process to $\bar{a}_1, ..., \bar{a}_n$ amounts to *factorizing* $A$ into an orthogonal matrix $Q$ and an upper triangular matrix $R$. 
  
-\BeginKnitrBlock{theorem}\iffalse{-91-81-82-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:qr"><strong>(\#thm:qr)  \iffalse (QR factorization) \fi{} </strong></span>if $A$ is an $m \times n$ matrix with full column rank, then $A$ can be factored as $A = QR$, where $Q$ is an $m \times n$ matrix whose columns form an orthonormal basis of $\text{Col}\;A$ and $R$ is an $n \times n$ upper triangular invertible matrix with positive entries on its diagonal. </div>\EndKnitrBlock{theorem}
+\BeginKnitrBlock{theorem}\iffalse{-91-81-82-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:qr"><strong>(\#thm:qr)  \iffalse (QR factorization) \fi{} </strong></span>if $A$ is an $m \times n$ matrix with full column rank, then $A$ can be factored as $A = QR$, where $Q$ is an $m \times n$ matrix whose columns form an orthonormal basis of $\mathcal{R}(A)$ and $R$ is an $n \times n$ upper triangular invertible matrix with positive entries on its diagonal. </div>\EndKnitrBlock{theorem}
 
 <div class = "proof"> Proof </div>  
 
@@ -347,16 +347,16 @@ a_3 &= (q_1 \cdot a_3)q_1 + (q_2 \cdot a_3)q_2 + (q_3 \cdot a_3)q_3  \\
 a_n &= \sum_{i=1}^{n}(q_i \cdot a_n)q_i
 \end{aligned}
 $$
-The set equations above is essentially expressing $a_i$ by their coordinates associated with the orthonormal basis $q_i$. As a summary, for any column of $A$, there exists a set of constant $r_{1k}, ..., r_{kk}$ where $r_{ik} = q_i \cdot a_k$, such that
+The set equations above is essentially expressing $\bar{a}_i$ by their coordinates associated with the orthonormal basis $q_i$. As a summary, for any column of $A$, there exists a set of constant $r_{1k}, ..., r_{kk}$ where $r_{ik} = q_i \cdot a_k$, such that
 
 $$
-\bar{x}_k = r_{1k}\bar{q}_{1} + \cdots + r_{kk}\bar{q}_{k} + 0 \cdot\bar{q}_{k+1} + \cdots + 0 \cdot \bar{q}_{n}
+\bar{a}_k = r_{1k}\bar{q}_{1} + \cdots + r_{kk}\bar{q}_{k} + 0 \cdot\bar{q}_{k+1} + \cdots + 0 \cdot \bar{q}_{n}
 $$
 
 Therefore 
 
 $$
-A = [\bar{x}_{1} \;\; \bar{x}_{2} \;\; \cdots \;\; \bar{x}_{n}] = [\bar{q}_{1} \;\; \bar{q}_{2} \;\; \cdots \;\; \bar{q}_{n}] 
+A = [\bar{a}_{1} \;\; \bar{a}_{2} \;\; \cdots \;\; \bar{a}_{n}] = [\bar{q}_{1} \;\; \bar{q}_{2} \;\; \cdots \;\; \bar{q}_{n}] 
 \begin{bmatrix}
 r_{11} & r_{12} & \cdots & r_{1n} \\
 0 & r_{22} & \cdots & r_{2n} \\
@@ -365,12 +365,64 @@ r_{11} & r_{12} & \cdots & r_{1n} \\
 \end{bmatrix} 
 = QR
 $$
-We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ and $\bar{u}_k$ by $-1$)
+
+where $r_{ij} = \bar{q}_i \cdot \bar{a}_j$
+
+We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ and $\bar{q}_k$ by $-1$)
+
+#### Applications of QR factorization 
 
 
+**Solving linear systems**
+
+However, direct computation of $A^{-1}$ could be very hard especially when $A$ is large. Cramer's rule {\@ref(thm:cramer)}, or the general formula using $A^*$ mainly serve for theoretical purposes and come with prohibitive complexity. Therefore, we need more effective algorithm for finding $A^{-1}$
+
+**Find matrix inverse**. In Section \@ref(qr-factorization), we show that a full rank square matrix $A$ can be factored into an orthogonal matrix $Q$ and an upper triangular matrix $R$ with positive diagonal entries. Hence $Q$ and $R$ are invertible, we have
+
+$$
+\begin{aligned}
+Ax &= b \\
+QRx &= b \\
+Rx &= Q^{-1}b = Q^Tb
+\end{aligned}
+$$ This means that to find the solution $x$, we need to solve the new linear system $Rx = Q^Tb$. The new coefficient matrix $R$ is upper triangular, let $Q^Tb$ be our new $b$, we write out the equations as
+
+$$
+\begin{aligned}
+R_{11}x_1 + R_{12}x_2 + \cdots + R_{1, n - 1}x_{n-1} + R_{1n}x_n   &= b_1 \\
+R_{22}x_2 + \cdots + R_{2, n - 1}x_{n-1} + R_{2n}x_n   &= b_2 \\
+& \vdots \\
+R_{n-1, n -1}x_{n - 1} + R_{n - 1, n}x_{n} &= b_{n - 1} \\
+R_{nn}x_n &= b_n
+\end{aligned}
+$$ If we move our eyes bottom-up, we immediately know $x_n = b_n / R_{nn}$. Substitute this into the second to last equation
+
+$$
+x_{n - 1} = \frac{b_{n-1} - R_{n-1,n} b_n / R_{nn}}{R_{n-1,n-1}}
+$$
+
+It follows that there exists a efficient algorithm to find the solution $x$ in the order $x_n, x_{n - 1}, ..., x_2, x_1$, known as *back substitution*.
+
+\BeginKnitrBlock{algorithm}<div class="algorithm">**Back Substitution**
+  
+For the linear system $Rx = b$, where $R$ is an $n \times n$ upper triangular matrix with nonzero diagonal entries, the solution $x = [x_1, ..., x_n]$ are given by 
+
+
+For $i = n, ..., 1$
+
+$$
+x_i = (b_i - R_{i, i + 1}x_{i + 1} - \cdots - R_{i, n}x_{n}) / R_{ii}
+$$</div>\EndKnitrBlock{algorithm}
 
 
 ## Complexity 
 
-**Compleity of the **
+
+**backsubtitution** 
+
+$$
+1 + 3 + ... + (2n - 1) = n^2
+$$
+
+
 

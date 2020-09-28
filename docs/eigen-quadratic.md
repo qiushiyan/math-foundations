@@ -417,7 +417,7 @@ A direct result derived from the Cayley Hamilton theorem is that for every inver
 
 \BeginKnitrBlock{proposition}\iffalse{-91-80-111-108-121-110-111-109-105-97-108-32-114-101-112-114-101-115-101-110-116-97-116-105-111-110-32-111-102-32-109-97-116-114-105-120-32-105-110-118-101-114-115-101-93-}\fi{}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-7"><strong>(\#prp:unnamed-chunk-7)  \iffalse (Polynomial representation of matrix inverse) \fi{} </strong></span>The *inverse* of an invertible square matrix $A$ is a polynomial of $A$ with degree at most $d -1$. </div>\EndKnitrBlock{proposition}
 
-Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for non-singular matrices. If the product of all eigenvalues are $k$, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$, where $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
+Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for non-singular matrices. If the product of all eigenvalues is $k$, we can write the Cayley-Hamilton matrix polynomial $f(A)$ in the form $f(A) = A \cdot g(A) + kI$, where $A \cdot g(A)$ is obtained by factoring out $A$ from the d-degree matrix polynomial, leaving $g(A)$ with degree of $d - 1$. Since $f(A)$ evaluates to zero, we have 
 
 $$
 A \underbrace{\Big( - g(A) / k\Big)}_{A^{-1}} = I

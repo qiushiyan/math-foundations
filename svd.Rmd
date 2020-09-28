@@ -227,6 +227,50 @@ This shed light on the relationship between SVD and the fundamental theorem of l
 |$\mathcal{N}(A)$|the last $n - r$ columns of $V$|
 |$\mathcal{N}(A^T)$|the last $m - r$ columns of $U$|
 
+### Geometric Interpretation of SVD
+
+https://www.cs.cornell.edu/courses/cs322/2008sp/stuff/TrefethenBau_Lec4_SVD.pdf
+
+http://db.cs.duke.edu/courses/cps111/spring07/notes/12.pdf
+
+
+### Uniqueness of SVD
+
+The title of this section may be confusing, because the SVD is "almost" unique but not exactly so. Nonetheless, we will first come to the good part. 
+
+The good news is, the diagonal matrix $\Sigma$ with singular values are uniquely determined by $A$, as long as we follow the convention to align singular values in ascending order. The uniqueness of $\Sigma$ is based directly on the fact that $A^TA$ and $AA^T$ have the (same) fixed set of nonzero eigenvalues. 
+
+Now we come to the real ambiguity about SVD, which lies in the choice of $U$ and $V$. Remember the decomposition
+
+$$
+A = \sum_{i = 1}^{r} \sigma_i \bar{u}_i \bar{v}_i^T
+$$
+
+It is immediately obvious that we can flipped $\bar{u}_i$ and $\bar{v}_i$ in pairs, and the decomposition would still be the same. In other words, we can exert the same permutation upon $U$ and $V$. Moreover, we can multiply one side by a nonzero factor and multiply its reciprocal on the side. This first ambiguity may not be of much practical value, and can be avoided by setting additional constraints.  
+
+The second source of ambiguity, however, is more subtle and complicated. if $A$ has repeated singular values, we pick an arbitrary orthogonal matrix $D$, then $U^* = UD$ and $V^{*} = VD$ would still form a singular value decomposition $A = U^*\Sigma {V^{*}}^T$. For instance, the identity matrix has an infinity of SVDs all of the form 
+
+$$
+I = UIU^{T}
+$$
+
+where $U$ can be any orthogonal matrix of suitable size. If $A$ is not full rank, i.e. there are zero singular values. There is even more freedom. Suppose the rank of a tall matrix $A$ is $r$, then its null space is of dimension $n - r$. Here the $r + 1$th through the $m$th columns of $U$ are less constrained, and can be any set of $m - r$  orthonormal vectors in the in the left null space of $A$. Moreover, the choice of these columns of $U$
+can be chosen independently of the last $n - r$ columns of $V$ (which form a orthonormal basis for the null space of $A$).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

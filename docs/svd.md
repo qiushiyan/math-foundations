@@ -174,7 +174,7 @@ This more compact form is called the **reduced form of SVD**.
 Another way to write this is 
 
 $$
-A = \sum_{i=1}^{t}{\sigma_i}\bar{u}_i\bar{v}_i
+A = \sum_{i=1}^{r}{\sigma_i}\bar{u}_i\bar{v}_i
 $$
 
 <hr> 
@@ -187,7 +187,7 @@ $$
 
 Therefore, $[\bar{u}_1 \;\; \cdots \;\; \bar{u}_n]$ are revealed as the orthonormal basis for $AA^T$'s eigenspace, as $[\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]$ are for $A^TA$.   
 
-Formula (1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, because $\Sigma\Sigma^T$ produces nonzero set $\lambda_1, ..., \lambda_r$.  
+Formula (1) echoes the fact that $A^TA$ and $AA^T$ have the same set of nonzero eigenvalues, because $\Sigma\Sigma^T = \Sigma^T\Sigma$
 
 In fact, if were to ask for a direction in which $A^T$ has its greatest stretching effect instead of $A$, we would still result in the equivalent decomposition $A^T =  V\Sigma U^T$, with $\bar{v}_i = \frac{A\bar{u}_i}{\sigma_i}$. 
 
@@ -220,6 +220,50 @@ This shed light on the relationship between SVD and the fundamental theorem of l
 |$\mathcal{R}(A^T)$|the first $r$ columns of $V$| 
 |$\mathcal{N}(A)$|the last $n - r$ columns of $V$|
 |$\mathcal{N}(A^T)$|the last $m - r$ columns of $U$|
+
+### Geometric Interpretation of SVD
+
+https://www.cs.cornell.edu/courses/cs322/2008sp/stuff/TrefethenBau_Lec4_SVD.pdf
+
+http://db.cs.duke.edu/courses/cps111/spring07/notes/12.pdf
+
+
+### Uniqueness of SVD
+
+The title of this section may be confusing, because the SVD is "almost" unique but not exactly so. Nonetheless, we will first come to the good part. 
+
+The good news is, the diagonal matrix $\Sigma$ with singular values are uniquely determined by $A$, as long as we follow the convention to align singular values in ascending order. The uniqueness of $\Sigma$ is based directly on the fact that $A^TA$ and $AA^T$ have the (same) fixed set of nonzero eigenvalues. 
+
+Now we come to the real ambiguity about SVD, which lies in the choice of $U$ and $V$. Remember the decomposition
+
+$$
+A = \sum_{i = 1}^{r} \sigma_i \bar{u}_i \bar{v}_i^T
+$$
+
+It is immediately obvious that we can flipped $\bar{u}_i$ and $\bar{v}_i$ in pairs, and the decomposition would still be the same. In other words, we can exert the same permutation upon $U$ and $V$. Moreover, we can multiply one side by a nonzero factor and multiply its reciprocal on the side. This first ambiguity may not be of much practical value, and can be avoided by setting additional constraints.  
+
+The second source of ambiguity, however, is more subtle and complicated. if $A$ has repeated singular values, we pick an arbitrary orthogonal matrix $D$, then $U^* = UD$ and $V^{*} = VD$ would still form a singular value decomposition $A = U^*\Sigma {V^{*}}^T$. For instance, the identity matrix has an infinity of SVDs all of the form 
+
+$$
+I = UIU^{T}
+$$
+
+where $U$ can be any orthogonal matrix of suitable size. If $A$ is not full rank, i.e. there are zero singular values. There is even more freedom. Suppose the rank of a tall matrix $A$ is $r$, then its null space is of dimension $n - r$. Here the $r + 1$th through the $m$th columns of $U$ are less constrained, and can be any set of $m - r$  orthonormal vectors in the in the left null space of $A$. Moreover, the choice of these columns of $U$
+can be chosen independently of the last $n - r$ columns of $V$ (which form a orthonormal basis for the null space of $A$).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -451,3 +495,80 @@ A measure of the quality of the approximation is given by
 $$
 \frac{\|A_k\|^2}{\| A\|^2} = \frac{\sigma_1^2 + \cdots + \sigma_k^2}{\sigma_1^2 + \cdots + \sigma_r^2}
 $$
+
+## Pseudoinverse 
+
+
+\BeginKnitrBlock{definition}\iffalse{-91-112-115-101-117-100-111-32-105-110-118-101-114-115-101-93-}\fi{}<div class="definition"><span class="definition" id="def:pseudo-inverse"><strong>(\#def:pseudo-inverse)  \iffalse (pseudo inverse) \fi{} </strong></span>For any matrix $A \in \mathbb{R}^{m \times n}$, a pseudoinverse of $A$ is defined as a matrix $A^{+} \in \mathbb{R}^{n \times m}$ satisfying aall 4 the so-called Moore-Penrose conditions 
+
+
+$$
+\begin{aligned}
+&1. \quad AA^{+}A  &= A && AA^{+} \text{ needs not be the identity matrix, but it maps all columns of } A \text{ to themselves} \\
+&2. \quad A^{+}A A^{+} &= A  && A^{+} \text{ acts like an weak inverse} \\
+&3. \quad (AA^{+})^{T} &= AA^{+}  &&  AA^{+} \text{ is symmetric} \\
+&3. \quad (A^{+}A)^{T} &= A^{+}A  &&  A^{+}A \text{ is symmetric}
+\end{aligned}
+$$</div>\EndKnitrBlock{definition}
+
+
+For this reason, the pseudoinverse $A^{+}$ is also called moore-penrose inverse. It's important to realize the existence and uniqueness (which we do not prove here) of a pseudoinverse. There is one precise pseudoinverse $A^{+}$ existing for any matrix $A$ satisfying the 4 properties. If we find a pseudoinverse, it is the pseudoinverse.   
+
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">A matrix satisfying the first condition of the definition is known as a *generalized inverse*. If the matrix also satisfies the second definition, it is called a generalized reflexive inverse. Generalized inverses always exist but are not in general unique. Uniqueness is a consequence of the last two conditions. 
+
+It follows that the pseudoinverse is a stricter kind of generalized inverse. </div>\EndKnitrBlock{rmdnote}
+
+
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-6"><strong>(\#cor:unnamed-chunk-6) </strong></span>The pseudoinverse of any diagonal $m \times n$ matrix $\Lambda$ with $r$ nonzero entries  
+
+
+$$
+\Sigma = \begin{bmatrix}
+\lambda_1 \\ 
+& \ddots \\ 
+& & \lambda_r \\ 
+& & & 0 \\ 
+& & & & \ddots \\
+& & & & & 0 
+\end{bmatrix}_{m \times n}
+$$
+
+is given by 
+
+$$
+\Sigma^{+} = 
+\begin{bmatrix}
+\frac{1}{\lambda_1} \\ 
+& \ddots \\ 
+& & \frac{1}{\lambda_r} \\ 
+& & & 0 \\ 
+& & & & \ddots \\
+& & & & & 0 
+\end{bmatrix}_{n \times m}
+$$
+
+That is, the pseudoinverse of a diagonal matrix can be obtained by taking the reciprocal of all nonzero elements, with all zero entries stay the same, and then transpose the matrix.</div>\EndKnitrBlock{corollary}
+
+
+
+\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
+
+We start the proof with 1-by-1 matrices, which is essentially a number. For any $x \in \mathbb{R}$, we defined 
+
+$$
+x^{+} = 
+\begin{cases} 
+x^{-1} && \text{if } x \not= 0 \\
+0 && \text{if } x = 0
+\end{cases}
+$$
+Then we can verify that such $x^{+}$ guarantee 4 moore-penrose conditions. Because the pseudoinverse is unique, we conclude that $x^{+}$ is a pseudoinverse of $x$ (interpreted as a 1-by-1 matrix). 
+
+Then, for $\Sigma$ and its claimed pseudoinverse $\Sigma$
+
+
+
+### Left and Right Inverses 
+
+
+
