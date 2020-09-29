@@ -6,11 +6,11 @@ A linear system $Ax= b$ when $b \not = 0$ [^linear-system-1] may behave in any o
 
 [^linear-system-1]: For simplicity I exclude most $\bar{}$ sign for vector notation, lower case letters typically denote a vector unless there is a need for mixed usage of scalars and vectors
 
--   The system has a single unique solution. This occurs when $b \in \mathcal{R}(A)$, and $A$ has linearly independent columns, then there exists an unique linear combination $a_1x_1 + \cdots + a_nx_n = b$. In the special case when $A$ is square, the solution is simply $x = A^{-1}b$
+-   The system has a single unique solution. This occurs when $b \in \mathcal{R}(A)$, and $A$ has linearly independent columns, then there exists an unique linear combination $a_1x_1 + \cdots + a_nx_n = b$. In the special case when $A$ is square, the solution is simply $x = A^{-1}b$. In this case, we are most concerned with how to ensure speed and accuracy of computing such a solution. And we hardly compute $A^{-1}$ directly. 
 
 -   The system has infinitely many solutions. This is the case when $b \in \mathcal{R}(A)$ and columns of $A$ are linearly dependent, with *free columns*. Any linear combination of current solutions would still satisfy $Ax = b$. In this case, we want to make $\| x \|^2$ as small as possible. This is called the *conciseness criterion*.
 
--   The system has no solution. This occurs when $b \not \in \mathcal{R}(A)$. In such cases we try to find *best fits* that meets certain optimization requirements. For example, to make $\|Ax - b\|$ as small as possible. Such a solution is called the *best fit*.
+-   The system has no solution. This occurs when $b \not \in \mathcal{R}(A)$. This is the most common case for linear models in statistics. More often than not we seek to find optimal solution with some satisfactory property, tailored to . For example, a best fit solution to make $\|Ax - b\|$ as small as possible. Such a solution is called the *best fit*.
 
 
 
