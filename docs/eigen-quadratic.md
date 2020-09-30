@@ -142,7 +142,7 @@ $$
 
 
 
-
+## QR Method
 
 
 ## Diagnolization and Similar Matrices 

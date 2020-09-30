@@ -370,7 +370,10 @@ where $r_{ij} = \bar{q}_i \cdot \bar{a}_j$
 
 We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ and $\bar{q}_k$ by $-1$)
 
-#### Applications of QR factorization 
+### Householder QR factorization 
+
+
+### Applications of QR factorization 
 
 
 **Solving linear systems**

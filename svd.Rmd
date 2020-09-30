@@ -632,14 +632,45 @@ $$
 
 Again, we can verify $A^{+} = UD^{+}V^{T}$ satisfy the 4 criterion above. 
 
-It may seems that $A^{+}$ may depend on specific choice of $U$ and $V$, since in Section \@ref(uniqueness-of-svd) we mentioned that they are not unique in singular value decomposition. But $A^{+}$ is indeed unique, and depends only on $A$. We will prove this using the geometric view of the least squares problem.  
+It may seems that $A^{+}$ may depend on specific choice of $U$ and $V$, since in Section \@ref(uniqueness-of-svd) we mentioned that they are not unique in singular value decomposition. But $A^{+}$ is indeed unique, and depends only on $A$. We can prove this using the geometric view of either the least square solution or the least-norm solution in chapter \@ref(linear-system).  
 
 
 
-### One sided inverse: Left and Right Inverse 
+### Pseudoinverse of full rank matrix 
 
-In this section, we discuss another member in the generalized inverse family: one sided inverse. This includes 
+When $A_{m \times n}$ is full column rank or full rank, it's possible to give a more straight form of $A^{+}$ in terms of $A$ itself, without relying on the svd.  
 
-- left inverse 
+```{corollary one-sided-inverse}
+When $A$ is full rank, the Moore-Penrose inverse can be directly calculated as follows 
+
+- **case** $n < m$ when $A$ is full column rank: $A^{+} = (A^TA)^{-1}A^T$
+
+- **case** $m < n$ when $A$ is full row rank: $A^{+} = A^T(AA^T)^{-1}$  
+```
 
 
+Note that these two expressions are based on the invertibility of the gram matrix when $A$ is full rank.   
+
+We will prove the first case here. Using svd, we have 
+
+$$
+\begin{split}
+(A^TA)^{-1}A^T &= (V\Sigma^T U^TU \Sigma V^T)^{-1} V\Sigma^T U^T \\
+&= (V\Sigma^T\Sigma V^T)^{-1} V\Sigma^TU^T \\
+\end{split}
+$$
+
+Let $S = \Sigma^T\Sigma$ 
+
+$$
+\begin{split}
+(A^TA)^{-1}A^T &= VS^{-1}V^TV\Sigma^TU^T \\
+&= VS^{-1}\Sigma^TU^T
+\end{split}
+$$
+Notice that $S^{-1} = \text{diag}(\frac{1}{\lambda_1^2}, ..., \frac{1}{\lambda_n^2})_{n \times n}$ and $\Sigma^T = \text{diag}(\lambda_1, ..., \lambda_n, 0, ..., 0)_{n \times m}$, so that $S^{-1}\Sigma^T = \text{diag}(\frac{1}{\lambda_1}, ..., \frac{1}{\lambda_n}, 0, ..., 0)_{n \times m} = \Sigma^{+}$. In conclusion, we obtain
+
+$$
+(A^TA)^{-1}A^T = V\Sigma^{+}U^T = A^{+}
+$$
+when $A$ is full column rank. 

@@ -57,11 +57,71 @@ A^Tb - A^TA\hat{x} = 0 \\
 \hat{x} = (A^TA)^{-1}A^Tb
 $$
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### When m < n: Least Norms
 
 ## Otherwise
 
 When $A$ has not independent columns nor rows, both $(A^TA)$ and $(AA^T)$ are not invertible, defying both the least squares and least norms solution.
+
+
+
+minimize 
+
+$$
+\underbrace{\|Ax - b\|^2}_{\text{best fit}} + \underbrace{\lambda \| x\|^2}_{\text{concise}}
+$$
+
+```{theorem}
+The least squares solution of smallest norm of the linear system $Ax = b$, when $A$ is any $m \times n$ matrix, is given by 
+
+$$
+x^{+} = A^{+}b = U \Sigma^{+} V^Tb
+$$
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Ill-Conditioned Matrices
 

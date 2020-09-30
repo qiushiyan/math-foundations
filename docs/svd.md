@@ -512,11 +512,13 @@ $$
 $$</div>\EndKnitrBlock{definition}
 
 
-For this reason, the pseudoinverse $A^{+}$ is also called moore-penrose inverse. It's important to realize the existence and uniqueness (which we do not prove here) of a pseudoinverse. There is one precise pseudoinverse $A^{+}$ existing for any matrix $A$ satisfying the 4 properties. If we find a pseudoinverse, it is the pseudoinverse.   
+For this reason, the pseudoinverse $A^{+}$ is also called moore-penrose inverse. It's important to realize the existence and uniqueness (which we do not prove here) of a pseudoinverse. **There is one precise pseudoinverse $A^{+}$ existing for any matrix $A$ satisfying the 4 properties**. If we find a pseudoinverse, it is the pseudoinverse.   
 
-\BeginKnitrBlock{rmdnote}<div class="rmdnote">A matrix satisfying the first condition of the definition is known as a *generalized inverse*. If the matrix also satisfies the second definition, it is called a generalized reflexive inverse. Generalized inverses always exist but are not in general unique. Uniqueness is a consequence of the last two conditions. 
+\BeginKnitrBlock{rmdnote}<div class="rmdnote">A matrix satisfying the first condition of the definition is known as a *generalized inverse*, denoted by $A^{-}$. If the matrix also satisfies the second definition, it is called a *generalized reflexive inverse*. Generalized inverses always exist but are not in general unique. Uniqueness is a consequence of the last two conditions. 
 
 It follows that the pseudoinverse is a stricter kind of generalized inverse. </div>\EndKnitrBlock{rmdnote}
+
+Note that this definition only gives criterion of the pseudoinverse, but not a formula for computing it. The following corollary will lead us to a computationally simple and accurate way to compute the pseudoinverse using the SVD. 
 
 
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-6"><strong>(\#cor:unnamed-chunk-6) </strong></span>The pseudoinverse of any diagonal $m \times n$ matrix $\Lambda$ with $r$ nonzero entries  
@@ -564,11 +566,81 @@ x^{-1} && \text{if } x \not= 0 \\
 $$
 Then we can verify that such $x^{+}$ guarantee 4 moore-penrose conditions. Because the pseudoinverse is unique, we conclude that $x^{+}$ is a pseudoinverse of $x$ (interpreted as a 1-by-1 matrix). 
 
-Then, for $\Sigma$ and its claimed pseudoinverse $\Sigma$
+Then, with $\Sigma = \text{diag}(\lambda_1, ..., \lambda_r, 0, ... 0)_{m \times n}$ and its claimed pseudoinverse $\Sigma^{+} = \text{diag}(1 / \lambda_1, ..., 1 / \lambda_r, 0, ... 0)_{n \times m}$, we can verify they obey the rules in definition \@def(pseudo-inverse). 
+
+
+one 
+$$
+\Sigma \Sigma^{+} \Sigma = \Sigma
+$$
+
+two 
+$$
+\Sigma^{+} \Sigma \Sigma^{+} = \Sigma^{+}
+$$
+three
+
+$$
+(\Sigma \Sigma^{+})^{T} = \Sigma \Sigma^{+}
+$$
+four 
+
+$$
+(\Sigma^{+}\Sigma)^{T}  =\Sigma^{+}\Sigma
+$$
+With this result, we can give a formula of the pseudoinverse of any matrix $A \in \mathbb{R}^{m \times n}$.  
+
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:compute-pseudo-inverse"><strong>(\#thm:compute-pseudo-inverse) </strong></span>For any matrix $A \in \mathbb{R}^{m \times n}$, the svd is 
+
+$$
+A = U\Sigma V^{T}
+$$
+Then, the unique pseudoinverse matrix of $n \times m$ is given by 
+
+$$
+A^{+} = UD^{+}V^{T}
+$$</div>\EndKnitrBlock{theorem}
+
+
+Again, we can verify $A^{+} = UD^{+}V^{T}$ satisfy the 4 criterion above. 
+
+It may seems that $A^{+}$ may depend on specific choice of $U$ and $V$, since in Section \@ref(uniqueness-of-svd) we mentioned that they are not unique in singular value decomposition. But $A^{+}$ is indeed unique, and depends only on $A$. We can prove this using the geometric view of either the least square solution or the least-norm solution in chapter \@ref(linear-system).  
 
 
 
-### Left and Right Inverses 
+### Pseudoinverse of full rank matrix 
+
+When $A_{m \times n}$ is full column rank or full rank, it's possible to give a more straight form of $A^{+}$ in terms of $A$ itself, without relying on the svd.  
+
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:one-sided-inverse"><strong>(\#cor:one-sided-inverse) </strong></span>When $A$ is full rank, the Moore-Penrose inverse can be directly calculated as follows 
+
+- **case** $n < m$ when $A$ is full column rank: $A^{+} = (A^TA)^{-1}A^T$
+
+- **case** $m < n$ when $A$ is full row rank: $A^{+} = A^T(AA^T)^{-1}$  </div>\EndKnitrBlock{corollary}
 
 
+Note that these two expressions are based on the invertibility of the gram matrix when $A$ is full rank.   
 
+We will prove the first case here. Using svd, we have 
+
+$$
+\begin{split}
+(A^TA)^{-1}A^T &= (V\Sigma^T U^TU \Sigma V^T)^{-1} V\Sigma^T U^T \\
+&= (V\Sigma^T\Sigma V^T)^{-1} V\Sigma^TU^T \\
+\end{split}
+$$
+
+Let $S = \Sigma^T\Sigma$ 
+
+$$
+\begin{split}
+(A^TA)^{-1}A^T &= VS^{-1}V^TV\Sigma^TU^T \\
+&= VS^{-1}\Sigma^TU^T
+\end{split}
+$$
+Notice that $S^{-1} = \text{diag}(\frac{1}{\lambda_1^2}, ..., \frac{1}{\lambda_n^2})_{n \times n}$ and $\Sigma^T = \text{diag}(\lambda_1, ..., \lambda_n, 0, ..., 0)_{n \times m}$, so that $S^{-1}\Sigma^T = \text{diag}(\frac{1}{\lambda_1}, ..., \frac{1}{\lambda_n}, 0, ..., 0)_{n \times m} = \Sigma^{+}$. In conclusion, we obtain
+
+$$
+(A^TA)^{-1}A^T = V\Sigma^{+}U^T = A^{+}
+$$
+when $A$ is full column rank. 
