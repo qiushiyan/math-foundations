@@ -29,7 +29,7 @@ rmd_files: [
   "univariate-dist.Rmd",
   "multivariate-dist.Rmd",
   "markov-chain.Rmd",
-  
+
   "learning-problem.Rmd",
   
   "optimization-basics.Rmd",

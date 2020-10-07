@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-09-30" />
+<meta name="date" content="2020-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="css\style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -213,7 +213,8 @@
 </ul></li>
 <li class="chapter" data-level="13" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html"><i class="fa fa-check"></i><b>13</b> Random variables and moments</a><ul>
 <li class="chapter" data-level="13.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>13.1</b> Properties of Expectation and Variance</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#random-vectors"><i class="fa fa-check"></i><b>13.1.1</b> Random vectors</a></li>
+<li class="chapter" data-level="13.1.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#stains-lemma"><i class="fa fa-check"></i><b>13.1.1</b> Stain’s Lemma</a></li>
+<li class="chapter" data-level="13.1.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#random-vectors"><i class="fa fa-check"></i><b>13.1.2</b> Random Vectors</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#other-summaries"><i class="fa fa-check"></i><b>13.2</b> Other Summaries</a></li>
 <li class="chapter" data-level="13.3" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#moment-generating-functions"><i class="fa fa-check"></i><b>13.3</b> Moment Generating Functions</a></li>
@@ -266,6 +267,7 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>21</b> Principal Component Analysis</a><ul>
+<li class="chapter" data-level="21.0.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#pca-with-normalization"><i class="fa fa-check"></i><b>21.0.1</b> PCA with Normalization</a></li>
 <li class="chapter" data-level="21.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#correspondence-analysis"><i class="fa fa-check"></i><b>21.1</b> Correspondence Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>22</b> Text Mining</a></li>
@@ -511,16 +513,16 @@ AB = a_1b_1^T + \cdots + a_nb_n^T
 \]</span>
 This echoes theorem <a href="basic-matrix-algebra.html#thm:cr-expansion">1.1</a>, where matrix multiplication is computed via column row expansion.</p>
 <p><br></p>
-<p>Next, we bring in the concept of cross product which may not be so significant in the linear algebra section, but it will shine in multivariate integral calculus.</p>
+<p>Next, we bring in the concept of cross product which may not be so significant in the linear algebra section, but will shine in multivariate integral calculus.</p>
 <p>The <strong>cross product</strong> between <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span> is a <strong>vector</strong> perpendicular to <span class="math inline">\(\bar{u}\)</span>, <span class="math inline">\(\bar{v}\)</span> and the plane formed by them, with length equal to</p>
 <p><span class="math display">\[
 \|\bar{u} \times \bar{v} \| = \|\bar{u}\| \|\bar{v}\| \sin \theta
 \]</span></p>
-<p>Let <span class="math inline">\(\bar{n}\)</span> denote the unit vector perpendicular to the plane containing <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span>, the cross product can be written as</p>
+<p>Let <span class="math inline">\(\bar{n}\)</span> denote the unit vector <strong>perpendicular</strong> to the plane containing <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span>, the cross product can be written as</p>
 <p><span class="math display">\[
 \bar{u} \times \bar{v} = \|\bar{u}\| \|\bar{v}\| \sin (\theta)\bar{n}
 \]</span></p>
-<p>Though this formula is rarely helpful we because the main usage of cross product is finding the direction <span class="math inline">\(\bar{n}\)</span>.</p>
+<p>This definition is rarely helpful we because the main usage of cross product is finding the direction <span class="math inline">\(\bar{n}\)</span>.</p>
 <p>In most cases, we only consider cross product in 3D spaces, although it can be generalized to higher dimensions.</p>
 <p>Since the sines of <span class="math inline">\(0\)</span> and <span class="math inline">\(\pi\)</span>, it makes sense that the cross product of two parallel vectors is zero.</p>
 <p>The cross product obeys the following laws</p>
@@ -563,16 +565,19 @@ u_1v_2 - u_2v_1
 \end{bmatrix}
 \end{split}
 \]</span>
-This result is same as the determinant of the following matrix (think of <span class="math inline">\(\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}\)</span>) as scalars during the computation)</p>
+This result is same as the determinant of the following matrix (think of <span class="math inline">\(\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}\)</span>) as scalars and use cofactor expansion)</p>
 <p><span class="math display">\[
-\bar{u} \times \bar{v} = 
+\begin{split}
+\bar{u} \times \bar{v} &amp;= 
 \begin{vmatrix}
 \boldsymbol{i} &amp; \boldsymbol{j} &amp; \boldsymbol{k} \\
 u_1 &amp; u_2 &amp; u_3 \\
 v_1 &amp; v_2 &amp; v_3 
-\end{vmatrix}
+\end{vmatrix} \\
+&amp;= (u_2v_3 - u_3v_2)\boldsymbol{i} - (u_1v_3 - u_3v_1)\boldsymbol{j} + (u_1v_2 - u_2v_1)\boldsymbol{k} 
+\end{split}
 \]</span></p>
-<p>The main use for cross product will be finding a vector which is perpendicular to two given vectors. We can make use of the magnitude as well. Recall the magnitude of the cross product</p>
+<p>The main use for cross product will be finding a vector which is perpendicular to two given vectors. We can make use of the magnitude as well. Recall the magnitude of the cross product is</p>
 <p><span class="math display">\[
 \| \bar{u} \times \bar{v} \| = \|\bar{u}\| \|v\|\sin\theta
 \]</span></p>
@@ -809,7 +814,7 @@ Then, subtracting we have</p>
 \bar{0} = \bar{x} - \bar{x} = (x_1 - y_1)\bar{a}_1 + \cdots + (x_r - y_r)\bar{a}_r
 \]</span>
 Since <span class="math inline">\(\{\bar{a}_1, ..., \bar{a}_r\}\)</span> is a linearly independent set, we have <span class="math inline">\(x_i = y_i\)</span> for <span class="math inline">\(1 \le i \le r\)</span>. Thus, the coordinates <span class="math inline">\(\bar{x}\)</span> of any vector in <span class="math inline">\(V\)</span> in terms of a certain basis is always unique.</p>
-<p>Note that the coordinate vector of the n-dimensional vector <span class="math inline">\(\bar{v}\)</span> contains <span class="math inline">\(r\)</span> components instead of <span class="math inline">\(n\)</span>, each of which corresponds to a weight associated with one basis in <span class="math inline">\(\mathcal{B}\)</span></p>
+<p>Note that the coordinate vector of the n-dimensional vector <span class="math inline">\(\bar{v}\)</span> contains <span class="math inline">\(r\)</span> components instead of <span class="math inline">\(n\)</span>, each of which corresponds to a weight associated with one basis in <span class="math inline">\(\mathcal{B}\)</span>.</p>
 <p>The default basis in <span class="math inline">\(\mathbb{R}^n\)</span>, is the collection of <span class="math inline">\(n\)</span> n-dimensional vectors <span class="math inline">\(\{\bar{e}_1, ..., \bar{e}_n\}\)</span>. Each of <span class="math inline">\(\bar{e}_i\)</span> contains a <span class="math inline">\(1\)</span> in the <span class="math inline">\(i\)</span>th entry and a value of <span class="math inline">\(0\)</span> in all other entries.</p>
 <p><span class="math display">\[
 \bar{e}_1 = 
@@ -836,8 +841,22 @@ Since <span class="math inline">\(\{\bar{a}_1, ..., \bar{a}_r\}\)</span> is a li
 1 
 \end{bmatrix}
 \]</span></p>
-<p>The next question is, given <span class="math inline">\(\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_r\}\)</span>, how can we find the unique coordinates of <span class="math inline">\(\bar{v}\)</span>, which is by default expressed in terms of the standard basis.</p>
-<p>We start by a special case where <span class="math inline">\(\bar{a}_1, ..., \bar{a}_r\)</span> forms a <strong>orthonormal</strong> basis of <span class="math inline">\(V\)</span>, then the coordinates are simply the dot products of <span class="math inline">\(\bar{x}\)</span> with these vectors. By taking the dot product of both sides of <span class="math inline">\(\bar{v} = \sum x_i\bar{a}_i\)</span> with each <span class="math inline">\(\bar{a}_i\)</span> and using <span class="math inline">\(\bar{a}_i^T\bar{a}_i = 1, \, \bar{a}_i^T\bar{a}_j = 0\)</span>, we can show that <span class="math inline">\(x_i = \bar{a}_i^T\bar{v}\)</span>.</p>
+<p>The next question is, given <span class="math inline">\(a basis \mathcal{B} = \{\bar{a}_1, ..., \bar{a}_r\}\)</span> other than the standard one, how can we find the unique coordinates of <span class="math inline">\(\bar{v}\)</span>, which is by default expressed in terms of the standard basis.</p>
+<p>We start with a special case where <span class="math inline">\(\{\bar{a}_1, ..., \bar{a}_r\}\)</span> forms a <strong>orthonormal</strong> basis of <span class="math inline">\(V\)</span>, then the coordinates <span class="math inline">\(\{x_1, ..., x_r \}\)</span> with reference to this basis can be obtained by taking the dot product of <span class="math inline">\(\bar{v}\)</span> with each of <span class="math inline">\(\{\bar{a}_1, ..., \bar{a}_r\}\)</span>. To see this, note that we have</p>
+<p><span class="math display">\[
+\bar{v} = 
+\begin{bmatrix}
+a_1 &amp; a_2 &amp; \cdots &amp; a_r
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_r
+\end{bmatrix}
+\]</span>
+Thus, we have <span class="math inline">\(\bar{v} = \sum x_i\bar{a}_i\)</span>.</p>
+<p>Taking dot product on both sides of <span class="math inline">\(\bar{v} = \sum x_i\bar{a}_i\)</span> with each <span class="math inline">\(\bar{a}_i\)</span> and using <span class="math inline">\(\bar{a}_i^T\bar{a}_i = 1, \, \bar{a}_i^T\bar{a}_j = 0\)</span>, we can show that <span class="math inline">\(x_i = \bar{a}_i^T\bar{v}\)</span>.</p>
 <p>This is a frequently used result that, if <span class="math inline">\(\bar{a}_i\)</span> is a unit vector, <span class="math inline">\(\bar{a}_i^T\bar{v}\)</span> will project <span class="math inline">\(\bar{v}\)</span> onto <span class="math inline">\(\bar{a}_i\)</span> and return a coordinate component of <span class="math inline">\(\bar{v}\)</span> in terms of <span class="math inline">\(\bar{a}_i\)</span>. Moreover, we get the whole coordinate vector of <span class="math inline">\(\bar{v}\)</span> with respect to <span class="math inline">\([\bar{a}_1 \, \cdots \bar{a}_r]\)</span> by</p>
 <p><span class="math display">\[
 \begin{aligned}
@@ -856,19 +875,15 @@ x_r \\
 \end{bmatrix}
 \end{aligned} 
 \]</span></p>
-<p>When the set <span class="math inline">\(\bar{a}_1, ..., \bar{a}_r\)</span> are not orthonormal, a general strategy is solving the system of equations <span class="math inline">\(A\bar{x} = \bar{v}\)</span>. This boils down to a problem extensively discussed in Chapter <a href="linear-system.html#linear-system">6</a>.</p>
-<p>If <span class="math inline">\(V\)</span> is simply <span class="math inline">\(\mathbb{R}^n\)</span>, then <span class="math inline">\(A\)</span> is square and invertible, then <span class="math inline">\(\bar{x}\)</span> is found by <span class="math inline">\(A^{-1}\bar{v}\)</span>. Difficult cases are <span class="math inline">\(A\)</span> is not square, or <span class="math inline">\(\bar{v}\)</span> does not lie in the hyperplane defined by <span class="math inline">\(\bar{a}_1, ..., \bar{a}_r\)</span> and therefore defies valid coordinates. Finding <span class="math inline">\(\bar{x}\)</span> now becomes a classic least square problem (Section <a href="#lesat-squares-problems"><strong>??</strong></a>). This results in the following (the best fit solution)</p>
-<p><span class="math display">\[
-\bar{x} = (A^TA)^{-1}A^T\bar{v}
-\]</span></p>
+<p>When the set <span class="math inline">\(\bar{a}_1, ..., \bar{a}_r\)</span> are not orthonormal, a general strategy is solving the system of equations <span class="math inline">\(A\bar{x} = \bar{v}\)</span>. This boils down to a linear system problem extensively discussed in Chapter <a href="linear-system.html#linear-system">6</a>.</p>
 <div id="change-of-basis" class="section level3">
 <h3><span class="header-section-number">2.6.1</span> Change of Basis</h3>
-<p>Previous discussions involve different representations of <span class="math inline">\(\bar{x}\)</span> with respect to two basis, one of which is standard basis in <span class="math inline">\(\mathbb{R}^n\)</span>. This section deals with transformations between two non-standard basis.</p>
-<p>Now suppose <span class="math inline">\(A = [\bar{a}_1, ..., \bar{a}_n]\)</span> and <span class="math inline">\(B = [\bar{b}_1, ..., \bar{b}_n]\)</span> are both bases for <span class="math inline">\(\mathbb{R}^n\)</span>. And the vector <span class="math inline">\(\bar{x}\)</span> has coordinates <span class="math inline">\(\bar{x}_a, \bar{x}_b\)</span> with respect to <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> respectively. The goal is to find an <span class="math inline">\(n \times n\)</span> matrix that transforms one coordinate to another</p>
+<p>Previous discussions involve different representations of <span class="math inline">\(\bar{x}\)</span> with respect to two basis, one of which is the standard basis in <span class="math inline">\(\mathbb{R}^n\)</span>. This section deals with transformations between two non-standard basis.</p>
+<p>Now suppose <span class="math inline">\(A = [\bar{a}_1, ..., \bar{a}_n]\)</span> and <span class="math inline">\(B = [\bar{b}_1, ..., \bar{b}_n]\)</span> are both bases for <span class="math inline">\(\mathbb{R}^n\)</span>. And the vector <span class="math inline">\(\bar{x}\)</span> has coordinates <span class="math inline">\(\bar{x}_a, \bar{x}_b\)</span> with respect to <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> respectively. The goal is to find an <span class="math inline">\(n \times n\)</span> matrix $ P_{a b}$ such that it transforms one coordinate to another</p>
 <p><span class="math display">\[
-\bar{x}_b = P_{a \rightarrow b}\,\bar{x}
+\bar{x}_b = P_{a \rightarrow b}\,\bar{x}_a
 \]</span></p>
-<p>To find <span class="math inline">\(P_{a \rightarrow b}\)</span>, we use the fact that <span class="math inline">\(A\bar{x}_b\)</span> and <span class="math inline">\(B\bar{x}_a\)</span> represents the same vector <span class="math inline">\(x\)</span>. We have the following</p>
+<p>To find <span class="math inline">\(P_{a \rightarrow b}\)</span>, we use the fact that <span class="math inline">\(A\bar{x}_b\)</span> and <span class="math inline">\(B\bar{x}_a\)</span> represents the same vector <span class="math inline">\(\bar{x}\)</span>. We have the following</p>
 <p><span class="math display">\[
 A\bar{x}_a = B \bar{x}_b = \bar{x}
 \]</span></p>
@@ -876,7 +891,7 @@ A\bar{x}_a = B \bar{x}_b = \bar{x}
 <p><span class="math display">\[
 \bar{x}_b = \underbrace{B^{-1}A}_{P_{a \rightarrow b}}\bar{x}_a
 \]</span></p>
-<p><span class="math inline">\(B^{-1}A\)</span> is called the <strong>change-of-basis/coordinate matrix from <span class="math inline">\(\mathcal{A}\)</span> to <span class="math inline">\(\mathcal{B}\)</span></strong>, because it converts coordinates from one system to another. When <span class="math inline">\(B\)</span> is large, finding its inverse can be challenging. Though, when <span class="math inline">\(\{\bar{b}_1, ..., \bar{b}_n\}\)</span> is an orthonormal basis, the transformation matrix simplify to <span class="math inline">\(B^TA\)</span>. Additionally, if <span class="math inline">\(A\)</span> corresponds to the standard basis, the transformation matrix is <span class="math inline">\(B^T\)</span>, as shown before.</p>
+<p><span class="math inline">\(B^{-1}A\)</span> is called the <strong>change-of-basis/coordinate matrix from <span class="math inline">\(\mathcal{A}\)</span> to <span class="math inline">\(\mathcal{B}\)</span></strong>, because it converts coordinates from one system to another. Particulalry, when <span class="math inline">\(\{\bar{b}_1, ..., \bar{b}_n\}\)</span> is an orthonormal basis, the transformation matrix simplify to <span class="math inline">\(B^TA\)</span>. Additionally, if <span class="math inline">\(A\)</span> corresponds to the standard basis, the transformation matrix is <span class="math inline">\(B^T\)</span>, as shown before.</p>
 <p>Such change-of-basis transformation can be performed between basis sets that define some other r-dimensional hyperplane <span class="math inline">\(V\)</span> rather than <span class="math inline">\(\mathbb{R}^n\)</span>. Moreover, the two basis set could even represent different hyperplane in <span class="math inline">\(\mathbb{R}^n\)</span>. We demonstrate such a case below.</p>
 <p>Let <span class="math inline">\(A = [\bar{a}_1 \, \cdots \, \bar{a}_r]\)</span> and <span class="math inline">\(B = [\bar{b}_1 \, \cdots \, \bar{b}_r]\)</span> be two matrices whose columns are bases from different hyperplanes in <span class="math inline">\(\mathbb{R}^n\)</span>, and let <span class="math inline">\(\bar{v}\)</span> lie in <span class="math inline">\(A\)</span>’s hyperplane. In this case, <span class="math inline">\(A\bar{x}_a \not = B\bar{x}_b\)</span> because <span class="math inline">\(B\bar{x}_b\)</span> is only a best-fit solution of <span class="math inline">\(\bar{v}\)</span>. This is again a least square problem. We have the following</p>
 <p><span class="math display">\[

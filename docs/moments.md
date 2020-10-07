@@ -93,7 +93,11 @@ $$
 $$
 
 
-### Random vectors 
+### Stain's Lemma
+  
+
+
+### Random Vectors 
 
 
 ## Other Summaries 

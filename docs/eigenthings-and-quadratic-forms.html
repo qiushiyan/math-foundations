@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-09-30" />
+<meta name="date" content="2020-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="css\style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -213,7 +213,8 @@
 </ul></li>
 <li class="chapter" data-level="13" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html"><i class="fa fa-check"></i><b>13</b> Random variables and moments</a><ul>
 <li class="chapter" data-level="13.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>13.1</b> Properties of Expectation and Variance</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#random-vectors"><i class="fa fa-check"></i><b>13.1.1</b> Random vectors</a></li>
+<li class="chapter" data-level="13.1.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#stains-lemma"><i class="fa fa-check"></i><b>13.1.1</b> Stain’s Lemma</a></li>
+<li class="chapter" data-level="13.1.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#random-vectors"><i class="fa fa-check"></i><b>13.1.2</b> Random Vectors</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#other-summaries"><i class="fa fa-check"></i><b>13.2</b> Other Summaries</a></li>
 <li class="chapter" data-level="13.3" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#moment-generating-functions"><i class="fa fa-check"></i><b>13.3</b> Moment Generating Functions</a></li>
@@ -266,6 +267,7 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>21</b> Principal Component Analysis</a><ul>
+<li class="chapter" data-level="21.0.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#pca-with-normalization"><i class="fa fa-check"></i><b>21.0.1</b> PCA with Normalization</a></li>
 <li class="chapter" data-level="21.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#correspondence-analysis"><i class="fa fa-check"></i><b>21.1</b> Correspondence Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>22</b> Text Mining</a></li>
@@ -306,7 +308,7 @@
 <p><span class="math display">\[
 (A - \lambda I)\bar{x}= 0
 \]</span></p>
-<p>Since eigenvector <span class="math inline">\(\bar{x}\)</span> must be nonzero, <span class="math inline">\((A - \lambda I)\)</span> is a singular matrix</p>
+<p>Since eigenvector <span class="math inline">\(\bar{x}\)</span> must be nonzero, <span class="math inline">\((A - \lambda I)\)</span> is a singular matrix with determinant zero</p>
 <p><span class="math display" id="eq:characteristic-equation">\[\begin{equation}
 \tag{4.1}
 \det (A - \lambda I) = 0
@@ -318,7 +320,7 @@
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>Consider the <span class="math inline">\(3 \times 3\)</span> case. If <span class="math inline">\(A\)</span> is upper triangular, then <span class="math inline">\(A - \lambda I\)</span> has the form</p>
 <p><span class="math display">\[
@@ -327,8 +329,8 @@ a_{11} - \lambda &amp; a_{12} &amp; a_{13} \\
 0 &amp; a_{22} - \lambda &amp; a_{23}  \\
 0 &amp; 0 &amp; a_{33} - \lambda
 \end{bmatrix}
-\]</span>
-So the roots of characteristic are <span class="math inline">\(a_{11}, a_{22}, a_{33}\)</span> respectively.</p>
+\]</span></p>
+<p>So the roots of characteristic are <span class="math inline">\(a_{11}, a_{22}, a_{33}\)</span> respectively.</p>
 <p>There are some useful results about how eigenvalues change after various manipulations.</p>
 <ol style="list-style-type: decimal">
 <li><p>For any <span class="math inline">\(k, b \in \mathbb{R}\)</span>, <span class="math inline">\(\bar{x}\)</span> is an eigenvector of <span class="math inline">\(kA + bI\)</span> with eigenvalue <span class="math inline">\(k\lambda + b\)</span></p></li>
@@ -336,7 +338,7 @@ So the roots of characteristic are <span class="math inline">\(a_{11}, a_{22}, a
 <li><p><span class="math inline">\(A^{k}\bar{x} = \lambda^{k}\bar{x}\)</span></p></li>
 </ol>
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>For (1)
 <span class="math display">\[
@@ -353,21 +355,21 @@ Proof
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>Suppose for r distinct eigenvalue <span class="math inline">\(\lambda_1, \cdots, \lambda_r\)</span>, the set <span class="math inline">\(\{\bar{v_1}, ..., \bar{v_r}\}\)</span> is not linearly independent, and <span class="math inline">\(p\)</span> is the least index such that <span class="math inline">\(\bar{v}_{p+1}\)</span> is a linear combination of the preceding vectors. Then there exists scalars <span class="math inline">\(c_1, \cdots, c_p\)</span> such that</p>
 <p><span class="math display">\[
 c_1\bar{v}_1 + \cdots + c_p\bar{v}_p = \bar{v}_{p+1} \tag{1}
-\]</span>
-Left multiply by <span class="math inline">\(A\)</span>, and note we have <span class="math inline">\(A\bar{v}_i = \lambda_i\bar{v}_i\)</span> for <span class="math inline">\(i = 1, ..., n\)</span></p>
-<p><span class="math display">\[
+\]</span></p>
+<p>Left multiply by <span class="math inline">\(A\)</span>, and note we have <span class="math inline">\(A\bar{v}_i = \lambda_i\bar{v}_i\)</span> for <span class="math inline">\(i = 1, ..., n\)</span>
+<span class="math display">\[
 c_1\lambda_1\bar{v}_1 + \cdots + c_p\lambda_p\bar{v}_p = \lambda_{p+1}\bar{v}_{p+1} \tag{2}
-\]</span>
-Multiplying both sides of (2) by <span class="math inline">\(\lambda_{p+1}\)</span> and subtracting (2) from the result</p>
+\]</span></p>
+<p>Multiplying both sides of (2) by <span class="math inline">\(\lambda_{p+1}\)</span> and subtracting (2) from the result</p>
 <p><span class="math display">\[
 c_1(\lambda_1 - \lambda_{p+1})\bar{v}_1 +\cdots + c_p(\lambda_p - \lambda_{p+1})\bar{v}_p = 0 \tag{3}
-\]</span>
-Since <span class="math inline">\(\bar{v}_1, ..., \bar{v}_p\)</span> are linearly independent, weights in (3) must be all zero. Since <span class="math inline">\(\lambda_1, \cdots, \lambda_p\)</span> are distinct, hence <span class="math inline">\(c_i = 0, \, i = 1, ..., p\)</span>. But then (5) says that eigenvector <span class="math inline">\(\bar{v}_{p+1}\)</span> is zero vector, which contradicts definition <a href="eigenthings-and-quadratic-forms.html#def:eigen">4.1</a></p>
+\]</span></p>
+<p>Since <span class="math inline">\(\bar{v}_1, ..., \bar{v}_p\)</span> are linearly independent, weights in (3) must be all zero. Since <span class="math inline">\(\lambda_1, \cdots, \lambda_p\)</span> are distinct, hence <span class="math inline">\(c_i = 0, \, i = 1, ..., p\)</span>. But then (5) says that eigenvector <span class="math inline">\(\bar{v}_{p+1}\)</span> is zero vector, which contradicts definition <a href="eigenthings-and-quadratic-forms.html#def:eigen">4.1</a></p>
 <hr>
 
 <div class="corollary">
@@ -375,19 +377,19 @@ Since <span class="math inline">\(\bar{v}_1, ..., \bar{v}_p\)</span> are linearl
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>Let <span class="math inline">\(\lambda\)</span> be a nonzero eigenvalue of <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(\bar{x}\)</span> its eigenvector</p>
 <p><span class="math display">\[
 \begin{split}
 (A^TA)\bar{x} &amp;= \lambda\bar{x} \\
 \end{split}
-\]</span>
-Left multiply by <span class="math inline">\(A\)</span></p>
+\]</span></p>
+<p>Left multiply by <span class="math inline">\(A\)</span></p>
 <p><span class="math display">\[
 AA^T(A\bar{x}) = \lambda (A\bar{x})
-\]</span>
-We will have to verify that <span class="math inline">\(A\bar{x}\)</span> is no zero vector before concluding <span class="math inline">\(\lambda\)</span> is also an eigenvector of <span class="math inline">\(AA^T\)</span>. Suppose <span class="math inline">\(A\bar{x} = 0\)</span>, then <span class="math inline">\(A^TA\bar{x} =\lambda\bar{x} = 0\)</span>. Since <span class="math inline">\(\bar{x}\)</span> is a eigenvector which is nonzero, <span class="math inline">\(\lambda = 0\)</span>, which contradicts our former statement. Thus, any nonzero eigenvalue of <span class="math inline">\(A^TA\)</span> is also an eigenvalue of <span class="math inline">\(AA^T\)</span>.</p>
+\]</span></p>
+<p>We will have to verify that <span class="math inline">\(A\bar{x}\)</span> is no zero vector before concluding <span class="math inline">\(\lambda\)</span> is also an eigenvector of <span class="math inline">\(AA^T\)</span>. Suppose <span class="math inline">\(A\bar{x} = 0\)</span>, then <span class="math inline">\(A^TA\bar{x} =\lambda\bar{x} = 0\)</span>. Since <span class="math inline">\(\bar{x}\)</span> is a eigenvector which is nonzero, <span class="math inline">\(\lambda = 0\)</span>, which contradicts our former statement. Thus, any nonzero eigenvalue of <span class="math inline">\(A^TA\)</span> is also an eigenvalue of <span class="math inline">\(AA^T\)</span>.</p>
 <p><span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are known as Gram matrix and left Gram matrix in corollary <a href="vector-spaces.html#prp:gram-matrix">2.1</a></p>
 <div id="additional-properties-of-eigenvalues-and-eigenvectors" class="section level3">
 <h3><span class="header-section-number">4.1.1</span> Additional Properties of Eigenvalues and Eigenvectors</h3>
@@ -412,9 +414,19 @@ We will have to verify that <span class="math inline">\(A\bar{x}\)</span> is no 
 </div>
 <div id="left-eigenvectors-and-right-eigenvectors" class="section level3">
 <h3><span class="header-section-number">4.1.2</span> Left Eigenvectors and Right Eigenvectors</h3>
+<p>It’s possible to define “left” eigenvectors as opposed to “right” eigenvectors as in <span class="math inline">\(A \bar{v} = \lambda \bar{v}\)</span>. A <em>left eigenvector</em> is a nonzero <em>row</em> vector <span class="math inline">\(\bar{w}\)</span> such that <span class="math inline">\(\bar{w}A = \lambda \bar{w}\)</span>. It is immediately obvious that the transpose of a right eigenvector of <span class="math inline">\(A\)</span> will be a left eigenvector of <span class="math inline">\(A^T\)</span>. The following discovery shows how they are further connected.</p>
+<p>Consider a diagonalizable <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span>, we have</p>
 <p><span class="math display">\[
-\bar{x}A = \lambda\bar{x}
+A = P\Lambda P^{-1}
 \]</span></p>
+<p>In this case, the right eigenvectors are the <span class="math inline">\(n\)</span> columns of <span class="math inline">\(P\)</span>, and the left eigenvectors are the <em>rows</em> of matrix <span class="math inline">\(P^{-1}\)</span>. This is true because left eigenvectors of <span class="math inline">\(A\)</span> are the transpose of right eigenvectors of <span class="math inline">\(A^T\)</span>. Transposing <span class="math inline">\(A\)</span> yields the following</p>
+<p><span class="math display">\[
+A^T = {(P^{-1})}^{T}\Lambda P^T 
+\]</span>
+<span class="math inline">\({(P^{-1})}^{T}\)</span> contains <span class="math inline">\(n\)</span> right eigenvectors of <span class="math inline">\(A^T\)</span>, which should be left eigenvectors of <span class="math inline">\(A\)</span> after transposition.</p>
+<p>How will right and left eigenvecotrs behave when <span class="math inline">\(A\)</span> is special? Take transpose on both sides of <span class="math inline">\(\bar{w}A = \lambda \bar{w}\)</span>, we see that if matrix <span class="math inline">\(A\)</span> is symmetric, then each of its left eigenvector is the transpose of its right eigenvector. Similarly, transposing each right eigenvector results in a row vector that is a left eigenvector.</p>
+<p>The relationship between left and right eigenvectors holds only for symmetric matrices. How about eigenvalues? It turns out that <strong>left eigenvalues and right eigenvalues are the same irrespective of whether or not the matrix is symmetric</strong>.</p>
+<p>This can be proved via the characteristic polynomial. For left eigenvectors we have <span class="math inline">\(A^T\bar{w}^T = \lambda \bar{w}^T\)</span>. Therefore, its characteristic polynomial is <span class="math inline">\(\det(A^T - \lambda I)\)</span>, which is equivalent to <span class="math inline">\(\det(A - \lambdaI)\)</span>. (the determinant stays the same after transposing)</p>
 </div>
 </div>
 <div id="qr-method" class="section level2">
@@ -430,7 +442,7 @@ In other words, <span class="math inline">\(A\)</span> is diagnolizable if and o
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p><span class="math display">\[
 \begin{split}
@@ -438,8 +450,8 @@ AP &amp;= A[\bar{v}_1 \cdots \bar{v}_n] \\
    &amp;= [A\bar{v}_1 \cdots A\bar{v}_n] \\ 
    &amp;= [\lambda_1\bar{v}_1 \cdots \lambda_n\bar{v}_n]
 \end{split}
-\]</span>
-while on the other side of the equation:</p>
+\]</span></p>
+<p>while on the other side of the equation:</p>
 <p><span class="math display">\[
 \begin{aligned}
 DP &amp;= 
@@ -460,8 +472,8 @@ DP &amp;=
 AP &amp;= PD \\
 A &amp;= P \Lambda P^{-1}
 \end{aligned}
-\]</span>
-Because <span class="math inline">\(P\)</span> contains <span class="math inline">\(n\)</span> independent columns so it’s invertible.</p>
+\]</span></p>
+<p>Because <span class="math inline">\(P\)</span> contains <span class="math inline">\(n\)</span> independent columns so it’s invertible.</p>
 <p>According to theorem <a href="eigenthings-and-quadratic-forms.html#thm:distinct-eigenvalue">4.1</a>, an <span class="math inline">\(n \times n\)</span> matrix with <span class="math inline">\(n\)</span> distinct eigenvalues is diagonalizable. This is a sufficient condition.</p>
 <p>For matrices whose eigenvalues are not distinct, there is still a change that it is diagonalizable. For any matrix <span class="math inline">\(A_{n\times n}\)</span>, as long as the sum of the dimensions of the eigenspaces equals <span class="math inline">\(n\)</span> then <span class="math inline">\(P\)</span> is invertible. This could happen in the following two scenarios</p>
 <ol style="list-style-type: decimal">
@@ -478,13 +490,13 @@ Repeated eigenvalues create the possibility that a diagonalization might not exi
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>If <span class="math inline">\(B = P^{-1}AP\)</span>, then</p>
 <p><span class="math display">\[
 B - \lambda I = P^{-1}AP - \lambda P^{-1}P = P^{-1}(AP - \lambda P) =  P^{-1}(A - \lambda I) P
-\]</span>
-so that</p>
+\]</span></p>
+<p>so that</p>
 <p><span class="math display">\[
 \det (B - \lambda I ) = \det(P) \cdot \det(A - \lambda I ) \cdot \det(P^{-1})
 \]</span>
@@ -523,8 +535,8 @@ B(P\bar{v}) = \lambda P \bar{v}
 2 &amp; 0 \\
 0 &amp; 2 
 \end{bmatrix}
-\]</span>
-are not similar even though they have the same eigenvalues.</p>
+\]</span></p>
+<p>are not similar even though they have the same eigenvalues.</p>
 </div>
 <div id="jordan-matrix" class="section level3">
 <h3><span class="header-section-number">4.3.2</span> Jordan Matrix</h3>
@@ -547,9 +559,9 @@ are not similar even though they have the same eigenvalues.</p>
 &amp; &amp; &amp; &amp; &amp; &amp; &amp; \lambda_n &amp; 1 \\
 &amp; &amp; &amp; &amp; &amp; &amp; &amp; &amp; \lambda_n
 \end{bmatrix}
-\]</span>
-An illustration from <a href="https://en.wikipedia.org/wiki/Jordan_normal_form">wikipedia</a>, the circled area is the Jordan block.
-<img src="images/jordan-blocks.png" width="40%" style="display: block; margin: auto;" /></p>
+\]</span></p>
+<p>An illustration from <a href="https://en.wikipedia.org/wiki/Jordan_normal_form">wikipedia</a>, the circled area is the Jordan block.</p>
+<p><img src="images/jordan-blocks.png" width="40%" style="display: block; margin: auto;" /></p>
 <p>Though the purpose of this section was not the computation details of Jordan matrices, it helps to give a concrete example. Consider <span class="math inline">\(A\)</span></p>
 <p><span class="math display">\[
 A = 
@@ -589,8 +601,8 @@ A[\bar{p}_1 \; \; \bar{p}_2 \;\; \bar{p}_3 \;\; \bar{p}_4] = [\bar{p}_1 \; \; \b
 (A - 4I)\bar{p}_3 &amp;= \bar{0} \\
 (A - 1I)\bar{p}_4 &amp;= \bar{p}_3 
 \end{aligned}
-\]</span>
-The solutions <span class="math inline">\(\bar{p}_i\)</span> are called <strong>generalized eigenvectors</strong> of <span class="math inline">\(A\)</span>.</p>
+\]</span></p>
+<p>The solutions <span class="math inline">\(\bar{p}_i\)</span> are called <strong>generalized eigenvectors</strong> of <span class="math inline">\(A\)</span>.</p>
 </div>
 <div id="simultaneous-diagonalization" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Simultaneous Diagonalization</h3>
@@ -625,8 +637,7 @@ B = P\Lambda_2P^{-1}
 1 &amp; 1 \\
 0 &amp; 0
 \end{bmatrix}
-\]</span>
-are not simultaneously diagonalizable because they do not commute.</p>
+\]</span> are not simultaneously diagonalizable because they do not commute.</p>
 </div>
 <div id="cayley-hamilton-theorem" class="section level3">
 <h3><span class="header-section-number">4.3.4</span> Cayley-Hamilton Theorem</h3>
@@ -642,14 +653,13 @@ Let <span class="math inline">\(f(\lambda)\)</span> be the polynomial function o
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>Though the Caley Hamilton theorem <a href="eigenthings-and-quadratic-forms.html#thm:cayley-hamilton">4.3</a> applies to any square matrix <span class="math inline">\(A\)</span>. Our proof only address the case for diagonalizable matrices.</p>
 <p>When <span class="math inline">\(A\)</span> is diagonalizable, the polynomial of <span class="math inline">\(A\)</span> takes the form</p>
 <p><span class="math display">\[
 f(A) = Pf(\Lambda)P^{-1}
-\]</span>
-Since <span class="math inline">\(f(\lambda) = \det(A - \lambda I)\)</span>, and the diagonal entries of <span class="math inline">\(\Lambda\)</span> are the eigenvalues of <span class="math inline">\(A\)</span>. Evaluate <span class="math inline">\(f(\lambda)\)</span> at each diagonal entry of <span class="math inline">\(\Lambda\)</span> will be zero. Thus <span class="math inline">\(f(A)\)</span> is a zero matrix.</p>
+\]</span> Since <span class="math inline">\(f(\lambda) = \det(A - \lambda I)\)</span>, and the diagonal entries of <span class="math inline">\(\Lambda\)</span> are the eigenvalues of <span class="math inline">\(A\)</span>. Evaluate <span class="math inline">\(f(\lambda)\)</span> at each diagonal entry of <span class="math inline">\(\Lambda\)</span> will be zero. Thus <span class="math inline">\(f(A)\)</span> is a zero matrix.</p>
 <p>A direct result derived from the Cayley Hamilton theorem is that for every invertible matrix <span class="math inline">\(A\)</span>, its inverse <span class="math inline">\(A^{-1}\)</span> can be represented as a polynomial of <span class="math inline">\(A\)</span> with degree <span class="math inline">\(d - 1\)</span>.</p>
 <p><r></p>
 
@@ -660,8 +670,8 @@ Since <span class="math inline">\(f(\lambda) = \det(A - \lambda I)\)</span>, and
 <p>Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for non-singular matrices. If the product of all eigenvalues is <span class="math inline">\(k\)</span>, we can write the Cayley-Hamilton matrix polynomial <span class="math inline">\(f(A)\)</span> in the form <span class="math inline">\(f(A) = A \cdot g(A) + kI\)</span>, where <span class="math inline">\(A \cdot g(A)\)</span> is obtained by factoring out <span class="math inline">\(A\)</span> from the d-degree matrix polynomial, leaving <span class="math inline">\(g(A)\)</span> with degree of <span class="math inline">\(d - 1\)</span>. Since <span class="math inline">\(f(A)\)</span> evaluates to zero, we have</p>
 <p><span class="math display">\[
 A \underbrace{\Big( - g(A) / k\Big)}_{A^{-1}} = I
-\]</span>
-Therefore, <span class="math inline">\(A^{-1}\)</span> is shown to be a polynomial of <span class="math inline">\(A\)</span>.</p>
+\]</span></p>
+<p>Therefore, <span class="math inline">\(A^{-1}\)</span> is shown to be a polynomial of <span class="math inline">\(A\)</span>.</p>
 </div>
 </div>
 <div id="symmetric-matrices" class="section level2">
@@ -679,7 +689,7 @@ A = \frac{1}{2}(A + A^T) + \frac{1}{2}(A - A^T)
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>Let <span class="math inline">\(\bar{v}_1\)</span> and <span class="math inline">\(\bar{v}_2\)</span> be eigenvectors that correspond to distinct eigenvalues <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>. Compute</p>
 <p><span class="math display">\[
@@ -690,8 +700,8 @@ Proof
 &amp;= \bar{v}_1^T(\lambda_2\bar{v}_2) \\
 &amp;= \lambda_2\bar{v}_1 \cdot \bar{v}_2
 \end{split}
-\]</span>
-because <span class="math inline">\(\lambda_1 \not = \lambda_2\)</span>, <span class="math inline">\(\bar{v}_1 \cdot \bar{v}_2 = 0\)</span>.</p>
+\]</span></p>
+<p>because <span class="math inline">\(\lambda_1 \not = \lambda_2\)</span>, <span class="math inline">\(\bar{v}_1 \cdot \bar{v}_2 = 0\)</span>.</p>
 <p>For symmetric matrices <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> without <span class="math inline">\(n\)</span> distinct eigenvalues, it turns out that the dimension of the eigenspace for each <span class="math inline">\(\lambda_k\)</span> always equals the multiplicity of <span class="math inline">\(\lambda_k\)</span>. For this reason, if <span class="math inline">\(A\)</span> is a symmetric matrix we can always construct a orthonormal set <span class="math inline">\(\{\bar{q}_1 \;\; \cdots \;\; \bar{q}_n\}\)</span> from <span class="math inline">\(\{\bar{v}_1 \;\; \cdots \;\; \bar{v}_n\}\)</span> such that</p>
 <p><span class="math display">\[
 Q^{T} = 
@@ -701,12 +711,12 @@ Q^{T} =
 \bar{q}_n^T
 \end{bmatrix}
 = Q^{-1}
-\]</span>
-Recall that matrix <span class="math inline">\(A\)</span> with <span class="math inline">\(n\)</span> linearly independent eigenvectors is diagonalizable and can be written as</p>
+\]</span></p>
+<p>Recall that matrix <span class="math inline">\(A\)</span> with <span class="math inline">\(n\)</span> linearly independent eigenvectors is diagonalizable and can be written as</p>
 <p><span class="math display">\[
 A = P \Lambda P^{-1}
-\]</span>
-where <span class="math inline">\(P = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]\)</span> and <span class="math inline">\(\Lambda\)</span> is a diagonal matrix with eigenvalues on its diagonal entries.</p>
+\]</span></p>
+<p>where <span class="math inline">\(P = [\bar{v}_1 \;\; \cdots \;\; \bar{v}_n]\)</span> and <span class="math inline">\(\Lambda\)</span> is a diagonal matrix with eigenvalues on its diagonal entries.</p>
 <p>With symmetric matrices, <span class="math inline">\(\{\bar{v}_1, \cdots, \bar{v}_n\}\)</span> must be linearly independent and can be transformed into a orthonormal basis <span class="math inline">\(\{\bar{q}_1, \cdots, \bar{q}_n\}\)</span>. With orthogonal matrix <span class="math inline">\(Q =[\bar{q}_1 \;\; \cdots \;\; \bar{q}_n]\)</span>, we have</p>
 <p><span class="math display" id="eq:orthogonal-diagonalization">\[\begin{equation}
 \tag{4.2}
@@ -795,12 +805,12 @@ x_3 \\
 &amp; \quad(a_{12} + a_{21})x_1x_2 + (a_{13} + a_{31})x_1x_3 + (a_{23} + a_{32})x_2x_3 
 \end{split} 
 \tag{1}
-\]</span>
-Since <span class="math inline">\(A\)</span> is symmetric, we have <span class="math inline">\(a_{ij} = a_{ji}\)</span>, thus</p>
+\]</span></p>
+<p>Since <span class="math inline">\(A\)</span> is symmetric, we have <span class="math inline">\(a_{ij} = a_{ji}\)</span>, thus</p>
 <p><span class="math display">\[
 \bar{x}^TA\bar{x}  = a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + 2a_{12}x_1x_2 + 2a_{13}x_1x_3 + 2a_{23}x_2x_3 \tag{2} 
-\]</span>
-This verifies that <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> when <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is symmetric does result in a quadratic function of <span class="math inline">\(n\)</span> variables. Conversely, any quadratic function of <span class="math inline">\(n\)</span> variables, like shown in <span class="math inline">\((2)\)</span>, can be expressed in terms of <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> with unique choice of symmetric matrix <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span>.</p>
+\]</span></p>
+<p>This verifies that <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> when <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is symmetric does result in a quadratic function of <span class="math inline">\(n\)</span> variables. Conversely, any quadratic function of <span class="math inline">\(n\)</span> variables, like shown in <span class="math inline">\((2)\)</span>, can be expressed in terms of <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> with unique choice of symmetric matrix <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span>.</p>
 <div id="change-of-variable" class="section level3">
 <h3><span class="header-section-number">4.5.1</span> Change of Variable</h3>
 <p>If <span class="math inline">\(\bar{x}\)</span> is a variable vector in <span class="math inline">\(\mathbb{R}^n\)</span>, then a <em>change of variable</em> is an equation of the form</p>
@@ -809,8 +819,8 @@ This verifies that <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> when <
 \bar{x} &amp;= P\bar{y} \\
 \text{or equivalently} \quad \bar{y} &amp;= P^{-1}\bar{x}
 \end{aligned}
-\]</span>
-where <span class="math inline">\(P\)</span> is any invertible matrix <span class="math inline">\(\in \mathbb{R}^{n \times n}\)</span></p>
+\]</span></p>
+<p>where <span class="math inline">\(P\)</span> is any invertible matrix <span class="math inline">\(\in \mathbb{R}^{n \times n}\)</span></p>
 
 <div class="theorem">
 <p><span id="thm:principal-axes" class="theorem"><strong>Theorem 4.4  (The Principal Axes Theorem)  </strong></span>Let <span class="math inline">\(A\)</span> be an <span class="math inline">\(n \times n\)</span> symmetric matrix. Then there exists an orthogonal change of variable, <span class="math inline">\(\bar{x} = Q\bar{y}\)</span>, this transform the quadratic form <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> into a quadratic form <span class="math inline">\(\bar{y}^T\Lambda\bar{y}\)</span> with no cross-product term.</p>
@@ -844,7 +854,7 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 <li><p>All pivots are <span class="math inline">\(&gt; 0\)</span></p></li>
 <li><p>All leading determinants of <span class="math inline">\(A &gt; 0\)</span></p></li>
 </ul>
-<p>For the last criterion, leading determinant is the determinant of the top-left <span class="math inline">\(k \times k\)</span> lock of <span class="math inline">\(A\)</span> for all <span class="math inline">\(1 \le k \le n\)</span>. There is formal theorem on this</p>
+<p>For the last criterion, leading determinant is the determinant of the top-left <span class="math inline">\(k \times k\)</span> lock of <span class="math inline">\(A\)</span> for all <span class="math inline">\(1 \le k \le n\)</span>. There is a formal theorem on this</p>
 
 <div class="theorem">
 <span id="thm:sylvester-criterion" class="theorem"><strong>Theorem 4.5  (Sylvester’s Criterion)  </strong></span>A symmetric matrix <span class="math inline">\(A\)</span> is positive definite if and only if the determinant of the top-left <span class="math inline">\(k \times k\)</span> block of <span class="math inline">\(A\)</span> is strictly positive for all <span class="math inline">\(1 \le k \le n\)</span>
@@ -882,7 +892,7 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>By definition, <span class="math inline">\(A^TA\)</span> is a positive semidefinite matrix if for any <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span>, the quadratic form <span class="math inline">\(\bar{x}^T(A^TA)\bar{x} \ge 0\)</span>.</p>
 <p><span class="math display">\[
@@ -891,8 +901,8 @@ Proof
 &amp;= (A\bar{x})^T(A\bar{x}) \\
 &amp;= \|A\bar{x}\|^2
 \end{split}
-\]</span>
-It turns out that the result is the square of the 2-norm of <span class="math inline">\(A\bar{x}\)</span> (nonnegative). This also tells <span class="math inline">\(A^TA\)</span> is positive definite when <span class="math inline">\(\bar{x} \not\subseteq \mathcal{N}(A)\)</span></p>
+\]</span></p>
+<p>It turns out that the result is the square of the 2-norm of <span class="math inline">\(A\bar{x}\)</span> (nonnegative). This also tells <span class="math inline">\(A^TA\)</span> is positive definite when <span class="math inline">\(\bar{x} \not\subseteq \mathcal{N}(A)\)</span></p>
 <p>Similarly, the quadratic form for <span class="math inline">\(AA^T\)</span> can be refactored in to the standard norm of <span class="math inline">\(A^T\bar{x}\)</span>.</p>
 <hr>
 
@@ -901,7 +911,7 @@ It turns out that the result is the square of the 2-norm of <span class="math in
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>From the previous corollary <a href="eigenthings-and-quadratic-forms.html#cor:ata-pd">4.4</a> we know that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are positive semidefinite, and that they have the same nonzero eigenvalues from corollary <a href="eigenthings-and-quadratic-forms.html#cor:same-nonzero">4.1</a>. According to Section <a href="eigenthings-and-quadratic-forms.html#additional-properties-of-eigenvalues-and-eigenvectors">4.1.1</a>, eigenvalues for <span class="math inline">\(P(A)\)</span> are <span class="math inline">\(P(\lambda)\)</span> for polynomial function <span class="math inline">\(P\)</span>. Therefore, <span class="math inline">\(A^TA +\lambda I\)</span> and <span class="math inline">\(AA^T + \lambda I\)</span> share a positive set of <span class="math inline">\(n\)</span> eigenvalues <span class="math inline">\(\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda\)</span>, so they are PD and invertible.</p>
 </div>
@@ -934,8 +944,7 @@ Proof
 Proof
 </div>
 
-<p>Let <span class="math inline">\(\lambda\)</span> be an eigenvalue of <span class="math inline">\(A\)</span> with associated eigenvector <span class="math inline">\(\bar{v}\)</span>. Suppose the largest entry of <span class="math inline">\(\bar{v}\)</span> is
-<span class="math inline">\(v_i\)</span>, we scale <span class="math inline">\(\bar{v}\)</span> such that <span class="math inline">\(v_i = 1\)</span> and all other elements less than <span class="math inline">\(1\)</span>. Note <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(i\)</span> are arbitrary, for example, the associated eigenvector of the 3rd eigenvalue may have the largest entry at <span class="math inline">\(v_5\)</span>.</p>
+<p>Let <span class="math inline">\(\lambda\)</span> be an eigenvalue of <span class="math inline">\(A\)</span> with associated eigenvector <span class="math inline">\(\bar{v}\)</span>. Suppose the largest entry of <span class="math inline">\(\bar{v}\)</span> is <span class="math inline">\(v_i\)</span>, we scale <span class="math inline">\(\bar{v}\)</span> such that <span class="math inline">\(v_i = 1\)</span> and all other elements less than <span class="math inline">\(1\)</span>. Note <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(i\)</span> are arbitrary, for example, the associated eigenvector of the 3rd eigenvalue may have the largest entry at <span class="math inline">\(v_5\)</span>.</p>
 <p>By the definition of matrix multiplication, we know <span class="math inline">\([A \bar{v}]_i = \sum_{j = 1}^{n}a_{ij}v_j = a_{ij}v_i + \sum_{j \not = i}a_{ij}v_j\)</span>. Also <span class="math inline">\(\lambda\)</span> is an eigenvalue and <span class="math inline">\(v_i = 1\)</span>, thus <span class="math inline">\([A\bar{v}]_i = \lambda v_ia\)</span>. Then</p>
 <p><span class="math display">\[
 a_{ij}\underbrace{v_i}_{1} + \sum_{j \not = i}a_{ij}v_j =  \lambda\underbrace{v_i}_{1}
@@ -949,8 +958,8 @@ a_{ij}\underbrace{v_i}_{1} + \sum_{j \not = i}a_{ij}v_j =  \lambda\underbrace{v_
 \]</span></p>
 <p><span class="math display">\[
 |\lambda - a_{ii}| \le  \sum_{j \not = i} |a_{ij}| = r_i
-\]</span>
-In other words, for any eigenvalue <span class="math inline">\(\lambda\)</span>, the distance between <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(a_{ii}\)</span> is less than <span class="math inline">\(r_i\)</span>, where <span class="math inline">\(i\)</span> is the index at which <span class="math inline">\(\lambda\)</span>’s associated eigenvector take its largest value.</p>
+\]</span></p>
+<p>In other words, for any eigenvalue <span class="math inline">\(\lambda\)</span>, the distance between <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(a_{ii}\)</span> is less than <span class="math inline">\(r_i\)</span>, where <span class="math inline">\(i\)</span> is the index at which <span class="math inline">\(\lambda\)</span>’s associated eigenvector take its largest value.</p>
 <p>For diagonal entries, all <span class="math inline">\(r_i = 0\)</span>, thus their eigenvalues are exactly diagonal entries.</p>
 <p>In cases where the off diagonal entries of <span class="math inline">\(A\)</span> are very small, then <span class="math inline">\(A\)</span>’s eigenvalue will be very close to diagonal entries. This leads to the notion of diagonal dominance.</p>
 
@@ -1020,33 +1029,33 @@ l_{11} &amp; \cdots &amp; l_{n1} \\
 <p>Let <span class="math inline">\(A \in \mathbb{S}^n\)</span> and <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span>, <strong>Rayleigh quotient</strong> is defined as</p>
 <p><span class="math display">\[
 R_{A}(\bar{x}) = \frac{\bar{x}^TA\bar{x}}{\bar{x}^T\bar{x}}
-\]</span>
-The Rayleigh quotient has some nice properties:</p>
+\]</span></p>
+<p>The Rayleigh quotient has some nice properties:</p>
 <ul>
 <li><p>scale invariance: for any vector <span class="math inline">\(\bar{x} \not= 0\)</span> and any scalar <span class="math inline">\(\alpha \not= 0\)</span>, <span class="math inline">\(R_{A}(\bar{x}) = R_{A}(\alpha\bar{x})\)</span></p></li>
 <li><p>If <span class="math inline">\(\bar{x}\)</span> is a eigenvector of <span class="math inline">\(A\)</span> with eigenvalue <span class="math inline">\(\lambda\)</span>, then <span class="math inline">\(R_{A}(\bar{x}) = \lambda\)</span></p></li>
-<li><p>The Rayleigh quotient is bounded by the largest and smallest eigenvalue of <span class="math inline">\(A\)</span>, i.e. </p></li>
+<li><p>The Rayleigh quotient is bounded by the largest and smallest eigenvalue of <span class="math inline">\(A\)</span>, i.e.</p></li>
 </ul>
 <p><span class="math display">\[
 \lambda_{\text{min}}(A) \le R_{A}(\bar{x}) \le \lambda_{\text{max}}(A)
 \]</span></p>
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>Since the Rayleigh quotient does not depend on the 2-norm of vector <span class="math inline">\(\bar{x}\)</span>, we may assume a unit vector <span class="math inline">\(\bar{x}^T\bar{x} = 1\)</span>, and Rayleigh quotient simplifies to the quadratic form <span class="math inline">\(\bar{x}^TA\bar{x}\)</span>.</p>
 <p>Next, orthogonally diagonalize <span class="math inline">\(A\)</span> as <span class="math inline">\(Q \Lambda Q\)</span>, we know that when <span class="math inline">\(\bar{x} = Q \bar{y}\)</span>:</p>
 <p><span class="math display">\[
 \bar{x}^TA\bar{x} = \bar{y}^T \Lambda \bar{y} \tag{1}
-\]</span>
-Also</p>
+\]</span></p>
+<p>Also</p>
 <p><span class="math display">\[
 1= \bar{x}^T\bar{x} = (Q\bar{y})^T Q\bar{y} = \bar{y}^TQ^TQ\bar{y} = \bar{y}^T\bar{y} \tag{2}
 \]</span></p>
 <p>Expand <span class="math inline">\(\bar{y}^T \Lambda \bar{y}\)</span> in (1) we get</p>
 <p><span class="math display">\[
 \bar{x}^TA\bar{x} = \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \tag{3}
-\]</span>
-where <span class="math inline">\(\{\lambda_1, ..., \lambda_n\}\)</span> are diagonal entries of <span class="math inline">\(\Lambda\)</span> and eigenvalues of <span class="math inline">\(A\)</span>. Let us suppose that the set <span class="math inline">\(\{\lambda_1, \lambda_2, \cdots, \lambda_n\}\)</span> has already been ordered descendingly, so that <span class="math inline">\(\lambda_1 &gt; \lambda_2 &gt; \cdots &gt; \lambda_n\)</span>.</p>
+\]</span></p>
+<p>where <span class="math inline">\(\{\lambda_1, ..., \lambda_n\}\)</span> are diagonal entries of <span class="math inline">\(\Lambda\)</span> and eigenvalues of <span class="math inline">\(A\)</span>. Let us suppose that the set <span class="math inline">\(\{\lambda_1, \lambda_2, \cdots, \lambda_n\}\)</span> has already been ordered descendingly, so that <span class="math inline">\(\lambda_1 &gt; \lambda_2 &gt; \cdots &gt; \lambda_n\)</span>.</p>
 <p>We can obtain the inequality from (3) and the order of eigenvalues:</p>
 <p><span class="math display">\[
 \begin{split}
@@ -1055,8 +1064,8 @@ where <span class="math inline">\(\{\lambda_1, ..., \lambda_n\}\)</span> are dia
 &amp;\le \lambda_1(\bar{y}^T\bar{y}) \\
 &amp;= \lambda_1
 \end{split}
-\]</span>
-The equation reach equality if and only if <span class="math inline">\([y_1, y_2, \cdots, y_n] = [1, 0, \cdots, 0]\)</span>. Since <span class="math inline">\(\bar{x} = Q\bar{y}\)</span>, we have</p>
+\]</span></p>
+<p>The equation reach equality if and only if <span class="math inline">\([y_1, y_2, \cdots, y_n] = [1, 0, \cdots, 0]\)</span>. Since <span class="math inline">\(\bar{x} = Q\bar{y}\)</span>, we have</p>
 <p><span class="math display">\[
 \bar{x} = 
 \begin{bmatrix}
@@ -1069,8 +1078,8 @@ The equation reach equality if and only if <span class="math inline">\([y_1, y_2
 0
 \end{bmatrix}
 = \bar{q}_1
-\]</span>
-Similarly, the minimum of the Rayleigh quotient will be <span class="math inline">\(\lambda_n\)</span>, with <span class="math inline">\(\bar{x} = \bar{q}_n\)</span>.</p>
+\]</span></p>
+<p>Similarly, the minimum of the Rayleigh quotient will be <span class="math inline">\(\lambda_n\)</span>, with <span class="math inline">\(\bar{x} = \bar{q}_n\)</span>.</p>
 <hr>
 <p>From the optimization perspective, the bound of Rayleigh quotient amounts to a constrained optimization problem</p>
 <p><span class="math display">\[
@@ -1078,8 +1087,8 @@ Similarly, the minimum of the Rayleigh quotient will be <span class="math inline
 \text{objective function} &amp;:  \bar{x}^TA\bar{x}\\
 \text{subject to}&amp;: \bar{x}^T\bar{x} = 1 
 \end{aligned}
-\]</span>
-The maximum and minimum of the objective function are <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_n\)</span>, with <span class="math inline">\(\bar{x}\)</span> being <span class="math inline">\(\bar{q}_1\)</span> and <span class="math inline">\(\bar{q}_n\)</span> respectively.</p>
+\]</span></p>
+<p>The maximum and minimum of the objective function are <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_n\)</span>, with <span class="math inline">\(\bar{x}\)</span> being <span class="math inline">\(\bar{q}_1\)</span> and <span class="math inline">\(\bar{q}_n\)</span> respectively.</p>
 <p>If we add more constraints, for example, that <span class="math inline">\(\bar{x}\)</span> should be orthogonal to <span class="math inline">\(\bar{q}_1\)</span>, then <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> has maximum <span class="math inline">\(\lambda_2\)</span> attained at <span class="math inline">\(\bar{x} = \lambda_2\)</span></p>
 
 <div class="theorem">
@@ -1091,7 +1100,7 @@ is the eigenvalue <span class="math inline">\(\lambda_k\)</span>, and this maxim
 </div>
 
 <div class="proof">
-Proof
+<p>Proof</p>
 </div>
 <p>From <span class="math inline">\(\bar{x} = P\bar{y}\)</span> we know that</p>
 <p><span class="math display">\[
@@ -1104,8 +1113,8 @@ Left multiply by <span class="math inline">\(\bar{q}_1^T\)</span></p>
 &amp;= y_1\bar{q}_1^T\bar{q}_1 \\
 &amp;= y_1
 \end{aligned} 
-\]</span>
-Since <span class="math inline">\(\bar{q}_1^T\bar{x} = \bar{x}^T\bar{q}_1 = 0\)</span>, we have <span class="math inline">\(y_1 = 0\)</span>. Similarly, <span class="math inline">\(y_2 = \cdots = y_{k-1} = 0\)</span>, and <span class="math inline">\(\bar{y}\)</span> becomes <span class="math inline">\([0 \;\; \cdots \;\; 0 \;\; y_{k} \;\; \cdots \;\; y_n]\)</span>. And the inequality now becomes:</p>
+\]</span></p>
+<p>Since <span class="math inline">\(\bar{q}_1^T\bar{x} = \bar{x}^T\bar{q}_1 = 0\)</span>, we have <span class="math inline">\(y_1 = 0\)</span>. Similarly, <span class="math inline">\(y_2 = \cdots = y_{k-1} = 0\)</span>, and <span class="math inline">\(\bar{y}\)</span> becomes <span class="math inline">\([0 \;\; \cdots \;\; 0 \;\; y_{k} \;\; \cdots \;\; y_n]\)</span>. And the inequality now becomes:</p>
 <p><span class="math display">\[
 \begin{split}
 \bar{x}^TA\bar{x} &amp;= \lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2 \\

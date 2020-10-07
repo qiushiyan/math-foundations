@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-09-30" />
+<meta name="date" content="2020-10-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="css\style.css" type="text/css" />
+<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
@@ -213,7 +213,8 @@
 </ul></li>
 <li class="chapter" data-level="13" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html"><i class="fa fa-check"></i><b>13</b> Random variables and moments</a><ul>
 <li class="chapter" data-level="13.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>13.1</b> Properties of Expectation and Variance</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#random-vectors"><i class="fa fa-check"></i><b>13.1.1</b> Random vectors</a></li>
+<li class="chapter" data-level="13.1.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#stains-lemma"><i class="fa fa-check"></i><b>13.1.1</b> Stain’s Lemma</a></li>
+<li class="chapter" data-level="13.1.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#random-vectors"><i class="fa fa-check"></i><b>13.1.2</b> Random Vectors</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#other-summaries"><i class="fa fa-check"></i><b>13.2</b> Other Summaries</a></li>
 <li class="chapter" data-level="13.3" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#moment-generating-functions"><i class="fa fa-check"></i><b>13.3</b> Moment Generating Functions</a></li>
@@ -266,6 +267,7 @@
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="21" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>21</b> Principal Component Analysis</a><ul>
+<li class="chapter" data-level="21.0.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#pca-with-normalization"><i class="fa fa-check"></i><b>21.0.1</b> PCA with Normalization</a></li>
 <li class="chapter" data-level="21.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#correspondence-analysis"><i class="fa fa-check"></i><b>21.1</b> Correspondence Analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="22" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>22</b> Text Mining</a></li>
@@ -294,8 +296,62 @@
             <section class="normal" id="section-">
 <div id="principal-component-analysis" class="section level1">
 <h1><span class="header-section-number">Chapter 21</span> Principal Component Analysis</h1>
+<p>Notation</p>
+<ul>
+<li><p><span class="math inline">\(X\)</span>: <span class="math inline">\(n \times p\)</span> data matrix, i.e. <span class="math inline">\(n\)</span> is the sample size and <span class="math inline">\(p\)</span> is the number of variables</p></li>
+<li><p><span class="math inline">\(S_X\)</span>: variance-covariance matrix of <span class="math inline">\(X\)</span></p></li>
+</ul>
+<p>Motivation: The goal of principal component analysis is to identify themost meaningful basis to re-express a data set. The hope isthat this new basis will filter out the noise and reveal hidden structure.</p>
+<p>First centering <span class="math inline">\(X\)</span> by</p>
+<p><span class="math display">\[
+X_c = X - \bar{X}
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\begin{split}
+\bar{X} &amp;= \frac{1}{n}\boldsymbol{1}_n\boldsymbol{1}^T_nX \\
+&amp;= \begin{bmatrix}
+\frac{1}{n} &amp; \cdots &amp; \frac{1}{n} \\
+\vdots &amp; &amp; \vdots \\
+\frac{1}{n} &amp; \cdots &amp; \frac{1}{n}
+\end{bmatrix}
+\begin{bmatrix}
+x_{11} &amp; \cdots &amp; x_{1p} \\
+\vdots &amp; &amp; \vdots \\
+x_{n1} &amp; \cdots &amp; x_{np}
+\end{bmatrix} \\
+&amp;= 
+\begin{bmatrix}
+\bar{x}_1 &amp; \bar{x}_2 &amp; \cdots &amp; \bar{x}_p \\
+\bar{x}_1 &amp; \bar{x}_2 &amp; \cdots &amp; \bar{x}_p \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\bar{x}_1 &amp; \bar{x}_2 &amp; \cdots &amp; \bar{x}_p 
+\end{bmatrix}
+\end{split}
+\]</span></p>
+<p>Then <span class="math inline">\(S_X\)</span>, the sample variance-covariance matrix is</p>
+<p><span class="math display">\[
+S_X = \frac{1}{n - 1}X_c^TX_c
+\]</span></p>
+<p><span class="math display">\[
+\text{maximize} \quad \bar{u}^TS\bar{u} \\
+\text{subject to} \quad \bar{u}^T\bar{u} = 1 
+\]</span>
+This is a typical Rayleigh quotients with solution <span class="math inline">\(\bar{u} = \bar{v}_1\)</span> where <span class="math inline">\(\bar{v}_1\)</span> represents the eigenvector corresponding to the greatest eigenvalue of <span class="math inline">\(S_X\)</span>. We can get obtain the same solution using largarange multiplier though. The objective function is:</p>
+<p><span class="math display">\[
+J = \quad \bar{u}^TS\bar{u}  + \lambda(\bar{u}^T\bar{u} - 1) 
+\]</span></p>
+<p>Takek derivative to <span class="math inline">\(\bar{u}\)</span> and set it to zero</p>
+<p><span class="math display">\[
+\frac{\partial \, J}{\partial \bar{u}} = 2\bar{u}^TS + 2\lambda \bar{u}^T = 0
+\]</span></p>
+<p>Since <span class="math inline">\(S\)</span> is symmetric, we get <span class="math inline">\(S\bar{u} = -\lambda\bar{u}\)</span>. Therefore, the variance after projection onto <span class="math inline">\(\bar{u}\)</span> becomes <span class="math inline">\(\bar{u}^TS\bar{u} = \lambda\bar{u}^T\bar{u} = \lambda\)</span>.</p>
+<div id="pca-with-normalization" class="section level3">
+<h3><span class="header-section-number">21.0.1</span> PCA with Normalization</h3>
+</div>
 <div id="correspondence-analysis" class="section level2">
 <h2><span class="header-section-number">21.1</span> Correspondence Analysis</h2>
+<p><span class="math inline">\(\chi^2\)</span> distance is defined by</p>
 
 </div>
 </div>

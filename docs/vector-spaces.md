@@ -284,7 +284,7 @@ This echoes theorem \@ref(thm:cr-expansion), where matrix multiplication is comp
 
 <br> 
 
-Next, we bring in the concept of cross product which may not be so significant in the linear algebra section, but it will shine in multivariate integral calculus. 
+Next, we bring in the concept of cross product which may not be so significant in the linear algebra section, but will shine in multivariate integral calculus. 
 
 The **cross product** between $\bar{u}$ and $\bar{v}$ is a **vector** perpendicular to $\bar{u}$, $\bar{v}$ and the plane formed by them, with length equal to 
 
@@ -293,13 +293,13 @@ $$
 \|\bar{u} \times \bar{v} \| = \|\bar{u}\| \|\bar{v}\| \sin \theta
 $$
 
-Let $\bar{n}$ denote the unit vector perpendicular to the plane containing $\bar{u}$ and $\bar{v}$, the cross product can be written as 
+Let $\bar{n}$ denote the unit vector **perpendicular** to the plane containing $\bar{u}$ and $\bar{v}$, the cross product can be written as 
 
 $$
 \bar{u} \times \bar{v} = \|\bar{u}\| \|\bar{v}\| \sin (\theta)\bar{n}
 $$
 
-Though this formula is rarely helpful we because the main usage of cross product is finding the direction $\bar{n}$. 
+This definition is rarely helpful we because the main usage of cross product is finding the direction $\bar{n}$. 
 
 In most cases, we only consider cross product in 3D spaces, although it can be generalized to higher dimensions.
 
@@ -352,18 +352,21 @@ u_1v_2 - u_2v_1
 \end{bmatrix}
 \end{split}
 $$
-This result is same as the determinant of the following matrix (think of  $\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}$) as scalars during the computation)
+This result is same as the determinant of the following matrix (think of  $\boldsymbol{i}, \boldsymbol{j}, \boldsymbol{k}$) as scalars and use cofactor expansion)
 
 $$
-\bar{u} \times \bar{v} = 
+\begin{split}
+\bar{u} \times \bar{v} &= 
 \begin{vmatrix}
 \boldsymbol{i} & \boldsymbol{j} & \boldsymbol{k} \\
 u_1 & u_2 & u_3 \\
 v_1 & v_2 & v_3 
-\end{vmatrix}
+\end{vmatrix} \\
+&= (u_2v_3 - u_3v_2)\boldsymbol{i} - (u_1v_3 - u_3v_1)\boldsymbol{j} + (u_1v_2 - u_2v_1)\boldsymbol{k} 
+\end{split}
 $$
 
-The main use for cross product will be finding a vector which is perpendicular to two given vectors. We can make use of the magnitude as well. Recall the magnitude of the cross product
+The main use for cross product will be finding a vector which is perpendicular to two given vectors. We can make use of the magnitude as well. Recall the magnitude of the cross product is 
 
 $$
 \| \bar{u} \times \bar{v} \| = \|\bar{u}\| \|v\|\sin\theta
@@ -658,7 +661,7 @@ Since $\{\bar{a}_1, ..., \bar{a}_r\}$ is a linearly independent set, we have $x_
 
 
 
-Note that the coordinate vector of the n-dimensional vector $\bar{v}$ contains $r$ components instead of $n$, each of which corresponds to a weight associated with one basis in $\mathcal{B}$
+Note that the coordinate vector of the n-dimensional vector $\bar{v}$ contains $r$ components instead of $n$, each of which corresponds to a weight associated with one basis in $\mathcal{B}$. 
 
 The default basis in $\mathbb{R}^n$, is the collection of $n$ n-dimensional vectors $\{\bar{e}_1, ..., \bar{e}_n\}$. Each of $\bar{e}_i$ contains a $1$ in the $i$th entry and a value of $0$ in all other entries. 
 
@@ -690,9 +693,25 @@ $$
 
 
 
-The next question is, given $\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_r\}$, how can we find the unique coordinates of $\bar{v}$, which is by default expressed in terms of the standard basis. 
+The next question is, given $a basis \mathcal{B} = \{\bar{a}_1, ..., \bar{a}_r\}$ other than the standard one, how can we find the unique coordinates of $\bar{v}$, which is by default expressed in terms of the standard basis. 
 
-We start by a special case where $\bar{a}_1, ..., \bar{a}_r$ forms a **orthonormal** basis of $V$, then the coordinates are simply the dot products of $\bar{x}$ with these vectors. By taking the dot product of both sides of $\bar{v} = \sum x_i\bar{a}_i$ with each $\bar{a}_i$ and using $\bar{a}_i^T\bar{a}_i = 1, \, \bar{a}_i^T\bar{a}_j = 0$, we can show that $x_i = \bar{a}_i^T\bar{v}$. 
+We start with a special case where $\{\bar{a}_1, ..., \bar{a}_r\}$ forms a **orthonormal** basis of $V$, then the coordinates $\{x_1, ..., x_r \}$ with reference to this basis can be obtained by taking the dot product of $\bar{v}$ with each of  $\{\bar{a}_1, ..., \bar{a}_r\}$. To see this, note that we have 
+
+$$
+\bar{v} = 
+\begin{bmatrix}
+a_1 & a_2 & \cdots & a_r
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\
+x_2 \\
+\vdots \\
+x_r
+\end{bmatrix}
+$$
+Thus, we have $\bar{v} = \sum x_i\bar{a}_i$. 
+
+Taking dot product on both sides of $\bar{v} = \sum x_i\bar{a}_i$ with each $\bar{a}_i$ and using $\bar{a}_i^T\bar{a}_i = 1, \, \bar{a}_i^T\bar{a}_j = 0$, we can show that $x_i = \bar{a}_i^T\bar{v}$. 
 
 This is a frequently used result that, if $\bar{a}_i$ is a unit vector, $\bar{a}_i^T\bar{v}$ will project $\bar{v}$ onto $\bar{a}_i$ and return a coordinate component of $\bar{v}$ in terms of $\bar{a}_i$. Moreover, we get the whole coordinate vector of $\bar{v}$ with respect to $[\bar{a}_1 \, \cdots \bar{a}_r]$ by 
 
@@ -715,27 +734,23 @@ x_r \\
 $$
 
 
-When the set $\bar{a}_1, ..., \bar{a}_r$ are not orthonormal, a general strategy is solving the system of equations $A\bar{x} = \bar{v}$. This boils down to a problem extensively discussed in Chapter \@ref(linear-system). 
+When the set $\bar{a}_1, ..., \bar{a}_r$ are not orthonormal, a general strategy is solving the system of equations $A\bar{x} = \bar{v}$. This boils down to a linear system problem extensively discussed in Chapter \@ref(linear-system). 
 
-If $V$ is simply $\mathbb{R}^n$, then $A$ is square and invertible, then $\bar{x}$ is found by $A^{-1}\bar{v}$. Difficult cases are $A$ is not square, or $\bar{v}$ does not lie in the hyperplane defined by $\bar{a}_1, ..., \bar{a}_r$ and therefore defies valid coordinates. Finding $\bar{x}$ now becomes a classic least square problem (Section \@ref(lesat-squares-problems)). This results in the following (the best fit solution)
 
-$$
-\bar{x} = (A^TA)^{-1}A^T\bar{v}
-$$
 
 
 ### Change of Basis
 
-Previous discussions involve different representations of $\bar{x}$ with respect to two basis, one of which is standard basis in $\mathbb{R}^n$. This section deals with transformations between two non-standard basis. 
+Previous discussions involve different representations of $\bar{x}$ with respect to two basis, one of which is the standard basis in $\mathbb{R}^n$. This section deals with transformations between two non-standard basis. 
 
-Now suppose $A = [\bar{a}_1, ..., \bar{a}_n]$ and $B = [\bar{b}_1, ..., \bar{b}_n]$ are both bases for $\mathbb{R}^n$. And the vector $\bar{x}$ has coordinates $\bar{x}_a, \bar{x}_b$ with respect to $A$ and $B$ respectively. The goal is to find an $n \times n$ matrix that transforms one coordinate to another 
+Now suppose $A = [\bar{a}_1, ..., \bar{a}_n]$ and $B = [\bar{b}_1, ..., \bar{b}_n]$ are both bases for $\mathbb{R}^n$. And the vector $\bar{x}$ has coordinates $\bar{x}_a, \bar{x}_b$ with respect to $A$ and $B$ respectively. The goal is to find an $n \times n$ matrix $ P_{a \rightarrow b}$ such that it transforms one coordinate to another 
 
 $$
-\bar{x}_b = P_{a \rightarrow b}\,\bar{x}
+\bar{x}_b = P_{a \rightarrow b}\,\bar{x}_a
 $$
 
 
-To find $P_{a \rightarrow b}$, we use the fact that $A\bar{x}_b$ and $B\bar{x}_a$ represents the same vector $x$. We have the following 
+To find $P_{a \rightarrow b}$, we use the fact that $A\bar{x}_b$ and $B\bar{x}_a$ represents the same vector $\bar{x}$. We have the following 
 
 $$
 A\bar{x}_a = B \bar{x}_b = \bar{x}
@@ -747,7 +762,7 @@ $$
 \bar{x}_b = \underbrace{B^{-1}A}_{P_{a \rightarrow b}}\bar{x}_a
 $$
 
-$B^{-1}A$ is called the **change-of-basis/coordinate matrix from $\mathcal{A}$ to $\mathcal{B}$**, because it converts coordinates from one system to another. When $B$ is large, finding its inverse can be challenging. Though, when $\{\bar{b}_1, ..., \bar{b}_n\}$ is an orthonormal basis, the transformation matrix simplify to $B^TA$. Additionally, if $A$ corresponds to the standard basis, the transformation matrix is $B^T$, as shown before. 
+$B^{-1}A$ is called the **change-of-basis/coordinate matrix from $\mathcal{A}$ to $\mathcal{B}$**, because it converts coordinates from one system to another. Particulalry, when $\{\bar{b}_1, ..., \bar{b}_n\}$ is an orthonormal basis, the transformation matrix simplify to $B^TA$. Additionally, if $A$ corresponds to the standard basis, the transformation matrix is $B^T$, as shown before. 
 
 Such change-of-basis transformation can be performed between basis sets that define some other r-dimensional hyperplane $V$ rather than $\mathbb{R}^n$. Moreover, the two basis set could even represent different hyperplane in $\mathbb{R}^n$. We demonstrate such a case below. 
 

@@ -86,6 +86,16 @@ $$
 \underbrace{\|Ax - b\|^2}_{\text{best fit}} + \underbrace{\lambda \| x\|^2}_{\text{concise}}
 $$
 
+$\|Ax - b\|^2 + \lambda \| x\|^2$ is equivalent to $\frac{1}{2}(Ax - b)^T(Ax - b) + \frac{\lambda}{2}x^Tx$ 
+
+$$
+\begin{aligned}
+A^TAx^T - b^TA + \lambda x^T = 0\\
+(A^TA +\lambda I)x = A^Tb
+\end{aligned}
+$$
+
+
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>The least squares solution of smallest norm of the linear system $Ax = b$, when $A$ is any $m \times n$ matrix, is given by 
 
 $$

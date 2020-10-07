@@ -1,0 +1,29 @@
+
+
+$$
+\begin{aligned}
+y_i &= f(x_i) + \varepsilon_i \\
+\varepsilon_i & \sim N(0, \sigma^2)
+\end{aligned}
+$$
+
+
+$$
+\begin{split}
+\mathbb{E}\Big[(\hat{y}_i - y_i)^2\Big] &= \mathbb{E}\Big[(\hat{f}(x_i) -  f(x_i) - \varepsilon_i)^2\Big] \\
+&= \mathbb{E}\Big[(\hat{f}(x_i) -  f(x_i))^2\Big] + \mathbb{E}(\varepsilon_i^2) -2 \mathbb{E}\Big[\varepsilon_i(\hat{f}(x_i) -  f(x_i)\Big] \\
+&= \mathbb{E}\Big[(\hat{f}(x_i) -  f(x_i))^2\Big] + \sigma^2 -2 \mathbb{E}\Big[\varepsilon_i(\hat{f}(x_i) -  f(x_i)\Big]
+\end{split}
+$$
+
+Here the difficult part is $\mathbb{E}\Big[\varepsilon_i(\hat{f}(x_i) -  f(x_i)\Big]$. When $y_i$ represents a new data point that is not used in model fitting, $(\hat{f}(x_i) -  f(x_i))$ is constant with respect to $\varepsilon_i$. However, When $y_i$ is used to fit the data, $\hat{f}(x_i)$ relies on $\varepsilon_i$, thus $(\hat{f}(x_i) -  f(x_i))$ is a function of $\varepsilon_i$. 
+
+**case 1**: when $y_i$ is not in the training set (i.e. $y_i \notin T$ and we are measuring the prediction MSE)
+
+**case 1**: when $y_i$ belongs to the trianing set $T$. 
+
+We refer to Stein's lemma, where for a normal r.v. $X \sim N(\mu, \sigma^2)$ and a differentiable function $g$, we have 
+
+$$
+\mathbb{E}\Big[(X - \mu) \cdot g(X)\Big] = \sigma^2\mathbb{E}\Big[\frac{\partial \, g(X)}{\partial X}  \Big] 
+$$
