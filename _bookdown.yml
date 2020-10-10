@@ -26,6 +26,7 @@ rmd_files: [
   
   "probability-basics.Rmd",
   "moments.Rmd",
+  "inequality.Rmd",
   "univariate-dist.Rmd",
   "multivariate-dist.Rmd",
   "markov-chain.Rmd",

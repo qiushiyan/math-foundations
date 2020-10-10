@@ -2,6 +2,10 @@
 
 # Principal Component Analysis
 
+https://www.math.uwaterloo.ca/~aghodsib/courses/f06stat890/readings/tutorial_stat890.pdf
+
+https://arxiv.org/pdf/1404.1100.pdf
+
 Notation
 
 - $X$: $n \times p$ data matrix, i.e. $n$ is the sample size and $p$ is the number of variables  

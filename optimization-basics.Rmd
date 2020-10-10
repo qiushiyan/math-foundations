@@ -26,7 +26,13 @@ Suppose $f''(x)$ is continuous on an open interval that contains $x = c$
 ## Multivariate Optimization 
 
 
-## Convex Functions 
+### ## Method of Lagrange Multiplier
+
+## Convexity
+
+
+
+
 
 ```{definition convex-set, name = "Convext set"}
 
@@ -64,8 +70,42 @@ $$
 ```
 
 
+Another more intuitive definition can be expressed as 
+
+> $f$ is a convex function if its epigrah (the set of points lying on or above its graph) is a convex set. 
 
 
-## Method of Lagrange Multiplier
+```{r, echo = FALSE, fig.cap = "A function is convex if and only if the region above its graph (in green) is a convex set. This region is the function's epigraph."}
+knitr::include_graphics("images/epigraph_convex.svg")
+```
+
+
+
+Most often in machine learning problems we encountered a subset of optimization problems, *convex optimization*. That is 
+
+$$
+\text{minimize} \quad f(\bar{w}) \\
+\text{subject to} \quad x \in C
+$$
+where $f:\mathbb{R}^n \to \mathbb{R}$ is a convex function and $C$ is a closed convex set.  
+
+
+### Properties of Convex Functions 
+
+```{theorem jensen-inequality, name = "Jenson's inequality"}
+
+```
+
+If $X$ is a random variable and $f$ is a convex function, then 
+
+$$
+E\big[f(X)\big] \ge f\big[E(X)\big]
+$$
+I find this very intuitive figure from https://www.bowaggoner.com/ to remember this formula
+
+```{r, echo = FALSE}
+knitr::include_graphics("images/jenson-inequality.jpg")
+```
+
 
 
