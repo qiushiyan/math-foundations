@@ -61,6 +61,7 @@ $$
 ```
 
 
+
 Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix. 
 
 
@@ -121,16 +122,13 @@ $$
 There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
-T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
+T(\bar{x}) = A\bar{x} \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
 $$
   
-In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ 
+In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e}_j)$, where $\bar{e}_j$ is the $j$th basis of $\mathbb{R}^n$ 
 ```
 
-```{block2, type = "proof"}
-Proof
-```
-
+::: {.pr}
 $$
 \bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
 $$
@@ -143,8 +141,11 @@ T(\bar{x}) &= x_1T(\bar{e}_1) + \dots + x_nT(\bar{e}_n) \\
 &= (A\bar{x})_{m \times 1}
 \end{split}
 $$
+:::
 
-In other words, the transformation is specified once we know what all basis in $\mathbb{R^n}$ become in $\mathbb{R^m}$.
+
+
+In other words, the transformation is determined once we know what all basis in $\mathbb{R}^n$ become in $\mathbb{R}^m$.
 
 The matrix $A$ is called the **standard matrix for the linear transformation** $T$.  
 

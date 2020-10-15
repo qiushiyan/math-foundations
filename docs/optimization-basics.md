@@ -24,7 +24,13 @@ Suppose $f''(x)$ is continuous on an open interval that contains $x = c$
 ## Multivariate Optimization 
 
 
-## Convex Functions 
+### ## Method of Lagrange Multiplier
+
+## Convexity
+
+
+
+
 
 \BeginKnitrBlock{definition}\iffalse{-91-67-111-110-118-101-120-116-32-115-101-116-93-}\fi{}<div class="definition"><span class="definition" id="def:convex-set"><strong>(\#def:convex-set)  \iffalse (Convext set) \fi{} </strong></span>
 A set $S$ is said to be convex, if for every pair of points $\bar{w}_1, \bar{w}_2 \in S$, point $\lambda\bar{w}_1 + (1 - \lambda)\bar{w}_2$ must also be in $S$ for all $\lambda \in (0, 1)$ </div>\EndKnitrBlock{definition}
@@ -56,8 +62,39 @@ f\big(\lambda\bar{w}_1 + (1 - \lambda)\bar{w}_2\big) \lt \lambda f(\bar{w}_1) + 
 $$</div>\EndKnitrBlock{definition}
 
 
+Another more intuitive definition can be expressed as 
+
+> $f$ is a convex function if its epigrah (the set of points lying on or above its graph) is a convex set. 
 
 
-## Method of Lagrange Multiplier
+<div class="figure" style="text-align: center">
+<img src="images/epigraph_convex.svg" alt="A function is convex if and only if the region above its graph (in green) is a convex set. This region is the function's epigraph."  />
+<p class="caption">(\#fig:unnamed-chunk-2)A function is convex if and only if the region above its graph (in green) is a convex set. This region is the function's epigraph.</p>
+</div>
+
+
+
+Most often in machine learning problems we encountered a subset of optimization problems, *convex optimization*. That is 
+
+$$
+\text{minimize} \quad f(\bar{w}) \\
+\text{subject to} \quad x \in C
+$$
+where $f:\mathbb{R}^n \to \mathbb{R}$ is a convex function and $C$ is a closed convex set.  
+
+
+### Properties of Convex Functions 
+
+\BeginKnitrBlock{theorem}\iffalse{-91-74-101-110-115-111-110-39-115-32-105-110-101-113-117-97-108-105-116-121-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:jensen-inequality"><strong>(\#thm:jensen-inequality)  \iffalse (Jenson's inequality) \fi{} </strong></span>If $X$ is a random variable and $f$ is a convex function, then 
+
+$$
+E\big[f(X)\big] \ge f\big[E(X)\big]
+$$
+I find this very intuitive figure from https://www.bowaggoner.com/ to remember this formula</div>\EndKnitrBlock{theorem}
+
+
+
+<img src="images/jenson-inequality.png" width="120%" style="display: block; margin: auto;" />
+
 
 

@@ -55,22 +55,28 @@ p.flushright {
   text-align: right;
 }
 
-/* Proof formating --------------------------------------------*/
+/* custom block formatting --------------------------------------------*/
 
-
-.proof {
-  display: block;
-  font-size: 1.1em;
-  text-align: center;
-  font-weight: bold;
-  font-style: italic;
-  background-color: #DEE9F6;
-  border-top: solid 5px #EEF4FA;
-  padding: 0.5em;
+.pr {
+  padding: 1em;
   margin: 1em 0;
+  min-height: 120px;
+  color: #1a162dcc;
+  background-color: #DEE9F6;
+  border-top: 7pt solid #a19ea936;
+  max-width: 100%;
+  line-height: 1.75em;
+  font-size: 0.9em;
+  letter-spacing: 1pt;
+  margin-bottom: 1.5em;
 }
 
-/* Algorithm formating --------------------------------------------*/
+.pr::before {
+  content: "Proof";
+  font-family: "Gabriola";
+  font-size: 2em;
+  font-weight: bold;
+}
 
 .algorithm {
   padding: 1em;
@@ -86,9 +92,24 @@ p.flushright {
   margin-bottom: 1.5em;
 }
 
-div.algorithm code, {
+div.algorithm code {
   background-color: #91CBD765 !important;
   font-size: 1em;
+}
+
+.todo {
+  display: block;
+  border: 1px solid #4285f4;
+  border-left-width: 5px;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+}
+
+.todo::before {
+  content: "TO DO: ";
+  font-weight: bold;
+  color: #4285f4;
 }
 
 
@@ -166,20 +187,7 @@ div.rmdtip::before {
   margin-bottom: 0.25em;
 }
 
-.todo {
-  display: block;
-  border: 1px solid #4285f4;
-  border-left-width: 5px;
-  border-radius: 5px;
-  padding: 0.5em 1em;
-  margin: 1em 0;
-}
 
-.todo::before {
-  content: "TO DO: ";
-  font-weight: bold;
-  color: #4285f4;
-}
 
 .flushright {
   text-align: right;

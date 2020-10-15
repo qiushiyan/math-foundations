@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Vector Spaces | Mathematical Notes for Machine Learning</title>
   <meta name="description" content="Chapter 2 Vector Spaces | Mathematical Notes for Machine Learning" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Vector Spaces | Mathematical Notes for Machine Learning" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-10-07" />
+<meta name="date" content="2020-10-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="basic-matrix-algebra.html"/>
 <link rel="next" href="orthogonality.html"/>
+<script src="libs/header-attrs-2.4/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -72,8 +73,10 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Linear Algebra</b></span></li>
-<li class="chapter" data-level="1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html"><i class="fa fa-check"></i><b>1</b> Basic Matrix Algebra</a><ul>
-<li class="chapter" data-level="1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication"><i class="fa fa-check"></i><b>1.1</b> Matrix Multiplication</a><ul>
+<li class="chapter" data-level="1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html"><i class="fa fa-check"></i><b>1</b> Basic Matrix Algebra</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication"><i class="fa fa-check"></i><b>1.1</b> Matrix Multiplication</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#geometric-transformations"><i class="fa fa-check"></i><b>1.1.1</b> Geometric Transformations</a></li>
 <li class="chapter" data-level="1.1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication-as-linear-transformation"><i class="fa fa-check"></i><b>1.1.2</b> Matrix Multiplication as Linear Transformation</a></li>
 <li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#selector-matrix"><i class="fa fa-check"></i><b>1.1.3</b> Selector Matrix</a></li>
@@ -81,73 +84,89 @@
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#elemetary-matrix-and-row-operations"><i class="fa fa-check"></i><b>1.2</b> Elemetary matrix and row operations</a></li>
 <li class="chapter" data-level="1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#lu-factorization"><i class="fa fa-check"></i><b>1.3</b> LU Factorization</a></li>
-<li class="chapter" data-level="1.4" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#determinants"><i class="fa fa-check"></i><b>1.4</b> Determinants</a><ul>
+<li class="chapter" data-level="1.4" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#determinants"><i class="fa fa-check"></i><b>1.4</b> Determinants</a>
+<ul>
 <li class="chapter" data-level="1.4.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#cofactor-expansion"><i class="fa fa-check"></i><b>1.4.1</b> Cofactor Expansion</a></li>
 <li class="chapter" data-level="1.4.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#geometric-interpretation-of-determinant"><i class="fa fa-check"></i><b>1.4.2</b> Geometric Interpretation of Determinant</a></li>
 <li class="chapter" data-level="1.4.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#properties-of-determinant"><i class="fa fa-check"></i><b>1.4.3</b> Properties of Determinant</a></li>
 <li class="chapter" data-level="1.4.4" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#cramers-rule"><i class="fa fa-check"></i><b>1.4.4</b> Cramer’s Rule</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#trace"><i class="fa fa-check"></i><b>1.5</b> Trace</a></li>
-<li class="chapter" data-level="1.6" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-inversion"><i class="fa fa-check"></i><b>1.6</b> Matrix Inversion</a><ul>
+<li class="chapter" data-level="1.6" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-inversion"><i class="fa fa-check"></i><b>1.6</b> Matrix Inversion</a>
+<ul>
 <li class="chapter" data-level="1.6.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#the-matrix-inversion-lemma"><i class="fa fa-check"></i><b>1.6.1</b> The Matrix Inversion Lemma</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity-of-matrix-computation"><i class="fa fa-check"></i><b>1.7</b> Complexity of Matrix Computation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector Spaces</a><ul>
-<li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#vector-space"><i class="fa fa-check"></i><b>2.1</b> Vector Space</a><ul>
+<li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector Spaces</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#vector-space"><i class="fa fa-check"></i><b>2.1</b> Vector Space</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="vector-spaces.html"><a href="vector-spaces.html#euclidean-space"><i class="fa fa-check"></i><b>2.1.1</b> Euclidean Space</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric Spaces, Normed Spaces, Inner Product Spaces</a><ul>
+<li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric Spaces, Normed Spaces, Inner Product Spaces</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-and-norm"><i class="fa fa-check"></i><b>2.2.1</b> Metric and Norm</a></li>
 <li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-produc-outer-product-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Produc, Outer Product, Cross Product</a></li>
 <li class="chapter" data-level="2.2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#restricted-definition-of-inner-products-in-rn"><i class="fa fa-check"></i><b>2.2.3</b> Restricted Definition of Inner Products in <span class="math inline">\(R^n\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
 <li class="chapter" data-level="2.4" data-path="vector-spaces.html"><a href="vector-spaces.html#fundamental-theorem"><i class="fa fa-check"></i><b>2.4</b> Fundamental Theorem of Linear Algebra</a></li>
-<li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a><ul>
+<li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="vector-spaces.html"><a href="vector-spaces.html#effect-of-operations-on-matrix-rank"><i class="fa fa-check"></i><b>2.5.1</b> Effect of Operations on Matrix Rank</a></li>
 <li class="chapter" data-level="2.5.2" data-path="vector-spaces.html"><a href="vector-spaces.html#gram-matrix"><i class="fa fa-check"></i><b>2.5.2</b> Gram Matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="vector-spaces.html"><a href="vector-spaces.html#bases-and-coordinate-systems"><i class="fa fa-check"></i><b>2.6</b> Bases and Coordinate Systems</a><ul>
+<li class="chapter" data-level="2.6" data-path="vector-spaces.html"><a href="vector-spaces.html#bases-and-coordinate-systems"><i class="fa fa-check"></i><b>2.6</b> Bases and Coordinate Systems</a>
+<ul>
 <li class="chapter" data-level="2.6.1" data-path="vector-spaces.html"><a href="vector-spaces.html#change-of-basis"><i class="fa fa-check"></i><b>2.6.1</b> Change of Basis</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="vector-spaces.html"><a href="vector-spaces.html#complexity-of-vector-computations"><i class="fa fa-check"></i><b>2.7</b> Complexity of Vector Computations</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
-<li class="chapter" data-level="3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>3.1</b> Orthogonal Decomposition</a><ul>
+<li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>3.1</b> Orthogonal Decomposition</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-complements"><i class="fa fa-check"></i><b>3.1.1</b> Orthogonal Complements</a></li>
 <li class="chapter" data-level="3.1.2" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-sets-and-orthogonal-basis"><i class="fa fa-check"></i><b>3.1.2</b> Orthogonal Sets and Orthogonal Basis</a></li>
 <li class="chapter" data-level="3.1.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>3.1.3</b> Orthogonal Decomposition</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.2</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
+<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.2</b> Orthonormal Sets and Orthogonal Matrices</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.2.1</b> Orthogonal Matrices</a></li>
 <li class="chapter" data-level="3.2.2" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.2.2</b> Best Approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#projection-and-idempotent-matrices"><i class="fa fa-check"></i><b>3.3</b> Projection and idempotent matrices</a></li>
 <li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.4</b> Gram-Schmidt Process</a></li>
-<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorization"><i class="fa fa-check"></i><b>3.5</b> QR Factorization</a><ul>
+<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorization"><i class="fa fa-check"></i><b>3.5</b> QR Factorization</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="orthogonality.html"><a href="orthogonality.html#householder-qr-factorization"><i class="fa fa-check"></i><b>3.5.1</b> Householder QR factorization</a></li>
 <li class="chapter" data-level="3.5.2" data-path="orthogonality.html"><a href="orthogonality.html#applications-of-qr-factorization"><i class="fa fa-check"></i><b>3.5.2</b> Applications of QR factorization</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="orthogonality.html"><a href="orthogonality.html#complexity"><i class="fa fa-check"></i><b>3.6</b> Complexity</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and Quadratic Forms</a><ul>
-<li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and Eigenvalues</a><ul>
+<li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and Quadratic Forms</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and Eigenvalues</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#additional-properties-of-eigenvalues-and-eigenvectors"><i class="fa fa-check"></i><b>4.1.1</b> Additional Properties of Eigenvalues and Eigenvectors</a></li>
 <li class="chapter" data-level="4.1.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#left-eigenvectors-and-right-eigenvectors"><i class="fa fa-check"></i><b>4.1.2</b> Left Eigenvectors and Right Eigenvectors</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#qr-method"><i class="fa fa-check"></i><b>4.2</b> QR Method</a></li>
-<li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>4.3</b> Diagnolization and Similar Matrices</a><ul>
+<li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>4.3</b> Diagnolization and Similar Matrices</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#similarity"><i class="fa fa-check"></i><b>4.3.1</b> Similarity</a></li>
 <li class="chapter" data-level="4.3.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#jordan-matrix"><i class="fa fa-check"></i><b>4.3.2</b> Jordan Matrix</a></li>
 <li class="chapter" data-level="4.3.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#simultaneous-diagonalization"><i class="fa fa-check"></i><b>4.3.3</b> Simultaneous Diagonalization</a></li>
 <li class="chapter" data-level="4.3.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#cayley-hamilton-theorem"><i class="fa fa-check"></i><b>4.3.4</b> Cayley-Hamilton Theorem</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.4</b> Symmetric Matrices</a><ul>
+<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.4</b> Symmetric Matrices</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#spectral-decomposition"><i class="fa fa-check"></i><b>4.4.1</b> Spectral Decomposition</a></li>
 <li class="chapter" data-level="4.4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#a-orthogonality"><i class="fa fa-check"></i><b>4.4.2</b> A-Orthogonality</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#quadratic-forms"><i class="fa fa-check"></i><b>4.5</b> Quadratic Forms</a><ul>
+<li class="chapter" data-level="4.5" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#quadratic-forms"><i class="fa fa-check"></i><b>4.5</b> Quadratic Forms</a>
+<ul>
 <li class="chapter" data-level="4.5.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#change-of-variable"><i class="fa fa-check"></i><b>4.5.1</b> Change of Variable</a></li>
 <li class="chapter" data-level="4.5.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#classification-of-quadratic-forms"><i class="fa fa-check"></i><b>4.5.2</b> Classification of Quadratic Forms</a></li>
 <li class="chapter" data-level="4.5.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#gershgorin-discs-and-diagonal-dominance"><i class="fa fa-check"></i><b>4.5.3</b> Gershgorin Discs and Diagonal Dominance</a></li>
@@ -155,122 +174,155 @@
 <li class="chapter" data-level="4.6" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#cholesky-factorization"><i class="fa fa-check"></i><b>4.6</b> Cholesky Factorization</a></li>
 <li class="chapter" data-level="4.7" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients"><i class="fa fa-check"></i><b>4.7</b> Rayleigh Quotients</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html"><i class="fa fa-check"></i><b>5</b> Singular Value Decomposition</a><ul>
+<li class="chapter" data-level="5" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html"><i class="fa fa-check"></i><b>5</b> Singular Value Decomposition</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#singular-values"><i class="fa fa-check"></i><b>5.1</b> Singular Values</a></li>
-<li class="chapter" data-level="5.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#svd-theorem"><i class="fa fa-check"></i><b>5.2</b> SVD</a><ul>
+<li class="chapter" data-level="5.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#svd-theorem"><i class="fa fa-check"></i><b>5.2</b> SVD</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#geometric-interpretation-of-svd"><i class="fa fa-check"></i><b>5.2.1</b> Geometric Interpretation of SVD</a></li>
 <li class="chapter" data-level="5.2.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#uniqueness-of-svd"><i class="fa fa-check"></i><b>5.2.2</b> Uniqueness of SVD</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#matrix-norms"><i class="fa fa-check"></i><b>5.3</b> Matrix Norms</a><ul>
+<li class="chapter" data-level="5.3" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#matrix-norms"><i class="fa fa-check"></i><b>5.3</b> Matrix Norms</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#induced-norms"><i class="fa fa-check"></i><b>5.3.1</b> Induced Norms</a></li>
 <li class="chapter" data-level="5.3.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#entry-wise-norm"><i class="fa fa-check"></i><b>5.3.2</b> Entry-wise Norm</a></li>
 <li class="chapter" data-level="5.3.3" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#other-matrix-norms"><i class="fa fa-check"></i><b>5.3.3</b> Other Matrix Norms</a></li>
 <li class="chapter" data-level="5.3.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#unitary-invariant-norms"><i class="fa fa-check"></i><b>5.3.4</b> Unitary Invariant Norms</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#low-rank-approximation"><i class="fa fa-check"></i><b>5.4</b> Low Rank Approximation</a></li>
-<li class="chapter" data-level="5.5" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#pseudoinverse"><i class="fa fa-check"></i><b>5.5</b> Pseudoinverse</a><ul>
+<li class="chapter" data-level="5.5" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#pseudoinverse"><i class="fa fa-check"></i><b>5.5</b> Pseudoinverse</a>
+<ul>
 <li class="chapter" data-level="5.5.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#pseudoinverse-of-full-rank-matrix"><i class="fa fa-check"></i><b>5.5.1</b> Pseudoinverse of full rank matrix</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="linear-system.html"><a href="linear-system.html"><i class="fa fa-check"></i><b>6</b> Solutions of Linear System Ax = b</a><ul>
-<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#when-a-has-independent-columns-or-rows"><i class="fa fa-check"></i><b>6.1</b> When A Has Independent Columns or Rows</a><ul>
+<li class="chapter" data-level="6" data-path="linear-system.html"><a href="linear-system.html"><i class="fa fa-check"></i><b>6</b> Solutions of Linear System Ax = b</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#when-a-has-independent-columns-or-rows"><i class="fa fa-check"></i><b>6.1</b> When A Has Independent Columns or Rows</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="linear-system.html"><a href="linear-system.html#when-a-is-square"><i class="fa fa-check"></i><b>6.1.1</b> When A is square</a></li>
 <li class="chapter" data-level="6.1.2" data-path="linear-system.html"><a href="linear-system.html#when-m-n-lesat-squares"><i class="fa fa-check"></i><b>6.1.2</b> When m &gt; n: Lesat Squares</a></li>
 <li class="chapter" data-level="6.1.3" data-path="linear-system.html"><a href="linear-system.html#when-m-n-least-norms"><i class="fa fa-check"></i><b>6.1.3</b> When m &lt; n: Least Norms</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="linear-system.html"><a href="linear-system.html#otherwise"><i class="fa fa-check"></i><b>6.2</b> Otherwise</a></li>
-<li class="chapter" data-level="6.3" data-path="linear-system.html"><a href="linear-system.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>6.3</b> Ill-Conditioned Matrices</a><ul>
+<li class="chapter" data-level="6.3" data-path="linear-system.html"><a href="linear-system.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>6.3</b> Ill-Conditioned Matrices</a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="linear-system.html"><a href="linear-system.html#condition-number"><i class="fa fa-check"></i><b>6.3.1</b> Condition Number</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="special-matrices.html"><a href="special-matrices.html"><i class="fa fa-check"></i><b>7</b> Special Matrices</a></li>
 <li class="part"><span><b>II Multivariate Calculus</b></span></li>
-<li class="chapter" data-level="8" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>8</b> Partial Derivatives</a><ul>
+<li class="chapter" data-level="8" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>8</b> Partial Derivatives</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limit-and-continuity"><i class="fa fa-check"></i><b>8.1</b> Limit and Continuity</a></li>
-<li class="chapter" data-level="8.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivative"><i class="fa fa-check"></i><b>8.2</b> Partial Derivative</a><ul>
+<li class="chapter" data-level="8.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivative"><i class="fa fa-check"></i><b>8.2</b> Partial Derivative</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#gradient-and-directional-derivative"><i class="fa fa-check"></i><b>8.2.1</b> Gradient and Directional Derivative</a></li>
 <li class="chapter" data-level="8.2.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#linearization-of-two-variable-functions"><i class="fa fa-check"></i><b>8.2.2</b> Linearization of Two-variable Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentials"><i class="fa fa-check"></i><b>8.3</b> Differentials</a><ul>
+<li class="chapter" data-level="8.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentials"><i class="fa fa-check"></i><b>8.3</b> Differentials</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#continuity-partial-derivatives-and-differentiability"><i class="fa fa-check"></i><b>8.3.1</b> Continuity, Partial Derivatives and Differentiability</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#divergence-curl-and-laplacian"><i class="fa fa-check"></i><b>8.4</b> Divergence, Curl, and Laplacian</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>9</b> Matrix Calculus</a><ul>
+<li class="chapter" data-level="9" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>9</b> Matrix Calculus</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="matrix-calculus.html"><a href="matrix-calculus.html#the-chain-rule"><i class="fa fa-check"></i><b>9.1</b> The Chain Rule</a></li>
 <li class="chapter" data-level="9.2" data-path="matrix-calculus.html"><a href="matrix-calculus.html#useful-identities-in-matirx-calculus"><i class="fa fa-check"></i><b>9.2</b> Useful Identities in Matirx Calculus</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="taylor-series.html"><a href="taylor-series.html"><i class="fa fa-check"></i><b>10</b> Taylor Series</a><ul>
+<li class="chapter" data-level="10" data-path="taylor-series.html"><a href="taylor-series.html"><i class="fa fa-check"></i><b>10</b> Taylor Series</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="taylor-series.html"><a href="taylor-series.html#convergence-of-taylor-series"><i class="fa fa-check"></i><b>10.1</b> Convergence of Taylor Series</a></li>
 <li class="chapter" data-level="10.2" data-path="taylor-series.html"><a href="taylor-series.html#taylor-approximation-of-multivariate-functions"><i class="fa fa-check"></i><b>10.2</b> Taylor Approximation of Multivariate Functions</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="multiple-integral.html"><a href="multiple-integral.html"><i class="fa fa-check"></i><b>11</b> Multiple Integral</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
-<li class="chapter" data-level="12" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html"><i class="fa fa-check"></i><b>12</b> Basics of Probability Theory</a><ul>
+<li class="chapter" data-level="12" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html"><i class="fa fa-check"></i><b>12</b> Basics of Probability Theory</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html#probabilty-space"><i class="fa fa-check"></i><b>12.1</b> Probabilty Space</a></li>
 <li class="chapter" data-level="12.2" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html#counting"><i class="fa fa-check"></i><b>12.2</b> Counting</a></li>
 <li class="chapter" data-level="12.3" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html#conditional-probability"><i class="fa fa-check"></i><b>12.3</b> Conditional Probability</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html"><i class="fa fa-check"></i><b>13</b> Random variables and moments</a><ul>
-<li class="chapter" data-level="13.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>13.1</b> Properties of Expectation and Variance</a><ul>
+<li class="chapter" data-level="13" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html"><i class="fa fa-check"></i><b>13</b> Random variables and moments</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>13.1</b> Properties of Expectation and Variance</a>
+<ul>
 <li class="chapter" data-level="13.1.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#stains-lemma"><i class="fa fa-check"></i><b>13.1.1</b> Stain’s Lemma</a></li>
 <li class="chapter" data-level="13.1.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#random-vectors"><i class="fa fa-check"></i><b>13.1.2</b> Random Vectors</a></li>
 </ul></li>
 <li class="chapter" data-level="13.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#other-summaries"><i class="fa fa-check"></i><b>13.2</b> Other Summaries</a></li>
 <li class="chapter" data-level="13.3" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#moment-generating-functions"><i class="fa fa-check"></i><b>13.3</b> Moment Generating Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>14</b> Univariate Distributions</a><ul>
-<li class="chapter" data-level="14.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>14.1</b> Uniform Distribution</a></li>
-<li class="chapter" data-level="14.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#normal-distribution"><i class="fa fa-check"></i><b>14.2</b> Normal Distribution</a><ul>
-<li class="chapter" data-level="14.2.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#log-normal-distribution"><i class="fa fa-check"></i><b>14.2.1</b> Log Normal Distribution</a></li>
+<li class="chapter" data-level="14" data-path="inequalities.html"><a href="inequalities.html"><i class="fa fa-check"></i><b>14</b> Inequalities</a></li>
+<li class="chapter" data-level="15" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>15</b> Univariate Distributions</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>15.1</b> Uniform Distribution</a></li>
+<li class="chapter" data-level="15.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#normal-distribution"><i class="fa fa-check"></i><b>15.2</b> Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#log-normal-distribution"><i class="fa fa-check"></i><b>15.2.1</b> Log Normal Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="14.3" data-path="univariate-distributions.html"><a href="univariate-distributions.html#binomial-distribution-and-beta-distribution"><i class="fa fa-check"></i><b>14.3</b> Binomial Distribution and Beta Distribution</a></li>
-<li class="chapter" data-level="14.4" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-distribution"><i class="fa fa-check"></i><b>14.4</b> Poisson Distribution</a><ul>
-<li class="chapter" data-level="14.4.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-process"><i class="fa fa-check"></i><b>14.4.1</b> Poisson Process</a></li>
+<li class="chapter" data-level="15.3" data-path="univariate-distributions.html"><a href="univariate-distributions.html#binomial-distribution-and-beta-distribution"><i class="fa fa-check"></i><b>15.3</b> Binomial Distribution and Beta Distribution</a></li>
+<li class="chapter" data-level="15.4" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-distribution"><i class="fa fa-check"></i><b>15.4</b> Poisson Distribution</a>
+<ul>
+<li class="chapter" data-level="15.4.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-process"><i class="fa fa-check"></i><b>15.4.1</b> Poisson Process</a></li>
 </ul></li>
-<li class="chapter" data-level="14.5" data-path="univariate-distributions.html"><a href="univariate-distributions.html#exponential-distribution-and-gamma-distribution"><i class="fa fa-check"></i><b>14.5</b> Exponential Distribution and Gamma Distribution</a><ul>
-<li class="chapter" data-level="14.5.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#properties"><i class="fa fa-check"></i><b>14.5.1</b> Properties</a></li>
-<li class="chapter" data-level="14.5.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#inverse-gamma-distribution"><i class="fa fa-check"></i><b>14.5.2</b> Inverse Gamma Distribution</a></li>
+<li class="chapter" data-level="15.5" data-path="univariate-distributions.html"><a href="univariate-distributions.html#exponential-distribution-and-gamma-distribution"><i class="fa fa-check"></i><b>15.5</b> Exponential Distribution and Gamma Distribution</a>
+<ul>
+<li class="chapter" data-level="15.5.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#properties"><i class="fa fa-check"></i><b>15.5.1</b> Properties</a></li>
+<li class="chapter" data-level="15.5.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#inverse-gamma-distribution"><i class="fa fa-check"></i><b>15.5.2</b> Inverse Gamma Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="14.6" data-path="univariate-distributions.html"><a href="univariate-distributions.html#beta-distribution"><i class="fa fa-check"></i><b>14.6</b> Beta Distribution</a></li>
+<li class="chapter" data-level="15.6" data-path="univariate-distributions.html"><a href="univariate-distributions.html#beta-distribution"><i class="fa fa-check"></i><b>15.6</b> Beta Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="15" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>15</b> Multivariate Distributions</a><ul>
-<li class="chapter" data-level="15.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>15.1</b> Multivariate Normal Distribution</a><ul>
-<li class="chapter" data-level="15.1.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#chi-square-distribution"><i class="fa fa-check"></i><b>15.1.1</b> Chi-square Distribution</a></li>
+<li class="chapter" data-level="16" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>16</b> Multivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>16.1</b> Multivariate Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#chi-square-distribution"><i class="fa fa-check"></i><b>16.1.1</b> Chi-square Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="15.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#dirichlet-distributon"><i class="fa fa-check"></i><b>15.2</b> Dirichlet Distributon</a></li>
+<li class="chapter" data-level="16.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#dirichlet-distributon"><i class="fa fa-check"></i><b>16.2</b> Dirichlet Distributon</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="markov-chain.html"><a href="markov-chain.html"><i class="fa fa-check"></i><b>16</b> Markov Chain</a></li>
+<li class="chapter" data-level="17" data-path="markov-chain.html"><a href="markov-chain.html"><i class="fa fa-check"></i><b>17</b> Markov Chain</a></li>
 <li class="part"><span><b>IV Learning Theory</b></span></li>
-<li class="chapter" data-level="17" data-path="the-learning-problem-framework.html"><a href="the-learning-problem-framework.html"><i class="fa fa-check"></i><b>17</b> The Learning Problem Framework</a><ul>
-<li class="chapter" data-level="17.1" data-path="the-learning-problem-framework.html"><a href="the-learning-problem-framework.html#the-pac-learning-framework"><i class="fa fa-check"></i><b>17.1</b> The PAC Learning Framework</a></li>
+<li class="chapter" data-level="18" data-path="the-learning-problem-framework.html"><a href="the-learning-problem-framework.html"><i class="fa fa-check"></i><b>18</b> The Learning Problem Framework</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="the-learning-problem-framework.html"><a href="the-learning-problem-framework.html#the-pac-learning-framework"><i class="fa fa-check"></i><b>18.1</b> The PAC Learning Framework</a></li>
 </ul></li>
 <li class="part"><span><b>V Optimization</b></span></li>
-<li class="chapter" data-level="18" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>18</b> Basics of Optimization</a><ul>
-<li class="chapter" data-level="18.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>18.1</b> Univariate Optimization</a></li>
-<li class="chapter" data-level="18.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>18.2</b> Multivariate Optimization</a></li>
-<li class="chapter" data-level="18.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#convex-functions"><i class="fa fa-check"></i><b>18.3</b> Convex Functions</a></li>
-<li class="chapter" data-level="18.4" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#method-of-lagrange-multiplier"><i class="fa fa-check"></i><b>18.4</b> Method of Lagrange Multiplier</a></li>
+<li class="chapter" data-level="19" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>19</b> Basics of Optimization</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>19.1</b> Univariate Optimization</a></li>
+<li class="chapter" data-level="19.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>19.2</b> Multivariate Optimization</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#method-of-lagrange-multiplier"><i class="fa fa-check"></i><b>19.2.1</b> ## Method of Lagrange Multiplier</a></li>
 </ul></li>
-<li class="chapter" data-level="19" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>19</b> Gradient Descent</a></li>
+<li class="chapter" data-level="19.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#convexity"><i class="fa fa-check"></i><b>19.3</b> Convexity</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#properties-of-convex-functions"><i class="fa fa-check"></i><b>19.3.1</b> Properties of Convex Functions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>20</b> Gradient Descent</a></li>
 <li class="part"><span><b>VI Applications</b></span></li>
-<li class="chapter" data-level="20" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>20</b> Linear Models</a><ul>
-<li class="chapter" data-level="20.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>20.1</b> Ordinary Least Squares</a><ul>
-<li class="chapter" data-level="20.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>20.1.1</b> Least Square Estimation</a></li>
+<li class="chapter" data-level="21" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>21</b> Linear Models</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>21.1</b> Ordinary Least Squares</a>
+<ul>
+<li class="chapter" data-level="21.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>21.1.1</b> Least Square Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="20.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>20.2</b> Weighted Least Squares</a></li>
-<li class="chapter" data-level="20.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squares"><i class="fa fa-check"></i><b>20.3</b> Partial Least Squares</a></li>
-<li class="chapter" data-level="20.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>20.4</b> Regularized Regression</a><ul>
-<li class="chapter" data-level="20.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>20.4.1</b> Ridge Regression</a></li>
-<li class="chapter" data-level="20.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso"><i class="fa fa-check"></i><b>20.4.2</b> Lasso</a></li>
-<li class="chapter" data-level="20.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net"><i class="fa fa-check"></i><b>20.4.3</b> Elastic Net</a></li>
+<li class="chapter" data-level="21.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>21.2</b> Weighted Least Squares</a></li>
+<li class="chapter" data-level="21.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squares"><i class="fa fa-check"></i><b>21.3</b> Partial Least Squares</a></li>
+<li class="chapter" data-level="21.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>21.4</b> Regularized Regression</a>
+<ul>
+<li class="chapter" data-level="21.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>21.4.1</b> Ridge Regression</a></li>
+<li class="chapter" data-level="21.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso"><i class="fa fa-check"></i><b>21.4.2</b> Lasso</a></li>
+<li class="chapter" data-level="21.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net"><i class="fa fa-check"></i><b>21.4.3</b> Elastic Net</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="21" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>21</b> Principal Component Analysis</a><ul>
-<li class="chapter" data-level="21.0.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#pca-with-normalization"><i class="fa fa-check"></i><b>21.0.1</b> PCA with Normalization</a></li>
-<li class="chapter" data-level="21.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#correspondence-analysis"><i class="fa fa-check"></i><b>21.1</b> Correspondence Analysis</a></li>
+<li class="chapter" data-level="22" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>22</b> Principal Component Analysis</a>
+<ul>
+<li class="chapter" data-level="22.0.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#pca-with-normalization"><i class="fa fa-check"></i><b>22.0.1</b> PCA with Normalization</a></li>
+<li class="chapter" data-level="22.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#correspondence-analysis"><i class="fa fa-check"></i><b>22.1</b> Correspondence Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>22</b> Text Mining</a></li>
+<li class="chapter" data-level="23" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>23</b> Text Mining</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -294,10 +346,10 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="vector-spaces" class="section level1">
+<div id="vector-spaces" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Vector Spaces</h1>
 <p>Vector spaces, metric spaces, normed spaces, and inner product spaces are places where computations in linear algebra happen. These spaces are defined more or less to generalize properties of Euclidean space.</p>
-<div id="vector-space" class="section level2">
+<div id="vector-space" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Vector Space</h2>
 <p>A <strong>vector space</strong> <span class="math inline">\(V\)</span> is a nonempty set, also called <em>linear spaces</em>, the elements of which are called vectors,. A vector space comes with two operations predefined: vectors can be added together, and vectors can be multiplied by real numbers called scalars. For all vectors <span class="math inline">\(\bar{u}, \bar{v}\)</span> and <span class="math inline">\(\bar{w}\)</span>, and all scalars <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> in <span class="math inline">\(V\)</span>, the following axioms of vector space must hold:</p>
 <ol style="list-style-type: decimal">
@@ -316,7 +368,7 @@ c_1\bar{v}_1 + \cdots + c_n\bar{v}_n &amp;= 0 &amp;&amp; \text{implies } c_1 = \
 \end{align*}
 \]</span></p>
 <p>The <strong>span</strong> of <span class="math inline">\(\bar{v}_1, ..., \bar{v}_n\)</span> is the set of all vectors that can be expressed as a linear combination of them.</p>
-<div id="euclidean-space" class="section level3">
+<div id="euclidean-space" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Euclidean Space</h3>
 <p>Euclidean space is the quintessential vector space, denoted by <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <p>The two must-have operations of vector spaces are valid in <span class="math inline">\(\mathbb{R}^n\)</span></p>
@@ -357,9 +409,9 @@ x_n + y_n
 \]</span></p>
 </div>
 </div>
-<div id="metric-spaces-normed-spaces-inner-product-spaces" class="section level2">
+<div id="metric-spaces-normed-spaces-inner-product-spaces" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Metric Spaces, Normed Spaces, Inner Product Spaces</h2>
-<div id="metric-and-norm" class="section level3">
+<div id="metric-and-norm" class="section level3" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Metric and Norm</h3>
 <p>Metric spaces, normed spaces and inner product spaces capture important properties of Euclidean space in a more general way (distance, length, angle).</p>
 <p>Although metric spaces are not required to be vector spaces, it is always assumed in linear algebra that this is the case. For this reason, metric spaces are short for “metric linear space”. Normed spaces and inner product spaces are defined to be extensions of metric linear spaces, so that they must be vector spaces.</p>
@@ -398,7 +450,7 @@ d(\bar{x}, \bar{y}) = \|\bar{x} - \bar{y}\|
 <p>1-norm is also called the Manhattan norm.</p>
 <p>2-norm is the Euclidean norm, the subscript <span class="math inline">\(2\)</span> can be left out in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <p>p-norm is a generalization of 1-norm and 2-norm, requiring <span class="math inline">\(p &gt; 1\)</span>. When <span class="math inline">\(p\)</span> turns infinity, <span class="math inline">\(\|\bar{x}\|_{\infty}\)</span> is called the maximum norm.</p>
-<p>The VMLS book <span class="citation">(Boyd and Vandenberghe <a href="references.html#ref-boyd2018introduction" role="doc-biblioref">2018</a>)</span> introduces some other topics related to norm.</p>
+<p>The VMLS book <span class="citation">(Boyd and Vandenberghe <a href="#ref-boyd2018introduction" role="doc-biblioref">2018</a>)</span> introduces some other topics related to norm.</p>
 <p><strong>Root-mean-square value</strong>. The root-mean-square (RMS) value of an <span class="math inline">\(n\)</span>-vector <span class="math inline">\(\bar{x}\)</span> is defined as</p>
 <p><span class="math display">\[
 \boldsymbol{\text{rms}}(x) = \sqrt{\frac{x_1^2 + \cdots + x_n^2}{n}} = \frac{\| \bar{x}\|}{\sqrt{n}}
@@ -445,11 +497,7 @@ Another way of writing this is</p>
 <p><span class="math display">\[
 \text{rms}(\bar{x})^2 = \mu^2 + \sigma^2
 \]</span></p>
-
-<div class="proof">
-Proof
-</div>
-
+<div class="pr">
 <p><span class="math display">\[
 \begin{split}
 \sigma^2 
@@ -461,7 +509,8 @@ Proof
 \end{split}
 \]</span></p>
 </div>
-<div id="inner-produc-outer-product-cross-product" class="section level3">
+</div>
+<div id="inner-produc-outer-product-cross-product" class="section level3" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> Inner Produc, Outer Product, Cross Product</h3>
 <p>An <strong>inner product</strong> on a real vector space <span class="math inline">\(X\)</span> is a function <span class="math inline">\(\langle \cdot, \cdot\rangle: X \times X \rightarrow \mathbb{R}\)</span> satisfying</p>
 <ol style="list-style-type: decimal">
@@ -482,7 +531,6 @@ Proof
 <div class="rmdnote">
 The abstract spaces—metric spaces, normed spaces, and inner product spaces—are all examples of what are more generally called “topological spaces” (linear topological space if they are assumed to be vector spaces first). These spaces have been given in order of increasing structure. That is, every inner product space is a normed space, and in turn, every normed space is a metric space.
 </div>
-
 <p>The <strong>outer product</strong> of an <span class="math inline">\(m\)</span> vector <span class="math inline">\(\bar{a}\)</span> and an <span class="math inline">\(\bar{b}\)</span> is given by <span class="math inline">\(\bar{a}\bar{b}^T\)</span>, which is an <strong>rank 1</strong> <span class="math inline">\(m \times n\)</span> matrix</p>
 <p><span class="math display">\[
 \bar{a}\bar{b}^T = 
@@ -533,7 +581,7 @@ This echoes theorem <a href="basic-matrix-algebra.html#thm:cr-expansion">1.1</a>
 <li><p>Not associative: <span class="math inline">\(\bar{u} \times (\bar{v} \times \bar{w}) = (\bar{u} \cdot \bar{w})\bar{v} - (\bar{u} \cdot \bar{v})\bar{w}\)</span></p></li>
 </ol>
 <p>To get a general formula of cross product, we consider the cross product among 3 standard basis <span class="math inline">\(\boldsymbol{i} = [1, 0, 0], \boldsymbol{j} = [0, 1, 0], \boldsymbol{k} = [0, 0, 1]\)</span></p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="images/cross-product.png" alt="Figure 12.30 FROM Thomas Calculus, 14th edition" width="200" />
 <p class="caption">
 Figure 2.1: Figure 12.30 FROM Thomas Calculus, 14th edition
@@ -582,7 +630,7 @@ v_1 &amp; v_2 &amp; v_3
 \| \bar{u} \times \bar{v} \| = \|\bar{u}\| \|v\|\sin\theta
 \]</span></p>
 <p>This is the area of the following parallelogram defined by <span class="math inline">\(\bar{u}\)</span> and <span class="math inline">\(\bar{v}\)</span></p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
 <img src="images/cross-product-2.png" alt="Figure 12.31 FROM Thomas Calculus, 14th edition" width="199" />
 <p class="caption">
 Figure 2.2: Figure 12.31 FROM Thomas Calculus, 14th edition
@@ -597,18 +645,13 @@ Figure 2.2: Figure 12.31 FROM Thomas Calculus, 14th edition
 V = |\bar{u} \cdot (\bar{v} \times \bar{w})|
 \]</span>
 </div>
-
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
 <img src="images/cross-product-3.png" alt="Figure 2.59 from https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product" width="308" />
 <p class="caption">
 Figure 2.3: Figure 2.59 from <a href="https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product" class="uri">https://openstax.org/books/calculus-volume-3/pages/2-4-the-cross-product</a>
 </p>
 </div>
-
-<div class="proof">
-Proof
-</div>
-
+<div class="pr">
 <p>The area of the base of the parallelepiped is given by <span class="math inline">\(\|\bar{v} \times \bar{w}\|\)</span>, the height is <span class="math inline">\(\bar{u}\)</span> projected on to the resulting vector from the dot product. So we have</p>
 <p><span class="math display">\[
 \begin{split}
@@ -626,7 +669,8 @@ V &amp;= \|\text{proj}_{\bar{v} \times \bar{w}} \bar{u} \|\|\bar{v} \times \bar{
 \end{vmatrix}
 \]</span></p>
 </div>
-<div id="restricted-definition-of-inner-products-in-rn" class="section level3">
+</div>
+<div id="restricted-definition-of-inner-products-in-rn" class="section level3" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> Restricted Definition of Inner Products in <span class="math inline">\(R^n\)</span></h3>
 <p>Sometimes it suffice only to generalize the dot product, with the definition of inner product, in Euclidean space <span class="math inline">\(\mathbb{R}^n\)</span> instead of other inner product spaces. For example, many engineering applications measure similarity between vectors using the dot product after stretching the two vectors in some directions, with linear transformation <span class="math inline">\(A\)</span>. Therefore, we can given a restricted definition of inner product that is meant to be used in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 
@@ -634,7 +678,6 @@ V &amp;= \|\text{proj}_{\bar{v} \times \bar{w}} \bar{u} \|\|\bar{v} \times \bar{
 <span id="def:restricted-inner-product" class="definition"><strong>Definition 2.1  (Restricted definition of inner product)  </strong></span>
 The generalized dot product <span class="math inline">\(\langle \bar{x}, \bar{y}\rangle\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span> between two vectors, is the dot product between <span class="math inline">\(A\bar{x}\)</span> and <span class="math inline">\(A\bar{y}\)</span>, for some <span class="math inline">\(n \times n\)</span> <strong>positive definite matrix <span class="math inline">\(S\)</span></strong>. The inner product <span class="math inline">\(\langle \bar{x}, \bar{y}\rangle\)</span> can also be expressed using the Gram matrix <span class="math inline">\(S = A^TA\)</span>
 </div>
-
 <p><span class="math display">\[
 \langle \bar{x}, \bar{y}\rangle =\bar{x}^TS\bar{y}  = \bar{x}(A^TA)\bar{y} 
 \]</span></p>
@@ -650,7 +693,7 @@ The generalized dot product <span class="math inline">\(\langle \bar{x}, \bar{y}
 \]</span></p>
 </div>
 </div>
-<div id="subspaces" class="section level2">
+<div id="subspaces" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Subspaces</h2>
 <p>If <span class="math inline">\(A\)</span> is a vector space, then <span class="math inline">\(S\)</span> is a subspace of <span class="math inline">\(A\)</span> (denoted <span class="math inline">\(S \subseteq A\)</span>) if</p>
 <ol style="list-style-type: decimal">
@@ -673,7 +716,7 @@ U + W = \{\bar{u} + \bar{v} \;| \; \bar{w} \in U, \bar{w} \in W \}
 \text{dim}(U \oplus W) = \text{dim}(V)  = \text{dim}(U) + \text{dim}(W)
 \]</span></p>
 </div>
-<div id="fundamental-theorem" class="section level2">
+<div id="fundamental-theorem" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Fundamental Theorem of Linear Algebra</h2>
 <p>The <strong>columnspace</strong> (also called <em>range</em>) of matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> is the span of the columns of <span class="math inline">\(A\)</span></p>
 <p><span class="math display">\[
@@ -700,14 +743,13 @@ U + W = \{\bar{u} + \bar{v} \;| \; \bar{w} \in U, \bar{w} \in W \}
 <li><p><span class="math inline">\(n - r\)</span> is the dimension of the null space of <span class="math inline">\(A\)</span></p></li>
 </ul>
 </div>
-<div id="rank" class="section level2">
+<div id="rank" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Rank</h2>
 <p>The <strong>rank</strong> of a vector space is its dimension.</p>
 
 <div class="definition">
-<span id="def:unnamed-chunk-7" class="definition"><strong>Definition 2.2  </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space.
+<span id="def:unnamed-chunk-5" class="definition"><strong>Definition 1.3  </strong></span>The rank of a matrix is equal to the rank of its column space, which is the same as the rank of its column space.
 </div>
-
 <p>I often think of rank of <span class="math inline">\(A\)</span> as the total volume of information that the matrix can offer.</p>
 <p>From the definition of matrix rank, we know that <span class="math inline">\(A\)</span>’s row rank (the dimension of <span class="math inline">\(\mathcal{R}(A^T)\)</span>)equals its column rank <span class="math inline">\(\mathcal{R}(A)\)</span>. A way to verify this are presented below.</p>
 <p>All matrices can be reduced into a (possibly rectangular) <em>diagonal matrix</em> with elementary row and column operations. First we can row reduce the matrix into row echelon form, then use column operations to convert positions above the pivot to zero.</p>
@@ -720,51 +762,43 @@ RAC = \Lambda \tag{1}
 RA = \Lambda C^{-1} \tag{2}
 \]</span></p>
 <p>From (1) we know that row rank of <span class="math inline">\(A\)</span> is identical to that the number of non-zero entries in <span class="math inline">\(\Lambda\)</span>, on the ground that row operations on <span class="math inline">\(A\)</span> does not change its row rank, and <span class="math inline">\(C^{-1}\)</span> only scale diagonal entries of <span class="math inline">\(\Lambda\)</span> to some multiple. Similarly, <span class="math inline">\(AC = R^{-1}\Lambda\)</span> shows that column rank of <span class="math inline">\(A\)</span> is the same as the number of non-zero diagonal entries in <span class="math inline">\(\Lambda\)</span>. Therefore, row rank <span class="math inline">\(=\)</span> column rank.</p>
-<div id="effect-of-operations-on-matrix-rank" class="section level3">
+<div id="effect-of-operations-on-matrix-rank" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Effect of Operations on Matrix Rank</h3>
 <p>Let <span class="math inline">\(A, B \in \mathbb{R}^{m \times n}\)</span> have ranks <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span></p>
 
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-8" class="corollary"><strong>Corollary 2.1  </strong></span></p>
+<p><span id="cor:unnamed-chunk-6" class="corollary"><strong>Corollary 2.1  </strong></span></p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(|a - b| \le r(A + B) \le a + b\)</span></p></li>
 <li><p><span class="math inline">\(r(AB) &lt; \min(a, b)\)</span></p>
 </div></li>
 </ol>
-<div class="proof">
-Proof
-</div>
+<div class="pr">
 <p>For (1), rows / columns of <span class="math inline">\(A + B\)</span> can be expressed as linear combinations of rows / columns of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
 <p>For (2), Each column of <span class="math inline">\(AB\)</span> is a linear combination of columns of A, and each row is a linear combination of rows of <span class="math inline">\(B\)</span>. Therefore, <span class="math inline">\(r(AB)\)</span> can not exceed either rank of <span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>. There is also a corollary on the lower bound of <span class="math inline">\(r(AB)\)</span>, which is <span class="math inline">\(a + b - n\)</span>. Note that <span class="math inline">\(n\)</span> is the shared dimension. I have not found a concise proof about this, but this property leads to a interesting result: when one of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are square and full rank, <span class="math inline">\(\min(r(AB)) = \max(r(AB))\)</span></p>
+</div>
 
 <div class="corollary">
-<p><span id="cor:unnamed-chunk-9" class="corollary"><strong>Corollary 2.2  </strong></span></p>
+<p><span id="cor:unnamed-chunk-7" class="corollary"><strong>Corollary 2.2  </strong></span></p>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Multiplying <span class="math inline">\(A\)</span> with a square matrix <span class="math inline">\(B\)</span> of full rank does not change the rank of <span class="math inline">\(A\)</span>.</p></li>
 <li><p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both singular, then <span class="math inline">\(AB\)</span> is non-singular if and only if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both non-singular</p>
 </div></li>
 </ol>
-
-<div class="proof">
-Proof
+<div class="pr">
+<p>Suppose <span class="math inline">\(B\)</span> is <span class="math inline">\(n \times n\)</span> matrix with rank <span class="math inline">\(n\)</span>, the minimum rank of <span class="math inline">\(AB\)</span> is <span class="math inline">\(a + n - n = a\)</span>, and the maximum rank is <span class="math inline">\(\min(a, n) = a\)</span>. Thus, multiplying by a full rank matrix preserves rank: <span class="math inline">\(r(AB) = r(A)\)</span>. (4) follows naturally after (3).</p>
 </div>
-
-<p>Suppose <span class="math inline">\(B\)</span> is <span class="math inline">\(n \times n\)</span>, the minimum rank of <span class="math inline">\(AB\)</span> is <span class="math inline">\(a + n - n = a\)</span>, and the maximum rank is <span class="math inline">\(\min(a, n) = a\)</span>. Thus, multiplying by a full rank matrix preserves rank: <span class="math inline">\(r(AB) = r(A)\)</span>. (4) follows naturally after (3).</p>
 </div>
-<div id="gram-matrix" class="section level3">
+<div id="gram-matrix" class="section level3" number="2.5.2">
 <h3><span class="header-section-number">2.5.2</span> Gram Matrix</h3>
 
 <div class="proposition">
 <span id="prp:gram-matrix" class="proposition"><strong>Proposition 2.1  (Gram matrix)  </strong></span>The matrix <span class="math inline">\(A^TA\)</span> is said to be the Gram matrix of column space of <span class="math inline">\(A_{m \times n}\)</span>. The columns of <span class="math inline">\(A\)</span> are linearly independent if and only if <span class="math inline">\(A^TA\)</span> is invertible.
 </div>
-
-
-<div class="proof">
-Proof
-</div>
-
+<div class="pr">
 <p>When <span class="math inline">\(A^TA\)</span> is invertible, it has rank <span class="math inline">\(n\)</span>. Therefore, each of the factors of <span class="math inline">\(A^TA\)</span> has at least rank <span class="math inline">\(n\)</span>, and this means columns of <span class="math inline">\(A\)</span> are linearly independent (since <span class="math inline">\(r(A) \le \min(m, n)\)</span>).</p>
 <p>Similarly, <span class="math inline">\(AA^T\)</span> are called the left Gram matrix of rowspace of <span class="math inline">\(A\)</span>. And <span class="math inline">\(AA^T\)</span> is invertible if and only rows of <span class="math inline">\(A\)</span> are linearly independent.</p>
+</div>
 
 <div class="proposition">
 <p><span id="prp:gram-matrix-rank" class="proposition"><strong>Proposition 2.2  </strong></span>For any matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, <span class="math inline">\(A\)</span>, <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> always have the same rank.</p>
@@ -772,31 +806,25 @@ Proof
 r(A) = r(A^TA) = r(AA^T)
 \]</span>
 </div>
-
-
-<div class="proof">
-Proof
-</div>
-
+<div class="pr">
 <p>For <span class="math inline">\(r(A) = r(A^TA)\)</span>, suppose <span class="math inline">\(r(A) = r\)</span>, then <span class="math inline">\(\dim(\mathcal{N}(A)) = n - \dim(\mathcal{R}(A^T)) = n - r\)</span>. Note that for any <span class="math inline">\(\bar{x}\)</span> that satisfies <span class="math inline">\(A\bar{x} = 0\)</span>, we have <span class="math inline">\(A^TA\bar{x} = 0\)</span>. It follows that <span class="math inline">\(A\)</span> and <span class="math inline">\(A^TA\)</span> have the same null space, <span class="math inline">\(\mathcal{N}(A) = \mathcal{N}(A^TA)\)</span>. Since <span class="math inline">\(A^TA \in \mathbb{R}^{n \times n}\)</span>, we have <span class="math inline">\(r(A^TA) = \dim(\mathcal{R}((A^TA)^T)) = n - \dim(\mathcal{N}(A^TA)) = r\)</span>.</p>
 <p>For <span class="math inline">\(r(A) = R(AA^T)\)</span>, note that <span class="math inline">\(r(A) = r(A^T)\)</span>, and that <span class="math inline">\(\mathcal{N}(A^T) = \mathcal{N}(AA^T)\)</span>, then the conclusion presents itself.</p>
+</div>
 <hr>
 <p>From the SVD perspective(Corollary <a href="eigenthings-and-quadratic-forms.html#cor:same-nonzero">4.1</a> and Section <a href="singular-value-decomposition.html#svd-theorem">5.2</a>), one can show that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> have the same set of nonzero eigenvalues, and <span class="math inline">\(r(A)\)</span> is the same as the number of nonzero eigenvalues of <span class="math inline">\(A^A\)</span> or <span class="math inline">\(AA^T\)</span>, so that <span class="math inline">\(r(A) = r(A^TA) = r(AA^T)\)</span>.</p>
 </div>
 </div>
-<div id="bases-and-coordinate-systems" class="section level2">
+<div id="bases-and-coordinate-systems" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Bases and Coordinate Systems</h2>
 
 <div class="definition">
-<span id="def:basis" class="definition"><strong>Definition 2.3  (basis of a vector space)  </strong></span>Let <span class="math inline">\(V\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>. An indexed set of vectors <span class="math inline">\(\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_r\}\)</span> is said to be a basis of <span class="math inline">\(V\)</span>, if <span class="math inline">\(\mathcal{B}\)</span> spans <span class="math inline">\(V\)</span> (these <span class="math inline">\(r\)</span> vectors are linearly independent)
+<span id="def:basis" class="definition"><strong>Definition 2.2  (basis of a vector space)  </strong></span>Let <span class="math inline">\(V\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^n\)</span>. An indexed set of vectors <span class="math inline">\(\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_r\}\)</span> is said to be a basis of <span class="math inline">\(V\)</span>, if <span class="math inline">\(\mathcal{B}\)</span> spans <span class="math inline">\(V\)</span> (these <span class="math inline">\(r\)</span> vectors are linearly independent)
 </div>
-
 <p>Note that <span class="math inline">\(\bar{a}_1, ..., \bar{a}_r\)</span> are n-dimensional vectors themselves, though <span class="math inline">\(V\)</span>, the subspace they span, is a hyperplane that has dimension strictly less than <span class="math inline">\(n\)</span> when <span class="math inline">\(r &lt; n\)</span>.</p>
 
 <div class="definition">
-<span id="def:coordinates" class="definition"><strong>Definition 2.4  (coordinates)  </strong></span>The coordinates of <span class="math inline">\(\bar{v}\)</span> relative to basis <span class="math inline">\(\mathcal{B}\)</span> (or the <span class="math inline">\(\mathcal{B}\)</span>-coordinates of <span class="math inline">\(\bar{v}\)</span>, denoted by <span class="math inline">\([\bar{v}]_{\mathcal{B}}\)</span>) are the weights <span class="math inline">\(x_1, ..., x_r\)</span> such that <span class="math inline">\(\bar{x} = x_1\bar{a}_1 + \cdots + x_r\bar{a}_n\)</span>
+<span id="def:coordinates" class="definition"><strong>Definition 2.3  (coordinates)  </strong></span>The coordinates of <span class="math inline">\(\bar{v}\)</span> relative to basis <span class="math inline">\(\mathcal{B}\)</span> (or the <span class="math inline">\(\mathcal{B}\)</span>-coordinates of <span class="math inline">\(\bar{v}\)</span>, denoted by <span class="math inline">\([\bar{v}]_{\mathcal{B}}\)</span>) are the weights <span class="math inline">\(x_1, ..., x_r\)</span> such that <span class="math inline">\(\bar{x} = x_1\bar{a}_1 + \cdots + x_r\bar{a}_n\)</span>
 </div>
-
 
 <div class="theorem">
 <p><span id="thm:unique-coordinate" class="theorem"><strong>Theorem 2.3  (Unique coordinate vector)  </strong></span>Let <span class="math inline">\(\mathcal{B} = \{\bar{a}_1, ..., \bar{a}_n\}\)</span> be a basis of <span class="math inline">\(V\)</span>. Then for any vector <span class="math inline">\(\bar{v} \in V\)</span>, there exists a unique coordinate vector <span class="math inline">\(\bar{x} = [x_1, ..., x_r]\)</span> such that</p>
@@ -804,7 +832,6 @@ Proof
 \bar{v} = x_1\bar{a}_1 + \cdots + x_r\bar{a}_r
 \]</span>
 </div>
-
 <p>Suppose <span class="math inline">\(\bar{v}\)</span> has another representation</p>
 <p><span class="math display">\[
 \bar{v} = y_1\bar{a}_1 + \cdots + y_r\bar{a}_r
@@ -876,7 +903,7 @@ x_r \\
 \end{aligned} 
 \]</span></p>
 <p>When the set <span class="math inline">\(\bar{a}_1, ..., \bar{a}_r\)</span> are not orthonormal, a general strategy is solving the system of equations <span class="math inline">\(A\bar{x} = \bar{v}\)</span>. This boils down to a linear system problem extensively discussed in Chapter <a href="linear-system.html#linear-system">6</a>.</p>
-<div id="change-of-basis" class="section level3">
+<div id="change-of-basis" class="section level3" number="2.6.1">
 <h3><span class="header-section-number">2.6.1</span> Change of Basis</h3>
 <p>Previous discussions involve different representations of <span class="math inline">\(\bar{x}\)</span> with respect to two basis, one of which is the standard basis in <span class="math inline">\(\mathbb{R}^n\)</span>. This section deals with transformations between two non-standard basis.</p>
 <p>Now suppose <span class="math inline">\(A = [\bar{a}_1, ..., \bar{a}_n]\)</span> and <span class="math inline">\(B = [\bar{b}_1, ..., \bar{b}_n]\)</span> are both bases for <span class="math inline">\(\mathbb{R}^n\)</span>. And the vector <span class="math inline">\(\bar{x}\)</span> has coordinates <span class="math inline">\(\bar{x}_a, \bar{x}_b\)</span> with respect to <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> respectively. The goal is to find an <span class="math inline">\(n \times n\)</span> matrix $ P_{a b}$ such that it transforms one coordinate to another</p>
@@ -902,12 +929,21 @@ Therefore</p>
 \bar{x}_b = \underbrace{(B^TB)^{-1}B^TA}_{P_{a \rightarrow b}}\bar{x}_a
 \]</span></p>
 <p><br></p>
-<p>Change of basis has various applications in machine learning, such as discrete wavelet transform (P.60, Ch2, <span class="citation">Aggarwal (<a href="references.html#ref-DBLP:books/sp/Aggarwal20" role="doc-biblioref">2020</a>)</span>). In time series analysis, a time series of length <span class="math inline">\(n\)</span> would result in a vector from <span class="math inline">\(\mathbb{R}^{n}\)</span>, and <span class="math inline">\(n\)</span> can be extremely large. Since consecutive sample points tend to be similar, we may take larger interest in a few variations across time, rather than the whole long vector. The <em>Haar wavelet transformation</em> performs a basis transformation with a view to extracting important variations, making the original time series vector reasonably sparse.</p>
+<p>Change of basis has various applications in machine learning, such as discrete wavelet transform (P.60, Ch2, <span class="citation">Aggarwal (<a href="#ref-DBLP:books/sp/Aggarwal20" role="doc-biblioref">2020</a>)</span>). In time series analysis, a time series of length <span class="math inline">\(n\)</span> would result in a vector from <span class="math inline">\(\mathbb{R}^{n}\)</span>, and <span class="math inline">\(n\)</span> can be extremely large. Since consecutive sample points tend to be similar, we may take larger interest in a few variations across time, rather than the whole long vector. The <em>Haar wavelet transformation</em> performs a basis transformation with a view to extracting important variations, making the original time series vector reasonably sparse.</p>
 </div>
 </div>
-<div id="complexity-of-vector-computations" class="section level2">
+<div id="complexity-of-vector-computations" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Complexity of Vector Computations</h2>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-DBLP:books/sp/Aggarwal20">
+<p>Aggarwal, Charu C. 2020. <em>Linear Algebra and Optimization for Machine Learning - A Textbook</em>. Springer. <a href="https://doi.org/10.1007/978-3-030-40344-7">https://doi.org/10.1007/978-3-030-40344-7</a>.</p>
+</div>
+<div id="ref-boyd2018introduction">
+<p>Boyd, S., and L. Vandenberghe. 2018. <em>Introduction to Applied Linear Algebra: Vectors, Matrices, and Least Squares</em>. Cambridge University Press. <a href="https://books.google.com/books?id=IApaDwAAQBAJ">https://books.google.com/books?id=IApaDwAAQBAJ</a>.</p>
 </div>
 </div>
             </section>

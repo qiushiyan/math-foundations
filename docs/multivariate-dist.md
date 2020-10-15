@@ -26,8 +26,10 @@ $$</div>\EndKnitrBlock{corollary}
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-2"><strong>(\#cor:unnamed-chunk-2) </strong></span>If $\boldsymbol{Y} \sim N(\boldsymbol{0}, I)$, and $A$ is an idempotent matrix. Then $\boldsymbol{Y}^TA\boldsymbol{Y}$ follows $\chi^2_m$, where $m$ is the number of $A$'s eigenvalues equall to $1$. </div>\EndKnitrBlock{corollary}
 
 
-\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
+::: {.pr}
 
+
+:::
 
 ## Dirichlet Distributon 
 

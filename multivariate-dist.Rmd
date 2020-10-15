@@ -30,10 +30,10 @@ If $\boldsymbol{Y} \sim N(\boldsymbol{0}, I)$, and $A$ is an idempotent matrix. 
 ```
 
 
-```{block2, type = "proof"}
-Proof
-```
+::: {.pr}
 
+
+:::
 
 ## Dirichlet Distributon 
 

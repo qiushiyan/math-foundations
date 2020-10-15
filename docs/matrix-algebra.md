@@ -59,6 +59,7 @@ AB &= [\text{col}_1(A) \cdots \text{col}_n(A)]
 $$</div>\EndKnitrBlock{theorem}
 
 
+
 Note that each $\text{col}_1(A)\text{row}_1(B)$ is a rank 1 $m \times p$ matrix. 
 
 
@@ -118,13 +119,12 @@ $$
 \BeginKnitrBlock{theorem}\iffalse{-91-108-101-102-116-32-109-117-108-116-105-112-108-105-99-97-116-105-111-110-32-97-115-32-108-105-110-101-97-114-32-116-114-97-110-115-102-111-114-109-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-1"><strong>(\#thm:unnamed-chunk-1)  \iffalse (left multiplication as linear transformation) \fi{} </strong></span>There is a one to one relationship between a linear transformation and a matrix. Let $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ be a linear transformation. Then there exists a **unique** matrix $A$ such that:  
   
 $$
-T(x) = Ax \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
+T(\bar{x}) = A\bar{x} \quad \text{for all} \; x \; \text{in} \; \mathbb{R^n}  
 $$
   
-In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e_j})$, where $\bar{e_j}$ is the $j$th basis of $\mathbb{R^n}$ </div>\EndKnitrBlock{theorem}
+In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e}_j)$, where $\bar{e}_j$ is the $j$th basis of $\mathbb{R}^n$ </div>\EndKnitrBlock{theorem}
 
-\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
-
+::: {.pr}
 $$
 \bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
 $$
@@ -137,8 +137,11 @@ T(\bar{x}) &= x_1T(\bar{e}_1) + \dots + x_nT(\bar{e}_n) \\
 &= (A\bar{x})_{m \times 1}
 \end{split}
 $$
+:::
 
-In other words, the transformation is specified once we know what all basis in $\mathbb{R^n}$ become in $\mathbb{R^m}$.
+
+
+In other words, the transformation is determined once we know what all basis in $\mathbb{R}^n$ become in $\mathbb{R}^m$.
 
 The matrix $A$ is called the **standard matrix for the linear transformation** $T$.  
 
@@ -146,13 +149,13 @@ The matrix $A$ is called the **standard matrix for the linear transformation** $
 
 (ref:onto) A mapping is onto $\mathbb{R^m}$
 
-\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-3"><strong>(\#def:unnamed-chunk-3)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
+\BeginKnitrBlock{definition}\iffalse{-91-40-114-101-102-58-111-110-116-111-41-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-2"><strong>(\#def:unnamed-chunk-2)  \iffalse ((ref:onto)) \fi{} </strong></span>A mapping $T: \mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **onto** \mathbb{R^m} if each $\bar{b}$ in $\mathbb{R^m}$ is the image of at least one $\bar{x}$ in \mathbb{R^n}</div>\EndKnitrBlock{definition}
 
 Equivalently, $T$ is onto $\mathbb{R^m}$ means that there exists at least one solution of $T(\bar{x}) = \bar{b}$ for any $\bar{b}$ in $\mathbb{R}^m$
 
 <br>
 
-\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-4"><strong>(\#def:unnamed-chunk-4)  \iffalse (one-to-one mapping) \fi{} </strong></span>
+\BeginKnitrBlock{definition}\iffalse{-91-111-110-101-45-116-111-45-111-110-101-32-109-97-112-112-105-110-103-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-3"><strong>(\#def:unnamed-chunk-3)  \iffalse (one-to-one mapping) \fi{} </strong></span>
 
 A mapping T: $\mathbb{R^n} \rightarrow \mathbb{R^m}$ is said to be **one-to-one** if each $\bar{b}$ in $\mathbb{R^m}$ is the image of *at most* one $\bar{x}$ in $\mathbb{R^n}$</div>\EndKnitrBlock{definition}
 
@@ -160,7 +163,7 @@ Equivalently, $T$ is one-to-one if, for each $\bar{b}$ in $\mathbb{R^m}$, the eq
 
 <br>
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-5"><strong>(\#thm:unnamed-chunk-5) </strong></span>Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-4"><strong>(\#thm:unnamed-chunk-4) </strong></span>Let $\mathbb{R}^n \rightarrow \mathbb{R}^m$ be a linear transformation, and $A$ the standard matrix. Then 
 
 - $T$ maps $mathbb{R}^n$ onto $\mathbb{R}^m$ if only if columns of $A$ span $\mathbb{R}^m$  
 
@@ -400,7 +403,7 @@ https://fml-fam.github.io/blog/2020/07/03/matrix-factorizations-for-data-analysi
 A *factorization* of matrix $A$ is an equation that expresses $A$ as a product of two or more matrices.  
 
 
-\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-6"><strong>(\#def:unnamed-chunk-6)  \iffalse (LU factorization) \fi{} </strong></span>Suppose $A$ can be reduced to an echelon form $U$ **using only row addition and row scaling**, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
+\BeginKnitrBlock{definition}\iffalse{-91-76-85-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="definition"><span class="definition" id="def:unnamed-chunk-5"><strong>(\#def:unnamed-chunk-5)  \iffalse (LU factorization) \fi{} </strong></span>Suppose $A$ can be reduced to an echelon form $U$ **using only row addition and row scaling**, there exist a set of unit lower trangular matrices $E_1, \dots, E_p$ such that 
 
 $$
 E_p \cdots E_1A = U  
@@ -659,7 +662,7 @@ The trace has the following properties:
 In practice $A^{-1}$ is seldom computed, because computing both $A^{-1}$ and $A^{-1}\bar{b}$ to solve linear equations takes about 3 times as many arithmetic operations as solving $A\bar{x} = \bar{b}$ by row reduction.</div>\EndKnitrBlock{rmdnote}
 
 Assume that $A$ and $B$ are both non-singular
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8) </strong></span>If A and B are both invertible matrces, we have
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-7"><strong>(\#thm:unnamed-chunk-7) </strong></span>If A and B are both invertible matrces, we have
 
 $$
 (A^{-1})^{-1} = A  
@@ -708,7 +711,7 @@ C_{1n} & C_{2n} & \cdots & C_{nn} \\
 
 The right side of Eq \@ref(eq:inverse-adjugate) is called the *adjugate* of $A$, often denoted by $\text{adj}\, A$.  
 
-\BeginKnitrBlock{theorem}\iffalse{-91-65-110-32-73-110-118-101-114-115-101-32-70-111-114-109-117-108-97-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-9"><strong>(\#thm:unnamed-chunk-9)  \iffalse (An Inverse Formula) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. Then 
+\BeginKnitrBlock{theorem}\iffalse{-91-65-110-32-73-110-118-101-114-115-101-32-70-111-114-109-117-108-97-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8)  \iffalse (An Inverse Formula) \fi{} </strong></span>Let $A$ be an invertible $n \times n$ matrix. Then 
 
 $$
 A^{-1} = \frac{1}{\det A}\text{adj}\, A
@@ -746,7 +749,7 @@ It's easy to find that the Woodbury Identity is an extension of the matrix inver
 
 <hr>
 
-\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-10"><strong>(\#prp:unnamed-chunk-10) </strong></span>For square matrix $P$ (**not** assuming invertible), if $I + P$ is invertible, then $(I + P)^{-1}$ satisfies:  
+\BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-9"><strong>(\#prp:unnamed-chunk-9) </strong></span>For square matrix $P$ (**not** assuming invertible), if $I + P$ is invertible, then $(I + P)^{-1}$ satisfies:  
 
 $$
 (I + P)^{-1} = I - (I + P)^{-1}P

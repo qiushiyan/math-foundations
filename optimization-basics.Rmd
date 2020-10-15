@@ -93,18 +93,18 @@ where $f:\mathbb{R}^n \to \mathbb{R}$ is a convex function and $C$ is a closed c
 ### Properties of Convex Functions 
 
 ```{theorem jensen-inequality, name = "Jenson's inequality"}
-
-```
-
 If $X$ is a random variable and $f$ is a convex function, then 
 
 $$
 E\big[f(X)\big] \ge f\big[E(X)\big]
 $$
 I find this very intuitive figure from https://www.bowaggoner.com/ to remember this formula
+```
 
-```{r, echo = FALSE}
-knitr::include_graphics("images/jenson-inequality.jpg")
+
+
+```{r, echo = FALSE, out.width = "120%"}
+knitr::include_graphics("images/jenson-inequality.png")
 ```
 
 

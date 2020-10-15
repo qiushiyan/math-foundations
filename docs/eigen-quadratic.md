@@ -23,10 +23,7 @@ Eq \@ref(eq:characteristic-equation) is called the **characteristic equation** o
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-1"><strong>(\#thm:unnamed-chunk-1) </strong></span>Eigenvalues of a trangular matrix are its diagonal entries.</div>\EndKnitrBlock{theorem}
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 Consider the $3 \times 3$ case. If $A$ is upper triangular, then $A - \lambda I$ has the form
 
 $$
@@ -38,6 +35,9 @@ a_{11} - \lambda & a_{12} & a_{13} \\
 $$ 
 
 So the roots of characteristic are $a_{11}, a_{22}, a_{33}$ respectively.
+:::
+
+
 
 There are some useful results about how eigenvalues change after various manipulations.
 
@@ -47,10 +47,7 @@ There are some useful results about how eigenvalues change after various manipul
 
 3.  $A^{k}\bar{x} = \lambda^{k}\bar{x}$
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 For (1) 
 $$
 (kA + bI)\bar{x} = kA\bar{x} + bI\bar{x} = k \lambda\bar{x} + b\bar{x} = (k\lambda + b)\bar{x} 
@@ -61,16 +58,16 @@ For(2)
 $$
 \bar{x} = A^{-1}A\bar{x} =  A^{-1}\lambda \bar{x} = \lambda A^{-1}\bar{x}
 $$
+:::
+
+
 
 The next theorem is important in terms of diagonalization and spectral decomposition
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:distinct-eigenvalue"><strong>(\#thm:distinct-eigenvalue) </strong></span>For distinct eigenvalues $\lambda_1, \cdots, \lambda_r$ of an $n \times n$ matrix A, their corresponding eigenvectors $\bar{v_1}, ..., \bar{v_r}$ are linearly independent. </div>\EndKnitrBlock{theorem}
 
-::: {.proof}
-Proof
-:::
-
-Suppose for r distinct eigenvalue $\lambda_1, \cdots, \lambda_r$, the set $\{\bar{v_1}, ..., \bar{v_r}\}$ is not linearly independent, and $p$ is the least index such that $\bar{v}_{p+1}$ is a linear combination of the preceding vectors. Then there exists scalars $c_1, \cdots, c_p$ such that
+::: {.pr}
+Suppose for $r$ distinct eigenvalue $\lambda_1, \cdots, \lambda_r$, the set $\{\bar{v_1}, ..., \bar{v_r}\}$ is not linearly independent, and $p$ is the least index such that $\bar{v}_{p+1}$ is a linear combination of the preceding vectors. Then there exists scalars $c_1, \cdots, c_p$ such that
 
 $$
 c_1\bar{v}_1 + \cdots + c_p\bar{v}_p = \bar{v}_{p+1} \tag{1}
@@ -87,16 +84,16 @@ $$
 c_1(\lambda_1 - \lambda_{p+1})\bar{v}_1 +\cdots + c_p(\lambda_p - \lambda_{p+1})\bar{v}_p = 0 \tag{3}
 $$ 
 
-Since $\bar{v}_1, ..., \bar{v}_p$ are linearly independent, weights in (3) must be all zero. Since $\lambda_1, \cdots, \lambda_p$ are distinct, hence $c_i = 0, \, i = 1, ..., p$. But then (5) says that eigenvector $\bar{v}_{p+1}$ is zero vector, which contradicts definition \@ref(def:eigen)
+Since $\bar{v}_1, ..., \bar{v}_p$ are linearly independent, weights in (3) must be all zero. Since $\lambda_1, \cdots, \lambda_p$ are distinct, hence $c_i = 0, \, i = 1, ..., p$. But then (1) says that eigenvector $\bar{v}_{p+1}$ is zero vector, which contradicts definition \@ref(def:eigen)
+:::
+
+
 
 <hr>
 
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:same-nonzero"><strong>(\#cor:same-nonzero) </strong></span>Let $A \in \mathbb{R}^{m \times n}$ $A^TA$ and $AA^T$ has the same set of *nonzero* eigenvalues. </div>\EndKnitrBlock{corollary}
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 Let $\lambda$ be a nonzero eigenvalue of $A^TA$ and $\bar{x}$ its eigenvector
 
 $$
@@ -112,8 +109,11 @@ AA^T(A\bar{x}) = \lambda (A\bar{x})
 $$ 
 
 We will have to verify that $A\bar{x}$ is no zero vector before concluding $\lambda$ is also an eigenvector of $AA^T$. Suppose $A\bar{x} = 0$, then $A^TA\bar{x} =\lambda\bar{x} = 0$. Since $\bar{x}$ is a eigenvector which is nonzero, $\lambda = 0$, which contradicts our former statement. Thus, any nonzero eigenvalue of $A^TA$ is also an eigenvalue of $AA^T$.
+:::
 
-$A^TA$ and $AA^T$ are known as Gram matrix and left Gram matrix in corollary \@ref(prp:gram-matrix)
+
+
+$A^TA$ and $AA^T$ are known as **Gram matrix** and left Gram matrix in corollary \@ref(prp:gram-matrix)
 
 ### Additional Properties of Eigenvalues and Eigenvectors
 
@@ -176,10 +176,7 @@ In such case, in $A = P \Lambda P^{-1}$, the diagonal entries of $D$ are eigenva
   
 In other words, $A$ is diagnolizable if and only if there are enough eigenvectors in form a basis of $R^n$, called an **eigenvector basis** of $R^n$ </div>\EndKnitrBlock{definition}
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 $$
 \begin{split}
 AP &= A[\bar{v}_1 \cdots \bar{v}_n] \\
@@ -215,6 +212,9 @@ A &= P \Lambda P^{-1}
 $$ 
 
 Because $P$ contains $n$ independent columns so it's invertible.
+:::
+
+
 
 According to theorem \@ref(thm:distinct-eigenvalue), an $n \times n$ matrix with $n$ distinct eigenvalues is diagonalizable. This is a sufficient condition.
 
@@ -231,10 +231,7 @@ If $A$ and $B$ are both $n \times n$ matrices, then $A$ **is similar to** $B$ if
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-2"><strong>(\#thm:unnamed-chunk-2) </strong></span>If $A$ and $B$ are similar, they have the same eigenvalues. </div>\EndKnitrBlock{theorem}
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 If $B = P^{-1}AP$, then
 
 $$
@@ -262,12 +259,17 @@ P(P^{-1}BP)\bar{v} &= \lambda P\bar{v} \\
 B(P\bar{v}) = \lambda P \bar{v}
 \end{aligned}
 $$
+:::
 
-The similarity theorem leads to a interesting result.
+
+
+The similarity theorem has the following implication
 
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-3"><strong>(\#cor:unnamed-chunk-3) </strong></span>For $A, B \in \mathbb{R}^{n \times n}$, $AB$ and $BA$ are similar matrices and therefore share the same set of eigenvalues.  </div>\EndKnitrBlock{corollary}
 
+::: {.pr}
 To prove this, we need to show that there exists a invertible matrix $A$ such that $P^{-1}(AB)P = BA$. Take $P = A$ and the equation holds.
+:::
 
 It is easy to show that similarity is **transitive**: if $A$ is similar to $B$, $B$ is similar to $C$, then $A$ is similar to $C$. So similarity means a family of matrices with the same set of eigenvalues, the most special and simplest of which is the diagonal matrix (if this is an diagonalizable family). Some computer algorithms calculate eigenvalues of $A$ in this manner: with a sequential choices of $P$, the off-diagonal elements of $A$ become smaller and smaller until $A$ becomes a triangular matrix or diagonal matrix, whose eigenvalues are simply diagonal entries and is the same as $A$.
 
@@ -401,7 +403,9 @@ $$
 1 & 1 \\
 0 & 0
 \end{bmatrix}
-$$ are not simultaneously diagonalizable because they do not commute.
+$$ 
+
+are not simultaneously diagonalizable because they do not commute.
 
 ### Cayley-Hamilton Theorem
 
@@ -415,21 +419,23 @@ We can obtain a polynomial of matrix $A$ by substituting $A$ for $\lambda$, and 
 
 \BeginKnitrBlock{theorem}\iffalse{-91-67-97-121-108-101-121-45-72-97-109-105-108-116-111-110-32-84-104-101-111-114-101-109-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:cayley-hamilton"><strong>(\#thm:cayley-hamilton)  \iffalse (Cayley-Hamilton Theorem) \fi{} </strong></span>
 
-Let $f(\lambda)$ be the polynomial function of the characteristic polynomial $\det(A - \lambda I)$, where $A$ is a square matrix. Then $f(A)$ evaluates to a zero matrix.</div>\EndKnitrBlock{theorem}
+Let $f(\lambda)$ be a polynomial function of the characteristic polynomial $\det(A - \lambda I)$, where $A$ is a square matrix. Then $f(A)$ evaluates to a zero matrix. ^[For example, if the characteristic polynomial of $A$ is $\lambda^2 + 2\lambda + 3$, then $f(A)$ is $A^2 + 2A + 3I$]</div>\EndKnitrBlock{theorem}
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 Though the Caley Hamilton theorem \@ref(thm:cayley-hamilton) applies to any square matrix $A$. Our proof only address the case for diagonalizable matrices.
 
 When $A$ is diagonalizable, the polynomial of $A$ takes the form
 
 $$
 f(A) = Pf(\Lambda)P^{-1}
-$$ Since $f(\lambda) = \det(A - \lambda I)$, and the diagonal entries of $\Lambda$ are the eigenvalues of $A$. Evaluate $f(\lambda)$ at each diagonal entry of $\Lambda$ will be zero. Thus $f(A)$ is a zero matrix.
+$$ 
 
-A direct result derived from the Cayley Hamilton theorem is that for every invertible matrix $A$, its inverse $A^{-1}$ can be represented as a polynomial of $A$ with degree $d - 1$.
+Since $f(\lambda) = \det(A - \lambda I)$, and the diagonal entries of $\Lambda$ are the eigenvalues of $A$. Evaluate $f(\lambda)$ at each diagonal entry of $\Lambda$ will be zero. Thus $f(A)$ is a zero matrix.
+:::
+
+
+
+A direct result from the Cayley Hamilton theorem is that for every invertible matrix $A$, its inverse $A^{-1}$ can be represented as a polynomial of $A$ with degree $d - 1$.
 
 <r>
 
@@ -459,10 +465,7 @@ Symmetric matrices have some nice properties about diagonalization.
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-8"><strong>(\#thm:unnamed-chunk-8) </strong></span>If $A$ is symmetric, eigenvectors from distinct eigenvalues are **orthogonal**. </div>\EndKnitrBlock{theorem}
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 Let $\bar{v}_1$ and $\bar{v}_2$ be eigenvectors that correspond to distinct eigenvalues $\lambda_1$ and $\lambda_2$. Compute
 
 $$
@@ -477,6 +480,9 @@ $$
 
 
 because $\lambda_1 \not = \lambda_2$, $\bar{v}_1 \cdot \bar{v}_2 = 0$.
+:::
+
+
 
 For symmetric matrices $A \in \mathbb{R}^{n \times n}$ without $n$ distinct eigenvalues, it turns out that the dimension of the eigenspace for each $\lambda_k$ always equals the multiplicity of $\lambda_k$. For this reason, if $A$ is a symmetric matrix we can always construct a orthonormal set $\{\bar{q}_1 \;\; \cdots \;\; \bar{q}_n\}$ from $\{\bar{v}_1 \;\; \cdots \;\; \bar{v}_n\}$ such that
 
@@ -684,10 +690,7 @@ Classification of $A \in \mathbb{S}^{n}$ by its eigenvalue can be applied in gen
 
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ata-pd"><strong>(\#cor:ata-pd) </strong></span>Given any matrix $A \in \mathbb{R}^{m \times n}$, $A^TA$ and $AA^T$ are always positive semidefinite matrices</div>\EndKnitrBlock{corollary}
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 By definition, $A^TA$ is a positive semidefinite matrix if for any $\bar{x} \in \mathbb{R}^n$, the quadratic form $\bar{x}^T(A^TA)\bar{x} \ge 0$.
 
 $$
@@ -701,16 +704,19 @@ $$
 It turns out that the result is the square of the 2-norm of $A\bar{x}$ (nonnegative). This also tells $A^TA$ is positive definite when $\bar{x} \not\subseteq \mathcal{N}(A)$
 
 Similarly, the quadratic form for $AA^T$ can be refactored in to the standard norm of $A^T\bar{x}$.
+:::
+
+
 
 <hr>
 
 \BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:ridge-invertible"><strong>(\#cor:ridge-invertible) </strong></span>$A^TA +\lambda I$ and $AA^T + \lambda I$ are always positive definite and invertible for $\lambda > 0$</div>\EndKnitrBlock{corollary}
 
-::: {.proof}
-Proof
+::: {.pr}
+From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are positive semidefinite, and that they have the same nonzero eigenvalues from corollary \@ref(cor:same-nonzero). According to Section \@ref(additional-properties-of-eigenvalues-and-eigenvectors), eigenvalues for $P(A)$ are $P(\lambda)$ for polynomial function $P$. Therefore, $A^TA +\lambda I$ and $AA^T + \lambda I$ share a positive set of $n$ eigenvalues $\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda$, so they are PD and invertible.
 :::
 
-From the previous corollary \@ref(cor:ata-pd) we know that $A^TA$ and $AA^T$ are positive semidefinite, and that they have the same nonzero eigenvalues from corollary \@ref(cor:same-nonzero). According to Section \@ref(additional-properties-of-eigenvalues-and-eigenvectors), eigenvalues for $P(A)$ are $P(\lambda)$ for polynomial function $P$. Therefore, $A^TA +\lambda I$ and $AA^T + \lambda I$ share a positive set of $n$ eigenvalues $\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda$, so they are PD and invertible.
+
 
 ### Gershgorin Discs and Diagonal Dominance
 
@@ -740,7 +746,8 @@ In this case, all elements and eigenvalues are real. Therefore, Gershgorin discs
 
 <img src="images/gershgorin-disc.png" width="640" style="display: block; margin: auto;" />
 
-\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
+
+::: {.pr}
 
 Let $\lambda$ be an eigenvalue of $A$ with associated eigenvector $\bar{v}$. Suppose the largest entry of $\bar{v}$ is $v_i$, we scale $\bar{v}$ such that $v_i = 1$ and all other elements less than $1$. Note $\lambda$ and $i$ are arbitrary, for example, the associated eigenvector of the 3rd eigenvalue may have the largest entry at $v_5$.
 
@@ -764,7 +771,11 @@ $$
 |\lambda - a_{ii}| \le  \sum_{j \not = i} |a_{ij}| = r_i
 $$ 
 
+
 In other words, for any eigenvalue $\lambda$, the distance between $\lambda$ and $a_{ii}$ is less than $r_i$, where $i$ is the index at which $\lambda$'s associated eigenvector take its largest value.
+:::
+
+
 
 For diagonal entries, all $r_i = 0$, thus their eigenvalues are exactly diagonal entries.
 
@@ -780,7 +791,7 @@ Suppose that $A \in \mathcal{M}_n{(\mathbb{C})}$, then $A$ is called
 
 A strictly diagonally dominant matrix is non-singular, because all of its Gershgorin discs do not touch zero. This result is known the *Levy-Desplanques theorem*
 
-\BeginKnitrBlock{corollary}\iffalse{-91-110-111-110-45-110-101-103-97-116-105-118-101-32-100-105-97-103-111-110-97-108-32-101-110-116-114-105-101-115-32-97-110-100-32-100-105-97-103-111-110-97-108-32-100-111-109-105-110-97-110-99-101-32-105-109-112-108-105-101-115-32-80-83-68-93-}\fi{}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-18"><strong>(\#cor:unnamed-chunk-18)  \iffalse (non-negative diagonal entries and diagonal dominance implies PSD) \fi{} </strong></span>
+\BeginKnitrBlock{corollary}\iffalse{-91-110-111-110-45-110-101-103-97-116-105-118-101-32-100-105-97-103-111-110-97-108-32-101-110-116-114-105-101-115-32-97-110-100-32-100-105-97-103-111-110-97-108-32-100-111-109-105-110-97-110-99-101-32-105-109-112-108-105-101-115-32-80-83-68-93-}\fi{}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-17"><strong>(\#cor:unnamed-chunk-17)  \iffalse (non-negative diagonal entries and diagonal dominance implies PSD) \fi{} </strong></span>
 
 Suppose that $A \in \mathcal{M}_n{(\mathbb{C})}$ has **non-negative** diagonal entries
 
@@ -792,7 +803,7 @@ Note that this is a one-way theorem, unlike the criterion using eigenvalues, piv
 
 ## Cholesky Factorization
 
-\BeginKnitrBlock{lemma}<div class="lemma"><span class="lemma" id="lem:unnamed-chunk-19"><strong>(\#lem:unnamed-chunk-19) </strong></span>A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. </div>\EndKnitrBlock{lemma}
+\BeginKnitrBlock{lemma}<div class="lemma"><span class="lemma" id="lem:unnamed-chunk-18"><strong>(\#lem:unnamed-chunk-18) </strong></span>A symmetric matrix $A \in \mathbb{S}^n$ is positive semidefinite if and only if it can be expressed in the gram matrix form $B^TB$ of some matrix $B$. </div>\EndKnitrBlock{lemma}
 
 <br>
 
@@ -857,10 +868,7 @@ $$
 \lambda_{\text{min}}(A) \le R_{A}(\bar{x}) \le \lambda_{\text{max}}(A)
 $$
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 Since the Rayleigh quotient does not depend on the 2-norm of vector $\bar{x}$, we may assume a unit vector $\bar{x}^T\bar{x} = 1$, and Rayleigh quotient simplifies to the quadratic form $\bar{x}^TA\bar{x}$.
 
 Next, orthogonally diagonalize $A$ as $Q \Lambda Q$, we know that when $\bar{x} = Q \bar{y}$:
@@ -912,6 +920,9 @@ $$
 
 Similarly, the minimum of the Rayleigh quotient will be $\lambda_n$, with $\bar{x} = \bar{q}_n$.
 
+:::
+
+
 <hr>
 
 From the optimization perspective, the bound of Rayleigh quotient amounts to a constrained optimization problem
@@ -927,17 +938,14 @@ The maximum and minimum of the objective function are $\lambda_1$ and $\lambda_n
 
 If we add more constraints, for example, that $\bar{x}$ should be orthogonal to $\bar{q}_1$, then $\bar{x}^TA\bar{x}$ has maximum $\lambda_2$ attained at $\bar{x} = \lambda_2$
 
-\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-20"><strong>(\#thm:unnamed-chunk-20) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\bar{x}^T A \bar{x}$ subject to constraints 
+\BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:unnamed-chunk-19"><strong>(\#thm:unnamed-chunk-19) </strong></span>Let $A \in \mathbb{S}^n$ with orthogonal diagonalization $A = Q\Lambda Q^T$, where the entries on the diagonal of $\Lambda$ are arranged so that $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$. Then for $k = 2, ...$, the maximum of value of $\bar{x}^T A \bar{x}$ subject to constraints 
 
 $$
 \bar{x}^T\bar{x} =  1, \;\; \bar{x}^T\bar{q}_1 = 0, \;\; \dots \;\;, \bar{x}^T\bar{q}_{k-1} = 0
 $$
 is the eigenvalue $\lambda_k$, and this maximum is attained at $\bar{x} = \bar{q}_k$</div>\EndKnitrBlock{theorem}
 
-::: {.proof}
-Proof
-:::
-
+::: {.pr}
 From $\bar{x} = P\bar{y}$ we know that
 
 $$
@@ -984,3 +992,6 @@ $$
 &= \bar{q}_k
 \end{split}
 $$
+
+:::
+

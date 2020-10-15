@@ -53,7 +53,7 @@ $$
   
 where $\{\bar{u}_1, \dots, \bar{u}_p\}$ is an orthogonal basis. </div>\EndKnitrBlock{theorem}
 
-<div class = "proof"> Proof </div>
+::: {.pr}
 
 $$
 \begin{split}
@@ -69,7 +69,7 @@ $$
 
 Derivations for other $c_i$ is similar. 
 
-
+:::
 
 ### Orthogonal Decomposition
 
@@ -83,7 +83,7 @@ $$
   
 where $\bar{v}_w \in W$ and $\bar{v}_{\perp} \in W^{\perp}$</div>\EndKnitrBlock{theorem}
 
-<div class = "proof"> Proof </div> 
+::: {.pr} 
 
 Let $\bar{u}_1, ..., \bar{u}_m$ be a orthonormal basis for $W$, there exists linear combination according to Section \@ref(orthogonal-sets-and-orthogonal-basis) 
 
@@ -126,6 +126,7 @@ $$
 0 = (\bar{v}_w - \bar{v}_w') \cdot (\bar{v}_{\perp}' - \bar{v}_{\perp}) = (\bar{v}_w - \bar{v}_w') \cdot (\bar{v}_w - \bar{v}_w') = \|\bar{v}_w - \bar{v}_w'\|^2
 $$
 Similarly we have $\|\bar{v}_{\perp}' - \bar{v}_{\perp}\|^2 = 0$. 
+:::
 
 The existence and uniqueness of the decomposition above mean that 
 
@@ -186,7 +187,7 @@ $$
 \|\bar{y} - \hat{\bar{y}}\| \le \|\bar{y} - \bar{v}\|
 $$</div>\EndKnitrBlock{theorem}
 
-<div class = "proof"> Proof </div>
+::: {.pr}
 
 Take $\bar{v}$ distinct from $\hat{\bar{y}}$ in $W$, we know that $\bar{y} - \hat{\bar{y}}$ is perpendicular to $\bar{v}$. According to Pythoagorean theorem, we have
 
@@ -200,6 +201,7 @@ $$
 $$
 When $\bar{v}$ is distinct from $\bar{\hat{y}}$, $\|\bar{\hat{y}} - \bar{v}\|^2$ is non-negative, so the error term of choosing $\bar{v}$ is always larger than that of the orthogonal projection $\bar{\hat{y}}$.  
 
+:::
 
 ## Projection and idempotent matrices
 
@@ -316,7 +318,7 @@ For $A \in \mathbb{R}^{m \times n}$ with linearly independent columns $\bar{a}_1
  
 \BeginKnitrBlock{theorem}\iffalse{-91-81-82-32-102-97-99-116-111-114-105-122-97-116-105-111-110-93-}\fi{}<div class="theorem"><span class="theorem" id="thm:qr"><strong>(\#thm:qr)  \iffalse (QR factorization) \fi{} </strong></span>if $A$ is an $m \times n$ matrix with full column rank, then $A$ can be factored as $A = QR$, where $Q$ is an $m \times n$ matrix whose columns form an orthonormal basis of $\mathcal{R}(A)$ and $R$ is an $n \times n$ upper triangular invertible matrix with positive entries on its diagonal. </div>\EndKnitrBlock{theorem}
 
-<div class = "proof"> Proof </div>  
+::: {.pr}
 
 Because $A_{m \times n}$ is full column rank, we can transform its column vector $\{\bar{a}_{1}, ..., \bar{a}_{n}\}$ into a new set of orthonormal basis $\{\bar{q}_{1}, ..., \bar{q}_{n}\}$ with Gram-Schmidt process. Let 
 
@@ -369,6 +371,8 @@ $$
 where $r_{ij} = \bar{q}_i \cdot \bar{a}_j$
 
 We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ and $\bar{q}_k$ by $-1$)
+:::
+
 
 ### Householder QR factorization 
 
@@ -406,7 +410,11 @@ $$
 
 It follows that there exists a efficient algorithm to find the solution $x$ in the order $x_n, x_{n - 1}, ..., x_2, x_1$, known as *back substitution*.
 
-\BeginKnitrBlock{algorithm}<div class="algorithm">**Back Substitution**
+
+
+
+::: {.algorithm} 
+**Back Substitution**
   
 For the linear system $Rx = b$, where $R$ is an $n \times n$ upper triangular matrix with nonzero diagonal entries, the solution $x = [x_1, ..., x_n]$ are given by 
 
@@ -415,8 +423,8 @@ For $i = n, ..., 1$
 
 $$
 x_i = (b_i - R_{i, i + 1}x_{i + 1} - \cdots - R_{i, n}x_{n}) / R_{ii}
-$$</div>\EndKnitrBlock{algorithm}
-
+$$
+:::
 
 ## Complexity 
 

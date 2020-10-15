@@ -43,7 +43,7 @@ From corollary \@ref(cor:ata-pd), we know that $A^TA$ are positive semidefinite 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:svd-rank"><strong>(\#thm:svd-rank) </strong></span>Proceeding from previous definitons of singular values, and suppose $A$ has at least one nonzero singular values. Then $\{A\bar{v}_1, ..., A\bar{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$, and $\text{rank} \;A = r$</div>\EndKnitrBlock{theorem}
 
 
-<div class = "proof"> Proof </div>  
+::: {.pr}
 
 First, let's examine that $\{A\bar{v}_1, ..., A\bar{v}_r\}$ is a orthogonal basis: any pair of two distinct vectors $A\bar{v}_i, A\bar{v}_j, \; i,j = 1, ..., r$ are orthogonal to each other 
 
@@ -72,6 +72,7 @@ $$
 
 Thus any $\bar{y} \in \mathcal{R}(A)$ is in Span$\{A\bar{v}_1, ..., A\bar{v}_r\}$, and $\{A\bar{v}_1, ..., A\bar{v}_r\}$ is an orthogonal basis for $\mathcal{R}(A)$. This also shows that the column rank of $A$ is equal to its number of nonzero singular values. 
 
+:::
 
 ## SVD {#svd-theorem}
 
@@ -97,7 +98,7 @@ $$
 A = U \Sigma V^T
 $$</div>\EndKnitrBlock{theorem}
 
-<div class = "proof"> Proof </div> 
+::: {.pr}
 
 Since $A$ has $r$ nonzero singular values which measure the length of $A\bar{v}_i, \; i = 1, ...n$, there exists orthogonal basis $\{A\bar{v}_1, ..., A\bar{v}_r\}$ for $\mathcal{R}(A)$, we can further normalize the set to produce the *orthonormal* set $\bar{u}_1, ..., \bar{u}_r$: 
 
@@ -134,7 +135,10 @@ And because $V$ is orthogonal
 $$
 A = U \Sigma V^{-1} =  U \Sigma V^{T}
 $$
-$\bar{u}_i$ and $\bar{v}_i$ are called *left eigenvector* and right eigenvector of $A$ respectively. 
+
+:::
+
+$\bar{u}_i$ and $\bar{v}_i$ are called *left eigenvector* and *right eigenvector* of $A$ respectively. 
 
 It's easy to verify that the spectral decomposition \@ref(spectral-decomposition) is a special case of SVD when $A \in \mathbb{R}^{n}, \;\; m = n$. In that case, $\Sigma$ is a square matrix and $U$ is equal to $V$. 
 
@@ -338,7 +342,7 @@ $$
 \|AB\|_p \le \|A\|_p\|B\|_p
 $$</div>\EndKnitrBlock{proposition}
 
-<div class = "proof"> Proof </div>
+::: {.pr}
 
 For any $\bar{x} \in \mathbb{R}^n$ 
 
@@ -350,7 +354,7 @@ si
 $$
 \|AB\|_p = \max \frac{\|A\bar{x}\|_p}{\|\bar{x}\|_p} \le \max \frac{\|A\|_p\|B\|_p\|\bar{x}\|_p}{\|\bar{x}\|_p} = \|A\|_p\|B\|_p
 $$
-
+:::
 
 
 ### Entry-wise Norm
@@ -376,7 +380,7 @@ where $\sigma_i$ is the nonzero singular value of $A$.
 
 \BeginKnitrBlock{proposition}<div class="proposition"><span class="proposition" id="prp:unnamed-chunk-2"><strong>(\#prp:unnamed-chunk-2) </strong></span>The F-norm is a submultiplicative norm. </div>\EndKnitrBlock{proposition}
 
-\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
+::: {.pr}
 
 Let $A$ and $B$ are of appropriate size such that
 
@@ -402,7 +406,11 @@ b_1 & \cdots & b_m
 \end{aligned}
 $$
 
-The first inequality comes from the Cauchy-Schwarz inequality $a \cdot b \le \|a\| \|b\|$
+(The first inequality comes from the Cauchy-Schwarz inequality $a \cdot b \le \|a\| \|b\|$)
+
+:::
+
+
 
 ### Other Matrix Norms 
 
@@ -521,7 +529,7 @@ It follows that the pseudoinverse is a stricter kind of generalized inverse. </d
 Note that this definition only gives criterion of the pseudoinverse, but not a formula for computing it. The following corollary will lead us to a computationally simple and accurate way to compute the pseudoinverse using the SVD. 
 
 
-\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-6"><strong>(\#cor:unnamed-chunk-6) </strong></span>The pseudoinverse of any diagonal $m \times n$ matrix $\Lambda$ with $r$ nonzero entries  
+\BeginKnitrBlock{corollary}<div class="corollary"><span class="corollary" id="cor:unnamed-chunk-5"><strong>(\#cor:unnamed-chunk-5) </strong></span>The pseudoinverse of any diagonal $m \times n$ matrix $\Lambda$ with $r$ nonzero entries  
 
 
 $$
@@ -553,7 +561,7 @@ That is, the pseudoinverse of a diagonal matrix can be obtained by taking the re
 
 
 
-\BeginKnitrBlock{proof}<div class="proof">Proof</div>\EndKnitrBlock{proof}
+::: {.pr}
 
 We start the proof with 1-by-1 matrices, which is essentially a number. For any $x \in \mathbb{R}$, we defined 
 
@@ -588,6 +596,8 @@ four
 $$
 (\Sigma^{+}\Sigma)^{T}  =\Sigma^{+}\Sigma
 $$
+:::
+
 With this result, we can give a formula of the pseudoinverse of any matrix $A \in \mathbb{R}^{m \times n}$.  
 
 \BeginKnitrBlock{theorem}<div class="theorem"><span class="theorem" id="thm:compute-pseudo-inverse"><strong>(\#thm:compute-pseudo-inverse) </strong></span>For any matrix $A \in \mathbb{R}^{m \times n}$, the svd is 
