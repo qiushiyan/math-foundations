@@ -130,7 +130,7 @@ In fact, $A$ is a $m \times n$ matrix whose $j$th column is the vector $T(\bar{e
 
 ::: {.pr}
 $$
-\bar{x} = x_1\bar{e_1} + \dots + x_n{\bar{e_n}}
+\bar{x} = x_1\bar{e}_1 + \dots + x_n{\bar{e}_n}
 $$
 And because $T(\bar{x})$ is a linear transformation: 
 
