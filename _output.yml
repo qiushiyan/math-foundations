@@ -5,7 +5,7 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><a href="./">Math Notes for Machine Learning</a></li>
+        <li><a href="./">Math Notes for Data Science and Statistics</a></li>
       after: |
         <li>
           <a href="https://github.com/rstudio/bookdown" target="blank">Written with bookdown</a>

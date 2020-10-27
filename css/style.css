@@ -113,6 +113,11 @@ div.algorithm code {
 }
 
 
+/* theorem enviroment*/
+div.theorem, div.lemma, div.corollary, div.proposition, div.conjecture {
+  font-style: normal;
+}
+
 /* Sidebar formating --------------------------------------------*/
 
 .sidebar {

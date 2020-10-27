@@ -25,6 +25,7 @@ rmd_files: [
   "multiple-integral.Rmd",
   
   "probability-basics.Rmd",
+  "exp-var.Rmd",
   "moments.Rmd",
   "inequality.Rmd",
   "univariate-dist.Rmd",
