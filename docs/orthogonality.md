@@ -377,6 +377,8 @@ We could assume that $r_{kk} \ge 0$. (if $r_{kk} < 0$, multiply both $r_{kk}$ an
 ### Householder QR factorization 
 
 
+Householder triangularization is an alternative of producing QR factorization $A= QR$ 
+
 ### Applications of QR factorization 
 
 

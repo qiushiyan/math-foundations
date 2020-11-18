@@ -199,12 +199,14 @@ basics-of-probability-theory
 probabilty-space
 counting
 conditional-probability
-random-variables-and-moments
+expectation-and-variance
 properties-of-expectation-and-variance
 stains-lemma
 random-vectors
-other-summaries
+conditional-expectation
 moment-generating-functions
+moments
+mgf
 inequalities
 univariate-distributions
 uniform-distribution
@@ -216,6 +218,7 @@ poisson-process
 exponential-distribution-and-gamma-distribution
 properties
 inverse-gamma-distribution
+laplace-distribution
 beta-distribution
 multivariate-distributions
 multivariate-normal-distribution

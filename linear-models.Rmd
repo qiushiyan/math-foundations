@@ -40,6 +40,8 @@ The log likelihood function is given by
 ## Partial Least Squares  
 
 
+
+
 ## Regularized Regression
 
 ### Ridge Regression

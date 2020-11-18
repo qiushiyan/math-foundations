@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Mathematical Notes for Data Science and Statistics</title>
+  <title>Chapter 13 Expectation and variance | Mathematical Notes for Data Science and Statistics</title>
   <meta name="description" content="A notebook covering from scratch scratch various mathematical knowledge relevant to data science and statistics." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Mathematical Notes for Data Science and Statistics" />
+  <meta property="og:title" content="Chapter 13 Expectation and variance | Mathematical Notes for Data Science and Statistics" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Mathematical Notes for Data Science and Statistics" />
+  <meta name="twitter:title" content="Chapter 13 Expectation and variance | Mathematical Notes for Data Science and Statistics" />
   
   <meta name="twitter:description" content="A notebook covering from scratch scratch various mathematical knowledge relevant to data science and statistics." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="basic-matrix-algebra.html"/>
+<link rel="prev" href="basics-of-probability-theory.html"/>
+<link rel="next" href="moment-generating-functions.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -352,73 +352,109 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Mathematical Notes for Data Science and Statistics</h1>
-<p class="author"><em>Qiushi Yan</em></p>
-<p class="date"><em>2020-11-18</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p>This document is an effort to cover from scratch various mathematical knowledge relevant to data science and statistics, including linear algebra, multivariate calculus, probability theory, computational learning theory, and optimization (statistics itself should be in another stand-alone document). Although it’s mainly intended for self consumption, I will be very glad if others could find it helpful and welcome any suggestion.</p>
-<p>Here is an short outline of each part</p>
-<p>…</p>
-<p>Major references (books, online courses, videos, papers) include:</p>
+<div id="expectation-and-variance" class="section level1" number="13">
+<h1><span class="header-section-number">Chapter 13</span> Expectation and variance</h1>
+<div id="properties-of-expectation-and-variance" class="section level2" number="13.1">
+<h2><span class="header-section-number">13.1</span> Properties of Expectation and Variance</h2>
+<p>This section provides some properties of <span class="math inline">\(E(X)\)</span> and <span class="math inline">\(\text{Var}(X)\)</span> commonly-used in probabilistic calculations. Suppose all expectations <span class="math inline">\(E(\cdot)\)</span> exists</p>
 <ul>
-<li><strong>general</strong>
+<li><p><strong>Non-negativity</strong>: If <span class="math inline">\(X \ge 0\)</span> then <span class="math inline">\(E(X) \ge 0\)</span><br />
+</p></li>
+<li><p><strong>Linearity of expectation</strong></p>
 <ul>
-<li><a href="http://gwthomas.github.io/docs/math4ml.pdf"><em>Mathematics for Machine Learning</em></a> by Garret Thomas</li>
-<li><em>Mathematics for Machine Learning</em> <span class="citation">(<a href="references.html#ref-Deisenroth2020" role="doc-biblioref">Deisenroth, Faisal, and Ong 2020</a>)</span></li>
-<li><a href="http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/"><em>Advanced Data Analysis from an Elementary Point of View</em></a> by Cosma Rohilla Shalizi</li>
-</ul></li>
-<li><strong>Linear Algebra</strong>
-<ul>
-<li><em>Linear Algebra and its Applications</em> <span class="citation">(<a href="references.html#ref-lay2006-3" role="doc-biblioref">Lay 2006</a>)</span><br />
+<li><span class="math inline">\(E(\alpha X) = \alpha E(X)\)</span> (<span class="math inline">\(\alpha\)</span> is constant)<br />
 </li>
-<li><em>Linear Algebra and Optimization for Machine Learning</em> <span class="citation">(<a href="references.html#ref-DBLP:books/sp/Aggarwal20" role="doc-biblioref">Aggarwal 2020</a>)</span><br />
-</li>
-<li><em>Matrix Algebra: Theory, Computations, and Applications in Statistics</em> <span class="citation">(<a href="references.html#ref-10.5555/1534802" role="doc-biblioref">Gentle 2017</a>)</span></li>
-<li><em>Linear Algebra and its Applications</em> <span class="citation">(<a href="references.html#ref-strang2006linear" role="doc-biblioref">Strang 2006</a>)</span><br />
-</li>
-<li><a href="http://cs229.stanford.edu/section/cs229-linalg.pdf"><em>Linear Algebra Review and Reference</em></a> on Stanford’s cs229 website<br />
-</li>
-<li>Gilbert Strang. 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, <a href="https://ocw.mit.edu" class="uri">https://ocw.mit.edu</a>. License: Creative Commons BY-NC-SA.<br />
-</li>
-<li>N. Johnston. <a href="http://www.njohnston.ca/publications/advanced-linear-and-matrix-algebra/"><em>Advanced Linear and Matrix Algebra</em></a>. Springer International Publishing, 2020.<span class="citation">(<a href="references.html#ref-johnston2020advanced" role="doc-biblioref">Johnston 2020</a>)</span></li>
+<li><span class="math inline">\(E(X + Y) = E(X) + E(Y)\)</span> (<span class="math inline">\(Y\)</span> is also r.v., and <strong>not</strong> necessarily independent of <span class="math inline">\(X\)</span>). More generally, for any r.v. <span class="math inline">\(X_1, ..., X_n\)</span> <span class="math inline">\(E(X_1 + \cdots + X_n) =\sum_{i=1}^n{E(X_i)}\)</span></li>
 </ul></li>
-<li><strong>Multivariate Calculus</strong>
-<ul>
-<li><em>Thomas’s Calculus</em> <span class="citation">(<a href="references.html#ref-weir2018thomas" role="doc-biblioref">Weir, Thomas, and Hass 2018</a>)</span></li>
-<li>Steve Butler. <a href="https://www.calc3.org/">Multivariate Calculus</a>. Lowa State</li>
-</ul></li>
-<li><strong>Probability Theory</strong>
-<ul>
-<li><em>Probability for Statistics and Machine Learning: Fundamentals and Advanced Topics</em> <span class="citation">(<a href="references.html#ref-10.5555/2028916" role="doc-biblioref">DasGupta 2011</a>)</span></li>
-<li><em>Introduction to Probability</em> <span class="citation">(<a href="references.html#ref-blitzstein2019" role="doc-biblioref">K. Blitzstein and Hwang 2019</a>)</span></li>
-<li><em>Introduction to Probability</em> <span class="citation">(<a href="references.html#ref-bertsekas2008introduction" role="doc-biblioref">Bertsekas and Tsitsiklis 2008</a>)</span></li>
-<li>John Tsitsiklis, and Patrick Jaillet. RES.6-012 Introduction to Probability. Spring 2018. Massachusetts Institute of Technology: MIT OpenCourseWare, <a href="https://ocw.mit.edu" class="uri">https://ocw.mit.edu</a>. License: Creative Commons BY-NC-SA.</li>
-</ul></li>
-<li><strong>Computational Learning Theory</strong>
-<ul>
-<li><em>Learning from Data</em> <span class="citation">(<a href="references.html#ref-10.5555/2207825" role="doc-biblioref">Abu-Mostafa, Magdon-Ismail, and Lin 2012</a>)</span></li>
-</ul></li>
+<li><p><strong>Monotonicity</strong>: If <span class="math inline">\(X \le Y\)</span>, then <span class="math inline">\(E(X) \le E(Y)\)</span></p></li>
+<li><p><strong>Non-multiplicativity</strong>:<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> <span class="math inline">\(E(XY) = E(X)E(Y) + \text{Cov}(X, Y)\)</span>. This means in general <span class="math inline">\(E(XY) \not= E(X)E(Y)\)</span> holds except that <span class="math inline">\(X, Y\)</span> are independent (although this is not a necessary condition)</p></li>
+<li><p><strong>law of the unconscious statistician (LOTUS)</strong>. Suppose <span class="math inline">\(g(X)\)</span> is a function of <span class="math inline">\(X\)</span>. If <span class="math inline">\(X\)</span> is discrete then <span class="math inline">\(E[g(X)] = \sum g(x)f_X(x)\)</span>, and if <span class="math inline">\(X\)</span> is continuous <span class="math inline">\(E[g(X)] = \int g(x)f(x)dx\)</span></p></li>
+<li><p><span class="math inline">\(E(X^2) = \text{Var}(X) + [E(X)]^2\)</span><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a></p></li>
 </ul>
-<p>Few comments at the end</p>
-<ul>
-<li>the notes focus on real numbers but many theorems have direct generalization in complex space</li>
-</ul>
-<p>The document is generated by the <strong>bookdown</strong> package <span class="citation">(<a href="references.html#ref-R-bookdown" role="doc-biblioref">Xie 2020</a>)</span>.</p>
+<p>An important extension of the previous identity is used listed in the following lemma.</p>
 
+<div class="lemma">
+<p><span id="lem:mean-square-expectation" class="lemma"><strong>Lemma 13.1  </strong></span>
+The fact that <span class="math inline">\(\text{E}(X^2) = \text{Var}(X) + \mu^2\)</span> is a special case of the following identity</p>
+<p><span class="math display">\[
+E(X  - c)^2 = \text{Var}(X) + (\mu - c)^2
+\]</span></p>
+where <span class="math inline">\(c = 0\)</span>
 </div>
 
+<div class="proof">
+<span id="unlabeled-div-76" class="proof"><em>Proof</em>. </span>Proof
+</div>
+<p>Use the fact that variance is not affected when adding a constant</p>
+<p><span class="math display">\[
+\begin{split}
+\text{Var}(X) &amp;= \text{Var}(X - c) \\
+&amp;= E(X - c)^2 - (E(X - c))^2 \\ 
+&amp;= E(X - c)^2 - (\mu - c)^2
+\end{split}
+\]</span></p>
+<hr>
+<p>For <span class="math inline">\(\text{Var}(X)\)</span>, we have the following properties</p>
+<ul>
+<li><p><strong>non-negative</strong>: <span class="math inline">\(\text{Var}(X) \ge 0\)</span> with equality only if <span class="math inline">\(X\)</span> follows degenerate distribution<br />
+</p></li>
+<li><p><strong>invariant to adding constant</strong>: <span class="math inline">\(\text{Var}(X + \alpha) = \text{Var}(X)\)</span></p></li>
+<li><p>If all values are scaled by a constant, the variance is scaled by the square of that constant: <span class="math inline">\(\text{Var}(\alpha X) = \alpha^2\text{Var}(X)\)</span></p></li>
+<li><p>The variance of a sum of two random variables is given by</p></li>
+</ul>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Var}(aX + bY) &amp;= a^2\text{Var}(X) + b^2\text{Var}(Y) + 2ab \cdot\text{Cov}(X, Y) \\
+\text{Var}(aX - bY) &amp;= a^2\text{Var}(X) + b^2\text{Var}(Y) - 2ab \cdot\text{Cov}(X, Y)
+\end{aligned}
+\]</span>
+By extension, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are uncorrelated, <span class="math inline">\(\text{Var}(aX + bY) = a^2\text{Var}(X) + b^2\text{Var}(Y)\)</span></p>
+<ul>
+<li><strong>variance-covariance operations</strong>: the variance of a linear combination of r.v. is the sum of variance plus all pairs of covariances</li>
+</ul>
+<p><span class="math display">\[
+\text{Var}(\sum_{i=1}^{n} \alpha_i X_i) =
+\sum_{i=1}^{n} \alpha^2 \text{Var}(X_i) + \sum_{i \not = j}a_ia_j \text{Cov}(X_i, X_j)
+\]</span></p>
+<div id="stains-lemma" class="section level3" number="13.1.1">
+<h3><span class="header-section-number">13.1.1</span> Stain’s Lemma</h3>
+</div>
+<div id="random-vectors" class="section level3" number="13.1.2">
+<h3><span class="header-section-number">13.1.2</span> Random Vectors</h3>
+</div>
+</div>
+<div id="conditional-expectation" class="section level2" number="13.2">
+<h2><span class="header-section-number">13.2</span> Conditional expectation</h2>
+<p><a href="https://en.m.wikipedia.org/wiki/Conditional_expectation" class="uri">https://en.m.wikipedia.org/wiki/Conditional_expectation</a></p>
 
-
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="5">
+<li id="fn5"><p>Proof: <span class="math inline">\(E(XY) = E(X)E(Y) + \text{Cov}(X, Y)\)</span>. Start with covariance <span class="math display">\[\begin{split}
+\text{Cov}(X, Y) &amp;= E[(X - \mu_x)(Y - \mu_y)] \\
+&amp;= E(XY - X\mu_y - Y\mu_x + \mu_x\mu_y) \\
+&amp;= E(XY) - \mu_yE(X) - \mu_xE(Y) + \mu_x\mu_y \\
+&amp;= E(XY) - 2\mu_x\mu_y + \mu_x\mu_y \\
+&amp; = E(XY) - \mu_x\mu_y
+\end{split}\]</span><a href="expectation-and-variance.html#fnref5" class="footnote-back">↩︎</a></p></li>
+<li id="fn6"><p>Proof: <span class="math inline">\(E(X^2) = \text{Var}(X) + \big( E(X) \big)\)</span>. <span class="math display">\[
+\begin{split}
+E(X^2) &amp;= E \big[ (X \pm \mu)^2 \big] \\
+&amp;= E(X - \mu)^2 + \mu^2 + 2 \mu E(X -\mu) \qquad \text{the 3rd term is zero} \\
+&amp;= \text{Var}(X) + [E(X)]^2
+\end{split}
+\]</span><a href="expectation-and-variance.html#fnref6" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="basic-matrix-algebra.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="basics-of-probability-theory.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="moment-generating-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -449,7 +485,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/enixam/math-foundations/edit/master/index.Rmd",
+"link": "https://github.com/enixam/math-foundations/edit/master/exp-var.Rmd",
 "text": "Edit"
 },
 "history": {

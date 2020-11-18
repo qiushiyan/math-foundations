@@ -1,19 +1,19 @@
 --- 
-title: "Mathematical Notes for Machine Learning"
+title: "Mathematical Notes for Data Science and Statistics"
 author: "Qiushi Yan"
-date: "2020-10-15"
+date: "2020-11-18"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [references.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: enixam/math-foundations
-#description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "A notebook covering from scratch scratch various mathematical knowledge relevant to data science and statistics."
 ---
 
 # Preface {-}  
 
-This document is an effort to cover from scratch various mathematical knowledge relevant to machine learning, including linear algebra, multivariate calculus, probability theory, computational learning theory, and optimization (statistics should be in another stand-alone document). Although it's mainly intended for self consumption, I will be very glad if others could find it helpful and welcome any suggestion. 
+This document is an effort to cover from scratch various mathematical knowledge relevant to data science and statistics, including linear algebra, multivariate calculus, probability theory, computational learning theory, and optimization (statistics itself should be in another stand-alone document). Although it's mainly intended for self consumption, I will be very glad if others could find it helpful and welcome any suggestion. 
 
 Here is an short outline of each part 
 

@@ -102,4 +102,6 @@ $$
 ### Inverse Gamma Distribution 
 
 
+### Laplace Distribution
+
 ## Beta Distribution 

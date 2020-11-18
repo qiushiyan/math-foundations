@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Eigenthings and Quadratic Forms | Mathematical Notes for Machine Learning</title>
-  <meta name="description" content="Chapter 4 Eigenthings and Quadratic Forms | Mathematical Notes for Machine Learning" />
+  <title>Chapter 4 Eigenthings and Quadratic Forms | Mathematical Notes for Data Science and Statistics</title>
+  <meta name="description" content="A notebook covering from scratch scratch various mathematical knowledge relevant to data science and statistics." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Eigenthings and Quadratic Forms | Mathematical Notes for Machine Learning" />
+  <meta property="og:title" content="Chapter 4 Eigenthings and Quadratic Forms | Mathematical Notes for Data Science and Statistics" />
   <meta property="og:type" content="book" />
   
   
-  
+  <meta property="og:description" content="A notebook covering from scratch scratch various mathematical knowledge relevant to data science and statistics." />
   <meta name="github-repo" content="enixam/math-foundations" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Eigenthings and Quadratic Forms | Mathematical Notes for Machine Learning" />
+  <meta name="twitter:title" content="Chapter 4 Eigenthings and Quadratic Forms | Mathematical Notes for Data Science and Statistics" />
   
-  
+  <meta name="twitter:description" content="A notebook covering from scratch scratch various mathematical knowledge relevant to data science and statistics." />
   
 
 <meta name="author" content="Qiushi Yan" />
 
 
-<meta name="date" content="2020-10-15" />
+<meta name="date" content="2020-11-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="orthogonality.html"/>
 <link rel="next" href="singular-value-decomposition.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 
@@ -67,13 +69,15 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">Math Notes for Machine Learning</a></li>
+<li><a href="./">Math Notes for Data Science and Statistics</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="part"><span><b>I Linear Algebra</b></span></li>
-<li class="chapter" data-level="1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html"><i class="fa fa-check"></i><b>1</b> Basic Matrix Algebra</a><ul>
-<li class="chapter" data-level="1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication"><i class="fa fa-check"></i><b>1.1</b> Matrix Multiplication</a><ul>
+<li class="chapter" data-level="1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html"><i class="fa fa-check"></i><b>1</b> Basic Matrix Algebra</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication"><i class="fa fa-check"></i><b>1.1</b> Matrix Multiplication</a>
+<ul>
 <li class="chapter" data-level="1.1.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#geometric-transformations"><i class="fa fa-check"></i><b>1.1.1</b> Geometric Transformations</a></li>
 <li class="chapter" data-level="1.1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-multiplication-as-linear-transformation"><i class="fa fa-check"></i><b>1.1.2</b> Matrix Multiplication as Linear Transformation</a></li>
 <li class="chapter" data-level="1.1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#selector-matrix"><i class="fa fa-check"></i><b>1.1.3</b> Selector Matrix</a></li>
@@ -81,73 +85,89 @@
 </ul></li>
 <li class="chapter" data-level="1.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#elemetary-matrix-and-row-operations"><i class="fa fa-check"></i><b>1.2</b> Elemetary matrix and row operations</a></li>
 <li class="chapter" data-level="1.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#lu-factorization"><i class="fa fa-check"></i><b>1.3</b> LU Factorization</a></li>
-<li class="chapter" data-level="1.4" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#determinants"><i class="fa fa-check"></i><b>1.4</b> Determinants</a><ul>
+<li class="chapter" data-level="1.4" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#determinants"><i class="fa fa-check"></i><b>1.4</b> Determinants</a>
+<ul>
 <li class="chapter" data-level="1.4.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#cofactor-expansion"><i class="fa fa-check"></i><b>1.4.1</b> Cofactor Expansion</a></li>
 <li class="chapter" data-level="1.4.2" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#geometric-interpretation-of-determinant"><i class="fa fa-check"></i><b>1.4.2</b> Geometric Interpretation of Determinant</a></li>
 <li class="chapter" data-level="1.4.3" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#properties-of-determinant"><i class="fa fa-check"></i><b>1.4.3</b> Properties of Determinant</a></li>
 <li class="chapter" data-level="1.4.4" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#cramers-rule"><i class="fa fa-check"></i><b>1.4.4</b> Cramer’s Rule</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#trace"><i class="fa fa-check"></i><b>1.5</b> Trace</a></li>
-<li class="chapter" data-level="1.6" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-inversion"><i class="fa fa-check"></i><b>1.6</b> Matrix Inversion</a><ul>
+<li class="chapter" data-level="1.6" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#matrix-inversion"><i class="fa fa-check"></i><b>1.6</b> Matrix Inversion</a>
+<ul>
 <li class="chapter" data-level="1.6.1" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#the-matrix-inversion-lemma"><i class="fa fa-check"></i><b>1.6.1</b> The Matrix Inversion Lemma</a></li>
 </ul></li>
 <li class="chapter" data-level="1.7" data-path="basic-matrix-algebra.html"><a href="basic-matrix-algebra.html#complexity-of-matrix-computation"><i class="fa fa-check"></i><b>1.7</b> Complexity of Matrix Computation</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector Spaces</a><ul>
-<li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#vector-space"><i class="fa fa-check"></i><b>2.1</b> Vector Space</a><ul>
+<li class="chapter" data-level="2" data-path="vector-spaces.html"><a href="vector-spaces.html"><i class="fa fa-check"></i><b>2</b> Vector Spaces</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#vector-space"><i class="fa fa-check"></i><b>2.1</b> Vector Space</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="vector-spaces.html"><a href="vector-spaces.html#euclidean-space"><i class="fa fa-check"></i><b>2.1.1</b> Euclidean Space</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric Spaces, Normed Spaces, Inner Product Spaces</a><ul>
+<li class="chapter" data-level="2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-spaces-normed-spaces-inner-product-spaces"><i class="fa fa-check"></i><b>2.2</b> Metric Spaces, Normed Spaces, Inner Product Spaces</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="vector-spaces.html"><a href="vector-spaces.html#metric-and-norm"><i class="fa fa-check"></i><b>2.2.1</b> Metric and Norm</a></li>
 <li class="chapter" data-level="2.2.2" data-path="vector-spaces.html"><a href="vector-spaces.html#inner-produc-outer-product-cross-product"><i class="fa fa-check"></i><b>2.2.2</b> Inner Produc, Outer Product, Cross Product</a></li>
 <li class="chapter" data-level="2.2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#restricted-definition-of-inner-products-in-rn"><i class="fa fa-check"></i><b>2.2.3</b> Restricted Definition of Inner Products in <span class="math inline">\(R^n\)</span></a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="vector-spaces.html"><a href="vector-spaces.html#subspaces"><i class="fa fa-check"></i><b>2.3</b> Subspaces</a></li>
 <li class="chapter" data-level="2.4" data-path="vector-spaces.html"><a href="vector-spaces.html#fundamental-theorem"><i class="fa fa-check"></i><b>2.4</b> Fundamental Theorem of Linear Algebra</a></li>
-<li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a><ul>
+<li class="chapter" data-level="2.5" data-path="vector-spaces.html"><a href="vector-spaces.html#rank"><i class="fa fa-check"></i><b>2.5</b> Rank</a>
+<ul>
 <li class="chapter" data-level="2.5.1" data-path="vector-spaces.html"><a href="vector-spaces.html#effect-of-operations-on-matrix-rank"><i class="fa fa-check"></i><b>2.5.1</b> Effect of Operations on Matrix Rank</a></li>
 <li class="chapter" data-level="2.5.2" data-path="vector-spaces.html"><a href="vector-spaces.html#gram-matrix"><i class="fa fa-check"></i><b>2.5.2</b> Gram Matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="vector-spaces.html"><a href="vector-spaces.html#bases-and-coordinate-systems"><i class="fa fa-check"></i><b>2.6</b> Bases and Coordinate Systems</a><ul>
+<li class="chapter" data-level="2.6" data-path="vector-spaces.html"><a href="vector-spaces.html#bases-and-coordinate-systems"><i class="fa fa-check"></i><b>2.6</b> Bases and Coordinate Systems</a>
+<ul>
 <li class="chapter" data-level="2.6.1" data-path="vector-spaces.html"><a href="vector-spaces.html#change-of-basis"><i class="fa fa-check"></i><b>2.6.1</b> Change of Basis</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="vector-spaces.html"><a href="vector-spaces.html#complexity-of-vector-computations"><i class="fa fa-check"></i><b>2.7</b> Complexity of Vector Computations</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a><ul>
-<li class="chapter" data-level="3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>3.1</b> Orthogonal Decomposition</a><ul>
+<li class="chapter" data-level="3" data-path="orthogonality.html"><a href="orthogonality.html"><i class="fa fa-check"></i><b>3</b> Orthogonality</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition"><i class="fa fa-check"></i><b>3.1</b> Orthogonal Decomposition</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-complements"><i class="fa fa-check"></i><b>3.1.1</b> Orthogonal Complements</a></li>
 <li class="chapter" data-level="3.1.2" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-sets-and-orthogonal-basis"><i class="fa fa-check"></i><b>3.1.2</b> Orthogonal Sets and Orthogonal Basis</a></li>
 <li class="chapter" data-level="3.1.3" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-decomposition-1"><i class="fa fa-check"></i><b>3.1.3</b> Orthogonal Decomposition</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.2</b> Orthonormal Sets and Orthogonal Matrices</a><ul>
+<li class="chapter" data-level="3.2" data-path="orthogonality.html"><a href="orthogonality.html#orthonormal-sets-and-orthogonal-matrices"><i class="fa fa-check"></i><b>3.2</b> Orthonormal Sets and Orthogonal Matrices</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="orthogonality.html"><a href="orthogonality.html#orthogonal-matrices"><i class="fa fa-check"></i><b>3.2.1</b> Orthogonal Matrices</a></li>
 <li class="chapter" data-level="3.2.2" data-path="orthogonality.html"><a href="orthogonality.html#best-approximation"><i class="fa fa-check"></i><b>3.2.2</b> Best Approximation</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="orthogonality.html"><a href="orthogonality.html#projection-and-idempotent-matrices"><i class="fa fa-check"></i><b>3.3</b> Projection and idempotent matrices</a></li>
 <li class="chapter" data-level="3.4" data-path="orthogonality.html"><a href="orthogonality.html#gram-schmidt-process"><i class="fa fa-check"></i><b>3.4</b> Gram-Schmidt Process</a></li>
-<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorization"><i class="fa fa-check"></i><b>3.5</b> QR Factorization</a><ul>
+<li class="chapter" data-level="3.5" data-path="orthogonality.html"><a href="orthogonality.html#qr-factorization"><i class="fa fa-check"></i><b>3.5</b> QR Factorization</a>
+<ul>
 <li class="chapter" data-level="3.5.1" data-path="orthogonality.html"><a href="orthogonality.html#householder-qr-factorization"><i class="fa fa-check"></i><b>3.5.1</b> Householder QR factorization</a></li>
 <li class="chapter" data-level="3.5.2" data-path="orthogonality.html"><a href="orthogonality.html#applications-of-qr-factorization"><i class="fa fa-check"></i><b>3.5.2</b> Applications of QR factorization</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="orthogonality.html"><a href="orthogonality.html#complexity"><i class="fa fa-check"></i><b>3.6</b> Complexity</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and Quadratic Forms</a><ul>
-<li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and Eigenvalues</a><ul>
+<li class="chapter" data-level="4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html"><i class="fa fa-check"></i><b>4</b> Eigenthings and Quadratic Forms</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#eigenvectors-and-eigenvalues"><i class="fa fa-check"></i><b>4.1</b> Eigenvectors and Eigenvalues</a>
+<ul>
 <li class="chapter" data-level="4.1.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#additional-properties-of-eigenvalues-and-eigenvectors"><i class="fa fa-check"></i><b>4.1.1</b> Additional Properties of Eigenvalues and Eigenvectors</a></li>
 <li class="chapter" data-level="4.1.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#left-eigenvectors-and-right-eigenvectors"><i class="fa fa-check"></i><b>4.1.2</b> Left Eigenvectors and Right Eigenvectors</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#qr-method"><i class="fa fa-check"></i><b>4.2</b> QR Method</a></li>
-<li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>4.3</b> Diagnolization and Similar Matrices</a><ul>
+<li class="chapter" data-level="4.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#diagnolization-and-similar-matrices"><i class="fa fa-check"></i><b>4.3</b> Diagnolization and Similar Matrices</a>
+<ul>
 <li class="chapter" data-level="4.3.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#similarity"><i class="fa fa-check"></i><b>4.3.1</b> Similarity</a></li>
 <li class="chapter" data-level="4.3.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#jordan-matrix"><i class="fa fa-check"></i><b>4.3.2</b> Jordan Matrix</a></li>
 <li class="chapter" data-level="4.3.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#simultaneous-diagonalization"><i class="fa fa-check"></i><b>4.3.3</b> Simultaneous Diagonalization</a></li>
 <li class="chapter" data-level="4.3.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#cayley-hamilton-theorem"><i class="fa fa-check"></i><b>4.3.4</b> Cayley-Hamilton Theorem</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.4</b> Symmetric Matrices</a><ul>
+<li class="chapter" data-level="4.4" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#symmetric-matrices"><i class="fa fa-check"></i><b>4.4</b> Symmetric Matrices</a>
+<ul>
 <li class="chapter" data-level="4.4.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#spectral-decomposition"><i class="fa fa-check"></i><b>4.4.1</b> Spectral Decomposition</a></li>
 <li class="chapter" data-level="4.4.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#a-orthogonality"><i class="fa fa-check"></i><b>4.4.2</b> A-Orthogonality</a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#quadratic-forms"><i class="fa fa-check"></i><b>4.5</b> Quadratic Forms</a><ul>
+<li class="chapter" data-level="4.5" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#quadratic-forms"><i class="fa fa-check"></i><b>4.5</b> Quadratic Forms</a>
+<ul>
 <li class="chapter" data-level="4.5.1" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#change-of-variable"><i class="fa fa-check"></i><b>4.5.1</b> Change of Variable</a></li>
 <li class="chapter" data-level="4.5.2" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#classification-of-quadratic-forms"><i class="fa fa-check"></i><b>4.5.2</b> Classification of Quadratic Forms</a></li>
 <li class="chapter" data-level="4.5.3" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#gershgorin-discs-and-diagonal-dominance"><i class="fa fa-check"></i><b>4.5.3</b> Gershgorin Discs and Diagonal Dominance</a></li>
@@ -155,126 +175,160 @@
 <li class="chapter" data-level="4.6" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#cholesky-factorization"><i class="fa fa-check"></i><b>4.6</b> Cholesky Factorization</a></li>
 <li class="chapter" data-level="4.7" data-path="eigenthings-and-quadratic-forms.html"><a href="eigenthings-and-quadratic-forms.html#rayleigh-quotients"><i class="fa fa-check"></i><b>4.7</b> Rayleigh Quotients</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html"><i class="fa fa-check"></i><b>5</b> Singular Value Decomposition</a><ul>
+<li class="chapter" data-level="5" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html"><i class="fa fa-check"></i><b>5</b> Singular Value Decomposition</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#singular-values"><i class="fa fa-check"></i><b>5.1</b> Singular Values</a></li>
-<li class="chapter" data-level="5.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#svd-theorem"><i class="fa fa-check"></i><b>5.2</b> SVD</a><ul>
+<li class="chapter" data-level="5.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#svd-theorem"><i class="fa fa-check"></i><b>5.2</b> SVD</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#geometric-interpretation-of-svd"><i class="fa fa-check"></i><b>5.2.1</b> Geometric Interpretation of SVD</a></li>
 <li class="chapter" data-level="5.2.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#uniqueness-of-svd"><i class="fa fa-check"></i><b>5.2.2</b> Uniqueness of SVD</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#matrix-norms"><i class="fa fa-check"></i><b>5.3</b> Matrix Norms</a><ul>
+<li class="chapter" data-level="5.3" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#matrix-norms"><i class="fa fa-check"></i><b>5.3</b> Matrix Norms</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#induced-norms"><i class="fa fa-check"></i><b>5.3.1</b> Induced Norms</a></li>
 <li class="chapter" data-level="5.3.2" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#entry-wise-norm"><i class="fa fa-check"></i><b>5.3.2</b> Entry-wise Norm</a></li>
 <li class="chapter" data-level="5.3.3" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#other-matrix-norms"><i class="fa fa-check"></i><b>5.3.3</b> Other Matrix Norms</a></li>
 <li class="chapter" data-level="5.3.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#unitary-invariant-norms"><i class="fa fa-check"></i><b>5.3.4</b> Unitary Invariant Norms</a></li>
 </ul></li>
 <li class="chapter" data-level="5.4" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#low-rank-approximation"><i class="fa fa-check"></i><b>5.4</b> Low Rank Approximation</a></li>
-<li class="chapter" data-level="5.5" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#pseudoinverse"><i class="fa fa-check"></i><b>5.5</b> Pseudoinverse</a><ul>
+<li class="chapter" data-level="5.5" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#pseudoinverse"><i class="fa fa-check"></i><b>5.5</b> Pseudoinverse</a>
+<ul>
 <li class="chapter" data-level="5.5.1" data-path="singular-value-decomposition.html"><a href="singular-value-decomposition.html#pseudoinverse-of-full-rank-matrix"><i class="fa fa-check"></i><b>5.5.1</b> Pseudoinverse of full rank matrix</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="linear-system.html"><a href="linear-system.html"><i class="fa fa-check"></i><b>6</b> Solutions of Linear System Ax = b</a><ul>
-<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#when-a-has-independent-columns-or-rows"><i class="fa fa-check"></i><b>6.1</b> When A Has Independent Columns or Rows</a><ul>
+<li class="chapter" data-level="6" data-path="linear-system.html"><a href="linear-system.html"><i class="fa fa-check"></i><b>6</b> Solutions of Linear System Ax = b</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="linear-system.html"><a href="linear-system.html#when-a-has-independent-columns-or-rows"><i class="fa fa-check"></i><b>6.1</b> When A Has Independent Columns or Rows</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="linear-system.html"><a href="linear-system.html#when-a-is-square"><i class="fa fa-check"></i><b>6.1.1</b> When A is square</a></li>
 <li class="chapter" data-level="6.1.2" data-path="linear-system.html"><a href="linear-system.html#when-m-n-lesat-squares"><i class="fa fa-check"></i><b>6.1.2</b> When m &gt; n: Lesat Squares</a></li>
 <li class="chapter" data-level="6.1.3" data-path="linear-system.html"><a href="linear-system.html#when-m-n-least-norms"><i class="fa fa-check"></i><b>6.1.3</b> When m &lt; n: Least Norms</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="linear-system.html"><a href="linear-system.html#otherwise"><i class="fa fa-check"></i><b>6.2</b> Otherwise</a></li>
-<li class="chapter" data-level="6.3" data-path="linear-system.html"><a href="linear-system.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>6.3</b> Ill-Conditioned Matrices</a><ul>
+<li class="chapter" data-level="6.3" data-path="linear-system.html"><a href="linear-system.html#ill-conditioned-matrices"><i class="fa fa-check"></i><b>6.3</b> Ill-Conditioned Matrices</a>
+<ul>
 <li class="chapter" data-level="6.3.1" data-path="linear-system.html"><a href="linear-system.html#condition-number"><i class="fa fa-check"></i><b>6.3.1</b> Condition Number</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="special-matrices.html"><a href="special-matrices.html"><i class="fa fa-check"></i><b>7</b> Special Matrices</a></li>
 <li class="part"><span><b>II Multivariate Calculus</b></span></li>
-<li class="chapter" data-level="8" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>8</b> Partial Derivatives</a><ul>
+<li class="chapter" data-level="8" data-path="partial-derivatives.html"><a href="partial-derivatives.html"><i class="fa fa-check"></i><b>8</b> Partial Derivatives</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#limit-and-continuity"><i class="fa fa-check"></i><b>8.1</b> Limit and Continuity</a></li>
-<li class="chapter" data-level="8.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivative"><i class="fa fa-check"></i><b>8.2</b> Partial Derivative</a><ul>
+<li class="chapter" data-level="8.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#partial-derivative"><i class="fa fa-check"></i><b>8.2</b> Partial Derivative</a>
+<ul>
 <li class="chapter" data-level="8.2.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#gradient-and-directional-derivative"><i class="fa fa-check"></i><b>8.2.1</b> Gradient and Directional Derivative</a></li>
 <li class="chapter" data-level="8.2.2" data-path="partial-derivatives.html"><a href="partial-derivatives.html#linearization-of-two-variable-functions"><i class="fa fa-check"></i><b>8.2.2</b> Linearization of Two-variable Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentials"><i class="fa fa-check"></i><b>8.3</b> Differentials</a><ul>
+<li class="chapter" data-level="8.3" data-path="partial-derivatives.html"><a href="partial-derivatives.html#differentials"><i class="fa fa-check"></i><b>8.3</b> Differentials</a>
+<ul>
 <li class="chapter" data-level="8.3.1" data-path="partial-derivatives.html"><a href="partial-derivatives.html#continuity-partial-derivatives-and-differentiability"><i class="fa fa-check"></i><b>8.3.1</b> Continuity, Partial Derivatives and Differentiability</a></li>
 </ul></li>
 <li class="chapter" data-level="8.4" data-path="partial-derivatives.html"><a href="partial-derivatives.html#divergence-curl-and-laplacian"><i class="fa fa-check"></i><b>8.4</b> Divergence, Curl, and Laplacian</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>9</b> Matrix Calculus</a><ul>
+<li class="chapter" data-level="9" data-path="matrix-calculus.html"><a href="matrix-calculus.html"><i class="fa fa-check"></i><b>9</b> Matrix Calculus</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="matrix-calculus.html"><a href="matrix-calculus.html#the-chain-rule"><i class="fa fa-check"></i><b>9.1</b> The Chain Rule</a></li>
 <li class="chapter" data-level="9.2" data-path="matrix-calculus.html"><a href="matrix-calculus.html#useful-identities-in-matirx-calculus"><i class="fa fa-check"></i><b>9.2</b> Useful Identities in Matirx Calculus</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="taylor-series.html"><a href="taylor-series.html"><i class="fa fa-check"></i><b>10</b> Taylor Series</a><ul>
+<li class="chapter" data-level="10" data-path="taylor-series.html"><a href="taylor-series.html"><i class="fa fa-check"></i><b>10</b> Taylor Series</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="taylor-series.html"><a href="taylor-series.html#convergence-of-taylor-series"><i class="fa fa-check"></i><b>10.1</b> Convergence of Taylor Series</a></li>
 <li class="chapter" data-level="10.2" data-path="taylor-series.html"><a href="taylor-series.html#taylor-approximation-of-multivariate-functions"><i class="fa fa-check"></i><b>10.2</b> Taylor Approximation of Multivariate Functions</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="multiple-integral.html"><a href="multiple-integral.html"><i class="fa fa-check"></i><b>11</b> Multiple Integral</a></li>
 <li class="part"><span><b>III Probability Theory</b></span></li>
-<li class="chapter" data-level="12" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html"><i class="fa fa-check"></i><b>12</b> Basics of Probability Theory</a><ul>
+<li class="chapter" data-level="12" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html"><i class="fa fa-check"></i><b>12</b> Basics of Probability Theory</a>
+<ul>
 <li class="chapter" data-level="12.1" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html#probabilty-space"><i class="fa fa-check"></i><b>12.1</b> Probabilty Space</a></li>
 <li class="chapter" data-level="12.2" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html#counting"><i class="fa fa-check"></i><b>12.2</b> Counting</a></li>
 <li class="chapter" data-level="12.3" data-path="basics-of-probability-theory.html"><a href="basics-of-probability-theory.html#conditional-probability"><i class="fa fa-check"></i><b>12.3</b> Conditional Probability</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html"><i class="fa fa-check"></i><b>13</b> Random variables and moments</a><ul>
-<li class="chapter" data-level="13.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>13.1</b> Properties of Expectation and Variance</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#stains-lemma"><i class="fa fa-check"></i><b>13.1.1</b> Stain’s Lemma</a></li>
-<li class="chapter" data-level="13.1.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#random-vectors"><i class="fa fa-check"></i><b>13.1.2</b> Random Vectors</a></li>
+<li class="chapter" data-level="13" data-path="expectation-and-variance.html"><a href="expectation-and-variance.html"><i class="fa fa-check"></i><b>13</b> Expectation and variance</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="expectation-and-variance.html"><a href="expectation-and-variance.html#properties-of-expectation-and-variance"><i class="fa fa-check"></i><b>13.1</b> Properties of Expectation and Variance</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="expectation-and-variance.html"><a href="expectation-and-variance.html#stains-lemma"><i class="fa fa-check"></i><b>13.1.1</b> Stain’s Lemma</a></li>
+<li class="chapter" data-level="13.1.2" data-path="expectation-and-variance.html"><a href="expectation-and-variance.html#random-vectors"><i class="fa fa-check"></i><b>13.1.2</b> Random Vectors</a></li>
 </ul></li>
-<li class="chapter" data-level="13.2" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#other-summaries"><i class="fa fa-check"></i><b>13.2</b> Other Summaries</a></li>
-<li class="chapter" data-level="13.3" data-path="random-variables-and-moments.html"><a href="random-variables-and-moments.html#moment-generating-functions"><i class="fa fa-check"></i><b>13.3</b> Moment Generating Functions</a></li>
+<li class="chapter" data-level="13.2" data-path="expectation-and-variance.html"><a href="expectation-and-variance.html#conditional-expectation"><i class="fa fa-check"></i><b>13.2</b> Conditional expectation</a></li>
 </ul></li>
-<li class="chapter" data-level="14" data-path="inequalities.html"><a href="inequalities.html"><i class="fa fa-check"></i><b>14</b> Inequalities</a></li>
-<li class="chapter" data-level="15" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>15</b> Univariate Distributions</a><ul>
-<li class="chapter" data-level="15.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>15.1</b> Uniform Distribution</a></li>
-<li class="chapter" data-level="15.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#normal-distribution"><i class="fa fa-check"></i><b>15.2</b> Normal Distribution</a><ul>
-<li class="chapter" data-level="15.2.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#log-normal-distribution"><i class="fa fa-check"></i><b>15.2.1</b> Log Normal Distribution</a></li>
+<li class="chapter" data-level="14" data-path="moment-generating-functions.html"><a href="moment-generating-functions.html"><i class="fa fa-check"></i><b>14</b> Moment Generating Functions</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="moment-generating-functions.html"><a href="moment-generating-functions.html#moments"><i class="fa fa-check"></i><b>14.1</b> Moments</a></li>
+<li class="chapter" data-level="14.2" data-path="moment-generating-functions.html"><a href="moment-generating-functions.html#mgf"><i class="fa fa-check"></i><b>14.2</b> MGF</a></li>
 </ul></li>
-<li class="chapter" data-level="15.3" data-path="univariate-distributions.html"><a href="univariate-distributions.html#binomial-distribution-and-beta-distribution"><i class="fa fa-check"></i><b>15.3</b> Binomial Distribution and Beta Distribution</a></li>
-<li class="chapter" data-level="15.4" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-distribution"><i class="fa fa-check"></i><b>15.4</b> Poisson Distribution</a><ul>
-<li class="chapter" data-level="15.4.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-process"><i class="fa fa-check"></i><b>15.4.1</b> Poisson Process</a></li>
+<li class="chapter" data-level="15" data-path="inequalities.html"><a href="inequalities.html"><i class="fa fa-check"></i><b>15</b> Inequalities</a></li>
+<li class="chapter" data-level="16" data-path="univariate-distributions.html"><a href="univariate-distributions.html"><i class="fa fa-check"></i><b>16</b> Univariate Distributions</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#uniform-distribution"><i class="fa fa-check"></i><b>16.1</b> Uniform Distribution</a></li>
+<li class="chapter" data-level="16.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#normal-distribution"><i class="fa fa-check"></i><b>16.2</b> Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#log-normal-distribution"><i class="fa fa-check"></i><b>16.2.1</b> Log Normal Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="15.5" data-path="univariate-distributions.html"><a href="univariate-distributions.html#exponential-distribution-and-gamma-distribution"><i class="fa fa-check"></i><b>15.5</b> Exponential Distribution and Gamma Distribution</a><ul>
-<li class="chapter" data-level="15.5.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#properties"><i class="fa fa-check"></i><b>15.5.1</b> Properties</a></li>
-<li class="chapter" data-level="15.5.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#inverse-gamma-distribution"><i class="fa fa-check"></i><b>15.5.2</b> Inverse Gamma Distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="univariate-distributions.html"><a href="univariate-distributions.html#binomial-distribution-and-beta-distribution"><i class="fa fa-check"></i><b>16.3</b> Binomial Distribution and Beta Distribution</a></li>
+<li class="chapter" data-level="16.4" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-distribution"><i class="fa fa-check"></i><b>16.4</b> Poisson Distribution</a>
+<ul>
+<li class="chapter" data-level="16.4.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#poisson-process"><i class="fa fa-check"></i><b>16.4.1</b> Poisson Process</a></li>
 </ul></li>
-<li class="chapter" data-level="15.6" data-path="univariate-distributions.html"><a href="univariate-distributions.html#beta-distribution"><i class="fa fa-check"></i><b>15.6</b> Beta Distribution</a></li>
+<li class="chapter" data-level="16.5" data-path="univariate-distributions.html"><a href="univariate-distributions.html#exponential-distribution-and-gamma-distribution"><i class="fa fa-check"></i><b>16.5</b> Exponential Distribution and Gamma Distribution</a>
+<ul>
+<li class="chapter" data-level="16.5.1" data-path="univariate-distributions.html"><a href="univariate-distributions.html#properties"><i class="fa fa-check"></i><b>16.5.1</b> Properties</a></li>
+<li class="chapter" data-level="16.5.2" data-path="univariate-distributions.html"><a href="univariate-distributions.html#inverse-gamma-distribution"><i class="fa fa-check"></i><b>16.5.2</b> Inverse Gamma Distribution</a></li>
+<li class="chapter" data-level="16.5.3" data-path="univariate-distributions.html"><a href="univariate-distributions.html#laplace-distribution"><i class="fa fa-check"></i><b>16.5.3</b> Laplace Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="16" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>16</b> Multivariate Distributions</a><ul>
-<li class="chapter" data-level="16.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>16.1</b> Multivariate Normal Distribution</a><ul>
-<li class="chapter" data-level="16.1.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#chi-square-distribution"><i class="fa fa-check"></i><b>16.1.1</b> Chi-square Distribution</a></li>
+<li class="chapter" data-level="16.6" data-path="univariate-distributions.html"><a href="univariate-distributions.html#beta-distribution"><i class="fa fa-check"></i><b>16.6</b> Beta Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="16.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#dirichlet-distributon"><i class="fa fa-check"></i><b>16.2</b> Dirichlet Distributon</a></li>
+<li class="chapter" data-level="17" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html"><i class="fa fa-check"></i><b>17</b> Multivariate Distributions</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#multivariate-normal-distribution"><i class="fa fa-check"></i><b>17.1</b> Multivariate Normal Distribution</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#chi-square-distribution"><i class="fa fa-check"></i><b>17.1.1</b> Chi-square Distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="17" data-path="markov-chain.html"><a href="markov-chain.html"><i class="fa fa-check"></i><b>17</b> Markov Chain</a></li>
+<li class="chapter" data-level="17.2" data-path="multivariate-distributions.html"><a href="multivariate-distributions.html#dirichlet-distributon"><i class="fa fa-check"></i><b>17.2</b> Dirichlet Distributon</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="markov-chain.html"><a href="markov-chain.html"><i class="fa fa-check"></i><b>18</b> Markov Chain</a></li>
 <li class="part"><span><b>IV Learning Theory</b></span></li>
-<li class="chapter" data-level="18" data-path="the-learning-problem-framework.html"><a href="the-learning-problem-framework.html"><i class="fa fa-check"></i><b>18</b> The Learning Problem Framework</a><ul>
-<li class="chapter" data-level="18.1" data-path="the-learning-problem-framework.html"><a href="the-learning-problem-framework.html#the-pac-learning-framework"><i class="fa fa-check"></i><b>18.1</b> The PAC Learning Framework</a></li>
+<li class="chapter" data-level="19" data-path="the-learning-problem-framework.html"><a href="the-learning-problem-framework.html"><i class="fa fa-check"></i><b>19</b> The Learning Problem Framework</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="the-learning-problem-framework.html"><a href="the-learning-problem-framework.html#the-pac-learning-framework"><i class="fa fa-check"></i><b>19.1</b> The PAC Learning Framework</a></li>
 </ul></li>
 <li class="part"><span><b>V Optimization</b></span></li>
-<li class="chapter" data-level="19" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>19</b> Basics of Optimization</a><ul>
-<li class="chapter" data-level="19.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>19.1</b> Univariate Optimization</a></li>
-<li class="chapter" data-level="19.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>19.2</b> Multivariate Optimization</a><ul>
-<li class="chapter" data-level="19.2.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#method-of-lagrange-multiplier"><i class="fa fa-check"></i><b>19.2.1</b> ## Method of Lagrange Multiplier</a></li>
+<li class="chapter" data-level="20" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html"><i class="fa fa-check"></i><b>20</b> Basics of Optimization</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#univariate-optimization"><i class="fa fa-check"></i><b>20.1</b> Univariate Optimization</a></li>
+<li class="chapter" data-level="20.2" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#multivariate-optimization"><i class="fa fa-check"></i><b>20.2</b> Multivariate Optimization</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#method-of-lagrange-multiplier"><i class="fa fa-check"></i><b>20.2.1</b> ## Method of Lagrange Multiplier</a></li>
 </ul></li>
-<li class="chapter" data-level="19.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#convexity"><i class="fa fa-check"></i><b>19.3</b> Convexity</a><ul>
-<li class="chapter" data-level="19.3.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#properties-of-convex-functions"><i class="fa fa-check"></i><b>19.3.1</b> Properties of Convex Functions</a></li>
+<li class="chapter" data-level="20.3" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#convexity"><i class="fa fa-check"></i><b>20.3</b> Convexity</a>
+<ul>
+<li class="chapter" data-level="20.3.1" data-path="basics-of-optimization.html"><a href="basics-of-optimization.html#properties-of-convex-functions"><i class="fa fa-check"></i><b>20.3.1</b> Properties of Convex Functions</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>20</b> Gradient Descent</a></li>
+<li class="chapter" data-level="21" data-path="gradient-descent.html"><a href="gradient-descent.html"><i class="fa fa-check"></i><b>21</b> Gradient Descent</a></li>
 <li class="part"><span><b>VI Applications</b></span></li>
-<li class="chapter" data-level="21" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>21</b> Linear Models</a><ul>
-<li class="chapter" data-level="21.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>21.1</b> Ordinary Least Squares</a><ul>
-<li class="chapter" data-level="21.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>21.1.1</b> Least Square Estimation</a></li>
+<li class="chapter" data-level="22" data-path="linear-models.html"><a href="linear-models.html"><i class="fa fa-check"></i><b>22</b> Linear Models</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="linear-models.html"><a href="linear-models.html#ordinary-least-squares"><i class="fa fa-check"></i><b>22.1</b> Ordinary Least Squares</a>
+<ul>
+<li class="chapter" data-level="22.1.1" data-path="linear-models.html"><a href="linear-models.html#least-square-estimation"><i class="fa fa-check"></i><b>22.1.1</b> Least Square Estimation</a></li>
 </ul></li>
-<li class="chapter" data-level="21.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>21.2</b> Weighted Least Squares</a></li>
-<li class="chapter" data-level="21.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squares"><i class="fa fa-check"></i><b>21.3</b> Partial Least Squares</a></li>
-<li class="chapter" data-level="21.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>21.4</b> Regularized Regression</a><ul>
-<li class="chapter" data-level="21.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>21.4.1</b> Ridge Regression</a></li>
-<li class="chapter" data-level="21.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso"><i class="fa fa-check"></i><b>21.4.2</b> Lasso</a></li>
-<li class="chapter" data-level="21.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net"><i class="fa fa-check"></i><b>21.4.3</b> Elastic Net</a></li>
+<li class="chapter" data-level="22.2" data-path="linear-models.html"><a href="linear-models.html#weighted-least-squares"><i class="fa fa-check"></i><b>22.2</b> Weighted Least Squares</a></li>
+<li class="chapter" data-level="22.3" data-path="linear-models.html"><a href="linear-models.html#partial-least-squares"><i class="fa fa-check"></i><b>22.3</b> Partial Least Squares</a></li>
+<li class="chapter" data-level="22.4" data-path="linear-models.html"><a href="linear-models.html#regularized-regression"><i class="fa fa-check"></i><b>22.4</b> Regularized Regression</a>
+<ul>
+<li class="chapter" data-level="22.4.1" data-path="linear-models.html"><a href="linear-models.html#ridge-regression"><i class="fa fa-check"></i><b>22.4.1</b> Ridge Regression</a></li>
+<li class="chapter" data-level="22.4.2" data-path="linear-models.html"><a href="linear-models.html#lasso"><i class="fa fa-check"></i><b>22.4.2</b> Lasso</a></li>
+<li class="chapter" data-level="22.4.3" data-path="linear-models.html"><a href="linear-models.html#elastic-net"><i class="fa fa-check"></i><b>22.4.3</b> Elastic Net</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>22</b> Principal Component Analysis</a><ul>
-<li class="chapter" data-level="22.0.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#pca-with-normalization"><i class="fa fa-check"></i><b>22.0.1</b> PCA with Normalization</a></li>
-<li class="chapter" data-level="22.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#correspondence-analysis"><i class="fa fa-check"></i><b>22.1</b> Correspondence Analysis</a></li>
+<li class="chapter" data-level="23" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html"><i class="fa fa-check"></i><b>23</b> Principal Component Analysis</a>
+<ul>
+<li class="chapter" data-level="23.0.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#pca-with-normalization"><i class="fa fa-check"></i><b>23.0.1</b> PCA with Normalization</a></li>
+<li class="chapter" data-level="23.1" data-path="principal-component-analysis.html"><a href="principal-component-analysis.html#correspondence-analysis"><i class="fa fa-check"></i><b>23.1</b> Correspondence Analysis</a></li>
 </ul></li>
-<li class="chapter" data-level="23" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>23</b> Text Mining</a></li>
+<li class="chapter" data-level="24" data-path="text-mining.html"><a href="text-mining.html"><i class="fa fa-check"></i><b>24</b> Text Mining</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li>
@@ -290,7 +344,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mathematical Notes for Machine Learning</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mathematical Notes for Data Science and Statistics</a>
           </h1>
         </div>
 
@@ -298,16 +352,15 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="eigenthings-and-quadratic-forms" class="section level1">
+<div id="eigenthings-and-quadratic-forms" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Eigenthings and Quadratic Forms</h1>
-<div id="eigenvectors-and-eigenvalues" class="section level2">
+<div id="eigenvectors-and-eigenvalues" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Eigenvectors and Eigenvalues</h2>
 
 <div class="definition">
 <p><span id="def:eigen" class="definition"><strong>Definition 4.1  (Eigenvectors and eigenvalues)  </strong></span>An <strong>eigenvector</strong> of an <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is a <em>nonzero</em> vector <span class="math inline">\(\bar{x}\)</span> such that <span class="math inline">\(A\bar{x} = \lambda\bar{x}\)</span>.</p>
 <span class="math inline">\(\lambda\)</span> is the <strong>eigenvalue</strong> of <span class="math inline">\(A\)</span> if there is a nontrivial solution <span class="math inline">\(\bar{x}\)</span> of <span class="math inline">\(A\bar{x} = \lambda \bar{x}\)</span>; such an <span class="math inline">\(\bar{x}\)</span> is called an <em>eigenvector corresponding to <span class="math inline">\(\lambda\)</span></em>
 </div>
-
 <p>To find eigenvalues and corresponding eigenvectors of <span class="math inline">\(A\)</span>, we look at the equation</p>
 <p><span class="math display">\[
 (A - \lambda I)\bar{x}= 0
@@ -322,7 +375,6 @@
 <div class="theorem">
 <span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 1.2  </strong></span>Eigenvalues of a trangular matrix are its diagonal entries.
 </div>
-
 <div class="pr">
 <p>Consider the <span class="math inline">\(3 \times 3\)</span> case. If <span class="math inline">\(A\)</span> is upper triangular, then <span class="math inline">\(A - \lambda I\)</span> has the form</p>
 <p><span class="math display">\[
@@ -355,7 +407,6 @@ a_{11} - \lambda &amp; a_{12} &amp; a_{13} \\
 <div class="theorem">
 <span id="thm:distinct-eigenvalue" class="theorem"><strong>Theorem 4.1  </strong></span>For distinct eigenvalues <span class="math inline">\(\lambda_1, \cdots, \lambda_r\)</span> of an <span class="math inline">\(n \times n\)</span> matrix A, their corresponding eigenvectors <span class="math inline">\(\bar{v_1}, ..., \bar{v_r}\)</span> are linearly independent.
 </div>
-
 <div class="pr">
 <p>Suppose for <span class="math inline">\(r\)</span> distinct eigenvalue <span class="math inline">\(\lambda_1, \cdots, \lambda_r\)</span>, the set <span class="math inline">\(\{\bar{v_1}, ..., \bar{v_r}\}\)</span> is not linearly independent, and <span class="math inline">\(p\)</span> is the least index such that <span class="math inline">\(\bar{v}_{p+1}\)</span> is a linear combination of the preceding vectors. Then there exists scalars <span class="math inline">\(c_1, \cdots, c_p\)</span> such that</p>
 <p><span class="math display">\[
@@ -376,7 +427,6 @@ c_1(\lambda_1 - \lambda_{p+1})\bar{v}_1 +\cdots + c_p(\lambda_p - \lambda_{p+1})
 <div class="corollary">
 <span id="cor:same-nonzero" class="corollary"><strong>Corollary 4.1  </strong></span>Let <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span> <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> has the same set of <em>nonzero</em> eigenvalues.
 </div>
-
 <div class="pr">
 <p>Let <span class="math inline">\(\lambda\)</span> be a nonzero eigenvalue of <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(\bar{x}\)</span> its eigenvector</p>
 <p><span class="math display">\[
@@ -391,7 +441,7 @@ AA^T(A\bar{x}) = \lambda (A\bar{x})
 <p>We will have to verify that <span class="math inline">\(A\bar{x}\)</span> is no zero vector before concluding <span class="math inline">\(\lambda\)</span> is also an eigenvector of <span class="math inline">\(AA^T\)</span>. Suppose <span class="math inline">\(A\bar{x} = 0\)</span>, then <span class="math inline">\(A^TA\bar{x} =\lambda\bar{x} = 0\)</span>. Since <span class="math inline">\(\bar{x}\)</span> is a eigenvector which is nonzero, <span class="math inline">\(\lambda = 0\)</span>, which contradicts our former statement. Thus, any nonzero eigenvalue of <span class="math inline">\(A^TA\)</span> is also an eigenvalue of <span class="math inline">\(AA^T\)</span>.</p>
 </div>
 <p><span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are known as <strong>Gram matrix</strong> and left Gram matrix in corollary <a href="vector-spaces.html#prp:gram-matrix">2.1</a></p>
-<div id="additional-properties-of-eigenvalues-and-eigenvectors" class="section level3">
+<div id="additional-properties-of-eigenvalues-and-eigenvectors" class="section level3" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Additional Properties of Eigenvalues and Eigenvectors</h3>
 <p>Let <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> with eigenvalues <span class="math inline">\(\lambda_1, ..., \lambda_n\)</span>. Here are some additional properties of this matrix and its eigenvalues:</p>
 <ul>
@@ -412,7 +462,7 @@ AA^T(A\bar{x}) = \lambda (A\bar{x})
 <li><p>For a polynomial function <span class="math inline">\(P\)</span> the eigenvalues of <span class="math inline">\(P(A)\)</span> are <span class="math inline">\(P(\lambda_1), ..., P(\lambda_n)\)</span></p></li>
 </ul>
 </div>
-<div id="left-eigenvectors-and-right-eigenvectors" class="section level3">
+<div id="left-eigenvectors-and-right-eigenvectors" class="section level3" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Left Eigenvectors and Right Eigenvectors</h3>
 <p>It’s possible to define “left” eigenvectors as opposed to “right” eigenvectors as in <span class="math inline">\(A \bar{v} = \lambda \bar{v}\)</span>. A <em>left eigenvector</em> is a nonzero <em>row</em> vector <span class="math inline">\(\bar{w}\)</span> such that <span class="math inline">\(\bar{w}A = \lambda \bar{w}\)</span>. It is immediately obvious that the transpose of a right eigenvector of <span class="math inline">\(A\)</span> will be a left eigenvector of <span class="math inline">\(A^T\)</span>. The following discovery shows how they are further connected.</p>
 <p>Consider a diagonalizable <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span>, we have</p>
@@ -429,10 +479,10 @@ A^T = {(P^{-1})}^{T}\Lambda P^T
 <p>This can be proved via the characteristic polynomial. For left eigenvectors we have <span class="math inline">\(A^T\bar{w}^T = \lambda \bar{w}^T\)</span>. Therefore, its characteristic polynomial is <span class="math inline">\(\det(A^T - \lambda I)\)</span>, which is equivalent to <span class="math inline">\(\det(A - \lambdaI)\)</span>. (the determinant stays the same after transposing)</p>
 </div>
 </div>
-<div id="qr-method" class="section level2">
+<div id="qr-method" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> QR Method</h2>
 </div>
-<div id="diagnolization-and-similar-matrices" class="section level2">
+<div id="diagnolization-and-similar-matrices" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Diagnolization and Similar Matrices</h2>
 
 <div class="definition">
@@ -440,7 +490,6 @@ A^T = {(P^{-1})}^{T}\Lambda P^T
 <p>In such case, in <span class="math inline">\(A = P \Lambda P^{-1}\)</span>, the diagonal entries of <span class="math inline">\(D\)</span> are eigenvalues that correpond, respectively, to the eigenvectors of in <span class="math inline">\(P\)</span></p>
 In other words, <span class="math inline">\(A\)</span> is diagnolizable if and only if there are enough eigenvectors in form a basis of <span class="math inline">\(R^n\)</span>, called an <strong>eigenvector basis</strong> of <span class="math inline">\(R^n\)</span>
 </div>
-
 <div class="pr">
 <p><span class="math display">\[
 \begin{split}
@@ -480,14 +529,13 @@ A &amp;= P \Lambda P^{-1}
 <li><p>The dimension of the eigenspace for each <span class="math inline">\(\lambda_k\)</span> equals the multiplicity of <span class="math inline">\(\lambda_k\)</span>. Thus <span class="math inline">\(A\)</span> with repeated eigenvalues can still be diagonalizable.<br />
 Repeated eigenvalues create the possibility that a diagonalization might not exist. Particularly, if less than <span class="math inline">\(r_i\)</span> eigenvectors exist for an eigenvalue with multiplicity <span class="math inline">\(r_i\)</span>, a diagonalization does not exist. Such a matrix is said to be <strong>deflective</strong>.</p></li>
 </ol>
-<div id="similarity" class="section level3">
+<div id="similarity" class="section level3" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Similarity</h3>
 <p>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are both <span class="math inline">\(n \times n\)</span> matrices, then <span class="math inline">\(A\)</span> <strong>is similar to</strong> <span class="math inline">\(B\)</span> if there is an invertible matrix <span class="math inline">\(P\)</span> such that <span class="math inline">\(P^{-1}AP = B\)</span>, or equivalently if we write <span class="math inline">\(Q\)</span> for <span class="math inline">\(P^{-1}\)</span>, <span class="math inline">\(Q^{-1}BQ = A\)</span>. Changing <span class="math inline">\(A\)</span> into <span class="math inline">\(P^{-1}AP\)</span> is called a <strong>similarity transformation</strong>.</p>
 
 <div class="theorem">
 <span id="thm:unnamed-chunk-2" class="theorem"><strong>Theorem 3.1  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are similar, they have the same eigenvalues.
 </div>
-
 <div class="pr">
 <p>If <span class="math inline">\(B = P^{-1}AP\)</span>, then</p>
 <p><span class="math display">\[
@@ -516,7 +564,6 @@ B(P\bar{v}) = \lambda P \bar{v}
 <div class="corollary">
 <span id="cor:unnamed-chunk-3" class="corollary"><strong>Corollary 4.2  </strong></span>For <span class="math inline">\(A, B \in \mathbb{R}^{n \times n}\)</span>, <span class="math inline">\(AB\)</span> and <span class="math inline">\(BA\)</span> are similar matrices and therefore share the same set of eigenvalues.
 </div>
-
 <div class="pr">
 <p>To prove this, we need to show that there exists a invertible matrix <span class="math inline">\(A\)</span> such that <span class="math inline">\(P^{-1}(AB)P = BA\)</span>. Take <span class="math inline">\(P = A\)</span> and the equation holds.</p>
 </div>
@@ -538,14 +585,13 @@ B(P\bar{v}) = \lambda P \bar{v}
 \]</span></p>
 <p>are not similar even though they have the same eigenvalues.</p>
 </div>
-<div id="jordan-matrix" class="section level3">
+<div id="jordan-matrix" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> Jordan Matrix</h3>
 <p>For non-diagonalizable square matrix <span class="math inline">\(A_{n \times n}\)</span>, the goal is to with similar transformation <span class="math inline">\(P^{-1}AP\)</span> construct a matrix that is as near to a diagonal matrix as possible.</p>
 
 <div class="definition">
 <span id="def:unnamed-chunk-4" class="definition"><strong>Definition 4.3  </strong></span>The <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(J_{\lambda, n}\)</span> with <span class="math inline">\(\lambda\)</span>s on the diagonal, <span class="math inline">\(1\)</span>s on the superdiagonal and <span class="math inline">\(0\)</span>s elsewhere is called a Jordan matrix. A Jordan matrix in Jordan normal form is a block matrix that has Jordan blocks down its block diagonal and is zero elsewhere
 </div>
-
 <p>An example of Jordan matrix, the appearance of <span class="math inline">\(\lambda_i\)</span> on the diagonal is equal to its multiplicity as <span class="math inline">\(A\)</span>’s eigenvalue.
 <span class="math display">\[
 \begin{bmatrix}
@@ -604,7 +650,7 @@ A[\bar{p}_1 \; \; \bar{p}_2 \;\; \bar{p}_3 \;\; \bar{p}_4] = [\bar{p}_1 \; \; \b
 \]</span></p>
 <p>The solutions <span class="math inline">\(\bar{p}_i\)</span> are called <strong>generalized eigenvectors</strong> of <span class="math inline">\(A\)</span>.</p>
 </div>
-<div id="simultaneous-diagonalization" class="section level3">
+<div id="simultaneous-diagonalization" class="section level3" number="4.3.3">
 <h3><span class="header-section-number">4.3.3</span> Simultaneous Diagonalization</h3>
 <p>A diagonlizable matrix family that share the <strong>same eigenvectors</strong> is called <em>simultaneously diagonalizable</em>. This notion is complimentary to a family of similar matrices that are diagonalizable, share eigenvalues but not eigenvectors.</p>
 
@@ -615,14 +661,12 @@ A =  P\Lambda_1P^{-1} \\
 B = P\Lambda_2P^{-1}
 \]</span>
 </div>
-
 <p>The geometric interpretation of simultaneously diagonalizable matrices is that they perform scaling in the same set of directions.</p>
 <hr>
 
 <div class="theorem">
 <span id="thm:unnamed-chunk-6" class="theorem"><strong>Theorem 4.2  </strong></span>If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are diagonalizable matrices, they are simultaneously diagonalizable if and only if they commute, such that <span class="math inline">\(AB\)</span> = <span class="math inline">\(BA\)</span>.
 </div>
-
 <p>This theorem is useful in identifying diagonalizable matrices with the same eigenvectors.</p>
 <p>For example, the matrices</p>
 <p><span class="math display">\[
@@ -640,7 +684,7 @@ B = P\Lambda_2P^{-1}
 \]</span></p>
 <p>are not simultaneously diagonalizable because they do not commute.</p>
 </div>
-<div id="cayley-hamilton-theorem" class="section level3">
+<div id="cayley-hamilton-theorem" class="section level3" number="4.3.4">
 <h3><span class="header-section-number">4.3.4</span> Cayley-Hamilton Theorem</h3>
 <p>For any square matrix <span class="math inline">\(A_{n \times n}\)</span>, the characteristic polynomial of <span class="math inline">\(\lambda\)</span> is defined as</p>
 <p><span class="math display">\[
@@ -652,7 +696,6 @@ B = P\Lambda_2P^{-1}
 <p><span id="thm:cayley-hamilton" class="theorem"><strong>Theorem 4.3  (Cayley-Hamilton Theorem)  </strong></span></p>
 Let <span class="math inline">\(f(\lambda)\)</span> be a polynomial function of the characteristic polynomial <span class="math inline">\(\det(A - \lambda I)\)</span>, where <span class="math inline">\(A\)</span> is a square matrix. Then <span class="math inline">\(f(A)\)</span> evaluates to a zero matrix.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>
 </div>
-
 <div class="pr">
 <p>Though the Caley Hamilton theorem <a href="eigenthings-and-quadratic-forms.html#thm:cayley-hamilton">4.3</a> applies to any square matrix <span class="math inline">\(A\)</span>. Our proof only address the case for diagonalizable matrices.</p>
 <p>When <span class="math inline">\(A\)</span> is diagonalizable, the polynomial of <span class="math inline">\(A\)</span> takes the form</p>
@@ -667,7 +710,6 @@ f(A) = Pf(\Lambda)P^{-1}
 <div class="proposition">
 <span id="prp:unnamed-chunk-7" class="proposition"><strong>Proposition 4.1  (Polynomial representation of matrix inverse)  </strong></span>The <em>inverse</em> of an invertible square matrix <span class="math inline">\(A\)</span> is a polynomial of <span class="math inline">\(A\)</span> with degree at most <span class="math inline">\(d -1\)</span>.
 </div>
-
 <p>Since the constant term in the characteristic polynomial is the product of eigenvalues, which is nonzero for non-singular matrices. If the product of all eigenvalues is <span class="math inline">\(k\)</span>, we can write the Cayley-Hamilton matrix polynomial <span class="math inline">\(f(A)\)</span> in the form <span class="math inline">\(f(A) = A \cdot g(A) + kI\)</span>, where <span class="math inline">\(A \cdot g(A)\)</span> is obtained by factoring out <span class="math inline">\(A\)</span> from the d-degree matrix polynomial, leaving <span class="math inline">\(g(A)\)</span> with degree of <span class="math inline">\(d - 1\)</span>. Since <span class="math inline">\(f(A)\)</span> evaluates to zero, we have</p>
 <p><span class="math display">\[
 A \underbrace{\Big( - g(A) / k\Big)}_{A^{-1}} = I
@@ -675,7 +717,7 @@ A \underbrace{\Big( - g(A) / k\Big)}_{A^{-1}} = I
 <p>Therefore, <span class="math inline">\(A^{-1}\)</span> is shown to be a polynomial of <span class="math inline">\(A\)</span>.</p>
 </div>
 </div>
-<div id="symmetric-matrices" class="section level2">
+<div id="symmetric-matrices" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Symmetric Matrices</h2>
 <p>A <em>square</em> matrix <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is <em>symmetric</em> if <span class="math inline">\(A = A^{T}\)</span>, and <em>anti-symmetric</em> if <span class="math inline">\(A = - A^{T}\)</span>.</p>
 <p>It can be shown that for any <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span>, <span class="math inline">\(A + A^T\)</span> is symmetric and <span class="math inline">\(A - A^T\)</span> anti-symmetric. So any square matrix <span class="math inline">\(A\)</span> can be wrote as a sum of a symmetric matrix and an anti-symmetric matrix</p>
@@ -688,7 +730,6 @@ A = \frac{1}{2}(A + A^T) + \frac{1}{2}(A - A^T)
 <div class="theorem">
 <span id="thm:unnamed-chunk-8" class="theorem"><strong>Theorem 1.8  </strong></span>If <span class="math inline">\(A\)</span> is symmetric, eigenvectors from distinct eigenvalues are <strong>orthogonal</strong>.
 </div>
-
 <div class="pr">
 <p>Let <span class="math inline">\(\bar{v}_1\)</span> and <span class="math inline">\(\bar{v}_2\)</span> be eigenvectors that correspond to distinct eigenvalues <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>. Compute</p>
 <p><span class="math display">\[
@@ -731,8 +772,7 @@ A^T = (Q \Lambda Q^{T})^T = (Q^T)^T\Lambda^TQ^T= Q \Lambda Q^{T}  = A
 <div class="theorem">
 <span id="thm:unnamed-chunk-9" class="theorem"><strong>Theorem 4.4  </strong></span>An <span class="math inline">\(n \times n\)</span> matrix <span class="math inline">\(A\)</span> is orthogonally diagonalizable if an only if <span class="math inline">\(A\)</span> is a symmetric matrix.
 </div>
-
-<div id="spectral-decomposition" class="section level3">
+<div id="spectral-decomposition" class="section level3" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> Spectral Decomposition</h3>
 <p>For orthogonally diagonalizable matrix <span class="math inline">\(A\)</span>, we have</p>
 <p><span class="math display">\[
@@ -755,23 +795,21 @@ A = \lambda_1\bar{q}_1\bar{q}_1^T + \cdots + \lambda_1\bar{q}_n\bar{q}_n^T
 \end{equation}\]</span></p>
 <p>Eq <a href="eigenthings-and-quadratic-forms.html#eq:spectral-decomposition">(4.3)</a> is called the <strong>spectral decomposition</strong>, breaking <span class="math inline">\(A\)</span> into pieces of rank 1 matrix. It got this name because he set of eigenvalues of a matrix <span class="math inline">\(A\)</span> is sometimes called its <em>spectrum</em>.</p>
 </div>
-<div id="a-orthogonality" class="section level3">
+<div id="a-orthogonality" class="section level3" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> A-Orthogonality</h3>
 
 <div class="definition">
 <span id="def:unnamed-chunk-10" class="definition"><strong>Definition 4.5  (A-Orthogonality)  </strong></span>Column vector <span class="math inline">\(\bar{v}_i\)</span> and <span class="math inline">\(\bar{v}_j\)</span> are said to be <em>A-orthogonal</em> if <span class="math inline">\(\bar{v}_i^TA\bar{v}_j = 0\)</span> for some <span class="math inline">\(n \times n\)</span> invertible matrix <span class="math inline">\(A\)</span>.
 </div>
-
 <p>Similarly, a set of column vectors <span class="math inline">\(\bar{v}_1, ..., \bar{v}_n\)</span> is A-orthogonal, if and only if <span class="math inline">\(\bar{v}_i^TA\bar{v}_i = 0\)</span> for each pair of vectors.</p>
 </div>
 </div>
-<div id="quadratic-forms" class="section level2">
+<div id="quadratic-forms" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Quadratic Forms</h2>
 
 <div class="definition">
 <span id="def:unnamed-chunk-11" class="definition"><strong>Definition 4.6  (Quadratic form)  </strong></span>A <strong>quadratic form</strong> on <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math inline">\(Q\)</span> defined on <span class="math inline">\(\mathbb{R}^n\)</span> whose value at a vector <span class="math inline">\(\bar{x}\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span> can be computed by an expression of the form <span class="math inline">\(Q(\bar{x}) = \bar{x}^TA\bar{x}\)</span>, where <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is a <strong>symmetric</strong> matrix. <span class="math inline">\(A\)</span> is called the matrix of the quadraticc form.
 </div>
-
 <p>There exists a one-to-one mapping between symmetric matrix <span class="math inline">\(A\)</span> and the quadratic form. Consider the <span class="math inline">\(3 \times 3\)</span> case:</p>
 <p><span class="math display">\[
 \bar{x} =
@@ -811,7 +849,7 @@ x_3 \\
 \bar{x}^TA\bar{x}  = a_{11}x_1^2 + a_{22}x_2^2 + a_{33}x_3^2 + 2a_{12}x_1x_2 + 2a_{13}x_1x_3 + 2a_{23}x_2x_3 \tag{2} 
 \]</span></p>
 <p>This verifies that <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> when <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> is symmetric does result in a quadratic function of <span class="math inline">\(n\)</span> variables. Conversely, any quadratic function of <span class="math inline">\(n\)</span> variables, like shown in <span class="math inline">\((2)\)</span>, can be expressed in terms of <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> with unique choice of symmetric matrix <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span>.</p>
-<div id="change-of-variable" class="section level3">
+<div id="change-of-variable" class="section level3" number="4.5.1">
 <h3><span class="header-section-number">4.5.1</span> Change of Variable</h3>
 <p>If <span class="math inline">\(\bar{x}\)</span> is a variable vector in <span class="math inline">\(\mathbb{R}^n\)</span>, then a <em>change of variable</em> is an equation of the form</p>
 <p><span class="math display">\[
@@ -829,10 +867,9 @@ x_3 \\
 \bar{x}^TA\bar{x} = (Q\bar{y})^TA(Q\bar{y}) = \bar{y}^TQ^{T}AQ\bar{y} = \bar{y}^T \Lambda \bar{y}
 \]</span>
 </div>
-
 <p>The principal axes theorem <a href="eigenthings-and-quadratic-forms.html#thm:principal-axes">4.5</a> shows that if <span class="math inline">\(A\)</span> is diagonalizable, quadratic form <span class="math inline">\(\bar{x}^TA\bar{x}\)</span> can be reexpressed into the form <span class="math inline">\(\lambda_1y_1^2 + \lambda_2y_2^2 + \cdots + \lambda_ny_n^2\)</span> with change of variables <span class="math inline">\(\bar{x} = Q\bar{y}\)</span>.</p>
 </div>
-<div id="classification-of-quadratic-forms" class="section level3">
+<div id="classification-of-quadratic-forms" class="section level3" number="4.5.2">
 <h3><span class="header-section-number">4.5.2</span> Classification of Quadratic Forms</h3>
 <ul>
 <li><p>A symmetric matrix <span class="math inline">\(A \in \mathbb{S}^n\)</span> is <strong>positive definite</strong> (PD) if for all non-zero vectors <span class="math inline">\(\bar{x} \in \mathbb{R}^n,\; \bar{x}^TA\bar{x} &gt; 0\)</span>. We can denote positive definite matrix <span class="math inline">\(A\)</span> as <span class="math inline">\(A \succ 0\)</span> (or <span class="math inline">\(A &gt; 0\)</span>). The set of all positive definite matrices is denoted as <span class="math inline">\(\mathbb{S}_{++}^n\)</span></p></li>
@@ -846,7 +883,6 @@ x_3 \\
 <p>Note that when talking about <span class="math inline">\(A\)</span> being PD, PSD, ND, NSD or indefinite, <span class="math inline">\(A\)</span> is always assumed to be <strong>symmetric</strong>.</p>
 Also, if <span class="math inline">\(A\)</span> is positive definite, then <span class="math inline">\(−A\)</span> is negative definite and viceversa. Likewise, if <span class="math inline">\(A\)</span> is positive semidefinite then <span class="math inline">\(−A\)</span> is negative semidefinite and vice versa. If <span class="math inline">\(A\)</span> is indefinite, then so is <span class="math inline">\(−A\)</span>.
 </div>
-
 <p>From theorem <a href="eigenthings-and-quadratic-forms.html#thm:principal-axes">4.5</a>, we know that the sign of eigenvalues are closely related to classifications of symmetric matrices here. Take positive definite matrices for example, the following statements of <span class="math inline">\(A\)</span> are equivalent:</p>
 <ul>
 <li><p>For any <span class="math inline">\(\bar{x} \in \mathbb{R}^n, \; \bar{x}^TA\bar{x} &gt; 0\)</span></p></li>
@@ -859,7 +895,6 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 <div class="theorem">
 <span id="thm:sylvester-criterion" class="theorem"><strong>Theorem 4.6  (Sylvester’s Criterion)  </strong></span>A symmetric matrix <span class="math inline">\(A\)</span> is positive definite if and only if the determinant of the top-left <span class="math inline">\(k \times k\)</span> block of <span class="math inline">\(A\)</span> is strictly positive for all <span class="math inline">\(1 \le k \le n\)</span>
 </div>
-
 <p>Sylvester’s criterion is more complicated for positive semidefinite matrices, we have to check more matrices rather than just the top-left one.</p>
 <p><br></p>
 <p>Classification of <span class="math inline">\(A \in \mathbb{S}^{n}\)</span> by its eigenvalue can be applied in general.</p>
@@ -878,7 +913,6 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 <div class="corollary">
 <span id="cor:unnamed-chunk-14" class="corollary"><strong>Corollary 4.3  </strong></span>Given positive definite matrices <span class="math inline">\(A, B \in \mathbb{S}^n\)</span> and <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, the following results <strong>remain to be positive definite</strong>.
 </div>
-
 <ul>
 <li><p>Scalar multiplication of PD matrices <span class="math inline">\(\alpha A\)</span> are PD matrices</p></li>
 <li><p>The sum of PD matrices <span class="math inline">\(A +B\)</span> are PD matrices</p></li>
@@ -890,7 +924,6 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 <div class="corollary">
 <span id="cor:ata-pd" class="corollary"><strong>Corollary 4.4  </strong></span>Given any matrix <span class="math inline">\(A \in \mathbb{R}^{m \times n}\)</span>, <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are always positive semidefinite matrices
 </div>
-
 <div class="pr">
 <p>By definition, <span class="math inline">\(A^TA\)</span> is a positive semidefinite matrix if for any <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span>, the quadratic form <span class="math inline">\(\bar{x}^T(A^TA)\bar{x} \ge 0\)</span>.</p>
 <p><span class="math display">\[
@@ -908,12 +941,11 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 <div class="corollary">
 <span id="cor:ridge-invertible" class="corollary"><strong>Corollary 4.5  </strong></span><span class="math inline">\(A^TA +\lambda I\)</span> and <span class="math inline">\(AA^T + \lambda I\)</span> are always positive definite and invertible for <span class="math inline">\(\lambda &gt; 0\)</span>
 </div>
-
 <div class="pr">
 <p>From the previous corollary <a href="eigenthings-and-quadratic-forms.html#cor:ata-pd">4.4</a> we know that <span class="math inline">\(A^TA\)</span> and <span class="math inline">\(AA^T\)</span> are positive semidefinite, and that they have the same nonzero eigenvalues from corollary <a href="eigenthings-and-quadratic-forms.html#cor:same-nonzero">4.1</a>. According to Section <a href="eigenthings-and-quadratic-forms.html#additional-properties-of-eigenvalues-and-eigenvectors">4.1.1</a>, eigenvalues for <span class="math inline">\(P(A)\)</span> are <span class="math inline">\(P(\lambda)\)</span> for polynomial function <span class="math inline">\(P\)</span>. Therefore, <span class="math inline">\(A^TA +\lambda I\)</span> and <span class="math inline">\(AA^T + \lambda I\)</span> share a positive set of <span class="math inline">\(n\)</span> eigenvalues <span class="math inline">\(\lambda_1 + \lambda, ..., \lambda_r + \lambda, \lambda, ..., \lambda\)</span>, so they are PD and invertible.</p>
 </div>
 </div>
-<div id="gershgorin-discs-and-diagonal-dominance" class="section level3">
+<div id="gershgorin-discs-and-diagonal-dominance" class="section level3" number="4.5.3">
 <h3><span class="header-section-number">4.5.3</span> Gershgorin Discs and Diagonal Dominance</h3>
 <p>This section introduces one more criterion for positive definite matrices. We first present the Gershgorin Disc Theorem, which is more convenient to be expressed in terms of complex matrices.</p>
 
@@ -925,7 +957,6 @@ Also, if <span class="math inline">\(A\)</span> is positive definite, then <span
 </ul>
 <p>Then every eigenvalue of <span class="math inline">\(A\)</span> is in at least one of the <span class="math inline">\(D(a_{ii}, r_i)\)</span> (called <em>Gershigorin discs</em>)</p>
 </div>
-
 <p>As an illustration taken from Wikipedia, the following figure presents 4 Gershgorin discs of the matrix</p>
 <p><span class="math display">\[
 \begin{bmatrix}
@@ -966,7 +997,6 @@ Suppose that <span class="math inline">\(A \in \mathcal{M}_n{(\mathbb{C})}\)</sp
 <li><p><strong>strictly diagonally dominant</strong> if <span class="math inline">\(|a_{ii}| &gt; \sum_{j \not = i}|a_{ij}|\)</span> for all <span class="math inline">\(1 \le i \le n\)</span></p></li>
 </ol>
 </div>
-
 <p>A strictly diagonally dominant matrix is non-singular, because all of its Gershgorin discs do not touch zero. This result is known the <em>Levy-Desplanques theorem</em></p>
 
 <div class="corollary">
@@ -980,13 +1010,12 @@ Suppose that <span class="math inline">\(A \in \mathcal{M}_n{(\mathbb{C})}\)</sp
 <p>Note that this is a one-way theorem, unlike the criterion using eigenvalues, pivots and leading matrices. A PD matrix may not be diagonally dominant.</p>
 </div>
 </div>
-<div id="cholesky-factorization" class="section level2">
+<div id="cholesky-factorization" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Cholesky Factorization</h2>
 
 <div class="lemma">
 <span id="lem:unnamed-chunk-18" class="lemma"><strong>Lemma 4.1  </strong></span>A symmetric matrix <span class="math inline">\(A \in \mathbb{S}^n\)</span> is positive semidefinite if and only if it can be expressed in the gram matrix form <span class="math inline">\(B^TB\)</span> of some matrix <span class="math inline">\(B\)</span>.
 </div>
-
 <p><br></p>
 <p>The previous corollary <a href="eigenthings-and-quadratic-forms.html#cor:ata-pd">4.4</a> shows that if <span class="math inline">\(A = B^TB\)</span> then it is positive definite. Conversely, if <span class="math inline">\(A\)</span> is PSD (or PD), we have <span class="math inline">\(A = Q \Lambda Q^T\)</span> where <span class="math inline">\(\Lambda\)</span>’s diagonal entries are all nonnegative. Then we can set <span class="math inline">\(\Lambda ^{1/2} = \Sigma\)</span> and <span class="math inline">\(B = (Q\Sigma)^T\)</span>. Then <span class="math inline">\(A = Q\Sigma^2Q^T = (Q\Sigma)(Q\Sigma)^T = B^TB\)</span>.</p>
 <p>Note that we could also have stated this lemma using <span class="math inline">\(BB^T\)</span> instead of <span class="math inline">\(B^TB\)</span>, and the proof is similar.</p>
@@ -1019,7 +1048,7 @@ l_{11} &amp; \cdots &amp; l_{n1} \\
 <p>Since <span class="math inline">\(L\)</span> is lower triangular, we can solve <span class="math inline">\(L\)</span> from <span class="math inline">\(A = LL^T\)</span> with a system of equations that can be easily solved using back-substitution. For example, <span class="math inline">\(l_{11} = \sqrt{a_{11}}\)</span>, and <span class="math inline">\(a_{i1} / l_{11}\)</span>.</p>
 <p>The Cholesky factorization is a special case of LU decomposition</p>
 </div>
-<div id="rayleigh-quotients" class="section level2">
+<div id="rayleigh-quotients" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Rayleigh Quotients</h2>
 <p>Let <span class="math inline">\(A \in \mathbb{S}^n\)</span> and <span class="math inline">\(\bar{x} \in \mathbb{R}^n\)</span>, <strong>Rayleigh quotient</strong> is defined as</p>
 <p><span class="math display">\[
@@ -1092,7 +1121,6 @@ R_{A}(\bar{x}) = \frac{\bar{x}^TA\bar{x}}{\bar{x}^T\bar{x}}
 \]</span>
 is the eigenvalue <span class="math inline">\(\lambda_k\)</span>, and this maximum is attained at <span class="math inline">\(\bar{x} = \bar{q}_k\)</span>
 </div>
-
 <div class="pr">
 <p>From <span class="math inline">\(\bar{x} = P\bar{y}\)</span> we know that</p>
 <p><span class="math display">\[
